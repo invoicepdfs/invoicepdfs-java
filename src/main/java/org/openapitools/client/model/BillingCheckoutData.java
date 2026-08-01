@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * BillingCheckoutData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T16:03:16.409269607Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T16:14:32.470417769Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BillingCheckoutData {
   public static final String SERIALIZED_NAME_SESSION_ID = "session_id";
   @SerializedName(SERIALIZED_NAME_SESSION_ID)
