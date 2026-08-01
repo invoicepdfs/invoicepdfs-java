@@ -1,0 +1,47 @@
+name: Generate SDK
+
+# Regenerate this client from the OpenAPI spec in invoicepdfs-openapi.
+# Run manually (Actions tab) or triggered automatically when the spec updates.
+# Requires org/repo secret SDK_SYNC_TOKEN (read access to invoicepdfs-openapi).
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [spec-updated]
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest OpenAPI spec
+        run: |
+          curl -fsSL \
+            -H "Authorization: Bearer ${{ secrets.SDK_SYNC_TOKEN }}" \
+            -H "Accept: application/vnd.github.raw+json" \
+            "https://api.github.com/repos/invoicepdfs/invoicepdfs-openapi/contents/openapi.json?ref=main" \
+            -o openapi.json
+
+      - name: Generate client (java)
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/local" \
+            openapitools/openapi-generator-cli:v7.7.0 generate \
+            -i /local/openapi.json -g java -o /local \
+            --additional-properties="groupId=com.invoicepdfs,artifactId=invoicepdfs,invokerPackage=com.invoicepdfs"
+
+      - name: Commit regenerated client
+        run: |
+          rm -f openapi.json
+          git config user.name "invoicepdfs-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Regenerate client from OpenAPI spec"
+            git push
+          fi

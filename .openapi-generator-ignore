@@ -1,0 +1,4 @@
+.github/**
+.openapi-generator-ignore
+README.md
+LICENSE
