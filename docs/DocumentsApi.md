@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost*
 | [**calculateDocumentApiV1DocumentsCalculatePost**](DocumentsApi.md#calculateDocumentApiV1DocumentsCalculatePost) | **POST** /api/v1/documents/calculate | Calculate Document |
 | [**createDocumentApiV1DocumentsPost**](DocumentsApi.md#createDocumentApiV1DocumentsPost) | **POST** /api/v1/documents | Create Document |
 | [**deleteDocumentApiV1DocumentsDocumentIdDelete**](DocumentsApi.md#deleteDocumentApiV1DocumentsDocumentIdDelete) | **DELETE** /api/v1/documents/{document_id} | Delete Document |
+| [**duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost**](DocumentsApi.md#duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost) | **POST** /api/v1/documents/{document_id}/duplicate | Duplicate Document |
 | [**finalizeDocumentApiV1DocumentsDocumentIdFinalizePost**](DocumentsApi.md#finalizeDocumentApiV1DocumentsDocumentIdFinalizePost) | **POST** /api/v1/documents/{document_id}/finalize | Finalize Document |
 | [**getDocumentApiV1DocumentsDocumentIdGet**](DocumentsApi.md#getDocumentApiV1DocumentsDocumentIdGet) | **GET** /api/v1/documents/{document_id} | Get Document |
 | [**listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGet**](DocumentsApi.md#listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGet) | **GET** /api/v1/documents/{document_id}/deliveries | List Document Deliveries |
@@ -274,6 +275,72 @@ public class Example {
 ### Return type
 
 [**SimpleBoolResponse**](SimpleBoolResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost"></a>
+# **duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost**
+> DocumentResponse duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost(documentId)
+
+Duplicate Document
+
+### Example
+```java
+// Import classes:
+import com.invoicepdfs.ApiClient;
+import com.invoicepdfs.ApiException;
+import com.invoicepdfs.Configuration;
+import com.invoicepdfs.auth.*;
+import com.invoicepdfs.models.*;
+import org.openapitools.client.api.DocumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP bearer authorization: HTTPBearer
+    HttpBearerAuth HTTPBearer = (HttpBearerAuth) defaultClient.getAuthentication("HTTPBearer");
+    HTTPBearer.setBearerToken("BEARER TOKEN");
+
+    DocumentsApi apiInstance = new DocumentsApi(defaultClient);
+    String documentId = "documentId_example"; // String | 
+    try {
+      DocumentResponse result = apiInstance.duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost(documentId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DocumentsApi#duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **documentId** | **String**|  | |
+
+### Return type
+
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 

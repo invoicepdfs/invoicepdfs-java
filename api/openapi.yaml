@@ -1130,6 +1130,38 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /api/v1/documents/{document_id}/duplicate:
+    post:
+      operationId: duplicate_document_api_v1_documents__document_id__duplicate_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Duplicate Document
+      tags:
+      - documents
+      x-accepts:
+      - application/json
   /api/v1/documents/{document_id}/finalize:
     post:
       operationId: finalize_document_api_v1_documents__document_id__finalize_post
