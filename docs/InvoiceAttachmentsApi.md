@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createAttachmentApiV1InvoicesInvoiceIdAttachmentsPost**](InvoiceAttachmentsApi.md#createAttachmentApiV1InvoicesInvoiceIdAttachmentsPost) | **POST** /api/v1/invoices/{invoice_id}/attachments | Create Attachment |
-| [**deleteAttachmentApiV1InvoicesInvoiceIdAttachmentsAttachmentIdDelete**](InvoiceAttachmentsApi.md#deleteAttachmentApiV1InvoicesInvoiceIdAttachmentsAttachmentIdDelete) | **DELETE** /api/v1/invoices/{invoice_id}/attachments/{attachment_id} | Delete Attachment |
-| [**listAttachmentsApiV1InvoicesInvoiceIdAttachmentsGet**](InvoiceAttachmentsApi.md#listAttachmentsApiV1InvoicesInvoiceIdAttachmentsGet) | **GET** /api/v1/invoices/{invoice_id}/attachments | List Attachments |
+| [**createAttachmentApiV1DocumentsInvoiceIdAttachmentsPost**](InvoiceAttachmentsApi.md#createAttachmentApiV1DocumentsInvoiceIdAttachmentsPost) | **POST** /api/v1/documents/{invoice_id}/attachments | Create Attachment |
+| [**deleteAttachmentApiV1DocumentsInvoiceIdAttachmentsAttachmentIdDelete**](InvoiceAttachmentsApi.md#deleteAttachmentApiV1DocumentsInvoiceIdAttachmentsAttachmentIdDelete) | **DELETE** /api/v1/documents/{invoice_id}/attachments/{attachment_id} | Delete Attachment |
+| [**listAttachmentsApiV1DocumentsInvoiceIdAttachmentsGet**](InvoiceAttachmentsApi.md#listAttachmentsApiV1DocumentsInvoiceIdAttachmentsGet) | **GET** /api/v1/documents/{invoice_id}/attachments | List Attachments |
 
 
-<a id="createAttachmentApiV1InvoicesInvoiceIdAttachmentsPost"></a>
-# **createAttachmentApiV1InvoicesInvoiceIdAttachmentsPost**
-> InvoiceAttachmentResponse createAttachmentApiV1InvoicesInvoiceIdAttachmentsPost(invoiceId, invoiceAttachmentCreateRequest)
+<a id="createAttachmentApiV1DocumentsInvoiceIdAttachmentsPost"></a>
+# **createAttachmentApiV1DocumentsInvoiceIdAttachmentsPost**
+> InvoiceAttachmentResponse createAttachmentApiV1DocumentsInvoiceIdAttachmentsPost(invoiceId, invoiceAttachmentCreateRequest)
 
 Create Attachment
 
@@ -38,10 +38,10 @@ public class Example {
     String invoiceId = "invoiceId_example"; // String | 
     InvoiceAttachmentCreateRequest invoiceAttachmentCreateRequest = new InvoiceAttachmentCreateRequest(); // InvoiceAttachmentCreateRequest | 
     try {
-      InvoiceAttachmentResponse result = apiInstance.createAttachmentApiV1InvoicesInvoiceIdAttachmentsPost(invoiceId, invoiceAttachmentCreateRequest);
+      InvoiceAttachmentResponse result = apiInstance.createAttachmentApiV1DocumentsInvoiceIdAttachmentsPost(invoiceId, invoiceAttachmentCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling InvoiceAttachmentsApi#createAttachmentApiV1InvoicesInvoiceIdAttachmentsPost");
+      System.err.println("Exception when calling InvoiceAttachmentsApi#createAttachmentApiV1DocumentsInvoiceIdAttachmentsPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -77,9 +77,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deleteAttachmentApiV1InvoicesInvoiceIdAttachmentsAttachmentIdDelete"></a>
-# **deleteAttachmentApiV1InvoicesInvoiceIdAttachmentsAttachmentIdDelete**
-> SimpleBoolResponse deleteAttachmentApiV1InvoicesInvoiceIdAttachmentsAttachmentIdDelete(invoiceId, attachmentId)
+<a id="deleteAttachmentApiV1DocumentsInvoiceIdAttachmentsAttachmentIdDelete"></a>
+# **deleteAttachmentApiV1DocumentsInvoiceIdAttachmentsAttachmentIdDelete**
+> SimpleBoolResponse deleteAttachmentApiV1DocumentsInvoiceIdAttachmentsAttachmentIdDelete(invoiceId, attachmentId)
 
 Delete Attachment
 
@@ -106,10 +106,10 @@ public class Example {
     String invoiceId = "invoiceId_example"; // String | 
     String attachmentId = "attachmentId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteAttachmentApiV1InvoicesInvoiceIdAttachmentsAttachmentIdDelete(invoiceId, attachmentId);
+      SimpleBoolResponse result = apiInstance.deleteAttachmentApiV1DocumentsInvoiceIdAttachmentsAttachmentIdDelete(invoiceId, attachmentId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling InvoiceAttachmentsApi#deleteAttachmentApiV1InvoicesInvoiceIdAttachmentsAttachmentIdDelete");
+      System.err.println("Exception when calling InvoiceAttachmentsApi#deleteAttachmentApiV1DocumentsInvoiceIdAttachmentsAttachmentIdDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -145,9 +145,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listAttachmentsApiV1InvoicesInvoiceIdAttachmentsGet"></a>
-# **listAttachmentsApiV1InvoicesInvoiceIdAttachmentsGet**
-> InvoiceAttachmentsListResponse listAttachmentsApiV1InvoicesInvoiceIdAttachmentsGet(invoiceId)
+<a id="listAttachmentsApiV1DocumentsInvoiceIdAttachmentsGet"></a>
+# **listAttachmentsApiV1DocumentsInvoiceIdAttachmentsGet**
+> InvoiceAttachmentsListResponse listAttachmentsApiV1DocumentsInvoiceIdAttachmentsGet(invoiceId)
 
 List Attachments
 
@@ -173,10 +173,10 @@ public class Example {
     InvoiceAttachmentsApi apiInstance = new InvoiceAttachmentsApi(defaultClient);
     String invoiceId = "invoiceId_example"; // String | 
     try {
-      InvoiceAttachmentsListResponse result = apiInstance.listAttachmentsApiV1InvoicesInvoiceIdAttachmentsGet(invoiceId);
+      InvoiceAttachmentsListResponse result = apiInstance.listAttachmentsApiV1DocumentsInvoiceIdAttachmentsGet(invoiceId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling InvoiceAttachmentsApi#listAttachmentsApiV1InvoicesInvoiceIdAttachmentsGet");
+      System.err.println("Exception when calling InvoiceAttachmentsApi#listAttachmentsApiV1DocumentsInvoiceIdAttachmentsGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

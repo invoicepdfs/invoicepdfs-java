@@ -550,7 +550,7 @@ public class Example {
 
 <a id="previewTemplateApiV1TemplatesTemplateIdPreviewPost"></a>
 # **previewTemplateApiV1TemplatesTemplateIdPreviewPost**
-> Object previewTemplateApiV1TemplatesTemplateIdPreviewPost(templateId, documentRenderRequest, idempotencyKey)
+> Object previewTemplateApiV1TemplatesTemplateIdPreviewPost(templateId, appSchemasV1DocumentRenderRequest, idempotencyKey)
 
 Preview Template
 
@@ -575,10 +575,10 @@ public class Example {
 
     TemplatesApi apiInstance = new TemplatesApi(defaultClient);
     String templateId = "templateId_example"; // String | 
-    DocumentRenderRequest documentRenderRequest = new DocumentRenderRequest(); // DocumentRenderRequest | 
+    AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest = new AppSchemasV1DocumentRenderRequest(); // AppSchemasV1DocumentRenderRequest | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      Object result = apiInstance.previewTemplateApiV1TemplatesTemplateIdPreviewPost(templateId, documentRenderRequest, idempotencyKey);
+      Object result = apiInstance.previewTemplateApiV1TemplatesTemplateIdPreviewPost(templateId, appSchemasV1DocumentRenderRequest, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplatesApi#previewTemplateApiV1TemplatesTemplateIdPreviewPost");
@@ -596,7 +596,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **templateId** | **String**|  | |
-| **documentRenderRequest** | [**DocumentRenderRequest**](DocumentRenderRequest.md)|  | |
+| **appSchemasV1DocumentRenderRequest** | [**AppSchemasV1DocumentRenderRequest**](AppSchemasV1DocumentRenderRequest.md)|  | |
 | **idempotencyKey** | **String**|  | [optional] |
 
 ### Return type

@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createPaymentApiV1InvoicesInvoiceIdPaymentsPost**](PaymentsApi.md#createPaymentApiV1InvoicesInvoiceIdPaymentsPost) | **POST** /api/v1/invoices/{invoice_id}/payments | Create Payment |
+| [**createPaymentApiV1DocumentsInvoiceIdPaymentsPost**](PaymentsApi.md#createPaymentApiV1DocumentsInvoiceIdPaymentsPost) | **POST** /api/v1/documents/{invoice_id}/payments | Create Payment |
 | [**deletePaymentApiV1PaymentsPaymentIdDelete**](PaymentsApi.md#deletePaymentApiV1PaymentsPaymentIdDelete) | **DELETE** /api/v1/payments/{payment_id} | Delete Payment |
 | [**getPaymentApiV1PaymentsPaymentIdGet**](PaymentsApi.md#getPaymentApiV1PaymentsPaymentIdGet) | **GET** /api/v1/payments/{payment_id} | Get Payment |
-| [**listInvoicePaymentsApiV1InvoicesInvoiceIdPaymentsGet**](PaymentsApi.md#listInvoicePaymentsApiV1InvoicesInvoiceIdPaymentsGet) | **GET** /api/v1/invoices/{invoice_id}/payments | List Invoice Payments |
+| [**listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet**](PaymentsApi.md#listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet) | **GET** /api/v1/documents/{invoice_id}/payments | List Invoice Payments |
 | [**updatePaymentApiV1PaymentsPaymentIdPatch**](PaymentsApi.md#updatePaymentApiV1PaymentsPaymentIdPatch) | **PATCH** /api/v1/payments/{payment_id} | Update Payment |
 
 
-<a id="createPaymentApiV1InvoicesInvoiceIdPaymentsPost"></a>
-# **createPaymentApiV1InvoicesInvoiceIdPaymentsPost**
-> PaymentResponse createPaymentApiV1InvoicesInvoiceIdPaymentsPost(invoiceId, paymentCreateRequest)
+<a id="createPaymentApiV1DocumentsInvoiceIdPaymentsPost"></a>
+# **createPaymentApiV1DocumentsInvoiceIdPaymentsPost**
+> PaymentResponse createPaymentApiV1DocumentsInvoiceIdPaymentsPost(invoiceId, paymentCreateRequest)
 
 Create Payment
 
@@ -40,10 +40,10 @@ public class Example {
     String invoiceId = "invoiceId_example"; // String | 
     PaymentCreateRequest paymentCreateRequest = new PaymentCreateRequest(); // PaymentCreateRequest | 
     try {
-      PaymentResponse result = apiInstance.createPaymentApiV1InvoicesInvoiceIdPaymentsPost(invoiceId, paymentCreateRequest);
+      PaymentResponse result = apiInstance.createPaymentApiV1DocumentsInvoiceIdPaymentsPost(invoiceId, paymentCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PaymentsApi#createPaymentApiV1InvoicesInvoiceIdPaymentsPost");
+      System.err.println("Exception when calling PaymentsApi#createPaymentApiV1DocumentsInvoiceIdPaymentsPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -211,9 +211,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listInvoicePaymentsApiV1InvoicesInvoiceIdPaymentsGet"></a>
-# **listInvoicePaymentsApiV1InvoicesInvoiceIdPaymentsGet**
-> PaymentsListResponse listInvoicePaymentsApiV1InvoicesInvoiceIdPaymentsGet(invoiceId, limit, cursor)
+<a id="listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet"></a>
+# **listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet**
+> PaymentsListResponse listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet(invoiceId, limit, cursor)
 
 List Invoice Payments
 
@@ -241,10 +241,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      PaymentsListResponse result = apiInstance.listInvoicePaymentsApiV1InvoicesInvoiceIdPaymentsGet(invoiceId, limit, cursor);
+      PaymentsListResponse result = apiInstance.listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet(invoiceId, limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PaymentsApi#listInvoicePaymentsApiV1InvoicesInvoiceIdPaymentsGet");
+      System.err.println("Exception when calling PaymentsApi#listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

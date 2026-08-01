@@ -12,7 +12,7 @@ info:
   license:
     name: MIT
   title: InvoicePDFs
-  version: 0.1.0
+  version: 0.1.2
 servers:
 - url: /
 paths:
@@ -932,9 +932,9 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/invoices:
+  /api/v1/documents:
     get:
-      operationId: list_invoices_api_v1_invoices_get
+      operationId: list_documents_api_v1_documents_get
       parameters:
       - explode: true
         in: query
@@ -957,6 +957,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: document_type
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
         name: status
         required: false
         schema:
@@ -968,7 +976,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoicesListResponse'
+                $ref: '#/components/schemas/DocumentsListResponse'
           description: Successful Response
         "422":
           content:
@@ -978,13 +986,13 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: List Invoices
+      summary: List Documents
       tags:
-      - invoices
+      - documents
       x-accepts:
       - application/json
     post:
-      operationId: create_invoice_api_v1_invoices_post
+      operationId: create_document_api_v1_documents_post
       parameters:
       - explode: false
         in: header
@@ -998,14 +1006,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InvoiceCreateRequest'
+              $ref: '#/components/schemas/DocumentCreateRequest'
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceResponse'
+                $ref: '#/components/schemas/DocumentResponse'
           description: Successful Response
         "422":
           content:
@@ -1015,22 +1023,22 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Create Invoice
+      summary: Create Document
       tags:
-      - invoices
+      - documents
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/invoices/{invoice_id}:
+  /api/v1/documents/{document_id}:
     delete:
-      operationId: delete_invoice_api_v1_invoices__invoice_id__delete
+      operationId: delete_document_api_v1_documents__document_id__delete
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       responses:
@@ -1048,20 +1056,20 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Delete Invoice
+      summary: Delete Document
       tags:
-      - invoices
+      - documents
       x-accepts:
       - application/json
     get:
-      operationId: get_invoice_api_v1_invoices__invoice_id__get
+      operationId: get_document_api_v1_documents__document_id__get
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       responses:
@@ -1069,7 +1077,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceResponse'
+                $ref: '#/components/schemas/DocumentResponse'
           description: Successful Response
         "422":
           content:
@@ -1079,20 +1087,283 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Get Invoice
+      summary: Get Document
       tags:
-      - invoices
+      - documents
       x-accepts:
       - application/json
     patch:
-      operationId: patch_invoice_api_v1_invoices__invoice_id__patch
+      operationId: patch_document_api_v1_documents__document_id__patch
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentPatchRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Patch Document
+      tags:
+      - documents
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/finalize:
+    post:
+      operationId: finalize_document_api_v1_documents__document_id__finalize_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Finalize Document
+      tags:
+      - documents
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/void:
+    post:
+      operationId: void_document_api_v1_documents__document_id__void_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Void Document
+      tags:
+      - documents
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/mark-sent:
+    post:
+      operationId: mark_sent_api_v1_documents__document_id__mark_sent_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Mark Sent
+      tags:
+      - documents
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/mark-paid:
+    post:
+      operationId: mark_paid_api_v1_documents__document_id__mark_paid_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Mark Paid
+      tags:
+      - documents
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/mark-unpaid:
+    post:
+      operationId: mark_unpaid_api_v1_documents__document_id__mark_unpaid_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Mark Unpaid
+      tags:
+      - documents
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/archive:
+    post:
+      operationId: archive_document_api_v1_documents__document_id__archive_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Archive Document
+      tags:
+      - documents
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/restore:
+    post:
+      operationId: restore_document_api_v1_documents__document_id__restore_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Restore Document
+      tags:
+      - documents
+      x-accepts:
+      - application/json
+  /api/v1/documents/{document_id}/renders:
+    post:
+      operationId: render_document_api_v1_documents__document_id__renders_post
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
           type: string
         style: simple
       - explode: false
@@ -1107,179 +1378,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InvoicePatchRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Patch Invoice
-      tags:
-      - invoices
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-    put:
-      operationId: replace_invoice_api_v1_invoices__invoice_id__put
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      - explode: false
-        in: header
-        name: Idempotency-Key
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceCreateRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Replace Invoice
-      tags:
-      - invoices
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/duplicate:
-    post:
-      operationId: duplicate_invoice_api_v1_invoices__invoice_id__duplicate_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Duplicate Invoice
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/validate:
-    post:
-      operationId: validate_invoice_api_v1_invoices_validate_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceDraftRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                additionalProperties: true
-                title: Response Validate Invoice Api V1 Invoices Validate Post
-                type: object
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Validate Invoice
-      tags:
-      - invoices
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /api/v1/invoices/calculate:
-    post:
-      operationId: calculate_invoice_api_v1_invoices_calculate_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceDraftRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                additionalProperties: true
-                title: Response Calculate Invoice Api V1 Invoices Calculate Post
-                type: object
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Calculate Invoice
-      tags:
-      - invoices
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /api/v1/invoices/preview:
-    post:
-      operationId: preview_invoice_api_v1_invoices_preview_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoicePreviewRequest'
+              $ref: '#/components/schemas/app__documents__schemas__DocumentRenderRequest'
         required: true
       responses:
         "200":
@@ -1295,257 +1394,22 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Preview Invoice
+      summary: Render Document
       tags:
-      - invoices
+      - documents
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/invoices/{invoice_id}/finalize:
+  /api/v1/documents/{document_id}/send:
     post:
-      operationId: finalize_invoice_api_v1_invoices__invoice_id__finalize_post
+      operationId: send_document_api_v1_documents__document_id__send_post
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      - explode: false
-        in: header
-        name: Idempotency-Key
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                additionalProperties: true
-                title: Response Finalize Invoice Api V1 Invoices  Invoice Id  Finalize
-                  Post
-                type: object
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Finalize Invoice
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/void:
-    post:
-      operationId: void_invoice_api_v1_invoices__invoice_id__void_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Void Invoice
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/mark-sent:
-    post:
-      operationId: mark_sent_api_v1_invoices__invoice_id__mark_sent_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Mark Sent
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/mark-paid:
-    post:
-      operationId: mark_paid_api_v1_invoices__invoice_id__mark_paid_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Mark Paid
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/mark-unpaid:
-    post:
-      operationId: mark_unpaid_api_v1_invoices__invoice_id__mark_unpaid_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Mark Unpaid
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/archive:
-    post:
-      operationId: archive_invoice_api_v1_invoices__invoice_id__archive_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Archive Invoice
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/restore:
-    post:
-      operationId: restore_invoice_api_v1_invoices__invoice_id__restore_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Restore Invoice
-      tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/send:
-    post:
-      operationId: send_invoice_api_v1_invoices__invoice_id__send_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       requestBody:
@@ -1569,22 +1433,22 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Send Invoice
+      summary: Send Document
       tags:
-      - invoices
+      - documents
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/invoices/{invoice_id}/deliveries:
+  /api/v1/documents/{document_id}/deliveries:
     get:
-      operationId: list_invoice_deliveries_api_v1_invoices__invoice_id__deliveries_get
+      operationId: list_document_deliveries_api_v1_documents__document_id__deliveries_get
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       - explode: true
@@ -1621,338 +1485,9 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: List Invoice Deliveries
+      summary: List Document Deliveries
       tags:
-      - invoices
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/renders:
-    post:
-      operationId: render_invoice_api_v1_invoices__invoice_id__renders_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      - explode: false
-        in: header
-        name: Idempotency-Key
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceRenderRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema: {}
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Render Invoice
-      tags:
-      - invoices
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/attachments:
-    get:
-      operationId: list_attachments_api_v1_invoices__invoice_id__attachments_get
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceAttachmentsListResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: List Attachments
-      tags:
-      - invoice-attachments
-      x-accepts:
-      - application/json
-    post:
-      operationId: create_attachment_api_v1_invoices__invoice_id__attachments_post
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceAttachmentCreateRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvoiceAttachmentResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Create Attachment
-      tags:
-      - invoice-attachments
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /api/v1/invoices/{invoice_id}/attachments/{attachment_id}:
-    delete:
-      operationId: delete_attachment_api_v1_invoices__invoice_id__attachments__attachment_id__delete
-      parameters:
-      - explode: false
-        in: path
-        name: invoice_id
-        required: true
-        schema:
-          title: Invoice Id
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: attachment_id
-        required: true
-        schema:
-          title: Attachment Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SimpleBoolResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Delete Attachment
-      tags:
-      - invoice-attachments
-      x-accepts:
-      - application/json
-  /api/v1/credit-notes:
-    get:
-      operationId: list_credit_notes_api_v1_credit_notes_get
-      parameters:
-      - explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          default: 50
-          maximum: 100
-          minimum: 1
-          title: Limit
-          type: integer
-        style: form
-      - explode: true
-        in: query
-        name: cursor
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreditNotesListResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: List Credit Notes
-      tags:
-      - credit-notes
-      x-accepts:
-      - application/json
-    post:
-      operationId: create_credit_note_api_v1_credit_notes_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreditNoteCreateRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreditNoteResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Create Credit Note
-      tags:
-      - credit-notes
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /api/v1/credit-notes/{credit_note_id}:
-    get:
-      operationId: get_credit_note_api_v1_credit_notes__credit_note_id__get
-      parameters:
-      - explode: false
-        in: path
-        name: credit_note_id
-        required: true
-        schema:
-          title: Credit Note Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreditNoteResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Get Credit Note
-      tags:
-      - credit-notes
-      x-accepts:
-      - application/json
-  /api/v1/credit-notes/{credit_note_id}/finalize:
-    post:
-      operationId: finalize_credit_note_api_v1_credit_notes__credit_note_id__finalize_post
-      parameters:
-      - explode: false
-        in: path
-        name: credit_note_id
-        required: true
-        schema:
-          title: Credit Note Id
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreditNoteResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Finalize Credit Note
-      tags:
-      - credit-notes
-      x-accepts:
-      - application/json
-  /api/v1/credit-notes/{credit_note_id}/renders:
-    post:
-      operationId: render_credit_note_api_v1_credit_notes__credit_note_id__renders_post
-      parameters:
-      - explode: false
-        in: path
-        name: credit_note_id
-        required: true
-        schema:
-          title: Credit Note Id
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreditNoteRenderRequest'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema: {}
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Render Credit Note
-      tags:
-      - credit-notes
-      x-content-type: application/json
+      - documents
       x-accepts:
       - application/json
   /api/v1/documents/validate:
@@ -2031,7 +1566,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DocumentRenderRequest'
+              $ref: '#/components/schemas/app__schemas__v1__DocumentRenderRequest'
         required: true
       responses:
         "200":
@@ -2051,6 +1586,116 @@ paths:
       tags:
       - documents
       x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/documents/{invoice_id}/attachments:
+    get:
+      operationId: list_attachments_api_v1_documents__invoice_id__attachments_get
+      parameters:
+      - explode: false
+        in: path
+        name: invoice_id
+        required: true
+        schema:
+          title: Invoice Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceAttachmentsListResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: List Attachments
+      tags:
+      - invoice-attachments
+      x-accepts:
+      - application/json
+    post:
+      operationId: create_attachment_api_v1_documents__invoice_id__attachments_post
+      parameters:
+      - explode: false
+        in: path
+        name: invoice_id
+        required: true
+        schema:
+          title: Invoice Id
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceAttachmentCreateRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceAttachmentResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Create Attachment
+      tags:
+      - invoice-attachments
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/documents/{invoice_id}/attachments/{attachment_id}:
+    delete:
+      operationId: delete_attachment_api_v1_documents__invoice_id__attachments__attachment_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: invoice_id
+        required: true
+        schema:
+          title: Invoice Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: attachment_id
+        required: true
+        schema:
+          title: Attachment Id
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimpleBoolResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Delete Attachment
+      tags:
+      - invoice-attachments
       x-accepts:
       - application/json
   /api/v1/templates:
@@ -2391,7 +2036,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DocumentRenderRequest'
+              $ref: '#/components/schemas/app__schemas__v1__DocumentRenderRequest'
         required: true
       responses:
         "200":
@@ -2591,9 +2236,9 @@ paths:
       x-accepts:
       - application/json
       - application/pdf
-  /api/v1/invoices/{invoice_id}/payments:
+  /api/v1/documents/{invoice_id}/payments:
     get:
-      operationId: list_invoice_payments_api_v1_invoices__invoice_id__payments_get
+      operationId: list_invoice_payments_api_v1_documents__invoice_id__payments_get
       parameters:
       - explode: false
         in: path
@@ -2643,7 +2288,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_payment_api_v1_invoices__invoice_id__payments_post
+      operationId: create_payment_api_v1_documents__invoice_id__payments_post
       parameters:
       - explode: false
         in: path
@@ -6617,311 +6262,6 @@ components:
       - total
       title: CalculationBreakdown
       type: object
-    CreditNoteCreateRequest:
-      example:
-        reason: reason
-        credit_note_number: CN-2026-001
-        issue_date: 2026-07-20
-        invoice_id: inv_01ABC
-        line_items:
-        - quantity: "1"
-          name: Web Development
-          description: description
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-        - quantity: "1"
-          name: Web Development
-          description: description
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-      properties:
-        invoice_id:
-          example: inv_01ABC
-          title: Invoice Id
-          type: string
-        credit_note_number:
-          example: CN-2026-001
-          title: Credit Note Number
-          type: string
-        issue_date:
-          example: 2026-07-20
-          format: date
-          title: Issue Date
-          type: string
-        reason:
-          nullable: true
-          type: string
-        line_items:
-          items:
-            $ref: '#/components/schemas/CreditNoteLineItemInput'
-          title: Line Items
-          type: array
-      required:
-      - credit_note_number
-      - invoice_id
-      - issue_date
-      - line_items
-      title: CreditNoteCreateRequest
-      type: object
-    CreditNoteLineItemInput:
-      example:
-        quantity: "1"
-        name: Web Development
-        description: description
-        taxes:
-        - tax_rate_id: tax_rate_id
-          inclusive: false
-          rate: rate
-          name: name
-        - tax_rate_id: tax_rate_id
-          inclusive: false
-          rate: rate
-          name: name
-        unit_price: "150.00"
-      properties:
-        name:
-          example: Web Development
-          title: Name
-          type: string
-        description:
-          nullable: true
-          type: string
-        quantity:
-          example: "1"
-          title: Quantity
-          type: string
-        unit_price:
-          example: "150.00"
-          title: Unit Price
-          type: string
-        taxes:
-          items:
-            $ref: '#/components/schemas/InvoiceLineItemTaxInput'
-          title: Taxes
-          type: array
-      required:
-      - name
-      - quantity
-      - unit_price
-      title: CreditNoteLineItemInput
-      type: object
-    CreditNoteOut:
-      example:
-        finalized_at: finalized_at
-        reason: reason
-        credit_note_number: credit_note_number
-        issue_date: 2000-01-23
-        updated_at: updated_at
-        invoice_id: invoice_id
-        created_at: created_at
-        currency: currency
-        id: id
-        totals:
-          discount_total:
-            amount: amount
-            currency: currency
-          total:
-            amount: amount
-            currency: currency
-          tax_total:
-            amount: amount
-            currency: currency
-          shipping_total:
-            amount: amount
-            currency: currency
-          subtotal:
-            amount: amount
-            currency: currency
-        status: draft
-      properties:
-        id:
-          title: Id
-          type: string
-        invoice_id:
-          title: Invoice Id
-          type: string
-        credit_note_number:
-          title: Credit Note Number
-          type: string
-        status:
-          enum:
-          - draft
-          - finalized
-          title: Status
-          type: string
-        reason:
-          nullable: true
-          type: string
-        currency:
-          title: Currency
-          type: string
-        totals:
-          $ref: '#/components/schemas/InvoiceTotalsOut'
-        issue_date:
-          format: date
-          title: Issue Date
-          type: string
-        created_at:
-          title: Created At
-          type: string
-        updated_at:
-          title: Updated At
-          type: string
-        finalized_at:
-          nullable: true
-          type: string
-      required:
-      - created_at
-      - credit_note_number
-      - currency
-      - id
-      - invoice_id
-      - issue_date
-      - status
-      - totals
-      - updated_at
-      title: CreditNoteOut
-      type: object
-    CreditNoteRenderRequest:
-      example:
-        template_id: tpl_modern
-        page_size: LETTER
-      properties:
-        template_id:
-          default: tpl_modern
-          title: Template Id
-          type: string
-        page_size:
-          default: LETTER
-          enum:
-          - LETTER
-          - A4
-          title: Page Size
-          type: string
-      title: CreditNoteRenderRequest
-      type: object
-    CreditNoteResponse:
-      example:
-        data:
-          finalized_at: finalized_at
-          reason: reason
-          credit_note_number: credit_note_number
-          issue_date: 2000-01-23
-          updated_at: updated_at
-          invoice_id: invoice_id
-          created_at: created_at
-          currency: currency
-          id: id
-          totals:
-            discount_total:
-              amount: amount
-              currency: currency
-            total:
-              amount: amount
-              currency: currency
-            tax_total:
-              amount: amount
-              currency: currency
-            shipping_total:
-              amount: amount
-              currency: currency
-            subtotal:
-              amount: amount
-              currency: currency
-          status: draft
-      properties:
-        data:
-          $ref: '#/components/schemas/CreditNoteOut'
-      required:
-      - data
-      title: CreditNoteResponse
-      type: object
-    CreditNotesListResponse:
-      example:
-        pagination:
-          next_cursor: next_cursor
-          has_more: false
-        data:
-        - finalized_at: finalized_at
-          reason: reason
-          credit_note_number: credit_note_number
-          issue_date: 2000-01-23
-          updated_at: updated_at
-          invoice_id: invoice_id
-          created_at: created_at
-          currency: currency
-          id: id
-          totals:
-            discount_total:
-              amount: amount
-              currency: currency
-            total:
-              amount: amount
-              currency: currency
-            tax_total:
-              amount: amount
-              currency: currency
-            shipping_total:
-              amount: amount
-              currency: currency
-            subtotal:
-              amount: amount
-              currency: currency
-          status: draft
-        - finalized_at: finalized_at
-          reason: reason
-          credit_note_number: credit_note_number
-          issue_date: 2000-01-23
-          updated_at: updated_at
-          invoice_id: invoice_id
-          created_at: created_at
-          currency: currency
-          id: id
-          totals:
-            discount_total:
-              amount: amount
-              currency: currency
-            total:
-              amount: amount
-              currency: currency
-            tax_total:
-              amount: amount
-              currency: currency
-            shipping_total:
-              amount: amount
-              currency: currency
-            subtotal:
-              amount: amount
-              currency: currency
-          status: draft
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/CreditNoteOut'
-          title: Data
-          type: array
-        pagination:
-          $ref: '#/components/schemas/CursorPagination'
-      required:
-      - data
-      title: CreditNotesListResponse
-      type: object
     CursorPagination:
       example:
         next_cursor: next_cursor
@@ -7717,6 +7057,199 @@ components:
       - data
       title: DocumentCalculateResponse
       type: object
+    DocumentCreateRequest:
+      example:
+        reason: reason
+        notes:
+        - type: note
+          content: Thank you for your business!
+        - type: note
+          content: Thank you for your business!
+        custom_fields:
+        - label: PO Number
+          value: PO-2026-001
+        - label: PO Number
+          value: PO-2026-001
+        branding:
+          accent_color: '#111827'
+          logo_file_id: logo_file_id
+          font_family: font_family
+          footer_text: Generated by InvoicePDFs
+          primary_color: '#111827'
+        due_date: 2000-01-23
+        line_items:
+        - unit: unit
+          quantity: "2"
+          name: Web Development
+          description: description
+          discount:
+            reason: reason
+            type: percentage
+            value: "10"
+          taxes:
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          unit_price: "150.00"
+          sku: sku
+        - unit: unit
+          quantity: "2"
+          name: Web Development
+          description: description
+          discount:
+            reason: reason
+            type: percentage
+            value: "10"
+          taxes:
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          unit_price: "150.00"
+          sku: sku
+        locale: locale
+        business_profile_id: bp_01ABC
+        number: INV-2026-001
+        issue_date: 2026-07-20
+        discounts:
+        - reason: reason
+          type: percentage
+          value: "10"
+        - reason: reason
+          type: percentage
+          value: "10"
+        shipping:
+          amount: "9.99"
+          description: Shipping
+        terms:
+        - type: term
+          content: Net 30 — payment due within 30 days of invoice date.
+        - type: term
+          content: Net 30 — payment due within 30 days of invoice date.
+        currency: USD
+        payment:
+          instructions: instructions
+          payment_url: payment_url
+          accepted_methods:
+          - bank_transfer
+          - credit_card
+          bank_account:
+            account_number: account_number
+            account_name: account_name
+            iban: iban
+            bank_name: bank_name
+            routing_number: routing_number
+            swift: swift
+        customer_id: cus_01XYZ
+        source_document_id: source_document_id
+        ship_to:
+          country: country
+          city: city
+          state: state
+          postal_code: postal_code
+          line2: line2
+          line1: 1 Main St
+        document_type: invoice
+      properties:
+        document_type:
+          default: invoice
+          enum:
+          - invoice
+          - credit_note
+          - quote
+          - receipt
+          - proforma
+          - purchase_order
+          - delivery_note
+          title: Document Type
+          type: string
+        number:
+          example: INV-2026-001
+          title: Number
+          type: string
+        issue_date:
+          example: 2026-07-20
+          format: date
+          title: Issue Date
+          type: string
+        due_date:
+          format: date
+          nullable: true
+          type: string
+        currency:
+          example: USD
+          maxLength: 3
+          minLength: 3
+          title: Currency
+          type: string
+        locale:
+          nullable: true
+          type: string
+        business_profile_id:
+          example: bp_01ABC
+          title: Business Profile Id
+          type: string
+        customer_id:
+          example: cus_01XYZ
+          title: Customer Id
+          type: string
+        source_document_id:
+          nullable: true
+          type: string
+        reason:
+          nullable: true
+          type: string
+        ship_to:
+          $ref: '#/components/schemas/PostalAddress'
+        line_items:
+          items:
+            $ref: '#/components/schemas/StandardLineItemInput'
+          title: Line Items
+          type: array
+        discounts:
+          items:
+            $ref: '#/components/schemas/LineItemDiscountInput'
+          title: Discounts
+          type: array
+        shipping:
+          $ref: '#/components/schemas/InvoiceShippingInput'
+        notes:
+          items:
+            $ref: '#/components/schemas/InvoiceNoteInput'
+          title: Notes
+          type: array
+        terms:
+          items:
+            $ref: '#/components/schemas/InvoiceTermInput'
+          title: Terms
+          type: array
+        custom_fields:
+          items:
+            $ref: '#/components/schemas/InvoiceCustomFieldInput'
+          title: Custom Fields
+          type: array
+        payment:
+          $ref: '#/components/schemas/InvoicePaymentInput'
+        branding:
+          $ref: '#/components/schemas/InvoiceBrandingInput'
+      required:
+      - business_profile_id
+      - currency
+      - customer_id
+      - issue_date
+      - line_items
+      - number
+      title: DocumentCreateRequest
+      type: object
     DocumentCustomFieldInput:
       example:
         label: PO Number
@@ -8032,11 +7565,119 @@ components:
       - rate
       title: DocumentLineItemTaxInput
       type: object
-    DocumentOutputOptions:
+    DocumentOut:
       example:
-        delivery: url
-        format: pdf
-        expires_in: 0
+        finalized_at: finalized_at
+        reason: reason
+        data:
+          key: ""
+        due_date: 2000-01-23
+        created_at: created_at
+        totals:
+          discount_total:
+            amount: amount
+            currency: currency
+          total:
+            amount: amount
+            currency: currency
+          tax_total:
+            amount: amount
+            currency: currency
+          shipping_total:
+            amount: amount
+            currency: currency
+          subtotal:
+            amount: amount
+            currency: currency
+        locale: locale
+        business_profile_id: business_profile_id
+        number: number
+        issue_date: 2000-01-23
+        updated_at: updated_at
+        currency: currency
+        id: id
+        customer_id: customer_id
+        source_document_id: source_document_id
+        document_type: invoice
+        status: status
+      properties:
+        id:
+          title: Id
+          type: string
+        document_type:
+          enum:
+          - invoice
+          - credit_note
+          - quote
+          - receipt
+          - proforma
+          - purchase_order
+          - delivery_note
+          title: Document Type
+          type: string
+        number:
+          title: Number
+          type: string
+        status:
+          title: Status
+          type: string
+        issue_date:
+          format: date
+          title: Issue Date
+          type: string
+        due_date:
+          format: date
+          nullable: true
+          type: string
+        currency:
+          title: Currency
+          type: string
+        locale:
+          nullable: true
+          type: string
+        business_profile_id:
+          title: Business Profile Id
+          type: string
+        customer_id:
+          title: Customer Id
+          type: string
+        source_document_id:
+          nullable: true
+          type: string
+        reason:
+          nullable: true
+          type: string
+        data:
+          additionalProperties: true
+          title: Data
+          type: object
+        totals:
+          $ref: '#/components/schemas/InvoiceTotalsOut'
+        created_at:
+          title: Created At
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+        finalized_at:
+          nullable: true
+          type: string
+      required:
+      - business_profile_id
+      - created_at
+      - currency
+      - customer_id
+      - data
+      - document_type
+      - id
+      - issue_date
+      - number
+      - status
+      - totals
+      - updated_at
+      title: DocumentOut
+      type: object
+    DocumentOutputOptions:
       properties:
         format:
           default: pdf
@@ -8111,6 +7752,186 @@ components:
       - name
       title: DocumentPartyInput
       type: object
+    DocumentPatchRequest:
+      example:
+        reason: reason
+        notes:
+        - type: note
+          content: Thank you for your business!
+        - type: note
+          content: Thank you for your business!
+        custom_fields:
+        - label: PO Number
+          value: PO-2026-001
+        - label: PO Number
+          value: PO-2026-001
+        branding:
+          accent_color: '#111827'
+          logo_file_id: logo_file_id
+          font_family: font_family
+          footer_text: Generated by InvoicePDFs
+          primary_color: '#111827'
+        due_date: 2000-01-23
+        line_items:
+        - unit: unit
+          quantity: "2"
+          name: Web Development
+          description: description
+          discount:
+            reason: reason
+            type: percentage
+            value: "10"
+          taxes:
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          unit_price: "150.00"
+          sku: sku
+        - unit: unit
+          quantity: "2"
+          name: Web Development
+          description: description
+          discount:
+            reason: reason
+            type: percentage
+            value: "10"
+          taxes:
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          - tax_rate_id: tax_rate_id
+            inclusive: false
+            rate: rate
+            name: name
+          unit_price: "150.00"
+          sku: sku
+        locale: locale
+        business_profile_id: business_profile_id
+        number: number
+        issue_date: 2000-01-23
+        discounts:
+        - reason: reason
+          type: percentage
+          value: "10"
+        - reason: reason
+          type: percentage
+          value: "10"
+        shipping:
+          amount: "9.99"
+          description: Shipping
+        terms:
+        - type: term
+          content: Net 30 — payment due within 30 days of invoice date.
+        - type: term
+          content: Net 30 — payment due within 30 days of invoice date.
+        currency: currency
+        payment:
+          instructions: instructions
+          payment_url: payment_url
+          accepted_methods:
+          - bank_transfer
+          - credit_card
+          bank_account:
+            account_number: account_number
+            account_name: account_name
+            iban: iban
+            bank_name: bank_name
+            routing_number: routing_number
+            swift: swift
+        customer_id: customer_id
+        source_document_id: source_document_id
+        ship_to:
+          country: country
+          city: city
+          state: state
+          postal_code: postal_code
+          line2: line2
+          line1: 1 Main St
+        document_type: invoice
+      properties:
+        number:
+          nullable: true
+          type: string
+        document_type:
+          enum:
+          - invoice
+          - credit_note
+          - quote
+          - receipt
+          - proforma
+          - purchase_order
+          - delivery_note
+          nullable: true
+          type: string
+        issue_date:
+          format: date
+          nullable: true
+          type: string
+        due_date:
+          format: date
+          nullable: true
+          type: string
+        currency:
+          maxLength: 3
+          minLength: 3
+          nullable: true
+          type: string
+        locale:
+          nullable: true
+          type: string
+        business_profile_id:
+          nullable: true
+          type: string
+        customer_id:
+          nullable: true
+          type: string
+        source_document_id:
+          nullable: true
+          type: string
+        reason:
+          nullable: true
+          type: string
+        ship_to:
+          $ref: '#/components/schemas/PostalAddress'
+        line_items:
+          items:
+            $ref: '#/components/schemas/StandardLineItemInput'
+          nullable: true
+          type: array
+        discounts:
+          items:
+            $ref: '#/components/schemas/LineItemDiscountInput'
+          nullable: true
+          type: array
+        shipping:
+          $ref: '#/components/schemas/InvoiceShippingInput'
+        notes:
+          items:
+            $ref: '#/components/schemas/InvoiceNoteInput'
+          nullable: true
+          type: array
+        terms:
+          items:
+            $ref: '#/components/schemas/InvoiceTermInput'
+          nullable: true
+          type: array
+        custom_fields:
+          items:
+            $ref: '#/components/schemas/InvoiceCustomFieldInput'
+          nullable: true
+          type: array
+        payment:
+          $ref: '#/components/schemas/InvoicePaymentInput'
+        branding:
+          $ref: '#/components/schemas/InvoiceBrandingInput'
+      title: DocumentPatchRequest
+      type: object
     DocumentPaymentInput:
       example:
         instructions: instructions
@@ -8144,172 +7965,48 @@ components:
           type: string
       title: DocumentPaymentInput
       type: object
-    DocumentRenderRequest:
+    DocumentResponse:
       example:
-        template:
-          id: id
-        output:
-          delivery: url
-          format: pdf
-          expires_in: 0
         data:
-          seller:
-            website: website
-            address:
-              country: country
-              city: city
-              state: state
-              postal_code: postal_code
-              line2: line2
-              line1: 1 Main St
-            phone: phone
-            registration_number: registration_number
-            name: Acme Corp
-            legal_name: legal_name
-            email: email
-            tax_id: tax_id
-            bank_account:
-              account_number: account_number
-              account_name: account_name
-              iban: iban
-              bank_name: bank_name
-              routing_number: routing_number
-              swift: swift
-          custom_fields:
-          - label: PO Number
-            value: PO-2026-001
-          - label: PO Number
-            value: PO-2026-001
-          branding:
-            accent_color: '#111827'
-            logo_file_id: logo_file_id
-            font_family: font_family
-            footer_text: Generated by InvoicePDFs
-            primary_color: '#111827'
+          finalized_at: finalized_at
+          reason: reason
+          data:
+            key: ""
           due_date: 2000-01-23
-          line_items:
-          - unit: unit
-            quantity: "2"
-            name: Web Development
-            description: description
-            discount:
-              reason: reason
-              type: percentage
-              value: "10"
-            taxes:
-            - inclusive: false
-              rate: "8.875"
-              name: Sales Tax
-            - inclusive: false
-              rate: "8.875"
-              name: Sales Tax
-            unit_price: "150.00"
-            sku: sku
-          - unit: unit
-            quantity: "2"
-            name: Web Development
-            description: description
-            discount:
-              reason: reason
-              type: percentage
-              value: "10"
-            taxes:
-            - inclusive: false
-              rate: "8.875"
-              name: Sales Tax
-            - inclusive: false
-              rate: "8.875"
-              name: Sales Tax
-            unit_price: "150.00"
-            sku: sku
-          buyer:
-            website: website
-            address:
-              country: country
-              city: city
-              state: state
-              postal_code: postal_code
-              line2: line2
-              line1: 1 Main St
-            phone: phone
-            registration_number: registration_number
-            name: Acme Corp
-            legal_name: legal_name
-            email: email
-            tax_id: tax_id
-            bank_account:
-              account_number: account_number
-              account_name: account_name
-              iban: iban
-              bank_name: bank_name
-              routing_number: routing_number
-              swift: swift
-          issue_date: 2026-07-20
-          discounts:
-          - reason: reason
-            type: percentage
-            value: "10"
-          - reason: reason
-            type: percentage
-            value: "10"
-          shipping:
-            amount: "9.99"
-            description: Shipping
-          currency: USD
-          payment:
-            instructions: instructions
-            payment_url: payment_url
-            accepted_methods:
-            - bank_transfer
-            - credit_card
-            bank_account:
-              account_number: account_number
-              account_name: account_name
-              iban: iban
-              bank_name: bank_name
-              routing_number: routing_number
-              swift: swift
-          invoice_number: INV-2026-001
-          ship_to:
-            website: website
-            address:
-              country: country
-              city: city
-              state: state
-              postal_code: postal_code
-              line2: line2
-              line1: 1 Main St
-            phone: phone
-            registration_number: registration_number
-            name: Acme Corp
-            legal_name: legal_name
-            email: email
-            tax_id: tax_id
-            bank_account:
-              account_number: account_number
-              account_name: account_name
-              iban: iban
-              bank_name: bank_name
-              routing_number: routing_number
-              swift: swift
-        document_type: invoice
+          created_at: created_at
+          totals:
+            discount_total:
+              amount: amount
+              currency: currency
+            total:
+              amount: amount
+              currency: currency
+            tax_total:
+              amount: amount
+              currency: currency
+            shipping_total:
+              amount: amount
+              currency: currency
+            subtotal:
+              amount: amount
+              currency: currency
+          locale: locale
+          business_profile_id: business_profile_id
+          number: number
+          issue_date: 2000-01-23
+          updated_at: updated_at
+          currency: currency
+          id: id
+          customer_id: customer_id
+          source_document_id: source_document_id
+          document_type: invoice
+          status: status
       properties:
-        document_type:
-          default: invoice
-          enum:
-          - invoice
-          title: Document Type
-          type: string
         data:
-          $ref: '#/components/schemas/DocumentInvoiceDataInput'
-        template:
-          $ref: '#/components/schemas/DocumentTemplateRef'
-        output:
-          $ref: '#/components/schemas/DocumentOutputOptions'
+          $ref: '#/components/schemas/DocumentOut'
       required:
       - data
-      - template
-      title: DocumentRenderRequest
+      title: DocumentResponse
       type: object
     DocumentShippingInput:
       example:
@@ -8329,8 +8026,6 @@ components:
       title: DocumentShippingInput
       type: object
     DocumentTemplateRef:
-      example:
-        id: id
       properties:
         id:
           title: Id
@@ -8508,6 +8203,90 @@ components:
       required:
       - data
       title: DocumentValidateResponse
+      type: object
+    DocumentsListResponse:
+      example:
+        pagination:
+          next_cursor: next_cursor
+          has_more: false
+        data:
+        - finalized_at: finalized_at
+          reason: reason
+          data:
+            key: ""
+          due_date: 2000-01-23
+          created_at: created_at
+          totals:
+            discount_total:
+              amount: amount
+              currency: currency
+            total:
+              amount: amount
+              currency: currency
+            tax_total:
+              amount: amount
+              currency: currency
+            shipping_total:
+              amount: amount
+              currency: currency
+            subtotal:
+              amount: amount
+              currency: currency
+          locale: locale
+          business_profile_id: business_profile_id
+          number: number
+          issue_date: 2000-01-23
+          updated_at: updated_at
+          currency: currency
+          id: id
+          customer_id: customer_id
+          source_document_id: source_document_id
+          document_type: invoice
+          status: status
+        - finalized_at: finalized_at
+          reason: reason
+          data:
+            key: ""
+          due_date: 2000-01-23
+          created_at: created_at
+          totals:
+            discount_total:
+              amount: amount
+              currency: currency
+            total:
+              amount: amount
+              currency: currency
+            tax_total:
+              amount: amount
+              currency: currency
+            shipping_total:
+              amount: amount
+              currency: currency
+            subtotal:
+              amount: amount
+              currency: currency
+          locale: locale
+          business_profile_id: business_profile_id
+          number: number
+          issue_date: 2000-01-23
+          updated_at: updated_at
+          currency: currency
+          id: id
+          customer_id: customer_id
+          source_document_id: source_document_id
+          document_type: invoice
+          status: status
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DocumentOut'
+          title: Data
+          type: array
+        pagination:
+          $ref: '#/components/schemas/CursorPagination'
+      required:
+      - data
+      title: DocumentsListResponse
       type: object
     FileOut:
       example:
@@ -8856,189 +8635,6 @@ components:
           title: Footer Text
           type: string
       title: InvoiceBrandingInput
-      type: object
-    InvoiceCreateRequest:
-      example:
-        notes:
-        - type: note
-          content: Thank you for your business!
-        - type: note
-          content: Thank you for your business!
-        custom_fields:
-        - label: PO Number
-          value: PO-2026-001
-        - label: PO Number
-          value: PO-2026-001
-        branding:
-          accent_color: '#111827'
-          logo_file_id: logo_file_id
-          font_family: font_family
-          footer_text: Generated by InvoicePDFs
-          primary_color: '#111827'
-        due_date: 2000-01-23
-        line_items:
-        - unit: unit
-          quantity: "2"
-          name: Web Development
-          description: description
-          discount:
-            reason: reason
-            type: percentage
-            value: "10"
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-          sku: sku
-        - unit: unit
-          quantity: "2"
-          name: Web Development
-          description: description
-          discount:
-            reason: reason
-            type: percentage
-            value: "10"
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-          sku: sku
-        locale: locale
-        business_profile_id: bp_01ABC
-        issue_date: 2026-07-20
-        discounts:
-        - reason: reason
-          type: percentage
-          value: "10"
-        - reason: reason
-          type: percentage
-          value: "10"
-        shipping:
-          amount: "9.99"
-          description: Shipping
-        terms:
-        - type: term
-          content: Net 30 — payment due within 30 days of invoice date.
-        - type: term
-          content: Net 30 — payment due within 30 days of invoice date.
-        currency: USD
-        payment:
-          instructions: instructions
-          payment_url: payment_url
-          accepted_methods:
-          - bank_transfer
-          - credit_card
-          bank_account:
-            account_number: account_number
-            account_name: account_name
-            iban: iban
-            bank_name: bank_name
-            routing_number: routing_number
-            swift: swift
-        customer_id: cus_01XYZ
-        invoice_number: INV-2026-001
-        ship_to:
-          country: country
-          city: city
-          state: state
-          postal_code: postal_code
-          line2: line2
-          line1: 1 Main St
-        document_type: invoice
-      properties:
-        invoice_number:
-          example: INV-2026-001
-          title: Invoice Number
-          type: string
-        document_type:
-          default: invoice
-          enum:
-          - invoice
-          - credit_note
-          - quote
-          - receipt
-          - proforma
-          - purchase_order
-          - delivery_note
-          title: Document Type
-          type: string
-        issue_date:
-          example: 2026-07-20
-          format: date
-          title: Issue Date
-          type: string
-        due_date:
-          format: date
-          nullable: true
-          type: string
-        currency:
-          example: USD
-          title: Currency
-          type: string
-        locale:
-          nullable: true
-          type: string
-        business_profile_id:
-          example: bp_01ABC
-          title: Business Profile Id
-          type: string
-        customer_id:
-          example: cus_01XYZ
-          title: Customer Id
-          type: string
-        ship_to:
-          $ref: '#/components/schemas/PostalAddress'
-        line_items:
-          items:
-            $ref: '#/components/schemas/InvoiceLineItemInput'
-          title: Line Items
-          type: array
-        discounts:
-          items:
-            $ref: '#/components/schemas/InvoiceDiscountInput'
-          title: Discounts
-          type: array
-        shipping:
-          $ref: '#/components/schemas/InvoiceShippingInput'
-        notes:
-          items:
-            $ref: '#/components/schemas/InvoiceNoteInput'
-          title: Notes
-          type: array
-        terms:
-          items:
-            $ref: '#/components/schemas/InvoiceTermInput'
-          title: Terms
-          type: array
-        custom_fields:
-          items:
-            $ref: '#/components/schemas/InvoiceCustomFieldInput'
-          title: Custom Fields
-          type: array
-        payment:
-          $ref: '#/components/schemas/InvoicePaymentInput'
-        branding:
-          $ref: '#/components/schemas/InvoiceBrandingInput'
-      required:
-      - business_profile_id
-      - currency
-      - customer_id
-      - invoice_number
-      - issue_date
-      - line_items
-      title: InvoiceCreateRequest
       type: object
     InvoiceCustomFieldInput:
       example:
@@ -9474,176 +9070,6 @@ components:
       - updated_at
       title: InvoiceOut
       type: object
-    InvoicePatchRequest:
-      example:
-        notes:
-        - type: note
-          content: Thank you for your business!
-        - type: note
-          content: Thank you for your business!
-        custom_fields:
-        - label: PO Number
-          value: PO-2026-001
-        - label: PO Number
-          value: PO-2026-001
-        branding:
-          accent_color: '#111827'
-          logo_file_id: logo_file_id
-          font_family: font_family
-          footer_text: Generated by InvoicePDFs
-          primary_color: '#111827'
-        due_date: 2000-01-23
-        line_items:
-        - unit: unit
-          quantity: "2"
-          name: Web Development
-          description: description
-          discount:
-            reason: reason
-            type: percentage
-            value: "10"
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-          sku: sku
-        - unit: unit
-          quantity: "2"
-          name: Web Development
-          description: description
-          discount:
-            reason: reason
-            type: percentage
-            value: "10"
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-          sku: sku
-        locale: locale
-        business_profile_id: business_profile_id
-        issue_date: 2000-01-23
-        discounts:
-        - reason: reason
-          type: percentage
-          value: "10"
-        - reason: reason
-          type: percentage
-          value: "10"
-        shipping:
-          amount: "9.99"
-          description: Shipping
-        terms:
-        - type: term
-          content: Net 30 — payment due within 30 days of invoice date.
-        - type: term
-          content: Net 30 — payment due within 30 days of invoice date.
-        currency: currency
-        payment:
-          instructions: instructions
-          payment_url: payment_url
-          accepted_methods:
-          - bank_transfer
-          - credit_card
-          bank_account:
-            account_number: account_number
-            account_name: account_name
-            iban: iban
-            bank_name: bank_name
-            routing_number: routing_number
-            swift: swift
-        customer_id: customer_id
-        invoice_number: invoice_number
-        ship_to:
-          country: country
-          city: city
-          state: state
-          postal_code: postal_code
-          line2: line2
-          line1: 1 Main St
-        document_type: invoice
-      properties:
-        invoice_number:
-          nullable: true
-          type: string
-        document_type:
-          enum:
-          - invoice
-          - credit_note
-          - quote
-          - receipt
-          - proforma
-          - purchase_order
-          - delivery_note
-          nullable: true
-          type: string
-        issue_date:
-          format: date
-          nullable: true
-          type: string
-        due_date:
-          format: date
-          nullable: true
-          type: string
-        currency:
-          nullable: true
-          type: string
-        locale:
-          nullable: true
-          type: string
-        business_profile_id:
-          nullable: true
-          type: string
-        customer_id:
-          nullable: true
-          type: string
-        ship_to:
-          $ref: '#/components/schemas/PostalAddress'
-        line_items:
-          items:
-            $ref: '#/components/schemas/InvoiceLineItemInput'
-          nullable: true
-          type: array
-        discounts:
-          items:
-            $ref: '#/components/schemas/InvoiceDiscountInput'
-          nullable: true
-          type: array
-        shipping:
-          $ref: '#/components/schemas/InvoiceShippingInput'
-        notes:
-          items:
-            $ref: '#/components/schemas/InvoiceNoteInput'
-          nullable: true
-          type: array
-        terms:
-          items:
-            $ref: '#/components/schemas/InvoiceTermInput'
-          nullable: true
-          type: array
-        custom_fields:
-          items:
-            $ref: '#/components/schemas/InvoiceCustomFieldInput'
-          nullable: true
-          type: array
-        payment:
-          $ref: '#/components/schemas/InvoicePaymentInput'
-        branding:
-          $ref: '#/components/schemas/InvoiceBrandingInput'
-      title: InvoicePatchRequest
-      type: object
     InvoicePaymentInput:
       example:
         instructions: instructions
@@ -9676,266 +9102,6 @@ components:
           nullable: true
           type: string
       title: InvoicePaymentInput
-      type: object
-    InvoicePreviewRequest:
-      example:
-        notes:
-        - type: note
-          content: Thank you for your business!
-        - type: note
-          content: Thank you for your business!
-        custom_fields:
-        - label: PO Number
-          value: PO-2026-001
-        - label: PO Number
-          value: PO-2026-001
-        branding:
-          accent_color: '#111827'
-          logo_file_id: logo_file_id
-          font_family: font_family
-          footer_text: Generated by InvoicePDFs
-          primary_color: '#111827'
-        due_date: 2000-01-23
-        line_items:
-        - unit: unit
-          quantity: "2"
-          name: Web Development
-          description: description
-          discount:
-            reason: reason
-            type: percentage
-            value: "10"
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-          sku: sku
-        - unit: unit
-          quantity: "2"
-          name: Web Development
-          description: description
-          discount:
-            reason: reason
-            type: percentage
-            value: "10"
-          taxes:
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          - tax_rate_id: tax_rate_id
-            inclusive: false
-            rate: rate
-            name: name
-          unit_price: "150.00"
-          sku: sku
-        locale: locale
-        business_profile_id: bp_01ABC
-        issue_date: 2026-07-20
-        discounts:
-        - reason: reason
-          type: percentage
-          value: "10"
-        - reason: reason
-          type: percentage
-          value: "10"
-        shipping:
-          amount: "9.99"
-          description: Shipping
-        terms:
-        - type: term
-          content: Net 30 — payment due within 30 days of invoice date.
-        - type: term
-          content: Net 30 — payment due within 30 days of invoice date.
-        currency: USD
-        payment:
-          instructions: instructions
-          payment_url: payment_url
-          accepted_methods:
-          - bank_transfer
-          - credit_card
-          bank_account:
-            account_number: account_number
-            account_name: account_name
-            iban: iban
-            bank_name: bank_name
-            routing_number: routing_number
-            swift: swift
-        template_id: tpl_modern
-        customer_id: cus_01XYZ
-        invoice_number: INV-2026-001
-        ship_to:
-          country: country
-          city: city
-          state: state
-          postal_code: postal_code
-          line2: line2
-          line1: 1 Main St
-        document_type: invoice
-        page_size: LETTER
-      properties:
-        invoice_number:
-          example: INV-2026-001
-          title: Invoice Number
-          type: string
-        document_type:
-          default: invoice
-          enum:
-          - invoice
-          - credit_note
-          - quote
-          - receipt
-          - proforma
-          - purchase_order
-          - delivery_note
-          title: Document Type
-          type: string
-        issue_date:
-          example: 2026-07-20
-          format: date
-          title: Issue Date
-          type: string
-        due_date:
-          format: date
-          nullable: true
-          type: string
-        currency:
-          example: USD
-          title: Currency
-          type: string
-        locale:
-          nullable: true
-          type: string
-        business_profile_id:
-          example: bp_01ABC
-          title: Business Profile Id
-          type: string
-        customer_id:
-          example: cus_01XYZ
-          title: Customer Id
-          type: string
-        ship_to:
-          $ref: '#/components/schemas/PostalAddress'
-        line_items:
-          items:
-            $ref: '#/components/schemas/InvoiceLineItemInput'
-          title: Line Items
-          type: array
-        discounts:
-          items:
-            $ref: '#/components/schemas/InvoiceDiscountInput'
-          title: Discounts
-          type: array
-        shipping:
-          $ref: '#/components/schemas/InvoiceShippingInput'
-        notes:
-          items:
-            $ref: '#/components/schemas/InvoiceNoteInput'
-          title: Notes
-          type: array
-        terms:
-          items:
-            $ref: '#/components/schemas/InvoiceTermInput'
-          title: Terms
-          type: array
-        custom_fields:
-          items:
-            $ref: '#/components/schemas/InvoiceCustomFieldInput'
-          title: Custom Fields
-          type: array
-        payment:
-          $ref: '#/components/schemas/InvoicePaymentInput'
-        branding:
-          $ref: '#/components/schemas/InvoiceBrandingInput'
-        template_id:
-          default: tpl_modern
-          title: Template Id
-          type: string
-        page_size:
-          default: LETTER
-          enum:
-          - LETTER
-          - A4
-          title: Page Size
-          type: string
-      required:
-      - business_profile_id
-      - currency
-      - customer_id
-      - invoice_number
-      - issue_date
-      - line_items
-      title: InvoicePreviewRequest
-      type: object
-    InvoiceRenderRequest:
-      example:
-        template_id: tpl_modern
-        expires_in: 0
-        page_size: LETTER
-      properties:
-        template_id:
-          default: tpl_modern
-          title: Template Id
-          type: string
-        page_size:
-          default: LETTER
-          enum:
-          - LETTER
-          - A4
-          title: Page Size
-          type: string
-        expires_in:
-          default: 3600
-          title: Expires In
-          type: integer
-      title: InvoiceRenderRequest
-      type: object
-    InvoiceResponse:
-      example:
-        data:
-          finalized_at: finalized_at
-          due_date: 2000-01-23
-          created_at: created_at
-          totals:
-            discount_total:
-              amount: amount
-              currency: currency
-            total:
-              amount: amount
-              currency: currency
-            tax_total:
-              amount: amount
-              currency: currency
-            shipping_total:
-              amount: amount
-              currency: currency
-            subtotal:
-              amount: amount
-              currency: currency
-          locale: locale
-          business_profile_id: business_profile_id
-          issue_date: 2000-01-23
-          updated_at: updated_at
-          currency: currency
-          id: id
-          invoice:
-            key: ""
-          customer_id: customer_id
-          invoice_number: invoice_number
-          status: draft
-          document_type: invoice
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceOut'
-      required:
-      - data
-      title: InvoiceResponse
       type: object
     InvoiceShippingInput:
       example:
@@ -10188,6 +9354,52 @@ components:
       required:
       - data
       title: JobResponse
+      type: object
+    LineItemDiscountInput:
+      example:
+        reason: reason
+        type: percentage
+        value: "10"
+      properties:
+        type:
+          default: percentage
+          enum:
+          - percentage
+          - fixed
+          title: Type
+          type: string
+        value:
+          example: "10"
+          title: Value
+          type: string
+        reason:
+          nullable: true
+          type: string
+      required:
+      - value
+      title: LineItemDiscountInput
+      type: object
+    LineItemTaxInput:
+      example:
+        tax_rate_id: tax_rate_id
+        inclusive: false
+        rate: rate
+        name: name
+      properties:
+        tax_rate_id:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        rate:
+          nullable: true
+          type: string
+        inclusive:
+          default: false
+          title: Inclusive
+          type: boolean
+      title: LineItemTaxInput
       type: object
     Money:
       example:
@@ -11122,6 +10334,65 @@ components:
       required:
       - data
       title: SimpleBoolResponse
+      type: object
+    StandardLineItemInput:
+      description: "A fully priced line: unit, price, tax, discount and SKU."
+      example:
+        unit: unit
+        quantity: "2"
+        name: Web Development
+        description: description
+        discount:
+          reason: reason
+          type: percentage
+          value: "10"
+        taxes:
+        - tax_rate_id: tax_rate_id
+          inclusive: false
+          rate: rate
+          name: name
+        - tax_rate_id: tax_rate_id
+          inclusive: false
+          rate: rate
+          name: name
+        unit_price: "150.00"
+        sku: sku
+      properties:
+        name:
+          example: Web Development
+          title: Name
+          type: string
+        description:
+          nullable: true
+          type: string
+        quantity:
+          description: Decimal string
+          example: "2"
+          title: Quantity
+          type: string
+        unit_price:
+          default: "0.00"
+          description: "Decimal string, major units"
+          example: "150.00"
+          title: Unit Price
+          type: string
+        unit:
+          nullable: true
+          type: string
+        sku:
+          nullable: true
+          type: string
+        discount:
+          $ref: '#/components/schemas/LineItemDiscountInput'
+        taxes:
+          items:
+            $ref: '#/components/schemas/LineItemTaxInput'
+          title: Taxes
+          type: array
+      required:
+      - name
+      - quantity
+      title: StandardLineItemInput
       type: object
     StatsCounts:
       example:
@@ -12217,6 +11488,41 @@ components:
       required:
       - data
       title: WorkspacesListResponse
+      type: object
+    app__documents__schemas__DocumentRenderRequest:
+      properties:
+        template_id:
+          default: tpl_modern
+          title: Template Id
+          type: string
+        page_size:
+          default: LETTER
+          title: Page Size
+          type: string
+        expires_in:
+          default: 3600
+          title: Expires In
+          type: integer
+      title: DocumentRenderRequest
+      type: object
+    app__schemas__v1__DocumentRenderRequest:
+      properties:
+        document_type:
+          default: invoice
+          enum:
+          - invoice
+          title: Document Type
+          type: string
+        data:
+          $ref: '#/components/schemas/DocumentInvoiceDataInput'
+        template:
+          $ref: '#/components/schemas/DocumentTemplateRef'
+        output:
+          $ref: '#/components/schemas/DocumentOutputOptions'
+      required:
+      - data
+      - template
+      title: DocumentRenderRequest
       type: object
     Location_inner:
       anyOf:
