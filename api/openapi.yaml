@@ -3542,6 +3542,68 @@ paths:
       - usage
       x-accepts:
       - application/json
+  /api/v1/stats:
+    get:
+      operationId: get_stats_api_v1_stats_get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatsResponse'
+          description: Successful Response
+      security:
+      - HTTPBearer: []
+      summary: Get Stats
+      tags:
+      - stats
+      x-accepts:
+      - application/json
+  /api/v1/logs:
+    get:
+      operationId: list_logs_api_v1_logs_get
+      parameters:
+      - explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          default: ""
+          pattern: ^(success|error)?$
+          title: Status
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          maximum: 1000
+          minimum: 1
+          title: Limit
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiRequestLogsListResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: List Logs
+      tags:
+      - logs
+      x-accepts:
+      - application/json
   /api/v1/numbering-sequences:
     get:
       operationId: list_sequences_api_v1_numbering_sequences_get
@@ -5315,6 +5377,84 @@ components:
       required:
       - data
       title: ApiKeyRotateResponse
+      type: object
+    ApiRequestLogOut:
+      example:
+        duration_ms: 6
+        path: path
+        status_code: 0
+        method: method
+        request_body: request_body
+        query: query
+        response_body: response_body
+        created_at: created_at
+        id: id
+      properties:
+        id:
+          title: Id
+          type: string
+        method:
+          title: Method
+          type: string
+        path:
+          title: Path
+          type: string
+        query:
+          nullable: true
+          type: string
+        status_code:
+          title: Status Code
+          type: integer
+        duration_ms:
+          nullable: true
+          type: integer
+        request_body:
+          nullable: true
+          type: string
+        response_body:
+          nullable: true
+          type: string
+        created_at:
+          title: Created At
+          type: string
+      required:
+      - created_at
+      - id
+      - method
+      - path
+      - status_code
+      title: ApiRequestLogOut
+      type: object
+    ApiRequestLogsListResponse:
+      example:
+        data:
+        - duration_ms: 6
+          path: path
+          status_code: 0
+          method: method
+          request_body: request_body
+          query: query
+          response_body: response_body
+          created_at: created_at
+          id: id
+        - duration_ms: 6
+          path: path
+          status_code: 0
+          method: method
+          request_body: request_body
+          query: query
+          response_body: response_body
+          created_at: created_at
+          id: id
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ApiRequestLogOut'
+          title: Data
+          type: array
+      required:
+      - data
+      title: ApiRequestLogsListResponse
       type: object
     AuditEventOut:
       example:
@@ -10982,6 +11122,141 @@ components:
       required:
       - data
       title: SimpleBoolResponse
+      type: object
+    StatsCounts:
+      example:
+        invoices: 0
+        business_profiles: 1
+        customers: 6
+      properties:
+        invoices:
+          title: Invoices
+          type: integer
+        customers:
+          title: Customers
+          type: integer
+        business_profiles:
+          title: Business Profiles
+          type: integer
+      required:
+      - business_profiles
+      - customers
+      - invoices
+      title: StatsCounts
+      type: object
+    StatsOverview:
+      example:
+        invoice_status_counts:
+          key: 5
+        recent_invoices:
+        - issue_date: issue_date
+          total_amount: total_amount
+          currency: currency
+          id: id
+          invoice_number: invoice_number
+          document_type: document_type
+          status: status
+        - issue_date: issue_date
+          total_amount: total_amount
+          currency: currency
+          id: id
+          invoice_number: invoice_number
+          document_type: document_type
+          status: status
+        counts:
+          invoices: 0
+          business_profiles: 1
+          customers: 6
+      properties:
+        counts:
+          $ref: '#/components/schemas/StatsCounts'
+        invoice_status_counts:
+          additionalProperties:
+            type: integer
+          title: Invoice Status Counts
+          type: object
+        recent_invoices:
+          items:
+            $ref: '#/components/schemas/StatsRecentInvoice'
+          title: Recent Invoices
+          type: array
+      required:
+      - counts
+      - invoice_status_counts
+      - recent_invoices
+      title: StatsOverview
+      type: object
+    StatsRecentInvoice:
+      example:
+        issue_date: issue_date
+        total_amount: total_amount
+        currency: currency
+        id: id
+        invoice_number: invoice_number
+        document_type: document_type
+        status: status
+      properties:
+        id:
+          title: Id
+          type: string
+        invoice_number:
+          title: Invoice Number
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        status:
+          title: Status
+          type: string
+        currency:
+          title: Currency
+          type: string
+        total_amount:
+          title: Total Amount
+          type: string
+        issue_date:
+          title: Issue Date
+          type: string
+      required:
+      - currency
+      - document_type
+      - id
+      - invoice_number
+      - issue_date
+      - status
+      - total_amount
+      title: StatsRecentInvoice
+      type: object
+    StatsResponse:
+      example:
+        data:
+          invoice_status_counts:
+            key: 5
+          recent_invoices:
+          - issue_date: issue_date
+            total_amount: total_amount
+            currency: currency
+            id: id
+            invoice_number: invoice_number
+            document_type: document_type
+            status: status
+          - issue_date: issue_date
+            total_amount: total_amount
+            currency: currency
+            id: id
+            invoice_number: invoice_number
+            document_type: document_type
+            status: status
+          counts:
+            invoices: 0
+            business_profiles: 1
+            customers: 6
+      properties:
+        data:
+          $ref: '#/components/schemas/StatsOverview'
+      required:
+      - data
+      title: StatsResponse
       type: object
     TaxRateCreateRequest:
       example:

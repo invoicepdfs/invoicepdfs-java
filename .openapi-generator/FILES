@@ -13,6 +13,8 @@ docs/ApiKeyPatchRequest.md
 docs/ApiKeyRevokeResponse.md
 docs/ApiKeyRotateResponse.md
 docs/ApiKeysApi.md
+docs/ApiRequestLogOut.md
+docs/ApiRequestLogsListResponse.md
 docs/AuditEventOut.md
 docs/AuditEventResponse.md
 docs/AuditEventsListResponse.md
@@ -140,6 +142,7 @@ docs/JobProgressOut.md
 docs/JobResponse.md
 docs/JobsApi.md
 docs/LocationInner.md
+docs/LogsApi.md
 docs/Money.md
 docs/MoneyOut.md
 docs/NumberingSequenceCreateRequest.md
@@ -166,6 +169,11 @@ docs/RecurringInvoicesListResponse.md
 docs/ReferenceApi.md
 docs/RendersApi.md
 docs/SimpleBoolResponse.md
+docs/StatsApi.md
+docs/StatsCounts.md
+docs/StatsOverview.md
+docs/StatsRecentInvoice.md
+docs/StatsResponse.md
 docs/TaxRateCreateRequest.md
 docs/TaxRateOut.md
 docs/TaxRatePatchRequest.md
@@ -254,11 +262,13 @@ src/main/java/org/openapitools/client/api/ImportsApi.java
 src/main/java/org/openapitools/client/api/InvoiceAttachmentsApi.java
 src/main/java/org/openapitools/client/api/InvoicesApi.java
 src/main/java/org/openapitools/client/api/JobsApi.java
+src/main/java/org/openapitools/client/api/LogsApi.java
 src/main/java/org/openapitools/client/api/NumberingSequencesApi.java
 src/main/java/org/openapitools/client/api/PaymentsApi.java
 src/main/java/org/openapitools/client/api/RecurringInvoicesApi.java
 src/main/java/org/openapitools/client/api/ReferenceApi.java
 src/main/java/org/openapitools/client/api/RendersApi.java
+src/main/java/org/openapitools/client/api/StatsApi.java
 src/main/java/org/openapitools/client/api/TaxRatesApi.java
 src/main/java/org/openapitools/client/api/TemplateVersionsApi.java
 src/main/java/org/openapitools/client/api/TemplatesApi.java
@@ -275,6 +285,8 @@ src/main/java/org/openapitools/client/model/ApiKeyListResponse.java
 src/main/java/org/openapitools/client/model/ApiKeyPatchRequest.java
 src/main/java/org/openapitools/client/model/ApiKeyRevokeResponse.java
 src/main/java/org/openapitools/client/model/ApiKeyRotateResponse.java
+src/main/java/org/openapitools/client/model/ApiRequestLogOut.java
+src/main/java/org/openapitools/client/model/ApiRequestLogsListResponse.java
 src/main/java/org/openapitools/client/model/AuditEventOut.java
 src/main/java/org/openapitools/client/model/AuditEventResponse.java
 src/main/java/org/openapitools/client/model/AuditEventsListResponse.java
@@ -407,6 +419,10 @@ src/main/java/org/openapitools/client/model/RecurringInvoicePatchRequest.java
 src/main/java/org/openapitools/client/model/RecurringInvoiceResponse.java
 src/main/java/org/openapitools/client/model/RecurringInvoicesListResponse.java
 src/main/java/org/openapitools/client/model/SimpleBoolResponse.java
+src/main/java/org/openapitools/client/model/StatsCounts.java
+src/main/java/org/openapitools/client/model/StatsOverview.java
+src/main/java/org/openapitools/client/model/StatsRecentInvoice.java
+src/main/java/org/openapitools/client/model/StatsResponse.java
 src/main/java/org/openapitools/client/model/TaxRateCreateRequest.java
 src/main/java/org/openapitools/client/model/TaxRateOut.java
 src/main/java/org/openapitools/client/model/TaxRatePatchRequest.java
@@ -446,3 +462,11 @@ src/main/java/org/openapitools/client/model/WorkspaceOut.java
 src/main/java/org/openapitools/client/model/WorkspacePatchRequest.java
 src/main/java/org/openapitools/client/model/WorkspaceResponse.java
 src/main/java/org/openapitools/client/model/WorkspacesListResponse.java
+src/test/java/org/openapitools/client/api/LogsApiTest.java
+src/test/java/org/openapitools/client/api/StatsApiTest.java
+src/test/java/org/openapitools/client/model/ApiRequestLogOutTest.java
+src/test/java/org/openapitools/client/model/ApiRequestLogsListResponseTest.java
+src/test/java/org/openapitools/client/model/StatsCountsTest.java
+src/test/java/org/openapitools/client/model/StatsOverviewTest.java
+src/test/java/org/openapitools/client/model/StatsRecentInvoiceTest.java
+src/test/java/org/openapitools/client/model/StatsResponseTest.java

@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceAttachmentCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T20:04:45.180102905Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T20:21:44.172487139Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceAttachmentCreateRequest {
   public static final String SERIALIZED_NAME_FILE_ID = "file_id";
   @SerializedName(SERIALIZED_NAME_FILE_ID)
