@@ -21,7 +21,6 @@ jobs:
       - name: Fetch latest OpenAPI spec
         run: |
           curl -fsSL \
-            -H "Authorization: Bearer ${{ secrets.SDK_SYNC_TOKEN }}" \
             -H "Accept: application/vnd.github.raw+json" \
             "https://api.github.com/repos/invoicepdfs/invoicepdfs-openapi/contents/openapi-3.0.json?ref=main" \
             -o openapi.json
