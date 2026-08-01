@@ -12,6 +12,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: generate-${{ github.repository }}
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -42,5 +46,9 @@ jobs:
             echo "No changes."
           else
             git commit -m "Regenerate client from OpenAPI spec"
-            git push
+            for a in 1 2 3 4 5; do
+              git pull --rebase --autostash origin "$(git rev-parse --abbrev-ref HEAD)" || true
+              git push && break
+              echo "push retry $a"; sleep $((a * 3))
+            done
           fi
