@@ -51,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * BusinessProfileOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T16:14:32.470417769Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T16:15:20.399974462Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BusinessProfileOut {
   public static final String SERIALIZED_NAME_LEGAL_NAME = "legal_name";
   @SerializedName(SERIALIZED_NAME_LEGAL_NAME)
