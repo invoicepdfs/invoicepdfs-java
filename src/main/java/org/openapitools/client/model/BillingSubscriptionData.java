@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * BillingSubscriptionData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T01:43:50.803493328Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T04:29:50.035732017Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BillingSubscriptionData {
   public static final String SERIALIZED_NAME_SUBSCRIPTION_ID = "subscription_id";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_ID)
@@ -67,6 +67,14 @@ public class BillingSubscriptionData {
   public static final String SERIALIZED_NAME_PLAN_NAME = "plan_name";
   @SerializedName(SERIALIZED_NAME_PLAN_NAME)
   private String planName;
+
+  public static final String SERIALIZED_NAME_STRIPE_CONFIGURED = "stripe_configured";
+  @SerializedName(SERIALIZED_NAME_STRIPE_CONFIGURED)
+  private Boolean stripeConfigured = false;
+
+  public static final String SERIALIZED_NAME_HAS_BILLING_ACCOUNT = "has_billing_account";
+  @SerializedName(SERIALIZED_NAME_HAS_BILLING_ACCOUNT)
+  private Boolean hasBillingAccount = false;
 
   public BillingSubscriptionData() {
   }
@@ -147,6 +155,44 @@ public class BillingSubscriptionData {
   }
 
 
+  public BillingSubscriptionData stripeConfigured(Boolean stripeConfigured) {
+    this.stripeConfigured = stripeConfigured;
+    return this;
+  }
+
+  /**
+   * Get stripeConfigured
+   * @return stripeConfigured
+   */
+  @javax.annotation.Nullable
+  public Boolean getStripeConfigured() {
+    return stripeConfigured;
+  }
+
+  public void setStripeConfigured(Boolean stripeConfigured) {
+    this.stripeConfigured = stripeConfigured;
+  }
+
+
+  public BillingSubscriptionData hasBillingAccount(Boolean hasBillingAccount) {
+    this.hasBillingAccount = hasBillingAccount;
+    return this;
+  }
+
+  /**
+   * Get hasBillingAccount
+   * @return hasBillingAccount
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasBillingAccount() {
+    return hasBillingAccount;
+  }
+
+  public void setHasBillingAccount(Boolean hasBillingAccount) {
+    this.hasBillingAccount = hasBillingAccount;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -160,7 +206,9 @@ public class BillingSubscriptionData {
     return Objects.equals(this.subscriptionId, billingSubscriptionData.subscriptionId) &&
         Objects.equals(this.status, billingSubscriptionData.status) &&
         Objects.equals(this.planId, billingSubscriptionData.planId) &&
-        Objects.equals(this.planName, billingSubscriptionData.planName);
+        Objects.equals(this.planName, billingSubscriptionData.planName) &&
+        Objects.equals(this.stripeConfigured, billingSubscriptionData.stripeConfigured) &&
+        Objects.equals(this.hasBillingAccount, billingSubscriptionData.hasBillingAccount);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -169,7 +217,7 @@ public class BillingSubscriptionData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(subscriptionId, status, planId, planName);
+    return Objects.hash(subscriptionId, status, planId, planName, stripeConfigured, hasBillingAccount);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -187,6 +235,8 @@ public class BillingSubscriptionData {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
     sb.append("    planName: ").append(toIndentedString(planName)).append("\n");
+    sb.append("    stripeConfigured: ").append(toIndentedString(stripeConfigured)).append("\n");
+    sb.append("    hasBillingAccount: ").append(toIndentedString(hasBillingAccount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -213,6 +263,8 @@ public class BillingSubscriptionData {
     openapiFields.add("status");
     openapiFields.add("plan_id");
     openapiFields.add("plan_name");
+    openapiFields.add("stripe_configured");
+    openapiFields.add("has_billing_account");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

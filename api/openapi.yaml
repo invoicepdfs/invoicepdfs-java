@@ -4890,6 +4890,24 @@ paths:
       - billing
       x-accepts:
       - application/json
+  /api/v1/billing/plans:
+    get:
+      description: Purchasable plans — the ones wired to a Stripe price.
+      operationId: list_plans_api_v1_billing_plans_get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BillingPlansListResponse'
+          description: Successful Response
+      security:
+      - HTTPBearer: []
+      summary: List Plans
+      tags:
+      - billing
+      x-accepts:
+      - application/json
   /api/v1/billing/checkout-session:
     post:
       description: Create a Stripe Checkout session for a subscription.
@@ -5977,6 +5995,53 @@ components:
       - data
       title: BillingCheckoutResponse
       type: object
+    BillingPlan:
+      example:
+        name: name
+        price_id: price_id
+        id: id
+        monthly_render_quota: 0
+      properties:
+        id:
+          title: Id
+          type: string
+        name:
+          title: Name
+          type: string
+        price_id:
+          title: Price Id
+          type: string
+        monthly_render_quota:
+          title: Monthly Render Quota
+          type: integer
+      required:
+      - id
+      - monthly_render_quota
+      - name
+      - price_id
+      title: BillingPlan
+      type: object
+    BillingPlansListResponse:
+      example:
+        data:
+        - name: name
+          price_id: price_id
+          id: id
+          monthly_render_quota: 0
+        - name: name
+          price_id: price_id
+          id: id
+          monthly_render_quota: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/BillingPlan'
+          title: Data
+          type: array
+      required:
+      - data
+      title: BillingPlansListResponse
+      type: object
     BillingPortalData:
       example:
         url: url
@@ -6002,6 +6067,8 @@ components:
     BillingSubscriptionData:
       example:
         subscription_id: subscription_id
+        has_billing_account: false
+        stripe_configured: false
         plan_id: plan_id
         plan_name: plan_name
         status: status
@@ -6018,6 +6085,14 @@ components:
         plan_name:
           title: Plan Name
           type: string
+        stripe_configured:
+          default: false
+          title: Stripe Configured
+          type: boolean
+        has_billing_account:
+          default: false
+          title: Has Billing Account
+          type: boolean
       required:
       - plan_id
       - plan_name
@@ -6027,6 +6102,8 @@ components:
       example:
         data:
           subscription_id: subscription_id
+          has_billing_account: false
+          stripe_configured: false
           plan_id: plan_id
           plan_name: plan_name
           status: status

@@ -11,6 +11,8 @@
 |**status** | **String** |  |  [optional] |
 |**planId** | **String** |  |  |
 |**planName** | **String** |  |  |
+|**stripeConfigured** | **Boolean** |  |  [optional] |
+|**hasBillingAccount** | **Boolean** |  |  [optional] |
 
 
 

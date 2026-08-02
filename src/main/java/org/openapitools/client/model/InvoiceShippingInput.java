@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceShippingInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T01:43:50.803493328Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T04:29:50.035732017Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceShippingInput {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
