@@ -12,7 +12,7 @@ info:
   license:
     name: MIT
   title: InvoicePDFs
-  version: 0.1.2
+  version: 0.1.3
 servers:
 - url: /
 paths:
