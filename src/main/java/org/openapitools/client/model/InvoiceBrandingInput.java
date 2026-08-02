@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceBrandingInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T23:47:07.909568853Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T00:59:25.016182931Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceBrandingInput {
   public static final String SERIALIZED_NAME_LOGO_FILE_ID = "logo_file_id";
   @SerializedName(SERIALIZED_NAME_LOGO_FILE_ID)
@@ -67,6 +67,10 @@ public class InvoiceBrandingInput {
   public static final String SERIALIZED_NAME_FONT_FAMILY = "font_family";
   @SerializedName(SERIALIZED_NAME_FONT_FAMILY)
   private String fontFamily;
+
+  public static final String SERIALIZED_NAME_HEADER_TEXT = "header_text";
+  @SerializedName(SERIALIZED_NAME_HEADER_TEXT)
+  private String headerText;
 
   public static final String SERIALIZED_NAME_FOOTER_TEXT = "footer_text";
   @SerializedName(SERIALIZED_NAME_FOOTER_TEXT)
@@ -151,6 +155,25 @@ public class InvoiceBrandingInput {
   }
 
 
+  public InvoiceBrandingInput headerText(String headerText) {
+    this.headerText = headerText;
+    return this;
+  }
+
+  /**
+   * Get headerText
+   * @return headerText
+   */
+  @javax.annotation.Nullable
+  public String getHeaderText() {
+    return headerText;
+  }
+
+  public void setHeaderText(String headerText) {
+    this.headerText = headerText;
+  }
+
+
   public InvoiceBrandingInput footerText(String footerText) {
     this.footerText = footerText;
     return this;
@@ -184,6 +207,7 @@ public class InvoiceBrandingInput {
         Objects.equals(this.primaryColor, invoiceBrandingInput.primaryColor) &&
         Objects.equals(this.accentColor, invoiceBrandingInput.accentColor) &&
         Objects.equals(this.fontFamily, invoiceBrandingInput.fontFamily) &&
+        Objects.equals(this.headerText, invoiceBrandingInput.headerText) &&
         Objects.equals(this.footerText, invoiceBrandingInput.footerText);
   }
 
@@ -193,7 +217,7 @@ public class InvoiceBrandingInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(logoFileId, primaryColor, accentColor, fontFamily, footerText);
+    return Objects.hash(logoFileId, primaryColor, accentColor, fontFamily, headerText, footerText);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -211,6 +235,7 @@ public class InvoiceBrandingInput {
     sb.append("    primaryColor: ").append(toIndentedString(primaryColor)).append("\n");
     sb.append("    accentColor: ").append(toIndentedString(accentColor)).append("\n");
     sb.append("    fontFamily: ").append(toIndentedString(fontFamily)).append("\n");
+    sb.append("    headerText: ").append(toIndentedString(headerText)).append("\n");
     sb.append("    footerText: ").append(toIndentedString(footerText)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -238,6 +263,7 @@ public class InvoiceBrandingInput {
     openapiFields.add("primary_color");
     openapiFields.add("accent_color");
     openapiFields.add("font_family");
+    openapiFields.add("header_text");
     openapiFields.add("footer_text");
 
     // a set of required properties/fields (JSON key names)
@@ -276,6 +302,9 @@ public class InvoiceBrandingInput {
       }
       if ((jsonObj.get("font_family") != null && !jsonObj.get("font_family").isJsonNull()) && !jsonObj.get("font_family").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `font_family` to be a primitive type in the JSON string but got `%s`", jsonObj.get("font_family").toString()));
+      }
+      if ((jsonObj.get("header_text") != null && !jsonObj.get("header_text").isJsonNull()) && !jsonObj.get("header_text").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `header_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("header_text").toString()));
       }
       if ((jsonObj.get("footer_text") != null && !jsonObj.get("footer_text").isJsonNull()) && !jsonObj.get("footer_text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `footer_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("footer_text").toString()));

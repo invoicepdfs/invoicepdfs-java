@@ -26,6 +26,7 @@
 |**customFields** | [**List&lt;InvoiceCustomFieldInput&gt;**](InvoiceCustomFieldInput.md) |  |  [optional] |
 |**payment** | [**InvoicePaymentInput**](InvoicePaymentInput.md) |  |  [optional] |
 |**branding** | [**InvoiceBrandingInput**](InvoiceBrandingInput.md) |  |  [optional] |
+|**brandingProfileId** | **String** |  |  [optional] |
 
 
 

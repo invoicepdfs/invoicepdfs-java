@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-01T23:47:07.909568853Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T00:59:25.016182931Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentCreateRequest {
   /**
    * Gets or Sets documentType
@@ -201,6 +201,10 @@ public class DocumentCreateRequest {
   public static final String SERIALIZED_NAME_BRANDING = "branding";
   @SerializedName(SERIALIZED_NAME_BRANDING)
   private InvoiceBrandingInput branding;
+
+  public static final String SERIALIZED_NAME_BRANDING_PROFILE_ID = "branding_profile_id";
+  @SerializedName(SERIALIZED_NAME_BRANDING_PROFILE_ID)
+  private String brandingProfileId;
 
   public DocumentCreateRequest() {
   }
@@ -606,6 +610,25 @@ public class DocumentCreateRequest {
   }
 
 
+  public DocumentCreateRequest brandingProfileId(String brandingProfileId) {
+    this.brandingProfileId = brandingProfileId;
+    return this;
+  }
+
+  /**
+   * Get brandingProfileId
+   * @return brandingProfileId
+   */
+  @javax.annotation.Nullable
+  public String getBrandingProfileId() {
+    return brandingProfileId;
+  }
+
+  public void setBrandingProfileId(String brandingProfileId) {
+    this.brandingProfileId = brandingProfileId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -634,7 +657,8 @@ public class DocumentCreateRequest {
         Objects.equals(this.terms, documentCreateRequest.terms) &&
         Objects.equals(this.customFields, documentCreateRequest.customFields) &&
         Objects.equals(this.payment, documentCreateRequest.payment) &&
-        Objects.equals(this.branding, documentCreateRequest.branding);
+        Objects.equals(this.branding, documentCreateRequest.branding) &&
+        Objects.equals(this.brandingProfileId, documentCreateRequest.brandingProfileId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -643,7 +667,7 @@ public class DocumentCreateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentType, number, issueDate, dueDate, currency, locale, businessProfileId, customerId, sourceDocumentId, reason, shipTo, lineItems, discounts, shipping, notes, terms, customFields, payment, branding);
+    return Objects.hash(documentType, number, issueDate, dueDate, currency, locale, businessProfileId, customerId, sourceDocumentId, reason, shipTo, lineItems, discounts, shipping, notes, terms, customFields, payment, branding, brandingProfileId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -676,6 +700,7 @@ public class DocumentCreateRequest {
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    payment: ").append(toIndentedString(payment)).append("\n");
     sb.append("    branding: ").append(toIndentedString(branding)).append("\n");
+    sb.append("    brandingProfileId: ").append(toIndentedString(brandingProfileId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -717,6 +742,7 @@ public class DocumentCreateRequest {
     openapiFields.add("custom_fields");
     openapiFields.add("payment");
     openapiFields.add("branding");
+    openapiFields.add("branding_profile_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -865,6 +891,9 @@ public class DocumentCreateRequest {
       // validate the optional field `branding`
       if (jsonObj.get("branding") != null && !jsonObj.get("branding").isJsonNull()) {
         InvoiceBrandingInput.validateJsonElement(jsonObj.get("branding"));
+      }
+      if ((jsonObj.get("branding_profile_id") != null && !jsonObj.get("branding_profile_id").isJsonNull()) && !jsonObj.get("branding_profile_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `branding_profile_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branding_profile_id").toString()));
       }
   }
 
