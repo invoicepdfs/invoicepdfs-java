@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * AuthMeAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T00:59:25.016182931Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T01:38:02.065022918Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class AuthMeAccount {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
