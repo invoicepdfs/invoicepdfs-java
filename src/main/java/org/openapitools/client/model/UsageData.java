@@ -51,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * UsageData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-02T23:22:01.343492844Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-03T00:13:23.871863546Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UsageData {
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
