@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * WorkspaceCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-03T04:32:10.327248546Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T03:12:08.818090095Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class WorkspaceCreateRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
