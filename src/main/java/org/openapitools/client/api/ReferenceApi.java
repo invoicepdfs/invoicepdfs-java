@@ -360,7 +360,7 @@ public class ReferenceApi {
 
     /**
      * List Document Types
-     * 
+     * List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (&#x60;&#x60;standard&#x60;&#x60; &#x3D; priced, &#x60;&#x60;shipped&#x60;&#x60; &#x3D; quantities only), and the lifecycle actions available to it.
      * @return Map&lt;String, Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -376,7 +376,7 @@ public class ReferenceApi {
 
     /**
      * List Document Types
-     * 
+     * List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (&#x60;&#x60;standard&#x60;&#x60; &#x3D; priced, &#x60;&#x60;shipped&#x60;&#x60; &#x3D; quantities only), and the lifecycle actions available to it.
      * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -393,7 +393,7 @@ public class ReferenceApi {
 
     /**
      * List Document Types (asynchronously)
-     * 
+     * List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (&#x60;&#x60;standard&#x60;&#x60; &#x3D; priced, &#x60;&#x60;shipped&#x60;&#x60; &#x3D; quantities only), and the lifecycle actions available to it.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

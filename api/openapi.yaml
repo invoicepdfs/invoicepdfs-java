@@ -4158,6 +4158,12 @@ paths:
       - application/json
   /api/v1/reference/document-types:
     get:
+      description: |-
+        List every supported document type with the metadata a client needs to
+        build a type-aware create form: the number prefix, whether it is payable /
+        takes a source document / supports a reason, which line-item shape it uses
+        (``standard`` = priced, ``shipped`` = quantities only), and the lifecycle
+        actions available to it.
       operationId: list_document_types_api_v1_reference_document_types_get
       responses:
         "200":

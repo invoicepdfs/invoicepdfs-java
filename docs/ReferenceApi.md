@@ -130,6 +130,8 @@ No authorization required
 
 List Document Types
 
+List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (&#x60;&#x60;standard&#x60;&#x60; &#x3D; priced, &#x60;&#x60;shipped&#x60;&#x60; &#x3D; quantities only), and the lifecycle actions available to it.
+
 ### Example
 ```java
 // Import classes:

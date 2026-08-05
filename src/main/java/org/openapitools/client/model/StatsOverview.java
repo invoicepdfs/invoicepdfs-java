@@ -55,7 +55,7 @@ import com.invoicepdfs.JSON;
 /**
  * StatsOverview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T03:12:08.818090095Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T11:31:06.682109491Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class StatsOverview {
   public static final String SERIALIZED_NAME_COUNTS = "counts";
   @SerializedName(SERIALIZED_NAME_COUNTS)
