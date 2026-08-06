@@ -29,6 +29,7 @@ paths:
       summary: Health
       tags:
       - health
+      x-visibility: public
       x-accepts:
       - application/json
   /version:
@@ -44,6 +45,7 @@ paths:
       summary: Version
       tags:
       - health
+      x-visibility: public
       x-accepts:
       - application/json
   /ready:
@@ -59,6 +61,7 @@ paths:
       summary: Ready
       tags:
       - health
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/auth/me:
@@ -76,6 +79,7 @@ paths:
       summary: Me
       tags:
       - auth
+      x-visibility: internal
       x-accepts:
       - application/json
     patch:
@@ -105,6 +109,7 @@ paths:
       summary: Patch Me
       tags:
       - auth
+      x-visibility: internal
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -138,6 +143,7 @@ paths:
       summary: Register
       tags:
       - auth
+      x-visibility: internal
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -172,6 +178,7 @@ paths:
       summary: Token Exchange
       tags:
       - auth
+      x-visibility: internal
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -191,6 +198,7 @@ paths:
       summary: Logout
       tags:
       - auth
+      x-visibility: internal
       x-accepts:
       - application/json
   /api/v1/auth/refresh:
@@ -219,6 +227,7 @@ paths:
       summary: Refresh
       tags:
       - auth
+      x-visibility: internal
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -248,6 +257,7 @@ paths:
       summary: Forgot Password
       tags:
       - auth
+      x-visibility: internal
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -277,6 +287,7 @@ paths:
       summary: Reset Password
       tags:
       - auth
+      x-visibility: internal
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -295,6 +306,7 @@ paths:
       summary: List Api Keys
       tags:
       - api-keys
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -323,6 +335,7 @@ paths:
       summary: Create Api Key
       tags:
       - api-keys
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -356,6 +369,7 @@ paths:
       summary: Revoke Api Key
       tags:
       - api-keys
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -387,6 +401,7 @@ paths:
       summary: Get Api Key
       tags:
       - api-keys
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -424,6 +439,7 @@ paths:
       summary: Patch Api Key
       tags:
       - api-keys
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -458,6 +474,7 @@ paths:
       summary: Rotate Api Key
       tags:
       - api-keys
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/business-profiles:
@@ -501,6 +518,7 @@ paths:
       summary: List Business Profiles
       tags:
       - business-profiles
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -538,6 +556,7 @@ paths:
       summary: Create Business Profile
       tags:
       - business-profiles
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -571,6 +590,7 @@ paths:
       summary: Delete Business Profile
       tags:
       - business-profiles
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -602,6 +622,7 @@ paths:
       summary: Get Business Profile
       tags:
       - business-profiles
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -647,6 +668,7 @@ paths:
       summary: Patch Business Profile
       tags:
       - business-profiles
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -665,6 +687,7 @@ paths:
       summary: List Profiles
       tags:
       - branding-profiles
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -693,6 +716,7 @@ paths:
       summary: Create Profile
       tags:
       - branding-profiles
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -726,6 +750,7 @@ paths:
       summary: Delete Profile
       tags:
       - branding-profiles
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -757,6 +782,7 @@ paths:
       summary: Get Profile
       tags:
       - branding-profiles
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -794,6 +820,7 @@ paths:
       summary: Update Profile
       tags:
       - branding-profiles
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -827,6 +854,7 @@ paths:
       summary: Set Default
       tags:
       - branding-profiles
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/branding-profiles/{profile_id}/logo:
@@ -859,6 +887,7 @@ paths:
       summary: Delete Logo
       tags:
       - branding-profiles
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -896,6 +925,7 @@ paths:
       summary: Upload Logo
       tags:
       - branding-profiles
+      x-visibility: public
       x-content-type: multipart/form-data
       x-accepts:
       - application/json
@@ -940,6 +970,7 @@ paths:
       summary: List Customers
       tags:
       - customers
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -977,6 +1008,7 @@ paths:
       summary: Create Customer
       tags:
       - customers
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1010,6 +1042,7 @@ paths:
       summary: Delete Customer
       tags:
       - customers
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -1041,6 +1074,7 @@ paths:
       summary: Get Customer
       tags:
       - customers
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -1086,6 +1120,7 @@ paths:
       summary: Patch Customer
       tags:
       - customers
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1146,6 +1181,7 @@ paths:
       summary: List Documents
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -1183,6 +1219,7 @@ paths:
       summary: Create Document
       tags:
       - documents
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1216,6 +1253,7 @@ paths:
       summary: Delete Document
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -1247,6 +1285,7 @@ paths:
       summary: Get Document
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -1284,6 +1323,7 @@ paths:
       summary: Patch Document
       tags:
       - documents
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1317,6 +1357,7 @@ paths:
       summary: Duplicate Document
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/finalize:
@@ -1349,6 +1390,7 @@ paths:
       summary: Finalize Document
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/void:
@@ -1381,6 +1423,7 @@ paths:
       summary: Void Document
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/mark-sent:
@@ -1413,6 +1456,7 @@ paths:
       summary: Mark Sent
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/mark-paid:
@@ -1445,6 +1489,7 @@ paths:
       summary: Mark Paid
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/mark-unpaid:
@@ -1477,6 +1522,7 @@ paths:
       summary: Mark Unpaid
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/archive:
@@ -1509,6 +1555,7 @@ paths:
       summary: Archive Document
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/restore:
@@ -1541,6 +1588,7 @@ paths:
       summary: Restore Document
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/{document_id}/renders:
@@ -1586,6 +1634,7 @@ paths:
       summary: Render Document
       tags:
       - documents
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1625,6 +1674,7 @@ paths:
       summary: Send Document
       tags:
       - documents
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1677,6 +1727,7 @@ paths:
       summary: List Document Deliveries
       tags:
       - documents
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/documents/validate:
@@ -1706,6 +1757,7 @@ paths:
       summary: Validate Document
       tags:
       - documents
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1736,6 +1788,7 @@ paths:
       summary: Calculate Document
       tags:
       - documents
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1774,6 +1827,7 @@ paths:
       summary: Render Document
       tags:
       - documents
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1807,6 +1861,7 @@ paths:
       summary: List Attachments
       tags:
       - invoice-attachments
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -1844,6 +1899,7 @@ paths:
       summary: Create Attachment
       tags:
       - invoice-attachments
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1885,6 +1941,7 @@ paths:
       summary: Delete Attachment
       tags:
       - invoice-attachments
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/templates:
@@ -1902,6 +1959,7 @@ paths:
       summary: Templates
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/templates/builtin/{template_id}:
@@ -1934,6 +1992,7 @@ paths:
       summary: Get Builtin Template
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/templates/custom:
@@ -1977,6 +2036,7 @@ paths:
       summary: List Custom Templates
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -2005,6 +2065,7 @@ paths:
       summary: Create Template
       tags:
       - templates
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -2034,6 +2095,7 @@ paths:
       summary: Delete Template
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -2065,6 +2127,7 @@ paths:
       summary: Get Custom Template
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -2102,6 +2165,7 @@ paths:
       summary: Patch Template
       tags:
       - templates
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -2135,6 +2199,7 @@ paths:
       summary: Duplicate Template
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/templates/custom/{template_id}/publish:
@@ -2167,6 +2232,7 @@ paths:
       summary: Publish Template
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/templates/{template_id}:
@@ -2199,6 +2265,7 @@ paths:
       summary: Get Template
       tags:
       - templates
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/templates/{template_id}/preview:
@@ -2244,6 +2311,7 @@ paths:
       summary: Preview Template
       tags:
       - templates
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -2277,6 +2345,7 @@ paths:
       summary: List Template Versions
       tags:
       - template-versions
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -2314,6 +2383,7 @@ paths:
       summary: Create Template Version
       tags:
       - template-versions
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -2355,6 +2425,7 @@ paths:
       summary: Get Template Version
       tags:
       - template-versions
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/renders/{render_id}:
@@ -2389,6 +2460,7 @@ paths:
       summary: Get Render
       tags:
       - renders
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/renders/{render_id}/download:
@@ -2422,6 +2494,7 @@ paths:
       summary: Download Render
       tags:
       - renders
+      x-visibility: public
       x-accepts:
       - application/json
       - application/pdf
@@ -2474,6 +2547,7 @@ paths:
       summary: List Invoice Payments
       tags:
       - payments
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -2511,6 +2585,7 @@ paths:
       summary: Create Payment
       tags:
       - payments
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -2544,6 +2619,7 @@ paths:
       summary: Delete Payment
       tags:
       - payments
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -2575,6 +2651,7 @@ paths:
       summary: Get Payment
       tags:
       - payments
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -2612,6 +2689,7 @@ paths:
       summary: Update Payment
       tags:
       - payments
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -2656,6 +2734,7 @@ paths:
       summary: List Batches
       tags:
       - batches
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -2684,6 +2763,7 @@ paths:
       summary: Create Batch
       tags:
       - batches
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -2717,6 +2797,7 @@ paths:
       summary: Get Batch
       tags:
       - batches
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/batches/{batch_id}/items:
@@ -2768,6 +2849,7 @@ paths:
       summary: List Batch Items
       tags:
       - batches
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/batches/{batch_id}/cancel:
@@ -2800,6 +2882,7 @@ paths:
       summary: Cancel Batch
       tags:
       - batches
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/batches/{batch_id}/download:
@@ -2831,6 +2914,7 @@ paths:
       summary: Download Batch
       tags:
       - batches
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/deliveries/{delivery_id}:
@@ -2863,6 +2947,7 @@ paths:
       summary: Get Delivery
       tags:
       - deliveries
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/deliveries/{delivery_id}/retry:
@@ -2895,6 +2980,7 @@ paths:
       summary: Retry Delivery
       tags:
       - deliveries
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/recurring-invoices:
@@ -2946,6 +3032,7 @@ paths:
       summary: List Recurring Invoices
       tags:
       - recurring-invoices
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -2974,6 +3061,7 @@ paths:
       summary: Create Recurring Invoice
       tags:
       - recurring-invoices
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -3007,6 +3095,7 @@ paths:
       summary: Cancel Recurring Invoice
       tags:
       - recurring-invoices
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -3038,6 +3127,7 @@ paths:
       summary: Get Recurring Invoice
       tags:
       - recurring-invoices
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -3075,6 +3165,7 @@ paths:
       summary: Patch Recurring Invoice
       tags:
       - recurring-invoices
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -3108,6 +3199,7 @@ paths:
       summary: Pause Recurring Invoice
       tags:
       - recurring-invoices
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/resume:
@@ -3140,6 +3232,7 @@ paths:
       summary: Resume Recurring Invoice
       tags:
       - recurring-invoices
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/invoices:
@@ -3191,6 +3284,7 @@ paths:
       summary: List Generated Invoices
       tags:
       - recurring-invoices
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/files:
@@ -3229,6 +3323,7 @@ paths:
       summary: Upload File
       tags:
       - files
+      x-visibility: public
       x-content-type: multipart/form-data
       x-accepts:
       - application/json
@@ -3262,6 +3357,7 @@ paths:
       summary: Delete File
       tags:
       - files
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -3293,6 +3389,7 @@ paths:
       summary: Get File
       tags:
       - files
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/usage:
@@ -3310,6 +3407,7 @@ paths:
       summary: Usage
       tags:
       - usage
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/usage/events:
@@ -3355,6 +3453,7 @@ paths:
       summary: List Usage Events
       tags:
       - usage
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/usage/limits:
@@ -3374,6 +3473,7 @@ paths:
       summary: Get Limits
       tags:
       - usage
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/stats:
@@ -3391,6 +3491,7 @@ paths:
       summary: Get Stats
       tags:
       - stats
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/logs:
@@ -3436,6 +3537,7 @@ paths:
       summary: List Logs
       tags:
       - logs
+      x-visibility: internal
       x-accepts:
       - application/json
   /api/v1/numbering-sequences:
@@ -3479,6 +3581,7 @@ paths:
       summary: List Sequences
       tags:
       - numbering-sequences
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -3507,6 +3610,7 @@ paths:
       summary: Create Sequence
       tags:
       - numbering-sequences
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -3540,6 +3644,7 @@ paths:
       summary: Delete Sequence
       tags:
       - numbering-sequences
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -3571,6 +3676,7 @@ paths:
       summary: Get Sequence
       tags:
       - numbering-sequences
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -3608,6 +3714,7 @@ paths:
       summary: Update Sequence
       tags:
       - numbering-sequences
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -3641,6 +3748,7 @@ paths:
       summary: Preview Sequence
       tags:
       - numbering-sequences
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/numbering-sequences/{sequence_id}/next:
@@ -3674,6 +3782,7 @@ paths:
       summary: Consume Next
       tags:
       - numbering-sequences
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/tax-rates:
@@ -3717,6 +3826,7 @@ paths:
       summary: List Tax Rates
       tags:
       - tax-rates
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -3745,6 +3855,7 @@ paths:
       summary: Create Tax Rate
       tags:
       - tax-rates
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -3778,6 +3889,7 @@ paths:
       summary: Delete Tax Rate
       tags:
       - tax-rates
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -3809,6 +3921,7 @@ paths:
       summary: Get Tax Rate
       tags:
       - tax-rates
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -3846,6 +3959,7 @@ paths:
       summary: Update Tax Rate
       tags:
       - tax-rates
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -3879,6 +3993,7 @@ paths:
       summary: Get Job
       tags:
       - jobs
+      x-visibility: internal
       x-accepts:
       - application/json
   /api/v1/jobs/{job_id}/cancel:
@@ -3911,6 +4026,7 @@ paths:
       summary: Cancel Job
       tags:
       - jobs
+      x-visibility: internal
       x-accepts:
       - application/json
   /api/v1/jobs/{job_id}/retry:
@@ -3943,6 +4059,7 @@ paths:
       summary: Retry Job
       tags:
       - jobs
+      x-visibility: internal
       x-accepts:
       - application/json
   /api/v1/imports:
@@ -3972,6 +4089,7 @@ paths:
       summary: Create Import
       tags:
       - imports
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4005,6 +4123,7 @@ paths:
       summary: Get Import
       tags:
       - imports
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/imports/{import_id}/confirm:
@@ -4037,6 +4156,7 @@ paths:
       summary: Confirm Import
       tags:
       - imports
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/imports/{import_id}/cancel:
@@ -4069,6 +4189,7 @@ paths:
       summary: Cancel Import
       tags:
       - imports
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/reference/currencies:
@@ -4086,6 +4207,7 @@ paths:
       summary: List Currencies
       tags:
       - reference
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/reference/countries:
@@ -4103,6 +4225,7 @@ paths:
       summary: List Countries
       tags:
       - reference
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/reference/locales:
@@ -4120,6 +4243,7 @@ paths:
       summary: List Locales
       tags:
       - reference
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/reference/timezones:
@@ -4137,6 +4261,7 @@ paths:
       summary: List Timezones
       tags:
       - reference
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/reference/page-sizes:
@@ -4154,6 +4279,7 @@ paths:
       summary: List Page Sizes
       tags:
       - reference
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/reference/document-types:
@@ -4178,6 +4304,7 @@ paths:
       summary: List Document Types
       tags:
       - reference
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/workspaces:
@@ -4221,6 +4348,7 @@ paths:
       summary: List Workspaces
       tags:
       - workspaces
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -4258,6 +4386,7 @@ paths:
       summary: Create Workspace
       tags:
       - workspaces
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4291,6 +4420,7 @@ paths:
       summary: Delete Workspace
       tags:
       - workspaces
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -4322,6 +4452,7 @@ paths:
       summary: Get Workspace
       tags:
       - workspaces
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -4367,6 +4498,7 @@ paths:
       summary: Patch Workspace
       tags:
       - workspaces
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4400,6 +4532,7 @@ paths:
       summary: List Members
       tags:
       - workspaces
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -4445,6 +4578,7 @@ paths:
       summary: Create Member
       tags:
       - workspaces
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4486,6 +4620,7 @@ paths:
       summary: Delete Member
       tags:
       - workspaces
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -4531,6 +4666,7 @@ paths:
       summary: Patch Member
       tags:
       - workspaces
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4575,6 +4711,7 @@ paths:
       summary: List Webhook Endpoints
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
     post:
@@ -4603,6 +4740,7 @@ paths:
       summary: Create Webhook Endpoint
       tags:
       - webhooks
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4636,6 +4774,7 @@ paths:
       summary: Delete Webhook Endpoint
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
     get:
@@ -4667,6 +4806,7 @@ paths:
       summary: Get Webhook Endpoint
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
     patch:
@@ -4704,6 +4844,7 @@ paths:
       summary: Update Webhook Endpoint
       tags:
       - webhooks
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4737,6 +4878,7 @@ paths:
       summary: Rotate Webhook Secret
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/webhook-endpoints/{endpoint_id}/test:
@@ -4769,6 +4911,7 @@ paths:
       summary: Test Webhook Endpoint
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/webhook-deliveries:
@@ -4812,6 +4955,7 @@ paths:
       summary: List Webhook Deliveries
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/webhook-deliveries/{delivery_id}:
@@ -4844,6 +4988,7 @@ paths:
       summary: Get Webhook Delivery
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/webhook-deliveries/{delivery_id}/retry:
@@ -4876,6 +5021,7 @@ paths:
       summary: Retry Webhook Delivery
       tags:
       - webhooks
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/billing/subscription:
@@ -4894,6 +5040,7 @@ paths:
       summary: Get Subscription
       tags:
       - billing
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/billing/plans:
@@ -4912,6 +5059,7 @@ paths:
       summary: List Plans
       tags:
       - billing
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/billing/checkout-session:
@@ -4942,6 +5090,7 @@ paths:
       summary: Create Checkout
       tags:
       - billing
+      x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4961,6 +5110,7 @@ paths:
       summary: Create Portal
       tags:
       - billing
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/audit-events:
@@ -5028,6 +5178,7 @@ paths:
       summary: List Audit Events
       tags:
       - audit-log
+      x-visibility: public
       x-accepts:
       - application/json
   /api/v1/audit-events/{audit_event_id}:
@@ -5060,6 +5211,7 @@ paths:
       summary: Get Audit Event
       tags:
       - audit-log
+      x-visibility: public
       x-accepts:
       - application/json
 components:
@@ -11936,4 +12088,8 @@ components:
     HTTPBearer:
       scheme: bearer
       type: http
+x-internal-tags:
+- auth
+- jobs
+- logs
 
