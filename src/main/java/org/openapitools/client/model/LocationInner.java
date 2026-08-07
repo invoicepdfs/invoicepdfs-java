@@ -50,7 +50,7 @@ import com.google.gson.JsonParseException;
 
 import com.invoicepdfs.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-06T03:27:18.924904536Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-07T16:42:25.212961653Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class LocationInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(LocationInner.class.getName());
 
