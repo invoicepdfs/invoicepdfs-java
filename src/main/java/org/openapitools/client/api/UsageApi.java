@@ -74,7 +74,7 @@ public class UsageApi {
     }
 
     /**
-     * Build call for getLimitsApiV1UsageLimitsGet
+     * Build call for getUsage
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -84,7 +84,120 @@ public class UsageApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLimitsApiV1UsageLimitsGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUsageCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/usage";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getUsageValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getUsageCall(_callback);
+
+    }
+
+    /**
+     * Get Usage
+     * 
+     * @return UsageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public UsageResponse getUsage() throws ApiException {
+        ApiResponse<UsageResponse> localVarResp = getUsageWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Usage
+     * 
+     * @return ApiResponse&lt;UsageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<UsageResponse> getUsageWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getUsageValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<UsageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Usage (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUsageAsync(final ApiCallback<UsageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getUsageValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<UsageResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getUsageLimits
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUsageLimitsCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -129,13 +242,13 @@ public class UsageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLimitsApiV1UsageLimitsGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getLimitsApiV1UsageLimitsGetCall(_callback);
+    private okhttp3.Call getUsageLimitsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getUsageLimitsCall(_callback);
 
     }
 
     /**
-     * Get Limits
+     * Get Usage Limits
      * 
      * @return Map&lt;String, Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -145,13 +258,13 @@ public class UsageApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> getLimitsApiV1UsageLimitsGet() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = getLimitsApiV1UsageLimitsGetWithHttpInfo();
+    public Map<String, Object> getUsageLimits() throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = getUsageLimitsWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * Get Limits
+     * Get Usage Limits
      * 
      * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -161,14 +274,14 @@ public class UsageApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> getLimitsApiV1UsageLimitsGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getLimitsApiV1UsageLimitsGetValidateBeforeCall(null);
+    public ApiResponse<Map<String, Object>> getUsageLimitsWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getUsageLimitsValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get Limits (asynchronously)
+     * Get Usage Limits (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -179,15 +292,15 @@ public class UsageApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLimitsApiV1UsageLimitsGetAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call getUsageLimitsAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getLimitsApiV1UsageLimitsGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getUsageLimitsValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listUsageEventsApiV1UsageEventsGet
+     * Build call for listUsageEvents
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -200,7 +313,7 @@ public class UsageApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsageEventsApiV1UsageEventsGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listUsageEventsCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -253,8 +366,8 @@ public class UsageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listUsageEventsApiV1UsageEventsGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listUsageEventsApiV1UsageEventsGetCall(limit, cursor, _callback);
+    private okhttp3.Call listUsageEventsValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listUsageEventsCall(limit, cursor, _callback);
 
     }
 
@@ -272,8 +385,8 @@ public class UsageApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listUsageEventsApiV1UsageEventsGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listUsageEventsApiV1UsageEventsGetWithHttpInfo(limit, cursor);
+    public Map<String, Object> listUsageEvents(Integer limit, String cursor) throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = listUsageEventsWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -291,8 +404,8 @@ public class UsageApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listUsageEventsApiV1UsageEventsGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listUsageEventsApiV1UsageEventsGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<Map<String, Object>> listUsageEventsWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listUsageEventsValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -312,123 +425,10 @@ public class UsageApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsageEventsApiV1UsageEventsGetAsync(Integer limit, String cursor, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listUsageEventsAsync(Integer limit, String cursor, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listUsageEventsApiV1UsageEventsGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listUsageEventsValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for usageApiV1UsageGet
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call usageApiV1UsageGetCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/usage";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call usageApiV1UsageGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return usageApiV1UsageGetCall(_callback);
-
-    }
-
-    /**
-     * Usage
-     * 
-     * @return UsageResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public UsageResponse usageApiV1UsageGet() throws ApiException {
-        ApiResponse<UsageResponse> localVarResp = usageApiV1UsageGetWithHttpInfo();
-        return localVarResp.getData();
-    }
-
-    /**
-     * Usage
-     * 
-     * @return ApiResponse&lt;UsageResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<UsageResponse> usageApiV1UsageGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = usageApiV1UsageGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<UsageResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Usage (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call usageApiV1UsageGetAsync(final ApiCallback<UsageResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = usageApiV1UsageGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<UsageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

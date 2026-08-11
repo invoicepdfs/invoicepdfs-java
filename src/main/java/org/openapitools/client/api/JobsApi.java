@@ -74,7 +74,7 @@ public class JobsApi {
     }
 
     /**
-     * Build call for cancelJobApiV1JobsJobIdCancelPost
+     * Build call for cancelJob
      * @param jobId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -86,7 +86,7 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelJobApiV1JobsJobIdCancelPostCall(String jobId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelJobCall(String jobId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -132,13 +132,13 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelJobApiV1JobsJobIdCancelPostValidateBeforeCall(String jobId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelJobValidateBeforeCall(String jobId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'jobId' is set
         if (jobId == null) {
-            throw new ApiException("Missing the required parameter 'jobId' when calling cancelJobApiV1JobsJobIdCancelPost(Async)");
+            throw new ApiException("Missing the required parameter 'jobId' when calling cancelJob(Async)");
         }
 
-        return cancelJobApiV1JobsJobIdCancelPostCall(jobId, _callback);
+        return cancelJobCall(jobId, _callback);
 
     }
 
@@ -155,8 +155,8 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public JobResponse cancelJobApiV1JobsJobIdCancelPost(String jobId) throws ApiException {
-        ApiResponse<JobResponse> localVarResp = cancelJobApiV1JobsJobIdCancelPostWithHttpInfo(jobId);
+    public JobResponse cancelJob(String jobId) throws ApiException {
+        ApiResponse<JobResponse> localVarResp = cancelJobWithHttpInfo(jobId);
         return localVarResp.getData();
     }
 
@@ -173,8 +173,8 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<JobResponse> cancelJobApiV1JobsJobIdCancelPostWithHttpInfo(String jobId) throws ApiException {
-        okhttp3.Call localVarCall = cancelJobApiV1JobsJobIdCancelPostValidateBeforeCall(jobId, null);
+    public ApiResponse<JobResponse> cancelJobWithHttpInfo(String jobId) throws ApiException {
+        okhttp3.Call localVarCall = cancelJobValidateBeforeCall(jobId, null);
         Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -193,15 +193,15 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelJobApiV1JobsJobIdCancelPostAsync(String jobId, final ApiCallback<JobResponse> _callback) throws ApiException {
+    public okhttp3.Call cancelJobAsync(String jobId, final ApiCallback<JobResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelJobApiV1JobsJobIdCancelPostValidateBeforeCall(jobId, _callback);
+        okhttp3.Call localVarCall = cancelJobValidateBeforeCall(jobId, _callback);
         Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getJobApiV1JobsJobIdGet
+     * Build call for getJob
      * @param jobId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -213,7 +213,7 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getJobApiV1JobsJobIdGetCall(String jobId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getJobCall(String jobId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,13 +259,13 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getJobApiV1JobsJobIdGetValidateBeforeCall(String jobId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getJobValidateBeforeCall(String jobId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'jobId' is set
         if (jobId == null) {
-            throw new ApiException("Missing the required parameter 'jobId' when calling getJobApiV1JobsJobIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'jobId' when calling getJob(Async)");
         }
 
-        return getJobApiV1JobsJobIdGetCall(jobId, _callback);
+        return getJobCall(jobId, _callback);
 
     }
 
@@ -282,8 +282,8 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public JobResponse getJobApiV1JobsJobIdGet(String jobId) throws ApiException {
-        ApiResponse<JobResponse> localVarResp = getJobApiV1JobsJobIdGetWithHttpInfo(jobId);
+    public JobResponse getJob(String jobId) throws ApiException {
+        ApiResponse<JobResponse> localVarResp = getJobWithHttpInfo(jobId);
         return localVarResp.getData();
     }
 
@@ -300,8 +300,8 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<JobResponse> getJobApiV1JobsJobIdGetWithHttpInfo(String jobId) throws ApiException {
-        okhttp3.Call localVarCall = getJobApiV1JobsJobIdGetValidateBeforeCall(jobId, null);
+    public ApiResponse<JobResponse> getJobWithHttpInfo(String jobId) throws ApiException {
+        okhttp3.Call localVarCall = getJobValidateBeforeCall(jobId, null);
         Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -320,15 +320,15 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getJobApiV1JobsJobIdGetAsync(String jobId, final ApiCallback<JobResponse> _callback) throws ApiException {
+    public okhttp3.Call getJobAsync(String jobId, final ApiCallback<JobResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getJobApiV1JobsJobIdGetValidateBeforeCall(jobId, _callback);
+        okhttp3.Call localVarCall = getJobValidateBeforeCall(jobId, _callback);
         Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for retryJobApiV1JobsJobIdRetryPost
+     * Build call for retryJob
      * @param jobId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -340,7 +340,7 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retryJobApiV1JobsJobIdRetryPostCall(String jobId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call retryJobCall(String jobId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -386,13 +386,13 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call retryJobApiV1JobsJobIdRetryPostValidateBeforeCall(String jobId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call retryJobValidateBeforeCall(String jobId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'jobId' is set
         if (jobId == null) {
-            throw new ApiException("Missing the required parameter 'jobId' when calling retryJobApiV1JobsJobIdRetryPost(Async)");
+            throw new ApiException("Missing the required parameter 'jobId' when calling retryJob(Async)");
         }
 
-        return retryJobApiV1JobsJobIdRetryPostCall(jobId, _callback);
+        return retryJobCall(jobId, _callback);
 
     }
 
@@ -409,8 +409,8 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public JobResponse retryJobApiV1JobsJobIdRetryPost(String jobId) throws ApiException {
-        ApiResponse<JobResponse> localVarResp = retryJobApiV1JobsJobIdRetryPostWithHttpInfo(jobId);
+    public JobResponse retryJob(String jobId) throws ApiException {
+        ApiResponse<JobResponse> localVarResp = retryJobWithHttpInfo(jobId);
         return localVarResp.getData();
     }
 
@@ -427,8 +427,8 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<JobResponse> retryJobApiV1JobsJobIdRetryPostWithHttpInfo(String jobId) throws ApiException {
-        okhttp3.Call localVarCall = retryJobApiV1JobsJobIdRetryPostValidateBeforeCall(jobId, null);
+    public ApiResponse<JobResponse> retryJobWithHttpInfo(String jobId) throws ApiException {
+        okhttp3.Call localVarCall = retryJobValidateBeforeCall(jobId, null);
         Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -447,9 +447,9 @@ public class JobsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retryJobApiV1JobsJobIdRetryPostAsync(String jobId, final ApiCallback<JobResponse> _callback) throws ApiException {
+    public okhttp3.Call retryJobAsync(String jobId, final ApiCallback<JobResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = retryJobApiV1JobsJobIdRetryPostValidateBeforeCall(jobId, _callback);
+        okhttp3.Call localVarCall = retryJobValidateBeforeCall(jobId, _callback);
         Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

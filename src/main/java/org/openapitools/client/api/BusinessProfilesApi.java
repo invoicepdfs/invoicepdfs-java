@@ -78,7 +78,7 @@ public class BusinessProfilesApi {
     }
 
     /**
-     * Build call for createBusinessProfileApiV1BusinessProfilesPost
+     * Build call for createBusinessProfile
      * @param businessProfileCreate  (required)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
@@ -91,7 +91,7 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBusinessProfileApiV1BusinessProfilesPostCall(BusinessProfileCreate businessProfileCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBusinessProfileCall(BusinessProfileCreate businessProfileCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,13 +141,13 @@ public class BusinessProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBusinessProfileApiV1BusinessProfilesPostValidateBeforeCall(BusinessProfileCreate businessProfileCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createBusinessProfileValidateBeforeCall(BusinessProfileCreate businessProfileCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'businessProfileCreate' is set
         if (businessProfileCreate == null) {
-            throw new ApiException("Missing the required parameter 'businessProfileCreate' when calling createBusinessProfileApiV1BusinessProfilesPost(Async)");
+            throw new ApiException("Missing the required parameter 'businessProfileCreate' when calling createBusinessProfile(Async)");
         }
 
-        return createBusinessProfileApiV1BusinessProfilesPostCall(businessProfileCreate, idempotencyKey, _callback);
+        return createBusinessProfileCall(businessProfileCreate, idempotencyKey, _callback);
 
     }
 
@@ -165,8 +165,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BusinessProfileResponse createBusinessProfileApiV1BusinessProfilesPost(BusinessProfileCreate businessProfileCreate, String idempotencyKey) throws ApiException {
-        ApiResponse<BusinessProfileResponse> localVarResp = createBusinessProfileApiV1BusinessProfilesPostWithHttpInfo(businessProfileCreate, idempotencyKey);
+    public BusinessProfileResponse createBusinessProfile(BusinessProfileCreate businessProfileCreate, String idempotencyKey) throws ApiException {
+        ApiResponse<BusinessProfileResponse> localVarResp = createBusinessProfileWithHttpInfo(businessProfileCreate, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -184,8 +184,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BusinessProfileResponse> createBusinessProfileApiV1BusinessProfilesPostWithHttpInfo(BusinessProfileCreate businessProfileCreate, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = createBusinessProfileApiV1BusinessProfilesPostValidateBeforeCall(businessProfileCreate, idempotencyKey, null);
+    public ApiResponse<BusinessProfileResponse> createBusinessProfileWithHttpInfo(BusinessProfileCreate businessProfileCreate, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = createBusinessProfileValidateBeforeCall(businessProfileCreate, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<BusinessProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,15 +205,15 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBusinessProfileApiV1BusinessProfilesPostAsync(BusinessProfileCreate businessProfileCreate, String idempotencyKey, final ApiCallback<BusinessProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call createBusinessProfileAsync(BusinessProfileCreate businessProfileCreate, String idempotencyKey, final ApiCallback<BusinessProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createBusinessProfileApiV1BusinessProfilesPostValidateBeforeCall(businessProfileCreate, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = createBusinessProfileValidateBeforeCall(businessProfileCreate, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<BusinessProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete
+     * Build call for deleteBusinessProfile
      * @param businessProfileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -225,7 +225,7 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteBusinessProfileCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,13 +271,13 @@ public class BusinessProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteValidateBeforeCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteBusinessProfileValidateBeforeCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'businessProfileId' is set
         if (businessProfileId == null) {
-            throw new ApiException("Missing the required parameter 'businessProfileId' when calling deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'businessProfileId' when calling deleteBusinessProfile(Async)");
         }
 
-        return deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteCall(businessProfileId, _callback);
+        return deleteBusinessProfileCall(businessProfileId, _callback);
 
     }
 
@@ -294,8 +294,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete(String businessProfileId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteWithHttpInfo(businessProfileId);
+    public SimpleBoolResponse deleteBusinessProfile(String businessProfileId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteBusinessProfileWithHttpInfo(businessProfileId);
         return localVarResp.getData();
     }
 
@@ -312,8 +312,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteWithHttpInfo(String businessProfileId) throws ApiException {
-        okhttp3.Call localVarCall = deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteValidateBeforeCall(businessProfileId, null);
+    public ApiResponse<SimpleBoolResponse> deleteBusinessProfileWithHttpInfo(String businessProfileId) throws ApiException {
+        okhttp3.Call localVarCall = deleteBusinessProfileValidateBeforeCall(businessProfileId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -332,15 +332,15 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteAsync(String businessProfileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteBusinessProfileAsync(String businessProfileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDeleteValidateBeforeCall(businessProfileId, _callback);
+        okhttp3.Call localVarCall = deleteBusinessProfileValidateBeforeCall(businessProfileId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet
+     * Build call for getBusinessProfile
      * @param businessProfileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -352,7 +352,7 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBusinessProfileCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -398,13 +398,13 @@ public class BusinessProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetValidateBeforeCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBusinessProfileValidateBeforeCall(String businessProfileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'businessProfileId' is set
         if (businessProfileId == null) {
-            throw new ApiException("Missing the required parameter 'businessProfileId' when calling getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'businessProfileId' when calling getBusinessProfile(Async)");
         }
 
-        return getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetCall(businessProfileId, _callback);
+        return getBusinessProfileCall(businessProfileId, _callback);
 
     }
 
@@ -421,8 +421,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BusinessProfileResponse getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet(String businessProfileId) throws ApiException {
-        ApiResponse<BusinessProfileResponse> localVarResp = getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetWithHttpInfo(businessProfileId);
+    public BusinessProfileResponse getBusinessProfile(String businessProfileId) throws ApiException {
+        ApiResponse<BusinessProfileResponse> localVarResp = getBusinessProfileWithHttpInfo(businessProfileId);
         return localVarResp.getData();
     }
 
@@ -439,8 +439,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BusinessProfileResponse> getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetWithHttpInfo(String businessProfileId) throws ApiException {
-        okhttp3.Call localVarCall = getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetValidateBeforeCall(businessProfileId, null);
+    public ApiResponse<BusinessProfileResponse> getBusinessProfileWithHttpInfo(String businessProfileId) throws ApiException {
+        okhttp3.Call localVarCall = getBusinessProfileValidateBeforeCall(businessProfileId, null);
         Type localVarReturnType = new TypeToken<BusinessProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -459,15 +459,15 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetAsync(String businessProfileId, final ApiCallback<BusinessProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call getBusinessProfileAsync(String businessProfileId, final ApiCallback<BusinessProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGetValidateBeforeCall(businessProfileId, _callback);
+        okhttp3.Call localVarCall = getBusinessProfileValidateBeforeCall(businessProfileId, _callback);
         Type localVarReturnType = new TypeToken<BusinessProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listBusinessProfilesApiV1BusinessProfilesGet
+     * Build call for listBusinessProfiles
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -480,7 +480,7 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBusinessProfilesApiV1BusinessProfilesGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listBusinessProfilesCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -533,8 +533,8 @@ public class BusinessProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listBusinessProfilesApiV1BusinessProfilesGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listBusinessProfilesApiV1BusinessProfilesGetCall(limit, cursor, _callback);
+    private okhttp3.Call listBusinessProfilesValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listBusinessProfilesCall(limit, cursor, _callback);
 
     }
 
@@ -552,8 +552,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BusinessProfilesListResponse listBusinessProfilesApiV1BusinessProfilesGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<BusinessProfilesListResponse> localVarResp = listBusinessProfilesApiV1BusinessProfilesGetWithHttpInfo(limit, cursor);
+    public BusinessProfilesListResponse listBusinessProfiles(Integer limit, String cursor) throws ApiException {
+        ApiResponse<BusinessProfilesListResponse> localVarResp = listBusinessProfilesWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -571,8 +571,8 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BusinessProfilesListResponse> listBusinessProfilesApiV1BusinessProfilesGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listBusinessProfilesApiV1BusinessProfilesGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<BusinessProfilesListResponse> listBusinessProfilesWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listBusinessProfilesValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<BusinessProfilesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -592,15 +592,15 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBusinessProfilesApiV1BusinessProfilesGetAsync(Integer limit, String cursor, final ApiCallback<BusinessProfilesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listBusinessProfilesAsync(Integer limit, String cursor, final ApiCallback<BusinessProfilesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listBusinessProfilesApiV1BusinessProfilesGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listBusinessProfilesValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<BusinessProfilesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch
+     * Build call for updateBusinessProfile
      * @param businessProfileId  (required)
      * @param businessProfilePatch  (required)
      * @param idempotencyKey  (optional)
@@ -614,7 +614,7 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchCall(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateBusinessProfileCall(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -665,23 +665,23 @@ public class BusinessProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchValidateBeforeCall(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateBusinessProfileValidateBeforeCall(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'businessProfileId' is set
         if (businessProfileId == null) {
-            throw new ApiException("Missing the required parameter 'businessProfileId' when calling patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'businessProfileId' when calling updateBusinessProfile(Async)");
         }
 
         // verify the required parameter 'businessProfilePatch' is set
         if (businessProfilePatch == null) {
-            throw new ApiException("Missing the required parameter 'businessProfilePatch' when calling patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'businessProfilePatch' when calling updateBusinessProfile(Async)");
         }
 
-        return patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchCall(businessProfileId, businessProfilePatch, idempotencyKey, _callback);
+        return updateBusinessProfileCall(businessProfileId, businessProfilePatch, idempotencyKey, _callback);
 
     }
 
     /**
-     * Patch Business Profile
+     * Update Business Profile
      * 
      * @param businessProfileId  (required)
      * @param businessProfilePatch  (required)
@@ -695,13 +695,13 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BusinessProfileResponse patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey) throws ApiException {
-        ApiResponse<BusinessProfileResponse> localVarResp = patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchWithHttpInfo(businessProfileId, businessProfilePatch, idempotencyKey);
+    public BusinessProfileResponse updateBusinessProfile(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey) throws ApiException {
+        ApiResponse<BusinessProfileResponse> localVarResp = updateBusinessProfileWithHttpInfo(businessProfileId, businessProfilePatch, idempotencyKey);
         return localVarResp.getData();
     }
 
     /**
-     * Patch Business Profile
+     * Update Business Profile
      * 
      * @param businessProfileId  (required)
      * @param businessProfilePatch  (required)
@@ -715,14 +715,14 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BusinessProfileResponse> patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchWithHttpInfo(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchValidateBeforeCall(businessProfileId, businessProfilePatch, idempotencyKey, null);
+    public ApiResponse<BusinessProfileResponse> updateBusinessProfileWithHttpInfo(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = updateBusinessProfileValidateBeforeCall(businessProfileId, businessProfilePatch, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<BusinessProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Patch Business Profile (asynchronously)
+     * Update Business Profile (asynchronously)
      * 
      * @param businessProfileId  (required)
      * @param businessProfilePatch  (required)
@@ -737,9 +737,9 @@ public class BusinessProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchAsync(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey, final ApiCallback<BusinessProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call updateBusinessProfileAsync(String businessProfileId, BusinessProfilePatch businessProfilePatch, String idempotencyKey, final ApiCallback<BusinessProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatchValidateBeforeCall(businessProfileId, businessProfilePatch, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = updateBusinessProfileValidateBeforeCall(businessProfileId, businessProfilePatch, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<BusinessProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

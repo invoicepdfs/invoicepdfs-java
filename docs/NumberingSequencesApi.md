@@ -4,20 +4,20 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**consumeNextApiV1NumberingSequencesSequenceIdNextPost**](NumberingSequencesApi.md#consumeNextApiV1NumberingSequencesSequenceIdNextPost) | **POST** /api/v1/numbering-sequences/{sequence_id}/next | Consume Next |
-| [**createSequenceApiV1NumberingSequencesPost**](NumberingSequencesApi.md#createSequenceApiV1NumberingSequencesPost) | **POST** /api/v1/numbering-sequences | Create Sequence |
-| [**deleteSequenceApiV1NumberingSequencesSequenceIdDelete**](NumberingSequencesApi.md#deleteSequenceApiV1NumberingSequencesSequenceIdDelete) | **DELETE** /api/v1/numbering-sequences/{sequence_id} | Delete Sequence |
-| [**getSequenceApiV1NumberingSequencesSequenceIdGet**](NumberingSequencesApi.md#getSequenceApiV1NumberingSequencesSequenceIdGet) | **GET** /api/v1/numbering-sequences/{sequence_id} | Get Sequence |
-| [**listSequencesApiV1NumberingSequencesGet**](NumberingSequencesApi.md#listSequencesApiV1NumberingSequencesGet) | **GET** /api/v1/numbering-sequences | List Sequences |
-| [**previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost**](NumberingSequencesApi.md#previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost) | **POST** /api/v1/numbering-sequences/{sequence_id}/preview | Preview Sequence |
-| [**updateSequenceApiV1NumberingSequencesSequenceIdPatch**](NumberingSequencesApi.md#updateSequenceApiV1NumberingSequencesSequenceIdPatch) | **PATCH** /api/v1/numbering-sequences/{sequence_id} | Update Sequence |
+| [**consumeSequenceNumber**](NumberingSequencesApi.md#consumeSequenceNumber) | **POST** /api/v1/numbering-sequences/{sequence_id}/next | Consume Sequence Number |
+| [**createSequence**](NumberingSequencesApi.md#createSequence) | **POST** /api/v1/numbering-sequences | Create Sequence |
+| [**deleteSequence**](NumberingSequencesApi.md#deleteSequence) | **DELETE** /api/v1/numbering-sequences/{sequence_id} | Delete Sequence |
+| [**getSequence**](NumberingSequencesApi.md#getSequence) | **GET** /api/v1/numbering-sequences/{sequence_id} | Get Sequence |
+| [**listSequences**](NumberingSequencesApi.md#listSequences) | **GET** /api/v1/numbering-sequences | List Sequences |
+| [**previewSequence**](NumberingSequencesApi.md#previewSequence) | **POST** /api/v1/numbering-sequences/{sequence_id}/preview | Preview Sequence |
+| [**updateSequence**](NumberingSequencesApi.md#updateSequence) | **PATCH** /api/v1/numbering-sequences/{sequence_id} | Update Sequence |
 
 
-<a id="consumeNextApiV1NumberingSequencesSequenceIdNextPost"></a>
-# **consumeNextApiV1NumberingSequencesSequenceIdNextPost**
-> NumberingSequenceResponse consumeNextApiV1NumberingSequencesSequenceIdNextPost(sequenceId)
+<a id="consumeSequenceNumber"></a>
+# **consumeSequenceNumber**
+> NumberingSequenceResponse consumeSequenceNumber(sequenceId)
 
-Consume Next
+Consume Sequence Number
 
 Consume and return the next number, incrementing the counter.
 
@@ -43,10 +43,10 @@ public class Example {
     NumberingSequencesApi apiInstance = new NumberingSequencesApi(defaultClient);
     String sequenceId = "sequenceId_example"; // String | 
     try {
-      NumberingSequenceResponse result = apiInstance.consumeNextApiV1NumberingSequencesSequenceIdNextPost(sequenceId);
+      NumberingSequenceResponse result = apiInstance.consumeSequenceNumber(sequenceId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling NumberingSequencesApi#consumeNextApiV1NumberingSequencesSequenceIdNextPost");
+      System.err.println("Exception when calling NumberingSequencesApi#consumeSequenceNumber");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -81,9 +81,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="createSequenceApiV1NumberingSequencesPost"></a>
-# **createSequenceApiV1NumberingSequencesPost**
-> NumberingSequenceResponse createSequenceApiV1NumberingSequencesPost(numberingSequenceCreateRequest)
+<a id="createSequence"></a>
+# **createSequence**
+> NumberingSequenceResponse createSequence(numberingSequenceCreateRequest)
 
 Create Sequence
 
@@ -109,10 +109,10 @@ public class Example {
     NumberingSequencesApi apiInstance = new NumberingSequencesApi(defaultClient);
     NumberingSequenceCreateRequest numberingSequenceCreateRequest = new NumberingSequenceCreateRequest(); // NumberingSequenceCreateRequest | 
     try {
-      NumberingSequenceResponse result = apiInstance.createSequenceApiV1NumberingSequencesPost(numberingSequenceCreateRequest);
+      NumberingSequenceResponse result = apiInstance.createSequence(numberingSequenceCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling NumberingSequencesApi#createSequenceApiV1NumberingSequencesPost");
+      System.err.println("Exception when calling NumberingSequencesApi#createSequence");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -147,9 +147,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deleteSequenceApiV1NumberingSequencesSequenceIdDelete"></a>
-# **deleteSequenceApiV1NumberingSequencesSequenceIdDelete**
-> SimpleBoolResponse deleteSequenceApiV1NumberingSequencesSequenceIdDelete(sequenceId)
+<a id="deleteSequence"></a>
+# **deleteSequence**
+> SimpleBoolResponse deleteSequence(sequenceId)
 
 Delete Sequence
 
@@ -175,10 +175,10 @@ public class Example {
     NumberingSequencesApi apiInstance = new NumberingSequencesApi(defaultClient);
     String sequenceId = "sequenceId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteSequenceApiV1NumberingSequencesSequenceIdDelete(sequenceId);
+      SimpleBoolResponse result = apiInstance.deleteSequence(sequenceId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling NumberingSequencesApi#deleteSequenceApiV1NumberingSequencesSequenceIdDelete");
+      System.err.println("Exception when calling NumberingSequencesApi#deleteSequence");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -213,9 +213,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getSequenceApiV1NumberingSequencesSequenceIdGet"></a>
-# **getSequenceApiV1NumberingSequencesSequenceIdGet**
-> NumberingSequenceResponse getSequenceApiV1NumberingSequencesSequenceIdGet(sequenceId)
+<a id="getSequence"></a>
+# **getSequence**
+> NumberingSequenceResponse getSequence(sequenceId)
 
 Get Sequence
 
@@ -241,10 +241,10 @@ public class Example {
     NumberingSequencesApi apiInstance = new NumberingSequencesApi(defaultClient);
     String sequenceId = "sequenceId_example"; // String | 
     try {
-      NumberingSequenceResponse result = apiInstance.getSequenceApiV1NumberingSequencesSequenceIdGet(sequenceId);
+      NumberingSequenceResponse result = apiInstance.getSequence(sequenceId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling NumberingSequencesApi#getSequenceApiV1NumberingSequencesSequenceIdGet");
+      System.err.println("Exception when calling NumberingSequencesApi#getSequence");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -279,9 +279,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listSequencesApiV1NumberingSequencesGet"></a>
-# **listSequencesApiV1NumberingSequencesGet**
-> NumberingSequencesListResponse listSequencesApiV1NumberingSequencesGet(limit, cursor)
+<a id="listSequences"></a>
+# **listSequences**
+> NumberingSequencesListResponse listSequences(limit, cursor)
 
 List Sequences
 
@@ -308,10 +308,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      NumberingSequencesListResponse result = apiInstance.listSequencesApiV1NumberingSequencesGet(limit, cursor);
+      NumberingSequencesListResponse result = apiInstance.listSequences(limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling NumberingSequencesApi#listSequencesApiV1NumberingSequencesGet");
+      System.err.println("Exception when calling NumberingSequencesApi#listSequences");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -347,9 +347,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost"></a>
-# **previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost**
-> NumberingSequencePreviewResponse previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost(sequenceId)
+<a id="previewSequence"></a>
+# **previewSequence**
+> NumberingSequencePreviewResponse previewSequence(sequenceId)
 
 Preview Sequence
 
@@ -375,10 +375,10 @@ public class Example {
     NumberingSequencesApi apiInstance = new NumberingSequencesApi(defaultClient);
     String sequenceId = "sequenceId_example"; // String | 
     try {
-      NumberingSequencePreviewResponse result = apiInstance.previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost(sequenceId);
+      NumberingSequencePreviewResponse result = apiInstance.previewSequence(sequenceId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling NumberingSequencesApi#previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost");
+      System.err.println("Exception when calling NumberingSequencesApi#previewSequence");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -413,9 +413,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="updateSequenceApiV1NumberingSequencesSequenceIdPatch"></a>
-# **updateSequenceApiV1NumberingSequencesSequenceIdPatch**
-> NumberingSequenceResponse updateSequenceApiV1NumberingSequencesSequenceIdPatch(sequenceId, numberingSequencePatchRequest)
+<a id="updateSequence"></a>
+# **updateSequence**
+> NumberingSequenceResponse updateSequence(sequenceId, numberingSequencePatchRequest)
 
 Update Sequence
 
@@ -442,10 +442,10 @@ public class Example {
     String sequenceId = "sequenceId_example"; // String | 
     NumberingSequencePatchRequest numberingSequencePatchRequest = new NumberingSequencePatchRequest(); // NumberingSequencePatchRequest | 
     try {
-      NumberingSequenceResponse result = apiInstance.updateSequenceApiV1NumberingSequencesSequenceIdPatch(sequenceId, numberingSequencePatchRequest);
+      NumberingSequenceResponse result = apiInstance.updateSequence(sequenceId, numberingSequencePatchRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling NumberingSequencesApi#updateSequenceApiV1NumberingSequencesSequenceIdPatch");
+      System.err.println("Exception when calling NumberingSequencesApi#updateSequence");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**cancelBatchApiV1BatchesBatchIdCancelPost**](BatchesApi.md#cancelBatchApiV1BatchesBatchIdCancelPost) | **POST** /api/v1/batches/{batch_id}/cancel | Cancel Batch |
-| [**createBatchApiV1BatchesPost**](BatchesApi.md#createBatchApiV1BatchesPost) | **POST** /api/v1/batches | Create Batch |
-| [**downloadBatchApiV1BatchesBatchIdDownloadGet**](BatchesApi.md#downloadBatchApiV1BatchesBatchIdDownloadGet) | **GET** /api/v1/batches/{batch_id}/download | Download Batch |
-| [**getBatchApiV1BatchesBatchIdGet**](BatchesApi.md#getBatchApiV1BatchesBatchIdGet) | **GET** /api/v1/batches/{batch_id} | Get Batch |
-| [**listBatchItemsApiV1BatchesBatchIdItemsGet**](BatchesApi.md#listBatchItemsApiV1BatchesBatchIdItemsGet) | **GET** /api/v1/batches/{batch_id}/items | List Batch Items |
-| [**listBatchesApiV1BatchesGet**](BatchesApi.md#listBatchesApiV1BatchesGet) | **GET** /api/v1/batches | List Batches |
+| [**cancelBatch**](BatchesApi.md#cancelBatch) | **POST** /api/v1/batches/{batch_id}/cancel | Cancel Batch |
+| [**createBatch**](BatchesApi.md#createBatch) | **POST** /api/v1/batches | Create Batch |
+| [**downloadBatch**](BatchesApi.md#downloadBatch) | **GET** /api/v1/batches/{batch_id}/download | Download Batch |
+| [**getBatch**](BatchesApi.md#getBatch) | **GET** /api/v1/batches/{batch_id} | Get Batch |
+| [**listBatchItems**](BatchesApi.md#listBatchItems) | **GET** /api/v1/batches/{batch_id}/items | List Batch Items |
+| [**listBatches**](BatchesApi.md#listBatches) | **GET** /api/v1/batches | List Batches |
 
 
-<a id="cancelBatchApiV1BatchesBatchIdCancelPost"></a>
-# **cancelBatchApiV1BatchesBatchIdCancelPost**
-> BatchResponse cancelBatchApiV1BatchesBatchIdCancelPost(batchId)
+<a id="cancelBatch"></a>
+# **cancelBatch**
+> BatchResponse cancelBatch(batchId)
 
 Cancel Batch
 
@@ -40,10 +40,10 @@ public class Example {
     BatchesApi apiInstance = new BatchesApi(defaultClient);
     String batchId = "batchId_example"; // String | 
     try {
-      BatchResponse result = apiInstance.cancelBatchApiV1BatchesBatchIdCancelPost(batchId);
+      BatchResponse result = apiInstance.cancelBatch(batchId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BatchesApi#cancelBatchApiV1BatchesBatchIdCancelPost");
+      System.err.println("Exception when calling BatchesApi#cancelBatch");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -78,9 +78,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="createBatchApiV1BatchesPost"></a>
-# **createBatchApiV1BatchesPost**
-> BatchResponse createBatchApiV1BatchesPost(batchCreateRequest)
+<a id="createBatch"></a>
+# **createBatch**
+> BatchResponse createBatch(batchCreateRequest)
 
 Create Batch
 
@@ -106,10 +106,10 @@ public class Example {
     BatchesApi apiInstance = new BatchesApi(defaultClient);
     BatchCreateRequest batchCreateRequest = new BatchCreateRequest(); // BatchCreateRequest | 
     try {
-      BatchResponse result = apiInstance.createBatchApiV1BatchesPost(batchCreateRequest);
+      BatchResponse result = apiInstance.createBatch(batchCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BatchesApi#createBatchApiV1BatchesPost");
+      System.err.println("Exception when calling BatchesApi#createBatch");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -144,9 +144,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="downloadBatchApiV1BatchesBatchIdDownloadGet"></a>
-# **downloadBatchApiV1BatchesBatchIdDownloadGet**
-> Object downloadBatchApiV1BatchesBatchIdDownloadGet(batchId)
+<a id="downloadBatch"></a>
+# **downloadBatch**
+> Object downloadBatch(batchId)
 
 Download Batch
 
@@ -172,10 +172,10 @@ public class Example {
     BatchesApi apiInstance = new BatchesApi(defaultClient);
     String batchId = "batchId_example"; // String | 
     try {
-      Object result = apiInstance.downloadBatchApiV1BatchesBatchIdDownloadGet(batchId);
+      Object result = apiInstance.downloadBatch(batchId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BatchesApi#downloadBatchApiV1BatchesBatchIdDownloadGet");
+      System.err.println("Exception when calling BatchesApi#downloadBatch");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -210,9 +210,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getBatchApiV1BatchesBatchIdGet"></a>
-# **getBatchApiV1BatchesBatchIdGet**
-> BatchResponse getBatchApiV1BatchesBatchIdGet(batchId)
+<a id="getBatch"></a>
+# **getBatch**
+> BatchResponse getBatch(batchId)
 
 Get Batch
 
@@ -238,10 +238,10 @@ public class Example {
     BatchesApi apiInstance = new BatchesApi(defaultClient);
     String batchId = "batchId_example"; // String | 
     try {
-      BatchResponse result = apiInstance.getBatchApiV1BatchesBatchIdGet(batchId);
+      BatchResponse result = apiInstance.getBatch(batchId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BatchesApi#getBatchApiV1BatchesBatchIdGet");
+      System.err.println("Exception when calling BatchesApi#getBatch");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -276,9 +276,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listBatchItemsApiV1BatchesBatchIdItemsGet"></a>
-# **listBatchItemsApiV1BatchesBatchIdItemsGet**
-> BatchItemsListResponse listBatchItemsApiV1BatchesBatchIdItemsGet(batchId, limit, cursor)
+<a id="listBatchItems"></a>
+# **listBatchItems**
+> BatchItemsListResponse listBatchItems(batchId, limit, cursor)
 
 List Batch Items
 
@@ -306,10 +306,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      BatchItemsListResponse result = apiInstance.listBatchItemsApiV1BatchesBatchIdItemsGet(batchId, limit, cursor);
+      BatchItemsListResponse result = apiInstance.listBatchItems(batchId, limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BatchesApi#listBatchItemsApiV1BatchesBatchIdItemsGet");
+      System.err.println("Exception when calling BatchesApi#listBatchItems");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -346,9 +346,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listBatchesApiV1BatchesGet"></a>
-# **listBatchesApiV1BatchesGet**
-> BatchesListResponse listBatchesApiV1BatchesGet(limit, cursor)
+<a id="listBatches"></a>
+# **listBatches**
+> BatchesListResponse listBatches(limit, cursor)
 
 List Batches
 
@@ -375,10 +375,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      BatchesListResponse result = apiInstance.listBatchesApiV1BatchesGet(limit, cursor);
+      BatchesListResponse result = apiInstance.listBatches(limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BatchesApi#listBatchesApiV1BatchesGet");
+      System.err.println("Exception when calling BatchesApi#listBatches");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

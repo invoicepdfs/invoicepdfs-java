@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**listCountriesApiV1ReferenceCountriesGet**](ReferenceApi.md#listCountriesApiV1ReferenceCountriesGet) | **GET** /api/v1/reference/countries | List Countries |
-| [**listCurrenciesApiV1ReferenceCurrenciesGet**](ReferenceApi.md#listCurrenciesApiV1ReferenceCurrenciesGet) | **GET** /api/v1/reference/currencies | List Currencies |
-| [**listDocumentTypesApiV1ReferenceDocumentTypesGet**](ReferenceApi.md#listDocumentTypesApiV1ReferenceDocumentTypesGet) | **GET** /api/v1/reference/document-types | List Document Types |
-| [**listLocalesApiV1ReferenceLocalesGet**](ReferenceApi.md#listLocalesApiV1ReferenceLocalesGet) | **GET** /api/v1/reference/locales | List Locales |
-| [**listPageSizesApiV1ReferencePageSizesGet**](ReferenceApi.md#listPageSizesApiV1ReferencePageSizesGet) | **GET** /api/v1/reference/page-sizes | List Page Sizes |
-| [**listTimezonesApiV1ReferenceTimezonesGet**](ReferenceApi.md#listTimezonesApiV1ReferenceTimezonesGet) | **GET** /api/v1/reference/timezones | List Timezones |
+| [**listCountries**](ReferenceApi.md#listCountries) | **GET** /api/v1/reference/countries | List Countries |
+| [**listCurrencies**](ReferenceApi.md#listCurrencies) | **GET** /api/v1/reference/currencies | List Currencies |
+| [**listDocumentTypes**](ReferenceApi.md#listDocumentTypes) | **GET** /api/v1/reference/document-types | List Document Types |
+| [**listLocales**](ReferenceApi.md#listLocales) | **GET** /api/v1/reference/locales | List Locales |
+| [**listPageSizes**](ReferenceApi.md#listPageSizes) | **GET** /api/v1/reference/page-sizes | List Page Sizes |
+| [**listTimezones**](ReferenceApi.md#listTimezones) | **GET** /api/v1/reference/timezones | List Timezones |
 
 
-<a id="listCountriesApiV1ReferenceCountriesGet"></a>
-# **listCountriesApiV1ReferenceCountriesGet**
-> Map&lt;String, Object&gt; listCountriesApiV1ReferenceCountriesGet()
+<a id="listCountries"></a>
+# **listCountries**
+> Map&lt;String, Object&gt; listCountries()
 
 List Countries
 
@@ -34,10 +34,10 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listCountriesApiV1ReferenceCountriesGet();
+      Map<String, Object> result = apiInstance.listCountries();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceApi#listCountriesApiV1ReferenceCountriesGet");
+      System.err.println("Exception when calling ReferenceApi#listCountries");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -68,9 +68,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="listCurrenciesApiV1ReferenceCurrenciesGet"></a>
-# **listCurrenciesApiV1ReferenceCurrenciesGet**
-> Map&lt;String, Object&gt; listCurrenciesApiV1ReferenceCurrenciesGet()
+<a id="listCurrencies"></a>
+# **listCurrencies**
+> Map&lt;String, Object&gt; listCurrencies()
 
 List Currencies
 
@@ -90,10 +90,10 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listCurrenciesApiV1ReferenceCurrenciesGet();
+      Map<String, Object> result = apiInstance.listCurrencies();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceApi#listCurrenciesApiV1ReferenceCurrenciesGet");
+      System.err.println("Exception when calling ReferenceApi#listCurrencies");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -124,9 +124,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="listDocumentTypesApiV1ReferenceDocumentTypesGet"></a>
-# **listDocumentTypesApiV1ReferenceDocumentTypesGet**
-> Map&lt;String, Object&gt; listDocumentTypesApiV1ReferenceDocumentTypesGet()
+<a id="listDocumentTypes"></a>
+# **listDocumentTypes**
+> Map&lt;String, Object&gt; listDocumentTypes()
 
 List Document Types
 
@@ -148,10 +148,10 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listDocumentTypesApiV1ReferenceDocumentTypesGet();
+      Map<String, Object> result = apiInstance.listDocumentTypes();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceApi#listDocumentTypesApiV1ReferenceDocumentTypesGet");
+      System.err.println("Exception when calling ReferenceApi#listDocumentTypes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -182,9 +182,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="listLocalesApiV1ReferenceLocalesGet"></a>
-# **listLocalesApiV1ReferenceLocalesGet**
-> Map&lt;String, Object&gt; listLocalesApiV1ReferenceLocalesGet()
+<a id="listLocales"></a>
+# **listLocales**
+> Map&lt;String, Object&gt; listLocales()
 
 List Locales
 
@@ -204,10 +204,10 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listLocalesApiV1ReferenceLocalesGet();
+      Map<String, Object> result = apiInstance.listLocales();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceApi#listLocalesApiV1ReferenceLocalesGet");
+      System.err.println("Exception when calling ReferenceApi#listLocales");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -238,9 +238,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="listPageSizesApiV1ReferencePageSizesGet"></a>
-# **listPageSizesApiV1ReferencePageSizesGet**
-> Map&lt;String, Object&gt; listPageSizesApiV1ReferencePageSizesGet()
+<a id="listPageSizes"></a>
+# **listPageSizes**
+> Map&lt;String, Object&gt; listPageSizes()
 
 List Page Sizes
 
@@ -260,10 +260,10 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listPageSizesApiV1ReferencePageSizesGet();
+      Map<String, Object> result = apiInstance.listPageSizes();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceApi#listPageSizesApiV1ReferencePageSizesGet");
+      System.err.println("Exception when calling ReferenceApi#listPageSizes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -294,9 +294,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="listTimezonesApiV1ReferenceTimezonesGet"></a>
-# **listTimezonesApiV1ReferenceTimezonesGet**
-> Map&lt;String, Object&gt; listTimezonesApiV1ReferenceTimezonesGet()
+<a id="listTimezones"></a>
+# **listTimezones**
+> Map&lt;String, Object&gt; listTimezones()
 
 List Timezones
 
@@ -316,10 +316,10 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listTimezonesApiV1ReferenceTimezonesGet();
+      Map<String, Object> result = apiInstance.listTimezones();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceApi#listTimezonesApiV1ReferenceTimezonesGet");
+      System.err.println("Exception when calling ReferenceApi#listTimezones");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

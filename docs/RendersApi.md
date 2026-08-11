@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**downloadRenderApiV1RendersRenderIdDownloadGet**](RendersApi.md#downloadRenderApiV1RendersRenderIdDownloadGet) | **GET** /api/v1/renders/{render_id}/download | Download Render |
-| [**getRenderApiV1RendersRenderIdGet**](RendersApi.md#getRenderApiV1RendersRenderIdGet) | **GET** /api/v1/renders/{render_id} | Get Render |
+| [**downloadRender**](RendersApi.md#downloadRender) | **GET** /api/v1/renders/{render_id}/download | Download Render |
+| [**getRender**](RendersApi.md#getRender) | **GET** /api/v1/renders/{render_id} | Get Render |
 
 
-<a id="downloadRenderApiV1RendersRenderIdDownloadGet"></a>
-# **downloadRenderApiV1RendersRenderIdDownloadGet**
-> File downloadRenderApiV1RendersRenderIdDownloadGet(renderId)
+<a id="downloadRender"></a>
+# **downloadRender**
+> File downloadRender(renderId)
 
 Download Render
 
@@ -36,10 +36,10 @@ public class Example {
     RendersApi apiInstance = new RendersApi(defaultClient);
     String renderId = "renderId_example"; // String | 
     try {
-      File result = apiInstance.downloadRenderApiV1RendersRenderIdDownloadGet(renderId);
+      File result = apiInstance.downloadRender(renderId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling RendersApi#downloadRenderApiV1RendersRenderIdDownloadGet");
+      System.err.println("Exception when calling RendersApi#downloadRender");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -74,9 +74,9 @@ public class Example {
 | **200** | PDF file |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getRenderApiV1RendersRenderIdGet"></a>
-# **getRenderApiV1RendersRenderIdGet**
-> Map&lt;String, Object&gt; getRenderApiV1RendersRenderIdGet(renderId)
+<a id="getRender"></a>
+# **getRender**
+> Map&lt;String, Object&gt; getRender(renderId)
 
 Get Render
 
@@ -102,10 +102,10 @@ public class Example {
     RendersApi apiInstance = new RendersApi(defaultClient);
     String renderId = "renderId_example"; // String | 
     try {
-      Map<String, Object> result = apiInstance.getRenderApiV1RendersRenderIdGet(renderId);
+      Map<String, Object> result = apiInstance.getRender(renderId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling RendersApi#getRenderApiV1RendersRenderIdGet");
+      System.err.println("Exception when calling RendersApi#getRender");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

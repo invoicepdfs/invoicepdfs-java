@@ -74,7 +74,7 @@ public class LogsApi {
     }
 
     /**
-     * Build call for listLogsApiV1LogsGet
+     * Build call for listLogs
      * @param status  (optional, default to )
      * @param limit  (optional, default to 100)
      * @param _callback Callback for upload/download progress
@@ -87,7 +87,7 @@ public class LogsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLogsApiV1LogsGetCall(String status, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listLogsCall(String status, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,8 +140,8 @@ public class LogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listLogsApiV1LogsGetValidateBeforeCall(String status, Integer limit, final ApiCallback _callback) throws ApiException {
-        return listLogsApiV1LogsGetCall(status, limit, _callback);
+    private okhttp3.Call listLogsValidateBeforeCall(String status, Integer limit, final ApiCallback _callback) throws ApiException {
+        return listLogsCall(status, limit, _callback);
 
     }
 
@@ -159,8 +159,8 @@ public class LogsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiRequestLogsListResponse listLogsApiV1LogsGet(String status, Integer limit) throws ApiException {
-        ApiResponse<ApiRequestLogsListResponse> localVarResp = listLogsApiV1LogsGetWithHttpInfo(status, limit);
+    public ApiRequestLogsListResponse listLogs(String status, Integer limit) throws ApiException {
+        ApiResponse<ApiRequestLogsListResponse> localVarResp = listLogsWithHttpInfo(status, limit);
         return localVarResp.getData();
     }
 
@@ -178,8 +178,8 @@ public class LogsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiRequestLogsListResponse> listLogsApiV1LogsGetWithHttpInfo(String status, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listLogsApiV1LogsGetValidateBeforeCall(status, limit, null);
+    public ApiResponse<ApiRequestLogsListResponse> listLogsWithHttpInfo(String status, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listLogsValidateBeforeCall(status, limit, null);
         Type localVarReturnType = new TypeToken<ApiRequestLogsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -199,9 +199,9 @@ public class LogsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLogsApiV1LogsGetAsync(String status, Integer limit, final ApiCallback<ApiRequestLogsListResponse> _callback) throws ApiException {
+    public okhttp3.Call listLogsAsync(String status, Integer limit, final ApiCallback<ApiRequestLogsListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listLogsApiV1LogsGetValidateBeforeCall(status, limit, _callback);
+        okhttp3.Call localVarCall = listLogsValidateBeforeCall(status, limit, _callback);
         Type localVarReturnType = new TypeToken<ApiRequestLogsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

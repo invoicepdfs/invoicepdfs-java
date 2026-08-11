@@ -74,7 +74,7 @@ public class DeliveriesApi {
     }
 
     /**
-     * Build call for getDeliveryApiV1DeliveriesDeliveryIdGet
+     * Build call for getDelivery
      * @param deliveryId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -86,7 +86,7 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeliveryApiV1DeliveriesDeliveryIdGetCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDeliveryCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -132,13 +132,13 @@ public class DeliveriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDeliveryApiV1DeliveriesDeliveryIdGetValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDeliveryValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'deliveryId' is set
         if (deliveryId == null) {
-            throw new ApiException("Missing the required parameter 'deliveryId' when calling getDeliveryApiV1DeliveriesDeliveryIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'deliveryId' when calling getDelivery(Async)");
         }
 
-        return getDeliveryApiV1DeliveriesDeliveryIdGetCall(deliveryId, _callback);
+        return getDeliveryCall(deliveryId, _callback);
 
     }
 
@@ -155,8 +155,8 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DeliveryResponse getDeliveryApiV1DeliveriesDeliveryIdGet(String deliveryId) throws ApiException {
-        ApiResponse<DeliveryResponse> localVarResp = getDeliveryApiV1DeliveriesDeliveryIdGetWithHttpInfo(deliveryId);
+    public DeliveryResponse getDelivery(String deliveryId) throws ApiException {
+        ApiResponse<DeliveryResponse> localVarResp = getDeliveryWithHttpInfo(deliveryId);
         return localVarResp.getData();
     }
 
@@ -173,8 +173,8 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeliveryResponse> getDeliveryApiV1DeliveriesDeliveryIdGetWithHttpInfo(String deliveryId) throws ApiException {
-        okhttp3.Call localVarCall = getDeliveryApiV1DeliveriesDeliveryIdGetValidateBeforeCall(deliveryId, null);
+    public ApiResponse<DeliveryResponse> getDeliveryWithHttpInfo(String deliveryId) throws ApiException {
+        okhttp3.Call localVarCall = getDeliveryValidateBeforeCall(deliveryId, null);
         Type localVarReturnType = new TypeToken<DeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -193,15 +193,15 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeliveryApiV1DeliveriesDeliveryIdGetAsync(String deliveryId, final ApiCallback<DeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call getDeliveryAsync(String deliveryId, final ApiCallback<DeliveryResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDeliveryApiV1DeliveriesDeliveryIdGetValidateBeforeCall(deliveryId, _callback);
+        okhttp3.Call localVarCall = getDeliveryValidateBeforeCall(deliveryId, _callback);
         Type localVarReturnType = new TypeToken<DeliveryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for retryDeliveryApiV1DeliveriesDeliveryIdRetryPost
+     * Build call for retryDelivery
      * @param deliveryId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -213,7 +213,7 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retryDeliveryApiV1DeliveriesDeliveryIdRetryPostCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call retryDeliveryCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,13 +259,13 @@ public class DeliveriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call retryDeliveryApiV1DeliveriesDeliveryIdRetryPostValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call retryDeliveryValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'deliveryId' is set
         if (deliveryId == null) {
-            throw new ApiException("Missing the required parameter 'deliveryId' when calling retryDeliveryApiV1DeliveriesDeliveryIdRetryPost(Async)");
+            throw new ApiException("Missing the required parameter 'deliveryId' when calling retryDelivery(Async)");
         }
 
-        return retryDeliveryApiV1DeliveriesDeliveryIdRetryPostCall(deliveryId, _callback);
+        return retryDeliveryCall(deliveryId, _callback);
 
     }
 
@@ -282,8 +282,8 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DeliveryResponse retryDeliveryApiV1DeliveriesDeliveryIdRetryPost(String deliveryId) throws ApiException {
-        ApiResponse<DeliveryResponse> localVarResp = retryDeliveryApiV1DeliveriesDeliveryIdRetryPostWithHttpInfo(deliveryId);
+    public DeliveryResponse retryDelivery(String deliveryId) throws ApiException {
+        ApiResponse<DeliveryResponse> localVarResp = retryDeliveryWithHttpInfo(deliveryId);
         return localVarResp.getData();
     }
 
@@ -300,8 +300,8 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeliveryResponse> retryDeliveryApiV1DeliveriesDeliveryIdRetryPostWithHttpInfo(String deliveryId) throws ApiException {
-        okhttp3.Call localVarCall = retryDeliveryApiV1DeliveriesDeliveryIdRetryPostValidateBeforeCall(deliveryId, null);
+    public ApiResponse<DeliveryResponse> retryDeliveryWithHttpInfo(String deliveryId) throws ApiException {
+        okhttp3.Call localVarCall = retryDeliveryValidateBeforeCall(deliveryId, null);
         Type localVarReturnType = new TypeToken<DeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -320,9 +320,9 @@ public class DeliveriesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retryDeliveryApiV1DeliveriesDeliveryIdRetryPostAsync(String deliveryId, final ApiCallback<DeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call retryDeliveryAsync(String deliveryId, final ApiCallback<DeliveryResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = retryDeliveryApiV1DeliveriesDeliveryIdRetryPostValidateBeforeCall(deliveryId, _callback);
+        okhttp3.Call localVarCall = retryDeliveryValidateBeforeCall(deliveryId, _callback);
         Type localVarReturnType = new TypeToken<DeliveryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

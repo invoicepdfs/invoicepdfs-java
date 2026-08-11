@@ -79,7 +79,7 @@ public class NumberingSequencesApi {
     }
 
     /**
-     * Build call for consumeNextApiV1NumberingSequencesSequenceIdNextPost
+     * Build call for consumeSequenceNumber
      * @param sequenceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,7 +91,7 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call consumeNextApiV1NumberingSequencesSequenceIdNextPostCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call consumeSequenceNumberCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,18 +137,18 @@ public class NumberingSequencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call consumeNextApiV1NumberingSequencesSequenceIdNextPostValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call consumeSequenceNumberValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sequenceId' is set
         if (sequenceId == null) {
-            throw new ApiException("Missing the required parameter 'sequenceId' when calling consumeNextApiV1NumberingSequencesSequenceIdNextPost(Async)");
+            throw new ApiException("Missing the required parameter 'sequenceId' when calling consumeSequenceNumber(Async)");
         }
 
-        return consumeNextApiV1NumberingSequencesSequenceIdNextPostCall(sequenceId, _callback);
+        return consumeSequenceNumberCall(sequenceId, _callback);
 
     }
 
     /**
-     * Consume Next
+     * Consume Sequence Number
      * Consume and return the next number, incrementing the counter.
      * @param sequenceId  (required)
      * @return NumberingSequenceResponse
@@ -160,13 +160,13 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NumberingSequenceResponse consumeNextApiV1NumberingSequencesSequenceIdNextPost(String sequenceId) throws ApiException {
-        ApiResponse<NumberingSequenceResponse> localVarResp = consumeNextApiV1NumberingSequencesSequenceIdNextPostWithHttpInfo(sequenceId);
+    public NumberingSequenceResponse consumeSequenceNumber(String sequenceId) throws ApiException {
+        ApiResponse<NumberingSequenceResponse> localVarResp = consumeSequenceNumberWithHttpInfo(sequenceId);
         return localVarResp.getData();
     }
 
     /**
-     * Consume Next
+     * Consume Sequence Number
      * Consume and return the next number, incrementing the counter.
      * @param sequenceId  (required)
      * @return ApiResponse&lt;NumberingSequenceResponse&gt;
@@ -178,14 +178,14 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NumberingSequenceResponse> consumeNextApiV1NumberingSequencesSequenceIdNextPostWithHttpInfo(String sequenceId) throws ApiException {
-        okhttp3.Call localVarCall = consumeNextApiV1NumberingSequencesSequenceIdNextPostValidateBeforeCall(sequenceId, null);
+    public ApiResponse<NumberingSequenceResponse> consumeSequenceNumberWithHttpInfo(String sequenceId) throws ApiException {
+        okhttp3.Call localVarCall = consumeSequenceNumberValidateBeforeCall(sequenceId, null);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Consume Next (asynchronously)
+     * Consume Sequence Number (asynchronously)
      * Consume and return the next number, incrementing the counter.
      * @param sequenceId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -198,15 +198,15 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call consumeNextApiV1NumberingSequencesSequenceIdNextPostAsync(String sequenceId, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
+    public okhttp3.Call consumeSequenceNumberAsync(String sequenceId, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = consumeNextApiV1NumberingSequencesSequenceIdNextPostValidateBeforeCall(sequenceId, _callback);
+        okhttp3.Call localVarCall = consumeSequenceNumberValidateBeforeCall(sequenceId, _callback);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createSequenceApiV1NumberingSequencesPost
+     * Build call for createSequence
      * @param numberingSequenceCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -218,7 +218,7 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSequenceApiV1NumberingSequencesPostCall(NumberingSequenceCreateRequest numberingSequenceCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSequenceCall(NumberingSequenceCreateRequest numberingSequenceCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -264,13 +264,13 @@ public class NumberingSequencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSequenceApiV1NumberingSequencesPostValidateBeforeCall(NumberingSequenceCreateRequest numberingSequenceCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSequenceValidateBeforeCall(NumberingSequenceCreateRequest numberingSequenceCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'numberingSequenceCreateRequest' is set
         if (numberingSequenceCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'numberingSequenceCreateRequest' when calling createSequenceApiV1NumberingSequencesPost(Async)");
+            throw new ApiException("Missing the required parameter 'numberingSequenceCreateRequest' when calling createSequence(Async)");
         }
 
-        return createSequenceApiV1NumberingSequencesPostCall(numberingSequenceCreateRequest, _callback);
+        return createSequenceCall(numberingSequenceCreateRequest, _callback);
 
     }
 
@@ -287,8 +287,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NumberingSequenceResponse createSequenceApiV1NumberingSequencesPost(NumberingSequenceCreateRequest numberingSequenceCreateRequest) throws ApiException {
-        ApiResponse<NumberingSequenceResponse> localVarResp = createSequenceApiV1NumberingSequencesPostWithHttpInfo(numberingSequenceCreateRequest);
+    public NumberingSequenceResponse createSequence(NumberingSequenceCreateRequest numberingSequenceCreateRequest) throws ApiException {
+        ApiResponse<NumberingSequenceResponse> localVarResp = createSequenceWithHttpInfo(numberingSequenceCreateRequest);
         return localVarResp.getData();
     }
 
@@ -305,8 +305,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NumberingSequenceResponse> createSequenceApiV1NumberingSequencesPostWithHttpInfo(NumberingSequenceCreateRequest numberingSequenceCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createSequenceApiV1NumberingSequencesPostValidateBeforeCall(numberingSequenceCreateRequest, null);
+    public ApiResponse<NumberingSequenceResponse> createSequenceWithHttpInfo(NumberingSequenceCreateRequest numberingSequenceCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createSequenceValidateBeforeCall(numberingSequenceCreateRequest, null);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -325,15 +325,15 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSequenceApiV1NumberingSequencesPostAsync(NumberingSequenceCreateRequest numberingSequenceCreateRequest, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
+    public okhttp3.Call createSequenceAsync(NumberingSequenceCreateRequest numberingSequenceCreateRequest, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createSequenceApiV1NumberingSequencesPostValidateBeforeCall(numberingSequenceCreateRequest, _callback);
+        okhttp3.Call localVarCall = createSequenceValidateBeforeCall(numberingSequenceCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteSequenceApiV1NumberingSequencesSequenceIdDelete
+     * Build call for deleteSequence
      * @param sequenceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -345,7 +345,7 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSequenceApiV1NumberingSequencesSequenceIdDeleteCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSequenceCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -391,13 +391,13 @@ public class NumberingSequencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSequenceApiV1NumberingSequencesSequenceIdDeleteValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSequenceValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sequenceId' is set
         if (sequenceId == null) {
-            throw new ApiException("Missing the required parameter 'sequenceId' when calling deleteSequenceApiV1NumberingSequencesSequenceIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'sequenceId' when calling deleteSequence(Async)");
         }
 
-        return deleteSequenceApiV1NumberingSequencesSequenceIdDeleteCall(sequenceId, _callback);
+        return deleteSequenceCall(sequenceId, _callback);
 
     }
 
@@ -414,8 +414,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteSequenceApiV1NumberingSequencesSequenceIdDelete(String sequenceId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteSequenceApiV1NumberingSequencesSequenceIdDeleteWithHttpInfo(sequenceId);
+    public SimpleBoolResponse deleteSequence(String sequenceId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteSequenceWithHttpInfo(sequenceId);
         return localVarResp.getData();
     }
 
@@ -432,8 +432,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteSequenceApiV1NumberingSequencesSequenceIdDeleteWithHttpInfo(String sequenceId) throws ApiException {
-        okhttp3.Call localVarCall = deleteSequenceApiV1NumberingSequencesSequenceIdDeleteValidateBeforeCall(sequenceId, null);
+    public ApiResponse<SimpleBoolResponse> deleteSequenceWithHttpInfo(String sequenceId) throws ApiException {
+        okhttp3.Call localVarCall = deleteSequenceValidateBeforeCall(sequenceId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -452,15 +452,15 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSequenceApiV1NumberingSequencesSequenceIdDeleteAsync(String sequenceId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteSequenceAsync(String sequenceId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteSequenceApiV1NumberingSequencesSequenceIdDeleteValidateBeforeCall(sequenceId, _callback);
+        okhttp3.Call localVarCall = deleteSequenceValidateBeforeCall(sequenceId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getSequenceApiV1NumberingSequencesSequenceIdGet
+     * Build call for getSequence
      * @param sequenceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -472,7 +472,7 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSequenceApiV1NumberingSequencesSequenceIdGetCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSequenceCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -518,13 +518,13 @@ public class NumberingSequencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSequenceApiV1NumberingSequencesSequenceIdGetValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSequenceValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sequenceId' is set
         if (sequenceId == null) {
-            throw new ApiException("Missing the required parameter 'sequenceId' when calling getSequenceApiV1NumberingSequencesSequenceIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'sequenceId' when calling getSequence(Async)");
         }
 
-        return getSequenceApiV1NumberingSequencesSequenceIdGetCall(sequenceId, _callback);
+        return getSequenceCall(sequenceId, _callback);
 
     }
 
@@ -541,8 +541,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NumberingSequenceResponse getSequenceApiV1NumberingSequencesSequenceIdGet(String sequenceId) throws ApiException {
-        ApiResponse<NumberingSequenceResponse> localVarResp = getSequenceApiV1NumberingSequencesSequenceIdGetWithHttpInfo(sequenceId);
+    public NumberingSequenceResponse getSequence(String sequenceId) throws ApiException {
+        ApiResponse<NumberingSequenceResponse> localVarResp = getSequenceWithHttpInfo(sequenceId);
         return localVarResp.getData();
     }
 
@@ -559,8 +559,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NumberingSequenceResponse> getSequenceApiV1NumberingSequencesSequenceIdGetWithHttpInfo(String sequenceId) throws ApiException {
-        okhttp3.Call localVarCall = getSequenceApiV1NumberingSequencesSequenceIdGetValidateBeforeCall(sequenceId, null);
+    public ApiResponse<NumberingSequenceResponse> getSequenceWithHttpInfo(String sequenceId) throws ApiException {
+        okhttp3.Call localVarCall = getSequenceValidateBeforeCall(sequenceId, null);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -579,15 +579,15 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSequenceApiV1NumberingSequencesSequenceIdGetAsync(String sequenceId, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
+    public okhttp3.Call getSequenceAsync(String sequenceId, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSequenceApiV1NumberingSequencesSequenceIdGetValidateBeforeCall(sequenceId, _callback);
+        okhttp3.Call localVarCall = getSequenceValidateBeforeCall(sequenceId, _callback);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listSequencesApiV1NumberingSequencesGet
+     * Build call for listSequences
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -600,7 +600,7 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSequencesApiV1NumberingSequencesGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSequencesCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -653,8 +653,8 @@ public class NumberingSequencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSequencesApiV1NumberingSequencesGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listSequencesApiV1NumberingSequencesGetCall(limit, cursor, _callback);
+    private okhttp3.Call listSequencesValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listSequencesCall(limit, cursor, _callback);
 
     }
 
@@ -672,8 +672,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NumberingSequencesListResponse listSequencesApiV1NumberingSequencesGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<NumberingSequencesListResponse> localVarResp = listSequencesApiV1NumberingSequencesGetWithHttpInfo(limit, cursor);
+    public NumberingSequencesListResponse listSequences(Integer limit, String cursor) throws ApiException {
+        ApiResponse<NumberingSequencesListResponse> localVarResp = listSequencesWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -691,8 +691,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NumberingSequencesListResponse> listSequencesApiV1NumberingSequencesGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listSequencesApiV1NumberingSequencesGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<NumberingSequencesListResponse> listSequencesWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listSequencesValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<NumberingSequencesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -712,15 +712,15 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSequencesApiV1NumberingSequencesGetAsync(Integer limit, String cursor, final ApiCallback<NumberingSequencesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listSequencesAsync(Integer limit, String cursor, final ApiCallback<NumberingSequencesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listSequencesApiV1NumberingSequencesGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listSequencesValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<NumberingSequencesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost
+     * Build call for previewSequence
      * @param sequenceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -732,7 +732,7 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call previewSequenceCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -778,13 +778,13 @@ public class NumberingSequencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call previewSequenceValidateBeforeCall(String sequenceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sequenceId' is set
         if (sequenceId == null) {
-            throw new ApiException("Missing the required parameter 'sequenceId' when calling previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost(Async)");
+            throw new ApiException("Missing the required parameter 'sequenceId' when calling previewSequence(Async)");
         }
 
-        return previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostCall(sequenceId, _callback);
+        return previewSequenceCall(sequenceId, _callback);
 
     }
 
@@ -801,8 +801,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NumberingSequencePreviewResponse previewSequenceApiV1NumberingSequencesSequenceIdPreviewPost(String sequenceId) throws ApiException {
-        ApiResponse<NumberingSequencePreviewResponse> localVarResp = previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostWithHttpInfo(sequenceId);
+    public NumberingSequencePreviewResponse previewSequence(String sequenceId) throws ApiException {
+        ApiResponse<NumberingSequencePreviewResponse> localVarResp = previewSequenceWithHttpInfo(sequenceId);
         return localVarResp.getData();
     }
 
@@ -819,8 +819,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NumberingSequencePreviewResponse> previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostWithHttpInfo(String sequenceId) throws ApiException {
-        okhttp3.Call localVarCall = previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostValidateBeforeCall(sequenceId, null);
+    public ApiResponse<NumberingSequencePreviewResponse> previewSequenceWithHttpInfo(String sequenceId) throws ApiException {
+        okhttp3.Call localVarCall = previewSequenceValidateBeforeCall(sequenceId, null);
         Type localVarReturnType = new TypeToken<NumberingSequencePreviewResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -839,15 +839,15 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostAsync(String sequenceId, final ApiCallback<NumberingSequencePreviewResponse> _callback) throws ApiException {
+    public okhttp3.Call previewSequenceAsync(String sequenceId, final ApiCallback<NumberingSequencePreviewResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = previewSequenceApiV1NumberingSequencesSequenceIdPreviewPostValidateBeforeCall(sequenceId, _callback);
+        okhttp3.Call localVarCall = previewSequenceValidateBeforeCall(sequenceId, _callback);
         Type localVarReturnType = new TypeToken<NumberingSequencePreviewResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for updateSequenceApiV1NumberingSequencesSequenceIdPatch
+     * Build call for updateSequence
      * @param sequenceId  (required)
      * @param numberingSequencePatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -860,7 +860,7 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSequenceApiV1NumberingSequencesSequenceIdPatchCall(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSequenceCall(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -907,18 +907,18 @@ public class NumberingSequencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSequenceApiV1NumberingSequencesSequenceIdPatchValidateBeforeCall(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSequenceValidateBeforeCall(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sequenceId' is set
         if (sequenceId == null) {
-            throw new ApiException("Missing the required parameter 'sequenceId' when calling updateSequenceApiV1NumberingSequencesSequenceIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'sequenceId' when calling updateSequence(Async)");
         }
 
         // verify the required parameter 'numberingSequencePatchRequest' is set
         if (numberingSequencePatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'numberingSequencePatchRequest' when calling updateSequenceApiV1NumberingSequencesSequenceIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'numberingSequencePatchRequest' when calling updateSequence(Async)");
         }
 
-        return updateSequenceApiV1NumberingSequencesSequenceIdPatchCall(sequenceId, numberingSequencePatchRequest, _callback);
+        return updateSequenceCall(sequenceId, numberingSequencePatchRequest, _callback);
 
     }
 
@@ -936,8 +936,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NumberingSequenceResponse updateSequenceApiV1NumberingSequencesSequenceIdPatch(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest) throws ApiException {
-        ApiResponse<NumberingSequenceResponse> localVarResp = updateSequenceApiV1NumberingSequencesSequenceIdPatchWithHttpInfo(sequenceId, numberingSequencePatchRequest);
+    public NumberingSequenceResponse updateSequence(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest) throws ApiException {
+        ApiResponse<NumberingSequenceResponse> localVarResp = updateSequenceWithHttpInfo(sequenceId, numberingSequencePatchRequest);
         return localVarResp.getData();
     }
 
@@ -955,8 +955,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NumberingSequenceResponse> updateSequenceApiV1NumberingSequencesSequenceIdPatchWithHttpInfo(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateSequenceApiV1NumberingSequencesSequenceIdPatchValidateBeforeCall(sequenceId, numberingSequencePatchRequest, null);
+    public ApiResponse<NumberingSequenceResponse> updateSequenceWithHttpInfo(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateSequenceValidateBeforeCall(sequenceId, numberingSequencePatchRequest, null);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -976,9 +976,9 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSequenceApiV1NumberingSequencesSequenceIdPatchAsync(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
+    public okhttp3.Call updateSequenceAsync(String sequenceId, NumberingSequencePatchRequest numberingSequencePatchRequest, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateSequenceApiV1NumberingSequencesSequenceIdPatchValidateBeforeCall(sequenceId, numberingSequencePatchRequest, _callback);
+        okhttp3.Call localVarCall = updateSequenceValidateBeforeCall(sequenceId, numberingSequencePatchRequest, _callback);
         Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -81,7 +81,7 @@ public class WebhooksApi {
     }
 
     /**
-     * Build call for createWebhookEndpointApiV1WebhookEndpointsPost
+     * Build call for createWebhookEndpoint
      * @param webhookEndpointCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -93,7 +93,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookEndpointApiV1WebhookEndpointsPostCall(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWebhookEndpointCall(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,13 +139,13 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWebhookEndpointApiV1WebhookEndpointsPostValidateBeforeCall(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWebhookEndpointValidateBeforeCall(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookEndpointCreateRequest' is set
         if (webhookEndpointCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'webhookEndpointCreateRequest' when calling createWebhookEndpointApiV1WebhookEndpointsPost(Async)");
+            throw new ApiException("Missing the required parameter 'webhookEndpointCreateRequest' when calling createWebhookEndpoint(Async)");
         }
 
-        return createWebhookEndpointApiV1WebhookEndpointsPostCall(webhookEndpointCreateRequest, _callback);
+        return createWebhookEndpointCall(webhookEndpointCreateRequest, _callback);
 
     }
 
@@ -162,8 +162,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookEndpointResponse createWebhookEndpointApiV1WebhookEndpointsPost(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
-        ApiResponse<WebhookEndpointResponse> localVarResp = createWebhookEndpointApiV1WebhookEndpointsPostWithHttpInfo(webhookEndpointCreateRequest);
+    public WebhookEndpointResponse createWebhookEndpoint(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
+        ApiResponse<WebhookEndpointResponse> localVarResp = createWebhookEndpointWithHttpInfo(webhookEndpointCreateRequest);
         return localVarResp.getData();
     }
 
@@ -180,8 +180,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookEndpointResponse> createWebhookEndpointApiV1WebhookEndpointsPostWithHttpInfo(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createWebhookEndpointApiV1WebhookEndpointsPostValidateBeforeCall(webhookEndpointCreateRequest, null);
+    public ApiResponse<WebhookEndpointResponse> createWebhookEndpointWithHttpInfo(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createWebhookEndpointValidateBeforeCall(webhookEndpointCreateRequest, null);
         Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -200,15 +200,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookEndpointApiV1WebhookEndpointsPostAsync(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback<WebhookEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call createWebhookEndpointAsync(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback<WebhookEndpointResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createWebhookEndpointApiV1WebhookEndpointsPostValidateBeforeCall(webhookEndpointCreateRequest, _callback);
+        okhttp3.Call localVarCall = createWebhookEndpointValidateBeforeCall(webhookEndpointCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete
+     * Build call for deleteWebhookEndpoint
      * @param endpointId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -220,7 +220,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWebhookEndpointCall(String endpointId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -266,13 +266,13 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookEndpointValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'endpointId' is set
         if (endpointId == null) {
-            throw new ApiException("Missing the required parameter 'endpointId' when calling deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'endpointId' when calling deleteWebhookEndpoint(Async)");
         }
 
-        return deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteCall(endpointId, _callback);
+        return deleteWebhookEndpointCall(endpointId, _callback);
 
     }
 
@@ -289,8 +289,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete(String endpointId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteWithHttpInfo(endpointId);
+    public SimpleBoolResponse deleteWebhookEndpoint(String endpointId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteWebhookEndpointWithHttpInfo(endpointId);
         return localVarResp.getData();
     }
 
@@ -307,8 +307,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteWithHttpInfo(String endpointId) throws ApiException {
-        okhttp3.Call localVarCall = deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteValidateBeforeCall(endpointId, null);
+    public ApiResponse<SimpleBoolResponse> deleteWebhookEndpointWithHttpInfo(String endpointId) throws ApiException {
+        okhttp3.Call localVarCall = deleteWebhookEndpointValidateBeforeCall(endpointId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -327,15 +327,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteAsync(String endpointId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteWebhookEndpointAsync(String endpointId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDeleteValidateBeforeCall(endpointId, _callback);
+        okhttp3.Call localVarCall = deleteWebhookEndpointValidateBeforeCall(endpointId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet
+     * Build call for getWebhookDelivery
      * @param deliveryId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -347,7 +347,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhookDeliveryCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -393,13 +393,13 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhookDeliveryValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'deliveryId' is set
         if (deliveryId == null) {
-            throw new ApiException("Missing the required parameter 'deliveryId' when calling getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'deliveryId' when calling getWebhookDelivery(Async)");
         }
 
-        return getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetCall(deliveryId, _callback);
+        return getWebhookDeliveryCall(deliveryId, _callback);
 
     }
 
@@ -416,8 +416,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookDeliveryResponse getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet(String deliveryId) throws ApiException {
-        ApiResponse<WebhookDeliveryResponse> localVarResp = getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetWithHttpInfo(deliveryId);
+    public WebhookDeliveryResponse getWebhookDelivery(String deliveryId) throws ApiException {
+        ApiResponse<WebhookDeliveryResponse> localVarResp = getWebhookDeliveryWithHttpInfo(deliveryId);
         return localVarResp.getData();
     }
 
@@ -434,8 +434,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookDeliveryResponse> getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetWithHttpInfo(String deliveryId) throws ApiException {
-        okhttp3.Call localVarCall = getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetValidateBeforeCall(deliveryId, null);
+    public ApiResponse<WebhookDeliveryResponse> getWebhookDeliveryWithHttpInfo(String deliveryId) throws ApiException {
+        okhttp3.Call localVarCall = getWebhookDeliveryValidateBeforeCall(deliveryId, null);
         Type localVarReturnType = new TypeToken<WebhookDeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -454,15 +454,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetAsync(String deliveryId, final ApiCallback<WebhookDeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call getWebhookDeliveryAsync(String deliveryId, final ApiCallback<WebhookDeliveryResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGetValidateBeforeCall(deliveryId, _callback);
+        okhttp3.Call localVarCall = getWebhookDeliveryValidateBeforeCall(deliveryId, _callback);
         Type localVarReturnType = new TypeToken<WebhookDeliveryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet
+     * Build call for getWebhookEndpoint
      * @param endpointId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -474,7 +474,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhookEndpointCall(String endpointId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -520,13 +520,13 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhookEndpointValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'endpointId' is set
         if (endpointId == null) {
-            throw new ApiException("Missing the required parameter 'endpointId' when calling getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'endpointId' when calling getWebhookEndpoint(Async)");
         }
 
-        return getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetCall(endpointId, _callback);
+        return getWebhookEndpointCall(endpointId, _callback);
 
     }
 
@@ -543,8 +543,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookEndpointResponse getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet(String endpointId) throws ApiException {
-        ApiResponse<WebhookEndpointResponse> localVarResp = getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetWithHttpInfo(endpointId);
+    public WebhookEndpointResponse getWebhookEndpoint(String endpointId) throws ApiException {
+        ApiResponse<WebhookEndpointResponse> localVarResp = getWebhookEndpointWithHttpInfo(endpointId);
         return localVarResp.getData();
     }
 
@@ -561,8 +561,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookEndpointResponse> getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetWithHttpInfo(String endpointId) throws ApiException {
-        okhttp3.Call localVarCall = getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetValidateBeforeCall(endpointId, null);
+    public ApiResponse<WebhookEndpointResponse> getWebhookEndpointWithHttpInfo(String endpointId) throws ApiException {
+        okhttp3.Call localVarCall = getWebhookEndpointValidateBeforeCall(endpointId, null);
         Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -581,15 +581,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetAsync(String endpointId, final ApiCallback<WebhookEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call getWebhookEndpointAsync(String endpointId, final ApiCallback<WebhookEndpointResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getWebhookEndpointApiV1WebhookEndpointsEndpointIdGetValidateBeforeCall(endpointId, _callback);
+        okhttp3.Call localVarCall = getWebhookEndpointValidateBeforeCall(endpointId, _callback);
         Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listWebhookDeliveriesApiV1WebhookDeliveriesGet
+     * Build call for listWebhookDeliveries
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -602,7 +602,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhookDeliveriesApiV1WebhookDeliveriesGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWebhookDeliveriesCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -655,8 +655,8 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWebhookDeliveriesApiV1WebhookDeliveriesGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listWebhookDeliveriesApiV1WebhookDeliveriesGetCall(limit, cursor, _callback);
+    private okhttp3.Call listWebhookDeliveriesValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listWebhookDeliveriesCall(limit, cursor, _callback);
 
     }
 
@@ -674,8 +674,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookDeliveriesListResponse listWebhookDeliveriesApiV1WebhookDeliveriesGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<WebhookDeliveriesListResponse> localVarResp = listWebhookDeliveriesApiV1WebhookDeliveriesGetWithHttpInfo(limit, cursor);
+    public WebhookDeliveriesListResponse listWebhookDeliveries(Integer limit, String cursor) throws ApiException {
+        ApiResponse<WebhookDeliveriesListResponse> localVarResp = listWebhookDeliveriesWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -693,8 +693,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookDeliveriesListResponse> listWebhookDeliveriesApiV1WebhookDeliveriesGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listWebhookDeliveriesApiV1WebhookDeliveriesGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<WebhookDeliveriesListResponse> listWebhookDeliveriesWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listWebhookDeliveriesValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<WebhookDeliveriesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -714,15 +714,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhookDeliveriesApiV1WebhookDeliveriesGetAsync(Integer limit, String cursor, final ApiCallback<WebhookDeliveriesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listWebhookDeliveriesAsync(Integer limit, String cursor, final ApiCallback<WebhookDeliveriesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listWebhookDeliveriesApiV1WebhookDeliveriesGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listWebhookDeliveriesValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<WebhookDeliveriesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listWebhookEndpointsApiV1WebhookEndpointsGet
+     * Build call for listWebhookEndpoints
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -735,7 +735,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhookEndpointsApiV1WebhookEndpointsGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWebhookEndpointsCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -788,8 +788,8 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWebhookEndpointsApiV1WebhookEndpointsGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listWebhookEndpointsApiV1WebhookEndpointsGetCall(limit, cursor, _callback);
+    private okhttp3.Call listWebhookEndpointsValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listWebhookEndpointsCall(limit, cursor, _callback);
 
     }
 
@@ -807,8 +807,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookEndpointsListResponse listWebhookEndpointsApiV1WebhookEndpointsGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<WebhookEndpointsListResponse> localVarResp = listWebhookEndpointsApiV1WebhookEndpointsGetWithHttpInfo(limit, cursor);
+    public WebhookEndpointsListResponse listWebhookEndpoints(Integer limit, String cursor) throws ApiException {
+        ApiResponse<WebhookEndpointsListResponse> localVarResp = listWebhookEndpointsWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -826,8 +826,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookEndpointsListResponse> listWebhookEndpointsApiV1WebhookEndpointsGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listWebhookEndpointsApiV1WebhookEndpointsGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<WebhookEndpointsListResponse> listWebhookEndpointsWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listWebhookEndpointsValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<WebhookEndpointsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -847,15 +847,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhookEndpointsApiV1WebhookEndpointsGetAsync(Integer limit, String cursor, final ApiCallback<WebhookEndpointsListResponse> _callback) throws ApiException {
+    public okhttp3.Call listWebhookEndpointsAsync(Integer limit, String cursor, final ApiCallback<WebhookEndpointsListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listWebhookEndpointsApiV1WebhookEndpointsGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listWebhookEndpointsValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<WebhookEndpointsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost
+     * Build call for retryWebhookDelivery
      * @param deliveryId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -867,7 +867,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call retryWebhookDeliveryCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -913,13 +913,13 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call retryWebhookDeliveryValidateBeforeCall(String deliveryId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'deliveryId' is set
         if (deliveryId == null) {
-            throw new ApiException("Missing the required parameter 'deliveryId' when calling retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost(Async)");
+            throw new ApiException("Missing the required parameter 'deliveryId' when calling retryWebhookDelivery(Async)");
         }
 
-        return retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostCall(deliveryId, _callback);
+        return retryWebhookDeliveryCall(deliveryId, _callback);
 
     }
 
@@ -936,8 +936,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookDeliveryResponse retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost(String deliveryId) throws ApiException {
-        ApiResponse<WebhookDeliveryResponse> localVarResp = retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostWithHttpInfo(deliveryId);
+    public WebhookDeliveryResponse retryWebhookDelivery(String deliveryId) throws ApiException {
+        ApiResponse<WebhookDeliveryResponse> localVarResp = retryWebhookDeliveryWithHttpInfo(deliveryId);
         return localVarResp.getData();
     }
 
@@ -954,8 +954,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookDeliveryResponse> retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostWithHttpInfo(String deliveryId) throws ApiException {
-        okhttp3.Call localVarCall = retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostValidateBeforeCall(deliveryId, null);
+    public ApiResponse<WebhookDeliveryResponse> retryWebhookDeliveryWithHttpInfo(String deliveryId) throws ApiException {
+        okhttp3.Call localVarCall = retryWebhookDeliveryValidateBeforeCall(deliveryId, null);
         Type localVarReturnType = new TypeToken<WebhookDeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -974,15 +974,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostAsync(String deliveryId, final ApiCallback<WebhookDeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call retryWebhookDeliveryAsync(String deliveryId, final ApiCallback<WebhookDeliveryResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPostValidateBeforeCall(deliveryId, _callback);
+        okhttp3.Call localVarCall = retryWebhookDeliveryValidateBeforeCall(deliveryId, _callback);
         Type localVarReturnType = new TypeToken<WebhookDeliveryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost
+     * Build call for rotateWebhookSecret
      * @param endpointId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -994,7 +994,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call rotateWebhookSecretCall(String endpointId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1040,13 +1040,13 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call rotateWebhookSecretValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'endpointId' is set
         if (endpointId == null) {
-            throw new ApiException("Missing the required parameter 'endpointId' when calling rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost(Async)");
+            throw new ApiException("Missing the required parameter 'endpointId' when calling rotateWebhookSecret(Async)");
         }
 
-        return rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostCall(endpointId, _callback);
+        return rotateWebhookSecretCall(endpointId, _callback);
 
     }
 
@@ -1063,8 +1063,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookSecretResponse rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost(String endpointId) throws ApiException {
-        ApiResponse<WebhookSecretResponse> localVarResp = rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostWithHttpInfo(endpointId);
+    public WebhookSecretResponse rotateWebhookSecret(String endpointId) throws ApiException {
+        ApiResponse<WebhookSecretResponse> localVarResp = rotateWebhookSecretWithHttpInfo(endpointId);
         return localVarResp.getData();
     }
 
@@ -1081,8 +1081,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookSecretResponse> rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostWithHttpInfo(String endpointId) throws ApiException {
-        okhttp3.Call localVarCall = rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostValidateBeforeCall(endpointId, null);
+    public ApiResponse<WebhookSecretResponse> rotateWebhookSecretWithHttpInfo(String endpointId) throws ApiException {
+        okhttp3.Call localVarCall = rotateWebhookSecretValidateBeforeCall(endpointId, null);
         Type localVarReturnType = new TypeToken<WebhookSecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1101,15 +1101,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostAsync(String endpointId, final ApiCallback<WebhookSecretResponse> _callback) throws ApiException {
+    public okhttp3.Call rotateWebhookSecretAsync(String endpointId, final ApiCallback<WebhookSecretResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPostValidateBeforeCall(endpointId, _callback);
+        okhttp3.Call localVarCall = rotateWebhookSecretValidateBeforeCall(endpointId, _callback);
         Type localVarReturnType = new TypeToken<WebhookSecretResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost
+     * Build call for testWebhookEndpoint
      * @param endpointId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1121,7 +1121,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call testWebhookEndpointCall(String endpointId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1167,13 +1167,13 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call testWebhookEndpointValidateBeforeCall(String endpointId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'endpointId' is set
         if (endpointId == null) {
-            throw new ApiException("Missing the required parameter 'endpointId' when calling testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost(Async)");
+            throw new ApiException("Missing the required parameter 'endpointId' when calling testWebhookEndpoint(Async)");
         }
 
-        return testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostCall(endpointId, _callback);
+        return testWebhookEndpointCall(endpointId, _callback);
 
     }
 
@@ -1190,8 +1190,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookDeliveryResponse testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost(String endpointId) throws ApiException {
-        ApiResponse<WebhookDeliveryResponse> localVarResp = testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostWithHttpInfo(endpointId);
+    public WebhookDeliveryResponse testWebhookEndpoint(String endpointId) throws ApiException {
+        ApiResponse<WebhookDeliveryResponse> localVarResp = testWebhookEndpointWithHttpInfo(endpointId);
         return localVarResp.getData();
     }
 
@@ -1208,8 +1208,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookDeliveryResponse> testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostWithHttpInfo(String endpointId) throws ApiException {
-        okhttp3.Call localVarCall = testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostValidateBeforeCall(endpointId, null);
+    public ApiResponse<WebhookDeliveryResponse> testWebhookEndpointWithHttpInfo(String endpointId) throws ApiException {
+        okhttp3.Call localVarCall = testWebhookEndpointValidateBeforeCall(endpointId, null);
         Type localVarReturnType = new TypeToken<WebhookDeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1228,15 +1228,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostAsync(String endpointId, final ApiCallback<WebhookDeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call testWebhookEndpointAsync(String endpointId, final ApiCallback<WebhookDeliveryResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPostValidateBeforeCall(endpointId, _callback);
+        okhttp3.Call localVarCall = testWebhookEndpointValidateBeforeCall(endpointId, _callback);
         Type localVarReturnType = new TypeToken<WebhookDeliveryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch
+     * Build call for updateWebhookEndpoint
      * @param endpointId  (required)
      * @param webhookEndpointPatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -1249,7 +1249,7 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchCall(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWebhookEndpointCall(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1296,18 +1296,18 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchValidateBeforeCall(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWebhookEndpointValidateBeforeCall(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'endpointId' is set
         if (endpointId == null) {
-            throw new ApiException("Missing the required parameter 'endpointId' when calling updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'endpointId' when calling updateWebhookEndpoint(Async)");
         }
 
         // verify the required parameter 'webhookEndpointPatchRequest' is set
         if (webhookEndpointPatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'webhookEndpointPatchRequest' when calling updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'webhookEndpointPatchRequest' when calling updateWebhookEndpoint(Async)");
         }
 
-        return updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchCall(endpointId, webhookEndpointPatchRequest, _callback);
+        return updateWebhookEndpointCall(endpointId, webhookEndpointPatchRequest, _callback);
 
     }
 
@@ -1325,8 +1325,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookEndpointResponse updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest) throws ApiException {
-        ApiResponse<WebhookEndpointResponse> localVarResp = updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchWithHttpInfo(endpointId, webhookEndpointPatchRequest);
+    public WebhookEndpointResponse updateWebhookEndpoint(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest) throws ApiException {
+        ApiResponse<WebhookEndpointResponse> localVarResp = updateWebhookEndpointWithHttpInfo(endpointId, webhookEndpointPatchRequest);
         return localVarResp.getData();
     }
 
@@ -1344,8 +1344,8 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookEndpointResponse> updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchWithHttpInfo(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchValidateBeforeCall(endpointId, webhookEndpointPatchRequest, null);
+    public ApiResponse<WebhookEndpointResponse> updateWebhookEndpointWithHttpInfo(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateWebhookEndpointValidateBeforeCall(endpointId, webhookEndpointPatchRequest, null);
         Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1365,9 +1365,9 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchAsync(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest, final ApiCallback<WebhookEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call updateWebhookEndpointAsync(String endpointId, WebhookEndpointPatchRequest webhookEndpointPatchRequest, final ApiCallback<WebhookEndpointResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatchValidateBeforeCall(endpointId, webhookEndpointPatchRequest, _callback);
+        okhttp3.Call localVarCall = updateWebhookEndpointValidateBeforeCall(endpointId, webhookEndpointPatchRequest, _callback);
         Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

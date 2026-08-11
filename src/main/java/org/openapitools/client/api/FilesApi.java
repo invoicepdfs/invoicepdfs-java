@@ -76,7 +76,7 @@ public class FilesApi {
     }
 
     /**
-     * Build call for deleteFileApiV1FilesFileIdDelete
+     * Build call for deleteFile
      * @param fileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -88,7 +88,7 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFileApiV1FilesFileIdDeleteCall(String fileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFileCall(String fileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -134,13 +134,13 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFileApiV1FilesFileIdDeleteValidateBeforeCall(String fileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFileValidateBeforeCall(String fileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
-            throw new ApiException("Missing the required parameter 'fileId' when calling deleteFileApiV1FilesFileIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'fileId' when calling deleteFile(Async)");
         }
 
-        return deleteFileApiV1FilesFileIdDeleteCall(fileId, _callback);
+        return deleteFileCall(fileId, _callback);
 
     }
 
@@ -157,8 +157,8 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteFileApiV1FilesFileIdDelete(String fileId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteFileApiV1FilesFileIdDeleteWithHttpInfo(fileId);
+    public SimpleBoolResponse deleteFile(String fileId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteFileWithHttpInfo(fileId);
         return localVarResp.getData();
     }
 
@@ -175,8 +175,8 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteFileApiV1FilesFileIdDeleteWithHttpInfo(String fileId) throws ApiException {
-        okhttp3.Call localVarCall = deleteFileApiV1FilesFileIdDeleteValidateBeforeCall(fileId, null);
+    public ApiResponse<SimpleBoolResponse> deleteFileWithHttpInfo(String fileId) throws ApiException {
+        okhttp3.Call localVarCall = deleteFileValidateBeforeCall(fileId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -195,15 +195,15 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFileApiV1FilesFileIdDeleteAsync(String fileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteFileAsync(String fileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteFileApiV1FilesFileIdDeleteValidateBeforeCall(fileId, _callback);
+        okhttp3.Call localVarCall = deleteFileValidateBeforeCall(fileId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getFileApiV1FilesFileIdGet
+     * Build call for getFile
      * @param fileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -215,7 +215,7 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFileApiV1FilesFileIdGetCall(String fileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFileCall(String fileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -261,13 +261,13 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFileApiV1FilesFileIdGetValidateBeforeCall(String fileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFileValidateBeforeCall(String fileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
-            throw new ApiException("Missing the required parameter 'fileId' when calling getFileApiV1FilesFileIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'fileId' when calling getFile(Async)");
         }
 
-        return getFileApiV1FilesFileIdGetCall(fileId, _callback);
+        return getFileCall(fileId, _callback);
 
     }
 
@@ -284,8 +284,8 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public FileResponse getFileApiV1FilesFileIdGet(String fileId) throws ApiException {
-        ApiResponse<FileResponse> localVarResp = getFileApiV1FilesFileIdGetWithHttpInfo(fileId);
+    public FileResponse getFile(String fileId) throws ApiException {
+        ApiResponse<FileResponse> localVarResp = getFileWithHttpInfo(fileId);
         return localVarResp.getData();
     }
 
@@ -302,8 +302,8 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FileResponse> getFileApiV1FilesFileIdGetWithHttpInfo(String fileId) throws ApiException {
-        okhttp3.Call localVarCall = getFileApiV1FilesFileIdGetValidateBeforeCall(fileId, null);
+    public ApiResponse<FileResponse> getFileWithHttpInfo(String fileId) throws ApiException {
+        okhttp3.Call localVarCall = getFileValidateBeforeCall(fileId, null);
         Type localVarReturnType = new TypeToken<FileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -322,15 +322,15 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFileApiV1FilesFileIdGetAsync(String fileId, final ApiCallback<FileResponse> _callback) throws ApiException {
+    public okhttp3.Call getFileAsync(String fileId, final ApiCallback<FileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getFileApiV1FilesFileIdGetValidateBeforeCall(fileId, _callback);
+        okhttp3.Call localVarCall = getFileValidateBeforeCall(fileId, _callback);
         Type localVarReturnType = new TypeToken<FileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for uploadFileApiV1FilesPost
+     * Build call for uploadFile
      * @param _file  (required)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
@@ -343,7 +343,7 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadFileApiV1FilesPostCall(File _file, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadFileCall(File _file, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -397,13 +397,13 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadFileApiV1FilesPostValidateBeforeCall(File _file, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadFileValidateBeforeCall(File _file, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter '_file' is set
         if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling uploadFileApiV1FilesPost(Async)");
+            throw new ApiException("Missing the required parameter '_file' when calling uploadFile(Async)");
         }
 
-        return uploadFileApiV1FilesPostCall(_file, idempotencyKey, _callback);
+        return uploadFileCall(_file, idempotencyKey, _callback);
 
     }
 
@@ -421,8 +421,8 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public FileResponse uploadFileApiV1FilesPost(File _file, String idempotencyKey) throws ApiException {
-        ApiResponse<FileResponse> localVarResp = uploadFileApiV1FilesPostWithHttpInfo(_file, idempotencyKey);
+    public FileResponse uploadFile(File _file, String idempotencyKey) throws ApiException {
+        ApiResponse<FileResponse> localVarResp = uploadFileWithHttpInfo(_file, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -440,8 +440,8 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FileResponse> uploadFileApiV1FilesPostWithHttpInfo(File _file, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = uploadFileApiV1FilesPostValidateBeforeCall(_file, idempotencyKey, null);
+    public ApiResponse<FileResponse> uploadFileWithHttpInfo(File _file, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = uploadFileValidateBeforeCall(_file, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<FileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -461,9 +461,9 @@ public class FilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadFileApiV1FilesPostAsync(File _file, String idempotencyKey, final ApiCallback<FileResponse> _callback) throws ApiException {
+    public okhttp3.Call uploadFileAsync(File _file, String idempotencyKey, final ApiCallback<FileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = uploadFileApiV1FilesPostValidateBeforeCall(_file, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = uploadFileValidateBeforeCall(_file, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<FileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

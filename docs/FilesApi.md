@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteFileApiV1FilesFileIdDelete**](FilesApi.md#deleteFileApiV1FilesFileIdDelete) | **DELETE** /api/v1/files/{file_id} | Delete File |
-| [**getFileApiV1FilesFileIdGet**](FilesApi.md#getFileApiV1FilesFileIdGet) | **GET** /api/v1/files/{file_id} | Get File |
-| [**uploadFileApiV1FilesPost**](FilesApi.md#uploadFileApiV1FilesPost) | **POST** /api/v1/files | Upload File |
+| [**deleteFile**](FilesApi.md#deleteFile) | **DELETE** /api/v1/files/{file_id} | Delete File |
+| [**getFile**](FilesApi.md#getFile) | **GET** /api/v1/files/{file_id} | Get File |
+| [**uploadFile**](FilesApi.md#uploadFile) | **POST** /api/v1/files | Upload File |
 
 
-<a id="deleteFileApiV1FilesFileIdDelete"></a>
-# **deleteFileApiV1FilesFileIdDelete**
-> SimpleBoolResponse deleteFileApiV1FilesFileIdDelete(fileId)
+<a id="deleteFile"></a>
+# **deleteFile**
+> SimpleBoolResponse deleteFile(fileId)
 
 Delete File
 
@@ -37,10 +37,10 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteFileApiV1FilesFileIdDelete(fileId);
+      SimpleBoolResponse result = apiInstance.deleteFile(fileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FilesApi#deleteFileApiV1FilesFileIdDelete");
+      System.err.println("Exception when calling FilesApi#deleteFile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -75,9 +75,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getFileApiV1FilesFileIdGet"></a>
-# **getFileApiV1FilesFileIdGet**
-> FileResponse getFileApiV1FilesFileIdGet(fileId)
+<a id="getFile"></a>
+# **getFile**
+> FileResponse getFile(fileId)
 
 Get File
 
@@ -103,10 +103,10 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | 
     try {
-      FileResponse result = apiInstance.getFileApiV1FilesFileIdGet(fileId);
+      FileResponse result = apiInstance.getFile(fileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FilesApi#getFileApiV1FilesFileIdGet");
+      System.err.println("Exception when calling FilesApi#getFile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -141,9 +141,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="uploadFileApiV1FilesPost"></a>
-# **uploadFileApiV1FilesPost**
-> FileResponse uploadFileApiV1FilesPost(_file, idempotencyKey)
+<a id="uploadFile"></a>
+# **uploadFile**
+> FileResponse uploadFile(_file, idempotencyKey)
 
 Upload File
 
@@ -170,10 +170,10 @@ public class Example {
     File _file = new File("/path/to/file"); // File | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      FileResponse result = apiInstance.uploadFileApiV1FilesPost(_file, idempotencyKey);
+      FileResponse result = apiInstance.uploadFile(_file, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FilesApi#uploadFileApiV1FilesPost");
+      System.err.println("Exception when calling FilesApi#uploadFile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

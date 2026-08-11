@@ -80,7 +80,7 @@ public class ApiKeysApi {
     }
 
     /**
-     * Build call for createApiKeyApiV1ApiKeysPost
+     * Build call for createApiKey
      * @param apiKeyCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -92,7 +92,7 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createApiKeyApiV1ApiKeysPostCall(ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createApiKeyCall(ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,13 +138,13 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createApiKeyApiV1ApiKeysPostValidateBeforeCall(ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createApiKeyValidateBeforeCall(ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'apiKeyCreateRequest' is set
         if (apiKeyCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyCreateRequest' when calling createApiKeyApiV1ApiKeysPost(Async)");
+            throw new ApiException("Missing the required parameter 'apiKeyCreateRequest' when calling createApiKey(Async)");
         }
 
-        return createApiKeyApiV1ApiKeysPostCall(apiKeyCreateRequest, _callback);
+        return createApiKeyCall(apiKeyCreateRequest, _callback);
 
     }
 
@@ -161,8 +161,8 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyCreateResponse createApiKeyApiV1ApiKeysPost(ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
-        ApiResponse<ApiKeyCreateResponse> localVarResp = createApiKeyApiV1ApiKeysPostWithHttpInfo(apiKeyCreateRequest);
+    public ApiKeyCreateResponse createApiKey(ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
+        ApiResponse<ApiKeyCreateResponse> localVarResp = createApiKeyWithHttpInfo(apiKeyCreateRequest);
         return localVarResp.getData();
     }
 
@@ -179,8 +179,8 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyCreateResponse> createApiKeyApiV1ApiKeysPostWithHttpInfo(ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createApiKeyApiV1ApiKeysPostValidateBeforeCall(apiKeyCreateRequest, null);
+    public ApiResponse<ApiKeyCreateResponse> createApiKeyWithHttpInfo(ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createApiKeyValidateBeforeCall(apiKeyCreateRequest, null);
         Type localVarReturnType = new TypeToken<ApiKeyCreateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -199,15 +199,15 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createApiKeyApiV1ApiKeysPostAsync(ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback<ApiKeyCreateResponse> _callback) throws ApiException {
+    public okhttp3.Call createApiKeyAsync(ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback<ApiKeyCreateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createApiKeyApiV1ApiKeysPostValidateBeforeCall(apiKeyCreateRequest, _callback);
+        okhttp3.Call localVarCall = createApiKeyValidateBeforeCall(apiKeyCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyCreateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getApiKeyApiV1ApiKeysApiKeyIdGet
+     * Build call for getApiKey
      * @param apiKeyId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -219,7 +219,7 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApiKeyApiV1ApiKeysApiKeyIdGetCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getApiKeyCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -265,13 +265,13 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getApiKeyApiV1ApiKeysApiKeyIdGetValidateBeforeCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getApiKeyValidateBeforeCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'apiKeyId' is set
         if (apiKeyId == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyId' when calling getApiKeyApiV1ApiKeysApiKeyIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'apiKeyId' when calling getApiKey(Async)");
         }
 
-        return getApiKeyApiV1ApiKeysApiKeyIdGetCall(apiKeyId, _callback);
+        return getApiKeyCall(apiKeyId, _callback);
 
     }
 
@@ -288,8 +288,8 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyDetailResponse getApiKeyApiV1ApiKeysApiKeyIdGet(String apiKeyId) throws ApiException {
-        ApiResponse<ApiKeyDetailResponse> localVarResp = getApiKeyApiV1ApiKeysApiKeyIdGetWithHttpInfo(apiKeyId);
+    public ApiKeyDetailResponse getApiKey(String apiKeyId) throws ApiException {
+        ApiResponse<ApiKeyDetailResponse> localVarResp = getApiKeyWithHttpInfo(apiKeyId);
         return localVarResp.getData();
     }
 
@@ -306,8 +306,8 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyDetailResponse> getApiKeyApiV1ApiKeysApiKeyIdGetWithHttpInfo(String apiKeyId) throws ApiException {
-        okhttp3.Call localVarCall = getApiKeyApiV1ApiKeysApiKeyIdGetValidateBeforeCall(apiKeyId, null);
+    public ApiResponse<ApiKeyDetailResponse> getApiKeyWithHttpInfo(String apiKeyId) throws ApiException {
+        okhttp3.Call localVarCall = getApiKeyValidateBeforeCall(apiKeyId, null);
         Type localVarReturnType = new TypeToken<ApiKeyDetailResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -326,15 +326,15 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApiKeyApiV1ApiKeysApiKeyIdGetAsync(String apiKeyId, final ApiCallback<ApiKeyDetailResponse> _callback) throws ApiException {
+    public okhttp3.Call getApiKeyAsync(String apiKeyId, final ApiCallback<ApiKeyDetailResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getApiKeyApiV1ApiKeysApiKeyIdGetValidateBeforeCall(apiKeyId, _callback);
+        okhttp3.Call localVarCall = getApiKeyValidateBeforeCall(apiKeyId, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyDetailResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listApiKeysApiV1ApiKeysGet
+     * Build call for listApiKeys
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -344,7 +344,7 @@ public class ApiKeysApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listApiKeysApiV1ApiKeysGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listApiKeysCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -389,8 +389,8 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listApiKeysApiV1ApiKeysGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listApiKeysApiV1ApiKeysGetCall(_callback);
+    private okhttp3.Call listApiKeysValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listApiKeysCall(_callback);
 
     }
 
@@ -405,8 +405,8 @@ public class ApiKeysApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyListResponse listApiKeysApiV1ApiKeysGet() throws ApiException {
-        ApiResponse<ApiKeyListResponse> localVarResp = listApiKeysApiV1ApiKeysGetWithHttpInfo();
+    public ApiKeyListResponse listApiKeys() throws ApiException {
+        ApiResponse<ApiKeyListResponse> localVarResp = listApiKeysWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -421,8 +421,8 @@ public class ApiKeysApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyListResponse> listApiKeysApiV1ApiKeysGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listApiKeysApiV1ApiKeysGetValidateBeforeCall(null);
+    public ApiResponse<ApiKeyListResponse> listApiKeysWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listApiKeysValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<ApiKeyListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -439,15 +439,269 @@ public class ApiKeysApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listApiKeysApiV1ApiKeysGetAsync(final ApiCallback<ApiKeyListResponse> _callback) throws ApiException {
+    public okhttp3.Call listApiKeysAsync(final ApiCallback<ApiKeyListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listApiKeysApiV1ApiKeysGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listApiKeysValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<ApiKeyListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchApiKeyApiV1ApiKeysApiKeyIdPatch
+     * Build call for revokeApiKey
+     * @param apiKeyId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call revokeApiKeyCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/api-keys/{api_key_id}"
+            .replace("{" + "api_key_id" + "}", localVarApiClient.escapeString(apiKeyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call revokeApiKeyValidateBeforeCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'apiKeyId' is set
+        if (apiKeyId == null) {
+            throw new ApiException("Missing the required parameter 'apiKeyId' when calling revokeApiKey(Async)");
+        }
+
+        return revokeApiKeyCall(apiKeyId, _callback);
+
+    }
+
+    /**
+     * Revoke Api Key
+     * 
+     * @param apiKeyId  (required)
+     * @return ApiKeyRevokeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiKeyRevokeResponse revokeApiKey(String apiKeyId) throws ApiException {
+        ApiResponse<ApiKeyRevokeResponse> localVarResp = revokeApiKeyWithHttpInfo(apiKeyId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Revoke Api Key
+     * 
+     * @param apiKeyId  (required)
+     * @return ApiResponse&lt;ApiKeyRevokeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ApiKeyRevokeResponse> revokeApiKeyWithHttpInfo(String apiKeyId) throws ApiException {
+        okhttp3.Call localVarCall = revokeApiKeyValidateBeforeCall(apiKeyId, null);
+        Type localVarReturnType = new TypeToken<ApiKeyRevokeResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Revoke Api Key (asynchronously)
+     * 
+     * @param apiKeyId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call revokeApiKeyAsync(String apiKeyId, final ApiCallback<ApiKeyRevokeResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = revokeApiKeyValidateBeforeCall(apiKeyId, _callback);
+        Type localVarReturnType = new TypeToken<ApiKeyRevokeResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for rotateApiKey
+     * @param apiKeyId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call rotateApiKeyCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/api-keys/{api_key_id}/rotate"
+            .replace("{" + "api_key_id" + "}", localVarApiClient.escapeString(apiKeyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call rotateApiKeyValidateBeforeCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'apiKeyId' is set
+        if (apiKeyId == null) {
+            throw new ApiException("Missing the required parameter 'apiKeyId' when calling rotateApiKey(Async)");
+        }
+
+        return rotateApiKeyCall(apiKeyId, _callback);
+
+    }
+
+    /**
+     * Rotate Api Key
+     * Revoke the existing key and create a new one with the same name.
+     * @param apiKeyId  (required)
+     * @return ApiKeyRotateResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiKeyRotateResponse rotateApiKey(String apiKeyId) throws ApiException {
+        ApiResponse<ApiKeyRotateResponse> localVarResp = rotateApiKeyWithHttpInfo(apiKeyId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Rotate Api Key
+     * Revoke the existing key and create a new one with the same name.
+     * @param apiKeyId  (required)
+     * @return ApiResponse&lt;ApiKeyRotateResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ApiKeyRotateResponse> rotateApiKeyWithHttpInfo(String apiKeyId) throws ApiException {
+        okhttp3.Call localVarCall = rotateApiKeyValidateBeforeCall(apiKeyId, null);
+        Type localVarReturnType = new TypeToken<ApiKeyRotateResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Rotate Api Key (asynchronously)
+     * Revoke the existing key and create a new one with the same name.
+     * @param apiKeyId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call rotateApiKeyAsync(String apiKeyId, final ApiCallback<ApiKeyRotateResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = rotateApiKeyValidateBeforeCall(apiKeyId, _callback);
+        Type localVarReturnType = new TypeToken<ApiKeyRotateResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateApiKey
      * @param apiKeyId  (required)
      * @param apiKeyPatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -460,7 +714,7 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApiKeyApiV1ApiKeysApiKeyIdPatchCall(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateApiKeyCall(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -507,23 +761,23 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchApiKeyApiV1ApiKeysApiKeyIdPatchValidateBeforeCall(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateApiKeyValidateBeforeCall(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'apiKeyId' is set
         if (apiKeyId == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyId' when calling patchApiKeyApiV1ApiKeysApiKeyIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'apiKeyId' when calling updateApiKey(Async)");
         }
 
         // verify the required parameter 'apiKeyPatchRequest' is set
         if (apiKeyPatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyPatchRequest' when calling patchApiKeyApiV1ApiKeysApiKeyIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'apiKeyPatchRequest' when calling updateApiKey(Async)");
         }
 
-        return patchApiKeyApiV1ApiKeysApiKeyIdPatchCall(apiKeyId, apiKeyPatchRequest, _callback);
+        return updateApiKeyCall(apiKeyId, apiKeyPatchRequest, _callback);
 
     }
 
     /**
-     * Patch Api Key
+     * Update Api Key
      * 
      * @param apiKeyId  (required)
      * @param apiKeyPatchRequest  (required)
@@ -536,13 +790,13 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyDetailResponse patchApiKeyApiV1ApiKeysApiKeyIdPatch(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest) throws ApiException {
-        ApiResponse<ApiKeyDetailResponse> localVarResp = patchApiKeyApiV1ApiKeysApiKeyIdPatchWithHttpInfo(apiKeyId, apiKeyPatchRequest);
+    public ApiKeyDetailResponse updateApiKey(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest) throws ApiException {
+        ApiResponse<ApiKeyDetailResponse> localVarResp = updateApiKeyWithHttpInfo(apiKeyId, apiKeyPatchRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Patch Api Key
+     * Update Api Key
      * 
      * @param apiKeyId  (required)
      * @param apiKeyPatchRequest  (required)
@@ -555,14 +809,14 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyDetailResponse> patchApiKeyApiV1ApiKeysApiKeyIdPatchWithHttpInfo(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = patchApiKeyApiV1ApiKeysApiKeyIdPatchValidateBeforeCall(apiKeyId, apiKeyPatchRequest, null);
+    public ApiResponse<ApiKeyDetailResponse> updateApiKeyWithHttpInfo(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateApiKeyValidateBeforeCall(apiKeyId, apiKeyPatchRequest, null);
         Type localVarReturnType = new TypeToken<ApiKeyDetailResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Patch Api Key (asynchronously)
+     * Update Api Key (asynchronously)
      * 
      * @param apiKeyId  (required)
      * @param apiKeyPatchRequest  (required)
@@ -576,264 +830,10 @@ public class ApiKeysApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApiKeyApiV1ApiKeysApiKeyIdPatchAsync(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest, final ApiCallback<ApiKeyDetailResponse> _callback) throws ApiException {
+    public okhttp3.Call updateApiKeyAsync(String apiKeyId, ApiKeyPatchRequest apiKeyPatchRequest, final ApiCallback<ApiKeyDetailResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchApiKeyApiV1ApiKeysApiKeyIdPatchValidateBeforeCall(apiKeyId, apiKeyPatchRequest, _callback);
+        okhttp3.Call localVarCall = updateApiKeyValidateBeforeCall(apiKeyId, apiKeyPatchRequest, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyDetailResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for revokeApiKeyApiV1ApiKeysApiKeyIdDelete
-     * @param apiKeyId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call revokeApiKeyApiV1ApiKeysApiKeyIdDeleteCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/api-keys/{api_key_id}"
-            .replace("{" + "api_key_id" + "}", localVarApiClient.escapeString(apiKeyId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call revokeApiKeyApiV1ApiKeysApiKeyIdDeleteValidateBeforeCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'apiKeyId' is set
-        if (apiKeyId == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyId' when calling revokeApiKeyApiV1ApiKeysApiKeyIdDelete(Async)");
-        }
-
-        return revokeApiKeyApiV1ApiKeysApiKeyIdDeleteCall(apiKeyId, _callback);
-
-    }
-
-    /**
-     * Revoke Api Key
-     * 
-     * @param apiKeyId  (required)
-     * @return ApiKeyRevokeResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiKeyRevokeResponse revokeApiKeyApiV1ApiKeysApiKeyIdDelete(String apiKeyId) throws ApiException {
-        ApiResponse<ApiKeyRevokeResponse> localVarResp = revokeApiKeyApiV1ApiKeysApiKeyIdDeleteWithHttpInfo(apiKeyId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Revoke Api Key
-     * 
-     * @param apiKeyId  (required)
-     * @return ApiResponse&lt;ApiKeyRevokeResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ApiKeyRevokeResponse> revokeApiKeyApiV1ApiKeysApiKeyIdDeleteWithHttpInfo(String apiKeyId) throws ApiException {
-        okhttp3.Call localVarCall = revokeApiKeyApiV1ApiKeysApiKeyIdDeleteValidateBeforeCall(apiKeyId, null);
-        Type localVarReturnType = new TypeToken<ApiKeyRevokeResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Revoke Api Key (asynchronously)
-     * 
-     * @param apiKeyId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call revokeApiKeyApiV1ApiKeysApiKeyIdDeleteAsync(String apiKeyId, final ApiCallback<ApiKeyRevokeResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = revokeApiKeyApiV1ApiKeysApiKeyIdDeleteValidateBeforeCall(apiKeyId, _callback);
-        Type localVarReturnType = new TypeToken<ApiKeyRevokeResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for rotateApiKeyApiV1ApiKeysApiKeyIdRotatePost
-     * @param apiKeyId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/api-keys/{api_key_id}/rotate"
-            .replace("{" + "api_key_id" + "}", localVarApiClient.escapeString(apiKeyId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostValidateBeforeCall(String apiKeyId, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'apiKeyId' is set
-        if (apiKeyId == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyId' when calling rotateApiKeyApiV1ApiKeysApiKeyIdRotatePost(Async)");
-        }
-
-        return rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostCall(apiKeyId, _callback);
-
-    }
-
-    /**
-     * Rotate Api Key
-     * Revoke the existing key and create a new one with the same name.
-     * @param apiKeyId  (required)
-     * @return ApiKeyRotateResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiKeyRotateResponse rotateApiKeyApiV1ApiKeysApiKeyIdRotatePost(String apiKeyId) throws ApiException {
-        ApiResponse<ApiKeyRotateResponse> localVarResp = rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostWithHttpInfo(apiKeyId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Rotate Api Key
-     * Revoke the existing key and create a new one with the same name.
-     * @param apiKeyId  (required)
-     * @return ApiResponse&lt;ApiKeyRotateResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ApiKeyRotateResponse> rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostWithHttpInfo(String apiKeyId) throws ApiException {
-        okhttp3.Call localVarCall = rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostValidateBeforeCall(apiKeyId, null);
-        Type localVarReturnType = new TypeToken<ApiKeyRotateResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Rotate Api Key (asynchronously)
-     * Revoke the existing key and create a new one with the same name.
-     * @param apiKeyId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostAsync(String apiKeyId, final ApiCallback<ApiKeyRotateResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = rotateApiKeyApiV1ApiKeysApiKeyIdRotatePostValidateBeforeCall(apiKeyId, _callback);
-        Type localVarReturnType = new TypeToken<ApiKeyRotateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

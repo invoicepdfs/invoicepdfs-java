@@ -75,7 +75,7 @@ public class ImportsApi {
     }
 
     /**
-     * Build call for cancelImportApiV1ImportsImportIdCancelPost
+     * Build call for cancelImport
      * @param importId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -87,7 +87,7 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelImportApiV1ImportsImportIdCancelPostCall(String importId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelImportCall(String importId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,13 +133,13 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelImportApiV1ImportsImportIdCancelPostValidateBeforeCall(String importId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelImportValidateBeforeCall(String importId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'importId' is set
         if (importId == null) {
-            throw new ApiException("Missing the required parameter 'importId' when calling cancelImportApiV1ImportsImportIdCancelPost(Async)");
+            throw new ApiException("Missing the required parameter 'importId' when calling cancelImport(Async)");
         }
 
-        return cancelImportApiV1ImportsImportIdCancelPostCall(importId, _callback);
+        return cancelImportCall(importId, _callback);
 
     }
 
@@ -156,8 +156,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ImportResponse cancelImportApiV1ImportsImportIdCancelPost(String importId) throws ApiException {
-        ApiResponse<ImportResponse> localVarResp = cancelImportApiV1ImportsImportIdCancelPostWithHttpInfo(importId);
+    public ImportResponse cancelImport(String importId) throws ApiException {
+        ApiResponse<ImportResponse> localVarResp = cancelImportWithHttpInfo(importId);
         return localVarResp.getData();
     }
 
@@ -174,8 +174,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ImportResponse> cancelImportApiV1ImportsImportIdCancelPostWithHttpInfo(String importId) throws ApiException {
-        okhttp3.Call localVarCall = cancelImportApiV1ImportsImportIdCancelPostValidateBeforeCall(importId, null);
+    public ApiResponse<ImportResponse> cancelImportWithHttpInfo(String importId) throws ApiException {
+        okhttp3.Call localVarCall = cancelImportValidateBeforeCall(importId, null);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -194,15 +194,15 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelImportApiV1ImportsImportIdCancelPostAsync(String importId, final ApiCallback<ImportResponse> _callback) throws ApiException {
+    public okhttp3.Call cancelImportAsync(String importId, final ApiCallback<ImportResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelImportApiV1ImportsImportIdCancelPostValidateBeforeCall(importId, _callback);
+        okhttp3.Call localVarCall = cancelImportValidateBeforeCall(importId, _callback);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for confirmImportApiV1ImportsImportIdConfirmPost
+     * Build call for confirmImport
      * @param importId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -214,7 +214,7 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmImportApiV1ImportsImportIdConfirmPostCall(String importId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call confirmImportCall(String importId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -260,13 +260,13 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call confirmImportApiV1ImportsImportIdConfirmPostValidateBeforeCall(String importId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call confirmImportValidateBeforeCall(String importId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'importId' is set
         if (importId == null) {
-            throw new ApiException("Missing the required parameter 'importId' when calling confirmImportApiV1ImportsImportIdConfirmPost(Async)");
+            throw new ApiException("Missing the required parameter 'importId' when calling confirmImport(Async)");
         }
 
-        return confirmImportApiV1ImportsImportIdConfirmPostCall(importId, _callback);
+        return confirmImportCall(importId, _callback);
 
     }
 
@@ -283,8 +283,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ImportResponse confirmImportApiV1ImportsImportIdConfirmPost(String importId) throws ApiException {
-        ApiResponse<ImportResponse> localVarResp = confirmImportApiV1ImportsImportIdConfirmPostWithHttpInfo(importId);
+    public ImportResponse confirmImport(String importId) throws ApiException {
+        ApiResponse<ImportResponse> localVarResp = confirmImportWithHttpInfo(importId);
         return localVarResp.getData();
     }
 
@@ -301,8 +301,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ImportResponse> confirmImportApiV1ImportsImportIdConfirmPostWithHttpInfo(String importId) throws ApiException {
-        okhttp3.Call localVarCall = confirmImportApiV1ImportsImportIdConfirmPostValidateBeforeCall(importId, null);
+    public ApiResponse<ImportResponse> confirmImportWithHttpInfo(String importId) throws ApiException {
+        okhttp3.Call localVarCall = confirmImportValidateBeforeCall(importId, null);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -321,15 +321,15 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmImportApiV1ImportsImportIdConfirmPostAsync(String importId, final ApiCallback<ImportResponse> _callback) throws ApiException {
+    public okhttp3.Call confirmImportAsync(String importId, final ApiCallback<ImportResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = confirmImportApiV1ImportsImportIdConfirmPostValidateBeforeCall(importId, _callback);
+        okhttp3.Call localVarCall = confirmImportValidateBeforeCall(importId, _callback);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createImportApiV1ImportsPost
+     * Build call for createImport
      * @param importCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -341,7 +341,7 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createImportApiV1ImportsPostCall(ImportCreateRequest importCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createImportCall(ImportCreateRequest importCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -387,13 +387,13 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createImportApiV1ImportsPostValidateBeforeCall(ImportCreateRequest importCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createImportValidateBeforeCall(ImportCreateRequest importCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'importCreateRequest' is set
         if (importCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'importCreateRequest' when calling createImportApiV1ImportsPost(Async)");
+            throw new ApiException("Missing the required parameter 'importCreateRequest' when calling createImport(Async)");
         }
 
-        return createImportApiV1ImportsPostCall(importCreateRequest, _callback);
+        return createImportCall(importCreateRequest, _callback);
 
     }
 
@@ -410,8 +410,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ImportResponse createImportApiV1ImportsPost(ImportCreateRequest importCreateRequest) throws ApiException {
-        ApiResponse<ImportResponse> localVarResp = createImportApiV1ImportsPostWithHttpInfo(importCreateRequest);
+    public ImportResponse createImport(ImportCreateRequest importCreateRequest) throws ApiException {
+        ApiResponse<ImportResponse> localVarResp = createImportWithHttpInfo(importCreateRequest);
         return localVarResp.getData();
     }
 
@@ -428,8 +428,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ImportResponse> createImportApiV1ImportsPostWithHttpInfo(ImportCreateRequest importCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createImportApiV1ImportsPostValidateBeforeCall(importCreateRequest, null);
+    public ApiResponse<ImportResponse> createImportWithHttpInfo(ImportCreateRequest importCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createImportValidateBeforeCall(importCreateRequest, null);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -448,15 +448,15 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createImportApiV1ImportsPostAsync(ImportCreateRequest importCreateRequest, final ApiCallback<ImportResponse> _callback) throws ApiException {
+    public okhttp3.Call createImportAsync(ImportCreateRequest importCreateRequest, final ApiCallback<ImportResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createImportApiV1ImportsPostValidateBeforeCall(importCreateRequest, _callback);
+        okhttp3.Call localVarCall = createImportValidateBeforeCall(importCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getImportApiV1ImportsImportIdGet
+     * Build call for getImport
      * @param importId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -468,7 +468,7 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImportApiV1ImportsImportIdGetCall(String importId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getImportCall(String importId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -514,13 +514,13 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getImportApiV1ImportsImportIdGetValidateBeforeCall(String importId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getImportValidateBeforeCall(String importId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'importId' is set
         if (importId == null) {
-            throw new ApiException("Missing the required parameter 'importId' when calling getImportApiV1ImportsImportIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'importId' when calling getImport(Async)");
         }
 
-        return getImportApiV1ImportsImportIdGetCall(importId, _callback);
+        return getImportCall(importId, _callback);
 
     }
 
@@ -537,8 +537,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ImportResponse getImportApiV1ImportsImportIdGet(String importId) throws ApiException {
-        ApiResponse<ImportResponse> localVarResp = getImportApiV1ImportsImportIdGetWithHttpInfo(importId);
+    public ImportResponse getImport(String importId) throws ApiException {
+        ApiResponse<ImportResponse> localVarResp = getImportWithHttpInfo(importId);
         return localVarResp.getData();
     }
 
@@ -555,8 +555,8 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ImportResponse> getImportApiV1ImportsImportIdGetWithHttpInfo(String importId) throws ApiException {
-        okhttp3.Call localVarCall = getImportApiV1ImportsImportIdGetValidateBeforeCall(importId, null);
+    public ApiResponse<ImportResponse> getImportWithHttpInfo(String importId) throws ApiException {
+        okhttp3.Call localVarCall = getImportValidateBeforeCall(importId, null);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -575,9 +575,9 @@ public class ImportsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImportApiV1ImportsImportIdGetAsync(String importId, final ApiCallback<ImportResponse> _callback) throws ApiException {
+    public okhttp3.Call getImportAsync(String importId, final ApiCallback<ImportResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getImportApiV1ImportsImportIdGetValidateBeforeCall(importId, _callback);
+        okhttp3.Call localVarCall = getImportValidateBeforeCall(importId, _callback);
         Type localVarReturnType = new TypeToken<ImportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

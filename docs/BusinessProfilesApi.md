@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createBusinessProfileApiV1BusinessProfilesPost**](BusinessProfilesApi.md#createBusinessProfileApiV1BusinessProfilesPost) | **POST** /api/v1/business-profiles | Create Business Profile |
-| [**deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete**](BusinessProfilesApi.md#deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete) | **DELETE** /api/v1/business-profiles/{business_profile_id} | Delete Business Profile |
-| [**getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet**](BusinessProfilesApi.md#getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet) | **GET** /api/v1/business-profiles/{business_profile_id} | Get Business Profile |
-| [**listBusinessProfilesApiV1BusinessProfilesGet**](BusinessProfilesApi.md#listBusinessProfilesApiV1BusinessProfilesGet) | **GET** /api/v1/business-profiles | List Business Profiles |
-| [**patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch**](BusinessProfilesApi.md#patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch) | **PATCH** /api/v1/business-profiles/{business_profile_id} | Patch Business Profile |
+| [**createBusinessProfile**](BusinessProfilesApi.md#createBusinessProfile) | **POST** /api/v1/business-profiles | Create Business Profile |
+| [**deleteBusinessProfile**](BusinessProfilesApi.md#deleteBusinessProfile) | **DELETE** /api/v1/business-profiles/{business_profile_id} | Delete Business Profile |
+| [**getBusinessProfile**](BusinessProfilesApi.md#getBusinessProfile) | **GET** /api/v1/business-profiles/{business_profile_id} | Get Business Profile |
+| [**listBusinessProfiles**](BusinessProfilesApi.md#listBusinessProfiles) | **GET** /api/v1/business-profiles | List Business Profiles |
+| [**updateBusinessProfile**](BusinessProfilesApi.md#updateBusinessProfile) | **PATCH** /api/v1/business-profiles/{business_profile_id} | Update Business Profile |
 
 
-<a id="createBusinessProfileApiV1BusinessProfilesPost"></a>
-# **createBusinessProfileApiV1BusinessProfilesPost**
-> BusinessProfileResponse createBusinessProfileApiV1BusinessProfilesPost(businessProfileCreate, idempotencyKey)
+<a id="createBusinessProfile"></a>
+# **createBusinessProfile**
+> BusinessProfileResponse createBusinessProfile(businessProfileCreate, idempotencyKey)
 
 Create Business Profile
 
@@ -40,10 +40,10 @@ public class Example {
     BusinessProfileCreate businessProfileCreate = new BusinessProfileCreate(); // BusinessProfileCreate | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      BusinessProfileResponse result = apiInstance.createBusinessProfileApiV1BusinessProfilesPost(businessProfileCreate, idempotencyKey);
+      BusinessProfileResponse result = apiInstance.createBusinessProfile(businessProfileCreate, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BusinessProfilesApi#createBusinessProfileApiV1BusinessProfilesPost");
+      System.err.println("Exception when calling BusinessProfilesApi#createBusinessProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -79,9 +79,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete"></a>
-# **deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete**
-> SimpleBoolResponse deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete(businessProfileId)
+<a id="deleteBusinessProfile"></a>
+# **deleteBusinessProfile**
+> SimpleBoolResponse deleteBusinessProfile(businessProfileId)
 
 Delete Business Profile
 
@@ -107,10 +107,10 @@ public class Example {
     BusinessProfilesApi apiInstance = new BusinessProfilesApi(defaultClient);
     String businessProfileId = "businessProfileId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete(businessProfileId);
+      SimpleBoolResponse result = apiInstance.deleteBusinessProfile(businessProfileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BusinessProfilesApi#deleteBusinessProfileApiV1BusinessProfilesBusinessProfileIdDelete");
+      System.err.println("Exception when calling BusinessProfilesApi#deleteBusinessProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -145,9 +145,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet"></a>
-# **getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet**
-> BusinessProfileResponse getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet(businessProfileId)
+<a id="getBusinessProfile"></a>
+# **getBusinessProfile**
+> BusinessProfileResponse getBusinessProfile(businessProfileId)
 
 Get Business Profile
 
@@ -173,10 +173,10 @@ public class Example {
     BusinessProfilesApi apiInstance = new BusinessProfilesApi(defaultClient);
     String businessProfileId = "businessProfileId_example"; // String | 
     try {
-      BusinessProfileResponse result = apiInstance.getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet(businessProfileId);
+      BusinessProfileResponse result = apiInstance.getBusinessProfile(businessProfileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BusinessProfilesApi#getBusinessProfileApiV1BusinessProfilesBusinessProfileIdGet");
+      System.err.println("Exception when calling BusinessProfilesApi#getBusinessProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -211,9 +211,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listBusinessProfilesApiV1BusinessProfilesGet"></a>
-# **listBusinessProfilesApiV1BusinessProfilesGet**
-> BusinessProfilesListResponse listBusinessProfilesApiV1BusinessProfilesGet(limit, cursor)
+<a id="listBusinessProfiles"></a>
+# **listBusinessProfiles**
+> BusinessProfilesListResponse listBusinessProfiles(limit, cursor)
 
 List Business Profiles
 
@@ -240,10 +240,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      BusinessProfilesListResponse result = apiInstance.listBusinessProfilesApiV1BusinessProfilesGet(limit, cursor);
+      BusinessProfilesListResponse result = apiInstance.listBusinessProfiles(limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BusinessProfilesApi#listBusinessProfilesApiV1BusinessProfilesGet");
+      System.err.println("Exception when calling BusinessProfilesApi#listBusinessProfiles");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -279,11 +279,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch"></a>
-# **patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch**
-> BusinessProfileResponse patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch(businessProfileId, businessProfilePatch, idempotencyKey)
+<a id="updateBusinessProfile"></a>
+# **updateBusinessProfile**
+> BusinessProfileResponse updateBusinessProfile(businessProfileId, businessProfilePatch, idempotencyKey)
 
-Patch Business Profile
+Update Business Profile
 
 ### Example
 ```java
@@ -309,10 +309,10 @@ public class Example {
     BusinessProfilePatch businessProfilePatch = new BusinessProfilePatch(); // BusinessProfilePatch | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      BusinessProfileResponse result = apiInstance.patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch(businessProfileId, businessProfilePatch, idempotencyKey);
+      BusinessProfileResponse result = apiInstance.updateBusinessProfile(businessProfileId, businessProfilePatch, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BusinessProfilesApi#patchBusinessProfileApiV1BusinessProfilesBusinessProfileIdPatch");
+      System.err.println("Exception when calling BusinessProfilesApi#updateBusinessProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

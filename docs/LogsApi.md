@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**listLogsApiV1LogsGet**](LogsApi.md#listLogsApiV1LogsGet) | **GET** /api/v1/logs | List Logs |
+| [**listLogs**](LogsApi.md#listLogs) | **GET** /api/v1/logs | List Logs |
 
 
-<a id="listLogsApiV1LogsGet"></a>
-# **listLogsApiV1LogsGet**
-> ApiRequestLogsListResponse listLogsApiV1LogsGet(status, limit)
+<a id="listLogs"></a>
+# **listLogs**
+> ApiRequestLogsListResponse listLogs(status, limit)
 
 List Logs
 
@@ -36,10 +36,10 @@ public class Example {
     String status = ""; // String | 
     Integer limit = 100; // Integer | 
     try {
-      ApiRequestLogsListResponse result = apiInstance.listLogsApiV1LogsGet(status, limit);
+      ApiRequestLogsListResponse result = apiInstance.listLogs(status, limit);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling LogsApi#listLogsApiV1LogsGet");
+      System.err.println("Exception when calling LogsApi#listLogs");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

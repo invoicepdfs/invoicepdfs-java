@@ -84,868 +84,7 @@ public class AuthApi {
     }
 
     /**
-     * Build call for forgotPasswordApiV1AuthForgotPasswordPost
-     * @param authForgotPasswordRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call forgotPasswordApiV1AuthForgotPasswordPostCall(AuthForgotPasswordRequest authForgotPasswordRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = authForgotPasswordRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/auth/forgot-password";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call forgotPasswordApiV1AuthForgotPasswordPostValidateBeforeCall(AuthForgotPasswordRequest authForgotPasswordRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'authForgotPasswordRequest' is set
-        if (authForgotPasswordRequest == null) {
-            throw new ApiException("Missing the required parameter 'authForgotPasswordRequest' when calling forgotPasswordApiV1AuthForgotPasswordPost(Async)");
-        }
-
-        return forgotPasswordApiV1AuthForgotPasswordPostCall(authForgotPasswordRequest, _callback);
-
-    }
-
-    /**
-     * Forgot Password
-     * Send a password reset email via Firebase.
-     * @param authForgotPasswordRequest  (required)
-     * @return AuthMessageResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public AuthMessageResponse forgotPasswordApiV1AuthForgotPasswordPost(AuthForgotPasswordRequest authForgotPasswordRequest) throws ApiException {
-        ApiResponse<AuthMessageResponse> localVarResp = forgotPasswordApiV1AuthForgotPasswordPostWithHttpInfo(authForgotPasswordRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Forgot Password
-     * Send a password reset email via Firebase.
-     * @param authForgotPasswordRequest  (required)
-     * @return ApiResponse&lt;AuthMessageResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AuthMessageResponse> forgotPasswordApiV1AuthForgotPasswordPostWithHttpInfo(AuthForgotPasswordRequest authForgotPasswordRequest) throws ApiException {
-        okhttp3.Call localVarCall = forgotPasswordApiV1AuthForgotPasswordPostValidateBeforeCall(authForgotPasswordRequest, null);
-        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Forgot Password (asynchronously)
-     * Send a password reset email via Firebase.
-     * @param authForgotPasswordRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call forgotPasswordApiV1AuthForgotPasswordPostAsync(AuthForgotPasswordRequest authForgotPasswordRequest, final ApiCallback<AuthMessageResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = forgotPasswordApiV1AuthForgotPasswordPostValidateBeforeCall(authForgotPasswordRequest, _callback);
-        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for logoutApiV1AuthLogoutPost
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call logoutApiV1AuthLogoutPostCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/auth/logout";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call logoutApiV1AuthLogoutPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return logoutApiV1AuthLogoutPostCall(_callback);
-
-    }
-
-    /**
-     * Logout
-     * Revoke all Firebase refresh tokens for the authenticated user.
-     * @return AuthMessageResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public AuthMessageResponse logoutApiV1AuthLogoutPost() throws ApiException {
-        ApiResponse<AuthMessageResponse> localVarResp = logoutApiV1AuthLogoutPostWithHttpInfo();
-        return localVarResp.getData();
-    }
-
-    /**
-     * Logout
-     * Revoke all Firebase refresh tokens for the authenticated user.
-     * @return ApiResponse&lt;AuthMessageResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AuthMessageResponse> logoutApiV1AuthLogoutPostWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = logoutApiV1AuthLogoutPostValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Logout (asynchronously)
-     * Revoke all Firebase refresh tokens for the authenticated user.
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call logoutApiV1AuthLogoutPostAsync(final ApiCallback<AuthMessageResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = logoutApiV1AuthLogoutPostValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for meApiV1AuthMeGet
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call meApiV1AuthMeGetCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/auth/me";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call meApiV1AuthMeGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return meApiV1AuthMeGetCall(_callback);
-
-    }
-
-    /**
-     * Me
-     * 
-     * @return AuthMeResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public AuthMeResponse meApiV1AuthMeGet() throws ApiException {
-        ApiResponse<AuthMeResponse> localVarResp = meApiV1AuthMeGetWithHttpInfo();
-        return localVarResp.getData();
-    }
-
-    /**
-     * Me
-     * 
-     * @return ApiResponse&lt;AuthMeResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AuthMeResponse> meApiV1AuthMeGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = meApiV1AuthMeGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Me (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call meApiV1AuthMeGetAsync(final ApiCallback<AuthMeResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = meApiV1AuthMeGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for patchMeApiV1AuthMePatch
-     * @param authMePatchRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call patchMeApiV1AuthMePatchCall(AuthMePatchRequest authMePatchRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = authMePatchRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/auth/me";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchMeApiV1AuthMePatchValidateBeforeCall(AuthMePatchRequest authMePatchRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'authMePatchRequest' is set
-        if (authMePatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'authMePatchRequest' when calling patchMeApiV1AuthMePatch(Async)");
-        }
-
-        return patchMeApiV1AuthMePatchCall(authMePatchRequest, _callback);
-
-    }
-
-    /**
-     * Patch Me
-     * Update the authenticated account&#39;s name or email.
-     * @param authMePatchRequest  (required)
-     * @return AuthMeResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public AuthMeResponse patchMeApiV1AuthMePatch(AuthMePatchRequest authMePatchRequest) throws ApiException {
-        ApiResponse<AuthMeResponse> localVarResp = patchMeApiV1AuthMePatchWithHttpInfo(authMePatchRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Patch Me
-     * Update the authenticated account&#39;s name or email.
-     * @param authMePatchRequest  (required)
-     * @return ApiResponse&lt;AuthMeResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AuthMeResponse> patchMeApiV1AuthMePatchWithHttpInfo(AuthMePatchRequest authMePatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = patchMeApiV1AuthMePatchValidateBeforeCall(authMePatchRequest, null);
-        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Patch Me (asynchronously)
-     * Update the authenticated account&#39;s name or email.
-     * @param authMePatchRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call patchMeApiV1AuthMePatchAsync(AuthMePatchRequest authMePatchRequest, final ApiCallback<AuthMeResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = patchMeApiV1AuthMePatchValidateBeforeCall(authMePatchRequest, _callback);
-        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for refreshApiV1AuthRefreshPost
-     * @param authRefreshRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call refreshApiV1AuthRefreshPostCall(AuthRefreshRequest authRefreshRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = authRefreshRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/auth/refresh";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call refreshApiV1AuthRefreshPostValidateBeforeCall(AuthRefreshRequest authRefreshRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'authRefreshRequest' is set
-        if (authRefreshRequest == null) {
-            throw new ApiException("Missing the required parameter 'authRefreshRequest' when calling refreshApiV1AuthRefreshPost(Async)");
-        }
-
-        return refreshApiV1AuthRefreshPostCall(authRefreshRequest, _callback);
-
-    }
-
-    /**
-     * Refresh
-     * Exchange a Firebase refresh token for a new ID token.
-     * @param authRefreshRequest  (required)
-     * @return AuthRefreshResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public AuthRefreshResponse refreshApiV1AuthRefreshPost(AuthRefreshRequest authRefreshRequest) throws ApiException {
-        ApiResponse<AuthRefreshResponse> localVarResp = refreshApiV1AuthRefreshPostWithHttpInfo(authRefreshRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Refresh
-     * Exchange a Firebase refresh token for a new ID token.
-     * @param authRefreshRequest  (required)
-     * @return ApiResponse&lt;AuthRefreshResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AuthRefreshResponse> refreshApiV1AuthRefreshPostWithHttpInfo(AuthRefreshRequest authRefreshRequest) throws ApiException {
-        okhttp3.Call localVarCall = refreshApiV1AuthRefreshPostValidateBeforeCall(authRefreshRequest, null);
-        Type localVarReturnType = new TypeToken<AuthRefreshResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Refresh (asynchronously)
-     * Exchange a Firebase refresh token for a new ID token.
-     * @param authRefreshRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call refreshApiV1AuthRefreshPostAsync(AuthRefreshRequest authRefreshRequest, final ApiCallback<AuthRefreshResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = refreshApiV1AuthRefreshPostValidateBeforeCall(authRefreshRequest, _callback);
-        Type localVarReturnType = new TypeToken<AuthRefreshResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for registerApiV1AuthRegisterPost
-     * @param authRegisterRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call registerApiV1AuthRegisterPostCall(AuthRegisterRequest authRegisterRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = authRegisterRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/auth/register";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerApiV1AuthRegisterPostValidateBeforeCall(AuthRegisterRequest authRegisterRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'authRegisterRequest' is set
-        if (authRegisterRequest == null) {
-            throw new ApiException("Missing the required parameter 'authRegisterRequest' when calling registerApiV1AuthRegisterPost(Async)");
-        }
-
-        return registerApiV1AuthRegisterPostCall(authRegisterRequest, _callback);
-
-    }
-
-    /**
-     * Register
-     * Register a new account using a Firebase ID token.  The client authenticates with Firebase (email/password, Google, etc.) and sends the resulting ID token here to create an InvoicePDFs account.
-     * @param authRegisterRequest  (required)
-     * @return AuthRegisterResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public AuthRegisterResponse registerApiV1AuthRegisterPost(AuthRegisterRequest authRegisterRequest) throws ApiException {
-        ApiResponse<AuthRegisterResponse> localVarResp = registerApiV1AuthRegisterPostWithHttpInfo(authRegisterRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Register
-     * Register a new account using a Firebase ID token.  The client authenticates with Firebase (email/password, Google, etc.) and sends the resulting ID token here to create an InvoicePDFs account.
-     * @param authRegisterRequest  (required)
-     * @return ApiResponse&lt;AuthRegisterResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AuthRegisterResponse> registerApiV1AuthRegisterPostWithHttpInfo(AuthRegisterRequest authRegisterRequest) throws ApiException {
-        okhttp3.Call localVarCall = registerApiV1AuthRegisterPostValidateBeforeCall(authRegisterRequest, null);
-        Type localVarReturnType = new TypeToken<AuthRegisterResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Register (asynchronously)
-     * Register a new account using a Firebase ID token.  The client authenticates with Firebase (email/password, Google, etc.) and sends the resulting ID token here to create an InvoicePDFs account.
-     * @param authRegisterRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call registerApiV1AuthRegisterPostAsync(AuthRegisterRequest authRegisterRequest, final ApiCallback<AuthRegisterResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = registerApiV1AuthRegisterPostValidateBeforeCall(authRegisterRequest, _callback);
-        Type localVarReturnType = new TypeToken<AuthRegisterResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for resetPasswordApiV1AuthResetPasswordPost
-     * @param authResetPasswordRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call resetPasswordApiV1AuthResetPasswordPostCall(AuthResetPasswordRequest authResetPasswordRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = authResetPasswordRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/auth/reset-password";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call resetPasswordApiV1AuthResetPasswordPostValidateBeforeCall(AuthResetPasswordRequest authResetPasswordRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'authResetPasswordRequest' is set
-        if (authResetPasswordRequest == null) {
-            throw new ApiException("Missing the required parameter 'authResetPasswordRequest' when calling resetPasswordApiV1AuthResetPasswordPost(Async)");
-        }
-
-        return resetPasswordApiV1AuthResetPasswordPostCall(authResetPasswordRequest, _callback);
-
-    }
-
-    /**
-     * Reset Password
-     * Confirm a password reset using the code from the reset email.
-     * @param authResetPasswordRequest  (required)
-     * @return AuthMessageResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public AuthMessageResponse resetPasswordApiV1AuthResetPasswordPost(AuthResetPasswordRequest authResetPasswordRequest) throws ApiException {
-        ApiResponse<AuthMessageResponse> localVarResp = resetPasswordApiV1AuthResetPasswordPostWithHttpInfo(authResetPasswordRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Reset Password
-     * Confirm a password reset using the code from the reset email.
-     * @param authResetPasswordRequest  (required)
-     * @return ApiResponse&lt;AuthMessageResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AuthMessageResponse> resetPasswordApiV1AuthResetPasswordPostWithHttpInfo(AuthResetPasswordRequest authResetPasswordRequest) throws ApiException {
-        okhttp3.Call localVarCall = resetPasswordApiV1AuthResetPasswordPostValidateBeforeCall(authResetPasswordRequest, null);
-        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Reset Password (asynchronously)
-     * Confirm a password reset using the code from the reset email.
-     * @param authResetPasswordRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call resetPasswordApiV1AuthResetPasswordPostAsync(AuthResetPasswordRequest authResetPasswordRequest, final ApiCallback<AuthMessageResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = resetPasswordApiV1AuthResetPasswordPostValidateBeforeCall(authResetPasswordRequest, _callback);
-        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for tokenExchangeApiV1AuthTokenPost
+     * Build call for exchangeAuthToken
      * @param authTokenRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -957,7 +96,7 @@ public class AuthApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call tokenExchangeApiV1AuthTokenPostCall(AuthTokenRequest authTokenRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call exchangeAuthTokenCall(AuthTokenRequest authTokenRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1003,18 +142,18 @@ public class AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call tokenExchangeApiV1AuthTokenPostValidateBeforeCall(AuthTokenRequest authTokenRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call exchangeAuthTokenValidateBeforeCall(AuthTokenRequest authTokenRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'authTokenRequest' is set
         if (authTokenRequest == null) {
-            throw new ApiException("Missing the required parameter 'authTokenRequest' when calling tokenExchangeApiV1AuthTokenPost(Async)");
+            throw new ApiException("Missing the required parameter 'authTokenRequest' when calling exchangeAuthToken(Async)");
         }
 
-        return tokenExchangeApiV1AuthTokenPostCall(authTokenRequest, _callback);
+        return exchangeAuthTokenCall(authTokenRequest, _callback);
 
     }
 
     /**
-     * Token Exchange
+     * Exchange Auth Token
      * Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
      * @param authTokenRequest  (required)
      * @return AuthTokenResponse
@@ -1026,13 +165,13 @@ public class AuthApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public AuthTokenResponse tokenExchangeApiV1AuthTokenPost(AuthTokenRequest authTokenRequest) throws ApiException {
-        ApiResponse<AuthTokenResponse> localVarResp = tokenExchangeApiV1AuthTokenPostWithHttpInfo(authTokenRequest);
+    public AuthTokenResponse exchangeAuthToken(AuthTokenRequest authTokenRequest) throws ApiException {
+        ApiResponse<AuthTokenResponse> localVarResp = exchangeAuthTokenWithHttpInfo(authTokenRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Token Exchange
+     * Exchange Auth Token
      * Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
      * @param authTokenRequest  (required)
      * @return ApiResponse&lt;AuthTokenResponse&gt;
@@ -1044,14 +183,14 @@ public class AuthApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthTokenResponse> tokenExchangeApiV1AuthTokenPostWithHttpInfo(AuthTokenRequest authTokenRequest) throws ApiException {
-        okhttp3.Call localVarCall = tokenExchangeApiV1AuthTokenPostValidateBeforeCall(authTokenRequest, null);
+    public ApiResponse<AuthTokenResponse> exchangeAuthTokenWithHttpInfo(AuthTokenRequest authTokenRequest) throws ApiException {
+        okhttp3.Call localVarCall = exchangeAuthTokenValidateBeforeCall(authTokenRequest, null);
         Type localVarReturnType = new TypeToken<AuthTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Token Exchange (asynchronously)
+     * Exchange Auth Token (asynchronously)
      * Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
      * @param authTokenRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1064,10 +203,871 @@ public class AuthApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call tokenExchangeApiV1AuthTokenPostAsync(AuthTokenRequest authTokenRequest, final ApiCallback<AuthTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call exchangeAuthTokenAsync(AuthTokenRequest authTokenRequest, final ApiCallback<AuthTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = tokenExchangeApiV1AuthTokenPostValidateBeforeCall(authTokenRequest, _callback);
+        okhttp3.Call localVarCall = exchangeAuthTokenValidateBeforeCall(authTokenRequest, _callback);
         Type localVarReturnType = new TypeToken<AuthTokenResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getCurrentUser
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCurrentUserCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/auth/me";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getCurrentUserValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getCurrentUserCall(_callback);
+
+    }
+
+    /**
+     * Get Current User
+     * 
+     * @return AuthMeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuthMeResponse getCurrentUser() throws ApiException {
+        ApiResponse<AuthMeResponse> localVarResp = getCurrentUserWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Current User
+     * 
+     * @return ApiResponse&lt;AuthMeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuthMeResponse> getCurrentUserWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getCurrentUserValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Current User (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCurrentUserAsync(final ApiCallback<AuthMeResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getCurrentUserValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for logout
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call logoutCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/auth/logout";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call logoutValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return logoutCall(_callback);
+
+    }
+
+    /**
+     * Logout
+     * Revoke all Firebase refresh tokens for the authenticated user.
+     * @return AuthMessageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuthMessageResponse logout() throws ApiException {
+        ApiResponse<AuthMessageResponse> localVarResp = logoutWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Logout
+     * Revoke all Firebase refresh tokens for the authenticated user.
+     * @return ApiResponse&lt;AuthMessageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuthMessageResponse> logoutWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = logoutValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Logout (asynchronously)
+     * Revoke all Firebase refresh tokens for the authenticated user.
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call logoutAsync(final ApiCallback<AuthMessageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = logoutValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for refreshAccessToken
+     * @param authRefreshRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call refreshAccessTokenCall(AuthRefreshRequest authRefreshRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = authRefreshRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/auth/refresh";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call refreshAccessTokenValidateBeforeCall(AuthRefreshRequest authRefreshRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'authRefreshRequest' is set
+        if (authRefreshRequest == null) {
+            throw new ApiException("Missing the required parameter 'authRefreshRequest' when calling refreshAccessToken(Async)");
+        }
+
+        return refreshAccessTokenCall(authRefreshRequest, _callback);
+
+    }
+
+    /**
+     * Refresh Access Token
+     * Exchange a Firebase refresh token for a new ID token.
+     * @param authRefreshRequest  (required)
+     * @return AuthRefreshResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuthRefreshResponse refreshAccessToken(AuthRefreshRequest authRefreshRequest) throws ApiException {
+        ApiResponse<AuthRefreshResponse> localVarResp = refreshAccessTokenWithHttpInfo(authRefreshRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Refresh Access Token
+     * Exchange a Firebase refresh token for a new ID token.
+     * @param authRefreshRequest  (required)
+     * @return ApiResponse&lt;AuthRefreshResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuthRefreshResponse> refreshAccessTokenWithHttpInfo(AuthRefreshRequest authRefreshRequest) throws ApiException {
+        okhttp3.Call localVarCall = refreshAccessTokenValidateBeforeCall(authRefreshRequest, null);
+        Type localVarReturnType = new TypeToken<AuthRefreshResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Refresh Access Token (asynchronously)
+     * Exchange a Firebase refresh token for a new ID token.
+     * @param authRefreshRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call refreshAccessTokenAsync(AuthRefreshRequest authRefreshRequest, final ApiCallback<AuthRefreshResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = refreshAccessTokenValidateBeforeCall(authRefreshRequest, _callback);
+        Type localVarReturnType = new TypeToken<AuthRefreshResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for register
+     * @param authRegisterRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registerCall(AuthRegisterRequest authRegisterRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = authRegisterRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/auth/register";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call registerValidateBeforeCall(AuthRegisterRequest authRegisterRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'authRegisterRequest' is set
+        if (authRegisterRequest == null) {
+            throw new ApiException("Missing the required parameter 'authRegisterRequest' when calling register(Async)");
+        }
+
+        return registerCall(authRegisterRequest, _callback);
+
+    }
+
+    /**
+     * Register
+     * Register a new account using a Firebase ID token.  The client authenticates with Firebase (email/password, Google, etc.) and sends the resulting ID token here to create an InvoicePDFs account.
+     * @param authRegisterRequest  (required)
+     * @return AuthRegisterResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuthRegisterResponse register(AuthRegisterRequest authRegisterRequest) throws ApiException {
+        ApiResponse<AuthRegisterResponse> localVarResp = registerWithHttpInfo(authRegisterRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Register
+     * Register a new account using a Firebase ID token.  The client authenticates with Firebase (email/password, Google, etc.) and sends the resulting ID token here to create an InvoicePDFs account.
+     * @param authRegisterRequest  (required)
+     * @return ApiResponse&lt;AuthRegisterResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuthRegisterResponse> registerWithHttpInfo(AuthRegisterRequest authRegisterRequest) throws ApiException {
+        okhttp3.Call localVarCall = registerValidateBeforeCall(authRegisterRequest, null);
+        Type localVarReturnType = new TypeToken<AuthRegisterResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Register (asynchronously)
+     * Register a new account using a Firebase ID token.  The client authenticates with Firebase (email/password, Google, etc.) and sends the resulting ID token here to create an InvoicePDFs account.
+     * @param authRegisterRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registerAsync(AuthRegisterRequest authRegisterRequest, final ApiCallback<AuthRegisterResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = registerValidateBeforeCall(authRegisterRequest, _callback);
+        Type localVarReturnType = new TypeToken<AuthRegisterResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for requestPasswordReset
+     * @param authForgotPasswordRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call requestPasswordResetCall(AuthForgotPasswordRequest authForgotPasswordRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = authForgotPasswordRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/auth/forgot-password";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call requestPasswordResetValidateBeforeCall(AuthForgotPasswordRequest authForgotPasswordRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'authForgotPasswordRequest' is set
+        if (authForgotPasswordRequest == null) {
+            throw new ApiException("Missing the required parameter 'authForgotPasswordRequest' when calling requestPasswordReset(Async)");
+        }
+
+        return requestPasswordResetCall(authForgotPasswordRequest, _callback);
+
+    }
+
+    /**
+     * Request Password Reset
+     * Send a password reset email via Firebase.
+     * @param authForgotPasswordRequest  (required)
+     * @return AuthMessageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuthMessageResponse requestPasswordReset(AuthForgotPasswordRequest authForgotPasswordRequest) throws ApiException {
+        ApiResponse<AuthMessageResponse> localVarResp = requestPasswordResetWithHttpInfo(authForgotPasswordRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Request Password Reset
+     * Send a password reset email via Firebase.
+     * @param authForgotPasswordRequest  (required)
+     * @return ApiResponse&lt;AuthMessageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuthMessageResponse> requestPasswordResetWithHttpInfo(AuthForgotPasswordRequest authForgotPasswordRequest) throws ApiException {
+        okhttp3.Call localVarCall = requestPasswordResetValidateBeforeCall(authForgotPasswordRequest, null);
+        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Request Password Reset (asynchronously)
+     * Send a password reset email via Firebase.
+     * @param authForgotPasswordRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call requestPasswordResetAsync(AuthForgotPasswordRequest authForgotPasswordRequest, final ApiCallback<AuthMessageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = requestPasswordResetValidateBeforeCall(authForgotPasswordRequest, _callback);
+        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for resetPassword
+     * @param authResetPasswordRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call resetPasswordCall(AuthResetPasswordRequest authResetPasswordRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = authResetPasswordRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/auth/reset-password";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call resetPasswordValidateBeforeCall(AuthResetPasswordRequest authResetPasswordRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'authResetPasswordRequest' is set
+        if (authResetPasswordRequest == null) {
+            throw new ApiException("Missing the required parameter 'authResetPasswordRequest' when calling resetPassword(Async)");
+        }
+
+        return resetPasswordCall(authResetPasswordRequest, _callback);
+
+    }
+
+    /**
+     * Reset Password
+     * Confirm a password reset using the code from the reset email.
+     * @param authResetPasswordRequest  (required)
+     * @return AuthMessageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuthMessageResponse resetPassword(AuthResetPasswordRequest authResetPasswordRequest) throws ApiException {
+        ApiResponse<AuthMessageResponse> localVarResp = resetPasswordWithHttpInfo(authResetPasswordRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Reset Password
+     * Confirm a password reset using the code from the reset email.
+     * @param authResetPasswordRequest  (required)
+     * @return ApiResponse&lt;AuthMessageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuthMessageResponse> resetPasswordWithHttpInfo(AuthResetPasswordRequest authResetPasswordRequest) throws ApiException {
+        okhttp3.Call localVarCall = resetPasswordValidateBeforeCall(authResetPasswordRequest, null);
+        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Reset Password (asynchronously)
+     * Confirm a password reset using the code from the reset email.
+     * @param authResetPasswordRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call resetPasswordAsync(AuthResetPasswordRequest authResetPasswordRequest, final ApiCallback<AuthMessageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = resetPasswordValidateBeforeCall(authResetPasswordRequest, _callback);
+        Type localVarReturnType = new TypeToken<AuthMessageResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateCurrentUser
+     * @param authMePatchRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateCurrentUserCall(AuthMePatchRequest authMePatchRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = authMePatchRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/auth/me";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateCurrentUserValidateBeforeCall(AuthMePatchRequest authMePatchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'authMePatchRequest' is set
+        if (authMePatchRequest == null) {
+            throw new ApiException("Missing the required parameter 'authMePatchRequest' when calling updateCurrentUser(Async)");
+        }
+
+        return updateCurrentUserCall(authMePatchRequest, _callback);
+
+    }
+
+    /**
+     * Update Current User
+     * Update the authenticated account&#39;s name or email.
+     * @param authMePatchRequest  (required)
+     * @return AuthMeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuthMeResponse updateCurrentUser(AuthMePatchRequest authMePatchRequest) throws ApiException {
+        ApiResponse<AuthMeResponse> localVarResp = updateCurrentUserWithHttpInfo(authMePatchRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Current User
+     * Update the authenticated account&#39;s name or email.
+     * @param authMePatchRequest  (required)
+     * @return ApiResponse&lt;AuthMeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuthMeResponse> updateCurrentUserWithHttpInfo(AuthMePatchRequest authMePatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateCurrentUserValidateBeforeCall(authMePatchRequest, null);
+        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Current User (asynchronously)
+     * Update the authenticated account&#39;s name or email.
+     * @param authMePatchRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateCurrentUserAsync(AuthMePatchRequest authMePatchRequest, final ApiCallback<AuthMeResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateCurrentUserValidateBeforeCall(authMePatchRequest, _callback);
+        Type localVarReturnType = new TypeToken<AuthMeResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

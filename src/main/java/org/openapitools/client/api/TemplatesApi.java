@@ -28,9 +28,9 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ApiErrorResponse;
-import org.openapitools.client.model.AppSchemasV1DocumentRenderRequest;
 import org.openapitools.client.model.CustomTemplateResponse;
 import org.openapitools.client.model.CustomTemplatesListResponse;
+import org.openapitools.client.model.DocumentRenderRequest;
 import org.openapitools.client.model.TemplateCreateRequest;
 import org.openapitools.client.model.TemplateDetailResponse;
 import org.openapitools.client.model.TemplatePatchRequest;
@@ -80,7 +80,7 @@ public class TemplatesApi {
     }
 
     /**
-     * Build call for createTemplateApiV1TemplatesCustomPost
+     * Build call for createTemplate
      * @param templateCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -92,7 +92,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTemplateApiV1TemplatesCustomPostCall(TemplateCreateRequest templateCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTemplateCall(TemplateCreateRequest templateCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,13 +138,13 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTemplateApiV1TemplatesCustomPostValidateBeforeCall(TemplateCreateRequest templateCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTemplateValidateBeforeCall(TemplateCreateRequest templateCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateCreateRequest' is set
         if (templateCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'templateCreateRequest' when calling createTemplateApiV1TemplatesCustomPost(Async)");
+            throw new ApiException("Missing the required parameter 'templateCreateRequest' when calling createTemplate(Async)");
         }
 
-        return createTemplateApiV1TemplatesCustomPostCall(templateCreateRequest, _callback);
+        return createTemplateCall(templateCreateRequest, _callback);
 
     }
 
@@ -161,8 +161,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomTemplateResponse createTemplateApiV1TemplatesCustomPost(TemplateCreateRequest templateCreateRequest) throws ApiException {
-        ApiResponse<CustomTemplateResponse> localVarResp = createTemplateApiV1TemplatesCustomPostWithHttpInfo(templateCreateRequest);
+    public CustomTemplateResponse createTemplate(TemplateCreateRequest templateCreateRequest) throws ApiException {
+        ApiResponse<CustomTemplateResponse> localVarResp = createTemplateWithHttpInfo(templateCreateRequest);
         return localVarResp.getData();
     }
 
@@ -179,8 +179,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomTemplateResponse> createTemplateApiV1TemplatesCustomPostWithHttpInfo(TemplateCreateRequest templateCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createTemplateApiV1TemplatesCustomPostValidateBeforeCall(templateCreateRequest, null);
+    public ApiResponse<CustomTemplateResponse> createTemplateWithHttpInfo(TemplateCreateRequest templateCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createTemplateValidateBeforeCall(templateCreateRequest, null);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -199,15 +199,15 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTemplateApiV1TemplatesCustomPostAsync(TemplateCreateRequest templateCreateRequest, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call createTemplateAsync(TemplateCreateRequest templateCreateRequest, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createTemplateApiV1TemplatesCustomPostValidateBeforeCall(templateCreateRequest, _callback);
+        okhttp3.Call localVarCall = createTemplateValidateBeforeCall(templateCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteTemplateApiV1TemplatesCustomTemplateIdDelete
+     * Build call for deleteTemplate
      * @param templateId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -219,7 +219,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTemplateApiV1TemplatesCustomTemplateIdDeleteCall(String templateId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTemplateCall(String templateId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -265,13 +265,13 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTemplateApiV1TemplatesCustomTemplateIdDeleteValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTemplateValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling deleteTemplateApiV1TemplatesCustomTemplateIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'templateId' when calling deleteTemplate(Async)");
         }
 
-        return deleteTemplateApiV1TemplatesCustomTemplateIdDeleteCall(templateId, _callback);
+        return deleteTemplateCall(templateId, _callback);
 
     }
 
@@ -287,8 +287,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteTemplateApiV1TemplatesCustomTemplateIdDelete(String templateId) throws ApiException {
-        deleteTemplateApiV1TemplatesCustomTemplateIdDeleteWithHttpInfo(templateId);
+    public void deleteTemplate(String templateId) throws ApiException {
+        deleteTemplateWithHttpInfo(templateId);
     }
 
     /**
@@ -304,8 +304,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteTemplateApiV1TemplatesCustomTemplateIdDeleteWithHttpInfo(String templateId) throws ApiException {
-        okhttp3.Call localVarCall = deleteTemplateApiV1TemplatesCustomTemplateIdDeleteValidateBeforeCall(templateId, null);
+    public ApiResponse<Void> deleteTemplateWithHttpInfo(String templateId) throws ApiException {
+        okhttp3.Call localVarCall = deleteTemplateValidateBeforeCall(templateId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -323,14 +323,14 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTemplateApiV1TemplatesCustomTemplateIdDeleteAsync(String templateId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteTemplateAsync(String templateId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteTemplateApiV1TemplatesCustomTemplateIdDeleteValidateBeforeCall(templateId, _callback);
+        okhttp3.Call localVarCall = deleteTemplateValidateBeforeCall(templateId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePost
+     * Build call for duplicateTemplate
      * @param templateId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -342,7 +342,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostCall(String templateId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call duplicateTemplateCall(String templateId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -388,13 +388,13 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call duplicateTemplateValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePost(Async)");
+            throw new ApiException("Missing the required parameter 'templateId' when calling duplicateTemplate(Async)");
         }
 
-        return duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostCall(templateId, _callback);
+        return duplicateTemplateCall(templateId, _callback);
 
     }
 
@@ -411,8 +411,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomTemplateResponse duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePost(String templateId) throws ApiException {
-        ApiResponse<CustomTemplateResponse> localVarResp = duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostWithHttpInfo(templateId);
+    public CustomTemplateResponse duplicateTemplate(String templateId) throws ApiException {
+        ApiResponse<CustomTemplateResponse> localVarResp = duplicateTemplateWithHttpInfo(templateId);
         return localVarResp.getData();
     }
 
@@ -429,8 +429,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomTemplateResponse> duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostWithHttpInfo(String templateId) throws ApiException {
-        okhttp3.Call localVarCall = duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostValidateBeforeCall(templateId, null);
+    public ApiResponse<CustomTemplateResponse> duplicateTemplateWithHttpInfo(String templateId) throws ApiException {
+        okhttp3.Call localVarCall = duplicateTemplateValidateBeforeCall(templateId, null);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -449,15 +449,15 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostAsync(String templateId, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call duplicateTemplateAsync(String templateId, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = duplicateTemplateApiV1TemplatesCustomTemplateIdDuplicatePostValidateBeforeCall(templateId, _callback);
+        okhttp3.Call localVarCall = duplicateTemplateValidateBeforeCall(templateId, _callback);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGet
+     * Build call for getBuiltinTemplate
      * @param templateId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -469,7 +469,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetCall(String templateId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBuiltinTemplateCall(String templateId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -515,13 +515,13 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBuiltinTemplateValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'templateId' when calling getBuiltinTemplate(Async)");
         }
 
-        return getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetCall(templateId, _callback);
+        return getBuiltinTemplateCall(templateId, _callback);
 
     }
 
@@ -538,8 +538,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public TemplateDetailResponse getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGet(String templateId) throws ApiException {
-        ApiResponse<TemplateDetailResponse> localVarResp = getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetWithHttpInfo(templateId);
+    public TemplateDetailResponse getBuiltinTemplate(String templateId) throws ApiException {
+        ApiResponse<TemplateDetailResponse> localVarResp = getBuiltinTemplateWithHttpInfo(templateId);
         return localVarResp.getData();
     }
 
@@ -556,8 +556,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TemplateDetailResponse> getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetWithHttpInfo(String templateId) throws ApiException {
-        okhttp3.Call localVarCall = getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetValidateBeforeCall(templateId, null);
+    public ApiResponse<TemplateDetailResponse> getBuiltinTemplateWithHttpInfo(String templateId) throws ApiException {
+        okhttp3.Call localVarCall = getBuiltinTemplateValidateBeforeCall(templateId, null);
         Type localVarReturnType = new TypeToken<TemplateDetailResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -576,15 +576,15 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetAsync(String templateId, final ApiCallback<TemplateDetailResponse> _callback) throws ApiException {
+    public okhttp3.Call getBuiltinTemplateAsync(String templateId, final ApiCallback<TemplateDetailResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getBuiltinTemplateApiV1TemplatesBuiltinTemplateIdGetValidateBeforeCall(templateId, _callback);
+        okhttp3.Call localVarCall = getBuiltinTemplateValidateBeforeCall(templateId, _callback);
         Type localVarReturnType = new TypeToken<TemplateDetailResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getCustomTemplateApiV1TemplatesCustomTemplateIdGet
+     * Build call for getCustomTemplate
      * @param templateId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -596,7 +596,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomTemplateApiV1TemplatesCustomTemplateIdGetCall(String templateId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCustomTemplateCall(String templateId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -642,13 +642,13 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomTemplateApiV1TemplatesCustomTemplateIdGetValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCustomTemplateValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling getCustomTemplateApiV1TemplatesCustomTemplateIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'templateId' when calling getCustomTemplate(Async)");
         }
 
-        return getCustomTemplateApiV1TemplatesCustomTemplateIdGetCall(templateId, _callback);
+        return getCustomTemplateCall(templateId, _callback);
 
     }
 
@@ -665,8 +665,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomTemplateResponse getCustomTemplateApiV1TemplatesCustomTemplateIdGet(String templateId) throws ApiException {
-        ApiResponse<CustomTemplateResponse> localVarResp = getCustomTemplateApiV1TemplatesCustomTemplateIdGetWithHttpInfo(templateId);
+    public CustomTemplateResponse getCustomTemplate(String templateId) throws ApiException {
+        ApiResponse<CustomTemplateResponse> localVarResp = getCustomTemplateWithHttpInfo(templateId);
         return localVarResp.getData();
     }
 
@@ -683,8 +683,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomTemplateResponse> getCustomTemplateApiV1TemplatesCustomTemplateIdGetWithHttpInfo(String templateId) throws ApiException {
-        okhttp3.Call localVarCall = getCustomTemplateApiV1TemplatesCustomTemplateIdGetValidateBeforeCall(templateId, null);
+    public ApiResponse<CustomTemplateResponse> getCustomTemplateWithHttpInfo(String templateId) throws ApiException {
+        okhttp3.Call localVarCall = getCustomTemplateValidateBeforeCall(templateId, null);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -703,15 +703,15 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomTemplateApiV1TemplatesCustomTemplateIdGetAsync(String templateId, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call getCustomTemplateAsync(String templateId, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCustomTemplateApiV1TemplatesCustomTemplateIdGetValidateBeforeCall(templateId, _callback);
+        okhttp3.Call localVarCall = getCustomTemplateValidateBeforeCall(templateId, _callback);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getTemplateApiV1TemplatesTemplateIdGet
+     * Build call for getTemplate
      * @param templateId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -723,7 +723,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTemplateApiV1TemplatesTemplateIdGetCall(String templateId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTemplateCall(String templateId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -769,13 +769,13 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTemplateApiV1TemplatesTemplateIdGetValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTemplateValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling getTemplateApiV1TemplatesTemplateIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'templateId' when calling getTemplate(Async)");
         }
 
-        return getTemplateApiV1TemplatesTemplateIdGetCall(templateId, _callback);
+        return getTemplateCall(templateId, _callback);
 
     }
 
@@ -792,8 +792,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public TemplateDetailResponse getTemplateApiV1TemplatesTemplateIdGet(String templateId) throws ApiException {
-        ApiResponse<TemplateDetailResponse> localVarResp = getTemplateApiV1TemplatesTemplateIdGetWithHttpInfo(templateId);
+    public TemplateDetailResponse getTemplate(String templateId) throws ApiException {
+        ApiResponse<TemplateDetailResponse> localVarResp = getTemplateWithHttpInfo(templateId);
         return localVarResp.getData();
     }
 
@@ -810,8 +810,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TemplateDetailResponse> getTemplateApiV1TemplatesTemplateIdGetWithHttpInfo(String templateId) throws ApiException {
-        okhttp3.Call localVarCall = getTemplateApiV1TemplatesTemplateIdGetValidateBeforeCall(templateId, null);
+    public ApiResponse<TemplateDetailResponse> getTemplateWithHttpInfo(String templateId) throws ApiException {
+        okhttp3.Call localVarCall = getTemplateValidateBeforeCall(templateId, null);
         Type localVarReturnType = new TypeToken<TemplateDetailResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -830,15 +830,15 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTemplateApiV1TemplatesTemplateIdGetAsync(String templateId, final ApiCallback<TemplateDetailResponse> _callback) throws ApiException {
+    public okhttp3.Call getTemplateAsync(String templateId, final ApiCallback<TemplateDetailResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTemplateApiV1TemplatesTemplateIdGetValidateBeforeCall(templateId, _callback);
+        okhttp3.Call localVarCall = getTemplateValidateBeforeCall(templateId, _callback);
         Type localVarReturnType = new TypeToken<TemplateDetailResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listCustomTemplatesApiV1TemplatesCustomGet
+     * Build call for listCustomTemplates
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -851,7 +851,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCustomTemplatesApiV1TemplatesCustomGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCustomTemplatesCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -904,8 +904,8 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCustomTemplatesApiV1TemplatesCustomGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listCustomTemplatesApiV1TemplatesCustomGetCall(limit, cursor, _callback);
+    private okhttp3.Call listCustomTemplatesValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listCustomTemplatesCall(limit, cursor, _callback);
 
     }
 
@@ -923,8 +923,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomTemplatesListResponse listCustomTemplatesApiV1TemplatesCustomGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<CustomTemplatesListResponse> localVarResp = listCustomTemplatesApiV1TemplatesCustomGetWithHttpInfo(limit, cursor);
+    public CustomTemplatesListResponse listCustomTemplates(Integer limit, String cursor) throws ApiException {
+        ApiResponse<CustomTemplatesListResponse> localVarResp = listCustomTemplatesWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -942,8 +942,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomTemplatesListResponse> listCustomTemplatesApiV1TemplatesCustomGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listCustomTemplatesApiV1TemplatesCustomGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<CustomTemplatesListResponse> listCustomTemplatesWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listCustomTemplatesValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<CustomTemplatesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -963,15 +963,400 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCustomTemplatesApiV1TemplatesCustomGetAsync(Integer limit, String cursor, final ApiCallback<CustomTemplatesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listCustomTemplatesAsync(Integer limit, String cursor, final ApiCallback<CustomTemplatesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCustomTemplatesApiV1TemplatesCustomGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listCustomTemplatesValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<CustomTemplatesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchTemplateApiV1TemplatesCustomTemplateIdPatch
+     * Build call for listTemplates
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listTemplatesCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/templates";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listTemplatesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listTemplatesCall(_callback);
+
+    }
+
+    /**
+     * List Templates
+     * 
+     * @return TemplatesListResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public TemplatesListResponse listTemplates() throws ApiException {
+        ApiResponse<TemplatesListResponse> localVarResp = listTemplatesWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Templates
+     * 
+     * @return ApiResponse&lt;TemplatesListResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TemplatesListResponse> listTemplatesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listTemplatesValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<TemplatesListResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Templates (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listTemplatesAsync(final ApiCallback<TemplatesListResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listTemplatesValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<TemplatesListResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for previewTemplate
+     * @param templateId  (required)
+     * @param documentRenderRequest  (required)
+     * @param idempotencyKey  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call previewTemplateCall(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = documentRenderRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/templates/{template_id}/preview"
+            .replace("{" + "template_id" + "}", localVarApiClient.escapeString(templateId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (idempotencyKey != null) {
+            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call previewTemplateValidateBeforeCall(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'templateId' is set
+        if (templateId == null) {
+            throw new ApiException("Missing the required parameter 'templateId' when calling previewTemplate(Async)");
+        }
+
+        // verify the required parameter 'documentRenderRequest' is set
+        if (documentRenderRequest == null) {
+            throw new ApiException("Missing the required parameter 'documentRenderRequest' when calling previewTemplate(Async)");
+        }
+
+        return previewTemplateCall(templateId, documentRenderRequest, idempotencyKey, _callback);
+
+    }
+
+    /**
+     * Preview Template
+     * 
+     * @param templateId  (required)
+     * @param documentRenderRequest  (required)
+     * @param idempotencyKey  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object previewTemplate(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<Object> localVarResp = previewTemplateWithHttpInfo(templateId, documentRenderRequest, idempotencyKey);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Preview Template
+     * 
+     * @param templateId  (required)
+     * @param documentRenderRequest  (required)
+     * @param idempotencyKey  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> previewTemplateWithHttpInfo(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, idempotencyKey, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Preview Template (asynchronously)
+     * 
+     * @param templateId  (required)
+     * @param documentRenderRequest  (required)
+     * @param idempotencyKey  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call previewTemplateAsync(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, idempotencyKey, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for publishTemplate
+     * @param templateId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call publishTemplateCall(String templateId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/templates/custom/{template_id}/publish"
+            .replace("{" + "template_id" + "}", localVarApiClient.escapeString(templateId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call publishTemplateValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'templateId' is set
+        if (templateId == null) {
+            throw new ApiException("Missing the required parameter 'templateId' when calling publishTemplate(Async)");
+        }
+
+        return publishTemplateCall(templateId, _callback);
+
+    }
+
+    /**
+     * Publish Template
+     * 
+     * @param templateId  (required)
+     * @return CustomTemplateResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public CustomTemplateResponse publishTemplate(String templateId) throws ApiException {
+        ApiResponse<CustomTemplateResponse> localVarResp = publishTemplateWithHttpInfo(templateId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Publish Template
+     * 
+     * @param templateId  (required)
+     * @return ApiResponse&lt;CustomTemplateResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CustomTemplateResponse> publishTemplateWithHttpInfo(String templateId) throws ApiException {
+        okhttp3.Call localVarCall = publishTemplateValidateBeforeCall(templateId, null);
+        Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Publish Template (asynchronously)
+     * 
+     * @param templateId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call publishTemplateAsync(String templateId, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = publishTemplateValidateBeforeCall(templateId, _callback);
+        Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateTemplate
      * @param templateId  (required)
      * @param templatePatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -984,7 +1369,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTemplateApiV1TemplatesCustomTemplateIdPatchCall(String templateId, TemplatePatchRequest templatePatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTemplateCall(String templateId, TemplatePatchRequest templatePatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1031,23 +1416,23 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchTemplateApiV1TemplatesCustomTemplateIdPatchValidateBeforeCall(String templateId, TemplatePatchRequest templatePatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTemplateValidateBeforeCall(String templateId, TemplatePatchRequest templatePatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling patchTemplateApiV1TemplatesCustomTemplateIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'templateId' when calling updateTemplate(Async)");
         }
 
         // verify the required parameter 'templatePatchRequest' is set
         if (templatePatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'templatePatchRequest' when calling patchTemplateApiV1TemplatesCustomTemplateIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'templatePatchRequest' when calling updateTemplate(Async)");
         }
 
-        return patchTemplateApiV1TemplatesCustomTemplateIdPatchCall(templateId, templatePatchRequest, _callback);
+        return updateTemplateCall(templateId, templatePatchRequest, _callback);
 
     }
 
     /**
-     * Patch Template
+     * Update Template
      * 
      * @param templateId  (required)
      * @param templatePatchRequest  (required)
@@ -1060,13 +1445,13 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomTemplateResponse patchTemplateApiV1TemplatesCustomTemplateIdPatch(String templateId, TemplatePatchRequest templatePatchRequest) throws ApiException {
-        ApiResponse<CustomTemplateResponse> localVarResp = patchTemplateApiV1TemplatesCustomTemplateIdPatchWithHttpInfo(templateId, templatePatchRequest);
+    public CustomTemplateResponse updateTemplate(String templateId, TemplatePatchRequest templatePatchRequest) throws ApiException {
+        ApiResponse<CustomTemplateResponse> localVarResp = updateTemplateWithHttpInfo(templateId, templatePatchRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Patch Template
+     * Update Template
      * 
      * @param templateId  (required)
      * @param templatePatchRequest  (required)
@@ -1079,14 +1464,14 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomTemplateResponse> patchTemplateApiV1TemplatesCustomTemplateIdPatchWithHttpInfo(String templateId, TemplatePatchRequest templatePatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = patchTemplateApiV1TemplatesCustomTemplateIdPatchValidateBeforeCall(templateId, templatePatchRequest, null);
+    public ApiResponse<CustomTemplateResponse> updateTemplateWithHttpInfo(String templateId, TemplatePatchRequest templatePatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateTemplateValidateBeforeCall(templateId, templatePatchRequest, null);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Patch Template (asynchronously)
+     * Update Template (asynchronously)
      * 
      * @param templateId  (required)
      * @param templatePatchRequest  (required)
@@ -1100,395 +1485,10 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTemplateApiV1TemplatesCustomTemplateIdPatchAsync(String templateId, TemplatePatchRequest templatePatchRequest, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call updateTemplateAsync(String templateId, TemplatePatchRequest templatePatchRequest, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchTemplateApiV1TemplatesCustomTemplateIdPatchValidateBeforeCall(templateId, templatePatchRequest, _callback);
+        okhttp3.Call localVarCall = updateTemplateValidateBeforeCall(templateId, templatePatchRequest, _callback);
         Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for previewTemplateApiV1TemplatesTemplateIdPreviewPost
-     * @param templateId  (required)
-     * @param appSchemasV1DocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call previewTemplateApiV1TemplatesTemplateIdPreviewPostCall(String templateId, AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = appSchemasV1DocumentRenderRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/templates/{template_id}/preview"
-            .replace("{" + "template_id" + "}", localVarApiClient.escapeString(templateId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (idempotencyKey != null) {
-            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call previewTemplateApiV1TemplatesTemplateIdPreviewPostValidateBeforeCall(String templateId, AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'templateId' is set
-        if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling previewTemplateApiV1TemplatesTemplateIdPreviewPost(Async)");
-        }
-
-        // verify the required parameter 'appSchemasV1DocumentRenderRequest' is set
-        if (appSchemasV1DocumentRenderRequest == null) {
-            throw new ApiException("Missing the required parameter 'appSchemasV1DocumentRenderRequest' when calling previewTemplateApiV1TemplatesTemplateIdPreviewPost(Async)");
-        }
-
-        return previewTemplateApiV1TemplatesTemplateIdPreviewPostCall(templateId, appSchemasV1DocumentRenderRequest, idempotencyKey, _callback);
-
-    }
-
-    /**
-     * Preview Template
-     * 
-     * @param templateId  (required)
-     * @param appSchemasV1DocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @return Object
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Object previewTemplateApiV1TemplatesTemplateIdPreviewPost(String templateId, AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<Object> localVarResp = previewTemplateApiV1TemplatesTemplateIdPreviewPostWithHttpInfo(templateId, appSchemasV1DocumentRenderRequest, idempotencyKey);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Preview Template
-     * 
-     * @param templateId  (required)
-     * @param appSchemasV1DocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Object> previewTemplateApiV1TemplatesTemplateIdPreviewPostWithHttpInfo(String templateId, AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = previewTemplateApiV1TemplatesTemplateIdPreviewPostValidateBeforeCall(templateId, appSchemasV1DocumentRenderRequest, idempotencyKey, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Preview Template (asynchronously)
-     * 
-     * @param templateId  (required)
-     * @param appSchemasV1DocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call previewTemplateApiV1TemplatesTemplateIdPreviewPostAsync(String templateId, AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = previewTemplateApiV1TemplatesTemplateIdPreviewPostValidateBeforeCall(templateId, appSchemasV1DocumentRenderRequest, idempotencyKey, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for publishTemplateApiV1TemplatesCustomTemplateIdPublishPost
-     * @param templateId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call publishTemplateApiV1TemplatesCustomTemplateIdPublishPostCall(String templateId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/templates/custom/{template_id}/publish"
-            .replace("{" + "template_id" + "}", localVarApiClient.escapeString(templateId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call publishTemplateApiV1TemplatesCustomTemplateIdPublishPostValidateBeforeCall(String templateId, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'templateId' is set
-        if (templateId == null) {
-            throw new ApiException("Missing the required parameter 'templateId' when calling publishTemplateApiV1TemplatesCustomTemplateIdPublishPost(Async)");
-        }
-
-        return publishTemplateApiV1TemplatesCustomTemplateIdPublishPostCall(templateId, _callback);
-
-    }
-
-    /**
-     * Publish Template
-     * 
-     * @param templateId  (required)
-     * @return CustomTemplateResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public CustomTemplateResponse publishTemplateApiV1TemplatesCustomTemplateIdPublishPost(String templateId) throws ApiException {
-        ApiResponse<CustomTemplateResponse> localVarResp = publishTemplateApiV1TemplatesCustomTemplateIdPublishPostWithHttpInfo(templateId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Publish Template
-     * 
-     * @param templateId  (required)
-     * @return ApiResponse&lt;CustomTemplateResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<CustomTemplateResponse> publishTemplateApiV1TemplatesCustomTemplateIdPublishPostWithHttpInfo(String templateId) throws ApiException {
-        okhttp3.Call localVarCall = publishTemplateApiV1TemplatesCustomTemplateIdPublishPostValidateBeforeCall(templateId, null);
-        Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Publish Template (asynchronously)
-     * 
-     * @param templateId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call publishTemplateApiV1TemplatesCustomTemplateIdPublishPostAsync(String templateId, final ApiCallback<CustomTemplateResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = publishTemplateApiV1TemplatesCustomTemplateIdPublishPostValidateBeforeCall(templateId, _callback);
-        Type localVarReturnType = new TypeToken<CustomTemplateResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for templatesApiV1TemplatesGet
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call templatesApiV1TemplatesGetCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/templates";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call templatesApiV1TemplatesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return templatesApiV1TemplatesGetCall(_callback);
-
-    }
-
-    /**
-     * Templates
-     * 
-     * @return TemplatesListResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public TemplatesListResponse templatesApiV1TemplatesGet() throws ApiException {
-        ApiResponse<TemplatesListResponse> localVarResp = templatesApiV1TemplatesGetWithHttpInfo();
-        return localVarResp.getData();
-    }
-
-    /**
-     * Templates
-     * 
-     * @return ApiResponse&lt;TemplatesListResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<TemplatesListResponse> templatesApiV1TemplatesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = templatesApiV1TemplatesGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<TemplatesListResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Templates (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call templatesApiV1TemplatesGetAsync(final ApiCallback<TemplatesListResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = templatesApiV1TemplatesGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<TemplatesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

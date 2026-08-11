@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createCustomerApiV1CustomersPost**](CustomersApi.md#createCustomerApiV1CustomersPost) | **POST** /api/v1/customers | Create Customer |
-| [**deleteCustomerApiV1CustomersCustomerIdDelete**](CustomersApi.md#deleteCustomerApiV1CustomersCustomerIdDelete) | **DELETE** /api/v1/customers/{customer_id} | Delete Customer |
-| [**getCustomerApiV1CustomersCustomerIdGet**](CustomersApi.md#getCustomerApiV1CustomersCustomerIdGet) | **GET** /api/v1/customers/{customer_id} | Get Customer |
-| [**listCustomersApiV1CustomersGet**](CustomersApi.md#listCustomersApiV1CustomersGet) | **GET** /api/v1/customers | List Customers |
-| [**patchCustomerApiV1CustomersCustomerIdPatch**](CustomersApi.md#patchCustomerApiV1CustomersCustomerIdPatch) | **PATCH** /api/v1/customers/{customer_id} | Patch Customer |
+| [**createCustomer**](CustomersApi.md#createCustomer) | **POST** /api/v1/customers | Create Customer |
+| [**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /api/v1/customers/{customer_id} | Delete Customer |
+| [**getCustomer**](CustomersApi.md#getCustomer) | **GET** /api/v1/customers/{customer_id} | Get Customer |
+| [**listCustomers**](CustomersApi.md#listCustomers) | **GET** /api/v1/customers | List Customers |
+| [**updateCustomer**](CustomersApi.md#updateCustomer) | **PATCH** /api/v1/customers/{customer_id} | Update Customer |
 
 
-<a id="createCustomerApiV1CustomersPost"></a>
-# **createCustomerApiV1CustomersPost**
-> CustomerResponse createCustomerApiV1CustomersPost(customerCreate, idempotencyKey)
+<a id="createCustomer"></a>
+# **createCustomer**
+> CustomerResponse createCustomer(customerCreate, idempotencyKey)
 
 Create Customer
 
@@ -40,10 +40,10 @@ public class Example {
     CustomerCreate customerCreate = new CustomerCreate(); // CustomerCreate | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      CustomerResponse result = apiInstance.createCustomerApiV1CustomersPost(customerCreate, idempotencyKey);
+      CustomerResponse result = apiInstance.createCustomer(customerCreate, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CustomersApi#createCustomerApiV1CustomersPost");
+      System.err.println("Exception when calling CustomersApi#createCustomer");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -79,9 +79,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deleteCustomerApiV1CustomersCustomerIdDelete"></a>
-# **deleteCustomerApiV1CustomersCustomerIdDelete**
-> SimpleBoolResponse deleteCustomerApiV1CustomersCustomerIdDelete(customerId)
+<a id="deleteCustomer"></a>
+# **deleteCustomer**
+> SimpleBoolResponse deleteCustomer(customerId)
 
 Delete Customer
 
@@ -107,10 +107,10 @@ public class Example {
     CustomersApi apiInstance = new CustomersApi(defaultClient);
     String customerId = "customerId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteCustomerApiV1CustomersCustomerIdDelete(customerId);
+      SimpleBoolResponse result = apiInstance.deleteCustomer(customerId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CustomersApi#deleteCustomerApiV1CustomersCustomerIdDelete");
+      System.err.println("Exception when calling CustomersApi#deleteCustomer");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -145,9 +145,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getCustomerApiV1CustomersCustomerIdGet"></a>
-# **getCustomerApiV1CustomersCustomerIdGet**
-> CustomerResponse getCustomerApiV1CustomersCustomerIdGet(customerId)
+<a id="getCustomer"></a>
+# **getCustomer**
+> CustomerResponse getCustomer(customerId)
 
 Get Customer
 
@@ -173,10 +173,10 @@ public class Example {
     CustomersApi apiInstance = new CustomersApi(defaultClient);
     String customerId = "customerId_example"; // String | 
     try {
-      CustomerResponse result = apiInstance.getCustomerApiV1CustomersCustomerIdGet(customerId);
+      CustomerResponse result = apiInstance.getCustomer(customerId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CustomersApi#getCustomerApiV1CustomersCustomerIdGet");
+      System.err.println("Exception when calling CustomersApi#getCustomer");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -211,9 +211,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listCustomersApiV1CustomersGet"></a>
-# **listCustomersApiV1CustomersGet**
-> CustomersListResponse listCustomersApiV1CustomersGet(limit, cursor)
+<a id="listCustomers"></a>
+# **listCustomers**
+> CustomersListResponse listCustomers(limit, cursor)
 
 List Customers
 
@@ -240,10 +240,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      CustomersListResponse result = apiInstance.listCustomersApiV1CustomersGet(limit, cursor);
+      CustomersListResponse result = apiInstance.listCustomers(limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CustomersApi#listCustomersApiV1CustomersGet");
+      System.err.println("Exception when calling CustomersApi#listCustomers");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -279,11 +279,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="patchCustomerApiV1CustomersCustomerIdPatch"></a>
-# **patchCustomerApiV1CustomersCustomerIdPatch**
-> CustomerResponse patchCustomerApiV1CustomersCustomerIdPatch(customerId, customerPatch, idempotencyKey)
+<a id="updateCustomer"></a>
+# **updateCustomer**
+> CustomerResponse updateCustomer(customerId, customerPatch, idempotencyKey)
 
-Patch Customer
+Update Customer
 
 ### Example
 ```java
@@ -309,10 +309,10 @@ public class Example {
     CustomerPatch customerPatch = new CustomerPatch(); // CustomerPatch | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      CustomerResponse result = apiInstance.patchCustomerApiV1CustomersCustomerIdPatch(customerId, customerPatch, idempotencyKey);
+      CustomerResponse result = apiInstance.updateCustomer(customerId, customerPatch, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CustomersApi#patchCustomerApiV1CustomersCustomerIdPatch");
+      System.err.println("Exception when calling CustomersApi#updateCustomer");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

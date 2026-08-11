@@ -78,8 +78,8 @@ public class PaymentsApi {
     }
 
     /**
-     * Build call for createPaymentApiV1DocumentsInvoiceIdPaymentsPost
-     * @param invoiceId  (required)
+     * Build call for createDocumentPayment
+     * @param documentId  (required)
      * @param paymentCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,7 +91,7 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPaymentApiV1DocumentsInvoiceIdPaymentsPostCall(String invoiceId, PaymentCreateRequest paymentCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createDocumentPaymentCall(String documentId, PaymentCreateRequest paymentCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -108,8 +108,8 @@ public class PaymentsApi {
         Object localVarPostBody = paymentCreateRequest;
 
         // create path and map variables
-        String localVarPath = "/api/v1/documents/{invoice_id}/payments"
-            .replace("{" + "invoice_id" + "}", localVarApiClient.escapeString(invoiceId.toString()));
+        String localVarPath = "/api/v1/documents/{document_id}/payments"
+            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -138,25 +138,25 @@ public class PaymentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPaymentApiV1DocumentsInvoiceIdPaymentsPostValidateBeforeCall(String invoiceId, PaymentCreateRequest paymentCreateRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'invoiceId' is set
-        if (invoiceId == null) {
-            throw new ApiException("Missing the required parameter 'invoiceId' when calling createPaymentApiV1DocumentsInvoiceIdPaymentsPost(Async)");
+    private okhttp3.Call createDocumentPaymentValidateBeforeCall(String documentId, PaymentCreateRequest paymentCreateRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null) {
+            throw new ApiException("Missing the required parameter 'documentId' when calling createDocumentPayment(Async)");
         }
 
         // verify the required parameter 'paymentCreateRequest' is set
         if (paymentCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'paymentCreateRequest' when calling createPaymentApiV1DocumentsInvoiceIdPaymentsPost(Async)");
+            throw new ApiException("Missing the required parameter 'paymentCreateRequest' when calling createDocumentPayment(Async)");
         }
 
-        return createPaymentApiV1DocumentsInvoiceIdPaymentsPostCall(invoiceId, paymentCreateRequest, _callback);
+        return createDocumentPaymentCall(documentId, paymentCreateRequest, _callback);
 
     }
 
     /**
-     * Create Payment
+     * Create Document Payment
      * 
-     * @param invoiceId  (required)
+     * @param documentId  (required)
      * @param paymentCreateRequest  (required)
      * @return PaymentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -167,15 +167,15 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public PaymentResponse createPaymentApiV1DocumentsInvoiceIdPaymentsPost(String invoiceId, PaymentCreateRequest paymentCreateRequest) throws ApiException {
-        ApiResponse<PaymentResponse> localVarResp = createPaymentApiV1DocumentsInvoiceIdPaymentsPostWithHttpInfo(invoiceId, paymentCreateRequest);
+    public PaymentResponse createDocumentPayment(String documentId, PaymentCreateRequest paymentCreateRequest) throws ApiException {
+        ApiResponse<PaymentResponse> localVarResp = createDocumentPaymentWithHttpInfo(documentId, paymentCreateRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Create Payment
+     * Create Document Payment
      * 
-     * @param invoiceId  (required)
+     * @param documentId  (required)
      * @param paymentCreateRequest  (required)
      * @return ApiResponse&lt;PaymentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -186,16 +186,16 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PaymentResponse> createPaymentApiV1DocumentsInvoiceIdPaymentsPostWithHttpInfo(String invoiceId, PaymentCreateRequest paymentCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createPaymentApiV1DocumentsInvoiceIdPaymentsPostValidateBeforeCall(invoiceId, paymentCreateRequest, null);
+    public ApiResponse<PaymentResponse> createDocumentPaymentWithHttpInfo(String documentId, PaymentCreateRequest paymentCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createDocumentPaymentValidateBeforeCall(documentId, paymentCreateRequest, null);
         Type localVarReturnType = new TypeToken<PaymentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Payment (asynchronously)
+     * Create Document Payment (asynchronously)
      * 
-     * @param invoiceId  (required)
+     * @param documentId  (required)
      * @param paymentCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -207,15 +207,15 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPaymentApiV1DocumentsInvoiceIdPaymentsPostAsync(String invoiceId, PaymentCreateRequest paymentCreateRequest, final ApiCallback<PaymentResponse> _callback) throws ApiException {
+    public okhttp3.Call createDocumentPaymentAsync(String documentId, PaymentCreateRequest paymentCreateRequest, final ApiCallback<PaymentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createPaymentApiV1DocumentsInvoiceIdPaymentsPostValidateBeforeCall(invoiceId, paymentCreateRequest, _callback);
+        okhttp3.Call localVarCall = createDocumentPaymentValidateBeforeCall(documentId, paymentCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<PaymentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deletePaymentApiV1PaymentsPaymentIdDelete
+     * Build call for deletePayment
      * @param paymentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -227,7 +227,7 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePaymentApiV1PaymentsPaymentIdDeleteCall(String paymentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deletePaymentCall(String paymentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -273,13 +273,13 @@ public class PaymentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePaymentApiV1PaymentsPaymentIdDeleteValidateBeforeCall(String paymentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePaymentValidateBeforeCall(String paymentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
-            throw new ApiException("Missing the required parameter 'paymentId' when calling deletePaymentApiV1PaymentsPaymentIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'paymentId' when calling deletePayment(Async)");
         }
 
-        return deletePaymentApiV1PaymentsPaymentIdDeleteCall(paymentId, _callback);
+        return deletePaymentCall(paymentId, _callback);
 
     }
 
@@ -296,8 +296,8 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deletePaymentApiV1PaymentsPaymentIdDelete(String paymentId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deletePaymentApiV1PaymentsPaymentIdDeleteWithHttpInfo(paymentId);
+    public SimpleBoolResponse deletePayment(String paymentId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deletePaymentWithHttpInfo(paymentId);
         return localVarResp.getData();
     }
 
@@ -314,8 +314,8 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deletePaymentApiV1PaymentsPaymentIdDeleteWithHttpInfo(String paymentId) throws ApiException {
-        okhttp3.Call localVarCall = deletePaymentApiV1PaymentsPaymentIdDeleteValidateBeforeCall(paymentId, null);
+    public ApiResponse<SimpleBoolResponse> deletePaymentWithHttpInfo(String paymentId) throws ApiException {
+        okhttp3.Call localVarCall = deletePaymentValidateBeforeCall(paymentId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -334,15 +334,15 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePaymentApiV1PaymentsPaymentIdDeleteAsync(String paymentId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deletePaymentAsync(String paymentId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deletePaymentApiV1PaymentsPaymentIdDeleteValidateBeforeCall(paymentId, _callback);
+        okhttp3.Call localVarCall = deletePaymentValidateBeforeCall(paymentId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getPaymentApiV1PaymentsPaymentIdGet
+     * Build call for getPayment
      * @param paymentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -354,7 +354,7 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPaymentApiV1PaymentsPaymentIdGetCall(String paymentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPaymentCall(String paymentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -400,13 +400,13 @@ public class PaymentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPaymentApiV1PaymentsPaymentIdGetValidateBeforeCall(String paymentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPaymentValidateBeforeCall(String paymentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
-            throw new ApiException("Missing the required parameter 'paymentId' when calling getPaymentApiV1PaymentsPaymentIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'paymentId' when calling getPayment(Async)");
         }
 
-        return getPaymentApiV1PaymentsPaymentIdGetCall(paymentId, _callback);
+        return getPaymentCall(paymentId, _callback);
 
     }
 
@@ -423,8 +423,8 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public PaymentResponse getPaymentApiV1PaymentsPaymentIdGet(String paymentId) throws ApiException {
-        ApiResponse<PaymentResponse> localVarResp = getPaymentApiV1PaymentsPaymentIdGetWithHttpInfo(paymentId);
+    public PaymentResponse getPayment(String paymentId) throws ApiException {
+        ApiResponse<PaymentResponse> localVarResp = getPaymentWithHttpInfo(paymentId);
         return localVarResp.getData();
     }
 
@@ -441,8 +441,8 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PaymentResponse> getPaymentApiV1PaymentsPaymentIdGetWithHttpInfo(String paymentId) throws ApiException {
-        okhttp3.Call localVarCall = getPaymentApiV1PaymentsPaymentIdGetValidateBeforeCall(paymentId, null);
+    public ApiResponse<PaymentResponse> getPaymentWithHttpInfo(String paymentId) throws ApiException {
+        okhttp3.Call localVarCall = getPaymentValidateBeforeCall(paymentId, null);
         Type localVarReturnType = new TypeToken<PaymentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -461,16 +461,16 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPaymentApiV1PaymentsPaymentIdGetAsync(String paymentId, final ApiCallback<PaymentResponse> _callback) throws ApiException {
+    public okhttp3.Call getPaymentAsync(String paymentId, final ApiCallback<PaymentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getPaymentApiV1PaymentsPaymentIdGetValidateBeforeCall(paymentId, _callback);
+        okhttp3.Call localVarCall = getPaymentValidateBeforeCall(paymentId, _callback);
         Type localVarReturnType = new TypeToken<PaymentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet
-     * @param invoiceId  (required)
+     * Build call for listDocumentPayments
+     * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -483,7 +483,7 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetCall(String invoiceId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDocumentPaymentsCall(String documentId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -500,8 +500,8 @@ public class PaymentsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/documents/{invoice_id}/payments"
-            .replace("{" + "invoice_id" + "}", localVarApiClient.escapeString(invoiceId.toString()));
+        String localVarPath = "/api/v1/documents/{document_id}/payments"
+            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -537,20 +537,20 @@ public class PaymentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetValidateBeforeCall(String invoiceId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'invoiceId' is set
-        if (invoiceId == null) {
-            throw new ApiException("Missing the required parameter 'invoiceId' when calling listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet(Async)");
+    private okhttp3.Call listDocumentPaymentsValidateBeforeCall(String documentId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null) {
+            throw new ApiException("Missing the required parameter 'documentId' when calling listDocumentPayments(Async)");
         }
 
-        return listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetCall(invoiceId, limit, cursor, _callback);
+        return listDocumentPaymentsCall(documentId, limit, cursor, _callback);
 
     }
 
     /**
-     * List Invoice Payments
+     * List Document Payments
      * 
-     * @param invoiceId  (required)
+     * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return PaymentsListResponse
@@ -562,15 +562,15 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public PaymentsListResponse listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet(String invoiceId, Integer limit, String cursor) throws ApiException {
-        ApiResponse<PaymentsListResponse> localVarResp = listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetWithHttpInfo(invoiceId, limit, cursor);
+    public PaymentsListResponse listDocumentPayments(String documentId, Integer limit, String cursor) throws ApiException {
+        ApiResponse<PaymentsListResponse> localVarResp = listDocumentPaymentsWithHttpInfo(documentId, limit, cursor);
         return localVarResp.getData();
     }
 
     /**
-     * List Invoice Payments
+     * List Document Payments
      * 
-     * @param invoiceId  (required)
+     * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;PaymentsListResponse&gt;
@@ -582,16 +582,16 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PaymentsListResponse> listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetWithHttpInfo(String invoiceId, Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetValidateBeforeCall(invoiceId, limit, cursor, null);
+    public ApiResponse<PaymentsListResponse> listDocumentPaymentsWithHttpInfo(String documentId, Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listDocumentPaymentsValidateBeforeCall(documentId, limit, cursor, null);
         Type localVarReturnType = new TypeToken<PaymentsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Invoice Payments (asynchronously)
+     * List Document Payments (asynchronously)
      * 
-     * @param invoiceId  (required)
+     * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -604,15 +604,15 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetAsync(String invoiceId, Integer limit, String cursor, final ApiCallback<PaymentsListResponse> _callback) throws ApiException {
+    public okhttp3.Call listDocumentPaymentsAsync(String documentId, Integer limit, String cursor, final ApiCallback<PaymentsListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGetValidateBeforeCall(invoiceId, limit, cursor, _callback);
+        okhttp3.Call localVarCall = listDocumentPaymentsValidateBeforeCall(documentId, limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<PaymentsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for updatePaymentApiV1PaymentsPaymentIdPatch
+     * Build call for updatePayment
      * @param paymentId  (required)
      * @param paymentPatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -625,7 +625,7 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePaymentApiV1PaymentsPaymentIdPatchCall(String paymentId, PaymentPatchRequest paymentPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePaymentCall(String paymentId, PaymentPatchRequest paymentPatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -672,18 +672,18 @@ public class PaymentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePaymentApiV1PaymentsPaymentIdPatchValidateBeforeCall(String paymentId, PaymentPatchRequest paymentPatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePaymentValidateBeforeCall(String paymentId, PaymentPatchRequest paymentPatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
-            throw new ApiException("Missing the required parameter 'paymentId' when calling updatePaymentApiV1PaymentsPaymentIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'paymentId' when calling updatePayment(Async)");
         }
 
         // verify the required parameter 'paymentPatchRequest' is set
         if (paymentPatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'paymentPatchRequest' when calling updatePaymentApiV1PaymentsPaymentIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'paymentPatchRequest' when calling updatePayment(Async)");
         }
 
-        return updatePaymentApiV1PaymentsPaymentIdPatchCall(paymentId, paymentPatchRequest, _callback);
+        return updatePaymentCall(paymentId, paymentPatchRequest, _callback);
 
     }
 
@@ -701,8 +701,8 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public PaymentResponse updatePaymentApiV1PaymentsPaymentIdPatch(String paymentId, PaymentPatchRequest paymentPatchRequest) throws ApiException {
-        ApiResponse<PaymentResponse> localVarResp = updatePaymentApiV1PaymentsPaymentIdPatchWithHttpInfo(paymentId, paymentPatchRequest);
+    public PaymentResponse updatePayment(String paymentId, PaymentPatchRequest paymentPatchRequest) throws ApiException {
+        ApiResponse<PaymentResponse> localVarResp = updatePaymentWithHttpInfo(paymentId, paymentPatchRequest);
         return localVarResp.getData();
     }
 
@@ -720,8 +720,8 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PaymentResponse> updatePaymentApiV1PaymentsPaymentIdPatchWithHttpInfo(String paymentId, PaymentPatchRequest paymentPatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = updatePaymentApiV1PaymentsPaymentIdPatchValidateBeforeCall(paymentId, paymentPatchRequest, null);
+    public ApiResponse<PaymentResponse> updatePaymentWithHttpInfo(String paymentId, PaymentPatchRequest paymentPatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updatePaymentValidateBeforeCall(paymentId, paymentPatchRequest, null);
         Type localVarReturnType = new TypeToken<PaymentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -741,9 +741,9 @@ public class PaymentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePaymentApiV1PaymentsPaymentIdPatchAsync(String paymentId, PaymentPatchRequest paymentPatchRequest, final ApiCallback<PaymentResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePaymentAsync(String paymentId, PaymentPatchRequest paymentPatchRequest, final ApiCallback<PaymentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePaymentApiV1PaymentsPaymentIdPatchValidateBeforeCall(paymentId, paymentPatchRequest, _callback);
+        okhttp3.Call localVarCall = updatePaymentValidateBeforeCall(paymentId, paymentPatchRequest, _callback);
         Type localVarReturnType = new TypeToken<PaymentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

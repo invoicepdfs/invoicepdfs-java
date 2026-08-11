@@ -74,7 +74,7 @@ public class RendersApi {
     }
 
     /**
-     * Build call for downloadRenderApiV1RendersRenderIdDownloadGet
+     * Build call for downloadRender
      * @param renderId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -86,7 +86,7 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadRenderApiV1RendersRenderIdDownloadGetCall(String renderId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call downloadRenderCall(String renderId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,13 +133,13 @@ public class RendersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadRenderApiV1RendersRenderIdDownloadGetValidateBeforeCall(String renderId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadRenderValidateBeforeCall(String renderId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'renderId' is set
         if (renderId == null) {
-            throw new ApiException("Missing the required parameter 'renderId' when calling downloadRenderApiV1RendersRenderIdDownloadGet(Async)");
+            throw new ApiException("Missing the required parameter 'renderId' when calling downloadRender(Async)");
         }
 
-        return downloadRenderApiV1RendersRenderIdDownloadGetCall(renderId, _callback);
+        return downloadRenderCall(renderId, _callback);
 
     }
 
@@ -156,8 +156,8 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadRenderApiV1RendersRenderIdDownloadGet(String renderId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadRenderApiV1RendersRenderIdDownloadGetWithHttpInfo(renderId);
+    public File downloadRender(String renderId) throws ApiException {
+        ApiResponse<File> localVarResp = downloadRenderWithHttpInfo(renderId);
         return localVarResp.getData();
     }
 
@@ -174,8 +174,8 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadRenderApiV1RendersRenderIdDownloadGetWithHttpInfo(String renderId) throws ApiException {
-        okhttp3.Call localVarCall = downloadRenderApiV1RendersRenderIdDownloadGetValidateBeforeCall(renderId, null);
+    public ApiResponse<File> downloadRenderWithHttpInfo(String renderId) throws ApiException {
+        okhttp3.Call localVarCall = downloadRenderValidateBeforeCall(renderId, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -194,15 +194,15 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadRenderApiV1RendersRenderIdDownloadGetAsync(String renderId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadRenderAsync(String renderId, final ApiCallback<File> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = downloadRenderApiV1RendersRenderIdDownloadGetValidateBeforeCall(renderId, _callback);
+        okhttp3.Call localVarCall = downloadRenderValidateBeforeCall(renderId, _callback);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getRenderApiV1RendersRenderIdGet
+     * Build call for getRender
      * @param renderId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -214,7 +214,7 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRenderApiV1RendersRenderIdGetCall(String renderId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRenderCall(String renderId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -260,13 +260,13 @@ public class RendersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRenderApiV1RendersRenderIdGetValidateBeforeCall(String renderId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRenderValidateBeforeCall(String renderId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'renderId' is set
         if (renderId == null) {
-            throw new ApiException("Missing the required parameter 'renderId' when calling getRenderApiV1RendersRenderIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'renderId' when calling getRender(Async)");
         }
 
-        return getRenderApiV1RendersRenderIdGetCall(renderId, _callback);
+        return getRenderCall(renderId, _callback);
 
     }
 
@@ -283,8 +283,8 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> getRenderApiV1RendersRenderIdGet(String renderId) throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = getRenderApiV1RendersRenderIdGetWithHttpInfo(renderId);
+    public Map<String, Object> getRender(String renderId) throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = getRenderWithHttpInfo(renderId);
         return localVarResp.getData();
     }
 
@@ -301,8 +301,8 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> getRenderApiV1RendersRenderIdGetWithHttpInfo(String renderId) throws ApiException {
-        okhttp3.Call localVarCall = getRenderApiV1RendersRenderIdGetValidateBeforeCall(renderId, null);
+    public ApiResponse<Map<String, Object>> getRenderWithHttpInfo(String renderId) throws ApiException {
+        okhttp3.Call localVarCall = getRenderValidateBeforeCall(renderId, null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -321,9 +321,9 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRenderApiV1RendersRenderIdGetAsync(String renderId, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call getRenderAsync(String renderId, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRenderApiV1RendersRenderIdGetValidateBeforeCall(renderId, _callback);
+        okhttp3.Call localVarCall = getRenderValidateBeforeCall(renderId, _callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

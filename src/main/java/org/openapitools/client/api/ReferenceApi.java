@@ -72,7 +72,7 @@ public class ReferenceApi {
     }
 
     /**
-     * Build call for listCountriesApiV1ReferenceCountriesGet
+     * Build call for listCountries
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -82,7 +82,7 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCountriesApiV1ReferenceCountriesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCountriesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -127,8 +127,8 @@ public class ReferenceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCountriesApiV1ReferenceCountriesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listCountriesApiV1ReferenceCountriesGetCall(_callback);
+    private okhttp3.Call listCountriesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listCountriesCall(_callback);
 
     }
 
@@ -143,8 +143,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listCountriesApiV1ReferenceCountriesGet() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listCountriesApiV1ReferenceCountriesGetWithHttpInfo();
+    public Map<String, Object> listCountries() throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = listCountriesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -159,8 +159,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listCountriesApiV1ReferenceCountriesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listCountriesApiV1ReferenceCountriesGetValidateBeforeCall(null);
+    public ApiResponse<Map<String, Object>> listCountriesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listCountriesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -177,15 +177,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCountriesApiV1ReferenceCountriesGetAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listCountriesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCountriesApiV1ReferenceCountriesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listCountriesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listCurrenciesApiV1ReferenceCurrenciesGet
+     * Build call for listCurrencies
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -195,7 +195,7 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCurrenciesApiV1ReferenceCurrenciesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCurrenciesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -240,8 +240,8 @@ public class ReferenceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCurrenciesApiV1ReferenceCurrenciesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listCurrenciesApiV1ReferenceCurrenciesGetCall(_callback);
+    private okhttp3.Call listCurrenciesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listCurrenciesCall(_callback);
 
     }
 
@@ -256,8 +256,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listCurrenciesApiV1ReferenceCurrenciesGet() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listCurrenciesApiV1ReferenceCurrenciesGetWithHttpInfo();
+    public Map<String, Object> listCurrencies() throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = listCurrenciesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -272,8 +272,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listCurrenciesApiV1ReferenceCurrenciesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listCurrenciesApiV1ReferenceCurrenciesGetValidateBeforeCall(null);
+    public ApiResponse<Map<String, Object>> listCurrenciesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listCurrenciesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -290,15 +290,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCurrenciesApiV1ReferenceCurrenciesGetAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listCurrenciesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCurrenciesApiV1ReferenceCurrenciesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listCurrenciesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listDocumentTypesApiV1ReferenceDocumentTypesGet
+     * Build call for listDocumentTypes
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -308,7 +308,7 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentTypesApiV1ReferenceDocumentTypesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDocumentTypesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -353,8 +353,8 @@ public class ReferenceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDocumentTypesApiV1ReferenceDocumentTypesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listDocumentTypesApiV1ReferenceDocumentTypesGetCall(_callback);
+    private okhttp3.Call listDocumentTypesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listDocumentTypesCall(_callback);
 
     }
 
@@ -369,8 +369,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listDocumentTypesApiV1ReferenceDocumentTypesGet() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listDocumentTypesApiV1ReferenceDocumentTypesGetWithHttpInfo();
+    public Map<String, Object> listDocumentTypes() throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = listDocumentTypesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -385,8 +385,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listDocumentTypesApiV1ReferenceDocumentTypesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listDocumentTypesApiV1ReferenceDocumentTypesGetValidateBeforeCall(null);
+    public ApiResponse<Map<String, Object>> listDocumentTypesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listDocumentTypesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -403,15 +403,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentTypesApiV1ReferenceDocumentTypesGetAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listDocumentTypesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listDocumentTypesApiV1ReferenceDocumentTypesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listDocumentTypesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listLocalesApiV1ReferenceLocalesGet
+     * Build call for listLocales
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -421,7 +421,7 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLocalesApiV1ReferenceLocalesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listLocalesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -466,8 +466,8 @@ public class ReferenceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listLocalesApiV1ReferenceLocalesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listLocalesApiV1ReferenceLocalesGetCall(_callback);
+    private okhttp3.Call listLocalesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listLocalesCall(_callback);
 
     }
 
@@ -482,8 +482,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listLocalesApiV1ReferenceLocalesGet() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listLocalesApiV1ReferenceLocalesGetWithHttpInfo();
+    public Map<String, Object> listLocales() throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = listLocalesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -498,8 +498,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listLocalesApiV1ReferenceLocalesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listLocalesApiV1ReferenceLocalesGetValidateBeforeCall(null);
+    public ApiResponse<Map<String, Object>> listLocalesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listLocalesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -516,15 +516,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLocalesApiV1ReferenceLocalesGetAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listLocalesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listLocalesApiV1ReferenceLocalesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listLocalesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listPageSizesApiV1ReferencePageSizesGet
+     * Build call for listPageSizes
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -534,7 +534,7 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPageSizesApiV1ReferencePageSizesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPageSizesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -579,8 +579,8 @@ public class ReferenceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPageSizesApiV1ReferencePageSizesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listPageSizesApiV1ReferencePageSizesGetCall(_callback);
+    private okhttp3.Call listPageSizesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listPageSizesCall(_callback);
 
     }
 
@@ -595,8 +595,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listPageSizesApiV1ReferencePageSizesGet() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listPageSizesApiV1ReferencePageSizesGetWithHttpInfo();
+    public Map<String, Object> listPageSizes() throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = listPageSizesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -611,8 +611,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listPageSizesApiV1ReferencePageSizesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listPageSizesApiV1ReferencePageSizesGetValidateBeforeCall(null);
+    public ApiResponse<Map<String, Object>> listPageSizesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listPageSizesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -629,15 +629,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPageSizesApiV1ReferencePageSizesGetAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listPageSizesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listPageSizesApiV1ReferencePageSizesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listPageSizesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listTimezonesApiV1ReferenceTimezonesGet
+     * Build call for listTimezones
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -647,7 +647,7 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTimezonesApiV1ReferenceTimezonesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTimezonesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -692,8 +692,8 @@ public class ReferenceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTimezonesApiV1ReferenceTimezonesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listTimezonesApiV1ReferenceTimezonesGetCall(_callback);
+    private okhttp3.Call listTimezonesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listTimezonesCall(_callback);
 
     }
 
@@ -708,8 +708,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listTimezonesApiV1ReferenceTimezonesGet() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listTimezonesApiV1ReferenceTimezonesGetWithHttpInfo();
+    public Map<String, Object> listTimezones() throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = listTimezonesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -724,8 +724,8 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listTimezonesApiV1ReferenceTimezonesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listTimezonesApiV1ReferenceTimezonesGetValidateBeforeCall(null);
+    public ApiResponse<Map<String, Object>> listTimezonesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listTimezonesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -742,9 +742,9 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTimezonesApiV1ReferenceTimezonesGetAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listTimezonesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listTimezonesApiV1ReferenceTimezonesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listTimezonesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

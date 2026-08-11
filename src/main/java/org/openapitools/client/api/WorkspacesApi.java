@@ -82,7 +82,7 @@ public class WorkspacesApi {
     }
 
     /**
-     * Build call for createMemberApiV1WorkspacesWorkspaceIdMembersPost
+     * Build call for addWorkspaceMember
      * @param workspaceId  (required)
      * @param workspaceMemberCreateRequest  (required)
      * @param idempotencyKey  (optional)
@@ -96,7 +96,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createMemberApiV1WorkspacesWorkspaceIdMembersPostCall(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addWorkspaceMemberCall(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -147,23 +147,23 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createMemberApiV1WorkspacesWorkspaceIdMembersPostValidateBeforeCall(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addWorkspaceMemberValidateBeforeCall(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workspaceId' is set
         if (workspaceId == null) {
-            throw new ApiException("Missing the required parameter 'workspaceId' when calling createMemberApiV1WorkspacesWorkspaceIdMembersPost(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceId' when calling addWorkspaceMember(Async)");
         }
 
         // verify the required parameter 'workspaceMemberCreateRequest' is set
         if (workspaceMemberCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'workspaceMemberCreateRequest' when calling createMemberApiV1WorkspacesWorkspaceIdMembersPost(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceMemberCreateRequest' when calling addWorkspaceMember(Async)");
         }
 
-        return createMemberApiV1WorkspacesWorkspaceIdMembersPostCall(workspaceId, workspaceMemberCreateRequest, idempotencyKey, _callback);
+        return addWorkspaceMemberCall(workspaceId, workspaceMemberCreateRequest, idempotencyKey, _callback);
 
     }
 
     /**
-     * Create Member
+     * Add Workspace Member
      * 
      * @param workspaceId  (required)
      * @param workspaceMemberCreateRequest  (required)
@@ -177,13 +177,13 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WorkspaceMembersListResponse createMemberApiV1WorkspacesWorkspaceIdMembersPost(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<WorkspaceMembersListResponse> localVarResp = createMemberApiV1WorkspacesWorkspaceIdMembersPostWithHttpInfo(workspaceId, workspaceMemberCreateRequest, idempotencyKey);
+    public WorkspaceMembersListResponse addWorkspaceMember(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<WorkspaceMembersListResponse> localVarResp = addWorkspaceMemberWithHttpInfo(workspaceId, workspaceMemberCreateRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
     /**
-     * Create Member
+     * Add Workspace Member
      * 
      * @param workspaceId  (required)
      * @param workspaceMemberCreateRequest  (required)
@@ -197,14 +197,14 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkspaceMembersListResponse> createMemberApiV1WorkspacesWorkspaceIdMembersPostWithHttpInfo(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = createMemberApiV1WorkspacesWorkspaceIdMembersPostValidateBeforeCall(workspaceId, workspaceMemberCreateRequest, idempotencyKey, null);
+    public ApiResponse<WorkspaceMembersListResponse> addWorkspaceMemberWithHttpInfo(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = addWorkspaceMemberValidateBeforeCall(workspaceId, workspaceMemberCreateRequest, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<WorkspaceMembersListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Member (asynchronously)
+     * Add Workspace Member (asynchronously)
      * 
      * @param workspaceId  (required)
      * @param workspaceMemberCreateRequest  (required)
@@ -219,15 +219,15 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createMemberApiV1WorkspacesWorkspaceIdMembersPostAsync(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey, final ApiCallback<WorkspaceMembersListResponse> _callback) throws ApiException {
+    public okhttp3.Call addWorkspaceMemberAsync(String workspaceId, WorkspaceMemberCreateRequest workspaceMemberCreateRequest, String idempotencyKey, final ApiCallback<WorkspaceMembersListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createMemberApiV1WorkspacesWorkspaceIdMembersPostValidateBeforeCall(workspaceId, workspaceMemberCreateRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = addWorkspaceMemberValidateBeforeCall(workspaceId, workspaceMemberCreateRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<WorkspaceMembersListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createWorkspaceApiV1WorkspacesPost
+     * Build call for createWorkspace
      * @param workspaceCreateRequest  (required)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
@@ -240,7 +240,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkspaceApiV1WorkspacesPostCall(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWorkspaceCall(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -290,13 +290,13 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWorkspaceApiV1WorkspacesPostValidateBeforeCall(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkspaceValidateBeforeCall(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workspaceCreateRequest' is set
         if (workspaceCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'workspaceCreateRequest' when calling createWorkspaceApiV1WorkspacesPost(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceCreateRequest' when calling createWorkspace(Async)");
         }
 
-        return createWorkspaceApiV1WorkspacesPostCall(workspaceCreateRequest, idempotencyKey, _callback);
+        return createWorkspaceCall(workspaceCreateRequest, idempotencyKey, _callback);
 
     }
 
@@ -314,8 +314,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WorkspaceResponse createWorkspaceApiV1WorkspacesPost(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<WorkspaceResponse> localVarResp = createWorkspaceApiV1WorkspacesPostWithHttpInfo(workspaceCreateRequest, idempotencyKey);
+    public WorkspaceResponse createWorkspace(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<WorkspaceResponse> localVarResp = createWorkspaceWithHttpInfo(workspaceCreateRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -333,8 +333,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkspaceResponse> createWorkspaceApiV1WorkspacesPostWithHttpInfo(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = createWorkspaceApiV1WorkspacesPostValidateBeforeCall(workspaceCreateRequest, idempotencyKey, null);
+    public ApiResponse<WorkspaceResponse> createWorkspaceWithHttpInfo(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = createWorkspaceValidateBeforeCall(workspaceCreateRequest, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<WorkspaceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -354,152 +354,15 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkspaceApiV1WorkspacesPostAsync(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey, final ApiCallback<WorkspaceResponse> _callback) throws ApiException {
+    public okhttp3.Call createWorkspaceAsync(WorkspaceCreateRequest workspaceCreateRequest, String idempotencyKey, final ApiCallback<WorkspaceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createWorkspaceApiV1WorkspacesPostValidateBeforeCall(workspaceCreateRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = createWorkspaceValidateBeforeCall(workspaceCreateRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<WorkspaceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDelete
-     * @param workspaceId  (required)
-     * @param memberId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteCall(String workspaceId, String memberId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/workspaces/{workspace_id}/members/{member_id}"
-            .replace("{" + "workspace_id" + "}", localVarApiClient.escapeString(workspaceId.toString()))
-            .replace("{" + "member_id" + "}", localVarApiClient.escapeString(memberId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteValidateBeforeCall(String workspaceId, String memberId, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'workspaceId' is set
-        if (workspaceId == null) {
-            throw new ApiException("Missing the required parameter 'workspaceId' when calling deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDelete(Async)");
-        }
-
-        // verify the required parameter 'memberId' is set
-        if (memberId == null) {
-            throw new ApiException("Missing the required parameter 'memberId' when calling deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDelete(Async)");
-        }
-
-        return deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteCall(workspaceId, memberId, _callback);
-
-    }
-
-    /**
-     * Delete Member
-     * 
-     * @param workspaceId  (required)
-     * @param memberId  (required)
-     * @return SimpleBoolResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public SimpleBoolResponse deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDelete(String workspaceId, String memberId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteWithHttpInfo(workspaceId, memberId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Delete Member
-     * 
-     * @param workspaceId  (required)
-     * @param memberId  (required)
-     * @return ApiResponse&lt;SimpleBoolResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<SimpleBoolResponse> deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteWithHttpInfo(String workspaceId, String memberId) throws ApiException {
-        okhttp3.Call localVarCall = deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteValidateBeforeCall(workspaceId, memberId, null);
-        Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Delete Member (asynchronously)
-     * 
-     * @param workspaceId  (required)
-     * @param memberId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteAsync(String workspaceId, String memberId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = deleteMemberApiV1WorkspacesWorkspaceIdMembersMemberIdDeleteValidateBeforeCall(workspaceId, memberId, _callback);
-        Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for deleteWorkspaceApiV1WorkspacesWorkspaceIdDelete
+     * Build call for deleteWorkspace
      * @param workspaceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -511,7 +374,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteCall(String workspaceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWorkspaceCall(String workspaceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -557,13 +420,13 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteValidateBeforeCall(String workspaceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWorkspaceValidateBeforeCall(String workspaceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workspaceId' is set
         if (workspaceId == null) {
-            throw new ApiException("Missing the required parameter 'workspaceId' when calling deleteWorkspaceApiV1WorkspacesWorkspaceIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceId' when calling deleteWorkspace(Async)");
         }
 
-        return deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteCall(workspaceId, _callback);
+        return deleteWorkspaceCall(workspaceId, _callback);
 
     }
 
@@ -580,8 +443,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteWorkspaceApiV1WorkspacesWorkspaceIdDelete(String workspaceId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteWithHttpInfo(workspaceId);
+    public SimpleBoolResponse deleteWorkspace(String workspaceId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteWorkspaceWithHttpInfo(workspaceId);
         return localVarResp.getData();
     }
 
@@ -598,8 +461,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteWithHttpInfo(String workspaceId) throws ApiException {
-        okhttp3.Call localVarCall = deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteValidateBeforeCall(workspaceId, null);
+    public ApiResponse<SimpleBoolResponse> deleteWorkspaceWithHttpInfo(String workspaceId) throws ApiException {
+        okhttp3.Call localVarCall = deleteWorkspaceValidateBeforeCall(workspaceId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -618,15 +481,15 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteAsync(String workspaceId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteWorkspaceAsync(String workspaceId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteValidateBeforeCall(workspaceId, _callback);
+        okhttp3.Call localVarCall = deleteWorkspaceValidateBeforeCall(workspaceId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getWorkspaceApiV1WorkspacesWorkspaceIdGet
+     * Build call for getWorkspace
      * @param workspaceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -638,7 +501,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkspaceApiV1WorkspacesWorkspaceIdGetCall(String workspaceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWorkspaceCall(String workspaceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -684,13 +547,13 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWorkspaceApiV1WorkspacesWorkspaceIdGetValidateBeforeCall(String workspaceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWorkspaceValidateBeforeCall(String workspaceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workspaceId' is set
         if (workspaceId == null) {
-            throw new ApiException("Missing the required parameter 'workspaceId' when calling getWorkspaceApiV1WorkspacesWorkspaceIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceId' when calling getWorkspace(Async)");
         }
 
-        return getWorkspaceApiV1WorkspacesWorkspaceIdGetCall(workspaceId, _callback);
+        return getWorkspaceCall(workspaceId, _callback);
 
     }
 
@@ -707,8 +570,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WorkspaceResponse getWorkspaceApiV1WorkspacesWorkspaceIdGet(String workspaceId) throws ApiException {
-        ApiResponse<WorkspaceResponse> localVarResp = getWorkspaceApiV1WorkspacesWorkspaceIdGetWithHttpInfo(workspaceId);
+    public WorkspaceResponse getWorkspace(String workspaceId) throws ApiException {
+        ApiResponse<WorkspaceResponse> localVarResp = getWorkspaceWithHttpInfo(workspaceId);
         return localVarResp.getData();
     }
 
@@ -725,8 +588,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkspaceResponse> getWorkspaceApiV1WorkspacesWorkspaceIdGetWithHttpInfo(String workspaceId) throws ApiException {
-        okhttp3.Call localVarCall = getWorkspaceApiV1WorkspacesWorkspaceIdGetValidateBeforeCall(workspaceId, null);
+    public ApiResponse<WorkspaceResponse> getWorkspaceWithHttpInfo(String workspaceId) throws ApiException {
+        okhttp3.Call localVarCall = getWorkspaceValidateBeforeCall(workspaceId, null);
         Type localVarReturnType = new TypeToken<WorkspaceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -745,15 +608,15 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkspaceApiV1WorkspacesWorkspaceIdGetAsync(String workspaceId, final ApiCallback<WorkspaceResponse> _callback) throws ApiException {
+    public okhttp3.Call getWorkspaceAsync(String workspaceId, final ApiCallback<WorkspaceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getWorkspaceApiV1WorkspacesWorkspaceIdGetValidateBeforeCall(workspaceId, _callback);
+        okhttp3.Call localVarCall = getWorkspaceValidateBeforeCall(workspaceId, _callback);
         Type localVarReturnType = new TypeToken<WorkspaceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listMembersApiV1WorkspacesWorkspaceIdMembersGet
+     * Build call for listWorkspaceMembers
      * @param workspaceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -765,7 +628,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMembersApiV1WorkspacesWorkspaceIdMembersGetCall(String workspaceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkspaceMembersCall(String workspaceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -811,18 +674,18 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMembersApiV1WorkspacesWorkspaceIdMembersGetValidateBeforeCall(String workspaceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWorkspaceMembersValidateBeforeCall(String workspaceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workspaceId' is set
         if (workspaceId == null) {
-            throw new ApiException("Missing the required parameter 'workspaceId' when calling listMembersApiV1WorkspacesWorkspaceIdMembersGet(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceId' when calling listWorkspaceMembers(Async)");
         }
 
-        return listMembersApiV1WorkspacesWorkspaceIdMembersGetCall(workspaceId, _callback);
+        return listWorkspaceMembersCall(workspaceId, _callback);
 
     }
 
     /**
-     * List Members
+     * List Workspace Members
      * 
      * @param workspaceId  (required)
      * @return WorkspaceMembersListResponse
@@ -834,13 +697,13 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WorkspaceMembersListResponse listMembersApiV1WorkspacesWorkspaceIdMembersGet(String workspaceId) throws ApiException {
-        ApiResponse<WorkspaceMembersListResponse> localVarResp = listMembersApiV1WorkspacesWorkspaceIdMembersGetWithHttpInfo(workspaceId);
+    public WorkspaceMembersListResponse listWorkspaceMembers(String workspaceId) throws ApiException {
+        ApiResponse<WorkspaceMembersListResponse> localVarResp = listWorkspaceMembersWithHttpInfo(workspaceId);
         return localVarResp.getData();
     }
 
     /**
-     * List Members
+     * List Workspace Members
      * 
      * @param workspaceId  (required)
      * @return ApiResponse&lt;WorkspaceMembersListResponse&gt;
@@ -852,14 +715,14 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkspaceMembersListResponse> listMembersApiV1WorkspacesWorkspaceIdMembersGetWithHttpInfo(String workspaceId) throws ApiException {
-        okhttp3.Call localVarCall = listMembersApiV1WorkspacesWorkspaceIdMembersGetValidateBeforeCall(workspaceId, null);
+    public ApiResponse<WorkspaceMembersListResponse> listWorkspaceMembersWithHttpInfo(String workspaceId) throws ApiException {
+        okhttp3.Call localVarCall = listWorkspaceMembersValidateBeforeCall(workspaceId, null);
         Type localVarReturnType = new TypeToken<WorkspaceMembersListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Members (asynchronously)
+     * List Workspace Members (asynchronously)
      * 
      * @param workspaceId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -872,15 +735,15 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMembersApiV1WorkspacesWorkspaceIdMembersGetAsync(String workspaceId, final ApiCallback<WorkspaceMembersListResponse> _callback) throws ApiException {
+    public okhttp3.Call listWorkspaceMembersAsync(String workspaceId, final ApiCallback<WorkspaceMembersListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listMembersApiV1WorkspacesWorkspaceIdMembersGetValidateBeforeCall(workspaceId, _callback);
+        okhttp3.Call localVarCall = listWorkspaceMembersValidateBeforeCall(workspaceId, _callback);
         Type localVarReturnType = new TypeToken<WorkspaceMembersListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listWorkspacesApiV1WorkspacesGet
+     * Build call for listWorkspaces
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -893,7 +756,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkspacesApiV1WorkspacesGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkspacesCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -946,8 +809,8 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkspacesApiV1WorkspacesGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listWorkspacesApiV1WorkspacesGetCall(limit, cursor, _callback);
+    private okhttp3.Call listWorkspacesValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listWorkspacesCall(limit, cursor, _callback);
 
     }
 
@@ -965,8 +828,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WorkspacesListResponse listWorkspacesApiV1WorkspacesGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<WorkspacesListResponse> localVarResp = listWorkspacesApiV1WorkspacesGetWithHttpInfo(limit, cursor);
+    public WorkspacesListResponse listWorkspaces(Integer limit, String cursor) throws ApiException {
+        ApiResponse<WorkspacesListResponse> localVarResp = listWorkspacesWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -984,8 +847,8 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkspacesListResponse> listWorkspacesApiV1WorkspacesGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listWorkspacesApiV1WorkspacesGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<WorkspacesListResponse> listWorkspacesWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listWorkspacesValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<WorkspacesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1005,18 +868,17 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkspacesApiV1WorkspacesGetAsync(Integer limit, String cursor, final ApiCallback<WorkspacesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listWorkspacesAsync(Integer limit, String cursor, final ApiCallback<WorkspacesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listWorkspacesApiV1WorkspacesGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listWorkspacesValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<WorkspacesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatch
+     * Build call for removeWorkspaceMember
      * @param workspaceId  (required)
      * @param memberId  (required)
-     * @param workspaceMemberPatchRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1027,7 +889,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchCall(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeWorkspaceMemberCall(String workspaceId, String memberId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1041,7 +903,7 @@ public class WorkspacesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = workspaceMemberPatchRequest;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/v1/workspaces/{workspace_id}/members/{member_id}"
@@ -1063,7 +925,6 @@ public class WorkspacesApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1071,37 +932,31 @@ public class WorkspacesApi {
         }
 
         String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchValidateBeforeCall(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeWorkspaceMemberValidateBeforeCall(String workspaceId, String memberId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workspaceId' is set
         if (workspaceId == null) {
-            throw new ApiException("Missing the required parameter 'workspaceId' when calling patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceId' when calling removeWorkspaceMember(Async)");
         }
 
         // verify the required parameter 'memberId' is set
         if (memberId == null) {
-            throw new ApiException("Missing the required parameter 'memberId' when calling patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'memberId' when calling removeWorkspaceMember(Async)");
         }
 
-        // verify the required parameter 'workspaceMemberPatchRequest' is set
-        if (workspaceMemberPatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'workspaceMemberPatchRequest' when calling patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatch(Async)");
-        }
-
-        return patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchCall(workspaceId, memberId, workspaceMemberPatchRequest, _callback);
+        return removeWorkspaceMemberCall(workspaceId, memberId, _callback);
 
     }
 
     /**
-     * Patch Member
+     * Remove Workspace Member
      * 
      * @param workspaceId  (required)
      * @param memberId  (required)
-     * @param workspaceMemberPatchRequest  (required)
-     * @return WorkspaceMemberOut
+     * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1110,18 +965,17 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WorkspaceMemberOut patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatch(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest) throws ApiException {
-        ApiResponse<WorkspaceMemberOut> localVarResp = patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchWithHttpInfo(workspaceId, memberId, workspaceMemberPatchRequest);
+    public SimpleBoolResponse removeWorkspaceMember(String workspaceId, String memberId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = removeWorkspaceMemberWithHttpInfo(workspaceId, memberId);
         return localVarResp.getData();
     }
 
     /**
-     * Patch Member
+     * Remove Workspace Member
      * 
      * @param workspaceId  (required)
      * @param memberId  (required)
-     * @param workspaceMemberPatchRequest  (required)
-     * @return ApiResponse&lt;WorkspaceMemberOut&gt;
+     * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1130,18 +984,17 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkspaceMemberOut> patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchWithHttpInfo(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchValidateBeforeCall(workspaceId, memberId, workspaceMemberPatchRequest, null);
-        Type localVarReturnType = new TypeToken<WorkspaceMemberOut>(){}.getType();
+    public ApiResponse<SimpleBoolResponse> removeWorkspaceMemberWithHttpInfo(String workspaceId, String memberId) throws ApiException {
+        okhttp3.Call localVarCall = removeWorkspaceMemberValidateBeforeCall(workspaceId, memberId, null);
+        Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Patch Member (asynchronously)
+     * Remove Workspace Member (asynchronously)
      * 
      * @param workspaceId  (required)
      * @param memberId  (required)
-     * @param workspaceMemberPatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1152,15 +1005,15 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchAsync(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest, final ApiCallback<WorkspaceMemberOut> _callback) throws ApiException {
+    public okhttp3.Call removeWorkspaceMemberAsync(String workspaceId, String memberId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchMemberApiV1WorkspacesWorkspaceIdMembersMemberIdPatchValidateBeforeCall(workspaceId, memberId, workspaceMemberPatchRequest, _callback);
-        Type localVarReturnType = new TypeToken<WorkspaceMemberOut>(){}.getType();
+        okhttp3.Call localVarCall = removeWorkspaceMemberValidateBeforeCall(workspaceId, memberId, _callback);
+        Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchWorkspaceApiV1WorkspacesWorkspaceIdPatch
+     * Build call for updateWorkspace
      * @param workspaceId  (required)
      * @param workspacePatchRequest  (required)
      * @param idempotencyKey  (optional)
@@ -1174,7 +1027,7 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchWorkspaceApiV1WorkspacesWorkspaceIdPatchCall(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWorkspaceCall(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1225,23 +1078,23 @@ public class WorkspacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchWorkspaceApiV1WorkspacesWorkspaceIdPatchValidateBeforeCall(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWorkspaceValidateBeforeCall(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workspaceId' is set
         if (workspaceId == null) {
-            throw new ApiException("Missing the required parameter 'workspaceId' when calling patchWorkspaceApiV1WorkspacesWorkspaceIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'workspaceId' when calling updateWorkspace(Async)");
         }
 
         // verify the required parameter 'workspacePatchRequest' is set
         if (workspacePatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'workspacePatchRequest' when calling patchWorkspaceApiV1WorkspacesWorkspaceIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'workspacePatchRequest' when calling updateWorkspace(Async)");
         }
 
-        return patchWorkspaceApiV1WorkspacesWorkspaceIdPatchCall(workspaceId, workspacePatchRequest, idempotencyKey, _callback);
+        return updateWorkspaceCall(workspaceId, workspacePatchRequest, idempotencyKey, _callback);
 
     }
 
     /**
-     * Patch Workspace
+     * Update Workspace
      * 
      * @param workspaceId  (required)
      * @param workspacePatchRequest  (required)
@@ -1255,13 +1108,13 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WorkspaceResponse patchWorkspaceApiV1WorkspacesWorkspaceIdPatch(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<WorkspaceResponse> localVarResp = patchWorkspaceApiV1WorkspacesWorkspaceIdPatchWithHttpInfo(workspaceId, workspacePatchRequest, idempotencyKey);
+    public WorkspaceResponse updateWorkspace(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<WorkspaceResponse> localVarResp = updateWorkspaceWithHttpInfo(workspaceId, workspacePatchRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
     /**
-     * Patch Workspace
+     * Update Workspace
      * 
      * @param workspaceId  (required)
      * @param workspacePatchRequest  (required)
@@ -1275,14 +1128,14 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkspaceResponse> patchWorkspaceApiV1WorkspacesWorkspaceIdPatchWithHttpInfo(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = patchWorkspaceApiV1WorkspacesWorkspaceIdPatchValidateBeforeCall(workspaceId, workspacePatchRequest, idempotencyKey, null);
+    public ApiResponse<WorkspaceResponse> updateWorkspaceWithHttpInfo(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = updateWorkspaceValidateBeforeCall(workspaceId, workspacePatchRequest, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<WorkspaceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Patch Workspace (asynchronously)
+     * Update Workspace (asynchronously)
      * 
      * @param workspaceId  (required)
      * @param workspacePatchRequest  (required)
@@ -1297,10 +1150,157 @@ public class WorkspacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchWorkspaceApiV1WorkspacesWorkspaceIdPatchAsync(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey, final ApiCallback<WorkspaceResponse> _callback) throws ApiException {
+    public okhttp3.Call updateWorkspaceAsync(String workspaceId, WorkspacePatchRequest workspacePatchRequest, String idempotencyKey, final ApiCallback<WorkspaceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchWorkspaceApiV1WorkspacesWorkspaceIdPatchValidateBeforeCall(workspaceId, workspacePatchRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = updateWorkspaceValidateBeforeCall(workspaceId, workspacePatchRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<WorkspaceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateWorkspaceMember
+     * @param workspaceId  (required)
+     * @param memberId  (required)
+     * @param workspaceMemberPatchRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateWorkspaceMemberCall(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = workspaceMemberPatchRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/workspaces/{workspace_id}/members/{member_id}"
+            .replace("{" + "workspace_id" + "}", localVarApiClient.escapeString(workspaceId.toString()))
+            .replace("{" + "member_id" + "}", localVarApiClient.escapeString(memberId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateWorkspaceMemberValidateBeforeCall(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workspaceId' is set
+        if (workspaceId == null) {
+            throw new ApiException("Missing the required parameter 'workspaceId' when calling updateWorkspaceMember(Async)");
+        }
+
+        // verify the required parameter 'memberId' is set
+        if (memberId == null) {
+            throw new ApiException("Missing the required parameter 'memberId' when calling updateWorkspaceMember(Async)");
+        }
+
+        // verify the required parameter 'workspaceMemberPatchRequest' is set
+        if (workspaceMemberPatchRequest == null) {
+            throw new ApiException("Missing the required parameter 'workspaceMemberPatchRequest' when calling updateWorkspaceMember(Async)");
+        }
+
+        return updateWorkspaceMemberCall(workspaceId, memberId, workspaceMemberPatchRequest, _callback);
+
+    }
+
+    /**
+     * Update Workspace Member
+     * 
+     * @param workspaceId  (required)
+     * @param memberId  (required)
+     * @param workspaceMemberPatchRequest  (required)
+     * @return WorkspaceMemberOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public WorkspaceMemberOut updateWorkspaceMember(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest) throws ApiException {
+        ApiResponse<WorkspaceMemberOut> localVarResp = updateWorkspaceMemberWithHttpInfo(workspaceId, memberId, workspaceMemberPatchRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Workspace Member
+     * 
+     * @param workspaceId  (required)
+     * @param memberId  (required)
+     * @param workspaceMemberPatchRequest  (required)
+     * @return ApiResponse&lt;WorkspaceMemberOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<WorkspaceMemberOut> updateWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateWorkspaceMemberValidateBeforeCall(workspaceId, memberId, workspaceMemberPatchRequest, null);
+        Type localVarReturnType = new TypeToken<WorkspaceMemberOut>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Workspace Member (asynchronously)
+     * 
+     * @param workspaceId  (required)
+     * @param memberId  (required)
+     * @param workspaceMemberPatchRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateWorkspaceMemberAsync(String workspaceId, String memberId, WorkspaceMemberPatchRequest workspaceMemberPatchRequest, final ApiCallback<WorkspaceMemberOut> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateWorkspaceMemberValidateBeforeCall(workspaceId, memberId, workspaceMemberPatchRequest, _callback);
+        Type localVarReturnType = new TypeToken<WorkspaceMemberOut>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

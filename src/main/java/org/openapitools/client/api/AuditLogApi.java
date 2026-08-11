@@ -75,7 +75,7 @@ public class AuditLogApi {
     }
 
     /**
-     * Build call for getAuditEventApiV1AuditEventsAuditEventIdGet
+     * Build call for getAuditEvent
      * @param auditEventId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -87,7 +87,7 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuditEventApiV1AuditEventsAuditEventIdGetCall(String auditEventId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAuditEventCall(String auditEventId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,13 +133,13 @@ public class AuditLogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAuditEventApiV1AuditEventsAuditEventIdGetValidateBeforeCall(String auditEventId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAuditEventValidateBeforeCall(String auditEventId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'auditEventId' is set
         if (auditEventId == null) {
-            throw new ApiException("Missing the required parameter 'auditEventId' when calling getAuditEventApiV1AuditEventsAuditEventIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'auditEventId' when calling getAuditEvent(Async)");
         }
 
-        return getAuditEventApiV1AuditEventsAuditEventIdGetCall(auditEventId, _callback);
+        return getAuditEventCall(auditEventId, _callback);
 
     }
 
@@ -156,8 +156,8 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public AuditEventResponse getAuditEventApiV1AuditEventsAuditEventIdGet(String auditEventId) throws ApiException {
-        ApiResponse<AuditEventResponse> localVarResp = getAuditEventApiV1AuditEventsAuditEventIdGetWithHttpInfo(auditEventId);
+    public AuditEventResponse getAuditEvent(String auditEventId) throws ApiException {
+        ApiResponse<AuditEventResponse> localVarResp = getAuditEventWithHttpInfo(auditEventId);
         return localVarResp.getData();
     }
 
@@ -174,8 +174,8 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuditEventResponse> getAuditEventApiV1AuditEventsAuditEventIdGetWithHttpInfo(String auditEventId) throws ApiException {
-        okhttp3.Call localVarCall = getAuditEventApiV1AuditEventsAuditEventIdGetValidateBeforeCall(auditEventId, null);
+    public ApiResponse<AuditEventResponse> getAuditEventWithHttpInfo(String auditEventId) throws ApiException {
+        okhttp3.Call localVarCall = getAuditEventValidateBeforeCall(auditEventId, null);
         Type localVarReturnType = new TypeToken<AuditEventResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -194,15 +194,15 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuditEventApiV1AuditEventsAuditEventIdGetAsync(String auditEventId, final ApiCallback<AuditEventResponse> _callback) throws ApiException {
+    public okhttp3.Call getAuditEventAsync(String auditEventId, final ApiCallback<AuditEventResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAuditEventApiV1AuditEventsAuditEventIdGetValidateBeforeCall(auditEventId, _callback);
+        okhttp3.Call localVarCall = getAuditEventValidateBeforeCall(auditEventId, _callback);
         Type localVarReturnType = new TypeToken<AuditEventResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listAuditEventsApiV1AuditEventsGet
+     * Build call for listAuditEvents
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param action  (optional)
@@ -218,7 +218,7 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuditEventsApiV1AuditEventsGetCall(Integer limit, String cursor, String action, String resourceType, String resourceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAuditEventsCall(Integer limit, String cursor, String action, String resourceType, String resourceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -283,8 +283,8 @@ public class AuditLogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAuditEventsApiV1AuditEventsGetValidateBeforeCall(Integer limit, String cursor, String action, String resourceType, String resourceId, final ApiCallback _callback) throws ApiException {
-        return listAuditEventsApiV1AuditEventsGetCall(limit, cursor, action, resourceType, resourceId, _callback);
+    private okhttp3.Call listAuditEventsValidateBeforeCall(Integer limit, String cursor, String action, String resourceType, String resourceId, final ApiCallback _callback) throws ApiException {
+        return listAuditEventsCall(limit, cursor, action, resourceType, resourceId, _callback);
 
     }
 
@@ -305,8 +305,8 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public AuditEventsListResponse listAuditEventsApiV1AuditEventsGet(Integer limit, String cursor, String action, String resourceType, String resourceId) throws ApiException {
-        ApiResponse<AuditEventsListResponse> localVarResp = listAuditEventsApiV1AuditEventsGetWithHttpInfo(limit, cursor, action, resourceType, resourceId);
+    public AuditEventsListResponse listAuditEvents(Integer limit, String cursor, String action, String resourceType, String resourceId) throws ApiException {
+        ApiResponse<AuditEventsListResponse> localVarResp = listAuditEventsWithHttpInfo(limit, cursor, action, resourceType, resourceId);
         return localVarResp.getData();
     }
 
@@ -327,8 +327,8 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuditEventsListResponse> listAuditEventsApiV1AuditEventsGetWithHttpInfo(Integer limit, String cursor, String action, String resourceType, String resourceId) throws ApiException {
-        okhttp3.Call localVarCall = listAuditEventsApiV1AuditEventsGetValidateBeforeCall(limit, cursor, action, resourceType, resourceId, null);
+    public ApiResponse<AuditEventsListResponse> listAuditEventsWithHttpInfo(Integer limit, String cursor, String action, String resourceType, String resourceId) throws ApiException {
+        okhttp3.Call localVarCall = listAuditEventsValidateBeforeCall(limit, cursor, action, resourceType, resourceId, null);
         Type localVarReturnType = new TypeToken<AuditEventsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -351,9 +351,9 @@ public class AuditLogApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuditEventsApiV1AuditEventsGetAsync(Integer limit, String cursor, String action, String resourceType, String resourceId, final ApiCallback<AuditEventsListResponse> _callback) throws ApiException {
+    public okhttp3.Call listAuditEventsAsync(Integer limit, String cursor, String action, String resourceType, String resourceId, final ApiCallback<AuditEventsListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAuditEventsApiV1AuditEventsGetValidateBeforeCall(limit, cursor, action, resourceType, resourceId, _callback);
+        okhttp3.Call localVarCall = listAuditEventsValidateBeforeCall(limit, cursor, action, resourceType, resourceId, _callback);
         Type localVarReturnType = new TypeToken<AuditEventsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

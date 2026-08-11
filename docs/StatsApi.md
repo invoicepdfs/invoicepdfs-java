@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getStatsApiV1StatsGet**](StatsApi.md#getStatsApiV1StatsGet) | **GET** /api/v1/stats | Get Stats |
+| [**getStats**](StatsApi.md#getStats) | **GET** /api/v1/stats | Get Stats |
 
 
-<a id="getStatsApiV1StatsGet"></a>
-# **getStatsApiV1StatsGet**
-> StatsResponse getStatsApiV1StatsGet()
+<a id="getStats"></a>
+# **getStats**
+> StatsResponse getStats()
 
 Get Stats
 
@@ -34,10 +34,10 @@ public class Example {
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     try {
-      StatsResponse result = apiInstance.getStatsApiV1StatsGet();
+      StatsResponse result = apiInstance.getStats();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling StatsApi#getStatsApiV1StatsGet");
+      System.err.println("Exception when calling StatsApi#getStats");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

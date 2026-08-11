@@ -78,7 +78,7 @@ public class TaxRatesApi {
     }
 
     /**
-     * Build call for createTaxRateApiV1TaxRatesPost
+     * Build call for createTaxRate
      * @param taxRateCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +90,7 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTaxRateApiV1TaxRatesPostCall(TaxRateCreateRequest taxRateCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTaxRateCall(TaxRateCreateRequest taxRateCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,13 +136,13 @@ public class TaxRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTaxRateApiV1TaxRatesPostValidateBeforeCall(TaxRateCreateRequest taxRateCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTaxRateValidateBeforeCall(TaxRateCreateRequest taxRateCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'taxRateCreateRequest' is set
         if (taxRateCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'taxRateCreateRequest' when calling createTaxRateApiV1TaxRatesPost(Async)");
+            throw new ApiException("Missing the required parameter 'taxRateCreateRequest' when calling createTaxRate(Async)");
         }
 
-        return createTaxRateApiV1TaxRatesPostCall(taxRateCreateRequest, _callback);
+        return createTaxRateCall(taxRateCreateRequest, _callback);
 
     }
 
@@ -159,8 +159,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public TaxRateResponse createTaxRateApiV1TaxRatesPost(TaxRateCreateRequest taxRateCreateRequest) throws ApiException {
-        ApiResponse<TaxRateResponse> localVarResp = createTaxRateApiV1TaxRatesPostWithHttpInfo(taxRateCreateRequest);
+    public TaxRateResponse createTaxRate(TaxRateCreateRequest taxRateCreateRequest) throws ApiException {
+        ApiResponse<TaxRateResponse> localVarResp = createTaxRateWithHttpInfo(taxRateCreateRequest);
         return localVarResp.getData();
     }
 
@@ -177,8 +177,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TaxRateResponse> createTaxRateApiV1TaxRatesPostWithHttpInfo(TaxRateCreateRequest taxRateCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createTaxRateApiV1TaxRatesPostValidateBeforeCall(taxRateCreateRequest, null);
+    public ApiResponse<TaxRateResponse> createTaxRateWithHttpInfo(TaxRateCreateRequest taxRateCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createTaxRateValidateBeforeCall(taxRateCreateRequest, null);
         Type localVarReturnType = new TypeToken<TaxRateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -197,15 +197,15 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTaxRateApiV1TaxRatesPostAsync(TaxRateCreateRequest taxRateCreateRequest, final ApiCallback<TaxRateResponse> _callback) throws ApiException {
+    public okhttp3.Call createTaxRateAsync(TaxRateCreateRequest taxRateCreateRequest, final ApiCallback<TaxRateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createTaxRateApiV1TaxRatesPostValidateBeforeCall(taxRateCreateRequest, _callback);
+        okhttp3.Call localVarCall = createTaxRateValidateBeforeCall(taxRateCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<TaxRateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteTaxRateApiV1TaxRatesTaxRateIdDelete
+     * Build call for deleteTaxRate
      * @param taxRateId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -217,7 +217,7 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTaxRateApiV1TaxRatesTaxRateIdDeleteCall(String taxRateId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTaxRateCall(String taxRateId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -263,13 +263,13 @@ public class TaxRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTaxRateApiV1TaxRatesTaxRateIdDeleteValidateBeforeCall(String taxRateId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTaxRateValidateBeforeCall(String taxRateId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'taxRateId' is set
         if (taxRateId == null) {
-            throw new ApiException("Missing the required parameter 'taxRateId' when calling deleteTaxRateApiV1TaxRatesTaxRateIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'taxRateId' when calling deleteTaxRate(Async)");
         }
 
-        return deleteTaxRateApiV1TaxRatesTaxRateIdDeleteCall(taxRateId, _callback);
+        return deleteTaxRateCall(taxRateId, _callback);
 
     }
 
@@ -286,8 +286,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteTaxRateApiV1TaxRatesTaxRateIdDelete(String taxRateId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteTaxRateApiV1TaxRatesTaxRateIdDeleteWithHttpInfo(taxRateId);
+    public SimpleBoolResponse deleteTaxRate(String taxRateId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteTaxRateWithHttpInfo(taxRateId);
         return localVarResp.getData();
     }
 
@@ -304,8 +304,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteTaxRateApiV1TaxRatesTaxRateIdDeleteWithHttpInfo(String taxRateId) throws ApiException {
-        okhttp3.Call localVarCall = deleteTaxRateApiV1TaxRatesTaxRateIdDeleteValidateBeforeCall(taxRateId, null);
+    public ApiResponse<SimpleBoolResponse> deleteTaxRateWithHttpInfo(String taxRateId) throws ApiException {
+        okhttp3.Call localVarCall = deleteTaxRateValidateBeforeCall(taxRateId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -324,15 +324,15 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTaxRateApiV1TaxRatesTaxRateIdDeleteAsync(String taxRateId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteTaxRateAsync(String taxRateId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteTaxRateApiV1TaxRatesTaxRateIdDeleteValidateBeforeCall(taxRateId, _callback);
+        okhttp3.Call localVarCall = deleteTaxRateValidateBeforeCall(taxRateId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getTaxRateApiV1TaxRatesTaxRateIdGet
+     * Build call for getTaxRate
      * @param taxRateId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -344,7 +344,7 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTaxRateApiV1TaxRatesTaxRateIdGetCall(String taxRateId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTaxRateCall(String taxRateId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -390,13 +390,13 @@ public class TaxRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTaxRateApiV1TaxRatesTaxRateIdGetValidateBeforeCall(String taxRateId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTaxRateValidateBeforeCall(String taxRateId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'taxRateId' is set
         if (taxRateId == null) {
-            throw new ApiException("Missing the required parameter 'taxRateId' when calling getTaxRateApiV1TaxRatesTaxRateIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'taxRateId' when calling getTaxRate(Async)");
         }
 
-        return getTaxRateApiV1TaxRatesTaxRateIdGetCall(taxRateId, _callback);
+        return getTaxRateCall(taxRateId, _callback);
 
     }
 
@@ -413,8 +413,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public TaxRateResponse getTaxRateApiV1TaxRatesTaxRateIdGet(String taxRateId) throws ApiException {
-        ApiResponse<TaxRateResponse> localVarResp = getTaxRateApiV1TaxRatesTaxRateIdGetWithHttpInfo(taxRateId);
+    public TaxRateResponse getTaxRate(String taxRateId) throws ApiException {
+        ApiResponse<TaxRateResponse> localVarResp = getTaxRateWithHttpInfo(taxRateId);
         return localVarResp.getData();
     }
 
@@ -431,8 +431,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TaxRateResponse> getTaxRateApiV1TaxRatesTaxRateIdGetWithHttpInfo(String taxRateId) throws ApiException {
-        okhttp3.Call localVarCall = getTaxRateApiV1TaxRatesTaxRateIdGetValidateBeforeCall(taxRateId, null);
+    public ApiResponse<TaxRateResponse> getTaxRateWithHttpInfo(String taxRateId) throws ApiException {
+        okhttp3.Call localVarCall = getTaxRateValidateBeforeCall(taxRateId, null);
         Type localVarReturnType = new TypeToken<TaxRateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -451,15 +451,15 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTaxRateApiV1TaxRatesTaxRateIdGetAsync(String taxRateId, final ApiCallback<TaxRateResponse> _callback) throws ApiException {
+    public okhttp3.Call getTaxRateAsync(String taxRateId, final ApiCallback<TaxRateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTaxRateApiV1TaxRatesTaxRateIdGetValidateBeforeCall(taxRateId, _callback);
+        okhttp3.Call localVarCall = getTaxRateValidateBeforeCall(taxRateId, _callback);
         Type localVarReturnType = new TypeToken<TaxRateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listTaxRatesApiV1TaxRatesGet
+     * Build call for listTaxRates
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -472,7 +472,7 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTaxRatesApiV1TaxRatesGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTaxRatesCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -525,8 +525,8 @@ public class TaxRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTaxRatesApiV1TaxRatesGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listTaxRatesApiV1TaxRatesGetCall(limit, cursor, _callback);
+    private okhttp3.Call listTaxRatesValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listTaxRatesCall(limit, cursor, _callback);
 
     }
 
@@ -544,8 +544,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public TaxRatesListResponse listTaxRatesApiV1TaxRatesGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<TaxRatesListResponse> localVarResp = listTaxRatesApiV1TaxRatesGetWithHttpInfo(limit, cursor);
+    public TaxRatesListResponse listTaxRates(Integer limit, String cursor) throws ApiException {
+        ApiResponse<TaxRatesListResponse> localVarResp = listTaxRatesWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -563,8 +563,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TaxRatesListResponse> listTaxRatesApiV1TaxRatesGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listTaxRatesApiV1TaxRatesGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<TaxRatesListResponse> listTaxRatesWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listTaxRatesValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<TaxRatesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -584,15 +584,15 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTaxRatesApiV1TaxRatesGetAsync(Integer limit, String cursor, final ApiCallback<TaxRatesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listTaxRatesAsync(Integer limit, String cursor, final ApiCallback<TaxRatesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listTaxRatesApiV1TaxRatesGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listTaxRatesValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<TaxRatesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for updateTaxRateApiV1TaxRatesTaxRateIdPatch
+     * Build call for updateTaxRate
      * @param taxRateId  (required)
      * @param taxRatePatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -605,7 +605,7 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTaxRateApiV1TaxRatesTaxRateIdPatchCall(String taxRateId, TaxRatePatchRequest taxRatePatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTaxRateCall(String taxRateId, TaxRatePatchRequest taxRatePatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -652,18 +652,18 @@ public class TaxRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTaxRateApiV1TaxRatesTaxRateIdPatchValidateBeforeCall(String taxRateId, TaxRatePatchRequest taxRatePatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTaxRateValidateBeforeCall(String taxRateId, TaxRatePatchRequest taxRatePatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'taxRateId' is set
         if (taxRateId == null) {
-            throw new ApiException("Missing the required parameter 'taxRateId' when calling updateTaxRateApiV1TaxRatesTaxRateIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'taxRateId' when calling updateTaxRate(Async)");
         }
 
         // verify the required parameter 'taxRatePatchRequest' is set
         if (taxRatePatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'taxRatePatchRequest' when calling updateTaxRateApiV1TaxRatesTaxRateIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'taxRatePatchRequest' when calling updateTaxRate(Async)");
         }
 
-        return updateTaxRateApiV1TaxRatesTaxRateIdPatchCall(taxRateId, taxRatePatchRequest, _callback);
+        return updateTaxRateCall(taxRateId, taxRatePatchRequest, _callback);
 
     }
 
@@ -681,8 +681,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public TaxRateResponse updateTaxRateApiV1TaxRatesTaxRateIdPatch(String taxRateId, TaxRatePatchRequest taxRatePatchRequest) throws ApiException {
-        ApiResponse<TaxRateResponse> localVarResp = updateTaxRateApiV1TaxRatesTaxRateIdPatchWithHttpInfo(taxRateId, taxRatePatchRequest);
+    public TaxRateResponse updateTaxRate(String taxRateId, TaxRatePatchRequest taxRatePatchRequest) throws ApiException {
+        ApiResponse<TaxRateResponse> localVarResp = updateTaxRateWithHttpInfo(taxRateId, taxRatePatchRequest);
         return localVarResp.getData();
     }
 
@@ -700,8 +700,8 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TaxRateResponse> updateTaxRateApiV1TaxRatesTaxRateIdPatchWithHttpInfo(String taxRateId, TaxRatePatchRequest taxRatePatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateTaxRateApiV1TaxRatesTaxRateIdPatchValidateBeforeCall(taxRateId, taxRatePatchRequest, null);
+    public ApiResponse<TaxRateResponse> updateTaxRateWithHttpInfo(String taxRateId, TaxRatePatchRequest taxRatePatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateTaxRateValidateBeforeCall(taxRateId, taxRatePatchRequest, null);
         Type localVarReturnType = new TypeToken<TaxRateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -721,9 +721,9 @@ public class TaxRatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTaxRateApiV1TaxRatesTaxRateIdPatchAsync(String taxRateId, TaxRatePatchRequest taxRatePatchRequest, final ApiCallback<TaxRateResponse> _callback) throws ApiException {
+    public okhttp3.Call updateTaxRateAsync(String taxRateId, TaxRatePatchRequest taxRatePatchRequest, final ApiCallback<TaxRateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateTaxRateApiV1TaxRatesTaxRateIdPatchValidateBeforeCall(taxRateId, taxRatePatchRequest, _callback);
+        okhttp3.Call localVarCall = updateTaxRateValidateBeforeCall(taxRateId, taxRatePatchRequest, _callback);
         Type localVarReturnType = new TypeToken<TaxRateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

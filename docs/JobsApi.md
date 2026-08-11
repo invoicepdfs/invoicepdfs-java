@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**cancelJobApiV1JobsJobIdCancelPost**](JobsApi.md#cancelJobApiV1JobsJobIdCancelPost) | **POST** /api/v1/jobs/{job_id}/cancel | Cancel Job |
-| [**getJobApiV1JobsJobIdGet**](JobsApi.md#getJobApiV1JobsJobIdGet) | **GET** /api/v1/jobs/{job_id} | Get Job |
-| [**retryJobApiV1JobsJobIdRetryPost**](JobsApi.md#retryJobApiV1JobsJobIdRetryPost) | **POST** /api/v1/jobs/{job_id}/retry | Retry Job |
+| [**cancelJob**](JobsApi.md#cancelJob) | **POST** /api/v1/jobs/{job_id}/cancel | Cancel Job |
+| [**getJob**](JobsApi.md#getJob) | **GET** /api/v1/jobs/{job_id} | Get Job |
+| [**retryJob**](JobsApi.md#retryJob) | **POST** /api/v1/jobs/{job_id}/retry | Retry Job |
 
 
-<a id="cancelJobApiV1JobsJobIdCancelPost"></a>
-# **cancelJobApiV1JobsJobIdCancelPost**
-> JobResponse cancelJobApiV1JobsJobIdCancelPost(jobId)
+<a id="cancelJob"></a>
+# **cancelJob**
+> JobResponse cancelJob(jobId)
 
 Cancel Job
 
@@ -37,10 +37,10 @@ public class Example {
     JobsApi apiInstance = new JobsApi(defaultClient);
     String jobId = "jobId_example"; // String | 
     try {
-      JobResponse result = apiInstance.cancelJobApiV1JobsJobIdCancelPost(jobId);
+      JobResponse result = apiInstance.cancelJob(jobId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling JobsApi#cancelJobApiV1JobsJobIdCancelPost");
+      System.err.println("Exception when calling JobsApi#cancelJob");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -75,9 +75,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getJobApiV1JobsJobIdGet"></a>
-# **getJobApiV1JobsJobIdGet**
-> JobResponse getJobApiV1JobsJobIdGet(jobId)
+<a id="getJob"></a>
+# **getJob**
+> JobResponse getJob(jobId)
 
 Get Job
 
@@ -103,10 +103,10 @@ public class Example {
     JobsApi apiInstance = new JobsApi(defaultClient);
     String jobId = "jobId_example"; // String | 
     try {
-      JobResponse result = apiInstance.getJobApiV1JobsJobIdGet(jobId);
+      JobResponse result = apiInstance.getJob(jobId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling JobsApi#getJobApiV1JobsJobIdGet");
+      System.err.println("Exception when calling JobsApi#getJob");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -141,9 +141,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="retryJobApiV1JobsJobIdRetryPost"></a>
-# **retryJobApiV1JobsJobIdRetryPost**
-> JobResponse retryJobApiV1JobsJobIdRetryPost(jobId)
+<a id="retryJob"></a>
+# **retryJob**
+> JobResponse retryJob(jobId)
 
 Retry Job
 
@@ -169,10 +169,10 @@ public class Example {
     JobsApi apiInstance = new JobsApi(defaultClient);
     String jobId = "jobId_example"; // String | 
     try {
-      JobResponse result = apiInstance.retryJobApiV1JobsJobIdRetryPost(jobId);
+      JobResponse result = apiInstance.retryJob(jobId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling JobsApi#retryJobApiV1JobsJobIdRetryPost");
+      System.err.println("Exception when calling JobsApi#retryJob");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

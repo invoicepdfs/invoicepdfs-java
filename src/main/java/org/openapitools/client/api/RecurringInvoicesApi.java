@@ -78,7 +78,7 @@ public class RecurringInvoicesApi {
     }
 
     /**
-     * Build call for cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDelete
+     * Build call for cancelRecurringInvoice
      * @param recurringId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +90,7 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteCall(String recurringId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelRecurringInvoiceCall(String recurringId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,13 +136,13 @@ public class RecurringInvoicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelRecurringInvoiceValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'recurringId' is set
         if (recurringId == null) {
-            throw new ApiException("Missing the required parameter 'recurringId' when calling cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'recurringId' when calling cancelRecurringInvoice(Async)");
         }
 
-        return cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteCall(recurringId, _callback);
+        return cancelRecurringInvoiceCall(recurringId, _callback);
 
     }
 
@@ -159,8 +159,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public RecurringInvoiceResponse cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDelete(String recurringId) throws ApiException {
-        ApiResponse<RecurringInvoiceResponse> localVarResp = cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteWithHttpInfo(recurringId);
+    public RecurringInvoiceResponse cancelRecurringInvoice(String recurringId) throws ApiException {
+        ApiResponse<RecurringInvoiceResponse> localVarResp = cancelRecurringInvoiceWithHttpInfo(recurringId);
         return localVarResp.getData();
     }
 
@@ -177,8 +177,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RecurringInvoiceResponse> cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteWithHttpInfo(String recurringId) throws ApiException {
-        okhttp3.Call localVarCall = cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteValidateBeforeCall(recurringId, null);
+    public ApiResponse<RecurringInvoiceResponse> cancelRecurringInvoiceWithHttpInfo(String recurringId) throws ApiException {
+        okhttp3.Call localVarCall = cancelRecurringInvoiceValidateBeforeCall(recurringId, null);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -197,15 +197,15 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
+    public okhttp3.Call cancelRecurringInvoiceAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelRecurringInvoiceApiV1RecurringInvoicesRecurringIdDeleteValidateBeforeCall(recurringId, _callback);
+        okhttp3.Call localVarCall = cancelRecurringInvoiceValidateBeforeCall(recurringId, _callback);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createRecurringInvoiceApiV1RecurringInvoicesPost
+     * Build call for createRecurringInvoice
      * @param recurringInvoiceCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -217,7 +217,7 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecurringInvoiceApiV1RecurringInvoicesPostCall(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRecurringInvoiceCall(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -263,13 +263,13 @@ public class RecurringInvoicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRecurringInvoiceApiV1RecurringInvoicesPostValidateBeforeCall(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRecurringInvoiceValidateBeforeCall(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'recurringInvoiceCreateRequest' is set
         if (recurringInvoiceCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'recurringInvoiceCreateRequest' when calling createRecurringInvoiceApiV1RecurringInvoicesPost(Async)");
+            throw new ApiException("Missing the required parameter 'recurringInvoiceCreateRequest' when calling createRecurringInvoice(Async)");
         }
 
-        return createRecurringInvoiceApiV1RecurringInvoicesPostCall(recurringInvoiceCreateRequest, _callback);
+        return createRecurringInvoiceCall(recurringInvoiceCreateRequest, _callback);
 
     }
 
@@ -286,8 +286,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public RecurringInvoiceResponse createRecurringInvoiceApiV1RecurringInvoicesPost(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest) throws ApiException {
-        ApiResponse<RecurringInvoiceResponse> localVarResp = createRecurringInvoiceApiV1RecurringInvoicesPostWithHttpInfo(recurringInvoiceCreateRequest);
+    public RecurringInvoiceResponse createRecurringInvoice(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest) throws ApiException {
+        ApiResponse<RecurringInvoiceResponse> localVarResp = createRecurringInvoiceWithHttpInfo(recurringInvoiceCreateRequest);
         return localVarResp.getData();
     }
 
@@ -304,8 +304,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RecurringInvoiceResponse> createRecurringInvoiceApiV1RecurringInvoicesPostWithHttpInfo(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createRecurringInvoiceApiV1RecurringInvoicesPostValidateBeforeCall(recurringInvoiceCreateRequest, null);
+    public ApiResponse<RecurringInvoiceResponse> createRecurringInvoiceWithHttpInfo(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createRecurringInvoiceValidateBeforeCall(recurringInvoiceCreateRequest, null);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -324,15 +324,15 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecurringInvoiceApiV1RecurringInvoicesPostAsync(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
+    public okhttp3.Call createRecurringInvoiceAsync(RecurringInvoiceCreateRequest recurringInvoiceCreateRequest, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createRecurringInvoiceApiV1RecurringInvoicesPostValidateBeforeCall(recurringInvoiceCreateRequest, _callback);
+        okhttp3.Call localVarCall = createRecurringInvoiceValidateBeforeCall(recurringInvoiceCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGet
+     * Build call for getRecurringInvoice
      * @param recurringId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -344,7 +344,7 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetCall(String recurringId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecurringInvoiceCall(String recurringId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -390,13 +390,13 @@ public class RecurringInvoicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRecurringInvoiceValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'recurringId' is set
         if (recurringId == null) {
-            throw new ApiException("Missing the required parameter 'recurringId' when calling getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'recurringId' when calling getRecurringInvoice(Async)");
         }
 
-        return getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetCall(recurringId, _callback);
+        return getRecurringInvoiceCall(recurringId, _callback);
 
     }
 
@@ -413,8 +413,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public RecurringInvoiceResponse getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGet(String recurringId) throws ApiException {
-        ApiResponse<RecurringInvoiceResponse> localVarResp = getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetWithHttpInfo(recurringId);
+    public RecurringInvoiceResponse getRecurringInvoice(String recurringId) throws ApiException {
+        ApiResponse<RecurringInvoiceResponse> localVarResp = getRecurringInvoiceWithHttpInfo(recurringId);
         return localVarResp.getData();
     }
 
@@ -431,8 +431,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RecurringInvoiceResponse> getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetWithHttpInfo(String recurringId) throws ApiException {
-        okhttp3.Call localVarCall = getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetValidateBeforeCall(recurringId, null);
+    public ApiResponse<RecurringInvoiceResponse> getRecurringInvoiceWithHttpInfo(String recurringId) throws ApiException {
+        okhttp3.Call localVarCall = getRecurringInvoiceValidateBeforeCall(recurringId, null);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -451,15 +451,15 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
+    public okhttp3.Call getRecurringInvoiceAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRecurringInvoiceApiV1RecurringInvoicesRecurringIdGetValidateBeforeCall(recurringId, _callback);
+        okhttp3.Call localVarCall = getRecurringInvoiceValidateBeforeCall(recurringId, _callback);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGet
+     * Build call for listGeneratedInvoices
      * @param recurringId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -473,7 +473,7 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetCall(String recurringId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listGeneratedInvoicesCall(String recurringId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -527,13 +527,13 @@ public class RecurringInvoicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetValidateBeforeCall(String recurringId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listGeneratedInvoicesValidateBeforeCall(String recurringId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'recurringId' is set
         if (recurringId == null) {
-            throw new ApiException("Missing the required parameter 'recurringId' when calling listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGet(Async)");
+            throw new ApiException("Missing the required parameter 'recurringId' when calling listGeneratedInvoices(Async)");
         }
 
-        return listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetCall(recurringId, limit, cursor, _callback);
+        return listGeneratedInvoicesCall(recurringId, limit, cursor, _callback);
 
     }
 
@@ -552,8 +552,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public InvoicesListResponse listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGet(String recurringId, Integer limit, String cursor) throws ApiException {
-        ApiResponse<InvoicesListResponse> localVarResp = listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetWithHttpInfo(recurringId, limit, cursor);
+    public InvoicesListResponse listGeneratedInvoices(String recurringId, Integer limit, String cursor) throws ApiException {
+        ApiResponse<InvoicesListResponse> localVarResp = listGeneratedInvoicesWithHttpInfo(recurringId, limit, cursor);
         return localVarResp.getData();
     }
 
@@ -572,8 +572,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InvoicesListResponse> listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetWithHttpInfo(String recurringId, Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetValidateBeforeCall(recurringId, limit, cursor, null);
+    public ApiResponse<InvoicesListResponse> listGeneratedInvoicesWithHttpInfo(String recurringId, Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listGeneratedInvoicesValidateBeforeCall(recurringId, limit, cursor, null);
         Type localVarReturnType = new TypeToken<InvoicesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -594,15 +594,15 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetAsync(String recurringId, Integer limit, String cursor, final ApiCallback<InvoicesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listGeneratedInvoicesAsync(String recurringId, Integer limit, String cursor, final ApiCallback<InvoicesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listGeneratedInvoicesApiV1RecurringInvoicesRecurringIdInvoicesGetValidateBeforeCall(recurringId, limit, cursor, _callback);
+        okhttp3.Call localVarCall = listGeneratedInvoicesValidateBeforeCall(recurringId, limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<InvoicesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listRecurringInvoicesApiV1RecurringInvoicesGet
+     * Build call for listRecurringInvoices
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param status  (optional)
@@ -616,7 +616,7 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRecurringInvoicesApiV1RecurringInvoicesGetCall(Integer limit, String cursor, String status, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listRecurringInvoicesCall(Integer limit, String cursor, String status, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -673,8 +673,8 @@ public class RecurringInvoicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listRecurringInvoicesApiV1RecurringInvoicesGetValidateBeforeCall(Integer limit, String cursor, String status, final ApiCallback _callback) throws ApiException {
-        return listRecurringInvoicesApiV1RecurringInvoicesGetCall(limit, cursor, status, _callback);
+    private okhttp3.Call listRecurringInvoicesValidateBeforeCall(Integer limit, String cursor, String status, final ApiCallback _callback) throws ApiException {
+        return listRecurringInvoicesCall(limit, cursor, status, _callback);
 
     }
 
@@ -693,8 +693,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public RecurringInvoicesListResponse listRecurringInvoicesApiV1RecurringInvoicesGet(Integer limit, String cursor, String status) throws ApiException {
-        ApiResponse<RecurringInvoicesListResponse> localVarResp = listRecurringInvoicesApiV1RecurringInvoicesGetWithHttpInfo(limit, cursor, status);
+    public RecurringInvoicesListResponse listRecurringInvoices(Integer limit, String cursor, String status) throws ApiException {
+        ApiResponse<RecurringInvoicesListResponse> localVarResp = listRecurringInvoicesWithHttpInfo(limit, cursor, status);
         return localVarResp.getData();
     }
 
@@ -713,8 +713,8 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RecurringInvoicesListResponse> listRecurringInvoicesApiV1RecurringInvoicesGetWithHttpInfo(Integer limit, String cursor, String status) throws ApiException {
-        okhttp3.Call localVarCall = listRecurringInvoicesApiV1RecurringInvoicesGetValidateBeforeCall(limit, cursor, status, null);
+    public ApiResponse<RecurringInvoicesListResponse> listRecurringInvoicesWithHttpInfo(Integer limit, String cursor, String status) throws ApiException {
+        okhttp3.Call localVarCall = listRecurringInvoicesValidateBeforeCall(limit, cursor, status, null);
         Type localVarReturnType = new TypeToken<RecurringInvoicesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -735,15 +735,269 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRecurringInvoicesApiV1RecurringInvoicesGetAsync(Integer limit, String cursor, String status, final ApiCallback<RecurringInvoicesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listRecurringInvoicesAsync(Integer limit, String cursor, String status, final ApiCallback<RecurringInvoicesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listRecurringInvoicesApiV1RecurringInvoicesGetValidateBeforeCall(limit, cursor, status, _callback);
+        okhttp3.Call localVarCall = listRecurringInvoicesValidateBeforeCall(limit, cursor, status, _callback);
         Type localVarReturnType = new TypeToken<RecurringInvoicesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatch
+     * Build call for pauseRecurringInvoice
+     * @param recurringId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call pauseRecurringInvoiceCall(String recurringId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/recurring-invoices/{recurring_id}/pause"
+            .replace("{" + "recurring_id" + "}", localVarApiClient.escapeString(recurringId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call pauseRecurringInvoiceValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'recurringId' is set
+        if (recurringId == null) {
+            throw new ApiException("Missing the required parameter 'recurringId' when calling pauseRecurringInvoice(Async)");
+        }
+
+        return pauseRecurringInvoiceCall(recurringId, _callback);
+
+    }
+
+    /**
+     * Pause Recurring Invoice
+     * 
+     * @param recurringId  (required)
+     * @return RecurringInvoiceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RecurringInvoiceResponse pauseRecurringInvoice(String recurringId) throws ApiException {
+        ApiResponse<RecurringInvoiceResponse> localVarResp = pauseRecurringInvoiceWithHttpInfo(recurringId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Pause Recurring Invoice
+     * 
+     * @param recurringId  (required)
+     * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RecurringInvoiceResponse> pauseRecurringInvoiceWithHttpInfo(String recurringId) throws ApiException {
+        okhttp3.Call localVarCall = pauseRecurringInvoiceValidateBeforeCall(recurringId, null);
+        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Pause Recurring Invoice (asynchronously)
+     * 
+     * @param recurringId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call pauseRecurringInvoiceAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = pauseRecurringInvoiceValidateBeforeCall(recurringId, _callback);
+        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for resumeRecurringInvoice
+     * @param recurringId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call resumeRecurringInvoiceCall(String recurringId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/recurring-invoices/{recurring_id}/resume"
+            .replace("{" + "recurring_id" + "}", localVarApiClient.escapeString(recurringId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call resumeRecurringInvoiceValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'recurringId' is set
+        if (recurringId == null) {
+            throw new ApiException("Missing the required parameter 'recurringId' when calling resumeRecurringInvoice(Async)");
+        }
+
+        return resumeRecurringInvoiceCall(recurringId, _callback);
+
+    }
+
+    /**
+     * Resume Recurring Invoice
+     * 
+     * @param recurringId  (required)
+     * @return RecurringInvoiceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RecurringInvoiceResponse resumeRecurringInvoice(String recurringId) throws ApiException {
+        ApiResponse<RecurringInvoiceResponse> localVarResp = resumeRecurringInvoiceWithHttpInfo(recurringId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Resume Recurring Invoice
+     * 
+     * @param recurringId  (required)
+     * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RecurringInvoiceResponse> resumeRecurringInvoiceWithHttpInfo(String recurringId) throws ApiException {
+        okhttp3.Call localVarCall = resumeRecurringInvoiceValidateBeforeCall(recurringId, null);
+        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Resume Recurring Invoice (asynchronously)
+     * 
+     * @param recurringId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call resumeRecurringInvoiceAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = resumeRecurringInvoiceValidateBeforeCall(recurringId, _callback);
+        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateRecurringInvoice
      * @param recurringId  (required)
      * @param recurringInvoicePatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -756,7 +1010,7 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchCall(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateRecurringInvoiceCall(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -803,23 +1057,23 @@ public class RecurringInvoicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchValidateBeforeCall(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateRecurringInvoiceValidateBeforeCall(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'recurringId' is set
         if (recurringId == null) {
-            throw new ApiException("Missing the required parameter 'recurringId' when calling patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'recurringId' when calling updateRecurringInvoice(Async)");
         }
 
         // verify the required parameter 'recurringInvoicePatchRequest' is set
         if (recurringInvoicePatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'recurringInvoicePatchRequest' when calling patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'recurringInvoicePatchRequest' when calling updateRecurringInvoice(Async)");
         }
 
-        return patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchCall(recurringId, recurringInvoicePatchRequest, _callback);
+        return updateRecurringInvoiceCall(recurringId, recurringInvoicePatchRequest, _callback);
 
     }
 
     /**
-     * Patch Recurring Invoice
+     * Update Recurring Invoice
      * 
      * @param recurringId  (required)
      * @param recurringInvoicePatchRequest  (required)
@@ -832,13 +1086,13 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public RecurringInvoiceResponse patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatch(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest) throws ApiException {
-        ApiResponse<RecurringInvoiceResponse> localVarResp = patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchWithHttpInfo(recurringId, recurringInvoicePatchRequest);
+    public RecurringInvoiceResponse updateRecurringInvoice(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest) throws ApiException {
+        ApiResponse<RecurringInvoiceResponse> localVarResp = updateRecurringInvoiceWithHttpInfo(recurringId, recurringInvoicePatchRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Patch Recurring Invoice
+     * Update Recurring Invoice
      * 
      * @param recurringId  (required)
      * @param recurringInvoicePatchRequest  (required)
@@ -851,14 +1105,14 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RecurringInvoiceResponse> patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchWithHttpInfo(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchValidateBeforeCall(recurringId, recurringInvoicePatchRequest, null);
+    public ApiResponse<RecurringInvoiceResponse> updateRecurringInvoiceWithHttpInfo(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateRecurringInvoiceValidateBeforeCall(recurringId, recurringInvoicePatchRequest, null);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Patch Recurring Invoice (asynchronously)
+     * Update Recurring Invoice (asynchronously)
      * 
      * @param recurringId  (required)
      * @param recurringInvoicePatchRequest  (required)
@@ -872,263 +1126,9 @@ public class RecurringInvoicesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchAsync(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
+    public okhttp3.Call updateRecurringInvoiceAsync(String recurringId, RecurringInvoicePatchRequest recurringInvoicePatchRequest, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchRecurringInvoiceApiV1RecurringInvoicesRecurringIdPatchValidateBeforeCall(recurringId, recurringInvoicePatchRequest, _callback);
-        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePost
-     * @param recurringId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostCall(String recurringId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/recurring-invoices/{recurring_id}/pause"
-            .replace("{" + "recurring_id" + "}", localVarApiClient.escapeString(recurringId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'recurringId' is set
-        if (recurringId == null) {
-            throw new ApiException("Missing the required parameter 'recurringId' when calling pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePost(Async)");
-        }
-
-        return pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostCall(recurringId, _callback);
-
-    }
-
-    /**
-     * Pause Recurring Invoice
-     * 
-     * @param recurringId  (required)
-     * @return RecurringInvoiceResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public RecurringInvoiceResponse pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePost(String recurringId) throws ApiException {
-        ApiResponse<RecurringInvoiceResponse> localVarResp = pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostWithHttpInfo(recurringId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Pause Recurring Invoice
-     * 
-     * @param recurringId  (required)
-     * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<RecurringInvoiceResponse> pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostWithHttpInfo(String recurringId) throws ApiException {
-        okhttp3.Call localVarCall = pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostValidateBeforeCall(recurringId, null);
-        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Pause Recurring Invoice (asynchronously)
-     * 
-     * @param recurringId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = pauseRecurringInvoiceApiV1RecurringInvoicesRecurringIdPausePostValidateBeforeCall(recurringId, _callback);
-        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePost
-     * @param recurringId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostCall(String recurringId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/recurring-invoices/{recurring_id}/resume"
-            .replace("{" + "recurring_id" + "}", localVarApiClient.escapeString(recurringId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostValidateBeforeCall(String recurringId, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'recurringId' is set
-        if (recurringId == null) {
-            throw new ApiException("Missing the required parameter 'recurringId' when calling resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePost(Async)");
-        }
-
-        return resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostCall(recurringId, _callback);
-
-    }
-
-    /**
-     * Resume Recurring Invoice
-     * 
-     * @param recurringId  (required)
-     * @return RecurringInvoiceResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public RecurringInvoiceResponse resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePost(String recurringId) throws ApiException {
-        ApiResponse<RecurringInvoiceResponse> localVarResp = resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostWithHttpInfo(recurringId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Resume Recurring Invoice
-     * 
-     * @param recurringId  (required)
-     * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<RecurringInvoiceResponse> resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostWithHttpInfo(String recurringId) throws ApiException {
-        okhttp3.Call localVarCall = resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostValidateBeforeCall(recurringId, null);
-        Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Resume Recurring Invoice (asynchronously)
-     * 
-     * @param recurringId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostAsync(String recurringId, final ApiCallback<RecurringInvoiceResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = resumeRecurringInvoiceApiV1RecurringInvoicesRecurringIdResumePostValidateBeforeCall(recurringId, _callback);
+        okhttp3.Call localVarCall = updateRecurringInvoiceValidateBeforeCall(recurringId, recurringInvoicePatchRequest, _callback);
         Type localVarReturnType = new TypeToken<RecurringInvoiceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

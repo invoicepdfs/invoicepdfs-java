@@ -75,7 +75,7 @@ public class HealthApi {
     }
 
     /**
-     * Build call for healthHealthGet
+     * Build call for getHealth
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -85,7 +85,7 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call healthHealthGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getHealthCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -130,13 +130,13 @@ public class HealthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call healthHealthGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return healthHealthGetCall(_callback);
+    private okhttp3.Call getHealthValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getHealthCall(_callback);
 
     }
 
     /**
-     * Health
+     * Get Health
      * 
      * @return HealthResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -146,13 +146,13 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public HealthResponse healthHealthGet() throws ApiException {
-        ApiResponse<HealthResponse> localVarResp = healthHealthGetWithHttpInfo();
+    public HealthResponse getHealth() throws ApiException {
+        ApiResponse<HealthResponse> localVarResp = getHealthWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * Health
+     * Get Health
      * 
      * @return ApiResponse&lt;HealthResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -162,14 +162,14 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HealthResponse> healthHealthGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = healthHealthGetValidateBeforeCall(null);
+    public ApiResponse<HealthResponse> getHealthWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getHealthValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<HealthResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Health (asynchronously)
+     * Get Health (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -180,15 +180,15 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call healthHealthGetAsync(final ApiCallback<HealthResponse> _callback) throws ApiException {
+    public okhttp3.Call getHealthAsync(final ApiCallback<HealthResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = healthHealthGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getHealthValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<HealthResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for readyReadyGet
+     * Build call for getReadiness
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -198,7 +198,7 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call readyReadyGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getReadinessCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -243,13 +243,13 @@ public class HealthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call readyReadyGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return readyReadyGetCall(_callback);
+    private okhttp3.Call getReadinessValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getReadinessCall(_callback);
 
     }
 
     /**
-     * Ready
+     * Get Readiness
      * 
      * @return ReadyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -259,13 +259,13 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ReadyResponse readyReadyGet() throws ApiException {
-        ApiResponse<ReadyResponse> localVarResp = readyReadyGetWithHttpInfo();
+    public ReadyResponse getReadiness() throws ApiException {
+        ApiResponse<ReadyResponse> localVarResp = getReadinessWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * Ready
+     * Get Readiness
      * 
      * @return ApiResponse&lt;ReadyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -275,14 +275,14 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReadyResponse> readyReadyGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = readyReadyGetValidateBeforeCall(null);
+    public ApiResponse<ReadyResponse> getReadinessWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getReadinessValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<ReadyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Ready (asynchronously)
+     * Get Readiness (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -293,15 +293,15 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call readyReadyGetAsync(final ApiCallback<ReadyResponse> _callback) throws ApiException {
+    public okhttp3.Call getReadinessAsync(final ApiCallback<ReadyResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = readyReadyGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getReadinessValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<ReadyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for versionVersionGet
+     * Build call for getVersion
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -311,7 +311,7 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call versionVersionGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getVersionCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -356,13 +356,13 @@ public class HealthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call versionVersionGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return versionVersionGetCall(_callback);
+    private okhttp3.Call getVersionValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getVersionCall(_callback);
 
     }
 
     /**
-     * Version
+     * Get Version
      * 
      * @return VersionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -372,13 +372,13 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public VersionResponse versionVersionGet() throws ApiException {
-        ApiResponse<VersionResponse> localVarResp = versionVersionGetWithHttpInfo();
+    public VersionResponse getVersion() throws ApiException {
+        ApiResponse<VersionResponse> localVarResp = getVersionWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * Version
+     * Get Version
      * 
      * @return ApiResponse&lt;VersionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -388,14 +388,14 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<VersionResponse> versionVersionGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = versionVersionGetValidateBeforeCall(null);
+    public ApiResponse<VersionResponse> getVersionWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getVersionValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<VersionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Version (asynchronously)
+     * Get Version (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -406,9 +406,9 @@ public class HealthApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call versionVersionGetAsync(final ApiCallback<VersionResponse> _callback) throws ApiException {
+    public okhttp3.Call getVersionAsync(final ApiCallback<VersionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = versionVersionGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getVersionValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<VersionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

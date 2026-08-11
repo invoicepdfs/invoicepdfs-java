@@ -78,7 +78,7 @@ public class BillingApi {
     }
 
     /**
-     * Build call for createCheckoutApiV1BillingCheckoutSessionPost
+     * Build call for createCheckoutSession
      * @param billingCheckoutRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +90,7 @@ public class BillingApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCheckoutApiV1BillingCheckoutSessionPostCall(BillingCheckoutRequest billingCheckoutRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCheckoutSessionCall(BillingCheckoutRequest billingCheckoutRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,18 +136,18 @@ public class BillingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCheckoutApiV1BillingCheckoutSessionPostValidateBeforeCall(BillingCheckoutRequest billingCheckoutRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCheckoutSessionValidateBeforeCall(BillingCheckoutRequest billingCheckoutRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingCheckoutRequest' is set
         if (billingCheckoutRequest == null) {
-            throw new ApiException("Missing the required parameter 'billingCheckoutRequest' when calling createCheckoutApiV1BillingCheckoutSessionPost(Async)");
+            throw new ApiException("Missing the required parameter 'billingCheckoutRequest' when calling createCheckoutSession(Async)");
         }
 
-        return createCheckoutApiV1BillingCheckoutSessionPostCall(billingCheckoutRequest, _callback);
+        return createCheckoutSessionCall(billingCheckoutRequest, _callback);
 
     }
 
     /**
-     * Create Checkout
+     * Create Checkout Session
      * Create a Stripe Checkout session for a subscription.
      * @param billingCheckoutRequest  (required)
      * @return BillingCheckoutResponse
@@ -159,13 +159,13 @@ public class BillingApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BillingCheckoutResponse createCheckoutApiV1BillingCheckoutSessionPost(BillingCheckoutRequest billingCheckoutRequest) throws ApiException {
-        ApiResponse<BillingCheckoutResponse> localVarResp = createCheckoutApiV1BillingCheckoutSessionPostWithHttpInfo(billingCheckoutRequest);
+    public BillingCheckoutResponse createCheckoutSession(BillingCheckoutRequest billingCheckoutRequest) throws ApiException {
+        ApiResponse<BillingCheckoutResponse> localVarResp = createCheckoutSessionWithHttpInfo(billingCheckoutRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Create Checkout
+     * Create Checkout Session
      * Create a Stripe Checkout session for a subscription.
      * @param billingCheckoutRequest  (required)
      * @return ApiResponse&lt;BillingCheckoutResponse&gt;
@@ -177,14 +177,14 @@ public class BillingApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BillingCheckoutResponse> createCheckoutApiV1BillingCheckoutSessionPostWithHttpInfo(BillingCheckoutRequest billingCheckoutRequest) throws ApiException {
-        okhttp3.Call localVarCall = createCheckoutApiV1BillingCheckoutSessionPostValidateBeforeCall(billingCheckoutRequest, null);
+    public ApiResponse<BillingCheckoutResponse> createCheckoutSessionWithHttpInfo(BillingCheckoutRequest billingCheckoutRequest) throws ApiException {
+        okhttp3.Call localVarCall = createCheckoutSessionValidateBeforeCall(billingCheckoutRequest, null);
         Type localVarReturnType = new TypeToken<BillingCheckoutResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Checkout (asynchronously)
+     * Create Checkout Session (asynchronously)
      * Create a Stripe Checkout session for a subscription.
      * @param billingCheckoutRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -197,15 +197,15 @@ public class BillingApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCheckoutApiV1BillingCheckoutSessionPostAsync(BillingCheckoutRequest billingCheckoutRequest, final ApiCallback<BillingCheckoutResponse> _callback) throws ApiException {
+    public okhttp3.Call createCheckoutSessionAsync(BillingCheckoutRequest billingCheckoutRequest, final ApiCallback<BillingCheckoutResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createCheckoutApiV1BillingCheckoutSessionPostValidateBeforeCall(billingCheckoutRequest, _callback);
+        okhttp3.Call localVarCall = createCheckoutSessionValidateBeforeCall(billingCheckoutRequest, _callback);
         Type localVarReturnType = new TypeToken<BillingCheckoutResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createPortalApiV1BillingPortalSessionPost
+     * Build call for createPortalSession
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -215,7 +215,7 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPortalApiV1BillingPortalSessionPostCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPortalSessionCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -260,13 +260,13 @@ public class BillingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPortalApiV1BillingPortalSessionPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return createPortalApiV1BillingPortalSessionPostCall(_callback);
+    private okhttp3.Call createPortalSessionValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return createPortalSessionCall(_callback);
 
     }
 
     /**
-     * Create Portal
+     * Create Portal Session
      * Create a Stripe Customer Portal session for self-service management.
      * @return BillingPortalResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -276,13 +276,13 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public BillingPortalResponse createPortalApiV1BillingPortalSessionPost() throws ApiException {
-        ApiResponse<BillingPortalResponse> localVarResp = createPortalApiV1BillingPortalSessionPostWithHttpInfo();
+    public BillingPortalResponse createPortalSession() throws ApiException {
+        ApiResponse<BillingPortalResponse> localVarResp = createPortalSessionWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * Create Portal
+     * Create Portal Session
      * Create a Stripe Customer Portal session for self-service management.
      * @return ApiResponse&lt;BillingPortalResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -292,14 +292,14 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BillingPortalResponse> createPortalApiV1BillingPortalSessionPostWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = createPortalApiV1BillingPortalSessionPostValidateBeforeCall(null);
+    public ApiResponse<BillingPortalResponse> createPortalSessionWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = createPortalSessionValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<BillingPortalResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Portal (asynchronously)
+     * Create Portal Session (asynchronously)
      * Create a Stripe Customer Portal session for self-service management.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -310,15 +310,15 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPortalApiV1BillingPortalSessionPostAsync(final ApiCallback<BillingPortalResponse> _callback) throws ApiException {
+    public okhttp3.Call createPortalSessionAsync(final ApiCallback<BillingPortalResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createPortalApiV1BillingPortalSessionPostValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = createPortalSessionValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<BillingPortalResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getSubscriptionApiV1BillingSubscriptionGet
+     * Build call for getSubscription
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -328,7 +328,7 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionApiV1BillingSubscriptionGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -373,8 +373,8 @@ public class BillingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionApiV1BillingSubscriptionGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getSubscriptionApiV1BillingSubscriptionGetCall(_callback);
+    private okhttp3.Call getSubscriptionValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getSubscriptionCall(_callback);
 
     }
 
@@ -389,8 +389,8 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public BillingSubscriptionResponse getSubscriptionApiV1BillingSubscriptionGet() throws ApiException {
-        ApiResponse<BillingSubscriptionResponse> localVarResp = getSubscriptionApiV1BillingSubscriptionGetWithHttpInfo();
+    public BillingSubscriptionResponse getSubscription() throws ApiException {
+        ApiResponse<BillingSubscriptionResponse> localVarResp = getSubscriptionWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -405,8 +405,8 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BillingSubscriptionResponse> getSubscriptionApiV1BillingSubscriptionGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getSubscriptionApiV1BillingSubscriptionGetValidateBeforeCall(null);
+    public ApiResponse<BillingSubscriptionResponse> getSubscriptionWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getSubscriptionValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<BillingSubscriptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -423,15 +423,15 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionApiV1BillingSubscriptionGetAsync(final ApiCallback<BillingSubscriptionResponse> _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionAsync(final ApiCallback<BillingSubscriptionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSubscriptionApiV1BillingSubscriptionGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getSubscriptionValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<BillingSubscriptionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listPlansApiV1BillingPlansGet
+     * Build call for listPlans
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -441,7 +441,7 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPlansApiV1BillingPlansGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPlansCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -486,8 +486,8 @@ public class BillingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPlansApiV1BillingPlansGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listPlansApiV1BillingPlansGetCall(_callback);
+    private okhttp3.Call listPlansValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listPlansCall(_callback);
 
     }
 
@@ -502,8 +502,8 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public BillingPlansListResponse listPlansApiV1BillingPlansGet() throws ApiException {
-        ApiResponse<BillingPlansListResponse> localVarResp = listPlansApiV1BillingPlansGetWithHttpInfo();
+    public BillingPlansListResponse listPlans() throws ApiException {
+        ApiResponse<BillingPlansListResponse> localVarResp = listPlansWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -518,8 +518,8 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BillingPlansListResponse> listPlansApiV1BillingPlansGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listPlansApiV1BillingPlansGetValidateBeforeCall(null);
+    public ApiResponse<BillingPlansListResponse> listPlansWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listPlansValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<BillingPlansListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -536,9 +536,9 @@ public class BillingApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPlansApiV1BillingPlansGetAsync(final ApiCallback<BillingPlansListResponse> _callback) throws ApiException {
+    public okhttp3.Call listPlansAsync(final ApiCallback<BillingPlansListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listPlansApiV1BillingPlansGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listPlansValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<BillingPlansListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

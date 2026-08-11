@@ -79,7 +79,7 @@ public class BrandingProfilesApi {
     }
 
     /**
-     * Build call for createProfileApiV1BrandingProfilesPost
+     * Build call for createBrandingProfile
      * @param brandingProfileCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,7 +91,7 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProfileApiV1BrandingProfilesPostCall(BrandingProfileCreateRequest brandingProfileCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBrandingProfileCall(BrandingProfileCreateRequest brandingProfileCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,18 +137,18 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createProfileApiV1BrandingProfilesPostValidateBeforeCall(BrandingProfileCreateRequest brandingProfileCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createBrandingProfileValidateBeforeCall(BrandingProfileCreateRequest brandingProfileCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'brandingProfileCreateRequest' is set
         if (brandingProfileCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'brandingProfileCreateRequest' when calling createProfileApiV1BrandingProfilesPost(Async)");
+            throw new ApiException("Missing the required parameter 'brandingProfileCreateRequest' when calling createBrandingProfile(Async)");
         }
 
-        return createProfileApiV1BrandingProfilesPostCall(brandingProfileCreateRequest, _callback);
+        return createBrandingProfileCall(brandingProfileCreateRequest, _callback);
 
     }
 
     /**
-     * Create Profile
+     * Create Branding Profile
      * 
      * @param brandingProfileCreateRequest  (required)
      * @return BrandingProfileResponse
@@ -160,13 +160,13 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BrandingProfileResponse createProfileApiV1BrandingProfilesPost(BrandingProfileCreateRequest brandingProfileCreateRequest) throws ApiException {
-        ApiResponse<BrandingProfileResponse> localVarResp = createProfileApiV1BrandingProfilesPostWithHttpInfo(brandingProfileCreateRequest);
+    public BrandingProfileResponse createBrandingProfile(BrandingProfileCreateRequest brandingProfileCreateRequest) throws ApiException {
+        ApiResponse<BrandingProfileResponse> localVarResp = createBrandingProfileWithHttpInfo(brandingProfileCreateRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Create Profile
+     * Create Branding Profile
      * 
      * @param brandingProfileCreateRequest  (required)
      * @return ApiResponse&lt;BrandingProfileResponse&gt;
@@ -178,14 +178,14 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BrandingProfileResponse> createProfileApiV1BrandingProfilesPostWithHttpInfo(BrandingProfileCreateRequest brandingProfileCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createProfileApiV1BrandingProfilesPostValidateBeforeCall(brandingProfileCreateRequest, null);
+    public ApiResponse<BrandingProfileResponse> createBrandingProfileWithHttpInfo(BrandingProfileCreateRequest brandingProfileCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createBrandingProfileValidateBeforeCall(brandingProfileCreateRequest, null);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Profile (asynchronously)
+     * Create Branding Profile (asynchronously)
      * 
      * @param brandingProfileCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -198,15 +198,15 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProfileApiV1BrandingProfilesPostAsync(BrandingProfileCreateRequest brandingProfileCreateRequest, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call createBrandingProfileAsync(BrandingProfileCreateRequest brandingProfileCreateRequest, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createProfileApiV1BrandingProfilesPostValidateBeforeCall(brandingProfileCreateRequest, _callback);
+        okhttp3.Call localVarCall = createBrandingProfileValidateBeforeCall(brandingProfileCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteLogoApiV1BrandingProfilesProfileIdLogoDelete
+     * Build call for deleteBrandingLogo
      * @param profileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -218,7 +218,7 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteCall(String profileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteBrandingLogoCall(String profileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -264,18 +264,18 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteBrandingLogoValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling deleteLogoApiV1BrandingProfilesProfileIdLogoDelete(Async)");
+            throw new ApiException("Missing the required parameter 'profileId' when calling deleteBrandingLogo(Async)");
         }
 
-        return deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteCall(profileId, _callback);
+        return deleteBrandingLogoCall(profileId, _callback);
 
     }
 
     /**
-     * Delete Logo
+     * Delete Branding Logo
      * 
      * @param profileId  (required)
      * @return SimpleBoolResponse
@@ -287,13 +287,13 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteLogoApiV1BrandingProfilesProfileIdLogoDelete(String profileId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteWithHttpInfo(profileId);
+    public SimpleBoolResponse deleteBrandingLogo(String profileId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteBrandingLogoWithHttpInfo(profileId);
         return localVarResp.getData();
     }
 
     /**
-     * Delete Logo
+     * Delete Branding Logo
      * 
      * @param profileId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
@@ -305,14 +305,14 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteWithHttpInfo(String profileId) throws ApiException {
-        okhttp3.Call localVarCall = deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteValidateBeforeCall(profileId, null);
+    public ApiResponse<SimpleBoolResponse> deleteBrandingLogoWithHttpInfo(String profileId) throws ApiException {
+        okhttp3.Call localVarCall = deleteBrandingLogoValidateBeforeCall(profileId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Delete Logo (asynchronously)
+     * Delete Branding Logo (asynchronously)
      * 
      * @param profileId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -325,15 +325,15 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteAsync(String profileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteBrandingLogoAsync(String profileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteLogoApiV1BrandingProfilesProfileIdLogoDeleteValidateBeforeCall(profileId, _callback);
+        okhttp3.Call localVarCall = deleteBrandingLogoValidateBeforeCall(profileId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteProfileApiV1BrandingProfilesProfileIdDelete
+     * Build call for deleteBrandingProfile
      * @param profileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -345,7 +345,7 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProfileApiV1BrandingProfilesProfileIdDeleteCall(String profileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteBrandingProfileCall(String profileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -391,18 +391,18 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteProfileApiV1BrandingProfilesProfileIdDeleteValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteBrandingProfileValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling deleteProfileApiV1BrandingProfilesProfileIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'profileId' when calling deleteBrandingProfile(Async)");
         }
 
-        return deleteProfileApiV1BrandingProfilesProfileIdDeleteCall(profileId, _callback);
+        return deleteBrandingProfileCall(profileId, _callback);
 
     }
 
     /**
-     * Delete Profile
+     * Delete Branding Profile
      * 
      * @param profileId  (required)
      * @return SimpleBoolResponse
@@ -414,13 +414,13 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteProfileApiV1BrandingProfilesProfileIdDelete(String profileId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteProfileApiV1BrandingProfilesProfileIdDeleteWithHttpInfo(profileId);
+    public SimpleBoolResponse deleteBrandingProfile(String profileId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteBrandingProfileWithHttpInfo(profileId);
         return localVarResp.getData();
     }
 
     /**
-     * Delete Profile
+     * Delete Branding Profile
      * 
      * @param profileId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
@@ -432,14 +432,14 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteProfileApiV1BrandingProfilesProfileIdDeleteWithHttpInfo(String profileId) throws ApiException {
-        okhttp3.Call localVarCall = deleteProfileApiV1BrandingProfilesProfileIdDeleteValidateBeforeCall(profileId, null);
+    public ApiResponse<SimpleBoolResponse> deleteBrandingProfileWithHttpInfo(String profileId) throws ApiException {
+        okhttp3.Call localVarCall = deleteBrandingProfileValidateBeforeCall(profileId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Delete Profile (asynchronously)
+     * Delete Branding Profile (asynchronously)
      * 
      * @param profileId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -452,15 +452,15 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProfileApiV1BrandingProfilesProfileIdDeleteAsync(String profileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteBrandingProfileAsync(String profileId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteProfileApiV1BrandingProfilesProfileIdDeleteValidateBeforeCall(profileId, _callback);
+        okhttp3.Call localVarCall = deleteBrandingProfileValidateBeforeCall(profileId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getProfileApiV1BrandingProfilesProfileIdGet
+     * Build call for getBrandingProfile
      * @param profileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -472,7 +472,7 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProfileApiV1BrandingProfilesProfileIdGetCall(String profileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBrandingProfileCall(String profileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -518,18 +518,18 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProfileApiV1BrandingProfilesProfileIdGetValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBrandingProfileValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling getProfileApiV1BrandingProfilesProfileIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'profileId' when calling getBrandingProfile(Async)");
         }
 
-        return getProfileApiV1BrandingProfilesProfileIdGetCall(profileId, _callback);
+        return getBrandingProfileCall(profileId, _callback);
 
     }
 
     /**
-     * Get Profile
+     * Get Branding Profile
      * 
      * @param profileId  (required)
      * @return BrandingProfileResponse
@@ -541,13 +541,13 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BrandingProfileResponse getProfileApiV1BrandingProfilesProfileIdGet(String profileId) throws ApiException {
-        ApiResponse<BrandingProfileResponse> localVarResp = getProfileApiV1BrandingProfilesProfileIdGetWithHttpInfo(profileId);
+    public BrandingProfileResponse getBrandingProfile(String profileId) throws ApiException {
+        ApiResponse<BrandingProfileResponse> localVarResp = getBrandingProfileWithHttpInfo(profileId);
         return localVarResp.getData();
     }
 
     /**
-     * Get Profile
+     * Get Branding Profile
      * 
      * @param profileId  (required)
      * @return ApiResponse&lt;BrandingProfileResponse&gt;
@@ -559,14 +559,14 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BrandingProfileResponse> getProfileApiV1BrandingProfilesProfileIdGetWithHttpInfo(String profileId) throws ApiException {
-        okhttp3.Call localVarCall = getProfileApiV1BrandingProfilesProfileIdGetValidateBeforeCall(profileId, null);
+    public ApiResponse<BrandingProfileResponse> getBrandingProfileWithHttpInfo(String profileId) throws ApiException {
+        okhttp3.Call localVarCall = getBrandingProfileValidateBeforeCall(profileId, null);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get Profile (asynchronously)
+     * Get Branding Profile (asynchronously)
      * 
      * @param profileId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -579,15 +579,15 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProfileApiV1BrandingProfilesProfileIdGetAsync(String profileId, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call getBrandingProfileAsync(String profileId, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProfileApiV1BrandingProfilesProfileIdGetValidateBeforeCall(profileId, _callback);
+        okhttp3.Call localVarCall = getBrandingProfileValidateBeforeCall(profileId, _callback);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listProfilesApiV1BrandingProfilesGet
+     * Build call for listBrandingProfiles
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -597,7 +597,7 @@ public class BrandingProfilesApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listProfilesApiV1BrandingProfilesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listBrandingProfilesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -642,13 +642,13 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listProfilesApiV1BrandingProfilesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listProfilesApiV1BrandingProfilesGetCall(_callback);
+    private okhttp3.Call listBrandingProfilesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listBrandingProfilesCall(_callback);
 
     }
 
     /**
-     * List Profiles
+     * List Branding Profiles
      * 
      * @return BrandingProfilesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -658,13 +658,13 @@ public class BrandingProfilesApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public BrandingProfilesListResponse listProfilesApiV1BrandingProfilesGet() throws ApiException {
-        ApiResponse<BrandingProfilesListResponse> localVarResp = listProfilesApiV1BrandingProfilesGetWithHttpInfo();
+    public BrandingProfilesListResponse listBrandingProfiles() throws ApiException {
+        ApiResponse<BrandingProfilesListResponse> localVarResp = listBrandingProfilesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * List Profiles
+     * List Branding Profiles
      * 
      * @return ApiResponse&lt;BrandingProfilesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -674,14 +674,14 @@ public class BrandingProfilesApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BrandingProfilesListResponse> listProfilesApiV1BrandingProfilesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listProfilesApiV1BrandingProfilesGetValidateBeforeCall(null);
+    public ApiResponse<BrandingProfilesListResponse> listBrandingProfilesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listBrandingProfilesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<BrandingProfilesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Profiles (asynchronously)
+     * List Branding Profiles (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -692,15 +692,15 @@ public class BrandingProfilesApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listProfilesApiV1BrandingProfilesGetAsync(final ApiCallback<BrandingProfilesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listBrandingProfilesAsync(final ApiCallback<BrandingProfilesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listProfilesApiV1BrandingProfilesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listBrandingProfilesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<BrandingProfilesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for setDefaultApiV1BrandingProfilesProfileIdDefaultPost
+     * Build call for setDefaultBrandingProfile
      * @param profileId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -712,7 +712,7 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call setDefaultApiV1BrandingProfilesProfileIdDefaultPostCall(String profileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call setDefaultBrandingProfileCall(String profileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -758,18 +758,18 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call setDefaultApiV1BrandingProfilesProfileIdDefaultPostValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call setDefaultBrandingProfileValidateBeforeCall(String profileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling setDefaultApiV1BrandingProfilesProfileIdDefaultPost(Async)");
+            throw new ApiException("Missing the required parameter 'profileId' when calling setDefaultBrandingProfile(Async)");
         }
 
-        return setDefaultApiV1BrandingProfilesProfileIdDefaultPostCall(profileId, _callback);
+        return setDefaultBrandingProfileCall(profileId, _callback);
 
     }
 
     /**
-     * Set Default
+     * Set Default Branding Profile
      * 
      * @param profileId  (required)
      * @return BrandingProfileResponse
@@ -781,13 +781,13 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BrandingProfileResponse setDefaultApiV1BrandingProfilesProfileIdDefaultPost(String profileId) throws ApiException {
-        ApiResponse<BrandingProfileResponse> localVarResp = setDefaultApiV1BrandingProfilesProfileIdDefaultPostWithHttpInfo(profileId);
+    public BrandingProfileResponse setDefaultBrandingProfile(String profileId) throws ApiException {
+        ApiResponse<BrandingProfileResponse> localVarResp = setDefaultBrandingProfileWithHttpInfo(profileId);
         return localVarResp.getData();
     }
 
     /**
-     * Set Default
+     * Set Default Branding Profile
      * 
      * @param profileId  (required)
      * @return ApiResponse&lt;BrandingProfileResponse&gt;
@@ -799,14 +799,14 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BrandingProfileResponse> setDefaultApiV1BrandingProfilesProfileIdDefaultPostWithHttpInfo(String profileId) throws ApiException {
-        okhttp3.Call localVarCall = setDefaultApiV1BrandingProfilesProfileIdDefaultPostValidateBeforeCall(profileId, null);
+    public ApiResponse<BrandingProfileResponse> setDefaultBrandingProfileWithHttpInfo(String profileId) throws ApiException {
+        okhttp3.Call localVarCall = setDefaultBrandingProfileValidateBeforeCall(profileId, null);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Set Default (asynchronously)
+     * Set Default Branding Profile (asynchronously)
      * 
      * @param profileId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -819,15 +819,15 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call setDefaultApiV1BrandingProfilesProfileIdDefaultPostAsync(String profileId, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call setDefaultBrandingProfileAsync(String profileId, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = setDefaultApiV1BrandingProfilesProfileIdDefaultPostValidateBeforeCall(profileId, _callback);
+        okhttp3.Call localVarCall = setDefaultBrandingProfileValidateBeforeCall(profileId, _callback);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for updateProfileApiV1BrandingProfilesProfileIdPatch
+     * Build call for updateBrandingProfile
      * @param profileId  (required)
      * @param brandingProfilePatchRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -840,7 +840,7 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProfileApiV1BrandingProfilesProfileIdPatchCall(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateBrandingProfileCall(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -887,23 +887,23 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateProfileApiV1BrandingProfilesProfileIdPatchValidateBeforeCall(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateBrandingProfileValidateBeforeCall(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling updateProfileApiV1BrandingProfilesProfileIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'profileId' when calling updateBrandingProfile(Async)");
         }
 
         // verify the required parameter 'brandingProfilePatchRequest' is set
         if (brandingProfilePatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'brandingProfilePatchRequest' when calling updateProfileApiV1BrandingProfilesProfileIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'brandingProfilePatchRequest' when calling updateBrandingProfile(Async)");
         }
 
-        return updateProfileApiV1BrandingProfilesProfileIdPatchCall(profileId, brandingProfilePatchRequest, _callback);
+        return updateBrandingProfileCall(profileId, brandingProfilePatchRequest, _callback);
 
     }
 
     /**
-     * Update Profile
+     * Update Branding Profile
      * 
      * @param profileId  (required)
      * @param brandingProfilePatchRequest  (required)
@@ -916,13 +916,13 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BrandingProfileResponse updateProfileApiV1BrandingProfilesProfileIdPatch(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest) throws ApiException {
-        ApiResponse<BrandingProfileResponse> localVarResp = updateProfileApiV1BrandingProfilesProfileIdPatchWithHttpInfo(profileId, brandingProfilePatchRequest);
+    public BrandingProfileResponse updateBrandingProfile(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest) throws ApiException {
+        ApiResponse<BrandingProfileResponse> localVarResp = updateBrandingProfileWithHttpInfo(profileId, brandingProfilePatchRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Update Profile
+     * Update Branding Profile
      * 
      * @param profileId  (required)
      * @param brandingProfilePatchRequest  (required)
@@ -935,14 +935,14 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BrandingProfileResponse> updateProfileApiV1BrandingProfilesProfileIdPatchWithHttpInfo(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateProfileApiV1BrandingProfilesProfileIdPatchValidateBeforeCall(profileId, brandingProfilePatchRequest, null);
+    public ApiResponse<BrandingProfileResponse> updateBrandingProfileWithHttpInfo(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateBrandingProfileValidateBeforeCall(profileId, brandingProfilePatchRequest, null);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update Profile (asynchronously)
+     * Update Branding Profile (asynchronously)
      * 
      * @param profileId  (required)
      * @param brandingProfilePatchRequest  (required)
@@ -956,15 +956,15 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProfileApiV1BrandingProfilesProfileIdPatchAsync(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call updateBrandingProfileAsync(String profileId, BrandingProfilePatchRequest brandingProfilePatchRequest, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateProfileApiV1BrandingProfilesProfileIdPatchValidateBeforeCall(profileId, brandingProfilePatchRequest, _callback);
+        okhttp3.Call localVarCall = updateBrandingProfileValidateBeforeCall(profileId, brandingProfilePatchRequest, _callback);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for uploadLogoApiV1BrandingProfilesProfileIdLogoPost
+     * Build call for uploadBrandingLogo
      * @param profileId  (required)
      * @param _file  (required)
      * @param _callback Callback for upload/download progress
@@ -977,7 +977,7 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadLogoApiV1BrandingProfilesProfileIdLogoPostCall(String profileId, File _file, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadBrandingLogoCall(String profileId, File _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1028,23 +1028,23 @@ public class BrandingProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadLogoApiV1BrandingProfilesProfileIdLogoPostValidateBeforeCall(String profileId, File _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadBrandingLogoValidateBeforeCall(String profileId, File _file, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling uploadLogoApiV1BrandingProfilesProfileIdLogoPost(Async)");
+            throw new ApiException("Missing the required parameter 'profileId' when calling uploadBrandingLogo(Async)");
         }
 
         // verify the required parameter '_file' is set
         if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling uploadLogoApiV1BrandingProfilesProfileIdLogoPost(Async)");
+            throw new ApiException("Missing the required parameter '_file' when calling uploadBrandingLogo(Async)");
         }
 
-        return uploadLogoApiV1BrandingProfilesProfileIdLogoPostCall(profileId, _file, _callback);
+        return uploadBrandingLogoCall(profileId, _file, _callback);
 
     }
 
     /**
-     * Upload Logo
+     * Upload Branding Logo
      * 
      * @param profileId  (required)
      * @param _file  (required)
@@ -1057,13 +1057,13 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BrandingProfileResponse uploadLogoApiV1BrandingProfilesProfileIdLogoPost(String profileId, File _file) throws ApiException {
-        ApiResponse<BrandingProfileResponse> localVarResp = uploadLogoApiV1BrandingProfilesProfileIdLogoPostWithHttpInfo(profileId, _file);
+    public BrandingProfileResponse uploadBrandingLogo(String profileId, File _file) throws ApiException {
+        ApiResponse<BrandingProfileResponse> localVarResp = uploadBrandingLogoWithHttpInfo(profileId, _file);
         return localVarResp.getData();
     }
 
     /**
-     * Upload Logo
+     * Upload Branding Logo
      * 
      * @param profileId  (required)
      * @param _file  (required)
@@ -1076,14 +1076,14 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BrandingProfileResponse> uploadLogoApiV1BrandingProfilesProfileIdLogoPostWithHttpInfo(String profileId, File _file) throws ApiException {
-        okhttp3.Call localVarCall = uploadLogoApiV1BrandingProfilesProfileIdLogoPostValidateBeforeCall(profileId, _file, null);
+    public ApiResponse<BrandingProfileResponse> uploadBrandingLogoWithHttpInfo(String profileId, File _file) throws ApiException {
+        okhttp3.Call localVarCall = uploadBrandingLogoValidateBeforeCall(profileId, _file, null);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Upload Logo (asynchronously)
+     * Upload Branding Logo (asynchronously)
      * 
      * @param profileId  (required)
      * @param _file  (required)
@@ -1097,9 +1097,9 @@ public class BrandingProfilesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadLogoApiV1BrandingProfilesProfileIdLogoPostAsync(String profileId, File _file, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call uploadBrandingLogoAsync(String profileId, File _file, final ApiCallback<BrandingProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = uploadLogoApiV1BrandingProfilesProfileIdLogoPostValidateBeforeCall(profileId, _file, _callback);
+        okhttp3.Call localVarCall = uploadBrandingLogoValidateBeforeCall(profileId, _file, _callback);
         Type localVarReturnType = new TypeToken<BrandingProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

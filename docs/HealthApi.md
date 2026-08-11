@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**healthHealthGet**](HealthApi.md#healthHealthGet) | **GET** /health | Health |
-| [**readyReadyGet**](HealthApi.md#readyReadyGet) | **GET** /ready | Ready |
-| [**versionVersionGet**](HealthApi.md#versionVersionGet) | **GET** /version | Version |
+| [**getHealth**](HealthApi.md#getHealth) | **GET** /health | Get Health |
+| [**getReadiness**](HealthApi.md#getReadiness) | **GET** /ready | Get Readiness |
+| [**getVersion**](HealthApi.md#getVersion) | **GET** /version | Get Version |
 
 
-<a id="healthHealthGet"></a>
-# **healthHealthGet**
-> HealthResponse healthHealthGet()
+<a id="getHealth"></a>
+# **getHealth**
+> HealthResponse getHealth()
 
-Health
+Get Health
 
 ### Example
 ```java
@@ -31,10 +31,10 @@ public class Example {
 
     HealthApi apiInstance = new HealthApi(defaultClient);
     try {
-      HealthResponse result = apiInstance.healthHealthGet();
+      HealthResponse result = apiInstance.getHealth();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling HealthApi#healthHealthGet");
+      System.err.println("Exception when calling HealthApi#getHealth");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -65,11 +65,11 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="readyReadyGet"></a>
-# **readyReadyGet**
-> ReadyResponse readyReadyGet()
+<a id="getReadiness"></a>
+# **getReadiness**
+> ReadyResponse getReadiness()
 
-Ready
+Get Readiness
 
 ### Example
 ```java
@@ -87,10 +87,10 @@ public class Example {
 
     HealthApi apiInstance = new HealthApi(defaultClient);
     try {
-      ReadyResponse result = apiInstance.readyReadyGet();
+      ReadyResponse result = apiInstance.getReadiness();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling HealthApi#readyReadyGet");
+      System.err.println("Exception when calling HealthApi#getReadiness");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -121,11 +121,11 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="versionVersionGet"></a>
-# **versionVersionGet**
-> VersionResponse versionVersionGet()
+<a id="getVersion"></a>
+# **getVersion**
+> VersionResponse getVersion()
 
-Version
+Get Version
 
 ### Example
 ```java
@@ -143,10 +143,10 @@ public class Example {
 
     HealthApi apiInstance = new HealthApi(defaultClient);
     try {
-      VersionResponse result = apiInstance.versionVersionGet();
+      VersionResponse result = apiInstance.getVersion();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling HealthApi#versionVersionGet");
+      System.err.println("Exception when calling HealthApi#getVersion");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

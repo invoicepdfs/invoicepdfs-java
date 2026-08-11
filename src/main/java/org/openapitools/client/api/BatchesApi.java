@@ -77,7 +77,7 @@ public class BatchesApi {
     }
 
     /**
-     * Build call for cancelBatchApiV1BatchesBatchIdCancelPost
+     * Build call for cancelBatch
      * @param batchId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -89,7 +89,7 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelBatchApiV1BatchesBatchIdCancelPostCall(String batchId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelBatchCall(String batchId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -135,13 +135,13 @@ public class BatchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelBatchApiV1BatchesBatchIdCancelPostValidateBeforeCall(String batchId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelBatchValidateBeforeCall(String batchId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
-            throw new ApiException("Missing the required parameter 'batchId' when calling cancelBatchApiV1BatchesBatchIdCancelPost(Async)");
+            throw new ApiException("Missing the required parameter 'batchId' when calling cancelBatch(Async)");
         }
 
-        return cancelBatchApiV1BatchesBatchIdCancelPostCall(batchId, _callback);
+        return cancelBatchCall(batchId, _callback);
 
     }
 
@@ -158,8 +158,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchResponse cancelBatchApiV1BatchesBatchIdCancelPost(String batchId) throws ApiException {
-        ApiResponse<BatchResponse> localVarResp = cancelBatchApiV1BatchesBatchIdCancelPostWithHttpInfo(batchId);
+    public BatchResponse cancelBatch(String batchId) throws ApiException {
+        ApiResponse<BatchResponse> localVarResp = cancelBatchWithHttpInfo(batchId);
         return localVarResp.getData();
     }
 
@@ -176,8 +176,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchResponse> cancelBatchApiV1BatchesBatchIdCancelPostWithHttpInfo(String batchId) throws ApiException {
-        okhttp3.Call localVarCall = cancelBatchApiV1BatchesBatchIdCancelPostValidateBeforeCall(batchId, null);
+    public ApiResponse<BatchResponse> cancelBatchWithHttpInfo(String batchId) throws ApiException {
+        okhttp3.Call localVarCall = cancelBatchValidateBeforeCall(batchId, null);
         Type localVarReturnType = new TypeToken<BatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -196,15 +196,15 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelBatchApiV1BatchesBatchIdCancelPostAsync(String batchId, final ApiCallback<BatchResponse> _callback) throws ApiException {
+    public okhttp3.Call cancelBatchAsync(String batchId, final ApiCallback<BatchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelBatchApiV1BatchesBatchIdCancelPostValidateBeforeCall(batchId, _callback);
+        okhttp3.Call localVarCall = cancelBatchValidateBeforeCall(batchId, _callback);
         Type localVarReturnType = new TypeToken<BatchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createBatchApiV1BatchesPost
+     * Build call for createBatch
      * @param batchCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -216,7 +216,7 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBatchApiV1BatchesPostCall(BatchCreateRequest batchCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBatchCall(BatchCreateRequest batchCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -262,13 +262,13 @@ public class BatchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBatchApiV1BatchesPostValidateBeforeCall(BatchCreateRequest batchCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createBatchValidateBeforeCall(BatchCreateRequest batchCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'batchCreateRequest' is set
         if (batchCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'batchCreateRequest' when calling createBatchApiV1BatchesPost(Async)");
+            throw new ApiException("Missing the required parameter 'batchCreateRequest' when calling createBatch(Async)");
         }
 
-        return createBatchApiV1BatchesPostCall(batchCreateRequest, _callback);
+        return createBatchCall(batchCreateRequest, _callback);
 
     }
 
@@ -285,8 +285,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchResponse createBatchApiV1BatchesPost(BatchCreateRequest batchCreateRequest) throws ApiException {
-        ApiResponse<BatchResponse> localVarResp = createBatchApiV1BatchesPostWithHttpInfo(batchCreateRequest);
+    public BatchResponse createBatch(BatchCreateRequest batchCreateRequest) throws ApiException {
+        ApiResponse<BatchResponse> localVarResp = createBatchWithHttpInfo(batchCreateRequest);
         return localVarResp.getData();
     }
 
@@ -303,8 +303,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchResponse> createBatchApiV1BatchesPostWithHttpInfo(BatchCreateRequest batchCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createBatchApiV1BatchesPostValidateBeforeCall(batchCreateRequest, null);
+    public ApiResponse<BatchResponse> createBatchWithHttpInfo(BatchCreateRequest batchCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createBatchValidateBeforeCall(batchCreateRequest, null);
         Type localVarReturnType = new TypeToken<BatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -323,15 +323,15 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBatchApiV1BatchesPostAsync(BatchCreateRequest batchCreateRequest, final ApiCallback<BatchResponse> _callback) throws ApiException {
+    public okhttp3.Call createBatchAsync(BatchCreateRequest batchCreateRequest, final ApiCallback<BatchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createBatchApiV1BatchesPostValidateBeforeCall(batchCreateRequest, _callback);
+        okhttp3.Call localVarCall = createBatchValidateBeforeCall(batchCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<BatchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for downloadBatchApiV1BatchesBatchIdDownloadGet
+     * Build call for downloadBatch
      * @param batchId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -343,7 +343,7 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadBatchApiV1BatchesBatchIdDownloadGetCall(String batchId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call downloadBatchCall(String batchId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -389,13 +389,13 @@ public class BatchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadBatchApiV1BatchesBatchIdDownloadGetValidateBeforeCall(String batchId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadBatchValidateBeforeCall(String batchId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
-            throw new ApiException("Missing the required parameter 'batchId' when calling downloadBatchApiV1BatchesBatchIdDownloadGet(Async)");
+            throw new ApiException("Missing the required parameter 'batchId' when calling downloadBatch(Async)");
         }
 
-        return downloadBatchApiV1BatchesBatchIdDownloadGetCall(batchId, _callback);
+        return downloadBatchCall(batchId, _callback);
 
     }
 
@@ -412,8 +412,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object downloadBatchApiV1BatchesBatchIdDownloadGet(String batchId) throws ApiException {
-        ApiResponse<Object> localVarResp = downloadBatchApiV1BatchesBatchIdDownloadGetWithHttpInfo(batchId);
+    public Object downloadBatch(String batchId) throws ApiException {
+        ApiResponse<Object> localVarResp = downloadBatchWithHttpInfo(batchId);
         return localVarResp.getData();
     }
 
@@ -430,8 +430,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> downloadBatchApiV1BatchesBatchIdDownloadGetWithHttpInfo(String batchId) throws ApiException {
-        okhttp3.Call localVarCall = downloadBatchApiV1BatchesBatchIdDownloadGetValidateBeforeCall(batchId, null);
+    public ApiResponse<Object> downloadBatchWithHttpInfo(String batchId) throws ApiException {
+        okhttp3.Call localVarCall = downloadBatchValidateBeforeCall(batchId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -450,15 +450,15 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadBatchApiV1BatchesBatchIdDownloadGetAsync(String batchId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call downloadBatchAsync(String batchId, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = downloadBatchApiV1BatchesBatchIdDownloadGetValidateBeforeCall(batchId, _callback);
+        okhttp3.Call localVarCall = downloadBatchValidateBeforeCall(batchId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getBatchApiV1BatchesBatchIdGet
+     * Build call for getBatch
      * @param batchId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -470,7 +470,7 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBatchApiV1BatchesBatchIdGetCall(String batchId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBatchCall(String batchId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -516,13 +516,13 @@ public class BatchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBatchApiV1BatchesBatchIdGetValidateBeforeCall(String batchId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBatchValidateBeforeCall(String batchId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
-            throw new ApiException("Missing the required parameter 'batchId' when calling getBatchApiV1BatchesBatchIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'batchId' when calling getBatch(Async)");
         }
 
-        return getBatchApiV1BatchesBatchIdGetCall(batchId, _callback);
+        return getBatchCall(batchId, _callback);
 
     }
 
@@ -539,8 +539,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchResponse getBatchApiV1BatchesBatchIdGet(String batchId) throws ApiException {
-        ApiResponse<BatchResponse> localVarResp = getBatchApiV1BatchesBatchIdGetWithHttpInfo(batchId);
+    public BatchResponse getBatch(String batchId) throws ApiException {
+        ApiResponse<BatchResponse> localVarResp = getBatchWithHttpInfo(batchId);
         return localVarResp.getData();
     }
 
@@ -557,8 +557,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchResponse> getBatchApiV1BatchesBatchIdGetWithHttpInfo(String batchId) throws ApiException {
-        okhttp3.Call localVarCall = getBatchApiV1BatchesBatchIdGetValidateBeforeCall(batchId, null);
+    public ApiResponse<BatchResponse> getBatchWithHttpInfo(String batchId) throws ApiException {
+        okhttp3.Call localVarCall = getBatchValidateBeforeCall(batchId, null);
         Type localVarReturnType = new TypeToken<BatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -577,15 +577,15 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBatchApiV1BatchesBatchIdGetAsync(String batchId, final ApiCallback<BatchResponse> _callback) throws ApiException {
+    public okhttp3.Call getBatchAsync(String batchId, final ApiCallback<BatchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getBatchApiV1BatchesBatchIdGetValidateBeforeCall(batchId, _callback);
+        okhttp3.Call localVarCall = getBatchValidateBeforeCall(batchId, _callback);
         Type localVarReturnType = new TypeToken<BatchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listBatchItemsApiV1BatchesBatchIdItemsGet
+     * Build call for listBatchItems
      * @param batchId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -599,7 +599,7 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBatchItemsApiV1BatchesBatchIdItemsGetCall(String batchId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listBatchItemsCall(String batchId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -653,13 +653,13 @@ public class BatchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listBatchItemsApiV1BatchesBatchIdItemsGetValidateBeforeCall(String batchId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listBatchItemsValidateBeforeCall(String batchId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
-            throw new ApiException("Missing the required parameter 'batchId' when calling listBatchItemsApiV1BatchesBatchIdItemsGet(Async)");
+            throw new ApiException("Missing the required parameter 'batchId' when calling listBatchItems(Async)");
         }
 
-        return listBatchItemsApiV1BatchesBatchIdItemsGetCall(batchId, limit, cursor, _callback);
+        return listBatchItemsCall(batchId, limit, cursor, _callback);
 
     }
 
@@ -678,8 +678,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchItemsListResponse listBatchItemsApiV1BatchesBatchIdItemsGet(String batchId, Integer limit, String cursor) throws ApiException {
-        ApiResponse<BatchItemsListResponse> localVarResp = listBatchItemsApiV1BatchesBatchIdItemsGetWithHttpInfo(batchId, limit, cursor);
+    public BatchItemsListResponse listBatchItems(String batchId, Integer limit, String cursor) throws ApiException {
+        ApiResponse<BatchItemsListResponse> localVarResp = listBatchItemsWithHttpInfo(batchId, limit, cursor);
         return localVarResp.getData();
     }
 
@@ -698,8 +698,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchItemsListResponse> listBatchItemsApiV1BatchesBatchIdItemsGetWithHttpInfo(String batchId, Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listBatchItemsApiV1BatchesBatchIdItemsGetValidateBeforeCall(batchId, limit, cursor, null);
+    public ApiResponse<BatchItemsListResponse> listBatchItemsWithHttpInfo(String batchId, Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listBatchItemsValidateBeforeCall(batchId, limit, cursor, null);
         Type localVarReturnType = new TypeToken<BatchItemsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -720,15 +720,15 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBatchItemsApiV1BatchesBatchIdItemsGetAsync(String batchId, Integer limit, String cursor, final ApiCallback<BatchItemsListResponse> _callback) throws ApiException {
+    public okhttp3.Call listBatchItemsAsync(String batchId, Integer limit, String cursor, final ApiCallback<BatchItemsListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listBatchItemsApiV1BatchesBatchIdItemsGetValidateBeforeCall(batchId, limit, cursor, _callback);
+        okhttp3.Call localVarCall = listBatchItemsValidateBeforeCall(batchId, limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<BatchItemsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listBatchesApiV1BatchesGet
+     * Build call for listBatches
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -741,7 +741,7 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBatchesApiV1BatchesGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listBatchesCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -794,8 +794,8 @@ public class BatchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listBatchesApiV1BatchesGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listBatchesApiV1BatchesGetCall(limit, cursor, _callback);
+    private okhttp3.Call listBatchesValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listBatchesCall(limit, cursor, _callback);
 
     }
 
@@ -813,8 +813,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchesListResponse listBatchesApiV1BatchesGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<BatchesListResponse> localVarResp = listBatchesApiV1BatchesGetWithHttpInfo(limit, cursor);
+    public BatchesListResponse listBatches(Integer limit, String cursor) throws ApiException {
+        ApiResponse<BatchesListResponse> localVarResp = listBatchesWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -832,8 +832,8 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchesListResponse> listBatchesApiV1BatchesGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listBatchesApiV1BatchesGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<BatchesListResponse> listBatchesWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listBatchesValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<BatchesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -853,9 +853,9 @@ public class BatchesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBatchesApiV1BatchesGetAsync(Integer limit, String cursor, final ApiCallback<BatchesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listBatchesAsync(Integer limit, String cursor, final ApiCallback<BatchesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listBatchesApiV1BatchesGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listBatchesValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<BatchesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

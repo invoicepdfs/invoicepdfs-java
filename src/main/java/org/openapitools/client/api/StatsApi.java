@@ -73,7 +73,7 @@ public class StatsApi {
     }
 
     /**
-     * Build call for getStatsApiV1StatsGet
+     * Build call for getStats
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -83,7 +83,7 @@ public class StatsApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatsApiV1StatsGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStatsCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -128,8 +128,8 @@ public class StatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStatsApiV1StatsGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getStatsApiV1StatsGetCall(_callback);
+    private okhttp3.Call getStatsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getStatsCall(_callback);
 
     }
 
@@ -144,8 +144,8 @@ public class StatsApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public StatsResponse getStatsApiV1StatsGet() throws ApiException {
-        ApiResponse<StatsResponse> localVarResp = getStatsApiV1StatsGetWithHttpInfo();
+    public StatsResponse getStats() throws ApiException {
+        ApiResponse<StatsResponse> localVarResp = getStatsWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -160,8 +160,8 @@ public class StatsApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatsResponse> getStatsApiV1StatsGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getStatsApiV1StatsGetValidateBeforeCall(null);
+    public ApiResponse<StatsResponse> getStatsWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getStatsValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<StatsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -178,9 +178,9 @@ public class StatsApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatsApiV1StatsGetAsync(final ApiCallback<StatsResponse> _callback) throws ApiException {
+    public okhttp3.Call getStatsAsync(final ApiCallback<StatsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getStatsApiV1StatsGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getStatsValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<StatsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

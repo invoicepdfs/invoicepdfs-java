@@ -18,7 +18,7 @@ servers:
 paths:
   /health:
     get:
-      operationId: health_health_get
+      operationId: get_health
       responses:
         "200":
           content:
@@ -26,7 +26,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/HealthResponse'
           description: Successful Response
-      summary: Health
+      summary: Get Health
       tags:
       - health
       x-visibility: public
@@ -34,7 +34,7 @@ paths:
       - application/json
   /version:
     get:
-      operationId: version_version_get
+      operationId: get_version
       responses:
         "200":
           content:
@@ -42,7 +42,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/VersionResponse'
           description: Successful Response
-      summary: Version
+      summary: Get Version
       tags:
       - health
       x-visibility: public
@@ -50,7 +50,7 @@ paths:
       - application/json
   /ready:
     get:
-      operationId: ready_ready_get
+      operationId: get_readiness
       responses:
         "200":
           content:
@@ -58,7 +58,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ReadyResponse'
           description: Successful Response
-      summary: Ready
+      summary: Get Readiness
       tags:
       - health
       x-visibility: public
@@ -66,7 +66,7 @@ paths:
       - application/json
   /api/v1/auth/me:
     get:
-      operationId: me_api_v1_auth_me_get
+      operationId: get_current_user
       responses:
         "200":
           content:
@@ -76,7 +76,7 @@ paths:
           description: Successful Response
       security:
       - HTTPBearer: []
-      summary: Me
+      summary: Get Current User
       tags:
       - auth
       x-visibility: internal
@@ -84,7 +84,7 @@ paths:
       - application/json
     patch:
       description: Update the authenticated account's name or email.
-      operationId: patch_me_api_v1_auth_me_patch
+      operationId: update_current_user
       requestBody:
         content:
           application/json:
@@ -106,7 +106,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Me
+      summary: Update Current User
       tags:
       - auth
       x-visibility: internal
@@ -120,7 +120,7 @@ paths:
 
         The client authenticates with Firebase (email/password, Google, etc.)
         and sends the resulting ID token here to create an InvoicePDFs account.
-      operationId: register_api_v1_auth_register_post
+      operationId: register
       requestBody:
         content:
           application/json:
@@ -155,7 +155,7 @@ paths:
         Use this on login: the client authenticates with Firebase, sends the ID
         token here, and receives the InvoicePDFs account details. The Firebase
         token itself is used as the Bearer token for subsequent API calls.
-      operationId: token_exchange_api_v1_auth_token_post
+      operationId: exchange_auth_token
       requestBody:
         content:
           application/json:
@@ -175,7 +175,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
-      summary: Token Exchange
+      summary: Exchange Auth Token
       tags:
       - auth
       x-visibility: internal
@@ -185,7 +185,7 @@ paths:
   /api/v1/auth/logout:
     post:
       description: Revoke all Firebase refresh tokens for the authenticated user.
-      operationId: logout_api_v1_auth_logout_post
+      operationId: logout
       responses:
         "200":
           content:
@@ -204,7 +204,7 @@ paths:
   /api/v1/auth/refresh:
     post:
       description: Exchange a Firebase refresh token for a new ID token.
-      operationId: refresh_api_v1_auth_refresh_post
+      operationId: refresh_access_token
       requestBody:
         content:
           application/json:
@@ -224,7 +224,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
-      summary: Refresh
+      summary: Refresh Access Token
       tags:
       - auth
       x-visibility: internal
@@ -234,7 +234,7 @@ paths:
   /api/v1/auth/forgot-password:
     post:
       description: Send a password reset email via Firebase.
-      operationId: forgot_password_api_v1_auth_forgot_password_post
+      operationId: request_password_reset
       requestBody:
         content:
           application/json:
@@ -254,7 +254,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
-      summary: Forgot Password
+      summary: Request Password Reset
       tags:
       - auth
       x-visibility: internal
@@ -264,7 +264,7 @@ paths:
   /api/v1/auth/reset-password:
     post:
       description: Confirm a password reset using the code from the reset email.
-      operationId: reset_password_api_v1_auth_reset_password_post
+      operationId: reset_password
       requestBody:
         content:
           application/json:
@@ -293,7 +293,7 @@ paths:
       - application/json
   /api/v1/api-keys:
     get:
-      operationId: list_api_keys_api_v1_api_keys_get
+      operationId: list_api_keys
       responses:
         "200":
           content:
@@ -310,7 +310,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_api_key_api_v1_api_keys_post
+      operationId: create_api_key
       requestBody:
         content:
           application/json:
@@ -341,7 +341,7 @@ paths:
       - application/json
   /api/v1/api-keys/{api_key_id}:
     delete:
-      operationId: revoke_api_key_api_v1_api_keys__api_key_id__delete
+      operationId: revoke_api_key
       parameters:
       - explode: false
         in: path
@@ -373,7 +373,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_api_key_api_v1_api_keys__api_key_id__get
+      operationId: get_api_key
       parameters:
       - explode: false
         in: path
@@ -405,7 +405,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: patch_api_key_api_v1_api_keys__api_key_id__patch
+      operationId: update_api_key
       parameters:
       - explode: false
         in: path
@@ -436,7 +436,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Api Key
+      summary: Update Api Key
       tags:
       - api-keys
       x-visibility: public
@@ -446,7 +446,7 @@ paths:
   /api/v1/api-keys/{api_key_id}/rotate:
     post:
       description: Revoke the existing key and create a new one with the same name.
-      operationId: rotate_api_key_api_v1_api_keys__api_key_id__rotate_post
+      operationId: rotate_api_key
       parameters:
       - explode: false
         in: path
@@ -479,7 +479,7 @@ paths:
       - application/json
   /api/v1/business-profiles:
     get:
-      operationId: list_business_profiles_api_v1_business_profiles_get
+      operationId: list_business_profiles
       parameters:
       - explode: true
         in: query
@@ -522,7 +522,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_business_profile_api_v1_business_profiles_post
+      operationId: create_business_profile
       parameters:
       - explode: false
         in: header
@@ -562,7 +562,7 @@ paths:
       - application/json
   /api/v1/business-profiles/{business_profile_id}:
     delete:
-      operationId: delete_business_profile_api_v1_business_profiles__business_profile_id__delete
+      operationId: delete_business_profile
       parameters:
       - explode: false
         in: path
@@ -594,7 +594,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_business_profile_api_v1_business_profiles__business_profile_id__get
+      operationId: get_business_profile
       parameters:
       - explode: false
         in: path
@@ -626,7 +626,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: patch_business_profile_api_v1_business_profiles__business_profile_id__patch
+      operationId: update_business_profile
       parameters:
       - explode: false
         in: path
@@ -665,7 +665,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Business Profile
+      summary: Update Business Profile
       tags:
       - business-profiles
       x-visibility: public
@@ -674,7 +674,7 @@ paths:
       - application/json
   /api/v1/branding-profiles:
     get:
-      operationId: list_profiles_api_v1_branding_profiles_get
+      operationId: list_branding_profiles
       responses:
         "200":
           content:
@@ -684,14 +684,14 @@ paths:
           description: Successful Response
       security:
       - HTTPBearer: []
-      summary: List Profiles
+      summary: List Branding Profiles
       tags:
       - branding-profiles
       x-visibility: public
       x-accepts:
       - application/json
     post:
-      operationId: create_profile_api_v1_branding_profiles_post
+      operationId: create_branding_profile
       requestBody:
         content:
           application/json:
@@ -713,7 +713,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Create Profile
+      summary: Create Branding Profile
       tags:
       - branding-profiles
       x-visibility: public
@@ -722,7 +722,7 @@ paths:
       - application/json
   /api/v1/branding-profiles/{profile_id}:
     delete:
-      operationId: delete_profile_api_v1_branding_profiles__profile_id__delete
+      operationId: delete_branding_profile
       parameters:
       - explode: false
         in: path
@@ -747,14 +747,14 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Delete Profile
+      summary: Delete Branding Profile
       tags:
       - branding-profiles
       x-visibility: public
       x-accepts:
       - application/json
     get:
-      operationId: get_profile_api_v1_branding_profiles__profile_id__get
+      operationId: get_branding_profile
       parameters:
       - explode: false
         in: path
@@ -779,14 +779,14 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Get Profile
+      summary: Get Branding Profile
       tags:
       - branding-profiles
       x-visibility: public
       x-accepts:
       - application/json
     patch:
-      operationId: update_profile_api_v1_branding_profiles__profile_id__patch
+      operationId: update_branding_profile
       parameters:
       - explode: false
         in: path
@@ -817,7 +817,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Update Profile
+      summary: Update Branding Profile
       tags:
       - branding-profiles
       x-visibility: public
@@ -826,7 +826,7 @@ paths:
       - application/json
   /api/v1/branding-profiles/{profile_id}/default:
     post:
-      operationId: set_default_api_v1_branding_profiles__profile_id__default_post
+      operationId: set_default_branding_profile
       parameters:
       - explode: false
         in: path
@@ -851,7 +851,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Set Default
+      summary: Set Default Branding Profile
       tags:
       - branding-profiles
       x-visibility: public
@@ -859,7 +859,7 @@ paths:
       - application/json
   /api/v1/branding-profiles/{profile_id}/logo:
     delete:
-      operationId: delete_logo_api_v1_branding_profiles__profile_id__logo_delete
+      operationId: delete_branding_logo
       parameters:
       - explode: false
         in: path
@@ -884,14 +884,14 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Delete Logo
+      summary: Delete Branding Logo
       tags:
       - branding-profiles
       x-visibility: public
       x-accepts:
       - application/json
     post:
-      operationId: upload_logo_api_v1_branding_profiles__profile_id__logo_post
+      operationId: upload_branding_logo
       parameters:
       - explode: false
         in: path
@@ -905,7 +905,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/Body_upload_logo_api_v1_branding_profiles__profile_id__logo_post'
+              $ref: '#/components/schemas/Body_upload_branding_logo'
         required: true
       responses:
         "200":
@@ -922,7 +922,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Upload Logo
+      summary: Upload Branding Logo
       tags:
       - branding-profiles
       x-visibility: public
@@ -931,7 +931,7 @@ paths:
       - application/json
   /api/v1/customers:
     get:
-      operationId: list_customers_api_v1_customers_get
+      operationId: list_customers
       parameters:
       - explode: true
         in: query
@@ -974,7 +974,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_customer_api_v1_customers_post
+      operationId: create_customer
       parameters:
       - explode: false
         in: header
@@ -1014,7 +1014,7 @@ paths:
       - application/json
   /api/v1/customers/{customer_id}:
     delete:
-      operationId: delete_customer_api_v1_customers__customer_id__delete
+      operationId: delete_customer
       parameters:
       - explode: false
         in: path
@@ -1046,7 +1046,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_customer_api_v1_customers__customer_id__get
+      operationId: get_customer
       parameters:
       - explode: false
         in: path
@@ -1078,7 +1078,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: patch_customer_api_v1_customers__customer_id__patch
+      operationId: update_customer
       parameters:
       - explode: false
         in: path
@@ -1117,7 +1117,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Customer
+      summary: Update Customer
       tags:
       - customers
       x-visibility: public
@@ -1126,7 +1126,7 @@ paths:
       - application/json
   /api/v1/documents:
     get:
-      operationId: list_documents_api_v1_documents_get
+      operationId: list_documents
       parameters:
       - explode: true
         in: query
@@ -1185,7 +1185,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_document_api_v1_documents_post
+      operationId: create_document
       parameters:
       - explode: false
         in: header
@@ -1225,7 +1225,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}:
     delete:
-      operationId: delete_document_api_v1_documents__document_id__delete
+      operationId: delete_document
       parameters:
       - explode: false
         in: path
@@ -1257,7 +1257,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_document_api_v1_documents__document_id__get
+      operationId: get_document
       parameters:
       - explode: false
         in: path
@@ -1289,7 +1289,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: patch_document_api_v1_documents__document_id__patch
+      operationId: update_document
       parameters:
       - explode: false
         in: path
@@ -1320,7 +1320,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Document
+      summary: Update Document
       tags:
       - documents
       x-visibility: public
@@ -1329,7 +1329,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/duplicate:
     post:
-      operationId: duplicate_document_api_v1_documents__document_id__duplicate_post
+      operationId: duplicate_document
       parameters:
       - explode: false
         in: path
@@ -1362,7 +1362,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/finalize:
     post:
-      operationId: finalize_document_api_v1_documents__document_id__finalize_post
+      operationId: finalize_document
       parameters:
       - explode: false
         in: path
@@ -1395,7 +1395,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/void:
     post:
-      operationId: void_document_api_v1_documents__document_id__void_post
+      operationId: void_document
       parameters:
       - explode: false
         in: path
@@ -1428,7 +1428,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/mark-sent:
     post:
-      operationId: mark_sent_api_v1_documents__document_id__mark_sent_post
+      operationId: mark_sent
       parameters:
       - explode: false
         in: path
@@ -1461,7 +1461,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/mark-paid:
     post:
-      operationId: mark_paid_api_v1_documents__document_id__mark_paid_post
+      operationId: mark_paid
       parameters:
       - explode: false
         in: path
@@ -1494,7 +1494,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/mark-unpaid:
     post:
-      operationId: mark_unpaid_api_v1_documents__document_id__mark_unpaid_post
+      operationId: mark_unpaid
       parameters:
       - explode: false
         in: path
@@ -1527,7 +1527,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/archive:
     post:
-      operationId: archive_document_api_v1_documents__document_id__archive_post
+      operationId: archive_document
       parameters:
       - explode: false
         in: path
@@ -1560,7 +1560,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/restore:
     post:
-      operationId: restore_document_api_v1_documents__document_id__restore_post
+      operationId: restore_document
       parameters:
       - explode: false
         in: path
@@ -1593,7 +1593,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/renders:
     post:
-      operationId: render_document_api_v1_documents__document_id__renders_post
+      operationId: create_document_render
       parameters:
       - explode: false
         in: path
@@ -1615,7 +1615,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/app__documents__schemas__DocumentRenderRequest'
+              $ref: '#/components/schemas/DocumentRenderOptions'
         required: true
       responses:
         "200":
@@ -1631,7 +1631,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Render Document
+      summary: Create Document Render
       tags:
       - documents
       x-visibility: public
@@ -1640,7 +1640,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/send:
     post:
-      operationId: send_document_api_v1_documents__document_id__send_post
+      operationId: send_document
       parameters:
       - explode: false
         in: path
@@ -1680,7 +1680,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/deliveries:
     get:
-      operationId: list_document_deliveries_api_v1_documents__document_id__deliveries_get
+      operationId: list_document_deliveries
       parameters:
       - explode: false
         in: path
@@ -1732,7 +1732,7 @@ paths:
       - application/json
   /api/v1/documents/validate:
     post:
-      operationId: validate_document_api_v1_documents_validate_post
+      operationId: validate_document
       requestBody:
         content:
           application/json:
@@ -1763,7 +1763,7 @@ paths:
       - application/json
   /api/v1/documents/calculate:
     post:
-      operationId: calculate_document_api_v1_documents_calculate_post
+      operationId: calculate_document
       requestBody:
         content:
           application/json:
@@ -1794,7 +1794,7 @@ paths:
       - application/json
   /api/v1/documents/render:
     post:
-      operationId: render_document_api_v1_documents_render_post
+      operationId: render_document
       parameters:
       - explode: false
         in: header
@@ -1808,7 +1808,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/app__schemas__v1__DocumentRenderRequest'
+              $ref: '#/components/schemas/DocumentRenderRequest'
         required: true
       responses:
         "200":
@@ -1831,16 +1831,16 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/documents/{invoice_id}/attachments:
+  /api/v1/documents/{document_id}/attachments:
     get:
-      operationId: list_attachments_api_v1_documents__invoice_id__attachments_get
+      operationId: list_document_attachments
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       responses:
@@ -1858,21 +1858,21 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: List Attachments
+      summary: List Document Attachments
       tags:
-      - invoice-attachments
+      - document-attachments
       x-visibility: public
       x-accepts:
       - application/json
     post:
-      operationId: create_attachment_api_v1_documents__invoice_id__attachments_post
+      operationId: create_document_attachment
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       requestBody:
@@ -1896,23 +1896,23 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Create Attachment
+      summary: Create Document Attachment
       tags:
-      - invoice-attachments
+      - document-attachments
       x-visibility: public
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/documents/{invoice_id}/attachments/{attachment_id}:
+  /api/v1/documents/{document_id}/attachments/{attachment_id}:
     delete:
-      operationId: delete_attachment_api_v1_documents__invoice_id__attachments__attachment_id__delete
+      operationId: delete_document_attachment
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       - explode: false
@@ -1938,15 +1938,15 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Delete Attachment
+      summary: Delete Document Attachment
       tags:
-      - invoice-attachments
+      - document-attachments
       x-visibility: public
       x-accepts:
       - application/json
   /api/v1/templates:
     get:
-      operationId: templates_api_v1_templates_get
+      operationId: list_templates
       responses:
         "200":
           content:
@@ -1956,7 +1956,7 @@ paths:
           description: Successful Response
       security:
       - HTTPBearer: []
-      summary: Templates
+      summary: List Templates
       tags:
       - templates
       x-visibility: public
@@ -1964,7 +1964,7 @@ paths:
       - application/json
   /api/v1/templates/builtin/{template_id}:
     get:
-      operationId: get_builtin_template_api_v1_templates_builtin__template_id__get
+      operationId: get_builtin_template
       parameters:
       - explode: false
         in: path
@@ -1997,7 +1997,7 @@ paths:
       - application/json
   /api/v1/templates/custom:
     get:
-      operationId: list_custom_templates_api_v1_templates_custom_get
+      operationId: list_custom_templates
       parameters:
       - explode: true
         in: query
@@ -2040,7 +2040,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_template_api_v1_templates_custom_post
+      operationId: create_template
       requestBody:
         content:
           application/json:
@@ -2071,7 +2071,7 @@ paths:
       - application/json
   /api/v1/templates/custom/{template_id}:
     delete:
-      operationId: delete_template_api_v1_templates_custom__template_id__delete
+      operationId: delete_template
       parameters:
       - explode: false
         in: path
@@ -2099,7 +2099,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_custom_template_api_v1_templates_custom__template_id__get
+      operationId: get_custom_template
       parameters:
       - explode: false
         in: path
@@ -2131,7 +2131,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: patch_template_api_v1_templates_custom__template_id__patch
+      operationId: update_template
       parameters:
       - explode: false
         in: path
@@ -2162,7 +2162,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Template
+      summary: Update Template
       tags:
       - templates
       x-visibility: public
@@ -2171,7 +2171,7 @@ paths:
       - application/json
   /api/v1/templates/custom/{template_id}/duplicate:
     post:
-      operationId: duplicate_template_api_v1_templates_custom__template_id__duplicate_post
+      operationId: duplicate_template
       parameters:
       - explode: false
         in: path
@@ -2204,7 +2204,7 @@ paths:
       - application/json
   /api/v1/templates/custom/{template_id}/publish:
     post:
-      operationId: publish_template_api_v1_templates_custom__template_id__publish_post
+      operationId: publish_template
       parameters:
       - explode: false
         in: path
@@ -2237,7 +2237,7 @@ paths:
       - application/json
   /api/v1/templates/{template_id}:
     get:
-      operationId: get_template_api_v1_templates__template_id__get
+      operationId: get_template
       parameters:
       - explode: false
         in: path
@@ -2270,7 +2270,7 @@ paths:
       - application/json
   /api/v1/templates/{template_id}/preview:
     post:
-      operationId: preview_template_api_v1_templates__template_id__preview_post
+      operationId: preview_template
       parameters:
       - explode: false
         in: path
@@ -2292,7 +2292,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/app__schemas__v1__DocumentRenderRequest'
+              $ref: '#/components/schemas/DocumentRenderRequest'
         required: true
       responses:
         "200":
@@ -2317,7 +2317,7 @@ paths:
       - application/json
   /api/v1/templates/{template_id}/versions:
     get:
-      operationId: list_template_versions_api_v1_templates__template_id__versions_get
+      operationId: list_template_versions
       parameters:
       - explode: false
         in: path
@@ -2349,7 +2349,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_template_version_api_v1_templates__template_id__versions_post
+      operationId: create_template_version
       parameters:
       - explode: false
         in: path
@@ -2389,7 +2389,7 @@ paths:
       - application/json
   /api/v1/templates/{template_id}/versions/{version}:
     get:
-      operationId: get_template_version_api_v1_templates__template_id__versions__version__get
+      operationId: get_template_version
       parameters:
       - explode: false
         in: path
@@ -2430,7 +2430,7 @@ paths:
       - application/json
   /api/v1/renders/{render_id}:
     get:
-      operationId: get_render_api_v1_renders__render_id__get
+      operationId: get_render
       parameters:
       - explode: false
         in: path
@@ -2446,7 +2446,7 @@ paths:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response Get Render Api V1 Renders  Render Id  Get
+                title: Response Get Render
                 type: object
           description: Successful Response
         "422":
@@ -2465,7 +2465,7 @@ paths:
       - application/json
   /api/v1/renders/{render_id}/download:
     get:
-      operationId: download_render_api_v1_renders__render_id__download_get
+      operationId: download_render
       parameters:
       - explode: false
         in: path
@@ -2498,16 +2498,16 @@ paths:
       x-accepts:
       - application/json
       - application/pdf
-  /api/v1/documents/{invoice_id}/payments:
+  /api/v1/documents/{document_id}/payments:
     get:
-      operationId: list_invoice_payments_api_v1_documents__invoice_id__payments_get
+      operationId: list_document_payments
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       - explode: true
@@ -2544,21 +2544,21 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: List Invoice Payments
+      summary: List Document Payments
       tags:
       - payments
       x-visibility: public
       x-accepts:
       - application/json
     post:
-      operationId: create_payment_api_v1_documents__invoice_id__payments_post
+      operationId: create_document_payment
       parameters:
       - explode: false
         in: path
-        name: invoice_id
+        name: document_id
         required: true
         schema:
-          title: Invoice Id
+          title: Document Id
           type: string
         style: simple
       requestBody:
@@ -2582,7 +2582,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Create Payment
+      summary: Create Document Payment
       tags:
       - payments
       x-visibility: public
@@ -2591,7 +2591,7 @@ paths:
       - application/json
   /api/v1/payments/{payment_id}:
     delete:
-      operationId: delete_payment_api_v1_payments__payment_id__delete
+      operationId: delete_payment
       parameters:
       - explode: false
         in: path
@@ -2623,7 +2623,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_payment_api_v1_payments__payment_id__get
+      operationId: get_payment
       parameters:
       - explode: false
         in: path
@@ -2655,7 +2655,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: update_payment_api_v1_payments__payment_id__patch
+      operationId: update_payment
       parameters:
       - explode: false
         in: path
@@ -2695,7 +2695,7 @@ paths:
       - application/json
   /api/v1/batches:
     get:
-      operationId: list_batches_api_v1_batches_get
+      operationId: list_batches
       parameters:
       - explode: true
         in: query
@@ -2738,7 +2738,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_batch_api_v1_batches_post
+      operationId: create_batch
       requestBody:
         content:
           application/json:
@@ -2769,7 +2769,7 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}:
     get:
-      operationId: get_batch_api_v1_batches__batch_id__get
+      operationId: get_batch
       parameters:
       - explode: false
         in: path
@@ -2802,7 +2802,7 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}/items:
     get:
-      operationId: list_batch_items_api_v1_batches__batch_id__items_get
+      operationId: list_batch_items
       parameters:
       - explode: false
         in: path
@@ -2854,7 +2854,7 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}/cancel:
     post:
-      operationId: cancel_batch_api_v1_batches__batch_id__cancel_post
+      operationId: cancel_batch
       parameters:
       - explode: false
         in: path
@@ -2887,7 +2887,7 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}/download:
     get:
-      operationId: download_batch_api_v1_batches__batch_id__download_get
+      operationId: download_batch
       parameters:
       - explode: false
         in: path
@@ -2919,7 +2919,7 @@ paths:
       - application/json
   /api/v1/deliveries/{delivery_id}:
     get:
-      operationId: get_delivery_api_v1_deliveries__delivery_id__get
+      operationId: get_delivery
       parameters:
       - explode: false
         in: path
@@ -2952,7 +2952,7 @@ paths:
       - application/json
   /api/v1/deliveries/{delivery_id}/retry:
     post:
-      operationId: retry_delivery_api_v1_deliveries__delivery_id__retry_post
+      operationId: retry_delivery
       parameters:
       - explode: false
         in: path
@@ -2985,7 +2985,7 @@ paths:
       - application/json
   /api/v1/recurring-invoices:
     get:
-      operationId: list_recurring_invoices_api_v1_recurring_invoices_get
+      operationId: list_recurring_invoices
       parameters:
       - explode: true
         in: query
@@ -3036,7 +3036,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_recurring_invoice_api_v1_recurring_invoices_post
+      operationId: create_recurring_invoice
       requestBody:
         content:
           application/json:
@@ -3067,7 +3067,7 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}:
     delete:
-      operationId: cancel_recurring_invoice_api_v1_recurring_invoices__recurring_id__delete
+      operationId: cancel_recurring_invoice
       parameters:
       - explode: false
         in: path
@@ -3099,7 +3099,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_recurring_invoice_api_v1_recurring_invoices__recurring_id__get
+      operationId: get_recurring_invoice
       parameters:
       - explode: false
         in: path
@@ -3131,7 +3131,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: patch_recurring_invoice_api_v1_recurring_invoices__recurring_id__patch
+      operationId: update_recurring_invoice
       parameters:
       - explode: false
         in: path
@@ -3162,7 +3162,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Recurring Invoice
+      summary: Update Recurring Invoice
       tags:
       - recurring-invoices
       x-visibility: public
@@ -3171,7 +3171,7 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/pause:
     post:
-      operationId: pause_recurring_invoice_api_v1_recurring_invoices__recurring_id__pause_post
+      operationId: pause_recurring_invoice
       parameters:
       - explode: false
         in: path
@@ -3204,7 +3204,7 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/resume:
     post:
-      operationId: resume_recurring_invoice_api_v1_recurring_invoices__recurring_id__resume_post
+      operationId: resume_recurring_invoice
       parameters:
       - explode: false
         in: path
@@ -3237,7 +3237,7 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/invoices:
     get:
-      operationId: list_generated_invoices_api_v1_recurring_invoices__recurring_id__invoices_get
+      operationId: list_generated_invoices
       parameters:
       - explode: false
         in: path
@@ -3289,7 +3289,7 @@ paths:
       - application/json
   /api/v1/files:
     post:
-      operationId: upload_file_api_v1_files_post
+      operationId: upload_file
       parameters:
       - explode: false
         in: header
@@ -3303,7 +3303,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/Body_upload_file_api_v1_files_post'
+              $ref: '#/components/schemas/Body_upload_file'
         required: true
       responses:
         "200":
@@ -3329,7 +3329,7 @@ paths:
       - application/json
   /api/v1/files/{file_id}:
     delete:
-      operationId: delete_file_api_v1_files__file_id__delete
+      operationId: delete_file
       parameters:
       - explode: false
         in: path
@@ -3361,7 +3361,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_file_api_v1_files__file_id__get
+      operationId: get_file
       parameters:
       - explode: false
         in: path
@@ -3394,7 +3394,7 @@ paths:
       - application/json
   /api/v1/usage:
     get:
-      operationId: usage_api_v1_usage_get
+      operationId: get_usage
       responses:
         "200":
           content:
@@ -3404,7 +3404,7 @@ paths:
           description: Successful Response
       security:
       - HTTPBearer: []
-      summary: Usage
+      summary: Get Usage
       tags:
       - usage
       x-visibility: public
@@ -3412,7 +3412,7 @@ paths:
       - application/json
   /api/v1/usage/events:
     get:
-      operationId: list_usage_events_api_v1_usage_events_get
+      operationId: list_usage_events
       parameters:
       - explode: true
         in: query
@@ -3439,7 +3439,7 @@ paths:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response List Usage Events Api V1 Usage Events Get
+                title: Response List Usage Events
                 type: object
           description: Successful Response
         "422":
@@ -3458,19 +3458,19 @@ paths:
       - application/json
   /api/v1/usage/limits:
     get:
-      operationId: get_limits_api_v1_usage_limits_get
+      operationId: get_usage_limits
       responses:
         "200":
           content:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response Get Limits Api V1 Usage Limits Get
+                title: Response Get Usage Limits
                 type: object
           description: Successful Response
       security:
       - HTTPBearer: []
-      summary: Get Limits
+      summary: Get Usage Limits
       tags:
       - usage
       x-visibility: public
@@ -3478,7 +3478,7 @@ paths:
       - application/json
   /api/v1/stats:
     get:
-      operationId: get_stats_api_v1_stats_get
+      operationId: get_stats
       responses:
         "200":
           content:
@@ -3496,7 +3496,7 @@ paths:
       - application/json
   /api/v1/logs:
     get:
-      operationId: list_logs_api_v1_logs_get
+      operationId: list_logs
       parameters:
       - explode: true
         in: query
@@ -3542,7 +3542,7 @@ paths:
       - application/json
   /api/v1/numbering-sequences:
     get:
-      operationId: list_sequences_api_v1_numbering_sequences_get
+      operationId: list_sequences
       parameters:
       - explode: true
         in: query
@@ -3585,7 +3585,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_sequence_api_v1_numbering_sequences_post
+      operationId: create_sequence
       requestBody:
         content:
           application/json:
@@ -3616,7 +3616,7 @@ paths:
       - application/json
   /api/v1/numbering-sequences/{sequence_id}:
     delete:
-      operationId: delete_sequence_api_v1_numbering_sequences__sequence_id__delete
+      operationId: delete_sequence
       parameters:
       - explode: false
         in: path
@@ -3648,7 +3648,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_sequence_api_v1_numbering_sequences__sequence_id__get
+      operationId: get_sequence
       parameters:
       - explode: false
         in: path
@@ -3680,7 +3680,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: update_sequence_api_v1_numbering_sequences__sequence_id__patch
+      operationId: update_sequence
       parameters:
       - explode: false
         in: path
@@ -3720,7 +3720,7 @@ paths:
       - application/json
   /api/v1/numbering-sequences/{sequence_id}/preview:
     post:
-      operationId: preview_sequence_api_v1_numbering_sequences__sequence_id__preview_post
+      operationId: preview_sequence
       parameters:
       - explode: false
         in: path
@@ -3754,7 +3754,7 @@ paths:
   /api/v1/numbering-sequences/{sequence_id}/next:
     post:
       description: "Consume and return the next number, incrementing the counter."
-      operationId: consume_next_api_v1_numbering_sequences__sequence_id__next_post
+      operationId: consume_sequence_number
       parameters:
       - explode: false
         in: path
@@ -3779,7 +3779,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Consume Next
+      summary: Consume Sequence Number
       tags:
       - numbering-sequences
       x-visibility: public
@@ -3787,7 +3787,7 @@ paths:
       - application/json
   /api/v1/tax-rates:
     get:
-      operationId: list_tax_rates_api_v1_tax_rates_get
+      operationId: list_tax_rates
       parameters:
       - explode: true
         in: query
@@ -3830,7 +3830,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_tax_rate_api_v1_tax_rates_post
+      operationId: create_tax_rate
       requestBody:
         content:
           application/json:
@@ -3861,7 +3861,7 @@ paths:
       - application/json
   /api/v1/tax-rates/{tax_rate_id}:
     delete:
-      operationId: delete_tax_rate_api_v1_tax_rates__tax_rate_id__delete
+      operationId: delete_tax_rate
       parameters:
       - explode: false
         in: path
@@ -3893,7 +3893,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_tax_rate_api_v1_tax_rates__tax_rate_id__get
+      operationId: get_tax_rate
       parameters:
       - explode: false
         in: path
@@ -3925,7 +3925,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: update_tax_rate_api_v1_tax_rates__tax_rate_id__patch
+      operationId: update_tax_rate
       parameters:
       - explode: false
         in: path
@@ -3965,7 +3965,7 @@ paths:
       - application/json
   /api/v1/jobs/{job_id}:
     get:
-      operationId: get_job_api_v1_jobs__job_id__get
+      operationId: get_job
       parameters:
       - explode: false
         in: path
@@ -3998,7 +3998,7 @@ paths:
       - application/json
   /api/v1/jobs/{job_id}/cancel:
     post:
-      operationId: cancel_job_api_v1_jobs__job_id__cancel_post
+      operationId: cancel_job
       parameters:
       - explode: false
         in: path
@@ -4031,7 +4031,7 @@ paths:
       - application/json
   /api/v1/jobs/{job_id}/retry:
     post:
-      operationId: retry_job_api_v1_jobs__job_id__retry_post
+      operationId: retry_job
       parameters:
       - explode: false
         in: path
@@ -4064,7 +4064,7 @@ paths:
       - application/json
   /api/v1/imports:
     post:
-      operationId: create_import_api_v1_imports_post
+      operationId: create_import
       requestBody:
         content:
           application/json:
@@ -4095,7 +4095,7 @@ paths:
       - application/json
   /api/v1/imports/{import_id}:
     get:
-      operationId: get_import_api_v1_imports__import_id__get
+      operationId: get_import
       parameters:
       - explode: false
         in: path
@@ -4128,7 +4128,7 @@ paths:
       - application/json
   /api/v1/imports/{import_id}/confirm:
     post:
-      operationId: confirm_import_api_v1_imports__import_id__confirm_post
+      operationId: confirm_import
       parameters:
       - explode: false
         in: path
@@ -4161,7 +4161,7 @@ paths:
       - application/json
   /api/v1/imports/{import_id}/cancel:
     post:
-      operationId: cancel_import_api_v1_imports__import_id__cancel_post
+      operationId: cancel_import
       parameters:
       - explode: false
         in: path
@@ -4194,14 +4194,14 @@ paths:
       - application/json
   /api/v1/reference/currencies:
     get:
-      operationId: list_currencies_api_v1_reference_currencies_get
+      operationId: list_currencies
       responses:
         "200":
           content:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response List Currencies Api V1 Reference Currencies Get
+                title: Response List Currencies
                 type: object
           description: Successful Response
       summary: List Currencies
@@ -4212,14 +4212,14 @@ paths:
       - application/json
   /api/v1/reference/countries:
     get:
-      operationId: list_countries_api_v1_reference_countries_get
+      operationId: list_countries
       responses:
         "200":
           content:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response List Countries Api V1 Reference Countries Get
+                title: Response List Countries
                 type: object
           description: Successful Response
       summary: List Countries
@@ -4230,14 +4230,14 @@ paths:
       - application/json
   /api/v1/reference/locales:
     get:
-      operationId: list_locales_api_v1_reference_locales_get
+      operationId: list_locales
       responses:
         "200":
           content:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response List Locales Api V1 Reference Locales Get
+                title: Response List Locales
                 type: object
           description: Successful Response
       summary: List Locales
@@ -4248,14 +4248,14 @@ paths:
       - application/json
   /api/v1/reference/timezones:
     get:
-      operationId: list_timezones_api_v1_reference_timezones_get
+      operationId: list_timezones
       responses:
         "200":
           content:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response List Timezones Api V1 Reference Timezones Get
+                title: Response List Timezones
                 type: object
           description: Successful Response
       summary: List Timezones
@@ -4266,14 +4266,14 @@ paths:
       - application/json
   /api/v1/reference/page-sizes:
     get:
-      operationId: list_page_sizes_api_v1_reference_page_sizes_get
+      operationId: list_page_sizes
       responses:
         "200":
           content:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response List Page Sizes Api V1 Reference Page Sizes Get
+                title: Response List Page Sizes
                 type: object
           description: Successful Response
       summary: List Page Sizes
@@ -4290,15 +4290,14 @@ paths:
         takes a source document / supports a reason, which line-item shape it uses
         (``standard`` = priced, ``shipped`` = quantities only), and the lifecycle
         actions available to it.
-      operationId: list_document_types_api_v1_reference_document_types_get
+      operationId: list_document_types
       responses:
         "200":
           content:
             application/json:
               schema:
                 additionalProperties: true
-                title: Response List Document Types Api V1 Reference Document Types
-                  Get
+                title: Response List Document Types
                 type: object
           description: Successful Response
       summary: List Document Types
@@ -4309,7 +4308,7 @@ paths:
       - application/json
   /api/v1/workspaces:
     get:
-      operationId: list_workspaces_api_v1_workspaces_get
+      operationId: list_workspaces
       parameters:
       - explode: true
         in: query
@@ -4352,7 +4351,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_workspace_api_v1_workspaces_post
+      operationId: create_workspace
       parameters:
       - explode: false
         in: header
@@ -4392,7 +4391,7 @@ paths:
       - application/json
   /api/v1/workspaces/{workspace_id}:
     delete:
-      operationId: delete_workspace_api_v1_workspaces__workspace_id__delete
+      operationId: delete_workspace
       parameters:
       - explode: false
         in: path
@@ -4424,7 +4423,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_workspace_api_v1_workspaces__workspace_id__get
+      operationId: get_workspace
       parameters:
       - explode: false
         in: path
@@ -4456,7 +4455,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: patch_workspace_api_v1_workspaces__workspace_id__patch
+      operationId: update_workspace
       parameters:
       - explode: false
         in: path
@@ -4495,7 +4494,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Workspace
+      summary: Update Workspace
       tags:
       - workspaces
       x-visibility: public
@@ -4504,7 +4503,7 @@ paths:
       - application/json
   /api/v1/workspaces/{workspace_id}/members:
     get:
-      operationId: list_members_api_v1_workspaces__workspace_id__members_get
+      operationId: list_workspace_members
       parameters:
       - explode: false
         in: path
@@ -4529,14 +4528,14 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: List Members
+      summary: List Workspace Members
       tags:
       - workspaces
       x-visibility: public
       x-accepts:
       - application/json
     post:
-      operationId: create_member_api_v1_workspaces__workspace_id__members_post
+      operationId: add_workspace_member
       parameters:
       - explode: false
         in: path
@@ -4575,7 +4574,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Create Member
+      summary: Add Workspace Member
       tags:
       - workspaces
       x-visibility: public
@@ -4584,7 +4583,7 @@ paths:
       - application/json
   /api/v1/workspaces/{workspace_id}/members/{member_id}:
     delete:
-      operationId: delete_member_api_v1_workspaces__workspace_id__members__member_id__delete
+      operationId: remove_workspace_member
       parameters:
       - explode: false
         in: path
@@ -4617,14 +4616,14 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Delete Member
+      summary: Remove Workspace Member
       tags:
       - workspaces
       x-visibility: public
       x-accepts:
       - application/json
     patch:
-      operationId: patch_member_api_v1_workspaces__workspace_id__members__member_id__patch
+      operationId: update_workspace_member
       parameters:
       - explode: false
         in: path
@@ -4663,7 +4662,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Patch Member
+      summary: Update Workspace Member
       tags:
       - workspaces
       x-visibility: public
@@ -4672,7 +4671,7 @@ paths:
       - application/json
   /api/v1/webhook-endpoints:
     get:
-      operationId: list_webhook_endpoints_api_v1_webhook_endpoints_get
+      operationId: list_webhook_endpoints
       parameters:
       - explode: true
         in: query
@@ -4715,7 +4714,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: create_webhook_endpoint_api_v1_webhook_endpoints_post
+      operationId: create_webhook_endpoint
       requestBody:
         content:
           application/json:
@@ -4746,7 +4745,7 @@ paths:
       - application/json
   /api/v1/webhook-endpoints/{endpoint_id}:
     delete:
-      operationId: delete_webhook_endpoint_api_v1_webhook_endpoints__endpoint_id__delete
+      operationId: delete_webhook_endpoint
       parameters:
       - explode: false
         in: path
@@ -4778,7 +4777,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: get_webhook_endpoint_api_v1_webhook_endpoints__endpoint_id__get
+      operationId: get_webhook_endpoint
       parameters:
       - explode: false
         in: path
@@ -4810,7 +4809,7 @@ paths:
       x-accepts:
       - application/json
     patch:
-      operationId: update_webhook_endpoint_api_v1_webhook_endpoints__endpoint_id__patch
+      operationId: update_webhook_endpoint
       parameters:
       - explode: false
         in: path
@@ -4850,7 +4849,7 @@ paths:
       - application/json
   /api/v1/webhook-endpoints/{endpoint_id}/rotate-secret:
     post:
-      operationId: rotate_webhook_secret_api_v1_webhook_endpoints__endpoint_id__rotate_secret_post
+      operationId: rotate_webhook_secret
       parameters:
       - explode: false
         in: path
@@ -4883,7 +4882,7 @@ paths:
       - application/json
   /api/v1/webhook-endpoints/{endpoint_id}/test:
     post:
-      operationId: test_webhook_endpoint_api_v1_webhook_endpoints__endpoint_id__test_post
+      operationId: test_webhook_endpoint
       parameters:
       - explode: false
         in: path
@@ -4916,7 +4915,7 @@ paths:
       - application/json
   /api/v1/webhook-deliveries:
     get:
-      operationId: list_webhook_deliveries_api_v1_webhook_deliveries_get
+      operationId: list_webhook_deliveries
       parameters:
       - explode: true
         in: query
@@ -4960,7 +4959,7 @@ paths:
       - application/json
   /api/v1/webhook-deliveries/{delivery_id}:
     get:
-      operationId: get_webhook_delivery_api_v1_webhook_deliveries__delivery_id__get
+      operationId: get_webhook_delivery
       parameters:
       - explode: false
         in: path
@@ -4993,7 +4992,7 @@ paths:
       - application/json
   /api/v1/webhook-deliveries/{delivery_id}/retry:
     post:
-      operationId: retry_webhook_delivery_api_v1_webhook_deliveries__delivery_id__retry_post
+      operationId: retry_webhook_delivery
       parameters:
       - explode: false
         in: path
@@ -5027,7 +5026,7 @@ paths:
   /api/v1/billing/subscription:
     get:
       description: "Get current subscription status (from DB, no Stripe API call)."
-      operationId: get_subscription_api_v1_billing_subscription_get
+      operationId: get_subscription
       responses:
         "200":
           content:
@@ -5046,7 +5045,7 @@ paths:
   /api/v1/billing/plans:
     get:
       description: Purchasable plans — the ones wired to a Stripe price.
-      operationId: list_plans_api_v1_billing_plans_get
+      operationId: list_plans
       responses:
         "200":
           content:
@@ -5065,7 +5064,7 @@ paths:
   /api/v1/billing/checkout-session:
     post:
       description: Create a Stripe Checkout session for a subscription.
-      operationId: create_checkout_api_v1_billing_checkout_session_post
+      operationId: create_checkout_session
       requestBody:
         content:
           application/json:
@@ -5087,7 +5086,7 @@ paths:
           description: Validation Error
       security:
       - HTTPBearer: []
-      summary: Create Checkout
+      summary: Create Checkout Session
       tags:
       - billing
       x-visibility: public
@@ -5097,7 +5096,7 @@ paths:
   /api/v1/billing/portal-session:
     post:
       description: Create a Stripe Customer Portal session for self-service management.
-      operationId: create_portal_api_v1_billing_portal_session_post
+      operationId: create_portal_session
       responses:
         "200":
           content:
@@ -5107,7 +5106,7 @@ paths:
           description: Successful Response
       security:
       - HTTPBearer: []
-      summary: Create Portal
+      summary: Create Portal Session
       tags:
       - billing
       x-visibility: public
@@ -5115,7 +5114,7 @@ paths:
       - application/json
   /api/v1/audit-events:
     get:
-      operationId: list_audit_events_api_v1_audit_events_get
+      operationId: list_audit_events
       parameters:
       - explode: true
         in: query
@@ -5183,7 +5182,7 @@ paths:
       - application/json
   /api/v1/audit-events/{audit_event_id}:
     get:
-      operationId: get_audit_event_api_v1_audit_events__audit_event_id__get
+      operationId: get_audit_event
       parameters:
       - explode: false
         in: path
@@ -6272,7 +6271,7 @@ components:
       - data
       title: BillingSubscriptionResponse
       type: object
-    Body_upload_file_api_v1_files_post:
+    Body_upload_branding_logo:
       properties:
         file:
           format: binary
@@ -6280,9 +6279,9 @@ components:
           type: string
       required:
       - file
-      title: Body_upload_file_api_v1_files_post
+      title: Body_upload_branding_logo
       type: object
-    Body_upload_logo_api_v1_branding_profiles__profile_id__logo_post:
+    Body_upload_file:
       properties:
         file:
           format: binary
@@ -6290,7 +6289,7 @@ components:
           type: string
       required:
       - file
-      title: Body_upload_logo_api_v1_branding_profiles__profile_id__logo_post
+      title: Body_upload_file
       type: object
     BrandingProfileCreateRequest:
       example:
@@ -8226,6 +8225,10 @@ components:
       title: DocumentOut
       type: object
     DocumentOutputOptions:
+      example:
+        delivery: url
+        format: pdf
+        expires_in: 0
       properties:
         format:
           default: pdf
@@ -8514,6 +8517,201 @@ components:
           type: string
       title: DocumentPaymentInput
       type: object
+    DocumentRenderOptions:
+      description: |-
+        Render options for an already-stored document (``POST /documents/{id}/renders``).
+
+        Distinct from ``app.schemas.v1.DocumentRenderRequest``, which carries a full inline
+        document for the stateless ``POST /documents/render``. Two classes sharing one name
+        made FastAPI fall back to module-qualified schema names in the spec
+        (``app__documents__schemas__DocumentRenderRequest``), which the SDK generators turned
+        into ``AppDocumentsSchemasDocumentRenderRequest``.
+      example:
+        template_id: tpl_modern
+        expires_in: 0
+        page_size: LETTER
+      properties:
+        template_id:
+          default: tpl_modern
+          title: Template Id
+          type: string
+        page_size:
+          default: LETTER
+          title: Page Size
+          type: string
+        expires_in:
+          default: 3600
+          title: Expires In
+          type: integer
+      title: DocumentRenderOptions
+      type: object
+    DocumentRenderRequest:
+      example:
+        template:
+          id: id
+        output:
+          delivery: url
+          format: pdf
+          expires_in: 0
+        data:
+          seller:
+            website: website
+            address:
+              country: country
+              city: city
+              state: state
+              postal_code: postal_code
+              line2: line2
+              line1: 1 Main St
+            phone: phone
+            registration_number: registration_number
+            name: Acme Corp
+            legal_name: legal_name
+            email: email
+            tax_id: tax_id
+            bank_account:
+              account_number: account_number
+              account_name: account_name
+              iban: iban
+              bank_name: bank_name
+              routing_number: routing_number
+              swift: swift
+          custom_fields:
+          - label: PO Number
+            value: PO-2026-001
+          - label: PO Number
+            value: PO-2026-001
+          branding:
+            accent_color: '#111827'
+            logo_file_id: logo_file_id
+            font_family: font_family
+            footer_text: Generated by InvoicePDFs
+            primary_color: '#111827'
+          due_date: 2000-01-23
+          line_items:
+          - unit: unit
+            quantity: "2"
+            name: Web Development
+            description: description
+            discount:
+              reason: reason
+              type: percentage
+              value: "10"
+            taxes:
+            - inclusive: false
+              rate: "8.875"
+              name: Sales Tax
+            - inclusive: false
+              rate: "8.875"
+              name: Sales Tax
+            unit_price: "150.00"
+            sku: sku
+          - unit: unit
+            quantity: "2"
+            name: Web Development
+            description: description
+            discount:
+              reason: reason
+              type: percentage
+              value: "10"
+            taxes:
+            - inclusive: false
+              rate: "8.875"
+              name: Sales Tax
+            - inclusive: false
+              rate: "8.875"
+              name: Sales Tax
+            unit_price: "150.00"
+            sku: sku
+          buyer:
+            website: website
+            address:
+              country: country
+              city: city
+              state: state
+              postal_code: postal_code
+              line2: line2
+              line1: 1 Main St
+            phone: phone
+            registration_number: registration_number
+            name: Acme Corp
+            legal_name: legal_name
+            email: email
+            tax_id: tax_id
+            bank_account:
+              account_number: account_number
+              account_name: account_name
+              iban: iban
+              bank_name: bank_name
+              routing_number: routing_number
+              swift: swift
+          issue_date: 2026-07-20
+          discounts:
+          - reason: reason
+            type: percentage
+            value: "10"
+          - reason: reason
+            type: percentage
+            value: "10"
+          shipping:
+            amount: "9.99"
+            description: Shipping
+          currency: USD
+          payment:
+            instructions: instructions
+            payment_url: payment_url
+            accepted_methods:
+            - bank_transfer
+            - credit_card
+            bank_account:
+              account_number: account_number
+              account_name: account_name
+              iban: iban
+              bank_name: bank_name
+              routing_number: routing_number
+              swift: swift
+          invoice_number: INV-2026-001
+          ship_to:
+            website: website
+            address:
+              country: country
+              city: city
+              state: state
+              postal_code: postal_code
+              line2: line2
+              line1: 1 Main St
+            phone: phone
+            registration_number: registration_number
+            name: Acme Corp
+            legal_name: legal_name
+            email: email
+            tax_id: tax_id
+            bank_account:
+              account_number: account_number
+              account_name: account_name
+              iban: iban
+              bank_name: bank_name
+              routing_number: routing_number
+              swift: swift
+        document_type: invoice
+      properties:
+        document_type:
+          default: invoice
+          enum:
+          - invoice
+          title: Document Type
+          type: string
+        data:
+          $ref: '#/components/schemas/DocumentInvoiceDataInput'
+        template:
+          $ref: '#/components/schemas/DocumentTemplateRef'
+        output:
+          $ref: '#/components/schemas/DocumentOutputOptions'
+      required:
+      - data
+      - template
+      title: DocumentRenderRequest
+      type: object
     DocumentResponse:
       example:
         data:
@@ -8575,6 +8773,8 @@ components:
       title: DocumentShippingInput
       type: object
     DocumentTemplateRef:
+      example:
+        id: id
       properties:
         id:
           title: Id
@@ -11987,41 +12187,6 @@ components:
       required:
       - data
       title: WorkspacesListResponse
-      type: object
-    app__documents__schemas__DocumentRenderRequest:
-      properties:
-        template_id:
-          default: tpl_modern
-          title: Template Id
-          type: string
-        page_size:
-          default: LETTER
-          title: Page Size
-          type: string
-        expires_in:
-          default: 3600
-          title: Expires In
-          type: integer
-      title: DocumentRenderRequest
-      type: object
-    app__schemas__v1__DocumentRenderRequest:
-      properties:
-        document_type:
-          default: invoice
-          enum:
-          - invoice
-          title: Document Type
-          type: string
-        data:
-          $ref: '#/components/schemas/DocumentInvoiceDataInput'
-        template:
-          $ref: '#/components/schemas/DocumentTemplateRef'
-        output:
-          $ref: '#/components/schemas/DocumentOutputOptions'
-      required:
-      - data
-      - template
-      title: DocumentRenderRequest
       type: object
     ApiErrorResponse:
       example:

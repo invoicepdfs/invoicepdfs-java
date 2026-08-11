@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createCheckoutApiV1BillingCheckoutSessionPost**](BillingApi.md#createCheckoutApiV1BillingCheckoutSessionPost) | **POST** /api/v1/billing/checkout-session | Create Checkout |
-| [**createPortalApiV1BillingPortalSessionPost**](BillingApi.md#createPortalApiV1BillingPortalSessionPost) | **POST** /api/v1/billing/portal-session | Create Portal |
-| [**getSubscriptionApiV1BillingSubscriptionGet**](BillingApi.md#getSubscriptionApiV1BillingSubscriptionGet) | **GET** /api/v1/billing/subscription | Get Subscription |
-| [**listPlansApiV1BillingPlansGet**](BillingApi.md#listPlansApiV1BillingPlansGet) | **GET** /api/v1/billing/plans | List Plans |
+| [**createCheckoutSession**](BillingApi.md#createCheckoutSession) | **POST** /api/v1/billing/checkout-session | Create Checkout Session |
+| [**createPortalSession**](BillingApi.md#createPortalSession) | **POST** /api/v1/billing/portal-session | Create Portal Session |
+| [**getSubscription**](BillingApi.md#getSubscription) | **GET** /api/v1/billing/subscription | Get Subscription |
+| [**listPlans**](BillingApi.md#listPlans) | **GET** /api/v1/billing/plans | List Plans |
 
 
-<a id="createCheckoutApiV1BillingCheckoutSessionPost"></a>
-# **createCheckoutApiV1BillingCheckoutSessionPost**
-> BillingCheckoutResponse createCheckoutApiV1BillingCheckoutSessionPost(billingCheckoutRequest)
+<a id="createCheckoutSession"></a>
+# **createCheckoutSession**
+> BillingCheckoutResponse createCheckoutSession(billingCheckoutRequest)
 
-Create Checkout
+Create Checkout Session
 
 Create a Stripe Checkout session for a subscription.
 
@@ -40,10 +40,10 @@ public class Example {
     BillingApi apiInstance = new BillingApi(defaultClient);
     BillingCheckoutRequest billingCheckoutRequest = new BillingCheckoutRequest(); // BillingCheckoutRequest | 
     try {
-      BillingCheckoutResponse result = apiInstance.createCheckoutApiV1BillingCheckoutSessionPost(billingCheckoutRequest);
+      BillingCheckoutResponse result = apiInstance.createCheckoutSession(billingCheckoutRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BillingApi#createCheckoutApiV1BillingCheckoutSessionPost");
+      System.err.println("Exception when calling BillingApi#createCheckoutSession");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -78,11 +78,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="createPortalApiV1BillingPortalSessionPost"></a>
-# **createPortalApiV1BillingPortalSessionPost**
-> BillingPortalResponse createPortalApiV1BillingPortalSessionPost()
+<a id="createPortalSession"></a>
+# **createPortalSession**
+> BillingPortalResponse createPortalSession()
 
-Create Portal
+Create Portal Session
 
 Create a Stripe Customer Portal session for self-service management.
 
@@ -107,10 +107,10 @@ public class Example {
 
     BillingApi apiInstance = new BillingApi(defaultClient);
     try {
-      BillingPortalResponse result = apiInstance.createPortalApiV1BillingPortalSessionPost();
+      BillingPortalResponse result = apiInstance.createPortalSession();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BillingApi#createPortalApiV1BillingPortalSessionPost");
+      System.err.println("Exception when calling BillingApi#createPortalSession");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -141,9 +141,9 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="getSubscriptionApiV1BillingSubscriptionGet"></a>
-# **getSubscriptionApiV1BillingSubscriptionGet**
-> BillingSubscriptionResponse getSubscriptionApiV1BillingSubscriptionGet()
+<a id="getSubscription"></a>
+# **getSubscription**
+> BillingSubscriptionResponse getSubscription()
 
 Get Subscription
 
@@ -170,10 +170,10 @@ public class Example {
 
     BillingApi apiInstance = new BillingApi(defaultClient);
     try {
-      BillingSubscriptionResponse result = apiInstance.getSubscriptionApiV1BillingSubscriptionGet();
+      BillingSubscriptionResponse result = apiInstance.getSubscription();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BillingApi#getSubscriptionApiV1BillingSubscriptionGet");
+      System.err.println("Exception when calling BillingApi#getSubscription");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -204,9 +204,9 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="listPlansApiV1BillingPlansGet"></a>
-# **listPlansApiV1BillingPlansGet**
-> BillingPlansListResponse listPlansApiV1BillingPlansGet()
+<a id="listPlans"></a>
+# **listPlans**
+> BillingPlansListResponse listPlans()
 
 List Plans
 
@@ -233,10 +233,10 @@ public class Example {
 
     BillingApi apiInstance = new BillingApi(defaultClient);
     try {
-      BillingPlansListResponse result = apiInstance.listPlansApiV1BillingPlansGet();
+      BillingPlansListResponse result = apiInstance.listPlans();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BillingApi#listPlansApiV1BillingPlansGet");
+      System.err.println("Exception when calling BillingApi#listPlans");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

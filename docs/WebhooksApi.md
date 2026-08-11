@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createWebhookEndpointApiV1WebhookEndpointsPost**](WebhooksApi.md#createWebhookEndpointApiV1WebhookEndpointsPost) | **POST** /api/v1/webhook-endpoints | Create Webhook Endpoint |
-| [**deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete**](WebhooksApi.md#deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete) | **DELETE** /api/v1/webhook-endpoints/{endpoint_id} | Delete Webhook Endpoint |
-| [**getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet**](WebhooksApi.md#getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet) | **GET** /api/v1/webhook-deliveries/{delivery_id} | Get Webhook Delivery |
-| [**getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet**](WebhooksApi.md#getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet) | **GET** /api/v1/webhook-endpoints/{endpoint_id} | Get Webhook Endpoint |
-| [**listWebhookDeliveriesApiV1WebhookDeliveriesGet**](WebhooksApi.md#listWebhookDeliveriesApiV1WebhookDeliveriesGet) | **GET** /api/v1/webhook-deliveries | List Webhook Deliveries |
-| [**listWebhookEndpointsApiV1WebhookEndpointsGet**](WebhooksApi.md#listWebhookEndpointsApiV1WebhookEndpointsGet) | **GET** /api/v1/webhook-endpoints | List Webhook Endpoints |
-| [**retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost**](WebhooksApi.md#retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost) | **POST** /api/v1/webhook-deliveries/{delivery_id}/retry | Retry Webhook Delivery |
-| [**rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost**](WebhooksApi.md#rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/rotate-secret | Rotate Webhook Secret |
-| [**testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost**](WebhooksApi.md#testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/test | Test Webhook Endpoint |
-| [**updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch**](WebhooksApi.md#updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch) | **PATCH** /api/v1/webhook-endpoints/{endpoint_id} | Update Webhook Endpoint |
+| [**createWebhookEndpoint**](WebhooksApi.md#createWebhookEndpoint) | **POST** /api/v1/webhook-endpoints | Create Webhook Endpoint |
+| [**deleteWebhookEndpoint**](WebhooksApi.md#deleteWebhookEndpoint) | **DELETE** /api/v1/webhook-endpoints/{endpoint_id} | Delete Webhook Endpoint |
+| [**getWebhookDelivery**](WebhooksApi.md#getWebhookDelivery) | **GET** /api/v1/webhook-deliveries/{delivery_id} | Get Webhook Delivery |
+| [**getWebhookEndpoint**](WebhooksApi.md#getWebhookEndpoint) | **GET** /api/v1/webhook-endpoints/{endpoint_id} | Get Webhook Endpoint |
+| [**listWebhookDeliveries**](WebhooksApi.md#listWebhookDeliveries) | **GET** /api/v1/webhook-deliveries | List Webhook Deliveries |
+| [**listWebhookEndpoints**](WebhooksApi.md#listWebhookEndpoints) | **GET** /api/v1/webhook-endpoints | List Webhook Endpoints |
+| [**retryWebhookDelivery**](WebhooksApi.md#retryWebhookDelivery) | **POST** /api/v1/webhook-deliveries/{delivery_id}/retry | Retry Webhook Delivery |
+| [**rotateWebhookSecret**](WebhooksApi.md#rotateWebhookSecret) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/rotate-secret | Rotate Webhook Secret |
+| [**testWebhookEndpoint**](WebhooksApi.md#testWebhookEndpoint) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/test | Test Webhook Endpoint |
+| [**updateWebhookEndpoint**](WebhooksApi.md#updateWebhookEndpoint) | **PATCH** /api/v1/webhook-endpoints/{endpoint_id} | Update Webhook Endpoint |
 
 
-<a id="createWebhookEndpointApiV1WebhookEndpointsPost"></a>
-# **createWebhookEndpointApiV1WebhookEndpointsPost**
-> WebhookEndpointResponse createWebhookEndpointApiV1WebhookEndpointsPost(webhookEndpointCreateRequest)
+<a id="createWebhookEndpoint"></a>
+# **createWebhookEndpoint**
+> WebhookEndpointResponse createWebhookEndpoint(webhookEndpointCreateRequest)
 
 Create Webhook Endpoint
 
@@ -44,10 +44,10 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     WebhookEndpointCreateRequest webhookEndpointCreateRequest = new WebhookEndpointCreateRequest(); // WebhookEndpointCreateRequest | 
     try {
-      WebhookEndpointResponse result = apiInstance.createWebhookEndpointApiV1WebhookEndpointsPost(webhookEndpointCreateRequest);
+      WebhookEndpointResponse result = apiInstance.createWebhookEndpoint(webhookEndpointCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#createWebhookEndpointApiV1WebhookEndpointsPost");
+      System.err.println("Exception when calling WebhooksApi#createWebhookEndpoint");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -82,9 +82,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete"></a>
-# **deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete**
-> SimpleBoolResponse deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete(endpointId)
+<a id="deleteWebhookEndpoint"></a>
+# **deleteWebhookEndpoint**
+> SimpleBoolResponse deleteWebhookEndpoint(endpointId)
 
 Delete Webhook Endpoint
 
@@ -110,10 +110,10 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     String endpointId = "endpointId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete(endpointId);
+      SimpleBoolResponse result = apiInstance.deleteWebhookEndpoint(endpointId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#deleteWebhookEndpointApiV1WebhookEndpointsEndpointIdDelete");
+      System.err.println("Exception when calling WebhooksApi#deleteWebhookEndpoint");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -148,9 +148,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet"></a>
-# **getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet**
-> WebhookDeliveryResponse getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet(deliveryId)
+<a id="getWebhookDelivery"></a>
+# **getWebhookDelivery**
+> WebhookDeliveryResponse getWebhookDelivery(deliveryId)
 
 Get Webhook Delivery
 
@@ -176,10 +176,10 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     String deliveryId = "deliveryId_example"; // String | 
     try {
-      WebhookDeliveryResponse result = apiInstance.getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet(deliveryId);
+      WebhookDeliveryResponse result = apiInstance.getWebhookDelivery(deliveryId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#getWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdGet");
+      System.err.println("Exception when calling WebhooksApi#getWebhookDelivery");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -214,9 +214,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet"></a>
-# **getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet**
-> WebhookEndpointResponse getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet(endpointId)
+<a id="getWebhookEndpoint"></a>
+# **getWebhookEndpoint**
+> WebhookEndpointResponse getWebhookEndpoint(endpointId)
 
 Get Webhook Endpoint
 
@@ -242,10 +242,10 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     String endpointId = "endpointId_example"; // String | 
     try {
-      WebhookEndpointResponse result = apiInstance.getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet(endpointId);
+      WebhookEndpointResponse result = apiInstance.getWebhookEndpoint(endpointId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#getWebhookEndpointApiV1WebhookEndpointsEndpointIdGet");
+      System.err.println("Exception when calling WebhooksApi#getWebhookEndpoint");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -280,9 +280,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listWebhookDeliveriesApiV1WebhookDeliveriesGet"></a>
-# **listWebhookDeliveriesApiV1WebhookDeliveriesGet**
-> WebhookDeliveriesListResponse listWebhookDeliveriesApiV1WebhookDeliveriesGet(limit, cursor)
+<a id="listWebhookDeliveries"></a>
+# **listWebhookDeliveries**
+> WebhookDeliveriesListResponse listWebhookDeliveries(limit, cursor)
 
 List Webhook Deliveries
 
@@ -309,10 +309,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      WebhookDeliveriesListResponse result = apiInstance.listWebhookDeliveriesApiV1WebhookDeliveriesGet(limit, cursor);
+      WebhookDeliveriesListResponse result = apiInstance.listWebhookDeliveries(limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#listWebhookDeliveriesApiV1WebhookDeliveriesGet");
+      System.err.println("Exception when calling WebhooksApi#listWebhookDeliveries");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -348,9 +348,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listWebhookEndpointsApiV1WebhookEndpointsGet"></a>
-# **listWebhookEndpointsApiV1WebhookEndpointsGet**
-> WebhookEndpointsListResponse listWebhookEndpointsApiV1WebhookEndpointsGet(limit, cursor)
+<a id="listWebhookEndpoints"></a>
+# **listWebhookEndpoints**
+> WebhookEndpointsListResponse listWebhookEndpoints(limit, cursor)
 
 List Webhook Endpoints
 
@@ -377,10 +377,10 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      WebhookEndpointsListResponse result = apiInstance.listWebhookEndpointsApiV1WebhookEndpointsGet(limit, cursor);
+      WebhookEndpointsListResponse result = apiInstance.listWebhookEndpoints(limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#listWebhookEndpointsApiV1WebhookEndpointsGet");
+      System.err.println("Exception when calling WebhooksApi#listWebhookEndpoints");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -416,9 +416,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost"></a>
-# **retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost**
-> WebhookDeliveryResponse retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost(deliveryId)
+<a id="retryWebhookDelivery"></a>
+# **retryWebhookDelivery**
+> WebhookDeliveryResponse retryWebhookDelivery(deliveryId)
 
 Retry Webhook Delivery
 
@@ -444,10 +444,10 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     String deliveryId = "deliveryId_example"; // String | 
     try {
-      WebhookDeliveryResponse result = apiInstance.retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost(deliveryId);
+      WebhookDeliveryResponse result = apiInstance.retryWebhookDelivery(deliveryId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#retryWebhookDeliveryApiV1WebhookDeliveriesDeliveryIdRetryPost");
+      System.err.println("Exception when calling WebhooksApi#retryWebhookDelivery");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -482,9 +482,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost"></a>
-# **rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost**
-> WebhookSecretResponse rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost(endpointId)
+<a id="rotateWebhookSecret"></a>
+# **rotateWebhookSecret**
+> WebhookSecretResponse rotateWebhookSecret(endpointId)
 
 Rotate Webhook Secret
 
@@ -510,10 +510,10 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     String endpointId = "endpointId_example"; // String | 
     try {
-      WebhookSecretResponse result = apiInstance.rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost(endpointId);
+      WebhookSecretResponse result = apiInstance.rotateWebhookSecret(endpointId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#rotateWebhookSecretApiV1WebhookEndpointsEndpointIdRotateSecretPost");
+      System.err.println("Exception when calling WebhooksApi#rotateWebhookSecret");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -548,9 +548,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost"></a>
-# **testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost**
-> WebhookDeliveryResponse testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost(endpointId)
+<a id="testWebhookEndpoint"></a>
+# **testWebhookEndpoint**
+> WebhookDeliveryResponse testWebhookEndpoint(endpointId)
 
 Test Webhook Endpoint
 
@@ -576,10 +576,10 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     String endpointId = "endpointId_example"; // String | 
     try {
-      WebhookDeliveryResponse result = apiInstance.testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost(endpointId);
+      WebhookDeliveryResponse result = apiInstance.testWebhookEndpoint(endpointId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#testWebhookEndpointApiV1WebhookEndpointsEndpointIdTestPost");
+      System.err.println("Exception when calling WebhooksApi#testWebhookEndpoint");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -614,9 +614,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch"></a>
-# **updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch**
-> WebhookEndpointResponse updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch(endpointId, webhookEndpointPatchRequest)
+<a id="updateWebhookEndpoint"></a>
+# **updateWebhookEndpoint**
+> WebhookEndpointResponse updateWebhookEndpoint(endpointId, webhookEndpointPatchRequest)
 
 Update Webhook Endpoint
 
@@ -643,10 +643,10 @@ public class Example {
     String endpointId = "endpointId_example"; // String | 
     WebhookEndpointPatchRequest webhookEndpointPatchRequest = new WebhookEndpointPatchRequest(); // WebhookEndpointPatchRequest | 
     try {
-      WebhookEndpointResponse result = apiInstance.updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch(endpointId, webhookEndpointPatchRequest);
+      WebhookEndpointResponse result = apiInstance.updateWebhookEndpoint(endpointId, webhookEndpointPatchRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#updateWebhookEndpointApiV1WebhookEndpointsEndpointIdPatch");
+      System.err.println("Exception when calling WebhooksApi#updateWebhookEndpoint");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

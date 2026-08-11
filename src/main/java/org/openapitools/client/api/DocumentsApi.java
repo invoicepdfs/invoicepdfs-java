@@ -28,8 +28,6 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ApiErrorResponse;
-import org.openapitools.client.model.AppDocumentsSchemasDocumentRenderRequest;
-import org.openapitools.client.model.AppSchemasV1DocumentRenderRequest;
 import org.openapitools.client.model.DeliveriesListResponse;
 import org.openapitools.client.model.DeliveryResponse;
 import org.openapitools.client.model.DeliverySendRequest;
@@ -37,6 +35,8 @@ import org.openapitools.client.model.DocumentCalculateRequest;
 import org.openapitools.client.model.DocumentCalculateResponse;
 import org.openapitools.client.model.DocumentCreateRequest;
 import org.openapitools.client.model.DocumentPatchRequest;
+import org.openapitools.client.model.DocumentRenderOptions;
+import org.openapitools.client.model.DocumentRenderRequest;
 import org.openapitools.client.model.DocumentResponse;
 import org.openapitools.client.model.DocumentValidateRequest;
 import org.openapitools.client.model.DocumentValidateResponse;
@@ -87,7 +87,7 @@ public class DocumentsApi {
     }
 
     /**
-     * Build call for archiveDocumentApiV1DocumentsDocumentIdArchivePost
+     * Build call for archiveDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -99,7 +99,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call archiveDocumentApiV1DocumentsDocumentIdArchivePostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call archiveDocumentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,13 +145,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call archiveDocumentApiV1DocumentsDocumentIdArchivePostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call archiveDocumentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling archiveDocumentApiV1DocumentsDocumentIdArchivePost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling archiveDocument(Async)");
         }
 
-        return archiveDocumentApiV1DocumentsDocumentIdArchivePostCall(documentId, _callback);
+        return archiveDocumentCall(documentId, _callback);
 
     }
 
@@ -168,8 +168,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse archiveDocumentApiV1DocumentsDocumentIdArchivePost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = archiveDocumentApiV1DocumentsDocumentIdArchivePostWithHttpInfo(documentId);
+    public DocumentResponse archiveDocument(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = archiveDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -186,8 +186,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> archiveDocumentApiV1DocumentsDocumentIdArchivePostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = archiveDocumentApiV1DocumentsDocumentIdArchivePostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> archiveDocumentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = archiveDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -206,15 +206,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call archiveDocumentApiV1DocumentsDocumentIdArchivePostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call archiveDocumentAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = archiveDocumentApiV1DocumentsDocumentIdArchivePostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = archiveDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for calculateDocumentApiV1DocumentsCalculatePost
+     * Build call for calculateDocument
      * @param documentCalculateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -226,7 +226,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call calculateDocumentApiV1DocumentsCalculatePostCall(DocumentCalculateRequest documentCalculateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call calculateDocumentCall(DocumentCalculateRequest documentCalculateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,13 +272,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call calculateDocumentApiV1DocumentsCalculatePostValidateBeforeCall(DocumentCalculateRequest documentCalculateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call calculateDocumentValidateBeforeCall(DocumentCalculateRequest documentCalculateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentCalculateRequest' is set
         if (documentCalculateRequest == null) {
-            throw new ApiException("Missing the required parameter 'documentCalculateRequest' when calling calculateDocumentApiV1DocumentsCalculatePost(Async)");
+            throw new ApiException("Missing the required parameter 'documentCalculateRequest' when calling calculateDocument(Async)");
         }
 
-        return calculateDocumentApiV1DocumentsCalculatePostCall(documentCalculateRequest, _callback);
+        return calculateDocumentCall(documentCalculateRequest, _callback);
 
     }
 
@@ -295,8 +295,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentCalculateResponse calculateDocumentApiV1DocumentsCalculatePost(DocumentCalculateRequest documentCalculateRequest) throws ApiException {
-        ApiResponse<DocumentCalculateResponse> localVarResp = calculateDocumentApiV1DocumentsCalculatePostWithHttpInfo(documentCalculateRequest);
+    public DocumentCalculateResponse calculateDocument(DocumentCalculateRequest documentCalculateRequest) throws ApiException {
+        ApiResponse<DocumentCalculateResponse> localVarResp = calculateDocumentWithHttpInfo(documentCalculateRequest);
         return localVarResp.getData();
     }
 
@@ -313,8 +313,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentCalculateResponse> calculateDocumentApiV1DocumentsCalculatePostWithHttpInfo(DocumentCalculateRequest documentCalculateRequest) throws ApiException {
-        okhttp3.Call localVarCall = calculateDocumentApiV1DocumentsCalculatePostValidateBeforeCall(documentCalculateRequest, null);
+    public ApiResponse<DocumentCalculateResponse> calculateDocumentWithHttpInfo(DocumentCalculateRequest documentCalculateRequest) throws ApiException {
+        okhttp3.Call localVarCall = calculateDocumentValidateBeforeCall(documentCalculateRequest, null);
         Type localVarReturnType = new TypeToken<DocumentCalculateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -333,15 +333,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call calculateDocumentApiV1DocumentsCalculatePostAsync(DocumentCalculateRequest documentCalculateRequest, final ApiCallback<DocumentCalculateResponse> _callback) throws ApiException {
+    public okhttp3.Call calculateDocumentAsync(DocumentCalculateRequest documentCalculateRequest, final ApiCallback<DocumentCalculateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = calculateDocumentApiV1DocumentsCalculatePostValidateBeforeCall(documentCalculateRequest, _callback);
+        okhttp3.Call localVarCall = calculateDocumentValidateBeforeCall(documentCalculateRequest, _callback);
         Type localVarReturnType = new TypeToken<DocumentCalculateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createDocumentApiV1DocumentsPost
+     * Build call for createDocument
      * @param documentCreateRequest  (required)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
@@ -354,7 +354,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDocumentApiV1DocumentsPostCall(DocumentCreateRequest documentCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createDocumentCall(DocumentCreateRequest documentCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -404,13 +404,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createDocumentApiV1DocumentsPostValidateBeforeCall(DocumentCreateRequest documentCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createDocumentValidateBeforeCall(DocumentCreateRequest documentCreateRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentCreateRequest' is set
         if (documentCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'documentCreateRequest' when calling createDocumentApiV1DocumentsPost(Async)");
+            throw new ApiException("Missing the required parameter 'documentCreateRequest' when calling createDocument(Async)");
         }
 
-        return createDocumentApiV1DocumentsPostCall(documentCreateRequest, idempotencyKey, _callback);
+        return createDocumentCall(documentCreateRequest, idempotencyKey, _callback);
 
     }
 
@@ -428,8 +428,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse createDocumentApiV1DocumentsPost(DocumentCreateRequest documentCreateRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = createDocumentApiV1DocumentsPostWithHttpInfo(documentCreateRequest, idempotencyKey);
+    public DocumentResponse createDocument(DocumentCreateRequest documentCreateRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = createDocumentWithHttpInfo(documentCreateRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -447,8 +447,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> createDocumentApiV1DocumentsPostWithHttpInfo(DocumentCreateRequest documentCreateRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = createDocumentApiV1DocumentsPostValidateBeforeCall(documentCreateRequest, idempotencyKey, null);
+    public ApiResponse<DocumentResponse> createDocumentWithHttpInfo(DocumentCreateRequest documentCreateRequest, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = createDocumentValidateBeforeCall(documentCreateRequest, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -468,15 +468,160 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDocumentApiV1DocumentsPostAsync(DocumentCreateRequest documentCreateRequest, String idempotencyKey, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call createDocumentAsync(DocumentCreateRequest documentCreateRequest, String idempotencyKey, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createDocumentApiV1DocumentsPostValidateBeforeCall(documentCreateRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = createDocumentValidateBeforeCall(documentCreateRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteDocumentApiV1DocumentsDocumentIdDelete
+     * Build call for createDocumentRender
+     * @param documentId  (required)
+     * @param documentRenderOptions  (required)
+     * @param idempotencyKey  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createDocumentRenderCall(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = documentRenderOptions;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/documents/{document_id}/renders"
+            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (idempotencyKey != null) {
+            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createDocumentRenderValidateBeforeCall(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null) {
+            throw new ApiException("Missing the required parameter 'documentId' when calling createDocumentRender(Async)");
+        }
+
+        // verify the required parameter 'documentRenderOptions' is set
+        if (documentRenderOptions == null) {
+            throw new ApiException("Missing the required parameter 'documentRenderOptions' when calling createDocumentRender(Async)");
+        }
+
+        return createDocumentRenderCall(documentId, documentRenderOptions, idempotencyKey, _callback);
+
+    }
+
+    /**
+     * Create Document Render
+     * 
+     * @param documentId  (required)
+     * @param documentRenderOptions  (required)
+     * @param idempotencyKey  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object createDocumentRender(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey) throws ApiException {
+        ApiResponse<Object> localVarResp = createDocumentRenderWithHttpInfo(documentId, documentRenderOptions, idempotencyKey);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Document Render
+     * 
+     * @param documentId  (required)
+     * @param documentRenderOptions  (required)
+     * @param idempotencyKey  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> createDocumentRenderWithHttpInfo(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = createDocumentRenderValidateBeforeCall(documentId, documentRenderOptions, idempotencyKey, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Document Render (asynchronously)
+     * 
+     * @param documentId  (required)
+     * @param documentRenderOptions  (required)
+     * @param idempotencyKey  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createDocumentRenderAsync(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createDocumentRenderValidateBeforeCall(documentId, documentRenderOptions, idempotencyKey, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -488,7 +633,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDocumentApiV1DocumentsDocumentIdDeleteCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteDocumentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -534,13 +679,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteDocumentApiV1DocumentsDocumentIdDeleteValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteDocumentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling deleteDocumentApiV1DocumentsDocumentIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling deleteDocument(Async)");
         }
 
-        return deleteDocumentApiV1DocumentsDocumentIdDeleteCall(documentId, _callback);
+        return deleteDocumentCall(documentId, _callback);
 
     }
 
@@ -557,8 +702,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteDocumentApiV1DocumentsDocumentIdDelete(String documentId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteDocumentApiV1DocumentsDocumentIdDeleteWithHttpInfo(documentId);
+    public SimpleBoolResponse deleteDocument(String documentId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -575,8 +720,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteDocumentApiV1DocumentsDocumentIdDeleteWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = deleteDocumentApiV1DocumentsDocumentIdDeleteValidateBeforeCall(documentId, null);
+    public ApiResponse<SimpleBoolResponse> deleteDocumentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = deleteDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -595,15 +740,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDocumentApiV1DocumentsDocumentIdDeleteAsync(String documentId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteDocumentAsync(String documentId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteDocumentApiV1DocumentsDocumentIdDeleteValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = deleteDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost
+     * Build call for duplicateDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -615,7 +760,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call duplicateDocumentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -661,13 +806,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call duplicateDocumentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling duplicateDocument(Async)");
         }
 
-        return duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostCall(documentId, _callback);
+        return duplicateDocumentCall(documentId, _callback);
 
     }
 
@@ -684,8 +829,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse duplicateDocumentApiV1DocumentsDocumentIdDuplicatePost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostWithHttpInfo(documentId);
+    public DocumentResponse duplicateDocument(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = duplicateDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -702,8 +847,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> duplicateDocumentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = duplicateDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -722,15 +867,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call duplicateDocumentAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = duplicateDocumentApiV1DocumentsDocumentIdDuplicatePostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = duplicateDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for finalizeDocumentApiV1DocumentsDocumentIdFinalizePost
+     * Build call for finalizeDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -742,7 +887,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call finalizeDocumentApiV1DocumentsDocumentIdFinalizePostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call finalizeDocumentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -788,13 +933,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call finalizeDocumentApiV1DocumentsDocumentIdFinalizePostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call finalizeDocumentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling finalizeDocumentApiV1DocumentsDocumentIdFinalizePost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling finalizeDocument(Async)");
         }
 
-        return finalizeDocumentApiV1DocumentsDocumentIdFinalizePostCall(documentId, _callback);
+        return finalizeDocumentCall(documentId, _callback);
 
     }
 
@@ -811,8 +956,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse finalizeDocumentApiV1DocumentsDocumentIdFinalizePost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = finalizeDocumentApiV1DocumentsDocumentIdFinalizePostWithHttpInfo(documentId);
+    public DocumentResponse finalizeDocument(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = finalizeDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -829,8 +974,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> finalizeDocumentApiV1DocumentsDocumentIdFinalizePostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = finalizeDocumentApiV1DocumentsDocumentIdFinalizePostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> finalizeDocumentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = finalizeDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -849,15 +994,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call finalizeDocumentApiV1DocumentsDocumentIdFinalizePostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call finalizeDocumentAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = finalizeDocumentApiV1DocumentsDocumentIdFinalizePostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = finalizeDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getDocumentApiV1DocumentsDocumentIdGet
+     * Build call for getDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -869,7 +1014,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDocumentApiV1DocumentsDocumentIdGetCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDocumentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -915,13 +1060,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDocumentApiV1DocumentsDocumentIdGetValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDocumentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling getDocumentApiV1DocumentsDocumentIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling getDocument(Async)");
         }
 
-        return getDocumentApiV1DocumentsDocumentIdGetCall(documentId, _callback);
+        return getDocumentCall(documentId, _callback);
 
     }
 
@@ -938,8 +1083,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse getDocumentApiV1DocumentsDocumentIdGet(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = getDocumentApiV1DocumentsDocumentIdGetWithHttpInfo(documentId);
+    public DocumentResponse getDocument(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = getDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -956,8 +1101,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> getDocumentApiV1DocumentsDocumentIdGetWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = getDocumentApiV1DocumentsDocumentIdGetValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> getDocumentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = getDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -976,15 +1121,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDocumentApiV1DocumentsDocumentIdGetAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call getDocumentAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDocumentApiV1DocumentsDocumentIdGetValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = getDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGet
+     * Build call for listDocumentDeliveries
      * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -998,7 +1143,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetCall(String documentId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDocumentDeliveriesCall(String documentId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1052,13 +1197,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetValidateBeforeCall(String documentId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDocumentDeliveriesValidateBeforeCall(String documentId, Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGet(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling listDocumentDeliveries(Async)");
         }
 
-        return listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetCall(documentId, limit, cursor, _callback);
+        return listDocumentDeliveriesCall(documentId, limit, cursor, _callback);
 
     }
 
@@ -1077,8 +1222,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DeliveriesListResponse listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGet(String documentId, Integer limit, String cursor) throws ApiException {
-        ApiResponse<DeliveriesListResponse> localVarResp = listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetWithHttpInfo(documentId, limit, cursor);
+    public DeliveriesListResponse listDocumentDeliveries(String documentId, Integer limit, String cursor) throws ApiException {
+        ApiResponse<DeliveriesListResponse> localVarResp = listDocumentDeliveriesWithHttpInfo(documentId, limit, cursor);
         return localVarResp.getData();
     }
 
@@ -1097,8 +1242,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeliveriesListResponse> listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetWithHttpInfo(String documentId, Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetValidateBeforeCall(documentId, limit, cursor, null);
+    public ApiResponse<DeliveriesListResponse> listDocumentDeliveriesWithHttpInfo(String documentId, Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listDocumentDeliveriesValidateBeforeCall(documentId, limit, cursor, null);
         Type localVarReturnType = new TypeToken<DeliveriesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1119,15 +1264,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetAsync(String documentId, Integer limit, String cursor, final ApiCallback<DeliveriesListResponse> _callback) throws ApiException {
+    public okhttp3.Call listDocumentDeliveriesAsync(String documentId, Integer limit, String cursor, final ApiCallback<DeliveriesListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listDocumentDeliveriesApiV1DocumentsDocumentIdDeliveriesGetValidateBeforeCall(documentId, limit, cursor, _callback);
+        okhttp3.Call localVarCall = listDocumentDeliveriesValidateBeforeCall(documentId, limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<DeliveriesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listDocumentsApiV1DocumentsGet
+     * Build call for listDocuments
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param documentType  (optional)
@@ -1142,7 +1287,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentsApiV1DocumentsGetCall(Integer limit, String cursor, String documentType, String status, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDocumentsCall(Integer limit, String cursor, String documentType, String status, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1203,8 +1348,8 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDocumentsApiV1DocumentsGetValidateBeforeCall(Integer limit, String cursor, String documentType, String status, final ApiCallback _callback) throws ApiException {
-        return listDocumentsApiV1DocumentsGetCall(limit, cursor, documentType, status, _callback);
+    private okhttp3.Call listDocumentsValidateBeforeCall(Integer limit, String cursor, String documentType, String status, final ApiCallback _callback) throws ApiException {
+        return listDocumentsCall(limit, cursor, documentType, status, _callback);
 
     }
 
@@ -1224,8 +1369,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentsListResponse listDocumentsApiV1DocumentsGet(Integer limit, String cursor, String documentType, String status) throws ApiException {
-        ApiResponse<DocumentsListResponse> localVarResp = listDocumentsApiV1DocumentsGetWithHttpInfo(limit, cursor, documentType, status);
+    public DocumentsListResponse listDocuments(Integer limit, String cursor, String documentType, String status) throws ApiException {
+        ApiResponse<DocumentsListResponse> localVarResp = listDocumentsWithHttpInfo(limit, cursor, documentType, status);
         return localVarResp.getData();
     }
 
@@ -1245,8 +1390,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentsListResponse> listDocumentsApiV1DocumentsGetWithHttpInfo(Integer limit, String cursor, String documentType, String status) throws ApiException {
-        okhttp3.Call localVarCall = listDocumentsApiV1DocumentsGetValidateBeforeCall(limit, cursor, documentType, status, null);
+    public ApiResponse<DocumentsListResponse> listDocumentsWithHttpInfo(Integer limit, String cursor, String documentType, String status) throws ApiException {
+        okhttp3.Call localVarCall = listDocumentsValidateBeforeCall(limit, cursor, documentType, status, null);
         Type localVarReturnType = new TypeToken<DocumentsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1268,15 +1413,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentsApiV1DocumentsGetAsync(Integer limit, String cursor, String documentType, String status, final ApiCallback<DocumentsListResponse> _callback) throws ApiException {
+    public okhttp3.Call listDocumentsAsync(Integer limit, String cursor, String documentType, String status, final ApiCallback<DocumentsListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listDocumentsApiV1DocumentsGetValidateBeforeCall(limit, cursor, documentType, status, _callback);
+        okhttp3.Call localVarCall = listDocumentsValidateBeforeCall(limit, cursor, documentType, status, _callback);
         Type localVarReturnType = new TypeToken<DocumentsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for markPaidApiV1DocumentsDocumentIdMarkPaidPost
+     * Build call for markPaid
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1288,7 +1433,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markPaidApiV1DocumentsDocumentIdMarkPaidPostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call markPaidCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1334,13 +1479,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call markPaidApiV1DocumentsDocumentIdMarkPaidPostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call markPaidValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling markPaidApiV1DocumentsDocumentIdMarkPaidPost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling markPaid(Async)");
         }
 
-        return markPaidApiV1DocumentsDocumentIdMarkPaidPostCall(documentId, _callback);
+        return markPaidCall(documentId, _callback);
 
     }
 
@@ -1357,8 +1502,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse markPaidApiV1DocumentsDocumentIdMarkPaidPost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = markPaidApiV1DocumentsDocumentIdMarkPaidPostWithHttpInfo(documentId);
+    public DocumentResponse markPaid(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = markPaidWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -1375,8 +1520,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> markPaidApiV1DocumentsDocumentIdMarkPaidPostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = markPaidApiV1DocumentsDocumentIdMarkPaidPostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> markPaidWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = markPaidValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1395,15 +1540,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markPaidApiV1DocumentsDocumentIdMarkPaidPostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call markPaidAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = markPaidApiV1DocumentsDocumentIdMarkPaidPostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = markPaidValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for markSentApiV1DocumentsDocumentIdMarkSentPost
+     * Build call for markSent
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1415,7 +1560,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markSentApiV1DocumentsDocumentIdMarkSentPostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call markSentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1461,13 +1606,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call markSentApiV1DocumentsDocumentIdMarkSentPostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call markSentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling markSentApiV1DocumentsDocumentIdMarkSentPost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling markSent(Async)");
         }
 
-        return markSentApiV1DocumentsDocumentIdMarkSentPostCall(documentId, _callback);
+        return markSentCall(documentId, _callback);
 
     }
 
@@ -1484,8 +1629,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse markSentApiV1DocumentsDocumentIdMarkSentPost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = markSentApiV1DocumentsDocumentIdMarkSentPostWithHttpInfo(documentId);
+    public DocumentResponse markSent(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = markSentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -1502,8 +1647,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> markSentApiV1DocumentsDocumentIdMarkSentPostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = markSentApiV1DocumentsDocumentIdMarkSentPostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> markSentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = markSentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1522,15 +1667,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markSentApiV1DocumentsDocumentIdMarkSentPostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call markSentAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = markSentApiV1DocumentsDocumentIdMarkSentPostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = markSentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPost
+     * Build call for markUnpaid
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1542,7 +1687,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call markUnpaidCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1588,13 +1733,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call markUnpaidValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling markUnpaid(Async)");
         }
 
-        return markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostCall(documentId, _callback);
+        return markUnpaidCall(documentId, _callback);
 
     }
 
@@ -1611,8 +1756,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostWithHttpInfo(documentId);
+    public DocumentResponse markUnpaid(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = markUnpaidWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -1629,8 +1774,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> markUnpaidWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = markUnpaidValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1649,17 +1794,17 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call markUnpaidAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = markUnpaidApiV1DocumentsDocumentIdMarkUnpaidPostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = markUnpaidValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchDocumentApiV1DocumentsDocumentIdPatch
-     * @param documentId  (required)
-     * @param documentPatchRequest  (required)
+     * Build call for renderDocument
+     * @param documentRenderRequest  (required)
+     * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1670,7 +1815,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchDocumentApiV1DocumentsDocumentIdPatchCall(String documentId, DocumentPatchRequest documentPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call renderDocumentCall(DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1684,289 +1829,7 @@ public class DocumentsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = documentPatchRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/documents/{document_id}"
-            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchDocumentApiV1DocumentsDocumentIdPatchValidateBeforeCall(String documentId, DocumentPatchRequest documentPatchRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'documentId' is set
-        if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling patchDocumentApiV1DocumentsDocumentIdPatch(Async)");
-        }
-
-        // verify the required parameter 'documentPatchRequest' is set
-        if (documentPatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'documentPatchRequest' when calling patchDocumentApiV1DocumentsDocumentIdPatch(Async)");
-        }
-
-        return patchDocumentApiV1DocumentsDocumentIdPatchCall(documentId, documentPatchRequest, _callback);
-
-    }
-
-    /**
-     * Patch Document
-     * 
-     * @param documentId  (required)
-     * @param documentPatchRequest  (required)
-     * @return DocumentResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public DocumentResponse patchDocumentApiV1DocumentsDocumentIdPatch(String documentId, DocumentPatchRequest documentPatchRequest) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = patchDocumentApiV1DocumentsDocumentIdPatchWithHttpInfo(documentId, documentPatchRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Patch Document
-     * 
-     * @param documentId  (required)
-     * @param documentPatchRequest  (required)
-     * @return ApiResponse&lt;DocumentResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<DocumentResponse> patchDocumentApiV1DocumentsDocumentIdPatchWithHttpInfo(String documentId, DocumentPatchRequest documentPatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = patchDocumentApiV1DocumentsDocumentIdPatchValidateBeforeCall(documentId, documentPatchRequest, null);
-        Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Patch Document (asynchronously)
-     * 
-     * @param documentId  (required)
-     * @param documentPatchRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call patchDocumentApiV1DocumentsDocumentIdPatchAsync(String documentId, DocumentPatchRequest documentPatchRequest, final ApiCallback<DocumentResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = patchDocumentApiV1DocumentsDocumentIdPatchValidateBeforeCall(documentId, documentPatchRequest, _callback);
-        Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for renderDocumentApiV1DocumentsDocumentIdRendersPost
-     * @param documentId  (required)
-     * @param appDocumentsSchemasDocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call renderDocumentApiV1DocumentsDocumentIdRendersPostCall(String documentId, AppDocumentsSchemasDocumentRenderRequest appDocumentsSchemasDocumentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = appDocumentsSchemasDocumentRenderRequest;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/documents/{document_id}/renders"
-            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (idempotencyKey != null) {
-            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "HTTPBearer" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call renderDocumentApiV1DocumentsDocumentIdRendersPostValidateBeforeCall(String documentId, AppDocumentsSchemasDocumentRenderRequest appDocumentsSchemasDocumentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'documentId' is set
-        if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling renderDocumentApiV1DocumentsDocumentIdRendersPost(Async)");
-        }
-
-        // verify the required parameter 'appDocumentsSchemasDocumentRenderRequest' is set
-        if (appDocumentsSchemasDocumentRenderRequest == null) {
-            throw new ApiException("Missing the required parameter 'appDocumentsSchemasDocumentRenderRequest' when calling renderDocumentApiV1DocumentsDocumentIdRendersPost(Async)");
-        }
-
-        return renderDocumentApiV1DocumentsDocumentIdRendersPostCall(documentId, appDocumentsSchemasDocumentRenderRequest, idempotencyKey, _callback);
-
-    }
-
-    /**
-     * Render Document
-     * 
-     * @param documentId  (required)
-     * @param appDocumentsSchemasDocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @return Object
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Object renderDocumentApiV1DocumentsDocumentIdRendersPost(String documentId, AppDocumentsSchemasDocumentRenderRequest appDocumentsSchemasDocumentRenderRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<Object> localVarResp = renderDocumentApiV1DocumentsDocumentIdRendersPostWithHttpInfo(documentId, appDocumentsSchemasDocumentRenderRequest, idempotencyKey);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Render Document
-     * 
-     * @param documentId  (required)
-     * @param appDocumentsSchemasDocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Object> renderDocumentApiV1DocumentsDocumentIdRendersPostWithHttpInfo(String documentId, AppDocumentsSchemasDocumentRenderRequest appDocumentsSchemasDocumentRenderRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = renderDocumentApiV1DocumentsDocumentIdRendersPostValidateBeforeCall(documentId, appDocumentsSchemasDocumentRenderRequest, idempotencyKey, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Render Document (asynchronously)
-     * 
-     * @param documentId  (required)
-     * @param appDocumentsSchemasDocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call renderDocumentApiV1DocumentsDocumentIdRendersPostAsync(String documentId, AppDocumentsSchemasDocumentRenderRequest appDocumentsSchemasDocumentRenderRequest, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = renderDocumentApiV1DocumentsDocumentIdRendersPostValidateBeforeCall(documentId, appDocumentsSchemasDocumentRenderRequest, idempotencyKey, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for renderDocumentApiV1DocumentsRenderPost
-     * @param appSchemasV1DocumentRenderRequest  (required)
-     * @param idempotencyKey  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call renderDocumentApiV1DocumentsRenderPostCall(AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = appSchemasV1DocumentRenderRequest;
+        Object localVarPostBody = documentRenderRequest;
 
         // create path and map variables
         String localVarPath = "/api/v1/documents/render";
@@ -2002,20 +1865,20 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call renderDocumentApiV1DocumentsRenderPostValidateBeforeCall(AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'appSchemasV1DocumentRenderRequest' is set
-        if (appSchemasV1DocumentRenderRequest == null) {
-            throw new ApiException("Missing the required parameter 'appSchemasV1DocumentRenderRequest' when calling renderDocumentApiV1DocumentsRenderPost(Async)");
+    private okhttp3.Call renderDocumentValidateBeforeCall(DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentRenderRequest' is set
+        if (documentRenderRequest == null) {
+            throw new ApiException("Missing the required parameter 'documentRenderRequest' when calling renderDocument(Async)");
         }
 
-        return renderDocumentApiV1DocumentsRenderPostCall(appSchemasV1DocumentRenderRequest, idempotencyKey, _callback);
+        return renderDocumentCall(documentRenderRequest, idempotencyKey, _callback);
 
     }
 
     /**
      * Render Document
      * 
-     * @param appSchemasV1DocumentRenderRequest  (required)
+     * @param documentRenderRequest  (required)
      * @param idempotencyKey  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2026,15 +1889,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object renderDocumentApiV1DocumentsRenderPost(AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<Object> localVarResp = renderDocumentApiV1DocumentsRenderPostWithHttpInfo(appSchemasV1DocumentRenderRequest, idempotencyKey);
+    public Object renderDocument(DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<Object> localVarResp = renderDocumentWithHttpInfo(documentRenderRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
     /**
      * Render Document
      * 
-     * @param appSchemasV1DocumentRenderRequest  (required)
+     * @param documentRenderRequest  (required)
      * @param idempotencyKey  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2045,8 +1908,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> renderDocumentApiV1DocumentsRenderPostWithHttpInfo(AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = renderDocumentApiV1DocumentsRenderPostValidateBeforeCall(appSchemasV1DocumentRenderRequest, idempotencyKey, null);
+    public ApiResponse<Object> renderDocumentWithHttpInfo(DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = renderDocumentValidateBeforeCall(documentRenderRequest, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2054,7 +1917,7 @@ public class DocumentsApi {
     /**
      * Render Document (asynchronously)
      * 
-     * @param appSchemasV1DocumentRenderRequest  (required)
+     * @param documentRenderRequest  (required)
      * @param idempotencyKey  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2066,15 +1929,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call renderDocumentApiV1DocumentsRenderPostAsync(AppSchemasV1DocumentRenderRequest appSchemasV1DocumentRenderRequest, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call renderDocumentAsync(DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = renderDocumentApiV1DocumentsRenderPostValidateBeforeCall(appSchemasV1DocumentRenderRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = renderDocumentValidateBeforeCall(documentRenderRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for restoreDocumentApiV1DocumentsDocumentIdRestorePost
+     * Build call for restoreDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2086,7 +1949,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call restoreDocumentApiV1DocumentsDocumentIdRestorePostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call restoreDocumentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2132,13 +1995,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call restoreDocumentApiV1DocumentsDocumentIdRestorePostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call restoreDocumentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling restoreDocumentApiV1DocumentsDocumentIdRestorePost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling restoreDocument(Async)");
         }
 
-        return restoreDocumentApiV1DocumentsDocumentIdRestorePostCall(documentId, _callback);
+        return restoreDocumentCall(documentId, _callback);
 
     }
 
@@ -2155,8 +2018,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse restoreDocumentApiV1DocumentsDocumentIdRestorePost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = restoreDocumentApiV1DocumentsDocumentIdRestorePostWithHttpInfo(documentId);
+    public DocumentResponse restoreDocument(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = restoreDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -2173,8 +2036,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> restoreDocumentApiV1DocumentsDocumentIdRestorePostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = restoreDocumentApiV1DocumentsDocumentIdRestorePostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> restoreDocumentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = restoreDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2193,15 +2056,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call restoreDocumentApiV1DocumentsDocumentIdRestorePostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call restoreDocumentAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = restoreDocumentApiV1DocumentsDocumentIdRestorePostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = restoreDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for sendDocumentApiV1DocumentsDocumentIdSendPost
+     * Build call for sendDocument
      * @param documentId  (required)
      * @param deliverySendRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -2214,7 +2077,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendDocumentApiV1DocumentsDocumentIdSendPostCall(String documentId, DeliverySendRequest deliverySendRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendDocumentCall(String documentId, DeliverySendRequest deliverySendRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2261,18 +2124,18 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendDocumentApiV1DocumentsDocumentIdSendPostValidateBeforeCall(String documentId, DeliverySendRequest deliverySendRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendDocumentValidateBeforeCall(String documentId, DeliverySendRequest deliverySendRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling sendDocumentApiV1DocumentsDocumentIdSendPost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling sendDocument(Async)");
         }
 
         // verify the required parameter 'deliverySendRequest' is set
         if (deliverySendRequest == null) {
-            throw new ApiException("Missing the required parameter 'deliverySendRequest' when calling sendDocumentApiV1DocumentsDocumentIdSendPost(Async)");
+            throw new ApiException("Missing the required parameter 'deliverySendRequest' when calling sendDocument(Async)");
         }
 
-        return sendDocumentApiV1DocumentsDocumentIdSendPostCall(documentId, deliverySendRequest, _callback);
+        return sendDocumentCall(documentId, deliverySendRequest, _callback);
 
     }
 
@@ -2290,8 +2153,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DeliveryResponse sendDocumentApiV1DocumentsDocumentIdSendPost(String documentId, DeliverySendRequest deliverySendRequest) throws ApiException {
-        ApiResponse<DeliveryResponse> localVarResp = sendDocumentApiV1DocumentsDocumentIdSendPostWithHttpInfo(documentId, deliverySendRequest);
+    public DeliveryResponse sendDocument(String documentId, DeliverySendRequest deliverySendRequest) throws ApiException {
+        ApiResponse<DeliveryResponse> localVarResp = sendDocumentWithHttpInfo(documentId, deliverySendRequest);
         return localVarResp.getData();
     }
 
@@ -2309,8 +2172,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeliveryResponse> sendDocumentApiV1DocumentsDocumentIdSendPostWithHttpInfo(String documentId, DeliverySendRequest deliverySendRequest) throws ApiException {
-        okhttp3.Call localVarCall = sendDocumentApiV1DocumentsDocumentIdSendPostValidateBeforeCall(documentId, deliverySendRequest, null);
+    public ApiResponse<DeliveryResponse> sendDocumentWithHttpInfo(String documentId, DeliverySendRequest deliverySendRequest) throws ApiException {
+        okhttp3.Call localVarCall = sendDocumentValidateBeforeCall(documentId, deliverySendRequest, null);
         Type localVarReturnType = new TypeToken<DeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2330,15 +2193,152 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendDocumentApiV1DocumentsDocumentIdSendPostAsync(String documentId, DeliverySendRequest deliverySendRequest, final ApiCallback<DeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call sendDocumentAsync(String documentId, DeliverySendRequest deliverySendRequest, final ApiCallback<DeliveryResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendDocumentApiV1DocumentsDocumentIdSendPostValidateBeforeCall(documentId, deliverySendRequest, _callback);
+        okhttp3.Call localVarCall = sendDocumentValidateBeforeCall(documentId, deliverySendRequest, _callback);
         Type localVarReturnType = new TypeToken<DeliveryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for validateDocumentApiV1DocumentsValidatePost
+     * Build call for updateDocument
+     * @param documentId  (required)
+     * @param documentPatchRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateDocumentCall(String documentId, DocumentPatchRequest documentPatchRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = documentPatchRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/documents/{document_id}"
+            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateDocumentValidateBeforeCall(String documentId, DocumentPatchRequest documentPatchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null) {
+            throw new ApiException("Missing the required parameter 'documentId' when calling updateDocument(Async)");
+        }
+
+        // verify the required parameter 'documentPatchRequest' is set
+        if (documentPatchRequest == null) {
+            throw new ApiException("Missing the required parameter 'documentPatchRequest' when calling updateDocument(Async)");
+        }
+
+        return updateDocumentCall(documentId, documentPatchRequest, _callback);
+
+    }
+
+    /**
+     * Update Document
+     * 
+     * @param documentId  (required)
+     * @param documentPatchRequest  (required)
+     * @return DocumentResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public DocumentResponse updateDocument(String documentId, DocumentPatchRequest documentPatchRequest) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = updateDocumentWithHttpInfo(documentId, documentPatchRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Document
+     * 
+     * @param documentId  (required)
+     * @param documentPatchRequest  (required)
+     * @return ApiResponse&lt;DocumentResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DocumentResponse> updateDocumentWithHttpInfo(String documentId, DocumentPatchRequest documentPatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateDocumentValidateBeforeCall(documentId, documentPatchRequest, null);
+        Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Document (asynchronously)
+     * 
+     * @param documentId  (required)
+     * @param documentPatchRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateDocumentAsync(String documentId, DocumentPatchRequest documentPatchRequest, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateDocumentValidateBeforeCall(documentId, documentPatchRequest, _callback);
+        Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for validateDocument
      * @param documentValidateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2350,7 +2350,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateDocumentApiV1DocumentsValidatePostCall(DocumentValidateRequest documentValidateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call validateDocumentCall(DocumentValidateRequest documentValidateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2396,13 +2396,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call validateDocumentApiV1DocumentsValidatePostValidateBeforeCall(DocumentValidateRequest documentValidateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call validateDocumentValidateBeforeCall(DocumentValidateRequest documentValidateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentValidateRequest' is set
         if (documentValidateRequest == null) {
-            throw new ApiException("Missing the required parameter 'documentValidateRequest' when calling validateDocumentApiV1DocumentsValidatePost(Async)");
+            throw new ApiException("Missing the required parameter 'documentValidateRequest' when calling validateDocument(Async)");
         }
 
-        return validateDocumentApiV1DocumentsValidatePostCall(documentValidateRequest, _callback);
+        return validateDocumentCall(documentValidateRequest, _callback);
 
     }
 
@@ -2419,8 +2419,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentValidateResponse validateDocumentApiV1DocumentsValidatePost(DocumentValidateRequest documentValidateRequest) throws ApiException {
-        ApiResponse<DocumentValidateResponse> localVarResp = validateDocumentApiV1DocumentsValidatePostWithHttpInfo(documentValidateRequest);
+    public DocumentValidateResponse validateDocument(DocumentValidateRequest documentValidateRequest) throws ApiException {
+        ApiResponse<DocumentValidateResponse> localVarResp = validateDocumentWithHttpInfo(documentValidateRequest);
         return localVarResp.getData();
     }
 
@@ -2437,8 +2437,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentValidateResponse> validateDocumentApiV1DocumentsValidatePostWithHttpInfo(DocumentValidateRequest documentValidateRequest) throws ApiException {
-        okhttp3.Call localVarCall = validateDocumentApiV1DocumentsValidatePostValidateBeforeCall(documentValidateRequest, null);
+    public ApiResponse<DocumentValidateResponse> validateDocumentWithHttpInfo(DocumentValidateRequest documentValidateRequest) throws ApiException {
+        okhttp3.Call localVarCall = validateDocumentValidateBeforeCall(documentValidateRequest, null);
         Type localVarReturnType = new TypeToken<DocumentValidateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2457,15 +2457,15 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateDocumentApiV1DocumentsValidatePostAsync(DocumentValidateRequest documentValidateRequest, final ApiCallback<DocumentValidateResponse> _callback) throws ApiException {
+    public okhttp3.Call validateDocumentAsync(DocumentValidateRequest documentValidateRequest, final ApiCallback<DocumentValidateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = validateDocumentApiV1DocumentsValidatePostValidateBeforeCall(documentValidateRequest, _callback);
+        okhttp3.Call localVarCall = validateDocumentValidateBeforeCall(documentValidateRequest, _callback);
         Type localVarReturnType = new TypeToken<DocumentValidateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for voidDocumentApiV1DocumentsDocumentIdVoidPost
+     * Build call for voidDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2477,7 +2477,7 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call voidDocumentApiV1DocumentsDocumentIdVoidPostCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call voidDocumentCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2523,13 +2523,13 @@ public class DocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call voidDocumentApiV1DocumentsDocumentIdVoidPostValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call voidDocumentValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
-            throw new ApiException("Missing the required parameter 'documentId' when calling voidDocumentApiV1DocumentsDocumentIdVoidPost(Async)");
+            throw new ApiException("Missing the required parameter 'documentId' when calling voidDocument(Async)");
         }
 
-        return voidDocumentApiV1DocumentsDocumentIdVoidPostCall(documentId, _callback);
+        return voidDocumentCall(documentId, _callback);
 
     }
 
@@ -2546,8 +2546,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public DocumentResponse voidDocumentApiV1DocumentsDocumentIdVoidPost(String documentId) throws ApiException {
-        ApiResponse<DocumentResponse> localVarResp = voidDocumentApiV1DocumentsDocumentIdVoidPostWithHttpInfo(documentId);
+    public DocumentResponse voidDocument(String documentId) throws ApiException {
+        ApiResponse<DocumentResponse> localVarResp = voidDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -2564,8 +2564,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DocumentResponse> voidDocumentApiV1DocumentsDocumentIdVoidPostWithHttpInfo(String documentId) throws ApiException {
-        okhttp3.Call localVarCall = voidDocumentApiV1DocumentsDocumentIdVoidPostValidateBeforeCall(documentId, null);
+    public ApiResponse<DocumentResponse> voidDocumentWithHttpInfo(String documentId) throws ApiException {
+        okhttp3.Call localVarCall = voidDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2584,9 +2584,9 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call voidDocumentApiV1DocumentsDocumentIdVoidPostAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
+    public okhttp3.Call voidDocumentAsync(String documentId, final ApiCallback<DocumentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = voidDocumentApiV1DocumentsDocumentIdVoidPostValidateBeforeCall(documentId, _callback);
+        okhttp3.Call localVarCall = voidDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<DocumentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createProfileApiV1BrandingProfilesPost**](BrandingProfilesApi.md#createProfileApiV1BrandingProfilesPost) | **POST** /api/v1/branding-profiles | Create Profile |
-| [**deleteLogoApiV1BrandingProfilesProfileIdLogoDelete**](BrandingProfilesApi.md#deleteLogoApiV1BrandingProfilesProfileIdLogoDelete) | **DELETE** /api/v1/branding-profiles/{profile_id}/logo | Delete Logo |
-| [**deleteProfileApiV1BrandingProfilesProfileIdDelete**](BrandingProfilesApi.md#deleteProfileApiV1BrandingProfilesProfileIdDelete) | **DELETE** /api/v1/branding-profiles/{profile_id} | Delete Profile |
-| [**getProfileApiV1BrandingProfilesProfileIdGet**](BrandingProfilesApi.md#getProfileApiV1BrandingProfilesProfileIdGet) | **GET** /api/v1/branding-profiles/{profile_id} | Get Profile |
-| [**listProfilesApiV1BrandingProfilesGet**](BrandingProfilesApi.md#listProfilesApiV1BrandingProfilesGet) | **GET** /api/v1/branding-profiles | List Profiles |
-| [**setDefaultApiV1BrandingProfilesProfileIdDefaultPost**](BrandingProfilesApi.md#setDefaultApiV1BrandingProfilesProfileIdDefaultPost) | **POST** /api/v1/branding-profiles/{profile_id}/default | Set Default |
-| [**updateProfileApiV1BrandingProfilesProfileIdPatch**](BrandingProfilesApi.md#updateProfileApiV1BrandingProfilesProfileIdPatch) | **PATCH** /api/v1/branding-profiles/{profile_id} | Update Profile |
-| [**uploadLogoApiV1BrandingProfilesProfileIdLogoPost**](BrandingProfilesApi.md#uploadLogoApiV1BrandingProfilesProfileIdLogoPost) | **POST** /api/v1/branding-profiles/{profile_id}/logo | Upload Logo |
+| [**createBrandingProfile**](BrandingProfilesApi.md#createBrandingProfile) | **POST** /api/v1/branding-profiles | Create Branding Profile |
+| [**deleteBrandingLogo**](BrandingProfilesApi.md#deleteBrandingLogo) | **DELETE** /api/v1/branding-profiles/{profile_id}/logo | Delete Branding Logo |
+| [**deleteBrandingProfile**](BrandingProfilesApi.md#deleteBrandingProfile) | **DELETE** /api/v1/branding-profiles/{profile_id} | Delete Branding Profile |
+| [**getBrandingProfile**](BrandingProfilesApi.md#getBrandingProfile) | **GET** /api/v1/branding-profiles/{profile_id} | Get Branding Profile |
+| [**listBrandingProfiles**](BrandingProfilesApi.md#listBrandingProfiles) | **GET** /api/v1/branding-profiles | List Branding Profiles |
+| [**setDefaultBrandingProfile**](BrandingProfilesApi.md#setDefaultBrandingProfile) | **POST** /api/v1/branding-profiles/{profile_id}/default | Set Default Branding Profile |
+| [**updateBrandingProfile**](BrandingProfilesApi.md#updateBrandingProfile) | **PATCH** /api/v1/branding-profiles/{profile_id} | Update Branding Profile |
+| [**uploadBrandingLogo**](BrandingProfilesApi.md#uploadBrandingLogo) | **POST** /api/v1/branding-profiles/{profile_id}/logo | Upload Branding Logo |
 
 
-<a id="createProfileApiV1BrandingProfilesPost"></a>
-# **createProfileApiV1BrandingProfilesPost**
-> BrandingProfileResponse createProfileApiV1BrandingProfilesPost(brandingProfileCreateRequest)
+<a id="createBrandingProfile"></a>
+# **createBrandingProfile**
+> BrandingProfileResponse createBrandingProfile(brandingProfileCreateRequest)
 
-Create Profile
+Create Branding Profile
 
 ### Example
 ```java
@@ -42,10 +42,10 @@ public class Example {
     BrandingProfilesApi apiInstance = new BrandingProfilesApi(defaultClient);
     BrandingProfileCreateRequest brandingProfileCreateRequest = new BrandingProfileCreateRequest(); // BrandingProfileCreateRequest | 
     try {
-      BrandingProfileResponse result = apiInstance.createProfileApiV1BrandingProfilesPost(brandingProfileCreateRequest);
+      BrandingProfileResponse result = apiInstance.createBrandingProfile(brandingProfileCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#createProfileApiV1BrandingProfilesPost");
+      System.err.println("Exception when calling BrandingProfilesApi#createBrandingProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -80,11 +80,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deleteLogoApiV1BrandingProfilesProfileIdLogoDelete"></a>
-# **deleteLogoApiV1BrandingProfilesProfileIdLogoDelete**
-> SimpleBoolResponse deleteLogoApiV1BrandingProfilesProfileIdLogoDelete(profileId)
+<a id="deleteBrandingLogo"></a>
+# **deleteBrandingLogo**
+> SimpleBoolResponse deleteBrandingLogo(profileId)
 
-Delete Logo
+Delete Branding Logo
 
 ### Example
 ```java
@@ -108,10 +108,10 @@ public class Example {
     BrandingProfilesApi apiInstance = new BrandingProfilesApi(defaultClient);
     String profileId = "profileId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteLogoApiV1BrandingProfilesProfileIdLogoDelete(profileId);
+      SimpleBoolResponse result = apiInstance.deleteBrandingLogo(profileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#deleteLogoApiV1BrandingProfilesProfileIdLogoDelete");
+      System.err.println("Exception when calling BrandingProfilesApi#deleteBrandingLogo");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -146,11 +146,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deleteProfileApiV1BrandingProfilesProfileIdDelete"></a>
-# **deleteProfileApiV1BrandingProfilesProfileIdDelete**
-> SimpleBoolResponse deleteProfileApiV1BrandingProfilesProfileIdDelete(profileId)
+<a id="deleteBrandingProfile"></a>
+# **deleteBrandingProfile**
+> SimpleBoolResponse deleteBrandingProfile(profileId)
 
-Delete Profile
+Delete Branding Profile
 
 ### Example
 ```java
@@ -174,10 +174,10 @@ public class Example {
     BrandingProfilesApi apiInstance = new BrandingProfilesApi(defaultClient);
     String profileId = "profileId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deleteProfileApiV1BrandingProfilesProfileIdDelete(profileId);
+      SimpleBoolResponse result = apiInstance.deleteBrandingProfile(profileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#deleteProfileApiV1BrandingProfilesProfileIdDelete");
+      System.err.println("Exception when calling BrandingProfilesApi#deleteBrandingProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -212,11 +212,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getProfileApiV1BrandingProfilesProfileIdGet"></a>
-# **getProfileApiV1BrandingProfilesProfileIdGet**
-> BrandingProfileResponse getProfileApiV1BrandingProfilesProfileIdGet(profileId)
+<a id="getBrandingProfile"></a>
+# **getBrandingProfile**
+> BrandingProfileResponse getBrandingProfile(profileId)
 
-Get Profile
+Get Branding Profile
 
 ### Example
 ```java
@@ -240,10 +240,10 @@ public class Example {
     BrandingProfilesApi apiInstance = new BrandingProfilesApi(defaultClient);
     String profileId = "profileId_example"; // String | 
     try {
-      BrandingProfileResponse result = apiInstance.getProfileApiV1BrandingProfilesProfileIdGet(profileId);
+      BrandingProfileResponse result = apiInstance.getBrandingProfile(profileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#getProfileApiV1BrandingProfilesProfileIdGet");
+      System.err.println("Exception when calling BrandingProfilesApi#getBrandingProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -278,11 +278,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listProfilesApiV1BrandingProfilesGet"></a>
-# **listProfilesApiV1BrandingProfilesGet**
-> BrandingProfilesListResponse listProfilesApiV1BrandingProfilesGet()
+<a id="listBrandingProfiles"></a>
+# **listBrandingProfiles**
+> BrandingProfilesListResponse listBrandingProfiles()
 
-List Profiles
+List Branding Profiles
 
 ### Example
 ```java
@@ -305,10 +305,10 @@ public class Example {
 
     BrandingProfilesApi apiInstance = new BrandingProfilesApi(defaultClient);
     try {
-      BrandingProfilesListResponse result = apiInstance.listProfilesApiV1BrandingProfilesGet();
+      BrandingProfilesListResponse result = apiInstance.listBrandingProfiles();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#listProfilesApiV1BrandingProfilesGet");
+      System.err.println("Exception when calling BrandingProfilesApi#listBrandingProfiles");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -339,11 +339,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 
-<a id="setDefaultApiV1BrandingProfilesProfileIdDefaultPost"></a>
-# **setDefaultApiV1BrandingProfilesProfileIdDefaultPost**
-> BrandingProfileResponse setDefaultApiV1BrandingProfilesProfileIdDefaultPost(profileId)
+<a id="setDefaultBrandingProfile"></a>
+# **setDefaultBrandingProfile**
+> BrandingProfileResponse setDefaultBrandingProfile(profileId)
 
-Set Default
+Set Default Branding Profile
 
 ### Example
 ```java
@@ -367,10 +367,10 @@ public class Example {
     BrandingProfilesApi apiInstance = new BrandingProfilesApi(defaultClient);
     String profileId = "profileId_example"; // String | 
     try {
-      BrandingProfileResponse result = apiInstance.setDefaultApiV1BrandingProfilesProfileIdDefaultPost(profileId);
+      BrandingProfileResponse result = apiInstance.setDefaultBrandingProfile(profileId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#setDefaultApiV1BrandingProfilesProfileIdDefaultPost");
+      System.err.println("Exception when calling BrandingProfilesApi#setDefaultBrandingProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -405,11 +405,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="updateProfileApiV1BrandingProfilesProfileIdPatch"></a>
-# **updateProfileApiV1BrandingProfilesProfileIdPatch**
-> BrandingProfileResponse updateProfileApiV1BrandingProfilesProfileIdPatch(profileId, brandingProfilePatchRequest)
+<a id="updateBrandingProfile"></a>
+# **updateBrandingProfile**
+> BrandingProfileResponse updateBrandingProfile(profileId, brandingProfilePatchRequest)
 
-Update Profile
+Update Branding Profile
 
 ### Example
 ```java
@@ -434,10 +434,10 @@ public class Example {
     String profileId = "profileId_example"; // String | 
     BrandingProfilePatchRequest brandingProfilePatchRequest = new BrandingProfilePatchRequest(); // BrandingProfilePatchRequest | 
     try {
-      BrandingProfileResponse result = apiInstance.updateProfileApiV1BrandingProfilesProfileIdPatch(profileId, brandingProfilePatchRequest);
+      BrandingProfileResponse result = apiInstance.updateBrandingProfile(profileId, brandingProfilePatchRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#updateProfileApiV1BrandingProfilesProfileIdPatch");
+      System.err.println("Exception when calling BrandingProfilesApi#updateBrandingProfile");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -473,11 +473,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="uploadLogoApiV1BrandingProfilesProfileIdLogoPost"></a>
-# **uploadLogoApiV1BrandingProfilesProfileIdLogoPost**
-> BrandingProfileResponse uploadLogoApiV1BrandingProfilesProfileIdLogoPost(profileId, _file)
+<a id="uploadBrandingLogo"></a>
+# **uploadBrandingLogo**
+> BrandingProfileResponse uploadBrandingLogo(profileId, _file)
 
-Upload Logo
+Upload Branding Logo
 
 ### Example
 ```java
@@ -502,10 +502,10 @@ public class Example {
     String profileId = "profileId_example"; // String | 
     File _file = new File("/path/to/file"); // File | 
     try {
-      BrandingProfileResponse result = apiInstance.uploadLogoApiV1BrandingProfilesProfileIdLogoPost(profileId, _file);
+      BrandingProfileResponse result = apiInstance.uploadBrandingLogo(profileId, _file);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BrandingProfilesApi#uploadLogoApiV1BrandingProfilesProfileIdLogoPost");
+      System.err.println("Exception when calling BrandingProfilesApi#uploadBrandingLogo");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

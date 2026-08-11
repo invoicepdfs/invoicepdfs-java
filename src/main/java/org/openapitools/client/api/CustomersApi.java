@@ -78,7 +78,7 @@ public class CustomersApi {
     }
 
     /**
-     * Build call for createCustomerApiV1CustomersPost
+     * Build call for createCustomer
      * @param customerCreate  (required)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
@@ -91,7 +91,7 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCustomerApiV1CustomersPostCall(CustomerCreate customerCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCustomerCall(CustomerCreate customerCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,13 +141,13 @@ public class CustomersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCustomerApiV1CustomersPostValidateBeforeCall(CustomerCreate customerCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCustomerValidateBeforeCall(CustomerCreate customerCreate, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customerCreate' is set
         if (customerCreate == null) {
-            throw new ApiException("Missing the required parameter 'customerCreate' when calling createCustomerApiV1CustomersPost(Async)");
+            throw new ApiException("Missing the required parameter 'customerCreate' when calling createCustomer(Async)");
         }
 
-        return createCustomerApiV1CustomersPostCall(customerCreate, idempotencyKey, _callback);
+        return createCustomerCall(customerCreate, idempotencyKey, _callback);
 
     }
 
@@ -165,8 +165,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomerResponse createCustomerApiV1CustomersPost(CustomerCreate customerCreate, String idempotencyKey) throws ApiException {
-        ApiResponse<CustomerResponse> localVarResp = createCustomerApiV1CustomersPostWithHttpInfo(customerCreate, idempotencyKey);
+    public CustomerResponse createCustomer(CustomerCreate customerCreate, String idempotencyKey) throws ApiException {
+        ApiResponse<CustomerResponse> localVarResp = createCustomerWithHttpInfo(customerCreate, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -184,8 +184,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomerResponse> createCustomerApiV1CustomersPostWithHttpInfo(CustomerCreate customerCreate, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = createCustomerApiV1CustomersPostValidateBeforeCall(customerCreate, idempotencyKey, null);
+    public ApiResponse<CustomerResponse> createCustomerWithHttpInfo(CustomerCreate customerCreate, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = createCustomerValidateBeforeCall(customerCreate, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<CustomerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,15 +205,15 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCustomerApiV1CustomersPostAsync(CustomerCreate customerCreate, String idempotencyKey, final ApiCallback<CustomerResponse> _callback) throws ApiException {
+    public okhttp3.Call createCustomerAsync(CustomerCreate customerCreate, String idempotencyKey, final ApiCallback<CustomerResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createCustomerApiV1CustomersPostValidateBeforeCall(customerCreate, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = createCustomerValidateBeforeCall(customerCreate, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<CustomerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteCustomerApiV1CustomersCustomerIdDelete
+     * Build call for deleteCustomer
      * @param customerId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -225,7 +225,7 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCustomerApiV1CustomersCustomerIdDeleteCall(String customerId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCustomerCall(String customerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,13 +271,13 @@ public class CustomersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomerApiV1CustomersCustomerIdDeleteValidateBeforeCall(String customerId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCustomerValidateBeforeCall(String customerId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-            throw new ApiException("Missing the required parameter 'customerId' when calling deleteCustomerApiV1CustomersCustomerIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling deleteCustomer(Async)");
         }
 
-        return deleteCustomerApiV1CustomersCustomerIdDeleteCall(customerId, _callback);
+        return deleteCustomerCall(customerId, _callback);
 
     }
 
@@ -294,8 +294,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public SimpleBoolResponse deleteCustomerApiV1CustomersCustomerIdDelete(String customerId) throws ApiException {
-        ApiResponse<SimpleBoolResponse> localVarResp = deleteCustomerApiV1CustomersCustomerIdDeleteWithHttpInfo(customerId);
+    public SimpleBoolResponse deleteCustomer(String customerId) throws ApiException {
+        ApiResponse<SimpleBoolResponse> localVarResp = deleteCustomerWithHttpInfo(customerId);
         return localVarResp.getData();
     }
 
@@ -312,8 +312,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SimpleBoolResponse> deleteCustomerApiV1CustomersCustomerIdDeleteWithHttpInfo(String customerId) throws ApiException {
-        okhttp3.Call localVarCall = deleteCustomerApiV1CustomersCustomerIdDeleteValidateBeforeCall(customerId, null);
+    public ApiResponse<SimpleBoolResponse> deleteCustomerWithHttpInfo(String customerId) throws ApiException {
+        okhttp3.Call localVarCall = deleteCustomerValidateBeforeCall(customerId, null);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -332,15 +332,15 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCustomerApiV1CustomersCustomerIdDeleteAsync(String customerId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteCustomerAsync(String customerId, final ApiCallback<SimpleBoolResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteCustomerApiV1CustomersCustomerIdDeleteValidateBeforeCall(customerId, _callback);
+        okhttp3.Call localVarCall = deleteCustomerValidateBeforeCall(customerId, _callback);
         Type localVarReturnType = new TypeToken<SimpleBoolResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getCustomerApiV1CustomersCustomerIdGet
+     * Build call for getCustomer
      * @param customerId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -352,7 +352,7 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomerApiV1CustomersCustomerIdGetCall(String customerId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCustomerCall(String customerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -398,13 +398,13 @@ public class CustomersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerApiV1CustomersCustomerIdGetValidateBeforeCall(String customerId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCustomerValidateBeforeCall(String customerId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-            throw new ApiException("Missing the required parameter 'customerId' when calling getCustomerApiV1CustomersCustomerIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling getCustomer(Async)");
         }
 
-        return getCustomerApiV1CustomersCustomerIdGetCall(customerId, _callback);
+        return getCustomerCall(customerId, _callback);
 
     }
 
@@ -421,8 +421,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomerResponse getCustomerApiV1CustomersCustomerIdGet(String customerId) throws ApiException {
-        ApiResponse<CustomerResponse> localVarResp = getCustomerApiV1CustomersCustomerIdGetWithHttpInfo(customerId);
+    public CustomerResponse getCustomer(String customerId) throws ApiException {
+        ApiResponse<CustomerResponse> localVarResp = getCustomerWithHttpInfo(customerId);
         return localVarResp.getData();
     }
 
@@ -439,8 +439,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomerResponse> getCustomerApiV1CustomersCustomerIdGetWithHttpInfo(String customerId) throws ApiException {
-        okhttp3.Call localVarCall = getCustomerApiV1CustomersCustomerIdGetValidateBeforeCall(customerId, null);
+    public ApiResponse<CustomerResponse> getCustomerWithHttpInfo(String customerId) throws ApiException {
+        okhttp3.Call localVarCall = getCustomerValidateBeforeCall(customerId, null);
         Type localVarReturnType = new TypeToken<CustomerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -459,15 +459,15 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomerApiV1CustomersCustomerIdGetAsync(String customerId, final ApiCallback<CustomerResponse> _callback) throws ApiException {
+    public okhttp3.Call getCustomerAsync(String customerId, final ApiCallback<CustomerResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCustomerApiV1CustomersCustomerIdGetValidateBeforeCall(customerId, _callback);
+        okhttp3.Call localVarCall = getCustomerValidateBeforeCall(customerId, _callback);
         Type localVarReturnType = new TypeToken<CustomerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listCustomersApiV1CustomersGet
+     * Build call for listCustomers
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback Callback for upload/download progress
@@ -480,7 +480,7 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCustomersApiV1CustomersGetCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCustomersCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -533,8 +533,8 @@ public class CustomersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCustomersApiV1CustomersGetValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
-        return listCustomersApiV1CustomersGetCall(limit, cursor, _callback);
+    private okhttp3.Call listCustomersValidateBeforeCall(Integer limit, String cursor, final ApiCallback _callback) throws ApiException {
+        return listCustomersCall(limit, cursor, _callback);
 
     }
 
@@ -552,8 +552,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomersListResponse listCustomersApiV1CustomersGet(Integer limit, String cursor) throws ApiException {
-        ApiResponse<CustomersListResponse> localVarResp = listCustomersApiV1CustomersGetWithHttpInfo(limit, cursor);
+    public CustomersListResponse listCustomers(Integer limit, String cursor) throws ApiException {
+        ApiResponse<CustomersListResponse> localVarResp = listCustomersWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -571,8 +571,8 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomersListResponse> listCustomersApiV1CustomersGetWithHttpInfo(Integer limit, String cursor) throws ApiException {
-        okhttp3.Call localVarCall = listCustomersApiV1CustomersGetValidateBeforeCall(limit, cursor, null);
+    public ApiResponse<CustomersListResponse> listCustomersWithHttpInfo(Integer limit, String cursor) throws ApiException {
+        okhttp3.Call localVarCall = listCustomersValidateBeforeCall(limit, cursor, null);
         Type localVarReturnType = new TypeToken<CustomersListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -592,15 +592,15 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCustomersApiV1CustomersGetAsync(Integer limit, String cursor, final ApiCallback<CustomersListResponse> _callback) throws ApiException {
+    public okhttp3.Call listCustomersAsync(Integer limit, String cursor, final ApiCallback<CustomersListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCustomersApiV1CustomersGetValidateBeforeCall(limit, cursor, _callback);
+        okhttp3.Call localVarCall = listCustomersValidateBeforeCall(limit, cursor, _callback);
         Type localVarReturnType = new TypeToken<CustomersListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for patchCustomerApiV1CustomersCustomerIdPatch
+     * Build call for updateCustomer
      * @param customerId  (required)
      * @param customerPatch  (required)
      * @param idempotencyKey  (optional)
@@ -614,7 +614,7 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchCustomerApiV1CustomersCustomerIdPatchCall(String customerId, CustomerPatch customerPatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCustomerCall(String customerId, CustomerPatch customerPatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -665,23 +665,23 @@ public class CustomersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchCustomerApiV1CustomersCustomerIdPatchValidateBeforeCall(String customerId, CustomerPatch customerPatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCustomerValidateBeforeCall(String customerId, CustomerPatch customerPatch, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-            throw new ApiException("Missing the required parameter 'customerId' when calling patchCustomerApiV1CustomersCustomerIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling updateCustomer(Async)");
         }
 
         // verify the required parameter 'customerPatch' is set
         if (customerPatch == null) {
-            throw new ApiException("Missing the required parameter 'customerPatch' when calling patchCustomerApiV1CustomersCustomerIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'customerPatch' when calling updateCustomer(Async)");
         }
 
-        return patchCustomerApiV1CustomersCustomerIdPatchCall(customerId, customerPatch, idempotencyKey, _callback);
+        return updateCustomerCall(customerId, customerPatch, idempotencyKey, _callback);
 
     }
 
     /**
-     * Patch Customer
+     * Update Customer
      * 
      * @param customerId  (required)
      * @param customerPatch  (required)
@@ -695,13 +695,13 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public CustomerResponse patchCustomerApiV1CustomersCustomerIdPatch(String customerId, CustomerPatch customerPatch, String idempotencyKey) throws ApiException {
-        ApiResponse<CustomerResponse> localVarResp = patchCustomerApiV1CustomersCustomerIdPatchWithHttpInfo(customerId, customerPatch, idempotencyKey);
+    public CustomerResponse updateCustomer(String customerId, CustomerPatch customerPatch, String idempotencyKey) throws ApiException {
+        ApiResponse<CustomerResponse> localVarResp = updateCustomerWithHttpInfo(customerId, customerPatch, idempotencyKey);
         return localVarResp.getData();
     }
 
     /**
-     * Patch Customer
+     * Update Customer
      * 
      * @param customerId  (required)
      * @param customerPatch  (required)
@@ -715,14 +715,14 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomerResponse> patchCustomerApiV1CustomersCustomerIdPatchWithHttpInfo(String customerId, CustomerPatch customerPatch, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = patchCustomerApiV1CustomersCustomerIdPatchValidateBeforeCall(customerId, customerPatch, idempotencyKey, null);
+    public ApiResponse<CustomerResponse> updateCustomerWithHttpInfo(String customerId, CustomerPatch customerPatch, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = updateCustomerValidateBeforeCall(customerId, customerPatch, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<CustomerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Patch Customer (asynchronously)
+     * Update Customer (asynchronously)
      * 
      * @param customerId  (required)
      * @param customerPatch  (required)
@@ -737,9 +737,9 @@ public class CustomersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchCustomerApiV1CustomersCustomerIdPatchAsync(String customerId, CustomerPatch customerPatch, String idempotencyKey, final ApiCallback<CustomerResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCustomerAsync(String customerId, CustomerPatch customerPatch, String idempotencyKey, final ApiCallback<CustomerResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchCustomerApiV1CustomersCustomerIdPatchValidateBeforeCall(customerId, customerPatch, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = updateCustomerValidateBeforeCall(customerId, customerPatch, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<CustomerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

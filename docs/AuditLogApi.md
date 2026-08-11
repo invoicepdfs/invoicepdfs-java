@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getAuditEventApiV1AuditEventsAuditEventIdGet**](AuditLogApi.md#getAuditEventApiV1AuditEventsAuditEventIdGet) | **GET** /api/v1/audit-events/{audit_event_id} | Get Audit Event |
-| [**listAuditEventsApiV1AuditEventsGet**](AuditLogApi.md#listAuditEventsApiV1AuditEventsGet) | **GET** /api/v1/audit-events | List Audit Events |
+| [**getAuditEvent**](AuditLogApi.md#getAuditEvent) | **GET** /api/v1/audit-events/{audit_event_id} | Get Audit Event |
+| [**listAuditEvents**](AuditLogApi.md#listAuditEvents) | **GET** /api/v1/audit-events | List Audit Events |
 
 
-<a id="getAuditEventApiV1AuditEventsAuditEventIdGet"></a>
-# **getAuditEventApiV1AuditEventsAuditEventIdGet**
-> AuditEventResponse getAuditEventApiV1AuditEventsAuditEventIdGet(auditEventId)
+<a id="getAuditEvent"></a>
+# **getAuditEvent**
+> AuditEventResponse getAuditEvent(auditEventId)
 
 Get Audit Event
 
@@ -36,10 +36,10 @@ public class Example {
     AuditLogApi apiInstance = new AuditLogApi(defaultClient);
     String auditEventId = "auditEventId_example"; // String | 
     try {
-      AuditEventResponse result = apiInstance.getAuditEventApiV1AuditEventsAuditEventIdGet(auditEventId);
+      AuditEventResponse result = apiInstance.getAuditEvent(auditEventId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AuditLogApi#getAuditEventApiV1AuditEventsAuditEventIdGet");
+      System.err.println("Exception when calling AuditLogApi#getAuditEvent");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -74,9 +74,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listAuditEventsApiV1AuditEventsGet"></a>
-# **listAuditEventsApiV1AuditEventsGet**
-> AuditEventsListResponse listAuditEventsApiV1AuditEventsGet(limit, cursor, action, resourceType, resourceId)
+<a id="listAuditEvents"></a>
+# **listAuditEvents**
+> AuditEventsListResponse listAuditEvents(limit, cursor, action, resourceType, resourceId)
 
 List Audit Events
 
@@ -106,10 +106,10 @@ public class Example {
     String resourceType = "resourceType_example"; // String | 
     String resourceId = "resourceId_example"; // String | 
     try {
-      AuditEventsListResponse result = apiInstance.listAuditEventsApiV1AuditEventsGet(limit, cursor, action, resourceType, resourceId);
+      AuditEventsListResponse result = apiInstance.listAuditEvents(limit, cursor, action, resourceType, resourceId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AuditLogApi#listAuditEventsApiV1AuditEventsGet");
+      System.err.println("Exception when calling AuditLogApi#listAuditEvents");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

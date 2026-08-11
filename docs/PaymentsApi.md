@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createPaymentApiV1DocumentsInvoiceIdPaymentsPost**](PaymentsApi.md#createPaymentApiV1DocumentsInvoiceIdPaymentsPost) | **POST** /api/v1/documents/{invoice_id}/payments | Create Payment |
-| [**deletePaymentApiV1PaymentsPaymentIdDelete**](PaymentsApi.md#deletePaymentApiV1PaymentsPaymentIdDelete) | **DELETE** /api/v1/payments/{payment_id} | Delete Payment |
-| [**getPaymentApiV1PaymentsPaymentIdGet**](PaymentsApi.md#getPaymentApiV1PaymentsPaymentIdGet) | **GET** /api/v1/payments/{payment_id} | Get Payment |
-| [**listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet**](PaymentsApi.md#listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet) | **GET** /api/v1/documents/{invoice_id}/payments | List Invoice Payments |
-| [**updatePaymentApiV1PaymentsPaymentIdPatch**](PaymentsApi.md#updatePaymentApiV1PaymentsPaymentIdPatch) | **PATCH** /api/v1/payments/{payment_id} | Update Payment |
+| [**createDocumentPayment**](PaymentsApi.md#createDocumentPayment) | **POST** /api/v1/documents/{document_id}/payments | Create Document Payment |
+| [**deletePayment**](PaymentsApi.md#deletePayment) | **DELETE** /api/v1/payments/{payment_id} | Delete Payment |
+| [**getPayment**](PaymentsApi.md#getPayment) | **GET** /api/v1/payments/{payment_id} | Get Payment |
+| [**listDocumentPayments**](PaymentsApi.md#listDocumentPayments) | **GET** /api/v1/documents/{document_id}/payments | List Document Payments |
+| [**updatePayment**](PaymentsApi.md#updatePayment) | **PATCH** /api/v1/payments/{payment_id} | Update Payment |
 
 
-<a id="createPaymentApiV1DocumentsInvoiceIdPaymentsPost"></a>
-# **createPaymentApiV1DocumentsInvoiceIdPaymentsPost**
-> PaymentResponse createPaymentApiV1DocumentsInvoiceIdPaymentsPost(invoiceId, paymentCreateRequest)
+<a id="createDocumentPayment"></a>
+# **createDocumentPayment**
+> PaymentResponse createDocumentPayment(documentId, paymentCreateRequest)
 
-Create Payment
+Create Document Payment
 
 ### Example
 ```java
@@ -37,13 +37,13 @@ public class Example {
     HTTPBearer.setBearerToken("BEARER TOKEN");
 
     PaymentsApi apiInstance = new PaymentsApi(defaultClient);
-    String invoiceId = "invoiceId_example"; // String | 
+    String documentId = "documentId_example"; // String | 
     PaymentCreateRequest paymentCreateRequest = new PaymentCreateRequest(); // PaymentCreateRequest | 
     try {
-      PaymentResponse result = apiInstance.createPaymentApiV1DocumentsInvoiceIdPaymentsPost(invoiceId, paymentCreateRequest);
+      PaymentResponse result = apiInstance.createDocumentPayment(documentId, paymentCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PaymentsApi#createPaymentApiV1DocumentsInvoiceIdPaymentsPost");
+      System.err.println("Exception when calling PaymentsApi#createDocumentPayment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -57,7 +57,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **invoiceId** | **String**|  | |
+| **documentId** | **String**|  | |
 | **paymentCreateRequest** | [**PaymentCreateRequest**](PaymentCreateRequest.md)|  | |
 
 ### Return type
@@ -79,9 +79,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="deletePaymentApiV1PaymentsPaymentIdDelete"></a>
-# **deletePaymentApiV1PaymentsPaymentIdDelete**
-> SimpleBoolResponse deletePaymentApiV1PaymentsPaymentIdDelete(paymentId)
+<a id="deletePayment"></a>
+# **deletePayment**
+> SimpleBoolResponse deletePayment(paymentId)
 
 Delete Payment
 
@@ -107,10 +107,10 @@ public class Example {
     PaymentsApi apiInstance = new PaymentsApi(defaultClient);
     String paymentId = "paymentId_example"; // String | 
     try {
-      SimpleBoolResponse result = apiInstance.deletePaymentApiV1PaymentsPaymentIdDelete(paymentId);
+      SimpleBoolResponse result = apiInstance.deletePayment(paymentId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PaymentsApi#deletePaymentApiV1PaymentsPaymentIdDelete");
+      System.err.println("Exception when calling PaymentsApi#deletePayment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -145,9 +145,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="getPaymentApiV1PaymentsPaymentIdGet"></a>
-# **getPaymentApiV1PaymentsPaymentIdGet**
-> PaymentResponse getPaymentApiV1PaymentsPaymentIdGet(paymentId)
+<a id="getPayment"></a>
+# **getPayment**
+> PaymentResponse getPayment(paymentId)
 
 Get Payment
 
@@ -173,10 +173,10 @@ public class Example {
     PaymentsApi apiInstance = new PaymentsApi(defaultClient);
     String paymentId = "paymentId_example"; // String | 
     try {
-      PaymentResponse result = apiInstance.getPaymentApiV1PaymentsPaymentIdGet(paymentId);
+      PaymentResponse result = apiInstance.getPayment(paymentId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PaymentsApi#getPaymentApiV1PaymentsPaymentIdGet");
+      System.err.println("Exception when calling PaymentsApi#getPayment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -211,11 +211,11 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet"></a>
-# **listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet**
-> PaymentsListResponse listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet(invoiceId, limit, cursor)
+<a id="listDocumentPayments"></a>
+# **listDocumentPayments**
+> PaymentsListResponse listDocumentPayments(documentId, limit, cursor)
 
-List Invoice Payments
+List Document Payments
 
 ### Example
 ```java
@@ -237,14 +237,14 @@ public class Example {
     HTTPBearer.setBearerToken("BEARER TOKEN");
 
     PaymentsApi apiInstance = new PaymentsApi(defaultClient);
-    String invoiceId = "invoiceId_example"; // String | 
+    String documentId = "documentId_example"; // String | 
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      PaymentsListResponse result = apiInstance.listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet(invoiceId, limit, cursor);
+      PaymentsListResponse result = apiInstance.listDocumentPayments(documentId, limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PaymentsApi#listInvoicePaymentsApiV1DocumentsInvoiceIdPaymentsGet");
+      System.err.println("Exception when calling PaymentsApi#listDocumentPayments");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -258,7 +258,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **invoiceId** | **String**|  | |
+| **documentId** | **String**|  | |
 | **limit** | **Integer**|  | [optional] [default to 50] |
 | **cursor** | **String**|  | [optional] |
 
@@ -281,9 +281,9 @@ public class Example {
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="updatePaymentApiV1PaymentsPaymentIdPatch"></a>
-# **updatePaymentApiV1PaymentsPaymentIdPatch**
-> PaymentResponse updatePaymentApiV1PaymentsPaymentIdPatch(paymentId, paymentPatchRequest)
+<a id="updatePayment"></a>
+# **updatePayment**
+> PaymentResponse updatePayment(paymentId, paymentPatchRequest)
 
 Update Payment
 
@@ -310,10 +310,10 @@ public class Example {
     String paymentId = "paymentId_example"; // String | 
     PaymentPatchRequest paymentPatchRequest = new PaymentPatchRequest(); // PaymentPatchRequest | 
     try {
-      PaymentResponse result = apiInstance.updatePaymentApiV1PaymentsPaymentIdPatch(paymentId, paymentPatchRequest);
+      PaymentResponse result = apiInstance.updatePayment(paymentId, paymentPatchRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PaymentsApi#updatePaymentApiV1PaymentsPaymentIdPatch");
+      System.err.println("Exception when calling PaymentsApi#updatePayment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
