@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * AuthRegisterRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-11T16:24:24.686702935Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-11T16:39:07.501999184Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class AuthRegisterRequest {
   public static final String SERIALIZED_NAME_ID_TOKEN = "id_token";
   @SerializedName(SERIALIZED_NAME_ID_TOKEN)
