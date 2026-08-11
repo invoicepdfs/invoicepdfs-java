@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**status** | **Integer** | HTTP status, mirroring the response status line. |  |
 |**code** | **String** |  |  |
 |**message** | **String** |  |  |
 |**requestId** | **String** | Trace id for this request; also returned as X-Trace-Id. |  [optional] |

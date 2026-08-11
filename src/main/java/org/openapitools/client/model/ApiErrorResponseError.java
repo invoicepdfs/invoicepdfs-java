@@ -50,8 +50,12 @@ import com.invoicepdfs.JSON;
 /**
  * ApiErrorResponseError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-11T16:59:42.754951606Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-11T17:58:29.142518814Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ApiErrorResponseError {
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  private Integer status;
+
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
@@ -70,6 +74,25 @@ public class ApiErrorResponseError {
 
   public ApiErrorResponseError() {
   }
+
+  public ApiErrorResponseError status(Integer status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * HTTP status, mirroring the response status line.
+   * @return status
+   */
+  @javax.annotation.Nonnull
+  public Integer getStatus() {
+    return status;
+  }
+
+  public void setStatus(Integer status) {
+    this.status = status;
+  }
+
 
   public ApiErrorResponseError code(String code) {
     this.code = code;
@@ -157,7 +180,8 @@ public class ApiErrorResponseError {
       return false;
     }
     ApiErrorResponseError apiErrorResponseError = (ApiErrorResponseError) o;
-    return Objects.equals(this.code, apiErrorResponseError.code) &&
+    return Objects.equals(this.status, apiErrorResponseError.status) &&
+        Objects.equals(this.code, apiErrorResponseError.code) &&
         Objects.equals(this.message, apiErrorResponseError.message) &&
         Objects.equals(this.requestId, apiErrorResponseError.requestId) &&
         Objects.equals(this.details, apiErrorResponseError.details);
@@ -169,7 +193,7 @@ public class ApiErrorResponseError {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, requestId, details);
+    return Objects.hash(status, code, message, requestId, details);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -183,6 +207,7 @@ public class ApiErrorResponseError {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiErrorResponseError {\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
@@ -209,6 +234,7 @@ public class ApiErrorResponseError {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("status");
     openapiFields.add("code");
     openapiFields.add("message");
     openapiFields.add("request_id");
@@ -216,6 +242,7 @@ public class ApiErrorResponseError {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("status");
     openapiRequiredFields.add("code");
     openapiRequiredFields.add("message");
   }
