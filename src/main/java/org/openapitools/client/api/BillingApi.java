@@ -27,12 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.BillingCheckoutRequest;
 import org.openapitools.client.model.BillingCheckoutResponse;
 import org.openapitools.client.model.BillingPlansListResponse;
 import org.openapitools.client.model.BillingPortalResponse;
 import org.openapitools.client.model.BillingSubscriptionResponse;
-import org.openapitools.client.model.HTTPValidationError;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

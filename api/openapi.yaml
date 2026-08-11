@@ -102,7 +102,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -138,7 +138,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       summary: Register
       tags:
@@ -173,7 +173,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       summary: Token Exchange
       tags:
@@ -222,7 +222,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       summary: Refresh
       tags:
@@ -252,7 +252,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       summary: Forgot Password
       tags:
@@ -282,7 +282,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       summary: Reset Password
       tags:
@@ -328,7 +328,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -362,7 +362,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -394,7 +394,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -432,7 +432,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -467,7 +467,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -511,7 +511,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -549,7 +549,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -583,7 +583,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -615,7 +615,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -661,7 +661,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -709,7 +709,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -743,7 +743,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -775,7 +775,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -813,7 +813,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -847,7 +847,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -880,7 +880,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -918,7 +918,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -963,7 +963,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1001,7 +1001,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1035,7 +1035,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1067,7 +1067,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1113,7 +1113,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1174,7 +1174,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1212,7 +1212,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1246,7 +1246,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1278,7 +1278,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1316,7 +1316,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1350,7 +1350,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1383,7 +1383,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1416,7 +1416,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1449,7 +1449,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1482,7 +1482,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1515,7 +1515,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1548,7 +1548,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1581,7 +1581,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1627,7 +1627,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1667,7 +1667,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1720,7 +1720,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1750,7 +1750,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1781,7 +1781,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1820,7 +1820,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1854,7 +1854,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1892,7 +1892,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1934,7 +1934,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -1985,7 +1985,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2029,7 +2029,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2058,7 +2058,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2088,7 +2088,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2120,7 +2120,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2158,7 +2158,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2192,7 +2192,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2225,7 +2225,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2258,7 +2258,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2304,7 +2304,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2338,7 +2338,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2376,7 +2376,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2418,7 +2418,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2453,7 +2453,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2487,7 +2487,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2540,7 +2540,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2578,7 +2578,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2612,7 +2612,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2644,7 +2644,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2682,7 +2682,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2727,7 +2727,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2756,7 +2756,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2790,7 +2790,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2842,7 +2842,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2875,7 +2875,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2907,7 +2907,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2940,7 +2940,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -2973,7 +2973,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3025,7 +3025,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3054,7 +3054,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3088,7 +3088,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3120,7 +3120,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3158,7 +3158,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3192,7 +3192,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3225,7 +3225,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3277,7 +3277,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3316,7 +3316,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3350,7 +3350,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3382,7 +3382,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3446,7 +3446,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3530,7 +3530,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3574,7 +3574,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3603,7 +3603,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3637,7 +3637,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3669,7 +3669,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3707,7 +3707,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3741,7 +3741,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3775,7 +3775,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3819,7 +3819,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3848,7 +3848,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3882,7 +3882,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3914,7 +3914,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3952,7 +3952,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -3986,7 +3986,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4019,7 +4019,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4052,7 +4052,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4082,7 +4082,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4116,7 +4116,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4149,7 +4149,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4182,7 +4182,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4341,7 +4341,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4379,7 +4379,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4413,7 +4413,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4445,7 +4445,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4491,7 +4491,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4525,7 +4525,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4571,7 +4571,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4613,7 +4613,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4659,7 +4659,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4704,7 +4704,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4733,7 +4733,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4767,7 +4767,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4799,7 +4799,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4837,7 +4837,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4871,7 +4871,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4904,7 +4904,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4948,7 +4948,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -4981,7 +4981,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -5014,7 +5014,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -5083,7 +5083,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -5171,7 +5171,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -5204,7 +5204,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: '#/components/schemas/ApiErrorResponse'
           description: Validation Error
       security:
       - HTTPBearer: []
@@ -8883,31 +8883,6 @@ components:
       - data
       title: FileResponse
       type: object
-    HTTPValidationError:
-      example:
-        detail:
-        - msg: msg
-          loc:
-          - Location_inner
-          - Location_inner
-          input: ""
-          ctx: "{}"
-          type: type
-        - msg: msg
-          loc:
-          - Location_inner
-          - Location_inner
-          input: ""
-          ctx: "{}"
-          type: type
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          title: Detail
-          type: array
-      title: HTTPValidationError
-      type: object
     HealthResponse:
       example:
         service: service
@@ -11545,38 +11520,6 @@ components:
       - data
       title: UsageResponse
       type: object
-    ValidationError:
-      example:
-        msg: msg
-        loc:
-        - Location_inner
-        - Location_inner
-        input: ""
-        ctx: "{}"
-        type: type
-      properties:
-        loc:
-          items:
-            $ref: '#/components/schemas/Location_inner'
-          title: Location
-          type: array
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-        input:
-          title: Input
-        ctx:
-          title: Context
-          type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
-      type: object
     VersionResponse:
       example:
         version: version
@@ -12080,10 +12023,45 @@ components:
       - template
       title: DocumentRenderRequest
       type: object
-    Location_inner:
-      anyOf:
-      - type: string
-      - type: integer
+    ApiErrorResponse:
+      example:
+        error:
+          code: unprocessable_entity
+          details: "{}"
+          message: Request validation failed
+          request_id: request_id
+      properties:
+        error:
+          $ref: '#/components/schemas/ApiErrorResponse_error'
+      required:
+      - error
+      title: ApiErrorResponse
+      type: object
+    ApiErrorResponse_error:
+      example:
+        code: unprocessable_entity
+        details: "{}"
+        message: Request validation failed
+        request_id: request_id
+      properties:
+        code:
+          example: unprocessable_entity
+          type: string
+        message:
+          example: Request validation failed
+          type: string
+        request_id:
+          description: Trace id for this request; also returned as X-Trace-Id.
+          nullable: true
+          type: string
+        details:
+          description: Error-specific context. Validation failures carry `fields`.
+          nullable: true
+          type: object
+      required:
+      - code
+      - message
+      type: object
   securitySchemes:
     HTTPBearer:
       scheme: bearer

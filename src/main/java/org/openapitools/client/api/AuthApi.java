@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.AuthForgotPasswordRequest;
 import org.openapitools.client.model.AuthMePatchRequest;
 import org.openapitools.client.model.AuthMeResponse;
@@ -38,7 +39,6 @@ import org.openapitools.client.model.AuthRegisterResponse;
 import org.openapitools.client.model.AuthResetPasswordRequest;
 import org.openapitools.client.model.AuthTokenRequest;
 import org.openapitools.client.model.AuthTokenResponse;
-import org.openapitools.client.model.HTTPValidationError;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

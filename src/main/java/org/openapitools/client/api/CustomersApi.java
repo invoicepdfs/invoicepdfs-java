@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.CustomerCreate;
 import org.openapitools.client.model.CustomerPatch;
 import org.openapitools.client.model.CustomerResponse;
 import org.openapitools.client.model.CustomersListResponse;
-import org.openapitools.client.model.HTTPValidationError;
 import org.openapitools.client.model.SimpleBoolResponse;
 
 import java.lang.reflect.Type;

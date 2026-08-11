@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.HTTPValidationError;
+import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.TemplateVersionCreateRequest;
 import org.openapitools.client.model.TemplateVersionResponse;
 import org.openapitools.client.model.TemplateVersionsListResponse;

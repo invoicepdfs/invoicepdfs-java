@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.AppSchemasV1DocumentRenderRequest;
 import org.openapitools.client.model.CustomTemplateResponse;
 import org.openapitools.client.model.CustomTemplatesListResponse;
-import org.openapitools.client.model.HTTPValidationError;
 import org.openapitools.client.model.TemplateCreateRequest;
 import org.openapitools.client.model.TemplateDetailResponse;
 import org.openapitools.client.model.TemplatePatchRequest;

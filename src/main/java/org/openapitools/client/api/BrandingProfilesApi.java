@@ -27,12 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.BrandingProfileCreateRequest;
 import org.openapitools.client.model.BrandingProfilePatchRequest;
 import org.openapitools.client.model.BrandingProfileResponse;
 import org.openapitools.client.model.BrandingProfilesListResponse;
 import java.io.File;
-import org.openapitools.client.model.HTTPValidationError;
 import org.openapitools.client.model.SimpleBoolResponse;
 
 import java.lang.reflect.Type;

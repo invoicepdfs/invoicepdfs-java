@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.AppDocumentsSchemasDocumentRenderRequest;
 import org.openapitools.client.model.AppSchemasV1DocumentRenderRequest;
 import org.openapitools.client.model.DeliveriesListResponse;
@@ -40,7 +41,6 @@ import org.openapitools.client.model.DocumentResponse;
 import org.openapitools.client.model.DocumentValidateRequest;
 import org.openapitools.client.model.DocumentValidateResponse;
 import org.openapitools.client.model.DocumentsListResponse;
-import org.openapitools.client.model.HTTPValidationError;
 import org.openapitools.client.model.SimpleBoolResponse;
 
 import java.lang.reflect.Type;
