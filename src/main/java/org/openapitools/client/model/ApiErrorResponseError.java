@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * ApiErrorResponseError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-11T17:58:29.142518814Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-11T19:11:17.476082642Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ApiErrorResponseError {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
