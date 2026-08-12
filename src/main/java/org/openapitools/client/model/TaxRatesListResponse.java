@@ -53,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * TaxRatesListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T01:24:29.464651523Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T04:03:04.904714746Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TaxRatesListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
