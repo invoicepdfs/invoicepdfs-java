@@ -72,7 +72,7 @@ This endpoint does not need any parameter.
 
 <a id="getUsageLimits"></a>
 # **getUsageLimits**
-> Map&lt;String, Object&gt; getUsageLimits()
+> UsageLimitsResponse getUsageLimits()
 
 Get Usage Limits
 
@@ -97,7 +97,7 @@ public class Example {
 
     UsageApi apiInstance = new UsageApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.getUsageLimits();
+      UsageLimitsResponse result = apiInstance.getUsageLimits();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsageApi#getUsageLimits");
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**UsageLimitsResponse**](UsageLimitsResponse.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ This endpoint does not need any parameter.
 
 <a id="listUsageEvents"></a>
 # **listUsageEvents**
-> Map&lt;String, Object&gt; listUsageEvents(limit, cursor)
+> UsageEventsListResponse listUsageEvents(limit, cursor)
 
 List Usage Events
 
@@ -160,7 +160,7 @@ public class Example {
     Integer limit = 50; // Integer | 
     String cursor = "cursor_example"; // String | 
     try {
-      Map<String, Object> result = apiInstance.listUsageEvents(limit, cursor);
+      UsageEventsListResponse result = apiInstance.listUsageEvents(limit, cursor);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsageApi#listUsageEvents");
@@ -182,7 +182,7 @@ public class Example {
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**UsageEventsListResponse**](UsageEventsListResponse.md)
 
 ### Authorization
 

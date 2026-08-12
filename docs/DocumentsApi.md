@@ -227,7 +227,7 @@ public class Example {
 
 <a id="createDocumentRender"></a>
 # **createDocumentRender**
-> Object createDocumentRender(documentId, documentRenderOptions, idempotencyKey)
+> RenderResponse createDocumentRender(documentId, documentRenderOptions, idempotencyKey)
 
 Create Document Render
 
@@ -255,7 +255,7 @@ public class Example {
     DocumentRenderOptions documentRenderOptions = new DocumentRenderOptions(); // DocumentRenderOptions | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      Object result = apiInstance.createDocumentRender(documentId, documentRenderOptions, idempotencyKey);
+      RenderResponse result = apiInstance.createDocumentRender(documentId, documentRenderOptions, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DocumentsApi#createDocumentRender");
@@ -278,7 +278,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**RenderResponse**](RenderResponse.md)
 
 ### Authorization
 
@@ -901,7 +901,7 @@ public class Example {
 
 <a id="renderDocument"></a>
 # **renderDocument**
-> Object renderDocument(documentRenderRequest, idempotencyKey)
+> RenderResponse renderDocument(documentRenderRequest, idempotencyKey)
 
 Render Document
 
@@ -928,7 +928,7 @@ public class Example {
     DocumentRenderRequest documentRenderRequest = new DocumentRenderRequest(); // DocumentRenderRequest | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      Object result = apiInstance.renderDocument(documentRenderRequest, idempotencyKey);
+      RenderResponse result = apiInstance.renderDocument(documentRenderRequest, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DocumentsApi#renderDocument");
@@ -950,7 +950,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**RenderResponse**](RenderResponse.md)
 
 ### Authorization
 
@@ -959,12 +959,12 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/pdf
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="restoreDocument"></a>

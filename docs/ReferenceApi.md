@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 <a id="listCountries"></a>
 # **listCountries**
-> Map&lt;String, Object&gt; listCountries()
+> CountriesListResponse listCountries()
 
 List Countries
 
@@ -34,7 +34,7 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listCountries();
+      CountriesListResponse result = apiInstance.listCountries();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceApi#listCountries");
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**CountriesListResponse**](CountriesListResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ No authorization required
 
 <a id="listCurrencies"></a>
 # **listCurrencies**
-> Map&lt;String, Object&gt; listCurrencies()
+> CurrenciesListResponse listCurrencies()
 
 List Currencies
 
@@ -90,7 +90,7 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listCurrencies();
+      CurrenciesListResponse result = apiInstance.listCurrencies();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceApi#listCurrencies");
@@ -108,7 +108,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**CurrenciesListResponse**](CurrenciesListResponse.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ No authorization required
 
 <a id="listDocumentTypes"></a>
 # **listDocumentTypes**
-> Map&lt;String, Object&gt; listDocumentTypes()
+> DocumentTypesListResponse listDocumentTypes()
 
 List Document Types
 
@@ -148,7 +148,7 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listDocumentTypes();
+      DocumentTypesListResponse result = apiInstance.listDocumentTypes();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceApi#listDocumentTypes");
@@ -166,7 +166,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**DocumentTypesListResponse**](DocumentTypesListResponse.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ No authorization required
 
 <a id="listLocales"></a>
 # **listLocales**
-> Map&lt;String, Object&gt; listLocales()
+> LocalesListResponse listLocales()
 
 List Locales
 
@@ -204,7 +204,7 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listLocales();
+      LocalesListResponse result = apiInstance.listLocales();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceApi#listLocales");
@@ -222,7 +222,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**LocalesListResponse**](LocalesListResponse.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ No authorization required
 
 <a id="listPageSizes"></a>
 # **listPageSizes**
-> Map&lt;String, Object&gt; listPageSizes()
+> PageSizesListResponse listPageSizes()
 
 List Page Sizes
 
@@ -260,7 +260,7 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listPageSizes();
+      PageSizesListResponse result = apiInstance.listPageSizes();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceApi#listPageSizes");
@@ -278,7 +278,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**PageSizesListResponse**](PageSizesListResponse.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ No authorization required
 
 <a id="listTimezones"></a>
 # **listTimezones**
-> Map&lt;String, Object&gt; listTimezones()
+> TimezonesListResponse listTimezones()
 
 List Timezones
 
@@ -316,7 +316,7 @@ public class Example {
 
     ReferenceApi apiInstance = new ReferenceApi(defaultClient);
     try {
-      Map<String, Object> result = apiInstance.listTimezones();
+      TimezonesListResponse result = apiInstance.listTimezones();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceApi#listTimezones");
@@ -334,7 +334,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**TimezonesListResponse**](TimezonesListResponse.md)
 
 ### Authorization
 

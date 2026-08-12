@@ -146,7 +146,7 @@ public class Example {
 
 <a id="downloadBatch"></a>
 # **downloadBatch**
-> Object downloadBatch(batchId)
+> File downloadBatch(batchId)
 
 Download Batch
 
@@ -172,7 +172,7 @@ public class Example {
     BatchesApi apiInstance = new BatchesApi(defaultClient);
     String batchId = "batchId_example"; // String | 
     try {
-      Object result = apiInstance.downloadBatch(batchId);
+      File result = apiInstance.downloadBatch(batchId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BatchesApi#downloadBatch");
@@ -193,7 +193,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**File**](File.md)
 
 ### Authorization
 
@@ -202,12 +202,12 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/zip, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | ZIP archive of every completed render in the batch |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="getBatch"></a>

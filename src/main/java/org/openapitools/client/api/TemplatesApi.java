@@ -31,6 +31,8 @@ import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.CustomTemplateResponse;
 import org.openapitools.client.model.CustomTemplatesListResponse;
 import org.openapitools.client.model.DocumentRenderRequest;
+import java.io.File;
+import org.openapitools.client.model.RenderResponse;
 import org.openapitools.client.model.TemplateCreateRequest;
 import org.openapitools.client.model.TemplateDetailResponse;
 import org.openapitools.client.model.TemplatePatchRequest;
@@ -1094,7 +1096,7 @@ public class TemplatesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered preview. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -1129,7 +1131,8 @@ public class TemplatesApi {
         }
 
         final String[] localVarAccepts = {
-            "application/json"
+            "application/json",
+            "application/pdf"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1170,17 +1173,17 @@ public class TemplatesApi {
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
      * @param idempotencyKey  (optional)
-     * @return Object
+     * @return RenderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered preview. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object previewTemplate(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<Object> localVarResp = previewTemplateWithHttpInfo(templateId, documentRenderRequest, idempotencyKey);
+    public RenderResponse previewTemplate(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<RenderResponse> localVarResp = previewTemplateWithHttpInfo(templateId, documentRenderRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -1190,18 +1193,18 @@ public class TemplatesApi {
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
      * @param idempotencyKey  (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;RenderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered preview. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> previewTemplateWithHttpInfo(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+    public ApiResponse<RenderResponse> previewTemplateWithHttpInfo(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
         okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, idempotencyKey, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1217,14 +1220,14 @@ public class TemplatesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered preview. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call previewTemplateAsync(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call previewTemplateAsync(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback<RenderResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, idempotencyKey, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

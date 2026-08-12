@@ -1621,7 +1621,8 @@ paths:
         "200":
           content:
             application/json:
-              schema: {}
+              schema:
+                $ref: '#/components/schemas/RenderResponse'
           description: Successful Response
         "422":
           content:
@@ -1814,8 +1815,14 @@ paths:
         "200":
           content:
             application/json:
-              schema: {}
-          description: Successful Response
+              schema:
+                $ref: '#/components/schemas/RenderResponse'
+            application/pdf:
+              schema:
+                format: binary
+                type: string
+          description: "The rendered document. Returns the PDF itself instead when\
+            \ `output.delivery` is `binary` or the request sends `Accept: application/pdf`."
         "422":
           content:
             application/json:
@@ -1831,6 +1838,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+      - application/pdf
   /api/v1/documents/{document_id}/attachments:
     get:
       operationId: list_document_attachments
@@ -2298,8 +2306,14 @@ paths:
         "200":
           content:
             application/json:
-              schema: {}
-          description: Successful Response
+              schema:
+                $ref: '#/components/schemas/RenderResponse'
+            application/pdf:
+              schema:
+                format: binary
+                type: string
+          description: "The rendered preview. Returns the PDF itself instead when\
+            \ `output.delivery` is `binary` or the request sends `Accept: application/pdf`."
         "422":
           content:
             application/json:
@@ -2315,6 +2329,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+      - application/pdf
   /api/v1/templates/{template_id}/versions:
     get:
       operationId: list_template_versions
@@ -2445,9 +2460,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response Get Render
-                type: object
+                $ref: '#/components/schemas/RenderResponse'
           description: Successful Response
         "422":
           content:
@@ -2900,9 +2913,11 @@ paths:
       responses:
         "200":
           content:
-            application/json:
-              schema: {}
-          description: Successful Response
+            application/zip:
+              schema:
+                format: binary
+                type: string
+          description: ZIP archive of every completed render in the batch
         "422":
           content:
             application/json:
@@ -2917,6 +2932,7 @@ paths:
       x-visibility: public
       x-accepts:
       - application/json
+      - application/zip
   /api/v1/deliveries/{delivery_id}:
     get:
       operationId: get_delivery
@@ -3438,9 +3454,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response List Usage Events
-                type: object
+                $ref: '#/components/schemas/UsageEventsListResponse'
           description: Successful Response
         "422":
           content:
@@ -3464,9 +3478,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response Get Usage Limits
-                type: object
+                $ref: '#/components/schemas/UsageLimitsResponse'
           description: Successful Response
       security:
       - HTTPBearer: []
@@ -4200,9 +4212,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response List Currencies
-                type: object
+                $ref: '#/components/schemas/CurrenciesListResponse'
           description: Successful Response
       summary: List Currencies
       tags:
@@ -4218,9 +4228,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response List Countries
-                type: object
+                $ref: '#/components/schemas/CountriesListResponse'
           description: Successful Response
       summary: List Countries
       tags:
@@ -4236,9 +4244,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response List Locales
-                type: object
+                $ref: '#/components/schemas/LocalesListResponse'
           description: Successful Response
       summary: List Locales
       tags:
@@ -4254,9 +4260,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response List Timezones
-                type: object
+                $ref: '#/components/schemas/TimezonesListResponse'
           description: Successful Response
       summary: List Timezones
       tags:
@@ -4272,9 +4276,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response List Page Sizes
-                type: object
+                $ref: '#/components/schemas/PageSizesListResponse'
           description: Successful Response
       summary: List Page Sizes
       tags:
@@ -4296,9 +4298,7 @@ paths:
           content:
             application/json:
               schema:
-                additionalProperties: true
-                title: Response List Document Types
-                type: object
+                $ref: '#/components/schemas/DocumentTypesListResponse'
           description: Successful Response
       summary: List Document Types
       tags:
@@ -6804,6 +6804,86 @@ components:
       - total
       title: CalculationBreakdown
       type: object
+    CountriesListResponse:
+      example:
+        data:
+        - code: code
+          name: name
+        - code: code
+          name: name
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/CountryOut'
+          title: Data
+          type: array
+      required:
+      - data
+      title: CountriesListResponse
+      type: object
+    CountryOut:
+      example:
+        code: code
+        name: name
+      properties:
+        code:
+          title: Code
+          type: string
+        name:
+          title: Name
+          type: string
+      required:
+      - code
+      - name
+      title: CountryOut
+      type: object
+    CurrenciesListResponse:
+      example:
+        data:
+        - symbol: symbol
+          code: code
+          decimals: 0
+          name: name
+        - symbol: symbol
+          code: code
+          decimals: 0
+          name: name
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/CurrencyOut'
+          title: Data
+          type: array
+      required:
+      - data
+      title: CurrenciesListResponse
+      type: object
+    CurrencyOut:
+      example:
+        symbol: symbol
+        code: code
+        decimals: 0
+        name: name
+      properties:
+        code:
+          title: Code
+          type: string
+        name:
+          title: Name
+          type: string
+        symbol:
+          title: Symbol
+          type: string
+        decimals:
+          title: Decimals
+          type: integer
+      required:
+      - code
+      - decimals
+      - name
+      - symbol
+      title: CurrencyOut
+      type: object
     CursorPagination:
       example:
         next_cursor: next_cursor
@@ -8783,6 +8863,92 @@ components:
       - id
       title: DocumentTemplateRef
       type: object
+    DocumentTypeOut:
+      example:
+        payable: true
+        name: name
+        requires_source_document: true
+        supports_reason: true
+        id: id
+        line_item_type: standard
+        number_prefix: number_prefix
+        actions:
+        - actions
+        - actions
+      properties:
+        id:
+          title: Id
+          type: string
+        name:
+          title: Name
+          type: string
+        number_prefix:
+          title: Number Prefix
+          type: string
+        payable:
+          title: Payable
+          type: boolean
+        requires_source_document:
+          title: Requires Source Document
+          type: boolean
+        supports_reason:
+          title: Supports Reason
+          type: boolean
+        line_item_type:
+          enum:
+          - standard
+          - shipped
+          title: Line Item Type
+          type: string
+        actions:
+          items:
+            type: string
+          title: Actions
+          type: array
+      required:
+      - actions
+      - id
+      - line_item_type
+      - name
+      - number_prefix
+      - payable
+      - requires_source_document
+      - supports_reason
+      title: DocumentTypeOut
+      type: object
+    DocumentTypesListResponse:
+      example:
+        data:
+        - payable: true
+          name: name
+          requires_source_document: true
+          supports_reason: true
+          id: id
+          line_item_type: standard
+          number_prefix: number_prefix
+          actions:
+          - actions
+          - actions
+        - payable: true
+          name: name
+          requires_source_document: true
+          supports_reason: true
+          id: id
+          line_item_type: standard
+          number_prefix: number_prefix
+          actions:
+          - actions
+          - actions
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DocumentTypeOut'
+          title: Data
+          type: array
+      required:
+      - data
+      title: DocumentTypesListResponse
+      type: object
     DocumentValidateRequest:
       example:
         data:
@@ -10130,6 +10296,39 @@ components:
           type: boolean
       title: LineItemTaxInput
       type: object
+    LocaleOut:
+      example:
+        code: code
+        name: name
+      properties:
+        code:
+          title: Code
+          type: string
+        name:
+          title: Name
+          type: string
+      required:
+      - code
+      - name
+      title: LocaleOut
+      type: object
+    LocalesListResponse:
+      example:
+        data:
+        - code: code
+          name: name
+        - code: code
+          name: name
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/LocaleOut'
+          title: Data
+          type: array
+      required:
+      - data
+      title: LocalesListResponse
+      type: object
     Money:
       example:
         amount: amount
@@ -10380,6 +10579,53 @@ components:
       required:
       - data
       title: NumberingSequencesListResponse
+      type: object
+    PageSizeOut:
+      example:
+        name: name
+        id: id
+        width_mm: 0.8008281904610115
+        height_mm: 6.027456183070403
+      properties:
+        id:
+          title: Id
+          type: string
+        name:
+          title: Name
+          type: string
+        width_mm:
+          title: Width Mm
+          type: number
+        height_mm:
+          title: Height Mm
+          type: number
+      required:
+      - height_mm
+      - id
+      - name
+      - width_mm
+      title: PageSizeOut
+      type: object
+    PageSizesListResponse:
+      example:
+        data:
+        - name: name
+          id: id
+          width_mm: 0.8008281904610115
+          height_mm: 6.027456183070403
+        - name: name
+          id: id
+          width_mm: 0.8008281904610115
+          height_mm: 6.027456183070403
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PageSizeOut'
+          title: Data
+          type: array
+      required:
+      - data
+      title: PageSizesListResponse
       type: object
     PaymentCreateRequest:
       example:
@@ -11047,6 +11293,111 @@ components:
       - pagination
       title: RecurringInvoicesListResponse
       type: object
+    RenderOut:
+      example:
+        calculation:
+          discount_total:
+            amount: amount
+            currency: currency
+          total:
+            amount: amount
+            currency: currency
+          tax_total:
+            amount: amount
+            currency: currency
+          shipping_total:
+            amount: amount
+            currency: currency
+          subtotal:
+            amount: amount
+            currency: currency
+        expires_at: expires_at
+        format: pdf
+        download_url: download_url
+        created_at: created_at
+        id: id
+        status: completed
+        document_type: invoice
+      properties:
+        id:
+          title: Id
+          type: string
+        status:
+          enum:
+          - completed
+          title: Status
+          type: string
+        document_type:
+          enum:
+          - invoice
+          - credit_note
+          - quote
+          - receipt
+          - proforma
+          - purchase_order
+          - delivery_note
+          title: Document Type
+          type: string
+        format:
+          enum:
+          - pdf
+          title: Format
+          type: string
+        download_url:
+          title: Download Url
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+        calculation:
+          $ref: '#/components/schemas/CalculationBreakdown'
+        created_at:
+          title: Created At
+          type: string
+      required:
+      - calculation
+      - created_at
+      - document_type
+      - download_url
+      - expires_at
+      - format
+      - id
+      - status
+      title: RenderOut
+      type: object
+    RenderResponse:
+      example:
+        data:
+          calculation:
+            discount_total:
+              amount: amount
+              currency: currency
+            total:
+              amount: amount
+              currency: currency
+            tax_total:
+              amount: amount
+              currency: currency
+            shipping_total:
+              amount: amount
+              currency: currency
+            subtotal:
+              amount: amount
+              currency: currency
+          expires_at: expires_at
+          format: pdf
+          download_url: download_url
+          created_at: created_at
+          id: id
+          status: completed
+          document_type: invoice
+      properties:
+        data:
+          $ref: '#/components/schemas/RenderOut'
+      required:
+      - data
+      title: RenderResponse
+      type: object
     SimpleBoolResponse:
       description: |-
         Generic boolean response envelope.
@@ -11654,6 +12005,39 @@ components:
       - data
       title: TemplatesListResponse
       type: object
+    TimezoneOut:
+      example:
+        offset: offset
+        name: name
+      properties:
+        name:
+          title: Name
+          type: string
+        offset:
+          title: Offset
+          type: string
+      required:
+      - name
+      - offset
+      title: TimezoneOut
+      type: object
+    TimezonesListResponse:
+      example:
+        data:
+        - offset: offset
+          name: name
+        - offset: offset
+          name: name
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/TimezoneOut'
+          title: Data
+          type: array
+      required:
+      - data
+      title: TimezonesListResponse
+      type: object
     UsageData:
       example:
         renders:
@@ -11672,6 +12056,85 @@ components:
       - renders
       title: UsageData
       type: object
+    UsageEventOut:
+      example:
+        render_id: render_id
+        created_at: created_at
+        id: id
+      properties:
+        id:
+          title: Id
+          type: string
+        render_id:
+          title: Render Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+      required:
+      - created_at
+      - id
+      - render_id
+      title: UsageEventOut
+      type: object
+    UsageEventsListResponse:
+      example:
+        pagination:
+          next_cursor: next_cursor
+          has_more: false
+        data:
+        - render_id: render_id
+          created_at: created_at
+          id: id
+        - render_id: render_id
+          created_at: created_at
+          id: id
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/UsageEventOut'
+          title: Data
+          type: array
+        pagination:
+          $ref: '#/components/schemas/CursorPagination'
+      required:
+      - data
+      title: UsageEventsListResponse
+      type: object
+    UsageLimitsData:
+      example:
+        renders:
+          limit: 6
+          used: 0
+          remaining: 1
+        rate_limit:
+          requests_per_second: 5
+      properties:
+        renders:
+          $ref: '#/components/schemas/UsageRenderLimits'
+        rate_limit:
+          $ref: '#/components/schemas/UsageRateLimit'
+      required:
+      - rate_limit
+      - renders
+      title: UsageLimitsData
+      type: object
+    UsageLimitsResponse:
+      example:
+        data:
+          renders:
+            limit: 6
+            used: 0
+            remaining: 1
+          rate_limit:
+            requests_per_second: 5
+      properties:
+        data:
+          $ref: '#/components/schemas/UsageLimitsData'
+      required:
+      - data
+      title: UsageLimitsResponse
+      type: object
     UsagePeriod:
       example:
         start: start
@@ -11687,6 +12150,38 @@ components:
       - end
       - start
       title: UsagePeriod
+      type: object
+    UsageRateLimit:
+      example:
+        requests_per_second: 5
+      properties:
+        requests_per_second:
+          title: Requests Per Second
+          type: integer
+      required:
+      - requests_per_second
+      title: UsageRateLimit
+      type: object
+    UsageRenderLimits:
+      example:
+        limit: 6
+        used: 0
+        remaining: 1
+      properties:
+        used:
+          title: Used
+          type: integer
+        limit:
+          title: Limit
+          type: integer
+        remaining:
+          title: Remaining
+          type: integer
+      required:
+      - limit
+      - remaining
+      - used
+      title: UsageRenderLimits
       type: object
     UsageRenders:
       example:

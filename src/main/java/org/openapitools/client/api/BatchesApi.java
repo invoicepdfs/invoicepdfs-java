@@ -32,6 +32,7 @@ import org.openapitools.client.model.BatchCreateRequest;
 import org.openapitools.client.model.BatchItemsListResponse;
 import org.openapitools.client.model.BatchResponse;
 import org.openapitools.client.model.BatchesListResponse;
+import java.io.File;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -339,7 +340,7 @@ public class BatchesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> ZIP archive of every completed render in the batch </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -370,6 +371,7 @@ public class BatchesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/zip",
             "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
@@ -403,17 +405,17 @@ public class BatchesApi {
      * Download Batch
      * 
      * @param batchId  (required)
-     * @return Object
+     * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> ZIP archive of every completed render in the batch </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object downloadBatch(String batchId) throws ApiException {
-        ApiResponse<Object> localVarResp = downloadBatchWithHttpInfo(batchId);
+    public File downloadBatch(String batchId) throws ApiException {
+        ApiResponse<File> localVarResp = downloadBatchWithHttpInfo(batchId);
         return localVarResp.getData();
     }
 
@@ -421,18 +423,18 @@ public class BatchesApi {
      * Download Batch
      * 
      * @param batchId  (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> ZIP archive of every completed render in the batch </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> downloadBatchWithHttpInfo(String batchId) throws ApiException {
+    public ApiResponse<File> downloadBatchWithHttpInfo(String batchId) throws ApiException {
         okhttp3.Call localVarCall = downloadBatchValidateBeforeCall(batchId, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -446,14 +448,14 @@ public class BatchesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> ZIP archive of every completed render in the batch </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadBatchAsync(String batchId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call downloadBatchAsync(String batchId, final ApiCallback<File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadBatchValidateBeforeCall(batchId, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

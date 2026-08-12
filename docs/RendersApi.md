@@ -76,7 +76,7 @@ public class Example {
 
 <a id="getRender"></a>
 # **getRender**
-> Map&lt;String, Object&gt; getRender(renderId)
+> RenderResponse getRender(renderId)
 
 Get Render
 
@@ -102,7 +102,7 @@ public class Example {
     RendersApi apiInstance = new RendersApi(defaultClient);
     String renderId = "renderId_example"; // String | 
     try {
-      Map<String, Object> result = apiInstance.getRender(renderId);
+      RenderResponse result = apiInstance.getRender(renderId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RendersApi#getRender");
@@ -123,7 +123,7 @@ public class Example {
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**RenderResponse**](RenderResponse.md)
 
 ### Authorization
 

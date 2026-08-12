@@ -543,7 +543,7 @@ This endpoint does not need any parameter.
 
 <a id="previewTemplate"></a>
 # **previewTemplate**
-> Object previewTemplate(templateId, documentRenderRequest, idempotencyKey)
+> RenderResponse previewTemplate(templateId, documentRenderRequest, idempotencyKey)
 
 Preview Template
 
@@ -571,7 +571,7 @@ public class Example {
     DocumentRenderRequest documentRenderRequest = new DocumentRenderRequest(); // DocumentRenderRequest | 
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      Object result = apiInstance.previewTemplate(templateId, documentRenderRequest, idempotencyKey);
+      RenderResponse result = apiInstance.previewTemplate(templateId, documentRenderRequest, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplatesApi#previewTemplate");
@@ -594,7 +594,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**RenderResponse**](RenderResponse.md)
 
 ### Authorization
 
@@ -603,12 +603,12 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/pdf
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | The rendered preview. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="publishTemplate"></a>

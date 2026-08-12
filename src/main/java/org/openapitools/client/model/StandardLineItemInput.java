@@ -54,7 +54,7 @@ import com.invoicepdfs.JSON;
 /**
  * A fully priced line: unit, price, tax, discount and SKU.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-11T23:17:57.866587916Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T01:24:29.464651523Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class StandardLineItemInput {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

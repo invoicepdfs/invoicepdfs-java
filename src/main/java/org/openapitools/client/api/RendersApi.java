@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import org.openapitools.client.model.ApiErrorResponse;
 import java.io.File;
+import org.openapitools.client.model.RenderResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -274,7 +275,7 @@ public class RendersApi {
      * Get Render
      * 
      * @param renderId  (required)
-     * @return Map&lt;String, Object&gt;
+     * @return RenderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -283,8 +284,8 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> getRender(String renderId) throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = getRenderWithHttpInfo(renderId);
+    public RenderResponse getRender(String renderId) throws ApiException {
+        ApiResponse<RenderResponse> localVarResp = getRenderWithHttpInfo(renderId);
         return localVarResp.getData();
     }
 
@@ -292,7 +293,7 @@ public class RendersApi {
      * Get Render
      * 
      * @param renderId  (required)
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;RenderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -301,9 +302,9 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> getRenderWithHttpInfo(String renderId) throws ApiException {
+    public ApiResponse<RenderResponse> getRenderWithHttpInfo(String renderId) throws ApiException {
         okhttp3.Call localVarCall = getRenderValidateBeforeCall(renderId, null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -321,10 +322,10 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRenderAsync(String renderId, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call getRenderAsync(String renderId, final ApiCallback<RenderResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRenderValidateBeforeCall(renderId, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -41,6 +41,8 @@ import org.openapitools.client.model.DocumentResponse;
 import org.openapitools.client.model.DocumentValidateRequest;
 import org.openapitools.client.model.DocumentValidateResponse;
 import org.openapitools.client.model.DocumentsListResponse;
+import java.io.File;
+import org.openapitools.client.model.RenderResponse;
 import org.openapitools.client.model.SimpleBoolResponse;
 
 import java.lang.reflect.Type;
@@ -562,7 +564,7 @@ public class DocumentsApi {
      * @param documentId  (required)
      * @param documentRenderOptions  (required)
      * @param idempotencyKey  (optional)
-     * @return Object
+     * @return RenderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -571,8 +573,8 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createDocumentRender(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey) throws ApiException {
-        ApiResponse<Object> localVarResp = createDocumentRenderWithHttpInfo(documentId, documentRenderOptions, idempotencyKey);
+    public RenderResponse createDocumentRender(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey) throws ApiException {
+        ApiResponse<RenderResponse> localVarResp = createDocumentRenderWithHttpInfo(documentId, documentRenderOptions, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -582,7 +584,7 @@ public class DocumentsApi {
      * @param documentId  (required)
      * @param documentRenderOptions  (required)
      * @param idempotencyKey  (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;RenderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -591,9 +593,9 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createDocumentRenderWithHttpInfo(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey) throws ApiException {
+    public ApiResponse<RenderResponse> createDocumentRenderWithHttpInfo(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey) throws ApiException {
         okhttp3.Call localVarCall = createDocumentRenderValidateBeforeCall(documentId, documentRenderOptions, idempotencyKey, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -613,10 +615,10 @@ public class DocumentsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDocumentRenderAsync(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createDocumentRenderAsync(String documentId, DocumentRenderOptions documentRenderOptions, String idempotencyKey, final ApiCallback<RenderResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createDocumentRenderValidateBeforeCall(documentId, documentRenderOptions, idempotencyKey, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1811,7 +1813,7 @@ public class DocumentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -1845,7 +1847,8 @@ public class DocumentsApi {
         }
 
         final String[] localVarAccepts = {
-            "application/json"
+            "application/json",
+            "application/pdf"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1880,17 +1883,17 @@ public class DocumentsApi {
      * 
      * @param documentRenderRequest  (required)
      * @param idempotencyKey  (optional)
-     * @return Object
+     * @return RenderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object renderDocument(DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<Object> localVarResp = renderDocumentWithHttpInfo(documentRenderRequest, idempotencyKey);
+    public RenderResponse renderDocument(DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+        ApiResponse<RenderResponse> localVarResp = renderDocumentWithHttpInfo(documentRenderRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -1899,18 +1902,18 @@ public class DocumentsApi {
      * 
      * @param documentRenderRequest  (required)
      * @param idempotencyKey  (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;RenderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> renderDocumentWithHttpInfo(DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
+    public ApiResponse<RenderResponse> renderDocumentWithHttpInfo(DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
         okhttp3.Call localVarCall = renderDocumentValidateBeforeCall(documentRenderRequest, idempotencyKey, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1925,14 +1928,14 @@ public class DocumentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call renderDocumentAsync(DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call renderDocumentAsync(DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback<RenderResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = renderDocumentValidateBeforeCall(documentRenderRequest, idempotencyKey, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

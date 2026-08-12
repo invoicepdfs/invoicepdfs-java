@@ -28,6 +28,8 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ApiErrorResponse;
+import org.openapitools.client.model.UsageEventsListResponse;
+import org.openapitools.client.model.UsageLimitsResponse;
 import org.openapitools.client.model.UsageResponse;
 
 import java.lang.reflect.Type;
@@ -250,7 +252,7 @@ public class UsageApi {
     /**
      * Get Usage Limits
      * 
-     * @return Map&lt;String, Object&gt;
+     * @return UsageLimitsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -258,15 +260,15 @@ public class UsageApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> getUsageLimits() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = getUsageLimitsWithHttpInfo();
+    public UsageLimitsResponse getUsageLimits() throws ApiException {
+        ApiResponse<UsageLimitsResponse> localVarResp = getUsageLimitsWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * Get Usage Limits
      * 
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;UsageLimitsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -274,9 +276,9 @@ public class UsageApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> getUsageLimitsWithHttpInfo() throws ApiException {
+    public ApiResponse<UsageLimitsResponse> getUsageLimitsWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getUsageLimitsValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UsageLimitsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -292,10 +294,10 @@ public class UsageApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUsageLimitsAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call getUsageLimitsAsync(final ApiCallback<UsageLimitsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUsageLimitsValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UsageLimitsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -376,7 +378,7 @@ public class UsageApi {
      * 
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
-     * @return Map&lt;String, Object&gt;
+     * @return UsageEventsListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -385,8 +387,8 @@ public class UsageApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listUsageEvents(Integer limit, String cursor) throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listUsageEventsWithHttpInfo(limit, cursor);
+    public UsageEventsListResponse listUsageEvents(Integer limit, String cursor) throws ApiException {
+        ApiResponse<UsageEventsListResponse> localVarResp = listUsageEventsWithHttpInfo(limit, cursor);
         return localVarResp.getData();
     }
 
@@ -395,7 +397,7 @@ public class UsageApi {
      * 
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;UsageEventsListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -404,9 +406,9 @@ public class UsageApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listUsageEventsWithHttpInfo(Integer limit, String cursor) throws ApiException {
+    public ApiResponse<UsageEventsListResponse> listUsageEventsWithHttpInfo(Integer limit, String cursor) throws ApiException {
         okhttp3.Call localVarCall = listUsageEventsValidateBeforeCall(limit, cursor, null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UsageEventsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -425,10 +427,10 @@ public class UsageApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsageEventsAsync(Integer limit, String cursor, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listUsageEventsAsync(Integer limit, String cursor, final ApiCallback<UsageEventsListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listUsageEventsValidateBeforeCall(limit, cursor, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UsageEventsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

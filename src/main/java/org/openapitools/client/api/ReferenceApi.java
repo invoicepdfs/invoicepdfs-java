@@ -27,6 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CountriesListResponse;
+import org.openapitools.client.model.CurrenciesListResponse;
+import org.openapitools.client.model.DocumentTypesListResponse;
+import org.openapitools.client.model.LocalesListResponse;
+import org.openapitools.client.model.PageSizesListResponse;
+import org.openapitools.client.model.TimezonesListResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -135,7 +141,7 @@ public class ReferenceApi {
     /**
      * List Countries
      * 
-     * @return Map&lt;String, Object&gt;
+     * @return CountriesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -143,15 +149,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listCountries() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listCountriesWithHttpInfo();
+    public CountriesListResponse listCountries() throws ApiException {
+        ApiResponse<CountriesListResponse> localVarResp = listCountriesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List Countries
      * 
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;CountriesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -159,9 +165,9 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listCountriesWithHttpInfo() throws ApiException {
+    public ApiResponse<CountriesListResponse> listCountriesWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = listCountriesValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<CountriesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -177,10 +183,10 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCountriesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listCountriesAsync(final ApiCallback<CountriesListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCountriesValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<CountriesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -248,7 +254,7 @@ public class ReferenceApi {
     /**
      * List Currencies
      * 
-     * @return Map&lt;String, Object&gt;
+     * @return CurrenciesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -256,15 +262,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listCurrencies() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listCurrenciesWithHttpInfo();
+    public CurrenciesListResponse listCurrencies() throws ApiException {
+        ApiResponse<CurrenciesListResponse> localVarResp = listCurrenciesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List Currencies
      * 
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;CurrenciesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -272,9 +278,9 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listCurrenciesWithHttpInfo() throws ApiException {
+    public ApiResponse<CurrenciesListResponse> listCurrenciesWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = listCurrenciesValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrenciesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -290,10 +296,10 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCurrenciesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listCurrenciesAsync(final ApiCallback<CurrenciesListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCurrenciesValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrenciesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -361,7 +367,7 @@ public class ReferenceApi {
     /**
      * List Document Types
      * List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (&#x60;&#x60;standard&#x60;&#x60; &#x3D; priced, &#x60;&#x60;shipped&#x60;&#x60; &#x3D; quantities only), and the lifecycle actions available to it.
-     * @return Map&lt;String, Object&gt;
+     * @return DocumentTypesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -369,15 +375,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listDocumentTypes() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listDocumentTypesWithHttpInfo();
+    public DocumentTypesListResponse listDocumentTypes() throws ApiException {
+        ApiResponse<DocumentTypesListResponse> localVarResp = listDocumentTypesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List Document Types
      * List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (&#x60;&#x60;standard&#x60;&#x60; &#x3D; priced, &#x60;&#x60;shipped&#x60;&#x60; &#x3D; quantities only), and the lifecycle actions available to it.
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;DocumentTypesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -385,9 +391,9 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listDocumentTypesWithHttpInfo() throws ApiException {
+    public ApiResponse<DocumentTypesListResponse> listDocumentTypesWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = listDocumentTypesValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<DocumentTypesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -403,10 +409,10 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentTypesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listDocumentTypesAsync(final ApiCallback<DocumentTypesListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listDocumentTypesValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<DocumentTypesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -474,7 +480,7 @@ public class ReferenceApi {
     /**
      * List Locales
      * 
-     * @return Map&lt;String, Object&gt;
+     * @return LocalesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -482,15 +488,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listLocales() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listLocalesWithHttpInfo();
+    public LocalesListResponse listLocales() throws ApiException {
+        ApiResponse<LocalesListResponse> localVarResp = listLocalesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List Locales
      * 
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;LocalesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -498,9 +504,9 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listLocalesWithHttpInfo() throws ApiException {
+    public ApiResponse<LocalesListResponse> listLocalesWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = listLocalesValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<LocalesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -516,10 +522,10 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLocalesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listLocalesAsync(final ApiCallback<LocalesListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listLocalesValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<LocalesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -587,7 +593,7 @@ public class ReferenceApi {
     /**
      * List Page Sizes
      * 
-     * @return Map&lt;String, Object&gt;
+     * @return PageSizesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -595,15 +601,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listPageSizes() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listPageSizesWithHttpInfo();
+    public PageSizesListResponse listPageSizes() throws ApiException {
+        ApiResponse<PageSizesListResponse> localVarResp = listPageSizesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List Page Sizes
      * 
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;PageSizesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -611,9 +617,9 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listPageSizesWithHttpInfo() throws ApiException {
+    public ApiResponse<PageSizesListResponse> listPageSizesWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = listPageSizesValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<PageSizesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -629,10 +635,10 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPageSizesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listPageSizesAsync(final ApiCallback<PageSizesListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPageSizesValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<PageSizesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -700,7 +706,7 @@ public class ReferenceApi {
     /**
      * List Timezones
      * 
-     * @return Map&lt;String, Object&gt;
+     * @return TimezonesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -708,15 +714,15 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> listTimezones() throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = listTimezonesWithHttpInfo();
+    public TimezonesListResponse listTimezones() throws ApiException {
+        ApiResponse<TimezonesListResponse> localVarResp = listTimezonesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List Timezones
      * 
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;TimezonesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -724,9 +730,9 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> listTimezonesWithHttpInfo() throws ApiException {
+    public ApiResponse<TimezonesListResponse> listTimezonesWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = listTimezonesValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<TimezonesListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -742,10 +748,10 @@ public class ReferenceApi {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTimezonesAsync(final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call listTimezonesAsync(final ApiCallback<TimezonesListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTimezonesValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<TimezonesListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
