@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * Render options for an already-stored document (&#x60;&#x60;POST /documents/{id}/renders&#x60;&#x60;).  Distinct from &#x60;&#x60;app.schemas.v1.DocumentRenderRequest&#x60;&#x60;, which carries a full inline document for the stateless &#x60;&#x60;POST /documents/render&#x60;&#x60;. Two classes sharing one name made FastAPI fall back to module-qualified schema names in the spec (&#x60;&#x60;app__documents__schemas__DocumentRenderRequest&#x60;&#x60;), which the SDK generators turned into &#x60;&#x60;AppDocumentsSchemasDocumentRenderRequest&#x60;&#x60;.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T04:03:04.904714746Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T21:07:01.111249349Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentRenderOptions {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)

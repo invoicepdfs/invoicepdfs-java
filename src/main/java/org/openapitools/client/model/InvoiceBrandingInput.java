@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceBrandingInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T04:03:04.904714746Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T21:07:01.111249349Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceBrandingInput {
   public static final String SERIALIZED_NAME_LOGO_FILE_ID = "logo_file_id";
   @SerializedName(SERIALIZED_NAME_LOGO_FILE_ID)
