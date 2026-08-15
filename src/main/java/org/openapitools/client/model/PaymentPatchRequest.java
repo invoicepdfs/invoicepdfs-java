@@ -51,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * PaymentPatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T21:07:01.111249349Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-15T20:09:18.446452209Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class PaymentPatchRequest {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
