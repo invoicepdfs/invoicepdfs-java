@@ -52,14 +52,26 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentRenderRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-17T07:37:17.757199688Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-17T16:24:10.540041690Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentRenderRequest {
   /**
    * Gets or Sets documentType
    */
   @JsonAdapter(DocumentTypeEnum.Adapter.class)
   public enum DocumentTypeEnum {
-    INVOICE("invoice");
+    INVOICE("invoice"),
+    
+    CREDIT_NOTE("credit_note"),
+    
+    QUOTE("quote"),
+    
+    RECEIPT("receipt"),
+    
+    PROFORMA("proforma"),
+    
+    PURCHASE_ORDER("purchase_order"),
+    
+    DELIVERY_NOTE("delivery_note");
 
     private String value;
 

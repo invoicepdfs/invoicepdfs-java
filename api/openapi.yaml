@@ -7642,6 +7642,12 @@ components:
           default: invoice
           enum:
           - invoice
+          - credit_note
+          - quote
+          - receipt
+          - proforma
+          - purchase_order
+          - delivery_note
           title: Document Type
           type: string
         data:
@@ -8779,6 +8785,12 @@ components:
           default: invoice
           enum:
           - invoice
+          - credit_note
+          - quote
+          - receipt
+          - proforma
+          - purchase_order
+          - delivery_note
           title: Document Type
           type: string
         data:
@@ -9097,6 +9109,12 @@ components:
           default: invoice
           enum:
           - invoice
+          - credit_note
+          - quote
+          - receipt
+          - proforma
+          - purchase_order
+          - delivery_note
           title: Document Type
           type: string
         data:
