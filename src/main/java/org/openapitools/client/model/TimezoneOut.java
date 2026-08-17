@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * TimezoneOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-17T06:32:46.451586170Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-17T07:37:17.757199688Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TimezoneOut {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
