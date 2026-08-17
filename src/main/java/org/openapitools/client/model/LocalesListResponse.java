@@ -52,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * LocalesListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-15T20:09:18.446452209Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-17T06:32:46.451586170Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class LocalesListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
