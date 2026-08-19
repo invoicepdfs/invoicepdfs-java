@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * CurrencyOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T16:36:22.681544038Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T18:36:35.971122079Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CurrencyOut {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
