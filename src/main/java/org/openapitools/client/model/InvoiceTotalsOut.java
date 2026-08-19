@@ -50,8 +50,12 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceTotalsOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T18:36:35.971122079Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T19:27:34.992885427Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceTotalsOut {
+  public static final String SERIALIZED_NAME_GROSS_SUBTOTAL = "gross_subtotal";
+  @SerializedName(SERIALIZED_NAME_GROSS_SUBTOTAL)
+  private MoneyOut grossSubtotal;
+
   public static final String SERIALIZED_NAME_SUBTOTAL = "subtotal";
   @SerializedName(SERIALIZED_NAME_SUBTOTAL)
   private MoneyOut subtotal;
@@ -59,6 +63,10 @@ public class InvoiceTotalsOut {
   public static final String SERIALIZED_NAME_DISCOUNT_TOTAL = "discount_total";
   @SerializedName(SERIALIZED_NAME_DISCOUNT_TOTAL)
   private MoneyOut discountTotal;
+
+  public static final String SERIALIZED_NAME_DOCUMENT_DISCOUNT_TOTAL = "document_discount_total";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_DISCOUNT_TOTAL)
+  private MoneyOut documentDiscountTotal;
 
   public static final String SERIALIZED_NAME_TAX_TOTAL = "tax_total";
   @SerializedName(SERIALIZED_NAME_TAX_TOTAL)
@@ -74,6 +82,25 @@ public class InvoiceTotalsOut {
 
   public InvoiceTotalsOut() {
   }
+
+  public InvoiceTotalsOut grossSubtotal(MoneyOut grossSubtotal) {
+    this.grossSubtotal = grossSubtotal;
+    return this;
+  }
+
+  /**
+   * Get grossSubtotal
+   * @return grossSubtotal
+   */
+  @javax.annotation.Nullable
+  public MoneyOut getGrossSubtotal() {
+    return grossSubtotal;
+  }
+
+  public void setGrossSubtotal(MoneyOut grossSubtotal) {
+    this.grossSubtotal = grossSubtotal;
+  }
+
 
   public InvoiceTotalsOut subtotal(MoneyOut subtotal) {
     this.subtotal = subtotal;
@@ -110,6 +137,25 @@ public class InvoiceTotalsOut {
 
   public void setDiscountTotal(MoneyOut discountTotal) {
     this.discountTotal = discountTotal;
+  }
+
+
+  public InvoiceTotalsOut documentDiscountTotal(MoneyOut documentDiscountTotal) {
+    this.documentDiscountTotal = documentDiscountTotal;
+    return this;
+  }
+
+  /**
+   * Get documentDiscountTotal
+   * @return documentDiscountTotal
+   */
+  @javax.annotation.Nullable
+  public MoneyOut getDocumentDiscountTotal() {
+    return documentDiscountTotal;
+  }
+
+  public void setDocumentDiscountTotal(MoneyOut documentDiscountTotal) {
+    this.documentDiscountTotal = documentDiscountTotal;
   }
 
 
@@ -180,8 +226,10 @@ public class InvoiceTotalsOut {
       return false;
     }
     InvoiceTotalsOut invoiceTotalsOut = (InvoiceTotalsOut) o;
-    return Objects.equals(this.subtotal, invoiceTotalsOut.subtotal) &&
+    return Objects.equals(this.grossSubtotal, invoiceTotalsOut.grossSubtotal) &&
+        Objects.equals(this.subtotal, invoiceTotalsOut.subtotal) &&
         Objects.equals(this.discountTotal, invoiceTotalsOut.discountTotal) &&
+        Objects.equals(this.documentDiscountTotal, invoiceTotalsOut.documentDiscountTotal) &&
         Objects.equals(this.taxTotal, invoiceTotalsOut.taxTotal) &&
         Objects.equals(this.shippingTotal, invoiceTotalsOut.shippingTotal) &&
         Objects.equals(this.total, invoiceTotalsOut.total);
@@ -189,15 +237,17 @@ public class InvoiceTotalsOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(subtotal, discountTotal, taxTotal, shippingTotal, total);
+    return Objects.hash(grossSubtotal, subtotal, discountTotal, documentDiscountTotal, taxTotal, shippingTotal, total);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoiceTotalsOut {\n");
+    sb.append("    grossSubtotal: ").append(toIndentedString(grossSubtotal)).append("\n");
     sb.append("    subtotal: ").append(toIndentedString(subtotal)).append("\n");
     sb.append("    discountTotal: ").append(toIndentedString(discountTotal)).append("\n");
+    sb.append("    documentDiscountTotal: ").append(toIndentedString(documentDiscountTotal)).append("\n");
     sb.append("    taxTotal: ").append(toIndentedString(taxTotal)).append("\n");
     sb.append("    shippingTotal: ").append(toIndentedString(shippingTotal)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
@@ -223,8 +273,10 @@ public class InvoiceTotalsOut {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("gross_subtotal");
     openapiFields.add("subtotal");
     openapiFields.add("discount_total");
+    openapiFields.add("document_discount_total");
     openapiFields.add("tax_total");
     openapiFields.add("shipping_total");
     openapiFields.add("total");
@@ -266,10 +318,18 @@ public class InvoiceTotalsOut {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `gross_subtotal`
+      if (jsonObj.get("gross_subtotal") != null && !jsonObj.get("gross_subtotal").isJsonNull()) {
+        MoneyOut.validateJsonElement(jsonObj.get("gross_subtotal"));
+      }
       // validate the required field `subtotal`
       MoneyOut.validateJsonElement(jsonObj.get("subtotal"));
       // validate the required field `discount_total`
       MoneyOut.validateJsonElement(jsonObj.get("discount_total"));
+      // validate the optional field `document_discount_total`
+      if (jsonObj.get("document_discount_total") != null && !jsonObj.get("document_discount_total").isJsonNull()) {
+        MoneyOut.validateJsonElement(jsonObj.get("document_discount_total"));
+      }
       // validate the required field `tax_total`
       MoneyOut.validateJsonElement(jsonObj.get("tax_total"));
       // validate the required field `shipping_total`

@@ -8215,6 +8215,12 @@ components:
         due_date: 2000-01-23
         created_at: created_at
         totals:
+          document_discount_total:
+            amount: amount
+            currency: currency
+          gross_subtotal:
+            amount: amount
+            currency: currency
           discount_total:
             amount: amount
             currency: currency
@@ -8822,6 +8828,12 @@ components:
           due_date: 2000-01-23
           created_at: created_at
           totals:
+            document_discount_total:
+              amount: amount
+              currency: currency
+            gross_subtotal:
+              amount: amount
+              currency: currency
             discount_total:
               amount: amount
               currency: currency
@@ -9158,6 +9170,12 @@ components:
           due_date: 2000-01-23
           created_at: created_at
           totals:
+            document_discount_total:
+              amount: amount
+              currency: currency
+            gross_subtotal:
+              amount: amount
+              currency: currency
             discount_total:
               amount: amount
               currency: currency
@@ -9191,6 +9209,12 @@ components:
           due_date: 2000-01-23
           created_at: created_at
           totals:
+            document_discount_total:
+              amount: amount
+              currency: currency
+            gross_subtotal:
+              amount: amount
+              currency: currency
             discount_total:
               amount: amount
               currency: currency
@@ -9886,6 +9910,12 @@ components:
         due_date: 2000-01-23
         created_at: created_at
         totals:
+          document_discount_total:
+            amount: amount
+            currency: currency
+          gross_subtotal:
+            amount: amount
+            currency: currency
           discount_total:
             amount: amount
             currency: currency
@@ -10061,6 +10091,12 @@ components:
       type: object
     InvoiceTotalsOut:
       example:
+        document_discount_total:
+          amount: amount
+          currency: currency
+        gross_subtotal:
+          amount: amount
+          currency: currency
         discount_total:
           amount: amount
           currency: currency
@@ -10077,9 +10113,13 @@ components:
           amount: amount
           currency: currency
       properties:
+        gross_subtotal:
+          $ref: '#/components/schemas/MoneyOut'
         subtotal:
           $ref: '#/components/schemas/MoneyOut'
         discount_total:
+          $ref: '#/components/schemas/MoneyOut'
+        document_discount_total:
           $ref: '#/components/schemas/MoneyOut'
         tax_total:
           $ref: '#/components/schemas/MoneyOut'
@@ -10105,6 +10145,12 @@ components:
           due_date: 2000-01-23
           created_at: created_at
           totals:
+            document_discount_total:
+              amount: amount
+              currency: currency
+            gross_subtotal:
+              amount: amount
+              currency: currency
             discount_total:
               amount: amount
               currency: currency
@@ -10136,6 +10182,12 @@ components:
           due_date: 2000-01-23
           created_at: created_at
           totals:
+            document_discount_total:
+              amount: amount
+              currency: currency
+            gross_subtotal:
+              amount: amount
+              currency: currency
             discount_total:
               amount: amount
               currency: currency
