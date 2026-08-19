@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ApiErrorResponse;
+import org.openapitools.client.model.NumberingNextResponse;
 import org.openapitools.client.model.NumberingSequenceCreateRequest;
 import org.openapitools.client.model.NumberingSequencePatchRequest;
 import org.openapitools.client.model.NumberingSequencePreviewResponse;
@@ -151,7 +152,7 @@ public class NumberingSequencesApi {
      * Consume Sequence Number
      * Consume and return the next number, incrementing the counter.
      * @param sequenceId  (required)
-     * @return NumberingSequenceResponse
+     * @return NumberingNextResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -160,8 +161,8 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NumberingSequenceResponse consumeSequenceNumber(String sequenceId) throws ApiException {
-        ApiResponse<NumberingSequenceResponse> localVarResp = consumeSequenceNumberWithHttpInfo(sequenceId);
+    public NumberingNextResponse consumeSequenceNumber(String sequenceId) throws ApiException {
+        ApiResponse<NumberingNextResponse> localVarResp = consumeSequenceNumberWithHttpInfo(sequenceId);
         return localVarResp.getData();
     }
 
@@ -169,7 +170,7 @@ public class NumberingSequencesApi {
      * Consume Sequence Number
      * Consume and return the next number, incrementing the counter.
      * @param sequenceId  (required)
-     * @return ApiResponse&lt;NumberingSequenceResponse&gt;
+     * @return ApiResponse&lt;NumberingNextResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -178,9 +179,9 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NumberingSequenceResponse> consumeSequenceNumberWithHttpInfo(String sequenceId) throws ApiException {
+    public ApiResponse<NumberingNextResponse> consumeSequenceNumberWithHttpInfo(String sequenceId) throws ApiException {
         okhttp3.Call localVarCall = consumeSequenceNumberValidateBeforeCall(sequenceId, null);
-        Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<NumberingNextResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -198,10 +199,10 @@ public class NumberingSequencesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call consumeSequenceNumberAsync(String sequenceId, final ApiCallback<NumberingSequenceResponse> _callback) throws ApiException {
+    public okhttp3.Call consumeSequenceNumberAsync(String sequenceId, final ApiCallback<NumberingNextResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = consumeSequenceNumberValidateBeforeCall(sequenceId, _callback);
-        Type localVarReturnType = new TypeToken<NumberingSequenceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<NumberingNextResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

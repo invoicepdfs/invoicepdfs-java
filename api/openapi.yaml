@@ -3781,7 +3781,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NumberingSequenceResponse'
+                $ref: '#/components/schemas/NumberingNextResponse'
           description: Successful Response
         "422":
           content:
@@ -6770,6 +6770,9 @@ components:
       type: object
     CalculationBreakdown:
       example:
+        document_discount_total:
+          amount: amount
+          currency: currency
         discount_total:
           amount: amount
           currency: currency
@@ -6789,6 +6792,8 @@ components:
         subtotal:
           $ref: '#/components/schemas/Money'
         discount_total:
+          $ref: '#/components/schemas/Money'
+        document_discount_total:
           $ref: '#/components/schemas/Money'
         tax_total:
           $ref: '#/components/schemas/Money'
@@ -7660,6 +7665,9 @@ components:
       example:
         data:
           key:
+            document_discount_total:
+              amount: amount
+              currency: currency
             discount_total:
               amount: amount
               currency: currency
@@ -10379,6 +10387,49 @@ components:
       - currency
       title: MoneyOut
       type: object
+    NumberingNextOut:
+      description: |-
+        What POST /numbering-sequences/{id}/next allocated.
+
+        The number is the point of the call. It used to answer with the sequence
+        row instead, so a caller burned a number and had to reconstruct the string
+        itself from prefix, date pattern and padding — the one thing the endpoint
+        exists to do for them.
+      example:
+        number: AMI-INV-2026-0013
+        next_number: 0
+        sequence_id: sequence_id
+      properties:
+        number:
+          example: AMI-INV-2026-0013
+          title: Number
+          type: string
+        sequence_id:
+          title: Sequence Id
+          type: string
+        next_number:
+          description: The counter after this allocation
+          title: Next Number
+          type: integer
+      required:
+      - next_number
+      - number
+      - sequence_id
+      title: NumberingNextOut
+      type: object
+    NumberingNextResponse:
+      example:
+        data:
+          number: AMI-INV-2026-0013
+          next_number: 0
+          sequence_id: sequence_id
+      properties:
+        data:
+          $ref: '#/components/schemas/NumberingNextOut'
+      required:
+      - data
+      title: NumberingNextResponse
+      type: object
     NumberingSequenceCreateRequest:
       example:
         padding: 5
@@ -11314,6 +11365,9 @@ components:
     RenderOut:
       example:
         calculation:
+          document_discount_total:
+            amount: amount
+            currency: currency
           discount_total:
             amount: amount
             currency: currency
@@ -11387,6 +11441,9 @@ components:
       example:
         data:
           calculation:
+            document_discount_total:
+              amount: amount
+              currency: currency
             discount_total:
               amount: amount
               currency: currency

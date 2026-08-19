@@ -15,7 +15,7 @@ All URIs are relative to *http://localhost*
 
 <a id="consumeSequenceNumber"></a>
 # **consumeSequenceNumber**
-> NumberingSequenceResponse consumeSequenceNumber(sequenceId)
+> NumberingNextResponse consumeSequenceNumber(sequenceId)
 
 Consume Sequence Number
 
@@ -43,7 +43,7 @@ public class Example {
     NumberingSequencesApi apiInstance = new NumberingSequencesApi(defaultClient);
     String sequenceId = "sequenceId_example"; // String | 
     try {
-      NumberingSequenceResponse result = apiInstance.consumeSequenceNumber(sequenceId);
+      NumberingNextResponse result = apiInstance.consumeSequenceNumber(sequenceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NumberingSequencesApi#consumeSequenceNumber");
@@ -64,7 +64,7 @@ public class Example {
 
 ### Return type
 
-[**NumberingSequenceResponse**](NumberingSequenceResponse.md)
+[**NumberingNextResponse**](NumberingNextResponse.md)
 
 ### Authorization
 

@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * CalculationBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T05:57:42.151071901Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T16:36:22.681544038Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CalculationBreakdown {
   public static final String SERIALIZED_NAME_SUBTOTAL = "subtotal";
   @SerializedName(SERIALIZED_NAME_SUBTOTAL)
@@ -59,6 +59,10 @@ public class CalculationBreakdown {
   public static final String SERIALIZED_NAME_DISCOUNT_TOTAL = "discount_total";
   @SerializedName(SERIALIZED_NAME_DISCOUNT_TOTAL)
   private Money discountTotal;
+
+  public static final String SERIALIZED_NAME_DOCUMENT_DISCOUNT_TOTAL = "document_discount_total";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_DISCOUNT_TOTAL)
+  private Money documentDiscountTotal;
 
   public static final String SERIALIZED_NAME_TAX_TOTAL = "tax_total";
   @SerializedName(SERIALIZED_NAME_TAX_TOTAL)
@@ -110,6 +114,25 @@ public class CalculationBreakdown {
 
   public void setDiscountTotal(Money discountTotal) {
     this.discountTotal = discountTotal;
+  }
+
+
+  public CalculationBreakdown documentDiscountTotal(Money documentDiscountTotal) {
+    this.documentDiscountTotal = documentDiscountTotal;
+    return this;
+  }
+
+  /**
+   * Get documentDiscountTotal
+   * @return documentDiscountTotal
+   */
+  @javax.annotation.Nullable
+  public Money getDocumentDiscountTotal() {
+    return documentDiscountTotal;
+  }
+
+  public void setDocumentDiscountTotal(Money documentDiscountTotal) {
+    this.documentDiscountTotal = documentDiscountTotal;
   }
 
 
@@ -182,6 +205,7 @@ public class CalculationBreakdown {
     CalculationBreakdown calculationBreakdown = (CalculationBreakdown) o;
     return Objects.equals(this.subtotal, calculationBreakdown.subtotal) &&
         Objects.equals(this.discountTotal, calculationBreakdown.discountTotal) &&
+        Objects.equals(this.documentDiscountTotal, calculationBreakdown.documentDiscountTotal) &&
         Objects.equals(this.taxTotal, calculationBreakdown.taxTotal) &&
         Objects.equals(this.shippingTotal, calculationBreakdown.shippingTotal) &&
         Objects.equals(this.total, calculationBreakdown.total);
@@ -189,7 +213,7 @@ public class CalculationBreakdown {
 
   @Override
   public int hashCode() {
-    return Objects.hash(subtotal, discountTotal, taxTotal, shippingTotal, total);
+    return Objects.hash(subtotal, discountTotal, documentDiscountTotal, taxTotal, shippingTotal, total);
   }
 
   @Override
@@ -198,6 +222,7 @@ public class CalculationBreakdown {
     sb.append("class CalculationBreakdown {\n");
     sb.append("    subtotal: ").append(toIndentedString(subtotal)).append("\n");
     sb.append("    discountTotal: ").append(toIndentedString(discountTotal)).append("\n");
+    sb.append("    documentDiscountTotal: ").append(toIndentedString(documentDiscountTotal)).append("\n");
     sb.append("    taxTotal: ").append(toIndentedString(taxTotal)).append("\n");
     sb.append("    shippingTotal: ").append(toIndentedString(shippingTotal)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
@@ -225,6 +250,7 @@ public class CalculationBreakdown {
     openapiFields = new HashSet<String>();
     openapiFields.add("subtotal");
     openapiFields.add("discount_total");
+    openapiFields.add("document_discount_total");
     openapiFields.add("tax_total");
     openapiFields.add("shipping_total");
     openapiFields.add("total");
@@ -270,6 +296,10 @@ public class CalculationBreakdown {
       Money.validateJsonElement(jsonObj.get("subtotal"));
       // validate the required field `discount_total`
       Money.validateJsonElement(jsonObj.get("discount_total"));
+      // validate the optional field `document_discount_total`
+      if (jsonObj.get("document_discount_total") != null && !jsonObj.get("document_discount_total").isJsonNull()) {
+        Money.validateJsonElement(jsonObj.get("document_discount_total"));
+      }
       // validate the required field `tax_total`
       Money.validateJsonElement(jsonObj.get("tax_total"));
       // validate the required field `shipping_total`

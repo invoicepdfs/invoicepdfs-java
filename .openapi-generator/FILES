@@ -152,6 +152,8 @@ docs/LocalesListResponse.md
 docs/LogsApi.md
 docs/Money.md
 docs/MoneyOut.md
+docs/NumberingNextOut.md
+docs/NumberingNextResponse.md
 docs/NumberingSequenceCreateRequest.md
 docs/NumberingSequenceOut.md
 docs/NumberingSequencePatchRequest.md
@@ -426,6 +428,8 @@ src/main/java/org/openapitools/client/model/LocaleOut.java
 src/main/java/org/openapitools/client/model/LocalesListResponse.java
 src/main/java/org/openapitools/client/model/Money.java
 src/main/java/org/openapitools/client/model/MoneyOut.java
+src/main/java/org/openapitools/client/model/NumberingNextOut.java
+src/main/java/org/openapitools/client/model/NumberingNextResponse.java
 src/main/java/org/openapitools/client/model/NumberingSequenceCreateRequest.java
 src/main/java/org/openapitools/client/model/NumberingSequenceOut.java
 src/main/java/org/openapitools/client/model/NumberingSequencePatchRequest.java
@@ -500,3 +504,5 @@ src/main/java/org/openapitools/client/model/WorkspaceOut.java
 src/main/java/org/openapitools/client/model/WorkspacePatchRequest.java
 src/main/java/org/openapitools/client/model/WorkspaceResponse.java
 src/main/java/org/openapitools/client/model/WorkspacesListResponse.java
+src/test/java/org/openapitools/client/model/NumberingNextOutTest.java
+src/test/java/org/openapitools/client/model/NumberingNextResponseTest.java
