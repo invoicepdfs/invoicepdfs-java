@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceAttachmentResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T04:46:23.086686074Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T05:57:42.151071901Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceAttachmentResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
