@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentDiscountInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T19:27:34.992885427Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T19:28:09.401323882Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentDiscountInput {
   /**
    * Gets or Sets type
