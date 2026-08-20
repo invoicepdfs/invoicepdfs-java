@@ -8233,7 +8233,13 @@ components:
           shipping_total:
             amount: amount
             currency: currency
+          totals_drift:
+            amount: amount
+            currency: currency
           subtotal:
+            amount: amount
+            currency: currency
+          recomputed_total:
             amount: amount
             currency: currency
         locale: locale
@@ -8846,7 +8852,13 @@ components:
             shipping_total:
               amount: amount
               currency: currency
+            totals_drift:
+              amount: amount
+              currency: currency
             subtotal:
+              amount: amount
+              currency: currency
+            recomputed_total:
               amount: amount
               currency: currency
           locale: locale
@@ -9188,7 +9200,13 @@ components:
             shipping_total:
               amount: amount
               currency: currency
+            totals_drift:
+              amount: amount
+              currency: currency
             subtotal:
+              amount: amount
+              currency: currency
+            recomputed_total:
               amount: amount
               currency: currency
           locale: locale
@@ -9227,7 +9245,13 @@ components:
             shipping_total:
               amount: amount
               currency: currency
+            totals_drift:
+              amount: amount
+              currency: currency
             subtotal:
+              amount: amount
+              currency: currency
+            recomputed_total:
               amount: amount
               currency: currency
           locale: locale
@@ -9928,7 +9952,13 @@ components:
           shipping_total:
             amount: amount
             currency: currency
+          totals_drift:
+            amount: amount
+            currency: currency
           subtotal:
+            amount: amount
+            currency: currency
+          recomputed_total:
             amount: amount
             currency: currency
         locale: locale
@@ -10109,7 +10139,13 @@ components:
         shipping_total:
           amount: amount
           currency: currency
+        totals_drift:
+          amount: amount
+          currency: currency
         subtotal:
+          amount: amount
+          currency: currency
+        recomputed_total:
           amount: amount
           currency: currency
       properties:
@@ -10126,6 +10162,10 @@ components:
         shipping_total:
           $ref: '#/components/schemas/MoneyOut'
         total:
+          $ref: '#/components/schemas/MoneyOut'
+        recomputed_total:
+          $ref: '#/components/schemas/MoneyOut'
+        totals_drift:
           $ref: '#/components/schemas/MoneyOut'
       required:
       - discount_total
@@ -10163,7 +10203,13 @@ components:
             shipping_total:
               amount: amount
               currency: currency
+            totals_drift:
+              amount: amount
+              currency: currency
             subtotal:
+              amount: amount
+              currency: currency
+            recomputed_total:
               amount: amount
               currency: currency
           locale: locale
@@ -10200,7 +10246,13 @@ components:
             shipping_total:
               amount: amount
               currency: currency
+            totals_drift:
+              amount: amount
+              currency: currency
             subtotal:
+              amount: amount
+              currency: currency
+            recomputed_total:
               amount: amount
               currency: currency
           locale: locale

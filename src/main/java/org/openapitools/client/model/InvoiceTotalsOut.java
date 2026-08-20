@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.MoneyOut;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceTotalsOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T21:55:15.080630106Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-20T20:37:48.766721779Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceTotalsOut {
   public static final String SERIALIZED_NAME_GROSS_SUBTOTAL = "gross_subtotal";
   @SerializedName(SERIALIZED_NAME_GROSS_SUBTOTAL)
@@ -79,6 +80,14 @@ public class InvoiceTotalsOut {
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
   private MoneyOut total;
+
+  public static final String SERIALIZED_NAME_RECOMPUTED_TOTAL = "recomputed_total";
+  @SerializedName(SERIALIZED_NAME_RECOMPUTED_TOTAL)
+  private MoneyOut recomputedTotal;
+
+  public static final String SERIALIZED_NAME_TOTALS_DRIFT = "totals_drift";
+  @SerializedName(SERIALIZED_NAME_TOTALS_DRIFT)
+  private MoneyOut totalsDrift;
 
   public InvoiceTotalsOut() {
   }
@@ -216,6 +225,44 @@ public class InvoiceTotalsOut {
   }
 
 
+  public InvoiceTotalsOut recomputedTotal(MoneyOut recomputedTotal) {
+    this.recomputedTotal = recomputedTotal;
+    return this;
+  }
+
+  /**
+   * Get recomputedTotal
+   * @return recomputedTotal
+   */
+  @javax.annotation.Nullable
+  public MoneyOut getRecomputedTotal() {
+    return recomputedTotal;
+  }
+
+  public void setRecomputedTotal(MoneyOut recomputedTotal) {
+    this.recomputedTotal = recomputedTotal;
+  }
+
+
+  public InvoiceTotalsOut totalsDrift(MoneyOut totalsDrift) {
+    this.totalsDrift = totalsDrift;
+    return this;
+  }
+
+  /**
+   * Get totalsDrift
+   * @return totalsDrift
+   */
+  @javax.annotation.Nullable
+  public MoneyOut getTotalsDrift() {
+    return totalsDrift;
+  }
+
+  public void setTotalsDrift(MoneyOut totalsDrift) {
+    this.totalsDrift = totalsDrift;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -232,12 +279,25 @@ public class InvoiceTotalsOut {
         Objects.equals(this.documentDiscountTotal, invoiceTotalsOut.documentDiscountTotal) &&
         Objects.equals(this.taxTotal, invoiceTotalsOut.taxTotal) &&
         Objects.equals(this.shippingTotal, invoiceTotalsOut.shippingTotal) &&
-        Objects.equals(this.total, invoiceTotalsOut.total);
+        Objects.equals(this.total, invoiceTotalsOut.total) &&
+        Objects.equals(this.recomputedTotal, invoiceTotalsOut.recomputedTotal) &&
+        Objects.equals(this.totalsDrift, invoiceTotalsOut.totalsDrift);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(grossSubtotal, subtotal, discountTotal, documentDiscountTotal, taxTotal, shippingTotal, total);
+    return Objects.hash(grossSubtotal, subtotal, discountTotal, documentDiscountTotal, taxTotal, shippingTotal, total, recomputedTotal, totalsDrift);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -251,6 +311,8 @@ public class InvoiceTotalsOut {
     sb.append("    taxTotal: ").append(toIndentedString(taxTotal)).append("\n");
     sb.append("    shippingTotal: ").append(toIndentedString(shippingTotal)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    recomputedTotal: ").append(toIndentedString(recomputedTotal)).append("\n");
+    sb.append("    totalsDrift: ").append(toIndentedString(totalsDrift)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -280,6 +342,8 @@ public class InvoiceTotalsOut {
     openapiFields.add("tax_total");
     openapiFields.add("shipping_total");
     openapiFields.add("total");
+    openapiFields.add("recomputed_total");
+    openapiFields.add("totals_drift");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -336,6 +400,14 @@ public class InvoiceTotalsOut {
       MoneyOut.validateJsonElement(jsonObj.get("shipping_total"));
       // validate the required field `total`
       MoneyOut.validateJsonElement(jsonObj.get("total"));
+      // validate the optional field `recomputed_total`
+      if (jsonObj.get("recomputed_total") != null && !jsonObj.get("recomputed_total").isJsonNull()) {
+        MoneyOut.validateJsonElement(jsonObj.get("recomputed_total"));
+      }
+      // validate the optional field `totals_drift`
+      if (jsonObj.get("totals_drift") != null && !jsonObj.get("totals_drift").isJsonNull()) {
+        MoneyOut.validateJsonElement(jsonObj.get("totals_drift"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

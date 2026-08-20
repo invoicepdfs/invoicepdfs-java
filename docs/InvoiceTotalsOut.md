@@ -14,6 +14,8 @@
 |**taxTotal** | [**MoneyOut**](MoneyOut.md) |  |  |
 |**shippingTotal** | [**MoneyOut**](MoneyOut.md) |  |  |
 |**total** | [**MoneyOut**](MoneyOut.md) |  |  |
+|**recomputedTotal** | [**MoneyOut**](MoneyOut.md) |  |  [optional] |
+|**totalsDrift** | [**MoneyOut**](MoneyOut.md) |  |  [optional] |
 
 
 
