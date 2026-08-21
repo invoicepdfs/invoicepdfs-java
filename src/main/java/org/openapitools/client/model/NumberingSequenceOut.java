@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * NumberingSequenceOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-20T20:37:48.766721779Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T17:06:18.969223261Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class NumberingSequenceOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
