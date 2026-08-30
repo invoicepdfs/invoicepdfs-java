@@ -31,10 +31,39 @@ jobs:
 
       - name: Generate client (java)
         run: |
+          # The generator reads .openapi-generator-ignore from its *output* dir,
+          # so seed .gen with it — otherwise generating out-of-tree would
+          # silently re-emit README.md and clobber the hand-written one when the
+          # tree is copied back.
+          mkdir -p .gen
+          cp .openapi-generator-ignore .gen/
+
           docker run --rm -v "${{ github.workspace }}:/local" \
             openapitools/openapi-generator-cli:v7.7.0 generate \
-            -i /local/openapi.json -g java -o /local \
+            -i /local/openapi.json -g java -o /local/.gen \
             --additional-properties="groupId=com.invoicepdfs,artifactId=invoicepdfs,invokerPackage=com.invoicepdfs"
+
+          # The container writes as root, so the runner cannot delete what it
+          # produced — take ownership before the cleanup below, which otherwise
+          # fails with "Permission denied".
+          sudo chown -R "$(id -u):$(id -g)" .gen
+
+          # Replace the tree wholesale. Generating in place and committing with
+          # `git add -A` stages additions and edits but can never remove a file
+          # the generator stopped emitting — which is how three dead API classes
+          # stayed in the published packages for eleven regeneration cycles.
+          # Everything kept below is what .openapi-generator-ignore protects,
+          # plus git and CI metadata.
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name '.git' \
+            ! -name '.gen' \
+            ! -name '.github' \
+            ! -name '.openapi-generator-ignore' \
+            ! -name 'README.md' \
+            ! -name 'LICENSE' \
+            -exec rm -rf {} +
+          cp -a .gen/. ./
+          rm -rf .gen
 
       - name: Commit regenerated client
         run: |
