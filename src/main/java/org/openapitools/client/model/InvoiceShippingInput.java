@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceShippingInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-30T07:11:26.088671284Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-30T08:01:01.479456006Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceShippingInput {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -58,6 +58,10 @@ public class InvoiceShippingInput {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
+
+  public static final String SERIALIZED_NAME_TAXABLE = "taxable";
+  @SerializedName(SERIALIZED_NAME_TAXABLE)
+  private Boolean taxable = false;
 
   public InvoiceShippingInput() {
   }
@@ -100,6 +104,25 @@ public class InvoiceShippingInput {
   }
 
 
+  public InvoiceShippingInput taxable(Boolean taxable) {
+    this.taxable = taxable;
+    return this;
+  }
+
+  /**
+   * Get taxable
+   * @return taxable
+   */
+  @javax.annotation.Nullable
+  public Boolean getTaxable() {
+    return taxable;
+  }
+
+  public void setTaxable(Boolean taxable) {
+    this.taxable = taxable;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -111,12 +134,13 @@ public class InvoiceShippingInput {
     }
     InvoiceShippingInput invoiceShippingInput = (InvoiceShippingInput) o;
     return Objects.equals(this.description, invoiceShippingInput.description) &&
-        Objects.equals(this.amount, invoiceShippingInput.amount);
+        Objects.equals(this.amount, invoiceShippingInput.amount) &&
+        Objects.equals(this.taxable, invoiceShippingInput.taxable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, amount);
+    return Objects.hash(description, amount, taxable);
   }
 
   @Override
@@ -125,6 +149,7 @@ public class InvoiceShippingInput {
     sb.append("class InvoiceShippingInput {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -149,6 +174,7 @@ public class InvoiceShippingInput {
     openapiFields = new HashSet<String>();
     openapiFields.add("description");
     openapiFields.add("amount");
+    openapiFields.add("taxable");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

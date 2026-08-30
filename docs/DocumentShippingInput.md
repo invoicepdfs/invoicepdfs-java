@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**description** | **String** |  |  [optional] |
 |**amount** | **String** |  |  |
+|**taxable** | **Boolean** |  |  [optional] |
 
 
 

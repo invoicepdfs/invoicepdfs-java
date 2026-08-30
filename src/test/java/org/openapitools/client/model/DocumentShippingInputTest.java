@@ -53,4 +53,12 @@ public class DocumentShippingInputTest {
         // TODO: test amount
     }
 
+    /**
+     * Test the property 'taxable'
+     */
+    @Test
+    public void taxableTest() {
+        // TODO: test taxable
+    }
+
 }
