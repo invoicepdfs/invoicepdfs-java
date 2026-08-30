@@ -52,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * RecurringInvoicePatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-30T05:32:57.228883861Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-30T05:51:29.401984132Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RecurringInvoicePatchRequest {
   public static final String SERIALIZED_NAME_FREQUENCY = "frequency";
   @SerializedName(SERIALIZED_NAME_FREQUENCY)
