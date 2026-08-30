@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * WebhookDeliveryOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-30T05:51:29.401984132Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-30T06:26:51.506628959Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class WebhookDeliveryOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
