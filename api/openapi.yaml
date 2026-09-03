@@ -5847,6 +5847,18 @@ components:
             key: ""
           external_id: external_id
           document_type: invoice
+        - data:
+            key: ""
+          external_id: external_id
+          document_type: invoice
+        - data:
+            key: ""
+          external_id: external_id
+          document_type: invoice
+        - data:
+            key: ""
+          external_id: external_id
+          document_type: invoice
       properties:
         operation:
           default: render
@@ -5857,6 +5869,7 @@ components:
         items:
           items:
             $ref: '#/components/schemas/BatchItemInput'
+          maxItems: 500
           minItems: 1
           title: Items
           type: array
