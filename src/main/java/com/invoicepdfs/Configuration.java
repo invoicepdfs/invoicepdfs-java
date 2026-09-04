@@ -13,7 +13,7 @@
 
 package com.invoicepdfs;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-04T04:50:14.133956227Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-04T19:44:12.344942572Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class Configuration {
     public static final String VERSION = "0.3.0";
 

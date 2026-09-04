@@ -5671,7 +5671,7 @@ components:
       properties:
         name:
           maxLength: 256
-          nullable: true
+          title: Name
           type: string
         email:
           maxLength: 256
@@ -6426,13 +6426,13 @@ components:
         is_default: true
       properties:
         name:
-          nullable: true
+          title: Name
           type: string
         primary_color:
-          nullable: true
+          title: Primary Color
           type: string
         accent_color:
-          nullable: true
+          title: Accent Color
           type: string
         font_family:
           nullable: true
@@ -6441,13 +6441,13 @@ components:
           nullable: true
           type: string
         footer_text:
-          nullable: true
+          title: Footer Text
           type: string
         hide_invoicepdfs_branding:
-          nullable: true
+          title: Hide Invoicepdfs Branding
           type: boolean
         is_default:
-          nullable: true
+          title: Is Default
           type: boolean
       title: BrandingProfilePatchRequest
       type: object
@@ -6660,7 +6660,7 @@ components:
         tax_id: tax_id
       properties:
         legal_name:
-          nullable: true
+          title: Legal Name
           type: string
         display_name:
           nullable: true
@@ -7167,7 +7167,7 @@ components:
         tax_id: tax_id
       properties:
         name:
-          nullable: true
+          title: Name
           type: string
         email:
           nullable: true
@@ -10686,29 +10686,29 @@ components:
         reset: never
       properties:
         name:
-          nullable: true
+          title: Name
           type: string
         prefix:
-          nullable: true
+          title: Prefix
           type: string
         date_pattern:
-          nullable: true
+          title: Date Pattern
           type: string
         padding:
           maximum: 10
           minimum: 1
-          nullable: true
+          title: Padding
           type: integer
         next_number:
           minimum: 1
-          nullable: true
+          title: Next Number
           type: integer
         reset:
           enum:
           - never
           - yearly
           - monthly
-          nullable: true
+          title: Reset
           type: string
       title: NumberingSequencePatchRequest
       type: object
@@ -10919,11 +10919,11 @@ components:
         method: method
       properties:
         amount:
-          nullable: true
+          title: Amount
           type: string
         paid_at:
           format: date-time
-          nullable: true
+          title: Paid At
           type: string
         method:
           nullable: true
@@ -11403,11 +11403,11 @@ components:
         frequency: frequency
       properties:
         frequency:
-          nullable: true
+          title: Frequency
           type: string
         interval:
           minimum: 1
-          nullable: true
+          title: Interval
           type: integer
         end_date:
           format: date
@@ -11421,7 +11421,7 @@ components:
           nullable: true
           type: string
         auto_finalize:
-          nullable: true
+          title: Auto Finalize
           type: boolean
         invoice_template:
           $ref: '#/components/schemas/InvoiceDraftRequest'
@@ -11903,19 +11903,19 @@ components:
         name: name
       properties:
         name:
-          nullable: true
+          title: Name
           type: string
         rate:
-          nullable: true
+          title: Rate
           type: string
         inclusive:
-          nullable: true
+          title: Inclusive
           type: boolean
         jurisdiction:
           nullable: true
           type: string
         is_active:
-          nullable: true
+          title: Is Active
           type: boolean
       title: TaxRatePatchRequest
       type: object
@@ -12051,14 +12051,14 @@ components:
         name:
           maxLength: 256
           minLength: 1
-          nullable: true
+          title: Name
           type: string
         description:
           nullable: true
           type: string
         config:
           additionalProperties: true
-          nullable: true
+          title: Config
           type: object
       title: TemplatePatchRequest
       type: object
@@ -12634,7 +12634,7 @@ components:
         - events
       properties:
         url:
-          nullable: true
+          title: Url
           type: string
         description:
           nullable: true
@@ -12642,10 +12642,10 @@ components:
         events:
           items:
             type: string
-          nullable: true
+          title: Events
           type: array
         is_active:
-          nullable: true
+          title: Is Active
           type: boolean
       title: WebhookEndpointPatchRequest
       type: object
@@ -12791,7 +12791,7 @@ components:
           - owner
           - admin
           - member
-          nullable: true
+          title: Role
           type: string
       title: WorkspaceMemberPatchRequest
       type: object
@@ -12850,7 +12850,7 @@ components:
       properties:
         name:
           maxLength: 256
-          nullable: true
+          title: Name
           type: string
       title: WorkspacePatchRequest
       type: object
