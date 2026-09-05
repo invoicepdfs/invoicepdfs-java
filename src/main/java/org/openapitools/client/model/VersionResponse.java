@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * VersionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-04T19:44:12.344942572Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-05T01:19:34.887199580Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class VersionResponse {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
