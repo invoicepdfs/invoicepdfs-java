@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceBankAccountInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-05T01:19:34.887199580Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-05T05:34:04.802659357Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceBankAccountInput {
   public static final String SERIALIZED_NAME_BANK_NAME = "bank_name";
   @SerializedName(SERIALIZED_NAME_BANK_NAME)
