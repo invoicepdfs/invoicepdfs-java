@@ -12,6 +12,7 @@
 |**accentColor** | **String** |  |  [optional] |
 |**fontFamily** | **String** |  |  [optional] |
 |**footerText** | **String** |  |  [optional] |
+|**hideInvoicepdfsBranding** | **Boolean** |  |  [optional] |
 
 
 

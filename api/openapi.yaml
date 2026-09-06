@@ -5061,6 +5061,43 @@ paths:
       x-visibility: public
       x-accepts:
       - application/json
+  /api/v1/billing/overage:
+    patch:
+      description: |-
+        Turn overage billing on or off for this account.
+
+        Off by default and stays off until asked: past the quota the API returns
+        429, which is a limit the customer can see coming. Overage replaces that
+        limit with a charge, and nobody should meet that decision on an invoice.
+      operationId: update_overage_settings
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BillingOverageRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BillingOverageResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Update Overage Settings
+      tags:
+      - billing
+      x-visibility: public
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /api/v1/billing/checkout-session:
     post:
       description: Create a Stripe Checkout session for a subscription.
@@ -6165,11 +6202,59 @@ components:
       - data
       title: BillingCheckoutResponse
       type: object
+    BillingOverageData:
+      example:
+        overage_available: true
+        overage_enabled: true
+        overage_price_millicents: 0
+      properties:
+        overage_enabled:
+          title: Overage Enabled
+          type: boolean
+        overage_available:
+          title: Overage Available
+          type: boolean
+        overage_price_millicents:
+          nullable: true
+          type: integer
+      required:
+      - overage_available
+      - overage_enabled
+      title: BillingOverageData
+      type: object
+    BillingOverageRequest:
+      example:
+        enabled: true
+      properties:
+        enabled:
+          description: Whether renders past the monthly quota should be billed
+          title: Enabled
+          type: boolean
+      required:
+      - enabled
+      title: BillingOverageRequest
+      type: object
+    BillingOverageResponse:
+      example:
+        data:
+          overage_available: true
+          overage_enabled: true
+          overage_price_millicents: 0
+      properties:
+        data:
+          $ref: '#/components/schemas/BillingOverageData'
+      required:
+      - data
+      title: BillingOverageResponse
+      type: object
     BillingPlan:
       example:
+        price_id_annual: price_id_annual
         name: name
         price_id: price_id
         id: id
+        allow_branding_removal: false
+        overage_price_millicents: 6
         monthly_render_quota: 0
       properties:
         id:
@@ -6181,8 +6266,18 @@ components:
         price_id:
           title: Price Id
           type: string
+        price_id_annual:
+          nullable: true
+          type: string
         monthly_render_quota:
           title: Monthly Render Quota
+          type: integer
+        allow_branding_removal:
+          default: false
+          title: Allow Branding Removal
+          type: boolean
+        overage_price_millicents:
+          nullable: true
           type: integer
       required:
       - id
@@ -6194,13 +6289,19 @@ components:
     BillingPlansListResponse:
       example:
         data:
-        - name: name
+        - price_id_annual: price_id_annual
+          name: name
           price_id: price_id
           id: id
+          allow_branding_removal: false
+          overage_price_millicents: 6
           monthly_render_quota: 0
-        - name: name
+        - price_id_annual: price_id_annual
+          name: name
           price_id: price_id
           id: id
+          allow_branding_removal: false
+          overage_price_millicents: 6
           monthly_render_quota: 0
       properties:
         data:
@@ -6238,7 +6339,10 @@ components:
       example:
         subscription_id: subscription_id
         has_billing_account: false
+        overage_available: false
+        overage_enabled: false
         stripe_configured: false
+        overage_price_millicents: 0
         plan_id: plan_id
         plan_name: plan_name
         status: status
@@ -6263,6 +6367,17 @@ components:
           default: false
           title: Has Billing Account
           type: boolean
+        overage_enabled:
+          default: false
+          title: Overage Enabled
+          type: boolean
+        overage_available:
+          default: false
+          title: Overage Available
+          type: boolean
+        overage_price_millicents:
+          nullable: true
+          type: integer
       required:
       - plan_id
       - plan_name
@@ -6273,7 +6388,10 @@ components:
         data:
           subscription_id: subscription_id
           has_billing_account: false
+          overage_available: false
+          overage_enabled: false
           stripe_configured: false
+          overage_price_millicents: 0
           plan_id: plan_id
           plan_name: plan_name
           status: status
@@ -7487,6 +7605,7 @@ components:
     DocumentBrandingInput:
       example:
         accent_color: '#111827'
+        hide_invoicepdfs_branding: false
         logo_file_id: logo_file_id
         font_family: font_family
         footer_text: Generated by InvoicePDFs
@@ -7510,6 +7629,10 @@ components:
           default: Generated by InvoicePDFs
           title: Footer Text
           type: string
+        hide_invoicepdfs_branding:
+          default: false
+          title: Hide Invoicepdfs Branding
+          type: boolean
       title: DocumentBrandingInput
       type: object
     DocumentCalculateRequest:
@@ -7544,6 +7667,7 @@ components:
             value: PO-2026-001
           branding:
             accent_color: '#111827'
+            hide_invoicepdfs_branding: false
             logo_file_id: logo_file_id
             font_family: font_family
             footer_text: Generated by InvoicePDFs
@@ -7723,6 +7847,7 @@ components:
         branding_profile_id: branding_profile_id
         branding:
           accent_color: '#111827'
+          hide_invoicepdfs_branding: false
           logo_file_id: logo_file_id
           font_family: font_family
           header_text: header_text
@@ -7979,6 +8104,7 @@ components:
           value: PO-2026-001
         branding:
           accent_color: '#111827'
+          hide_invoicepdfs_branding: false
           logo_file_id: logo_file_id
           font_family: font_family
           footer_text: Generated by InvoicePDFs
@@ -8440,6 +8566,7 @@ components:
           value: PO-2026-001
         branding:
           accent_color: '#111827'
+          hide_invoicepdfs_branding: false
           logo_file_id: logo_file_id
           font_family: font_family
           header_text: header_text
@@ -8706,6 +8833,7 @@ components:
             value: PO-2026-001
           branding:
             accent_color: '#111827'
+            hide_invoicepdfs_branding: false
             logo_file_id: logo_file_id
             font_family: font_family
             footer_text: Generated by InvoicePDFs
@@ -9048,6 +9176,7 @@ components:
             value: PO-2026-001
           branding:
             accent_color: '#111827'
+            hide_invoicepdfs_branding: false
             logo_file_id: logo_file_id
             font_family: font_family
             footer_text: Generated by InvoicePDFs
@@ -9599,6 +9728,7 @@ components:
     InvoiceBrandingInput:
       example:
         accent_color: '#111827'
+        hide_invoicepdfs_branding: false
         logo_file_id: logo_file_id
         font_family: font_family
         header_text: header_text
@@ -9626,6 +9756,10 @@ components:
           default: Generated by InvoicePDFs
           title: Footer Text
           type: string
+        hide_invoicepdfs_branding:
+          default: false
+          title: Hide Invoicepdfs Branding
+          type: boolean
       title: InvoiceBrandingInput
       type: object
     InvoiceCustomFieldInput:
@@ -9684,6 +9818,7 @@ components:
           value: PO-2026-001
         branding:
           accent_color: '#111827'
+          hide_invoicepdfs_branding: false
           logo_file_id: logo_file_id
           font_family: font_family
           header_text: header_text
@@ -11070,6 +11205,7 @@ components:
             value: PO-2026-001
           branding:
             accent_color: '#111827'
+            hide_invoicepdfs_branding: false
             logo_file_id: logo_file_id
             font_family: font_family
             header_text: header_text
@@ -11308,6 +11444,7 @@ components:
             value: PO-2026-001
           branding:
             accent_color: '#111827'
+            hide_invoicepdfs_branding: false
             logo_file_id: logo_file_id
             font_family: font_family
             header_text: header_text
@@ -12320,11 +12457,19 @@ components:
           remaining: 1
         rate_limit:
           requests_per_second: 5
+        overage:
+          price_millicents: 2
+          renders: 5
+          estimated_cost_cents: 7
+          available: false
+          enabled: false
       properties:
         renders:
           $ref: '#/components/schemas/UsageRenderLimits'
         rate_limit:
           $ref: '#/components/schemas/UsageRateLimit'
+        overage:
+          $ref: '#/components/schemas/UsageOverage'
       required:
       - rate_limit
       - renders
@@ -12339,12 +12484,48 @@ components:
             remaining: 1
           rate_limit:
             requests_per_second: 5
+          overage:
+            price_millicents: 2
+            renders: 5
+            estimated_cost_cents: 7
+            available: false
+            enabled: false
       properties:
         data:
           $ref: '#/components/schemas/UsageLimitsData'
       required:
       - data
       title: UsageLimitsResponse
+      type: object
+    UsageOverage:
+      description: "Renders past the quota this period, and what they cost."
+      example:
+        price_millicents: 2
+        renders: 5
+        estimated_cost_cents: 7
+        available: false
+        enabled: false
+      properties:
+        enabled:
+          default: false
+          title: Enabled
+          type: boolean
+        available:
+          default: false
+          title: Available
+          type: boolean
+        renders:
+          default: 0
+          title: Renders
+          type: integer
+        price_millicents:
+          nullable: true
+          type: integer
+        estimated_cost_cents:
+          default: 0
+          title: Estimated Cost Cents
+          type: integer
+      title: UsageOverage
       type: object
     UsagePeriod:
       example:

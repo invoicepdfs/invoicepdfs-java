@@ -17,6 +17,8 @@ import com.invoicepdfs.ApiException;
 import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.BillingCheckoutRequest;
 import org.openapitools.client.model.BillingCheckoutResponse;
+import org.openapitools.client.model.BillingOverageRequest;
+import org.openapitools.client.model.BillingOverageResponse;
 import org.openapitools.client.model.BillingPlansListResponse;
 import org.openapitools.client.model.BillingPortalResponse;
 import org.openapitools.client.model.BillingSubscriptionResponse;
@@ -86,6 +88,20 @@ public class BillingApiTest {
     @Test
     public void listPlansTest() throws ApiException {
         BillingPlansListResponse response = api.listPlans();
+        // TODO: test validations
+    }
+
+    /**
+     * Update Overage Settings
+     *
+     * Turn overage billing on or off for this account.  Off by default and stays off until asked: past the quota the API returns 429, which is a limit the customer can see coming. Overage replaces that limit with a charge, and nobody should meet that decision on an invoice.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updateOverageSettingsTest() throws ApiException {
+        BillingOverageRequest billingOverageRequest = null;
+        BillingOverageResponse response = api.updateOverageSettings(billingOverageRequest);
         // TODO: test validations
     }
 

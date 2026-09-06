@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * BillingPlan
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-05T05:34:04.802659357Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T00:27:59.660269179Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BillingPlan {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -63,9 +64,21 @@ public class BillingPlan {
   @SerializedName(SERIALIZED_NAME_PRICE_ID)
   private String priceId;
 
+  public static final String SERIALIZED_NAME_PRICE_ID_ANNUAL = "price_id_annual";
+  @SerializedName(SERIALIZED_NAME_PRICE_ID_ANNUAL)
+  private String priceIdAnnual;
+
   public static final String SERIALIZED_NAME_MONTHLY_RENDER_QUOTA = "monthly_render_quota";
   @SerializedName(SERIALIZED_NAME_MONTHLY_RENDER_QUOTA)
   private Integer monthlyRenderQuota;
+
+  public static final String SERIALIZED_NAME_ALLOW_BRANDING_REMOVAL = "allow_branding_removal";
+  @SerializedName(SERIALIZED_NAME_ALLOW_BRANDING_REMOVAL)
+  private Boolean allowBrandingRemoval = false;
+
+  public static final String SERIALIZED_NAME_OVERAGE_PRICE_MILLICENTS = "overage_price_millicents";
+  @SerializedName(SERIALIZED_NAME_OVERAGE_PRICE_MILLICENTS)
+  private Integer overagePriceMillicents;
 
   public BillingPlan() {
   }
@@ -127,6 +140,25 @@ public class BillingPlan {
   }
 
 
+  public BillingPlan priceIdAnnual(String priceIdAnnual) {
+    this.priceIdAnnual = priceIdAnnual;
+    return this;
+  }
+
+  /**
+   * Get priceIdAnnual
+   * @return priceIdAnnual
+   */
+  @javax.annotation.Nullable
+  public String getPriceIdAnnual() {
+    return priceIdAnnual;
+  }
+
+  public void setPriceIdAnnual(String priceIdAnnual) {
+    this.priceIdAnnual = priceIdAnnual;
+  }
+
+
   public BillingPlan monthlyRenderQuota(Integer monthlyRenderQuota) {
     this.monthlyRenderQuota = monthlyRenderQuota;
     return this;
@@ -146,6 +178,44 @@ public class BillingPlan {
   }
 
 
+  public BillingPlan allowBrandingRemoval(Boolean allowBrandingRemoval) {
+    this.allowBrandingRemoval = allowBrandingRemoval;
+    return this;
+  }
+
+  /**
+   * Get allowBrandingRemoval
+   * @return allowBrandingRemoval
+   */
+  @javax.annotation.Nullable
+  public Boolean getAllowBrandingRemoval() {
+    return allowBrandingRemoval;
+  }
+
+  public void setAllowBrandingRemoval(Boolean allowBrandingRemoval) {
+    this.allowBrandingRemoval = allowBrandingRemoval;
+  }
+
+
+  public BillingPlan overagePriceMillicents(Integer overagePriceMillicents) {
+    this.overagePriceMillicents = overagePriceMillicents;
+    return this;
+  }
+
+  /**
+   * Get overagePriceMillicents
+   * @return overagePriceMillicents
+   */
+  @javax.annotation.Nullable
+  public Integer getOveragePriceMillicents() {
+    return overagePriceMillicents;
+  }
+
+  public void setOveragePriceMillicents(Integer overagePriceMillicents) {
+    this.overagePriceMillicents = overagePriceMillicents;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -159,12 +229,26 @@ public class BillingPlan {
     return Objects.equals(this.id, billingPlan.id) &&
         Objects.equals(this.name, billingPlan.name) &&
         Objects.equals(this.priceId, billingPlan.priceId) &&
-        Objects.equals(this.monthlyRenderQuota, billingPlan.monthlyRenderQuota);
+        Objects.equals(this.priceIdAnnual, billingPlan.priceIdAnnual) &&
+        Objects.equals(this.monthlyRenderQuota, billingPlan.monthlyRenderQuota) &&
+        Objects.equals(this.allowBrandingRemoval, billingPlan.allowBrandingRemoval) &&
+        Objects.equals(this.overagePriceMillicents, billingPlan.overagePriceMillicents);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, priceId, monthlyRenderQuota);
+    return Objects.hash(id, name, priceId, priceIdAnnual, monthlyRenderQuota, allowBrandingRemoval, overagePriceMillicents);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -174,7 +258,10 @@ public class BillingPlan {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    priceId: ").append(toIndentedString(priceId)).append("\n");
+    sb.append("    priceIdAnnual: ").append(toIndentedString(priceIdAnnual)).append("\n");
     sb.append("    monthlyRenderQuota: ").append(toIndentedString(monthlyRenderQuota)).append("\n");
+    sb.append("    allowBrandingRemoval: ").append(toIndentedString(allowBrandingRemoval)).append("\n");
+    sb.append("    overagePriceMillicents: ").append(toIndentedString(overagePriceMillicents)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,7 +287,10 @@ public class BillingPlan {
     openapiFields.add("id");
     openapiFields.add("name");
     openapiFields.add("price_id");
+    openapiFields.add("price_id_annual");
     openapiFields.add("monthly_render_quota");
+    openapiFields.add("allow_branding_removal");
+    openapiFields.add("overage_price_millicents");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -246,6 +336,9 @@ public class BillingPlan {
       }
       if (!jsonObj.get("price_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `price_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("price_id").toString()));
+      }
+      if ((jsonObj.get("price_id_annual") != null && !jsonObj.get("price_id_annual").isJsonNull()) && !jsonObj.get("price_id_annual").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `price_id_annual` to be a primitive type in the JSON string but got `%s`", jsonObj.get("price_id_annual").toString()));
       }
   }
 

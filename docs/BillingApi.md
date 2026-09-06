@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost*
 | [**createPortalSession**](BillingApi.md#createPortalSession) | **POST** /api/v1/billing/portal-session | Create Portal Session |
 | [**getSubscription**](BillingApi.md#getSubscription) | **GET** /api/v1/billing/subscription | Get Subscription |
 | [**listPlans**](BillingApi.md#listPlans) | **GET** /api/v1/billing/plans | List Plans |
+| [**updateOverageSettings**](BillingApi.md#updateOverageSettings) | **PATCH** /api/v1/billing/overage | Update Overage Settings |
 
 
 <a id="createCheckoutSession"></a>
@@ -266,4 +267,72 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
+
+<a id="updateOverageSettings"></a>
+# **updateOverageSettings**
+> BillingOverageResponse updateOverageSettings(billingOverageRequest)
+
+Update Overage Settings
+
+Turn overage billing on or off for this account.  Off by default and stays off until asked: past the quota the API returns 429, which is a limit the customer can see coming. Overage replaces that limit with a charge, and nobody should meet that decision on an invoice.
+
+### Example
+```java
+// Import classes:
+import com.invoicepdfs.ApiClient;
+import com.invoicepdfs.ApiException;
+import com.invoicepdfs.Configuration;
+import com.invoicepdfs.auth.*;
+import com.invoicepdfs.models.*;
+import org.openapitools.client.api.BillingApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP bearer authorization: HTTPBearer
+    HttpBearerAuth HTTPBearer = (HttpBearerAuth) defaultClient.getAuthentication("HTTPBearer");
+    HTTPBearer.setBearerToken("BEARER TOKEN");
+
+    BillingApi apiInstance = new BillingApi(defaultClient);
+    BillingOverageRequest billingOverageRequest = new BillingOverageRequest(); // BillingOverageRequest | 
+    try {
+      BillingOverageResponse result = apiInstance.updateOverageSettings(billingOverageRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling BillingApi#updateOverageSettings");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **billingOverageRequest** | [**BillingOverageRequest**](BillingOverageRequest.md)|  | |
+
+### Return type
+
+[**BillingOverageResponse**](BillingOverageResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
 

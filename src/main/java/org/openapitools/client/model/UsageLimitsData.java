@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.UsageOverage;
 import org.openapitools.client.model.UsageRateLimit;
 import org.openapitools.client.model.UsageRenderLimits;
 
@@ -51,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * UsageLimitsData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-05T05:34:04.802659357Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T00:27:59.660269179Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UsageLimitsData {
   public static final String SERIALIZED_NAME_RENDERS = "renders";
   @SerializedName(SERIALIZED_NAME_RENDERS)
@@ -60,6 +61,10 @@ public class UsageLimitsData {
   public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
   @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
   private UsageRateLimit rateLimit;
+
+  public static final String SERIALIZED_NAME_OVERAGE = "overage";
+  @SerializedName(SERIALIZED_NAME_OVERAGE)
+  private UsageOverage overage;
 
   public UsageLimitsData() {
   }
@@ -102,6 +107,25 @@ public class UsageLimitsData {
   }
 
 
+  public UsageLimitsData overage(UsageOverage overage) {
+    this.overage = overage;
+    return this;
+  }
+
+  /**
+   * Get overage
+   * @return overage
+   */
+  @javax.annotation.Nullable
+  public UsageOverage getOverage() {
+    return overage;
+  }
+
+  public void setOverage(UsageOverage overage) {
+    this.overage = overage;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -113,12 +137,13 @@ public class UsageLimitsData {
     }
     UsageLimitsData usageLimitsData = (UsageLimitsData) o;
     return Objects.equals(this.renders, usageLimitsData.renders) &&
-        Objects.equals(this.rateLimit, usageLimitsData.rateLimit);
+        Objects.equals(this.rateLimit, usageLimitsData.rateLimit) &&
+        Objects.equals(this.overage, usageLimitsData.overage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(renders, rateLimit);
+    return Objects.hash(renders, rateLimit, overage);
   }
 
   @Override
@@ -127,6 +152,7 @@ public class UsageLimitsData {
     sb.append("class UsageLimitsData {\n");
     sb.append("    renders: ").append(toIndentedString(renders)).append("\n");
     sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
+    sb.append("    overage: ").append(toIndentedString(overage)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -151,6 +177,7 @@ public class UsageLimitsData {
     openapiFields = new HashSet<String>();
     openapiFields.add("renders");
     openapiFields.add("rate_limit");
+    openapiFields.add("overage");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -190,6 +217,10 @@ public class UsageLimitsData {
       UsageRenderLimits.validateJsonElement(jsonObj.get("renders"));
       // validate the required field `rate_limit`
       UsageRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
+      // validate the optional field `overage`
+      if (jsonObj.get("overage") != null && !jsonObj.get("overage").isJsonNull()) {
+        UsageOverage.validateJsonElement(jsonObj.get("overage"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

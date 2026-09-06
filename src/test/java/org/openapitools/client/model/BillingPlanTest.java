@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -62,11 +63,35 @@ public class BillingPlanTest {
     }
 
     /**
+     * Test the property 'priceIdAnnual'
+     */
+    @Test
+    public void priceIdAnnualTest() {
+        // TODO: test priceIdAnnual
+    }
+
+    /**
      * Test the property 'monthlyRenderQuota'
      */
     @Test
     public void monthlyRenderQuotaTest() {
         // TODO: test monthlyRenderQuota
+    }
+
+    /**
+     * Test the property 'allowBrandingRemoval'
+     */
+    @Test
+    public void allowBrandingRemovalTest() {
+        // TODO: test allowBrandingRemoval
+    }
+
+    /**
+     * Test the property 'overagePriceMillicents'
+     */
+    @Test
+    public void overagePriceMillicentsTest() {
+        // TODO: test overagePriceMillicents
     }
 
 }

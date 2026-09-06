@@ -13,6 +13,9 @@
 |**planName** | **String** |  |  |
 |**stripeConfigured** | **Boolean** |  |  [optional] |
 |**hasBillingAccount** | **Boolean** |  |  [optional] |
+|**overageEnabled** | **Boolean** |  |  [optional] |
+|**overageAvailable** | **Boolean** |  |  [optional] |
+|**overagePriceMillicents** | **Integer** |  |  [optional] |
 
 
 

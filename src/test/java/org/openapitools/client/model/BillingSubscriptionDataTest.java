@@ -86,4 +86,28 @@ public class BillingSubscriptionDataTest {
         // TODO: test hasBillingAccount
     }
 
+    /**
+     * Test the property 'overageEnabled'
+     */
+    @Test
+    public void overageEnabledTest() {
+        // TODO: test overageEnabled
+    }
+
+    /**
+     * Test the property 'overageAvailable'
+     */
+    @Test
+    public void overageAvailableTest() {
+        // TODO: test overageAvailable
+    }
+
+    /**
+     * Test the property 'overagePriceMillicents'
+     */
+    @Test
+    public void overagePriceMillicentsTest() {
+        // TODO: test overagePriceMillicents
+    }
+
 }

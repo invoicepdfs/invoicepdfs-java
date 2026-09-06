@@ -78,4 +78,12 @@ public class DocumentBrandingInputTest {
         // TODO: test footerText
     }
 
+    /**
+     * Test the property 'hideInvoicepdfsBranding'
+     */
+    @Test
+    public void hideInvoicepdfsBrandingTest() {
+        // TODO: test hideInvoicepdfsBranding
+    }
+
 }

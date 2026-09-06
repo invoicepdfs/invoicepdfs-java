@@ -30,6 +30,8 @@ import java.io.IOException;
 import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.BillingCheckoutRequest;
 import org.openapitools.client.model.BillingCheckoutResponse;
+import org.openapitools.client.model.BillingOverageRequest;
+import org.openapitools.client.model.BillingOverageResponse;
 import org.openapitools.client.model.BillingPlansListResponse;
 import org.openapitools.client.model.BillingPortalResponse;
 import org.openapitools.client.model.BillingSubscriptionResponse;
@@ -540,6 +542,133 @@ public class BillingApi {
 
         okhttp3.Call localVarCall = listPlansValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<BillingPlansListResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateOverageSettings
+     * @param billingOverageRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateOverageSettingsCall(BillingOverageRequest billingOverageRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = billingOverageRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/billing/overage";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateOverageSettingsValidateBeforeCall(BillingOverageRequest billingOverageRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'billingOverageRequest' is set
+        if (billingOverageRequest == null) {
+            throw new ApiException("Missing the required parameter 'billingOverageRequest' when calling updateOverageSettings(Async)");
+        }
+
+        return updateOverageSettingsCall(billingOverageRequest, _callback);
+
+    }
+
+    /**
+     * Update Overage Settings
+     * Turn overage billing on or off for this account.  Off by default and stays off until asked: past the quota the API returns 429, which is a limit the customer can see coming. Overage replaces that limit with a charge, and nobody should meet that decision on an invoice.
+     * @param billingOverageRequest  (required)
+     * @return BillingOverageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public BillingOverageResponse updateOverageSettings(BillingOverageRequest billingOverageRequest) throws ApiException {
+        ApiResponse<BillingOverageResponse> localVarResp = updateOverageSettingsWithHttpInfo(billingOverageRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Overage Settings
+     * Turn overage billing on or off for this account.  Off by default and stays off until asked: past the quota the API returns 429, which is a limit the customer can see coming. Overage replaces that limit with a charge, and nobody should meet that decision on an invoice.
+     * @param billingOverageRequest  (required)
+     * @return ApiResponse&lt;BillingOverageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BillingOverageResponse> updateOverageSettingsWithHttpInfo(BillingOverageRequest billingOverageRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateOverageSettingsValidateBeforeCall(billingOverageRequest, null);
+        Type localVarReturnType = new TypeToken<BillingOverageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Overage Settings (asynchronously)
+     * Turn overage billing on or off for this account.  Off by default and stays off until asked: past the quota the API returns 429, which is a limit the customer can see coming. Overage replaces that limit with a charge, and nobody should meet that decision on an invoice.
+     * @param billingOverageRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateOverageSettingsAsync(BillingOverageRequest billingOverageRequest, final ApiCallback<BillingOverageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateOverageSettingsValidateBeforeCall(billingOverageRequest, _callback);
+        Type localVarReturnType = new TypeToken<BillingOverageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**renders** | [**UsageRenderLimits**](UsageRenderLimits.md) |  |  |
 |**rateLimit** | [**UsageRateLimit**](UsageRateLimit.md) |  |  |
+|**overage** | [**UsageOverage**](UsageOverage.md) |  |  [optional] |
 
 
 

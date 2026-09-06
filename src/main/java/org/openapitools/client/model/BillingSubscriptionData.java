@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * BillingSubscriptionData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-05T05:34:04.802659357Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T00:27:59.660269179Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BillingSubscriptionData {
   public static final String SERIALIZED_NAME_SUBSCRIPTION_ID = "subscription_id";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_ID)
@@ -75,6 +75,18 @@ public class BillingSubscriptionData {
   public static final String SERIALIZED_NAME_HAS_BILLING_ACCOUNT = "has_billing_account";
   @SerializedName(SERIALIZED_NAME_HAS_BILLING_ACCOUNT)
   private Boolean hasBillingAccount = false;
+
+  public static final String SERIALIZED_NAME_OVERAGE_ENABLED = "overage_enabled";
+  @SerializedName(SERIALIZED_NAME_OVERAGE_ENABLED)
+  private Boolean overageEnabled = false;
+
+  public static final String SERIALIZED_NAME_OVERAGE_AVAILABLE = "overage_available";
+  @SerializedName(SERIALIZED_NAME_OVERAGE_AVAILABLE)
+  private Boolean overageAvailable = false;
+
+  public static final String SERIALIZED_NAME_OVERAGE_PRICE_MILLICENTS = "overage_price_millicents";
+  @SerializedName(SERIALIZED_NAME_OVERAGE_PRICE_MILLICENTS)
+  private Integer overagePriceMillicents;
 
   public BillingSubscriptionData() {
   }
@@ -193,6 +205,63 @@ public class BillingSubscriptionData {
   }
 
 
+  public BillingSubscriptionData overageEnabled(Boolean overageEnabled) {
+    this.overageEnabled = overageEnabled;
+    return this;
+  }
+
+  /**
+   * Get overageEnabled
+   * @return overageEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getOverageEnabled() {
+    return overageEnabled;
+  }
+
+  public void setOverageEnabled(Boolean overageEnabled) {
+    this.overageEnabled = overageEnabled;
+  }
+
+
+  public BillingSubscriptionData overageAvailable(Boolean overageAvailable) {
+    this.overageAvailable = overageAvailable;
+    return this;
+  }
+
+  /**
+   * Get overageAvailable
+   * @return overageAvailable
+   */
+  @javax.annotation.Nullable
+  public Boolean getOverageAvailable() {
+    return overageAvailable;
+  }
+
+  public void setOverageAvailable(Boolean overageAvailable) {
+    this.overageAvailable = overageAvailable;
+  }
+
+
+  public BillingSubscriptionData overagePriceMillicents(Integer overagePriceMillicents) {
+    this.overagePriceMillicents = overagePriceMillicents;
+    return this;
+  }
+
+  /**
+   * Get overagePriceMillicents
+   * @return overagePriceMillicents
+   */
+  @javax.annotation.Nullable
+  public Integer getOveragePriceMillicents() {
+    return overagePriceMillicents;
+  }
+
+  public void setOveragePriceMillicents(Integer overagePriceMillicents) {
+    this.overagePriceMillicents = overagePriceMillicents;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -208,7 +277,10 @@ public class BillingSubscriptionData {
         Objects.equals(this.planId, billingSubscriptionData.planId) &&
         Objects.equals(this.planName, billingSubscriptionData.planName) &&
         Objects.equals(this.stripeConfigured, billingSubscriptionData.stripeConfigured) &&
-        Objects.equals(this.hasBillingAccount, billingSubscriptionData.hasBillingAccount);
+        Objects.equals(this.hasBillingAccount, billingSubscriptionData.hasBillingAccount) &&
+        Objects.equals(this.overageEnabled, billingSubscriptionData.overageEnabled) &&
+        Objects.equals(this.overageAvailable, billingSubscriptionData.overageAvailable) &&
+        Objects.equals(this.overagePriceMillicents, billingSubscriptionData.overagePriceMillicents);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -217,7 +289,7 @@ public class BillingSubscriptionData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(subscriptionId, status, planId, planName, stripeConfigured, hasBillingAccount);
+    return Objects.hash(subscriptionId, status, planId, planName, stripeConfigured, hasBillingAccount, overageEnabled, overageAvailable, overagePriceMillicents);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -237,6 +309,9 @@ public class BillingSubscriptionData {
     sb.append("    planName: ").append(toIndentedString(planName)).append("\n");
     sb.append("    stripeConfigured: ").append(toIndentedString(stripeConfigured)).append("\n");
     sb.append("    hasBillingAccount: ").append(toIndentedString(hasBillingAccount)).append("\n");
+    sb.append("    overageEnabled: ").append(toIndentedString(overageEnabled)).append("\n");
+    sb.append("    overageAvailable: ").append(toIndentedString(overageAvailable)).append("\n");
+    sb.append("    overagePriceMillicents: ").append(toIndentedString(overagePriceMillicents)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -265,6 +340,9 @@ public class BillingSubscriptionData {
     openapiFields.add("plan_name");
     openapiFields.add("stripe_configured");
     openapiFields.add("has_billing_account");
+    openapiFields.add("overage_enabled");
+    openapiFields.add("overage_available");
+    openapiFields.add("overage_price_millicents");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

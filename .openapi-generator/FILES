@@ -50,6 +50,9 @@ docs/BillingApi.md
 docs/BillingCheckoutData.md
 docs/BillingCheckoutRequest.md
 docs/BillingCheckoutResponse.md
+docs/BillingOverageData.md
+docs/BillingOverageRequest.md
+docs/BillingOverageResponse.md
 docs/BillingPlan.md
 docs/BillingPlansListResponse.md
 docs/BillingPortalData.md
@@ -214,6 +217,7 @@ docs/UsageEventOut.md
 docs/UsageEventsListResponse.md
 docs/UsageLimitsData.md
 docs/UsageLimitsResponse.md
+docs/UsageOverage.md
 docs/UsagePeriod.md
 docs/UsageRateLimit.md
 docs/UsageRenderLimits.md
@@ -337,6 +341,9 @@ src/main/java/org/openapitools/client/model/BatchesListResponse.java
 src/main/java/org/openapitools/client/model/BillingCheckoutData.java
 src/main/java/org/openapitools/client/model/BillingCheckoutRequest.java
 src/main/java/org/openapitools/client/model/BillingCheckoutResponse.java
+src/main/java/org/openapitools/client/model/BillingOverageData.java
+src/main/java/org/openapitools/client/model/BillingOverageRequest.java
+src/main/java/org/openapitools/client/model/BillingOverageResponse.java
 src/main/java/org/openapitools/client/model/BillingPlan.java
 src/main/java/org/openapitools/client/model/BillingPlansListResponse.java
 src/main/java/org/openapitools/client/model/BillingPortalData.java
@@ -480,6 +487,7 @@ src/main/java/org/openapitools/client/model/UsageEventOut.java
 src/main/java/org/openapitools/client/model/UsageEventsListResponse.java
 src/main/java/org/openapitools/client/model/UsageLimitsData.java
 src/main/java/org/openapitools/client/model/UsageLimitsResponse.java
+src/main/java/org/openapitools/client/model/UsageOverage.java
 src/main/java/org/openapitools/client/model/UsagePeriod.java
 src/main/java/org/openapitools/client/model/UsageRateLimit.java
 src/main/java/org/openapitools/client/model/UsageRenderLimits.java
@@ -574,6 +582,9 @@ src/test/java/org/openapitools/client/model/BatchesListResponseTest.java
 src/test/java/org/openapitools/client/model/BillingCheckoutDataTest.java
 src/test/java/org/openapitools/client/model/BillingCheckoutRequestTest.java
 src/test/java/org/openapitools/client/model/BillingCheckoutResponseTest.java
+src/test/java/org/openapitools/client/model/BillingOverageDataTest.java
+src/test/java/org/openapitools/client/model/BillingOverageRequestTest.java
+src/test/java/org/openapitools/client/model/BillingOverageResponseTest.java
 src/test/java/org/openapitools/client/model/BillingPlanTest.java
 src/test/java/org/openapitools/client/model/BillingPlansListResponseTest.java
 src/test/java/org/openapitools/client/model/BillingPortalDataTest.java
@@ -717,6 +728,7 @@ src/test/java/org/openapitools/client/model/UsageEventOutTest.java
 src/test/java/org/openapitools/client/model/UsageEventsListResponseTest.java
 src/test/java/org/openapitools/client/model/UsageLimitsDataTest.java
 src/test/java/org/openapitools/client/model/UsageLimitsResponseTest.java
+src/test/java/org/openapitools/client/model/UsageOverageTest.java
 src/test/java/org/openapitools/client/model/UsagePeriodTest.java
 src/test/java/org/openapitools/client/model/UsageRateLimitTest.java
 src/test/java/org/openapitools/client/model/UsageRenderLimitsTest.java

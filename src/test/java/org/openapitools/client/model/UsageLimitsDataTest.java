@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.UsageOverage;
 import org.openapitools.client.model.UsageRateLimit;
 import org.openapitools.client.model.UsageRenderLimits;
 import org.junit.jupiter.api.Disabled;
@@ -53,6 +54,14 @@ public class UsageLimitsDataTest {
     @Test
     public void rateLimitTest() {
         // TODO: test rateLimit
+    }
+
+    /**
+     * Test the property 'overage'
+     */
+    @Test
+    public void overageTest() {
+        // TODO: test overage
     }
 
 }

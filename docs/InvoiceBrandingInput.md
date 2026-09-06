@@ -13,6 +13,7 @@
 |**fontFamily** | **String** |  |  [optional] |
 |**headerText** | **String** |  |  [optional] |
 |**footerText** | **String** |  |  [optional] |
+|**hideInvoicepdfsBranding** | **Boolean** |  |  [optional] |
 
 
 
