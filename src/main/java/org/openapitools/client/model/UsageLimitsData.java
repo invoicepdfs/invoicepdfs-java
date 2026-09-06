@@ -52,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * UsageLimitsData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T00:27:59.660269179Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T06:08:26.777243047Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UsageLimitsData {
   public static final String SERIALIZED_NAME_RENDERS = "renders";
   @SerializedName(SERIALIZED_NAME_RENDERS)
@@ -61,6 +61,10 @@ public class UsageLimitsData {
   public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
   @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
   private UsageRateLimit rateLimit;
+
+  public static final String SERIALIZED_NAME_API_LOG_RETENTION = "api_log_retention";
+  @SerializedName(SERIALIZED_NAME_API_LOG_RETENTION)
+  private Integer apiLogRetention = 0;
 
   public static final String SERIALIZED_NAME_OVERAGE = "overage";
   @SerializedName(SERIALIZED_NAME_OVERAGE)
@@ -107,6 +111,25 @@ public class UsageLimitsData {
   }
 
 
+  public UsageLimitsData apiLogRetention(Integer apiLogRetention) {
+    this.apiLogRetention = apiLogRetention;
+    return this;
+  }
+
+  /**
+   * Get apiLogRetention
+   * @return apiLogRetention
+   */
+  @javax.annotation.Nullable
+  public Integer getApiLogRetention() {
+    return apiLogRetention;
+  }
+
+  public void setApiLogRetention(Integer apiLogRetention) {
+    this.apiLogRetention = apiLogRetention;
+  }
+
+
   public UsageLimitsData overage(UsageOverage overage) {
     this.overage = overage;
     return this;
@@ -138,12 +161,13 @@ public class UsageLimitsData {
     UsageLimitsData usageLimitsData = (UsageLimitsData) o;
     return Objects.equals(this.renders, usageLimitsData.renders) &&
         Objects.equals(this.rateLimit, usageLimitsData.rateLimit) &&
+        Objects.equals(this.apiLogRetention, usageLimitsData.apiLogRetention) &&
         Objects.equals(this.overage, usageLimitsData.overage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(renders, rateLimit, overage);
+    return Objects.hash(renders, rateLimit, apiLogRetention, overage);
   }
 
   @Override
@@ -152,6 +176,7 @@ public class UsageLimitsData {
     sb.append("class UsageLimitsData {\n");
     sb.append("    renders: ").append(toIndentedString(renders)).append("\n");
     sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
+    sb.append("    apiLogRetention: ").append(toIndentedString(apiLogRetention)).append("\n");
     sb.append("    overage: ").append(toIndentedString(overage)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -177,6 +202,7 @@ public class UsageLimitsData {
     openapiFields = new HashSet<String>();
     openapiFields.add("renders");
     openapiFields.add("rate_limit");
+    openapiFields.add("api_log_retention");
     openapiFields.add("overage");
 
     // a set of required properties/fields (JSON key names)

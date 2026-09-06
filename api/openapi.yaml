@@ -6342,6 +6342,7 @@ components:
         overage_available: false
         overage_enabled: false
         stripe_configured: false
+        allow_branding_removal: false
         overage_price_millicents: 0
         plan_id: plan_id
         plan_name: plan_name
@@ -6378,6 +6379,10 @@ components:
         overage_price_millicents:
           nullable: true
           type: integer
+        allow_branding_removal:
+          default: false
+          title: Allow Branding Removal
+          type: boolean
       required:
       - plan_id
       - plan_name
@@ -6391,6 +6396,7 @@ components:
           overage_available: false
           overage_enabled: false
           stripe_configured: false
+          allow_branding_removal: false
           overage_price_millicents: 0
           plan_id: plan_id
           plan_name: plan_name
@@ -12457,10 +12463,11 @@ components:
           remaining: 1
         rate_limit:
           requests_per_second: 5
+        api_log_retention: 5
         overage:
-          price_millicents: 2
-          renders: 5
-          estimated_cost_cents: 7
+          price_millicents: 7
+          renders: 2
+          estimated_cost_cents: 9
           available: false
           enabled: false
       properties:
@@ -12468,6 +12475,10 @@ components:
           $ref: '#/components/schemas/UsageRenderLimits'
         rate_limit:
           $ref: '#/components/schemas/UsageRateLimit'
+        api_log_retention:
+          default: 0
+          title: Api Log Retention
+          type: integer
         overage:
           $ref: '#/components/schemas/UsageOverage'
       required:
@@ -12484,10 +12495,11 @@ components:
             remaining: 1
           rate_limit:
             requests_per_second: 5
+          api_log_retention: 5
           overage:
-            price_millicents: 2
-            renders: 5
-            estimated_cost_cents: 7
+            price_millicents: 7
+            renders: 2
+            estimated_cost_cents: 9
             available: false
             enabled: false
       properties:
@@ -12500,9 +12512,9 @@ components:
     UsageOverage:
       description: "Renders past the quota this period, and what they cost."
       example:
-        price_millicents: 2
-        renders: 5
-        estimated_cost_cents: 7
+        price_millicents: 7
+        renders: 2
+        estimated_cost_cents: 9
         available: false
         enabled: false
       properties:

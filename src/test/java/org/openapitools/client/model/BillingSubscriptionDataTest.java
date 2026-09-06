@@ -110,4 +110,12 @@ public class BillingSubscriptionDataTest {
         // TODO: test overagePriceMillicents
     }
 
+    /**
+     * Test the property 'allowBrandingRemoval'
+     */
+    @Test
+    public void allowBrandingRemovalTest() {
+        // TODO: test allowBrandingRemoval
+    }
+
 }

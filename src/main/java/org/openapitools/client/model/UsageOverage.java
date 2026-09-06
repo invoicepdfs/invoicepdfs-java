@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * Renders past the quota this period, and what they cost.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T00:27:59.660269179Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T06:08:26.777243047Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UsageOverage {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)

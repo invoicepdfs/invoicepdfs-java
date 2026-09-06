@@ -57,6 +57,14 @@ public class UsageLimitsDataTest {
     }
 
     /**
+     * Test the property 'apiLogRetention'
+     */
+    @Test
+    public void apiLogRetentionTest() {
+        // TODO: test apiLogRetention
+    }
+
+    /**
      * Test the property 'overage'
      */
     @Test

@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * BillingSubscriptionData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T00:27:59.660269179Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T06:08:26.777243047Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BillingSubscriptionData {
   public static final String SERIALIZED_NAME_SUBSCRIPTION_ID = "subscription_id";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_ID)
@@ -87,6 +87,10 @@ public class BillingSubscriptionData {
   public static final String SERIALIZED_NAME_OVERAGE_PRICE_MILLICENTS = "overage_price_millicents";
   @SerializedName(SERIALIZED_NAME_OVERAGE_PRICE_MILLICENTS)
   private Integer overagePriceMillicents;
+
+  public static final String SERIALIZED_NAME_ALLOW_BRANDING_REMOVAL = "allow_branding_removal";
+  @SerializedName(SERIALIZED_NAME_ALLOW_BRANDING_REMOVAL)
+  private Boolean allowBrandingRemoval = false;
 
   public BillingSubscriptionData() {
   }
@@ -262,6 +266,25 @@ public class BillingSubscriptionData {
   }
 
 
+  public BillingSubscriptionData allowBrandingRemoval(Boolean allowBrandingRemoval) {
+    this.allowBrandingRemoval = allowBrandingRemoval;
+    return this;
+  }
+
+  /**
+   * Get allowBrandingRemoval
+   * @return allowBrandingRemoval
+   */
+  @javax.annotation.Nullable
+  public Boolean getAllowBrandingRemoval() {
+    return allowBrandingRemoval;
+  }
+
+  public void setAllowBrandingRemoval(Boolean allowBrandingRemoval) {
+    this.allowBrandingRemoval = allowBrandingRemoval;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -280,7 +303,8 @@ public class BillingSubscriptionData {
         Objects.equals(this.hasBillingAccount, billingSubscriptionData.hasBillingAccount) &&
         Objects.equals(this.overageEnabled, billingSubscriptionData.overageEnabled) &&
         Objects.equals(this.overageAvailable, billingSubscriptionData.overageAvailable) &&
-        Objects.equals(this.overagePriceMillicents, billingSubscriptionData.overagePriceMillicents);
+        Objects.equals(this.overagePriceMillicents, billingSubscriptionData.overagePriceMillicents) &&
+        Objects.equals(this.allowBrandingRemoval, billingSubscriptionData.allowBrandingRemoval);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -289,7 +313,7 @@ public class BillingSubscriptionData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(subscriptionId, status, planId, planName, stripeConfigured, hasBillingAccount, overageEnabled, overageAvailable, overagePriceMillicents);
+    return Objects.hash(subscriptionId, status, planId, planName, stripeConfigured, hasBillingAccount, overageEnabled, overageAvailable, overagePriceMillicents, allowBrandingRemoval);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -312,6 +336,7 @@ public class BillingSubscriptionData {
     sb.append("    overageEnabled: ").append(toIndentedString(overageEnabled)).append("\n");
     sb.append("    overageAvailable: ").append(toIndentedString(overageAvailable)).append("\n");
     sb.append("    overagePriceMillicents: ").append(toIndentedString(overagePriceMillicents)).append("\n");
+    sb.append("    allowBrandingRemoval: ").append(toIndentedString(allowBrandingRemoval)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -343,6 +368,7 @@ public class BillingSubscriptionData {
     openapiFields.add("overage_enabled");
     openapiFields.add("overage_available");
     openapiFields.add("overage_price_millicents");
+    openapiFields.add("allow_branding_removal");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

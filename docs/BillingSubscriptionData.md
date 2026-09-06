@@ -16,6 +16,7 @@
 |**overageEnabled** | **Boolean** |  |  [optional] |
 |**overageAvailable** | **Boolean** |  |  [optional] |
 |**overagePriceMillicents** | **Integer** |  |  [optional] |
+|**allowBrandingRemoval** | **Boolean** |  |  [optional] |
 
 
 
