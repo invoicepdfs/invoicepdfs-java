@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * BillingPlan
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T06:08:26.777243047Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T09:07:52.097537412Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BillingPlan {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -67,6 +67,14 @@ public class BillingPlan {
   public static final String SERIALIZED_NAME_PRICE_ID_ANNUAL = "price_id_annual";
   @SerializedName(SERIALIZED_NAME_PRICE_ID_ANNUAL)
   private String priceIdAnnual;
+
+  public static final String SERIALIZED_NAME_PRICE_CENTS = "price_cents";
+  @SerializedName(SERIALIZED_NAME_PRICE_CENTS)
+  private Integer priceCents;
+
+  public static final String SERIALIZED_NAME_PRICE_CENTS_ANNUAL = "price_cents_annual";
+  @SerializedName(SERIALIZED_NAME_PRICE_CENTS_ANNUAL)
+  private Integer priceCentsAnnual;
 
   public static final String SERIALIZED_NAME_MONTHLY_RENDER_QUOTA = "monthly_render_quota";
   @SerializedName(SERIALIZED_NAME_MONTHLY_RENDER_QUOTA)
@@ -159,6 +167,44 @@ public class BillingPlan {
   }
 
 
+  public BillingPlan priceCents(Integer priceCents) {
+    this.priceCents = priceCents;
+    return this;
+  }
+
+  /**
+   * Get priceCents
+   * @return priceCents
+   */
+  @javax.annotation.Nullable
+  public Integer getPriceCents() {
+    return priceCents;
+  }
+
+  public void setPriceCents(Integer priceCents) {
+    this.priceCents = priceCents;
+  }
+
+
+  public BillingPlan priceCentsAnnual(Integer priceCentsAnnual) {
+    this.priceCentsAnnual = priceCentsAnnual;
+    return this;
+  }
+
+  /**
+   * Get priceCentsAnnual
+   * @return priceCentsAnnual
+   */
+  @javax.annotation.Nullable
+  public Integer getPriceCentsAnnual() {
+    return priceCentsAnnual;
+  }
+
+  public void setPriceCentsAnnual(Integer priceCentsAnnual) {
+    this.priceCentsAnnual = priceCentsAnnual;
+  }
+
+
   public BillingPlan monthlyRenderQuota(Integer monthlyRenderQuota) {
     this.monthlyRenderQuota = monthlyRenderQuota;
     return this;
@@ -230,6 +276,8 @@ public class BillingPlan {
         Objects.equals(this.name, billingPlan.name) &&
         Objects.equals(this.priceId, billingPlan.priceId) &&
         Objects.equals(this.priceIdAnnual, billingPlan.priceIdAnnual) &&
+        Objects.equals(this.priceCents, billingPlan.priceCents) &&
+        Objects.equals(this.priceCentsAnnual, billingPlan.priceCentsAnnual) &&
         Objects.equals(this.monthlyRenderQuota, billingPlan.monthlyRenderQuota) &&
         Objects.equals(this.allowBrandingRemoval, billingPlan.allowBrandingRemoval) &&
         Objects.equals(this.overagePriceMillicents, billingPlan.overagePriceMillicents);
@@ -241,7 +289,7 @@ public class BillingPlan {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, priceId, priceIdAnnual, monthlyRenderQuota, allowBrandingRemoval, overagePriceMillicents);
+    return Objects.hash(id, name, priceId, priceIdAnnual, priceCents, priceCentsAnnual, monthlyRenderQuota, allowBrandingRemoval, overagePriceMillicents);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -259,6 +307,8 @@ public class BillingPlan {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    priceId: ").append(toIndentedString(priceId)).append("\n");
     sb.append("    priceIdAnnual: ").append(toIndentedString(priceIdAnnual)).append("\n");
+    sb.append("    priceCents: ").append(toIndentedString(priceCents)).append("\n");
+    sb.append("    priceCentsAnnual: ").append(toIndentedString(priceCentsAnnual)).append("\n");
     sb.append("    monthlyRenderQuota: ").append(toIndentedString(monthlyRenderQuota)).append("\n");
     sb.append("    allowBrandingRemoval: ").append(toIndentedString(allowBrandingRemoval)).append("\n");
     sb.append("    overagePriceMillicents: ").append(toIndentedString(overagePriceMillicents)).append("\n");
@@ -288,6 +338,8 @@ public class BillingPlan {
     openapiFields.add("name");
     openapiFields.add("price_id");
     openapiFields.add("price_id_annual");
+    openapiFields.add("price_cents");
+    openapiFields.add("price_cents_annual");
     openapiFields.add("monthly_render_quota");
     openapiFields.add("allow_branding_removal");
     openapiFields.add("overage_price_millicents");

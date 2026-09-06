@@ -71,6 +71,22 @@ public class BillingPlanTest {
     }
 
     /**
+     * Test the property 'priceCents'
+     */
+    @Test
+    public void priceCentsTest() {
+        // TODO: test priceCents
+    }
+
+    /**
+     * Test the property 'priceCentsAnnual'
+     */
+    @Test
+    public void priceCentsAnnualTest() {
+        // TODO: test priceCentsAnnual
+    }
+
+    /**
      * Test the property 'monthlyRenderQuota'
      */
     @Test

@@ -53,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * BatchItemsListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T06:08:26.777243047Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-06T09:07:52.097537412Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BatchItemsListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

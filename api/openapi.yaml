@@ -6252,10 +6252,12 @@ components:
         price_id_annual: price_id_annual
         name: name
         price_id: price_id
+        price_cents: 0
+        price_cents_annual: 6
         id: id
         allow_branding_removal: false
-        overage_price_millicents: 6
-        monthly_render_quota: 0
+        overage_price_millicents: 5
+        monthly_render_quota: 1
       properties:
         id:
           title: Id
@@ -6269,6 +6271,12 @@ components:
         price_id_annual:
           nullable: true
           type: string
+        price_cents:
+          nullable: true
+          type: integer
+        price_cents_annual:
+          nullable: true
+          type: integer
         monthly_render_quota:
           title: Monthly Render Quota
           type: integer
@@ -6292,17 +6300,21 @@ components:
         - price_id_annual: price_id_annual
           name: name
           price_id: price_id
+          price_cents: 0
+          price_cents_annual: 6
           id: id
           allow_branding_removal: false
-          overage_price_millicents: 6
-          monthly_render_quota: 0
+          overage_price_millicents: 5
+          monthly_render_quota: 1
         - price_id_annual: price_id_annual
           name: name
           price_id: price_id
+          price_cents: 0
+          price_cents_annual: 6
           id: id
           allow_branding_removal: false
-          overage_price_millicents: 6
-          monthly_render_quota: 0
+          overage_price_millicents: 5
+          monthly_render_quota: 1
       properties:
         data:
           items:
