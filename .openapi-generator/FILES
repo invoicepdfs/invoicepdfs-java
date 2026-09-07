@@ -72,6 +72,8 @@ docs/BusinessProfileResponse.md
 docs/BusinessProfilesApi.md
 docs/BusinessProfilesListResponse.md
 docs/CalculationBreakdown.md
+docs/ComplianceCheckOut.md
+docs/ComplianceViolationOut.md
 docs/CountriesListResponse.md
 docs/CountryOut.md
 docs/CurrenciesListResponse.md
@@ -95,6 +97,8 @@ docs/DocumentAttachmentsApi.md
 docs/DocumentBrandingInput.md
 docs/DocumentCalculateRequest.md
 docs/DocumentCalculateResponse.md
+docs/DocumentComplianceRequest.md
+docs/DocumentComplianceResponse.md
 docs/DocumentCreateRequest.md
 docs/DocumentCustomFieldInput.md
 docs/DocumentDiscountInput.md
@@ -363,6 +367,8 @@ src/main/java/org/openapitools/client/model/BusinessProfilePatch.java
 src/main/java/org/openapitools/client/model/BusinessProfileResponse.java
 src/main/java/org/openapitools/client/model/BusinessProfilesListResponse.java
 src/main/java/org/openapitools/client/model/CalculationBreakdown.java
+src/main/java/org/openapitools/client/model/ComplianceCheckOut.java
+src/main/java/org/openapitools/client/model/ComplianceViolationOut.java
 src/main/java/org/openapitools/client/model/CountriesListResponse.java
 src/main/java/org/openapitools/client/model/CountryOut.java
 src/main/java/org/openapitools/client/model/CurrenciesListResponse.java
@@ -383,6 +389,8 @@ src/main/java/org/openapitools/client/model/DeliverySendRequest.java
 src/main/java/org/openapitools/client/model/DocumentBrandingInput.java
 src/main/java/org/openapitools/client/model/DocumentCalculateRequest.java
 src/main/java/org/openapitools/client/model/DocumentCalculateResponse.java
+src/main/java/org/openapitools/client/model/DocumentComplianceRequest.java
+src/main/java/org/openapitools/client/model/DocumentComplianceResponse.java
 src/main/java/org/openapitools/client/model/DocumentCreateRequest.java
 src/main/java/org/openapitools/client/model/DocumentCustomFieldInput.java
 src/main/java/org/openapitools/client/model/DocumentDiscountInput.java
@@ -606,6 +614,8 @@ src/test/java/org/openapitools/client/model/BusinessProfilePatchTest.java
 src/test/java/org/openapitools/client/model/BusinessProfileResponseTest.java
 src/test/java/org/openapitools/client/model/BusinessProfilesListResponseTest.java
 src/test/java/org/openapitools/client/model/CalculationBreakdownTest.java
+src/test/java/org/openapitools/client/model/ComplianceCheckOutTest.java
+src/test/java/org/openapitools/client/model/ComplianceViolationOutTest.java
 src/test/java/org/openapitools/client/model/CountriesListResponseTest.java
 src/test/java/org/openapitools/client/model/CountryOutTest.java
 src/test/java/org/openapitools/client/model/CurrenciesListResponseTest.java
@@ -626,6 +636,8 @@ src/test/java/org/openapitools/client/model/DeliverySendRequestTest.java
 src/test/java/org/openapitools/client/model/DocumentBrandingInputTest.java
 src/test/java/org/openapitools/client/model/DocumentCalculateRequestTest.java
 src/test/java/org/openapitools/client/model/DocumentCalculateResponseTest.java
+src/test/java/org/openapitools/client/model/DocumentComplianceRequestTest.java
+src/test/java/org/openapitools/client/model/DocumentComplianceResponseTest.java
 src/test/java/org/openapitools/client/model/DocumentCreateRequestTest.java
 src/test/java/org/openapitools/client/model/DocumentCustomFieldInputTest.java
 src/test/java/org/openapitools/client/model/DocumentDiscountInputTest.java

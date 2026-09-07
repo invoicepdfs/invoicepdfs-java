@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceDraftRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:12:00.695505601Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T05:11:02.871565432Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceDraftRequest {
   public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
   @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)
@@ -161,6 +161,14 @@ public class InvoiceDraftRequest {
   public static final String SERIALIZED_NAME_SHIP_TO = "ship_to";
   @SerializedName(SERIALIZED_NAME_SHIP_TO)
   private PostalAddress shipTo;
+
+  public static final String SERIALIZED_NAME_BUYER_REFERENCE = "buyer_reference";
+  @SerializedName(SERIALIZED_NAME_BUYER_REFERENCE)
+  private String buyerReference;
+
+  public static final String SERIALIZED_NAME_PRECEDING_INVOICE_NUMBER = "preceding_invoice_number";
+  @SerializedName(SERIALIZED_NAME_PRECEDING_INVOICE_NUMBER)
+  private String precedingInvoiceNumber;
 
   public static final String SERIALIZED_NAME_LINE_ITEMS = "line_items";
   @SerializedName(SERIALIZED_NAME_LINE_ITEMS)
@@ -365,6 +373,44 @@ public class InvoiceDraftRequest {
 
   public void setShipTo(PostalAddress shipTo) {
     this.shipTo = shipTo;
+  }
+
+
+  public InvoiceDraftRequest buyerReference(String buyerReference) {
+    this.buyerReference = buyerReference;
+    return this;
+  }
+
+  /**
+   * Get buyerReference
+   * @return buyerReference
+   */
+  @javax.annotation.Nullable
+  public String getBuyerReference() {
+    return buyerReference;
+  }
+
+  public void setBuyerReference(String buyerReference) {
+    this.buyerReference = buyerReference;
+  }
+
+
+  public InvoiceDraftRequest precedingInvoiceNumber(String precedingInvoiceNumber) {
+    this.precedingInvoiceNumber = precedingInvoiceNumber;
+    return this;
+  }
+
+  /**
+   * Get precedingInvoiceNumber
+   * @return precedingInvoiceNumber
+   */
+  @javax.annotation.Nullable
+  public String getPrecedingInvoiceNumber() {
+    return precedingInvoiceNumber;
+  }
+
+  public void setPrecedingInvoiceNumber(String precedingInvoiceNumber) {
+    this.precedingInvoiceNumber = precedingInvoiceNumber;
   }
 
 
@@ -579,6 +625,8 @@ public class InvoiceDraftRequest {
         Objects.equals(this.businessProfileId, invoiceDraftRequest.businessProfileId) &&
         Objects.equals(this.customerId, invoiceDraftRequest.customerId) &&
         Objects.equals(this.shipTo, invoiceDraftRequest.shipTo) &&
+        Objects.equals(this.buyerReference, invoiceDraftRequest.buyerReference) &&
+        Objects.equals(this.precedingInvoiceNumber, invoiceDraftRequest.precedingInvoiceNumber) &&
         Objects.equals(this.lineItems, invoiceDraftRequest.lineItems) &&
         Objects.equals(this.discounts, invoiceDraftRequest.discounts) &&
         Objects.equals(this.shipping, invoiceDraftRequest.shipping) &&
@@ -595,7 +643,7 @@ public class InvoiceDraftRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, documentType, issueDate, dueDate, currency, locale, businessProfileId, customerId, shipTo, lineItems, discounts, shipping, notes, terms, customFields, payment, branding);
+    return Objects.hash(invoiceNumber, documentType, issueDate, dueDate, currency, locale, businessProfileId, customerId, shipTo, buyerReference, precedingInvoiceNumber, lineItems, discounts, shipping, notes, terms, customFields, payment, branding);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -618,6 +666,8 @@ public class InvoiceDraftRequest {
     sb.append("    businessProfileId: ").append(toIndentedString(businessProfileId)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    sb.append("    buyerReference: ").append(toIndentedString(buyerReference)).append("\n");
+    sb.append("    precedingInvoiceNumber: ").append(toIndentedString(precedingInvoiceNumber)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
     sb.append("    shipping: ").append(toIndentedString(shipping)).append("\n");
@@ -657,6 +707,8 @@ public class InvoiceDraftRequest {
     openapiFields.add("business_profile_id");
     openapiFields.add("customer_id");
     openapiFields.add("ship_to");
+    openapiFields.add("buyer_reference");
+    openapiFields.add("preceding_invoice_number");
     openapiFields.add("line_items");
     openapiFields.add("discounts");
     openapiFields.add("shipping");
@@ -729,6 +781,12 @@ public class InvoiceDraftRequest {
       // validate the optional field `ship_to`
       if (jsonObj.get("ship_to") != null && !jsonObj.get("ship_to").isJsonNull()) {
         PostalAddress.validateJsonElement(jsonObj.get("ship_to"));
+      }
+      if ((jsonObj.get("buyer_reference") != null && !jsonObj.get("buyer_reference").isJsonNull()) && !jsonObj.get("buyer_reference").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `buyer_reference` to be a primitive type in the JSON string but got `%s`", jsonObj.get("buyer_reference").toString()));
+      }
+      if ((jsonObj.get("preceding_invoice_number") != null && !jsonObj.get("preceding_invoice_number").isJsonNull()) && !jsonObj.get("preceding_invoice_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `preceding_invoice_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("preceding_invoice_number").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("line_items").isJsonArray()) {

@@ -21,6 +21,7 @@ All URIs are relative to *http://localhost*
 | [**restoreDocument**](DocumentsApi.md#restoreDocument) | **POST** /api/v1/documents/{document_id}/restore | Restore Document |
 | [**sendDocument**](DocumentsApi.md#sendDocument) | **POST** /api/v1/documents/{document_id}/send | Send Document |
 | [**updateDocument**](DocumentsApi.md#updateDocument) | **PATCH** /api/v1/documents/{document_id} | Update Document |
+| [**validateCompliance**](DocumentsApi.md#validateCompliance) | **POST** /api/v1/documents/validate-compliance | Validate Compliance |
 | [**validateDocument**](DocumentsApi.md#validateDocument) | **POST** /api/v1/documents/validate | Validate Document |
 | [**voidDocument**](DocumentsApi.md#voidDocument) | **POST** /api/v1/documents/{document_id}/void | Void Document |
 
@@ -1153,6 +1154,74 @@ public class Example {
 ### Return type
 
 [**DocumentResponse**](DocumentResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="validateCompliance"></a>
+# **validateCompliance**
+> DocumentComplianceResponse validateCompliance(documentComplianceRequest)
+
+Validate Compliance
+
+Check a document against an e-invoicing ruleset without rendering it.  Costs no renders: nothing is stored and no PDF is produced, so a caller can check every invoice they are about to send rather than discovering the problem from a rejection weeks later.  This is the semantic half — mandatory fields and conditional requirements. Schematron is the authoritative check and is not wired up yet, so a document that passes here is not thereby proven conformant. It says what it can prove is wrong, which is the useful half early.
+
+### Example
+```java
+// Import classes:
+import com.invoicepdfs.ApiClient;
+import com.invoicepdfs.ApiException;
+import com.invoicepdfs.Configuration;
+import com.invoicepdfs.auth.*;
+import com.invoicepdfs.models.*;
+import org.openapitools.client.api.DocumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP bearer authorization: HTTPBearer
+    HttpBearerAuth HTTPBearer = (HttpBearerAuth) defaultClient.getAuthentication("HTTPBearer");
+    HTTPBearer.setBearerToken("BEARER TOKEN");
+
+    DocumentsApi apiInstance = new DocumentsApi(defaultClient);
+    DocumentComplianceRequest documentComplianceRequest = new DocumentComplianceRequest(); // DocumentComplianceRequest | 
+    try {
+      DocumentComplianceResponse result = apiInstance.validateCompliance(documentComplianceRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DocumentsApi#validateCompliance");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **documentComplianceRequest** | [**DocumentComplianceRequest**](DocumentComplianceRequest.md)|  | |
+
+### Return type
+
+[**DocumentComplianceResponse**](DocumentComplianceResponse.md)
 
 ### Authorization
 

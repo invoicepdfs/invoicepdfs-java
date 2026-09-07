@@ -20,6 +20,8 @@ import org.openapitools.client.model.DeliveryResponse;
 import org.openapitools.client.model.DeliverySendRequest;
 import org.openapitools.client.model.DocumentCalculateRequest;
 import org.openapitools.client.model.DocumentCalculateResponse;
+import org.openapitools.client.model.DocumentComplianceRequest;
+import org.openapitools.client.model.DocumentComplianceResponse;
 import org.openapitools.client.model.DocumentCreateRequest;
 import org.openapitools.client.model.DocumentPatchRequest;
 import org.openapitools.client.model.DocumentRenderOptions;
@@ -259,6 +261,20 @@ public class DocumentsApiTest {
         String documentId = null;
         DocumentPatchRequest documentPatchRequest = null;
         DocumentResponse response = api.updateDocument(documentId, documentPatchRequest);
+        // TODO: test validations
+    }
+
+    /**
+     * Validate Compliance
+     *
+     * Check a document against an e-invoicing ruleset without rendering it.  Costs no renders: nothing is stored and no PDF is produced, so a caller can check every invoice they are about to send rather than discovering the problem from a rejection weeks later.  This is the semantic half — mandatory fields and conditional requirements. Schematron is the authoritative check and is not wired up yet, so a document that passes here is not thereby proven conformant. It says what it can prove is wrong, which is the useful half early.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void validateComplianceTest() throws ApiException {
+        DocumentComplianceRequest documentComplianceRequest = null;
+        DocumentComplianceResponse response = api.validateCompliance(documentComplianceRequest);
         // TODO: test validations
     }
 
