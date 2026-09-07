@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.TaxCategory;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -50,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * TaxRatePatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:09:36.858564891Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:09:55.026992991Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TaxRatePatchRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -71,6 +72,10 @@ public class TaxRatePatchRequest {
   public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
   @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
+
+  public static final String SERIALIZED_NAME_CATEGORY = "category";
+  @SerializedName(SERIALIZED_NAME_CATEGORY)
+  private TaxCategory category;
 
   public TaxRatePatchRequest() {
   }
@@ -170,6 +175,25 @@ public class TaxRatePatchRequest {
   }
 
 
+  public TaxRatePatchRequest category(TaxCategory category) {
+    this.category = category;
+    return this;
+  }
+
+  /**
+   * Get category
+   * @return category
+   */
+  @javax.annotation.Nullable
+  public TaxCategory getCategory() {
+    return category;
+  }
+
+  public void setCategory(TaxCategory category) {
+    this.category = category;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -184,7 +208,8 @@ public class TaxRatePatchRequest {
         Objects.equals(this.rate, taxRatePatchRequest.rate) &&
         Objects.equals(this.inclusive, taxRatePatchRequest.inclusive) &&
         Objects.equals(this.jurisdiction, taxRatePatchRequest.jurisdiction) &&
-        Objects.equals(this.isActive, taxRatePatchRequest.isActive);
+        Objects.equals(this.isActive, taxRatePatchRequest.isActive) &&
+        Objects.equals(this.category, taxRatePatchRequest.category);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -193,7 +218,7 @@ public class TaxRatePatchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, rate, inclusive, jurisdiction, isActive);
+    return Objects.hash(name, rate, inclusive, jurisdiction, isActive, category);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -212,6 +237,7 @@ public class TaxRatePatchRequest {
     sb.append("    inclusive: ").append(toIndentedString(inclusive)).append("\n");
     sb.append("    jurisdiction: ").append(toIndentedString(jurisdiction)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -239,6 +265,7 @@ public class TaxRatePatchRequest {
     openapiFields.add("inclusive");
     openapiFields.add("jurisdiction");
     openapiFields.add("is_active");
+    openapiFields.add("category");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -273,6 +300,10 @@ public class TaxRatePatchRequest {
       }
       if ((jsonObj.get("jurisdiction") != null && !jsonObj.get("jurisdiction").isJsonNull()) && !jsonObj.get("jurisdiction").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jurisdiction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jurisdiction").toString()));
+      }
+      // validate the optional field `category`
+      if (jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) {
+        TaxCategory.validateJsonElement(jsonObj.get("category"));
       }
   }
 

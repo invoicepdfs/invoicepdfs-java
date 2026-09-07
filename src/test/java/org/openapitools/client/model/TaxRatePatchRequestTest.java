@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.TaxCategory;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -76,6 +77,14 @@ public class TaxRatePatchRequestTest {
     @Test
     public void isActiveTest() {
         // TODO: test isActive
+    }
+
+    /**
+     * Test the property 'category'
+     */
+    @Test
+    public void categoryTest() {
+        // TODO: test category
     }
 
 }

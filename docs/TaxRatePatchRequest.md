@@ -12,6 +12,7 @@
 |**inclusive** | **Boolean** |  |  [optional] |
 |**jurisdiction** | **String** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
+|**category** | [**TaxCategory**](TaxCategory.md) |  |  [optional] |
 
 
 

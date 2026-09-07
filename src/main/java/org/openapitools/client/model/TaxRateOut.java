@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.TaxCategory;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -50,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * TaxRateOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:09:36.858564891Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:09:55.026992991Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TaxRateOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -71,6 +72,10 @@ public class TaxRateOut {
   public static final String SERIALIZED_NAME_JURISDICTION = "jurisdiction";
   @SerializedName(SERIALIZED_NAME_JURISDICTION)
   private String jurisdiction;
+
+  public static final String SERIALIZED_NAME_CATEGORY = "category";
+  @SerializedName(SERIALIZED_NAME_CATEGORY)
+  private TaxCategory category;
 
   public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
   @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
@@ -182,6 +187,25 @@ public class TaxRateOut {
   }
 
 
+  public TaxRateOut category(TaxCategory category) {
+    this.category = category;
+    return this;
+  }
+
+  /**
+   * Get category
+   * @return category
+   */
+  @javax.annotation.Nullable
+  public TaxCategory getCategory() {
+    return category;
+  }
+
+  public void setCategory(TaxCategory category) {
+    this.category = category;
+  }
+
+
   public TaxRateOut isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
@@ -254,6 +278,7 @@ public class TaxRateOut {
         Objects.equals(this.rate, taxRateOut.rate) &&
         Objects.equals(this.inclusive, taxRateOut.inclusive) &&
         Objects.equals(this.jurisdiction, taxRateOut.jurisdiction) &&
+        Objects.equals(this.category, taxRateOut.category) &&
         Objects.equals(this.isActive, taxRateOut.isActive) &&
         Objects.equals(this.createdAt, taxRateOut.createdAt) &&
         Objects.equals(this.updatedAt, taxRateOut.updatedAt);
@@ -265,7 +290,7 @@ public class TaxRateOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, rate, inclusive, jurisdiction, isActive, createdAt, updatedAt);
+    return Objects.hash(id, name, rate, inclusive, jurisdiction, category, isActive, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -284,6 +309,7 @@ public class TaxRateOut {
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("    inclusive: ").append(toIndentedString(inclusive)).append("\n");
     sb.append("    jurisdiction: ").append(toIndentedString(jurisdiction)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -314,6 +340,7 @@ public class TaxRateOut {
     openapiFields.add("rate");
     openapiFields.add("inclusive");
     openapiFields.add("jurisdiction");
+    openapiFields.add("category");
     openapiFields.add("is_active");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -368,6 +395,10 @@ public class TaxRateOut {
       }
       if ((jsonObj.get("jurisdiction") != null && !jsonObj.get("jurisdiction").isJsonNull()) && !jsonObj.get("jurisdiction").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jurisdiction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jurisdiction").toString()));
+      }
+      // validate the optional field `category`
+      if (jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) {
+        TaxCategory.validateJsonElement(jsonObj.get("category"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
