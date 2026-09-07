@@ -117,6 +117,7 @@ docs/DocumentValidateRequest.md
 docs/DocumentValidateResponse.md
 docs/DocumentsApi.md
 docs/DocumentsListResponse.md
+docs/ElectronicAddress.md
 docs/FileOut.md
 docs/FileResponse.md
 docs/FilesApi.md
@@ -403,6 +404,7 @@ src/main/java/org/openapitools/client/model/DocumentTypesListResponse.java
 src/main/java/org/openapitools/client/model/DocumentValidateRequest.java
 src/main/java/org/openapitools/client/model/DocumentValidateResponse.java
 src/main/java/org/openapitools/client/model/DocumentsListResponse.java
+src/main/java/org/openapitools/client/model/ElectronicAddress.java
 src/main/java/org/openapitools/client/model/FileOut.java
 src/main/java/org/openapitools/client/model/FileResponse.java
 src/main/java/org/openapitools/client/model/HealthResponse.java
@@ -645,6 +647,7 @@ src/test/java/org/openapitools/client/model/DocumentTypesListResponseTest.java
 src/test/java/org/openapitools/client/model/DocumentValidateRequestTest.java
 src/test/java/org/openapitools/client/model/DocumentValidateResponseTest.java
 src/test/java/org/openapitools/client/model/DocumentsListResponseTest.java
+src/test/java/org/openapitools/client/model/ElectronicAddressTest.java
 src/test/java/org/openapitools/client/model/FileOutTest.java
 src/test/java/org/openapitools/client/model/FileResponseTest.java
 src/test/java/org/openapitools/client/model/HealthResponseTest.java

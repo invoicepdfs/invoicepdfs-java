@@ -16,6 +16,7 @@
 |**registrationNumber** | **String** |  |  [optional] |
 |**address** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
 |**bankAccount** | [**InvoiceBankAccountInput**](InvoiceBankAccountInput.md) |  |  [optional] |
+|**electronicAddress** | [**ElectronicAddress**](ElectronicAddress.md) |  |  [optional] |
 
 
 

@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +47,56 @@ import java.util.Set;
 import com.invoicepdfs.JSON;
 
 /**
- * InvoiceAttachmentCreateRequest
+ * BT-34 / BT-49 — where a document is routed on Peppol or DBNA.  Both halves are required: an identifier without its scheme cannot be resolved, because the same string means different things in different code lists. This is not the tax id, which identifies a company to a tax authority rather than a mailbox on a network.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class InvoiceAttachmentCreateRequest {
-  public static final String SERIALIZED_NAME_FILE_ID = "file_id";
-  @SerializedName(SERIALIZED_NAME_FILE_ID)
-  private String fileId;
+public class ElectronicAddress {
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private String value;
 
-  public static final String SERIALIZED_NAME_LABEL = "label";
-  @SerializedName(SERIALIZED_NAME_LABEL)
-  private String label;
+  public static final String SERIALIZED_NAME_SCHEME_ID = "scheme_id";
+  @SerializedName(SERIALIZED_NAME_SCHEME_ID)
+  private String schemeId;
 
-  public InvoiceAttachmentCreateRequest() {
+  public ElectronicAddress() {
   }
 
-  public InvoiceAttachmentCreateRequest fileId(String fileId) {
-    this.fileId = fileId;
+  public ElectronicAddress value(String value) {
+    this.value = value;
     return this;
   }
 
   /**
-   * Get fileId
-   * @return fileId
+   * Get value
+   * @return value
    */
   @javax.annotation.Nonnull
-  public String getFileId() {
-    return fileId;
+  public String getValue() {
+    return value;
   }
 
-  public void setFileId(String fileId) {
-    this.fileId = fileId;
+  public void setValue(String value) {
+    this.value = value;
   }
 
 
-  public InvoiceAttachmentCreateRequest label(String label) {
-    this.label = label;
+  public ElectronicAddress schemeId(String schemeId) {
+    this.schemeId = schemeId;
     return this;
   }
 
   /**
-   * Get label
-   * @return label
+   * EAS code list identifier — 0088 is GLN, 9930 a German VAT number.
+   * @return schemeId
    */
-  @javax.annotation.Nullable
-  public String getLabel() {
-    return label;
+  @javax.annotation.Nonnull
+  public String getSchemeId() {
+    return schemeId;
   }
 
-  public void setLabel(String label) {
-    this.label = label;
+  public void setSchemeId(String schemeId) {
+    this.schemeId = schemeId;
   }
 
 
@@ -110,33 +109,22 @@ public class InvoiceAttachmentCreateRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InvoiceAttachmentCreateRequest invoiceAttachmentCreateRequest = (InvoiceAttachmentCreateRequest) o;
-    return Objects.equals(this.fileId, invoiceAttachmentCreateRequest.fileId) &&
-        Objects.equals(this.label, invoiceAttachmentCreateRequest.label);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    ElectronicAddress electronicAddress = (ElectronicAddress) o;
+    return Objects.equals(this.value, electronicAddress.value) &&
+        Objects.equals(this.schemeId, electronicAddress.schemeId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileId, label);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(value, schemeId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InvoiceAttachmentCreateRequest {\n");
-    sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
-    sb.append("    label: ").append(toIndentedString(label)).append("\n");
+    sb.append("class ElectronicAddress {\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    schemeId: ").append(toIndentedString(schemeId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,47 +147,48 @@ public class InvoiceAttachmentCreateRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("file_id");
-    openapiFields.add("label");
+    openapiFields.add("value");
+    openapiFields.add("scheme_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("file_id");
+    openapiRequiredFields.add("value");
+    openapiRequiredFields.add("scheme_id");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to InvoiceAttachmentCreateRequest
+   * @throws IOException if the JSON Element is invalid with respect to ElectronicAddress
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!InvoiceAttachmentCreateRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InvoiceAttachmentCreateRequest is not found in the empty JSON string", InvoiceAttachmentCreateRequest.openapiRequiredFields.toString()));
+        if (!ElectronicAddress.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ElectronicAddress is not found in the empty JSON string", ElectronicAddress.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!InvoiceAttachmentCreateRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InvoiceAttachmentCreateRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ElectronicAddress.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ElectronicAddress` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : InvoiceAttachmentCreateRequest.openapiRequiredFields) {
+      for (String requiredField : ElectronicAddress.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("file_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_id").toString()));
+      if (!jsonObj.get("value").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
       }
-      if ((jsonObj.get("label") != null && !jsonObj.get("label").isJsonNull()) && !jsonObj.get("label").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
+      if (!jsonObj.get("scheme_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `scheme_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scheme_id").toString()));
       }
   }
 
@@ -207,22 +196,22 @@ public class InvoiceAttachmentCreateRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!InvoiceAttachmentCreateRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'InvoiceAttachmentCreateRequest' and its subtypes
+       if (!ElectronicAddress.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ElectronicAddress' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<InvoiceAttachmentCreateRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(InvoiceAttachmentCreateRequest.class));
+       final TypeAdapter<ElectronicAddress> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ElectronicAddress.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<InvoiceAttachmentCreateRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<ElectronicAddress>() {
            @Override
-           public void write(JsonWriter out, InvoiceAttachmentCreateRequest value) throws IOException {
+           public void write(JsonWriter out, ElectronicAddress value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public InvoiceAttachmentCreateRequest read(JsonReader in) throws IOException {
+           public ElectronicAddress read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -233,18 +222,18 @@ public class InvoiceAttachmentCreateRequest {
   }
 
   /**
-   * Create an instance of InvoiceAttachmentCreateRequest given an JSON string
+   * Create an instance of ElectronicAddress given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of InvoiceAttachmentCreateRequest
-   * @throws IOException if the JSON string is invalid with respect to InvoiceAttachmentCreateRequest
+   * @return An instance of ElectronicAddress
+   * @throws IOException if the JSON string is invalid with respect to ElectronicAddress
    */
-  public static InvoiceAttachmentCreateRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, InvoiceAttachmentCreateRequest.class);
+  public static ElectronicAddress fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ElectronicAddress.class);
   }
 
   /**
-   * Convert an instance of InvoiceAttachmentCreateRequest to an JSON string
+   * Convert an instance of ElectronicAddress to an JSON string
    *
    * @return JSON string
    */

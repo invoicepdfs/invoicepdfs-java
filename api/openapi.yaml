@@ -7671,6 +7671,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -7757,6 +7760,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -7806,6 +7812,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -8140,6 +8149,9 @@ components:
           legal_name: legal_name
           email: email
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
           bank_account:
             account_number: account_number
             account_name: account_name
@@ -8226,6 +8238,9 @@ components:
           legal_name: legal_name
           email: email
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
           bank_account:
             account_number: account_number
             account_name: account_name
@@ -8275,6 +8290,9 @@ components:
           legal_name: legal_name
           email: email
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
           bank_account:
             account_number: account_number
             account_name: account_name
@@ -8593,6 +8611,9 @@ components:
         legal_name: legal_name
         email: email
         tax_id: tax_id
+        electronic_address:
+          scheme_id: "0088"
+          value: "9482348239"
         bank_account:
           account_number: account_number
           account_name: account_name
@@ -8627,6 +8648,8 @@ components:
           $ref: '#/components/schemas/PostalAddress'
         bank_account:
           $ref: '#/components/schemas/InvoiceBankAccountInput'
+        electronic_address:
+          $ref: '#/components/schemas/ElectronicAddress'
       required:
       - name
       title: DocumentPartyInput
@@ -8915,6 +8938,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -9001,6 +9027,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -9050,6 +9079,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -9274,6 +9306,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -9360,6 +9395,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -9409,6 +9447,9 @@ components:
             legal_name: legal_name
             email: email
             tax_id: tax_id
+            electronic_address:
+              scheme_id: "0088"
+              value: "9482348239"
             bank_account:
               account_number: account_number
               account_name: account_name
@@ -9557,6 +9598,35 @@ components:
       required:
       - data
       title: DocumentsListResponse
+      type: object
+    ElectronicAddress:
+      description: |-
+        BT-34 / BT-49 — where a document is routed on Peppol or DBNA.
+
+        Both halves are required: an identifier without its scheme cannot be
+        resolved, because the same string means different things in different code
+        lists. This is not the tax id, which identifies a company to a tax
+        authority rather than a mailbox on a network.
+      example:
+        scheme_id: "0088"
+        value: "9482348239"
+      properties:
+        value:
+          example: "9482348239"
+          minLength: 1
+          title: Value
+          type: string
+        scheme_id:
+          description: "EAS code list identifier — 0088 is GLN, 9930 a German VAT\
+            \ number."
+          example: "0088"
+          minLength: 1
+          title: Scheme Id
+          type: string
+      required:
+      - scheme_id
+      - value
+      title: ElectronicAddress
       type: object
     FileOut:
       example:

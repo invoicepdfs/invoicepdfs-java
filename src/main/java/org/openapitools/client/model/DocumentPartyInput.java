@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ElectronicAddress;
 import org.openapitools.client.model.InvoiceBankAccountInput;
 import org.openapitools.client.model.PostalAddress;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -52,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentPartyInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:16.376975728Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentPartyInput {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -89,6 +90,10 @@ public class DocumentPartyInput {
   public static final String SERIALIZED_NAME_BANK_ACCOUNT = "bank_account";
   @SerializedName(SERIALIZED_NAME_BANK_ACCOUNT)
   private InvoiceBankAccountInput bankAccount;
+
+  public static final String SERIALIZED_NAME_ELECTRONIC_ADDRESS = "electronic_address";
+  @SerializedName(SERIALIZED_NAME_ELECTRONIC_ADDRESS)
+  private ElectronicAddress electronicAddress;
 
   public DocumentPartyInput() {
   }
@@ -264,6 +269,25 @@ public class DocumentPartyInput {
   }
 
 
+  public DocumentPartyInput electronicAddress(ElectronicAddress electronicAddress) {
+    this.electronicAddress = electronicAddress;
+    return this;
+  }
+
+  /**
+   * Get electronicAddress
+   * @return electronicAddress
+   */
+  @javax.annotation.Nullable
+  public ElectronicAddress getElectronicAddress() {
+    return electronicAddress;
+  }
+
+  public void setElectronicAddress(ElectronicAddress electronicAddress) {
+    this.electronicAddress = electronicAddress;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -282,7 +306,8 @@ public class DocumentPartyInput {
         Objects.equals(this.taxId, documentPartyInput.taxId) &&
         Objects.equals(this.registrationNumber, documentPartyInput.registrationNumber) &&
         Objects.equals(this.address, documentPartyInput.address) &&
-        Objects.equals(this.bankAccount, documentPartyInput.bankAccount);
+        Objects.equals(this.bankAccount, documentPartyInput.bankAccount) &&
+        Objects.equals(this.electronicAddress, documentPartyInput.electronicAddress);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -291,7 +316,7 @@ public class DocumentPartyInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, legalName, email, phone, website, taxId, registrationNumber, address, bankAccount);
+    return Objects.hash(name, legalName, email, phone, website, taxId, registrationNumber, address, bankAccount, electronicAddress);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -314,6 +339,7 @@ public class DocumentPartyInput {
     sb.append("    registrationNumber: ").append(toIndentedString(registrationNumber)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
+    sb.append("    electronicAddress: ").append(toIndentedString(electronicAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -345,6 +371,7 @@ public class DocumentPartyInput {
     openapiFields.add("registration_number");
     openapiFields.add("address");
     openapiFields.add("bank_account");
+    openapiFields.add("electronic_address");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -407,6 +434,10 @@ public class DocumentPartyInput {
       // validate the optional field `bank_account`
       if (jsonObj.get("bank_account") != null && !jsonObj.get("bank_account").isJsonNull()) {
         InvoiceBankAccountInput.validateJsonElement(jsonObj.get("bank_account"));
+      }
+      // validate the optional field `electronic_address`
+      if (jsonObj.get("electronic_address") != null && !jsonObj.get("electronic_address").isJsonNull()) {
+        ElectronicAddress.validateJsonElement(jsonObj.get("electronic_address"));
       }
   }
 

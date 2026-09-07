@@ -52,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * UsageLimitsData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:16.376975728Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UsageLimitsData {
   public static final String SERIALIZED_NAME_RENDERS = "renders";
   @SerializedName(SERIALIZED_NAME_RENDERS)
