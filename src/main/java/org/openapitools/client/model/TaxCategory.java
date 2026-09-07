@@ -48,102 +48,79 @@ import java.util.Set;
 import com.invoicepdfs.JSON;
 
 /**
- * TaxRateCreateRequest
+ * How a tax is treated, as opposed to what it is called.  &#x60;name&#x60; and &#x60;rate&#x60; do not say this: two taxes at 0% may be zero-rated, exempt, reverse-charge or outside scope, and EN 16931 keeps them in separate VAT breakdown groups with different mandatory fields. Optional, so an invoice that never mentions a category calculates exactly as before.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:09:36.858564891Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class TaxRateCreateRequest {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+public class TaxCategory {
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private String code;
 
-  public static final String SERIALIZED_NAME_RATE = "rate";
-  @SerializedName(SERIALIZED_NAME_RATE)
-  private String rate;
+  public static final String SERIALIZED_NAME_EXEMPTION_REASON = "exemption_reason";
+  @SerializedName(SERIALIZED_NAME_EXEMPTION_REASON)
+  private String exemptionReason;
 
-  public static final String SERIALIZED_NAME_INCLUSIVE = "inclusive";
-  @SerializedName(SERIALIZED_NAME_INCLUSIVE)
-  private Boolean inclusive = false;
+  public static final String SERIALIZED_NAME_EXEMPTION_REASON_CODE = "exemption_reason_code";
+  @SerializedName(SERIALIZED_NAME_EXEMPTION_REASON_CODE)
+  private String exemptionReasonCode;
 
-  public static final String SERIALIZED_NAME_JURISDICTION = "jurisdiction";
-  @SerializedName(SERIALIZED_NAME_JURISDICTION)
-  private String jurisdiction;
-
-  public TaxRateCreateRequest() {
+  public TaxCategory() {
   }
 
-  public TaxRateCreateRequest name(String name) {
-    this.name = name;
+  public TaxCategory code(String code) {
+    this.code = code;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * UNCL5305 tax category code — S standard, Z zero-rated, E exempt, AE reverse charge, K intra-community, G export, O outside scope
+   * @return code
    */
   @javax.annotation.Nonnull
-  public String getName() {
-    return name;
+  public String getCode() {
+    return code;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
-  public TaxRateCreateRequest rate(String rate) {
-    this.rate = rate;
+  public TaxCategory exemptionReason(String exemptionReason) {
+    this.exemptionReason = exemptionReason;
     return this;
   }
 
   /**
-   * Get rate
-   * @return rate
-   */
-  @javax.annotation.Nonnull
-  public String getRate() {
-    return rate;
-  }
-
-  public void setRate(String rate) {
-    this.rate = rate;
-  }
-
-
-  public TaxRateCreateRequest inclusive(Boolean inclusive) {
-    this.inclusive = inclusive;
-    return this;
-  }
-
-  /**
-   * Get inclusive
-   * @return inclusive
+   * Get exemptionReason
+   * @return exemptionReason
    */
   @javax.annotation.Nullable
-  public Boolean getInclusive() {
-    return inclusive;
+  public String getExemptionReason() {
+    return exemptionReason;
   }
 
-  public void setInclusive(Boolean inclusive) {
-    this.inclusive = inclusive;
+  public void setExemptionReason(String exemptionReason) {
+    this.exemptionReason = exemptionReason;
   }
 
 
-  public TaxRateCreateRequest jurisdiction(String jurisdiction) {
-    this.jurisdiction = jurisdiction;
+  public TaxCategory exemptionReasonCode(String exemptionReasonCode) {
+    this.exemptionReasonCode = exemptionReasonCode;
     return this;
   }
 
   /**
-   * Get jurisdiction
-   * @return jurisdiction
+   * Get exemptionReasonCode
+   * @return exemptionReasonCode
    */
   @javax.annotation.Nullable
-  public String getJurisdiction() {
-    return jurisdiction;
+  public String getExemptionReasonCode() {
+    return exemptionReasonCode;
   }
 
-  public void setJurisdiction(String jurisdiction) {
-    this.jurisdiction = jurisdiction;
+  public void setExemptionReasonCode(String exemptionReasonCode) {
+    this.exemptionReasonCode = exemptionReasonCode;
   }
 
 
@@ -156,11 +133,10 @@ public class TaxRateCreateRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TaxRateCreateRequest taxRateCreateRequest = (TaxRateCreateRequest) o;
-    return Objects.equals(this.name, taxRateCreateRequest.name) &&
-        Objects.equals(this.rate, taxRateCreateRequest.rate) &&
-        Objects.equals(this.inclusive, taxRateCreateRequest.inclusive) &&
-        Objects.equals(this.jurisdiction, taxRateCreateRequest.jurisdiction);
+    TaxCategory taxCategory = (TaxCategory) o;
+    return Objects.equals(this.code, taxCategory.code) &&
+        Objects.equals(this.exemptionReason, taxCategory.exemptionReason) &&
+        Objects.equals(this.exemptionReasonCode, taxCategory.exemptionReasonCode);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -169,7 +145,7 @@ public class TaxRateCreateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, rate, inclusive, jurisdiction);
+    return Objects.hash(code, exemptionReason, exemptionReasonCode);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -182,11 +158,10 @@ public class TaxRateCreateRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TaxRateCreateRequest {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
-    sb.append("    inclusive: ").append(toIndentedString(inclusive)).append("\n");
-    sb.append("    jurisdiction: ").append(toIndentedString(jurisdiction)).append("\n");
+    sb.append("class TaxCategory {\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    exemptionReason: ").append(toIndentedString(exemptionReason)).append("\n");
+    sb.append("    exemptionReasonCode: ").append(toIndentedString(exemptionReasonCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -209,53 +184,51 @@ public class TaxRateCreateRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("rate");
-    openapiFields.add("inclusive");
-    openapiFields.add("jurisdiction");
+    openapiFields.add("code");
+    openapiFields.add("exemption_reason");
+    openapiFields.add("exemption_reason_code");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("rate");
+    openapiRequiredFields.add("code");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to TaxRateCreateRequest
+   * @throws IOException if the JSON Element is invalid with respect to TaxCategory
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!TaxRateCreateRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TaxRateCreateRequest is not found in the empty JSON string", TaxRateCreateRequest.openapiRequiredFields.toString()));
+        if (!TaxCategory.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in TaxCategory is not found in the empty JSON string", TaxCategory.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!TaxRateCreateRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TaxRateCreateRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!TaxCategory.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TaxCategory` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : TaxRateCreateRequest.openapiRequiredFields) {
+      for (String requiredField : TaxCategory.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if (!jsonObj.get("code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
-      if (!jsonObj.get("rate").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rate").toString()));
+      if ((jsonObj.get("exemption_reason") != null && !jsonObj.get("exemption_reason").isJsonNull()) && !jsonObj.get("exemption_reason").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `exemption_reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("exemption_reason").toString()));
       }
-      if ((jsonObj.get("jurisdiction") != null && !jsonObj.get("jurisdiction").isJsonNull()) && !jsonObj.get("jurisdiction").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `jurisdiction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jurisdiction").toString()));
+      if ((jsonObj.get("exemption_reason_code") != null && !jsonObj.get("exemption_reason_code").isJsonNull()) && !jsonObj.get("exemption_reason_code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `exemption_reason_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("exemption_reason_code").toString()));
       }
   }
 
@@ -263,22 +236,22 @@ public class TaxRateCreateRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!TaxRateCreateRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'TaxRateCreateRequest' and its subtypes
+       if (!TaxCategory.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'TaxCategory' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<TaxRateCreateRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(TaxRateCreateRequest.class));
+       final TypeAdapter<TaxCategory> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(TaxCategory.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<TaxRateCreateRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<TaxCategory>() {
            @Override
-           public void write(JsonWriter out, TaxRateCreateRequest value) throws IOException {
+           public void write(JsonWriter out, TaxCategory value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public TaxRateCreateRequest read(JsonReader in) throws IOException {
+           public TaxCategory read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -289,18 +262,18 @@ public class TaxRateCreateRequest {
   }
 
   /**
-   * Create an instance of TaxRateCreateRequest given an JSON string
+   * Create an instance of TaxCategory given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of TaxRateCreateRequest
-   * @throws IOException if the JSON string is invalid with respect to TaxRateCreateRequest
+   * @return An instance of TaxCategory
+   * @throws IOException if the JSON string is invalid with respect to TaxCategory
    */
-  public static TaxRateCreateRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, TaxRateCreateRequest.class);
+  public static TaxCategory fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, TaxCategory.class);
   }
 
   /**
-   * Convert an instance of TaxRateCreateRequest to an JSON string
+   * Convert an instance of TaxCategory to an JSON string
    *
    * @return JSON string
    */

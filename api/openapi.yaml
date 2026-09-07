@@ -7704,9 +7704,17 @@ components:
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           - unit: unit
@@ -7721,9 +7729,17 @@ components:
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           buyer:
@@ -7886,10 +7902,18 @@ components:
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - tax_rate_id: tax_rate_id
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         - unit: unit
@@ -7905,10 +7929,18 @@ components:
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - tax_rate_id: tax_rate_id
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         locale: locale
@@ -8141,9 +8173,17 @@ components:
           - inclusive: false
             rate: "8.875"
             name: Sales Tax
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - inclusive: false
             rate: "8.875"
             name: Sales Tax
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         - unit: unit
@@ -8158,9 +8198,17 @@ components:
           - inclusive: false
             rate: "8.875"
             name: Sales Tax
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - inclusive: false
             rate: "8.875"
             name: Sales Tax
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         buyer:
@@ -8302,9 +8350,17 @@ components:
         - inclusive: false
           rate: "8.875"
           name: Sales Tax
+          category:
+            code: S
+            exemption_reason: exemption_reason
+            exemption_reason_code: exemption_reason_code
         - inclusive: false
           rate: "8.875"
           name: Sales Tax
+          category:
+            code: S
+            exemption_reason: exemption_reason
+            exemption_reason_code: exemption_reason_code
         unit_price: "150.00"
         sku: sku
       properties:
@@ -8348,6 +8404,10 @@ components:
         inclusive: false
         rate: "8.875"
         name: Sales Tax
+        category:
+          code: S
+          exemption_reason: exemption_reason
+          exemption_reason_code: exemption_reason_code
       properties:
         name:
           example: Sales Tax
@@ -8361,6 +8421,8 @@ components:
           default: false
           title: Inclusive
           type: boolean
+        category:
+          $ref: '#/components/schemas/TaxCategory'
       required:
       - name
       - rate
@@ -8605,10 +8667,18 @@ components:
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - tax_rate_id: tax_rate_id
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         - unit: unit
@@ -8624,10 +8694,18 @@ components:
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - tax_rate_id: tax_rate_id
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         locale: locale
@@ -8870,9 +8948,17 @@ components:
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           - unit: unit
@@ -8887,9 +8973,17 @@ components:
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           buyer:
@@ -9213,9 +9307,17 @@ components:
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           - unit: unit
@@ -9230,9 +9332,17 @@ components:
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - inclusive: false
               rate: "8.875"
               name: Sales Tax
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           buyer:
@@ -9857,10 +9967,18 @@ components:
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - tax_rate_id: tax_rate_id
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         - unit: unit
@@ -9876,10 +9994,18 @@ components:
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           - tax_rate_id: tax_rate_id
             inclusive: false
             rate: rate
             name: name
+            category:
+              code: S
+              exemption_reason: exemption_reason
+              exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
         locale: locale
@@ -10023,10 +10149,18 @@ components:
           inclusive: false
           rate: rate
           name: name
+          category:
+            code: S
+            exemption_reason: exemption_reason
+            exemption_reason_code: exemption_reason_code
         - tax_rate_id: tax_rate_id
           inclusive: false
           rate: rate
           name: name
+          category:
+            code: S
+            exemption_reason: exemption_reason
+            exemption_reason_code: exemption_reason_code
         unit_price: "150.00"
         sku: sku
       properties:
@@ -10072,6 +10206,10 @@ components:
         inclusive: false
         rate: rate
         name: name
+        category:
+          code: S
+          exemption_reason: exemption_reason
+          exemption_reason_code: exemption_reason_code
       properties:
         tax_rate_id:
           nullable: true
@@ -10086,6 +10224,8 @@ components:
           default: false
           title: Inclusive
           type: boolean
+        category:
+          $ref: '#/components/schemas/TaxCategory'
       title: InvoiceLineItemTaxInput
       type: object
     InvoiceNoteInput:
@@ -10593,6 +10733,10 @@ components:
         inclusive: false
         rate: rate
         name: name
+        category:
+          code: S
+          exemption_reason: exemption_reason
+          exemption_reason_code: exemption_reason_code
       properties:
         tax_rate_id:
           nullable: true
@@ -10607,6 +10751,8 @@ components:
           default: false
           title: Inclusive
           type: boolean
+        category:
+          $ref: '#/components/schemas/TaxCategory'
       title: LineItemTaxInput
       type: object
     LocaleOut:
@@ -11244,10 +11390,18 @@ components:
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - tax_rate_id: tax_rate_id
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           - unit: unit
@@ -11263,10 +11417,18 @@ components:
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - tax_rate_id: tax_rate_id
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           locale: locale
@@ -11483,10 +11645,18 @@ components:
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - tax_rate_id: tax_rate_id
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           - unit: unit
@@ -11502,10 +11672,18 @@ components:
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             - tax_rate_id: tax_rate_id
               inclusive: false
               rate: rate
               name: name
+              category:
+                code: S
+                exemption_reason: exemption_reason
+                exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
           locale: locale
@@ -11799,10 +11977,18 @@ components:
           inclusive: false
           rate: rate
           name: name
+          category:
+            code: S
+            exemption_reason: exemption_reason
+            exemption_reason_code: exemption_reason_code
         - tax_rate_id: tax_rate_id
           inclusive: false
           rate: rate
           name: name
+          category:
+            code: S
+            exemption_reason: exemption_reason
+            exemption_reason_code: exemption_reason_code
         unit_price: "150.00"
         sku: sku
       properties:
@@ -11976,6 +12162,36 @@ components:
       required:
       - data
       title: StatsResponse
+      type: object
+    TaxCategory:
+      description: |-
+        How a tax is treated, as opposed to what it is called.
+
+        `name` and `rate` do not say this: two taxes at 0% may be zero-rated,
+        exempt, reverse-charge or outside scope, and EN 16931 keeps them in
+        separate VAT breakdown groups with different mandatory fields. Optional,
+        so an invoice that never mentions a category calculates exactly as before.
+      example:
+        code: S
+        exemption_reason: exemption_reason
+        exemption_reason_code: exemption_reason_code
+      properties:
+        code:
+          description: "UNCL5305 tax category code — S standard, Z zero-rated, E exempt,\
+            \ AE reverse charge, K intra-community, G export, O outside scope"
+          example: S
+          minLength: 1
+          title: Code
+          type: string
+        exemption_reason:
+          nullable: true
+          type: string
+        exemption_reason_code:
+          nullable: true
+          type: string
+      required:
+      - code
+      title: TaxCategory
       type: object
     TaxRateCreateRequest:
       example:

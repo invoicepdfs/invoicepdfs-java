@@ -191,6 +191,7 @@ docs/StatsCounts.md
 docs/StatsOverview.md
 docs/StatsRecentInvoice.md
 docs/StatsResponse.md
+docs/TaxCategory.md
 docs/TaxRateCreateRequest.md
 docs/TaxRateOut.md
 docs/TaxRatePatchRequest.md
@@ -465,6 +466,7 @@ src/main/java/org/openapitools/client/model/StatsCounts.java
 src/main/java/org/openapitools/client/model/StatsOverview.java
 src/main/java/org/openapitools/client/model/StatsRecentInvoice.java
 src/main/java/org/openapitools/client/model/StatsResponse.java
+src/main/java/org/openapitools/client/model/TaxCategory.java
 src/main/java/org/openapitools/client/model/TaxRateCreateRequest.java
 src/main/java/org/openapitools/client/model/TaxRateOut.java
 src/main/java/org/openapitools/client/model/TaxRatePatchRequest.java
@@ -706,6 +708,7 @@ src/test/java/org/openapitools/client/model/StatsCountsTest.java
 src/test/java/org/openapitools/client/model/StatsOverviewTest.java
 src/test/java/org/openapitools/client/model/StatsRecentInvoiceTest.java
 src/test/java/org/openapitools/client/model/StatsResponseTest.java
+src/test/java/org/openapitools/client/model/TaxCategoryTest.java
 src/test/java/org/openapitools/client/model/TaxRateCreateRequestTest.java
 src/test/java/org/openapitools/client/model/TaxRateOutTest.java
 src/test/java/org/openapitools/client/model/TaxRatePatchRequestTest.java

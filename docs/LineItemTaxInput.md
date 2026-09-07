@@ -11,6 +11,7 @@
 |**name** | **String** |  |  [optional] |
 |**rate** | **String** |  |  [optional] |
 |**inclusive** | **Boolean** |  |  [optional] |
+|**category** | [**TaxCategory**](TaxCategory.md) |  |  [optional] |
 
 
 

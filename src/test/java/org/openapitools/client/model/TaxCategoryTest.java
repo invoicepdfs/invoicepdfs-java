@@ -20,55 +20,46 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.TaxCategory;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for DocumentLineItemTaxInput
+ * Model tests for TaxCategory
  */
-public class DocumentLineItemTaxInputTest {
-    private final DocumentLineItemTaxInput model = new DocumentLineItemTaxInput();
+public class TaxCategoryTest {
+    private final TaxCategory model = new TaxCategory();
 
     /**
-     * Model tests for DocumentLineItemTaxInput
+     * Model tests for TaxCategory
      */
     @Test
-    public void testDocumentLineItemTaxInput() {
-        // TODO: test DocumentLineItemTaxInput
+    public void testTaxCategory() {
+        // TODO: test TaxCategory
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'code'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
+    public void codeTest() {
+        // TODO: test code
     }
 
     /**
-     * Test the property 'rate'
+     * Test the property 'exemptionReason'
      */
     @Test
-    public void rateTest() {
-        // TODO: test rate
+    public void exemptionReasonTest() {
+        // TODO: test exemptionReason
     }
 
     /**
-     * Test the property 'inclusive'
+     * Test the property 'exemptionReasonCode'
      */
     @Test
-    public void inclusiveTest() {
-        // TODO: test inclusive
-    }
-
-    /**
-     * Test the property 'category'
-     */
-    @Test
-    public void categoryTest() {
-        // TODO: test category
+    public void exemptionReasonCodeTest() {
+        // TODO: test exemptionReasonCode
     }
 
 }

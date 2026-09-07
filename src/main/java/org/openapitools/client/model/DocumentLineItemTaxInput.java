@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.TaxCategory;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentLineItemTaxInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:02:43.402628862Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:09:36.858564891Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentLineItemTaxInput {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -62,6 +64,10 @@ public class DocumentLineItemTaxInput {
   public static final String SERIALIZED_NAME_INCLUSIVE = "inclusive";
   @SerializedName(SERIALIZED_NAME_INCLUSIVE)
   private Boolean inclusive = false;
+
+  public static final String SERIALIZED_NAME_CATEGORY = "category";
+  @SerializedName(SERIALIZED_NAME_CATEGORY)
+  private TaxCategory category;
 
   public DocumentLineItemTaxInput() {
   }
@@ -123,6 +129,25 @@ public class DocumentLineItemTaxInput {
   }
 
 
+  public DocumentLineItemTaxInput category(TaxCategory category) {
+    this.category = category;
+    return this;
+  }
+
+  /**
+   * Get category
+   * @return category
+   */
+  @javax.annotation.Nullable
+  public TaxCategory getCategory() {
+    return category;
+  }
+
+  public void setCategory(TaxCategory category) {
+    this.category = category;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -135,12 +160,24 @@ public class DocumentLineItemTaxInput {
     DocumentLineItemTaxInput documentLineItemTaxInput = (DocumentLineItemTaxInput) o;
     return Objects.equals(this.name, documentLineItemTaxInput.name) &&
         Objects.equals(this.rate, documentLineItemTaxInput.rate) &&
-        Objects.equals(this.inclusive, documentLineItemTaxInput.inclusive);
+        Objects.equals(this.inclusive, documentLineItemTaxInput.inclusive) &&
+        Objects.equals(this.category, documentLineItemTaxInput.category);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, rate, inclusive);
+    return Objects.hash(name, rate, inclusive, category);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -150,6 +187,7 @@ public class DocumentLineItemTaxInput {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("    inclusive: ").append(toIndentedString(inclusive)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -175,6 +213,7 @@ public class DocumentLineItemTaxInput {
     openapiFields.add("name");
     openapiFields.add("rate");
     openapiFields.add("inclusive");
+    openapiFields.add("category");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -215,6 +254,10 @@ public class DocumentLineItemTaxInput {
       }
       if (!jsonObj.get("rate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `rate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rate").toString()));
+      }
+      // validate the optional field `category`
+      if (jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) {
+        TaxCategory.validateJsonElement(jsonObj.get("category"));
       }
   }
 

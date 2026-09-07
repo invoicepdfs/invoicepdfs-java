@@ -10,6 +10,7 @@
 |**name** | **String** |  |  |
 |**rate** | **String** |  |  |
 |**inclusive** | **Boolean** |  |  [optional] |
+|**category** | [**TaxCategory**](TaxCategory.md) |  |  [optional] |
 
 
 
