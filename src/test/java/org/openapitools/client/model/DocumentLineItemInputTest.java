@@ -83,6 +83,14 @@ public class DocumentLineItemInputTest {
     }
 
     /**
+     * Test the property 'unitCode'
+     */
+    @Test
+    public void unitCodeTest() {
+        // TODO: test unitCode
+    }
+
+    /**
      * Test the property 'sku'
      */
     @Test

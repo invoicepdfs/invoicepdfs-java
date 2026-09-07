@@ -14,6 +14,8 @@
 |**seller** | [**DocumentPartyInput**](DocumentPartyInput.md) |  |  |
 |**buyer** | [**DocumentPartyInput**](DocumentPartyInput.md) |  |  |
 |**shipTo** | [**DocumentPartyInput**](DocumentPartyInput.md) |  |  [optional] |
+|**buyerReference** | **String** |  |  [optional] |
+|**precedingInvoiceNumber** | **String** |  |  [optional] |
 |**lineItems** | [**List&lt;DocumentLineItemInput&gt;**](DocumentLineItemInput.md) |  |  |
 |**discounts** | [**List&lt;DocumentDiscountInput&gt;**](DocumentDiscountInput.md) |  |  [optional] |
 |**shipping** | [**DocumentShippingInput**](DocumentShippingInput.md) |  |  [optional] |

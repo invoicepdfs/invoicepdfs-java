@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:12:00.695505601Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentCreateRequest {
   /**
    * Gets or Sets documentType
@@ -169,6 +169,10 @@ public class DocumentCreateRequest {
   public static final String SERIALIZED_NAME_SHIP_TO = "ship_to";
   @SerializedName(SERIALIZED_NAME_SHIP_TO)
   private PostalAddress shipTo;
+
+  public static final String SERIALIZED_NAME_BUYER_REFERENCE = "buyer_reference";
+  @SerializedName(SERIALIZED_NAME_BUYER_REFERENCE)
+  private String buyerReference;
 
   public static final String SERIALIZED_NAME_LINE_ITEMS = "line_items";
   @SerializedName(SERIALIZED_NAME_LINE_ITEMS)
@@ -418,6 +422,25 @@ public class DocumentCreateRequest {
   }
 
 
+  public DocumentCreateRequest buyerReference(String buyerReference) {
+    this.buyerReference = buyerReference;
+    return this;
+  }
+
+  /**
+   * Get buyerReference
+   * @return buyerReference
+   */
+  @javax.annotation.Nullable
+  public String getBuyerReference() {
+    return buyerReference;
+  }
+
+  public void setBuyerReference(String buyerReference) {
+    this.buyerReference = buyerReference;
+  }
+
+
   public DocumentCreateRequest lineItems(List<StandardLineItemInput> lineItems) {
     this.lineItems = lineItems;
     return this;
@@ -650,6 +673,7 @@ public class DocumentCreateRequest {
         Objects.equals(this.sourceDocumentId, documentCreateRequest.sourceDocumentId) &&
         Objects.equals(this.reason, documentCreateRequest.reason) &&
         Objects.equals(this.shipTo, documentCreateRequest.shipTo) &&
+        Objects.equals(this.buyerReference, documentCreateRequest.buyerReference) &&
         Objects.equals(this.lineItems, documentCreateRequest.lineItems) &&
         Objects.equals(this.discounts, documentCreateRequest.discounts) &&
         Objects.equals(this.shipping, documentCreateRequest.shipping) &&
@@ -667,7 +691,7 @@ public class DocumentCreateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentType, number, issueDate, dueDate, currency, locale, businessProfileId, customerId, sourceDocumentId, reason, shipTo, lineItems, discounts, shipping, notes, terms, customFields, payment, branding, brandingProfileId);
+    return Objects.hash(documentType, number, issueDate, dueDate, currency, locale, businessProfileId, customerId, sourceDocumentId, reason, shipTo, buyerReference, lineItems, discounts, shipping, notes, terms, customFields, payment, branding, brandingProfileId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -692,6 +716,7 @@ public class DocumentCreateRequest {
     sb.append("    sourceDocumentId: ").append(toIndentedString(sourceDocumentId)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    sb.append("    buyerReference: ").append(toIndentedString(buyerReference)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
     sb.append("    shipping: ").append(toIndentedString(shipping)).append("\n");
@@ -734,6 +759,7 @@ public class DocumentCreateRequest {
     openapiFields.add("source_document_id");
     openapiFields.add("reason");
     openapiFields.add("ship_to");
+    openapiFields.add("buyer_reference");
     openapiFields.add("line_items");
     openapiFields.add("discounts");
     openapiFields.add("shipping");
@@ -813,6 +839,9 @@ public class DocumentCreateRequest {
       // validate the optional field `ship_to`
       if (jsonObj.get("ship_to") != null && !jsonObj.get("ship_to").isJsonNull()) {
         PostalAddress.validateJsonElement(jsonObj.get("ship_to"));
+      }
+      if ((jsonObj.get("buyer_reference") != null && !jsonObj.get("buyer_reference").isJsonNull()) && !jsonObj.get("buyer_reference").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `buyer_reference` to be a primitive type in the JSON string but got `%s`", jsonObj.get("buyer_reference").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("line_items").isJsonArray()) {

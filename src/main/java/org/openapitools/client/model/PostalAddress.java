@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * PostalAddress
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:12:00.695505601Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class PostalAddress {
   public static final String SERIALIZED_NAME_LINE1 = "line1";
   @SerializedName(SERIALIZED_NAME_LINE1)

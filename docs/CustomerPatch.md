@@ -13,6 +13,7 @@
 |**taxId** | **String** |  |  [optional] |
 |**billingAddress** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
 |**shippingAddress** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
+|**electronicAddress** | [**ElectronicAddress**](ElectronicAddress.md) |  |  [optional] |
 |**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 

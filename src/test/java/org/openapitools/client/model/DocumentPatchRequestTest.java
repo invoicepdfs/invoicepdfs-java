@@ -139,6 +139,14 @@ public class DocumentPatchRequestTest {
     }
 
     /**
+     * Test the property 'buyerReference'
+     */
+    @Test
+    public void buyerReferenceTest() {
+        // TODO: test buyerReference
+    }
+
+    /**
      * Test the property 'lineItems'
      */
     @Test

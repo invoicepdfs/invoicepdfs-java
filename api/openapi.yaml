@@ -6665,6 +6665,9 @@ components:
         default_currency: default_currency
         email: email
         tax_id: tax_id
+        electronic_address:
+          scheme_id: "0088"
+          value: "9482348239"
       properties:
         legal_name:
           example: Acme Corp Inc.
@@ -6687,6 +6690,8 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/PostalAddress'
+        electronic_address:
+          $ref: '#/components/schemas/ElectronicAddress'
         default_currency:
           nullable: true
           type: string
@@ -6717,6 +6722,9 @@ components:
         created_at: created_at
         display_name: display_name
         tax_id: tax_id
+        electronic_address:
+          scheme_id: "0088"
+          value: "9482348239"
         default_timezone: default_timezone
         updated_at: updated_at
         phone: phone
@@ -6747,6 +6755,8 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/PostalAddress'
+        electronic_address:
+          $ref: '#/components/schemas/ElectronicAddress'
         default_currency:
           nullable: true
           type: string
@@ -6794,6 +6804,9 @@ components:
         default_currency: default_currency
         email: email
         tax_id: tax_id
+        electronic_address:
+          scheme_id: "0088"
+          value: "9482348239"
       properties:
         legal_name:
           title: Legal Name
@@ -6815,6 +6828,8 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/PostalAddress'
+        electronic_address:
+          $ref: '#/components/schemas/ElectronicAddress'
         default_currency:
           nullable: true
           type: string
@@ -6844,6 +6859,9 @@ components:
           created_at: created_at
           display_name: display_name
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
           default_timezone: default_timezone
           updated_at: updated_at
           phone: phone
@@ -6877,6 +6895,9 @@ components:
           created_at: created_at
           display_name: display_name
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
           default_timezone: default_timezone
           updated_at: updated_at
           phone: phone
@@ -6897,6 +6918,9 @@ components:
           created_at: created_at
           display_name: display_name
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
           default_timezone: default_timezone
           updated_at: updated_at
           phone: phone
@@ -7190,6 +7214,9 @@ components:
           line1: 1 Main St
         email: email
         tax_id: tax_id
+        electronic_address:
+          scheme_id: "0088"
+          value: "9482348239"
       properties:
         name:
           example: Jane Smith
@@ -7208,6 +7235,8 @@ components:
           $ref: '#/components/schemas/PostalAddress'
         shipping_address:
           $ref: '#/components/schemas/PostalAddress'
+        electronic_address:
+          $ref: '#/components/schemas/ElectronicAddress'
         metadata:
           additionalProperties: true
           nullable: true
@@ -7241,6 +7270,9 @@ components:
         id: id
         email: email
         tax_id: tax_id
+        electronic_address:
+          scheme_id: "0088"
+          value: "9482348239"
       properties:
         name:
           example: Jane Smith
@@ -7259,6 +7291,8 @@ components:
           $ref: '#/components/schemas/PostalAddress'
         shipping_address:
           $ref: '#/components/schemas/PostalAddress'
+        electronic_address:
+          $ref: '#/components/schemas/ElectronicAddress'
         metadata:
           additionalProperties: true
           nullable: true
@@ -7301,6 +7335,9 @@ components:
           line1: 1 Main St
         email: email
         tax_id: tax_id
+        electronic_address:
+          scheme_id: "0088"
+          value: "9482348239"
       properties:
         name:
           title: Name
@@ -7318,6 +7355,8 @@ components:
           $ref: '#/components/schemas/PostalAddress'
         shipping_address:
           $ref: '#/components/schemas/PostalAddress'
+        electronic_address:
+          $ref: '#/components/schemas/ElectronicAddress'
         metadata:
           additionalProperties: true
           nullable: true
@@ -7350,6 +7389,9 @@ components:
           id: id
           email: email
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
       properties:
         data:
           $ref: '#/components/schemas/CustomerOut'
@@ -7386,6 +7428,9 @@ components:
           id: id
           email: email
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
         - metadata:
             key: ""
           updated_at: updated_at
@@ -7409,6 +7454,9 @@ components:
           id: id
           email: email
           tax_id: tax_id
+          electronic_address:
+            scheme_id: "0088"
+            value: "9482348239"
       properties:
         data:
           items:
@@ -7699,6 +7747,7 @@ components:
             quantity: "2"
             name: Web Development
             description: description
+            unit_code: unit_code
             discount:
               reason: reason
               type: percentage
@@ -7724,6 +7773,7 @@ components:
             quantity: "2"
             name: Web Development
             description: description
+            unit_code: unit_code
             discount:
               reason: reason
               type: percentage
@@ -7745,6 +7795,7 @@ components:
                 exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
+          buyer_reference: buyer_reference
           buyer:
             website: website
             address:
@@ -7796,6 +7847,7 @@ components:
               bank_name: bank_name
               routing_number: routing_number
               swift: swift
+          preceding_invoice_number: preceding_invoice_number
           invoice_number: INV-2026-001
           ship_to:
             website: website
@@ -7902,6 +7954,7 @@ components:
           quantity: "2"
           name: Web Development
           description: description
+          unit_code: unit_code
           discount:
             reason: reason
             type: percentage
@@ -7929,6 +7982,7 @@ components:
           quantity: "2"
           name: Web Development
           description: description
+          unit_code: unit_code
           discount:
             reason: reason
             type: percentage
@@ -7953,6 +8007,7 @@ components:
           unit_price: "150.00"
           sku: sku
         locale: locale
+        buyer_reference: buyer_reference
         business_profile_id: bp_01ABC
         number: INV-2026-001
         issue_date: 2026-07-20
@@ -8047,6 +8102,9 @@ components:
           type: string
         ship_to:
           $ref: '#/components/schemas/PostalAddress'
+        buyer_reference:
+          nullable: true
+          type: string
         line_items:
           items:
             $ref: '#/components/schemas/StandardLineItemInput'
@@ -8177,6 +8235,7 @@ components:
           quantity: "2"
           name: Web Development
           description: description
+          unit_code: unit_code
           discount:
             reason: reason
             type: percentage
@@ -8202,6 +8261,7 @@ components:
           quantity: "2"
           name: Web Development
           description: description
+          unit_code: unit_code
           discount:
             reason: reason
             type: percentage
@@ -8223,6 +8283,7 @@ components:
               exemption_reason_code: exemption_reason_code
           unit_price: "150.00"
           sku: sku
+        buyer_reference: buyer_reference
         buyer:
           website: website
           address:
@@ -8274,6 +8335,7 @@ components:
             bank_name: bank_name
             routing_number: routing_number
             swift: swift
+        preceding_invoice_number: preceding_invoice_number
         invoice_number: INV-2026-001
         ship_to:
           website: website
@@ -8324,6 +8386,12 @@ components:
           $ref: '#/components/schemas/DocumentPartyInput'
         ship_to:
           $ref: '#/components/schemas/DocumentPartyInput'
+        buyer_reference:
+          nullable: true
+          type: string
+        preceding_invoice_number:
+          nullable: true
+          type: string
         line_items:
           items:
             $ref: '#/components/schemas/DocumentLineItemInput'
@@ -8360,6 +8428,7 @@ components:
         quantity: "2"
         name: Web Development
         description: description
+        unit_code: unit_code
         discount:
           reason: reason
           type: percentage
@@ -8399,6 +8468,9 @@ components:
           title: Unit Price
           type: string
         unit:
+          nullable: true
+          type: string
+        unit_code:
           nullable: true
           type: string
         sku:
@@ -8681,6 +8753,7 @@ components:
           quantity: "2"
           name: Web Development
           description: description
+          unit_code: unit_code
           discount:
             reason: reason
             type: percentage
@@ -8708,6 +8781,7 @@ components:
           quantity: "2"
           name: Web Development
           description: description
+          unit_code: unit_code
           discount:
             reason: reason
             type: percentage
@@ -8732,6 +8806,7 @@ components:
           unit_price: "150.00"
           sku: sku
         locale: locale
+        buyer_reference: buyer_reference
         business_profile_id: business_profile_id
         number: number
         issue_date: 2000-01-23
@@ -8820,6 +8895,9 @@ components:
           type: string
         ship_to:
           $ref: '#/components/schemas/PostalAddress'
+        buyer_reference:
+          nullable: true
+          type: string
         line_items:
           items:
             $ref: '#/components/schemas/StandardLineItemInput'
@@ -8966,6 +9044,7 @@ components:
             quantity: "2"
             name: Web Development
             description: description
+            unit_code: unit_code
             discount:
               reason: reason
               type: percentage
@@ -8991,6 +9070,7 @@ components:
             quantity: "2"
             name: Web Development
             description: description
+            unit_code: unit_code
             discount:
               reason: reason
               type: percentage
@@ -9012,6 +9092,7 @@ components:
                 exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
+          buyer_reference: buyer_reference
           buyer:
             website: website
             address:
@@ -9063,6 +9144,7 @@ components:
               bank_name: bank_name
               routing_number: routing_number
               swift: swift
+          preceding_invoice_number: preceding_invoice_number
           invoice_number: INV-2026-001
           ship_to:
             website: website
@@ -9334,6 +9416,7 @@ components:
             quantity: "2"
             name: Web Development
             description: description
+            unit_code: unit_code
             discount:
               reason: reason
               type: percentage
@@ -9359,6 +9442,7 @@ components:
             quantity: "2"
             name: Web Development
             description: description
+            unit_code: unit_code
             discount:
               reason: reason
               type: percentage
@@ -9380,6 +9464,7 @@ components:
                 exemption_reason_code: exemption_reason_code
             unit_price: "150.00"
             sku: sku
+          buyer_reference: buyer_reference
           buyer:
             website: website
             address:
@@ -9431,6 +9516,7 @@ components:
               bank_name: bank_name
               routing_number: routing_number
               swift: swift
+          preceding_invoice_number: preceding_invoice_number
           invoice_number: INV-2026-001
           ship_to:
             website: website
@@ -12038,6 +12124,7 @@ components:
         quantity: "2"
         name: Web Development
         description: description
+        unit_code: unit_code
         discount:
           reason: reason
           type: percentage
@@ -12081,6 +12168,9 @@ components:
           title: Unit Price
           type: string
         unit:
+          nullable: true
+          type: string
+        unit_code:
           nullable: true
           type: string
         sku:

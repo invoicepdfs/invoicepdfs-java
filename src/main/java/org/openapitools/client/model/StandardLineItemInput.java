@@ -54,7 +54,7 @@ import com.invoicepdfs.JSON;
 /**
  * A fully priced line: unit, price, tax, discount and SKU.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:12:00.695505601Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class StandardLineItemInput {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -75,6 +75,10 @@ public class StandardLineItemInput {
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
+
+  public static final String SERIALIZED_NAME_UNIT_CODE = "unit_code";
+  @SerializedName(SERIALIZED_NAME_UNIT_CODE)
+  private String unitCode;
 
   public static final String SERIALIZED_NAME_SKU = "sku";
   @SerializedName(SERIALIZED_NAME_SKU)
@@ -186,6 +190,25 @@ public class StandardLineItemInput {
   }
 
 
+  public StandardLineItemInput unitCode(String unitCode) {
+    this.unitCode = unitCode;
+    return this;
+  }
+
+  /**
+   * Get unitCode
+   * @return unitCode
+   */
+  @javax.annotation.Nullable
+  public String getUnitCode() {
+    return unitCode;
+  }
+
+  public void setUnitCode(String unitCode) {
+    this.unitCode = unitCode;
+  }
+
+
   public StandardLineItemInput sku(String sku) {
     this.sku = sku;
     return this;
@@ -266,6 +289,7 @@ public class StandardLineItemInput {
         Objects.equals(this.quantity, standardLineItemInput.quantity) &&
         Objects.equals(this.unitPrice, standardLineItemInput.unitPrice) &&
         Objects.equals(this.unit, standardLineItemInput.unit) &&
+        Objects.equals(this.unitCode, standardLineItemInput.unitCode) &&
         Objects.equals(this.sku, standardLineItemInput.sku) &&
         Objects.equals(this.discount, standardLineItemInput.discount) &&
         Objects.equals(this.taxes, standardLineItemInput.taxes);
@@ -277,7 +301,7 @@ public class StandardLineItemInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, quantity, unitPrice, unit, sku, discount, taxes);
+    return Objects.hash(name, description, quantity, unitPrice, unit, unitCode, sku, discount, taxes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -296,6 +320,7 @@ public class StandardLineItemInput {
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    unitCode: ").append(toIndentedString(unitCode)).append("\n");
     sb.append("    sku: ").append(toIndentedString(sku)).append("\n");
     sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
     sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
@@ -326,6 +351,7 @@ public class StandardLineItemInput {
     openapiFields.add("quantity");
     openapiFields.add("unit_price");
     openapiFields.add("unit");
+    openapiFields.add("unit_code");
     openapiFields.add("sku");
     openapiFields.add("discount");
     openapiFields.add("taxes");
@@ -378,6 +404,9 @@ public class StandardLineItemInput {
       }
       if ((jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) && !jsonObj.get("unit").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+      }
+      if ((jsonObj.get("unit_code") != null && !jsonObj.get("unit_code").isJsonNull()) && !jsonObj.get("unit_code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unit_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit_code").toString()));
       }
       if ((jsonObj.get("sku") != null && !jsonObj.get("sku").isJsonNull()) && !jsonObj.get("sku").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sku` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sku").toString()));

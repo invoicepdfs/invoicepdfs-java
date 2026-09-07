@@ -14,6 +14,7 @@
 |**website** | **String** |  |  [optional] |
 |**taxId** | **String** |  |  [optional] |
 |**address** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
+|**electronicAddress** | [**ElectronicAddress**](ElectronicAddress.md) |  |  [optional] |
 |**defaultCurrency** | **String** |  |  [optional] |
 |**defaultLocale** | **String** |  |  [optional] |
 |**defaultTimezone** | **String** |  |  [optional] |

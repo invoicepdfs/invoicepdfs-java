@@ -12,6 +12,7 @@
 |**quantity** | **String** |  |  |
 |**unitPrice** | **String** | Decimal string in major units |  |
 |**unit** | **String** |  |  [optional] |
+|**unitCode** | **String** |  |  [optional] |
 |**sku** | **String** |  |  [optional] |
 |**discount** | [**DocumentDiscountInput**](DocumentDiscountInput.md) |  |  [optional] |
 |**taxes** | [**List&lt;DocumentLineItemTaxInput&gt;**](DocumentLineItemTaxInput.md) |  |  [optional] |

@@ -105,6 +105,22 @@ public class DocumentInvoiceDataInputTest {
     }
 
     /**
+     * Test the property 'buyerReference'
+     */
+    @Test
+    public void buyerReferenceTest() {
+        // TODO: test buyerReference
+    }
+
+    /**
+     * Test the property 'precedingInvoiceNumber'
+     */
+    @Test
+    public void precedingInvoiceNumberTest() {
+        // TODO: test precedingInvoiceNumber
+    }
+
+    /**
      * Test the property 'lineItems'
      */
     @Test

@@ -60,7 +60,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentInvoiceDataInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:12:00.695505601Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentInvoiceDataInput {
   public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
   @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)
@@ -89,6 +89,14 @@ public class DocumentInvoiceDataInput {
   public static final String SERIALIZED_NAME_SHIP_TO = "ship_to";
   @SerializedName(SERIALIZED_NAME_SHIP_TO)
   private DocumentPartyInput shipTo;
+
+  public static final String SERIALIZED_NAME_BUYER_REFERENCE = "buyer_reference";
+  @SerializedName(SERIALIZED_NAME_BUYER_REFERENCE)
+  private String buyerReference;
+
+  public static final String SERIALIZED_NAME_PRECEDING_INVOICE_NUMBER = "preceding_invoice_number";
+  @SerializedName(SERIALIZED_NAME_PRECEDING_INVOICE_NUMBER)
+  private String precedingInvoiceNumber;
 
   public static final String SERIALIZED_NAME_LINE_ITEMS = "line_items";
   @SerializedName(SERIALIZED_NAME_LINE_ITEMS)
@@ -250,6 +258,44 @@ public class DocumentInvoiceDataInput {
   }
 
 
+  public DocumentInvoiceDataInput buyerReference(String buyerReference) {
+    this.buyerReference = buyerReference;
+    return this;
+  }
+
+  /**
+   * Get buyerReference
+   * @return buyerReference
+   */
+  @javax.annotation.Nullable
+  public String getBuyerReference() {
+    return buyerReference;
+  }
+
+  public void setBuyerReference(String buyerReference) {
+    this.buyerReference = buyerReference;
+  }
+
+
+  public DocumentInvoiceDataInput precedingInvoiceNumber(String precedingInvoiceNumber) {
+    this.precedingInvoiceNumber = precedingInvoiceNumber;
+    return this;
+  }
+
+  /**
+   * Get precedingInvoiceNumber
+   * @return precedingInvoiceNumber
+   */
+  @javax.annotation.Nullable
+  public String getPrecedingInvoiceNumber() {
+    return precedingInvoiceNumber;
+  }
+
+  public void setPrecedingInvoiceNumber(String precedingInvoiceNumber) {
+    this.precedingInvoiceNumber = precedingInvoiceNumber;
+  }
+
+
   public DocumentInvoiceDataInput lineItems(List<DocumentLineItemInput> lineItems) {
     this.lineItems = lineItems;
     return this;
@@ -405,6 +451,8 @@ public class DocumentInvoiceDataInput {
         Objects.equals(this.seller, documentInvoiceDataInput.seller) &&
         Objects.equals(this.buyer, documentInvoiceDataInput.buyer) &&
         Objects.equals(this.shipTo, documentInvoiceDataInput.shipTo) &&
+        Objects.equals(this.buyerReference, documentInvoiceDataInput.buyerReference) &&
+        Objects.equals(this.precedingInvoiceNumber, documentInvoiceDataInput.precedingInvoiceNumber) &&
         Objects.equals(this.lineItems, documentInvoiceDataInput.lineItems) &&
         Objects.equals(this.discounts, documentInvoiceDataInput.discounts) &&
         Objects.equals(this.shipping, documentInvoiceDataInput.shipping) &&
@@ -419,7 +467,7 @@ public class DocumentInvoiceDataInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, issueDate, dueDate, currency, seller, buyer, shipTo, lineItems, discounts, shipping, customFields, payment, branding);
+    return Objects.hash(invoiceNumber, issueDate, dueDate, currency, seller, buyer, shipTo, buyerReference, precedingInvoiceNumber, lineItems, discounts, shipping, customFields, payment, branding);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -440,6 +488,8 @@ public class DocumentInvoiceDataInput {
     sb.append("    seller: ").append(toIndentedString(seller)).append("\n");
     sb.append("    buyer: ").append(toIndentedString(buyer)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    sb.append("    buyerReference: ").append(toIndentedString(buyerReference)).append("\n");
+    sb.append("    precedingInvoiceNumber: ").append(toIndentedString(precedingInvoiceNumber)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
     sb.append("    shipping: ").append(toIndentedString(shipping)).append("\n");
@@ -475,6 +525,8 @@ public class DocumentInvoiceDataInput {
     openapiFields.add("seller");
     openapiFields.add("buyer");
     openapiFields.add("ship_to");
+    openapiFields.add("buyer_reference");
+    openapiFields.add("preceding_invoice_number");
     openapiFields.add("line_items");
     openapiFields.add("discounts");
     openapiFields.add("shipping");
@@ -533,6 +585,12 @@ public class DocumentInvoiceDataInput {
       // validate the optional field `ship_to`
       if (jsonObj.get("ship_to") != null && !jsonObj.get("ship_to").isJsonNull()) {
         DocumentPartyInput.validateJsonElement(jsonObj.get("ship_to"));
+      }
+      if ((jsonObj.get("buyer_reference") != null && !jsonObj.get("buyer_reference").isJsonNull()) && !jsonObj.get("buyer_reference").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `buyer_reference` to be a primitive type in the JSON string but got `%s`", jsonObj.get("buyer_reference").toString()));
+      }
+      if ((jsonObj.get("preceding_invoice_number") != null && !jsonObj.get("preceding_invoice_number").isJsonNull()) && !jsonObj.get("preceding_invoice_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `preceding_invoice_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("preceding_invoice_number").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("line_items").isJsonArray()) {

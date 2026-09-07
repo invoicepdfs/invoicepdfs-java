@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.ElectronicAddress;
 import org.openapitools.client.model.PostalAddress;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -53,7 +54,7 @@ import com.invoicepdfs.JSON;
 /**
  * CustomerCreate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:12:00.695505601Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CustomerCreate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -78,6 +79,10 @@ public class CustomerCreate {
   public static final String SERIALIZED_NAME_SHIPPING_ADDRESS = "shipping_address";
   @SerializedName(SERIALIZED_NAME_SHIPPING_ADDRESS)
   private PostalAddress shippingAddress;
+
+  public static final String SERIALIZED_NAME_ELECTRONIC_ADDRESS = "electronic_address";
+  @SerializedName(SERIALIZED_NAME_ELECTRONIC_ADDRESS)
+  private ElectronicAddress electronicAddress;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
@@ -200,6 +205,25 @@ public class CustomerCreate {
   }
 
 
+  public CustomerCreate electronicAddress(ElectronicAddress electronicAddress) {
+    this.electronicAddress = electronicAddress;
+    return this;
+  }
+
+  /**
+   * Get electronicAddress
+   * @return electronicAddress
+   */
+  @javax.annotation.Nullable
+  public ElectronicAddress getElectronicAddress() {
+    return electronicAddress;
+  }
+
+  public void setElectronicAddress(ElectronicAddress electronicAddress) {
+    this.electronicAddress = electronicAddress;
+  }
+
+
   public CustomerCreate metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
@@ -243,6 +267,7 @@ public class CustomerCreate {
         Objects.equals(this.taxId, customerCreate.taxId) &&
         Objects.equals(this.billingAddress, customerCreate.billingAddress) &&
         Objects.equals(this.shippingAddress, customerCreate.shippingAddress) &&
+        Objects.equals(this.electronicAddress, customerCreate.electronicAddress) &&
         Objects.equals(this.metadata, customerCreate.metadata);
   }
 
@@ -252,7 +277,7 @@ public class CustomerCreate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, email, phone, taxId, billingAddress, shippingAddress, metadata);
+    return Objects.hash(name, email, phone, taxId, billingAddress, shippingAddress, electronicAddress, metadata);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -272,6 +297,7 @@ public class CustomerCreate {
     sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
     sb.append("    billingAddress: ").append(toIndentedString(billingAddress)).append("\n");
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    sb.append("    electronicAddress: ").append(toIndentedString(electronicAddress)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -301,6 +327,7 @@ public class CustomerCreate {
     openapiFields.add("tax_id");
     openapiFields.add("billing_address");
     openapiFields.add("shipping_address");
+    openapiFields.add("electronic_address");
     openapiFields.add("metadata");
 
     // a set of required properties/fields (JSON key names)
@@ -355,6 +382,10 @@ public class CustomerCreate {
       // validate the optional field `shipping_address`
       if (jsonObj.get("shipping_address") != null && !jsonObj.get("shipping_address").isJsonNull()) {
         PostalAddress.validateJsonElement(jsonObj.get("shipping_address"));
+      }
+      // validate the optional field `electronic_address`
+      if (jsonObj.get("electronic_address") != null && !jsonObj.get("electronic_address").isJsonNull()) {
+        ElectronicAddress.validateJsonElement(jsonObj.get("electronic_address"));
       }
   }
 

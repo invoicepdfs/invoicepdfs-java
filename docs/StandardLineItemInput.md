@@ -13,6 +13,7 @@ A fully priced line: unit, price, tax, discount and SKU.
 |**quantity** | **String** | Decimal string |  |
 |**unitPrice** | **String** | Decimal string, major units |  [optional] |
 |**unit** | **String** |  |  [optional] |
+|**unitCode** | **String** |  |  [optional] |
 |**sku** | **String** |  |  [optional] |
 |**discount** | [**LineItemDiscountInput**](LineItemDiscountInput.md) |  |  [optional] |
 |**taxes** | [**List&lt;LineItemTaxInput&gt;**](LineItemTaxInput.md) |  |  [optional] |

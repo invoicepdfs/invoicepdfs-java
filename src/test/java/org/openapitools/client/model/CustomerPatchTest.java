@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.ElectronicAddress;
 import org.openapitools.client.model.PostalAddress;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
@@ -87,6 +88,14 @@ public class CustomerPatchTest {
     @Test
     public void shippingAddressTest() {
         // TODO: test shippingAddress
+    }
+
+    /**
+     * Test the property 'electronicAddress'
+     */
+    @Test
+    public void electronicAddressTest() {
+        // TODO: test electronicAddress
     }
 
     /**

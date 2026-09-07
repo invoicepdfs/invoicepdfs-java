@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ElectronicAddress;
 import org.openapitools.client.model.PostalAddress;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -51,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * BusinessProfilePatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:10:36.290402234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:12:00.695505601Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BusinessProfilePatch {
   public static final String SERIALIZED_NAME_LEGAL_NAME = "legal_name";
   @SerializedName(SERIALIZED_NAME_LEGAL_NAME)
@@ -80,6 +81,10 @@ public class BusinessProfilePatch {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   private PostalAddress address;
+
+  public static final String SERIALIZED_NAME_ELECTRONIC_ADDRESS = "electronic_address";
+  @SerializedName(SERIALIZED_NAME_ELECTRONIC_ADDRESS)
+  private ElectronicAddress electronicAddress;
 
   public static final String SERIALIZED_NAME_DEFAULT_CURRENCY = "default_currency";
   @SerializedName(SERIALIZED_NAME_DEFAULT_CURRENCY)
@@ -233,6 +238,25 @@ public class BusinessProfilePatch {
   }
 
 
+  public BusinessProfilePatch electronicAddress(ElectronicAddress electronicAddress) {
+    this.electronicAddress = electronicAddress;
+    return this;
+  }
+
+  /**
+   * Get electronicAddress
+   * @return electronicAddress
+   */
+  @javax.annotation.Nullable
+  public ElectronicAddress getElectronicAddress() {
+    return electronicAddress;
+  }
+
+  public void setElectronicAddress(ElectronicAddress electronicAddress) {
+    this.electronicAddress = electronicAddress;
+  }
+
+
   public BusinessProfilePatch defaultCurrency(String defaultCurrency) {
     this.defaultCurrency = defaultCurrency;
     return this;
@@ -326,6 +350,7 @@ public class BusinessProfilePatch {
         Objects.equals(this.website, businessProfilePatch.website) &&
         Objects.equals(this.taxId, businessProfilePatch.taxId) &&
         Objects.equals(this.address, businessProfilePatch.address) &&
+        Objects.equals(this.electronicAddress, businessProfilePatch.electronicAddress) &&
         Objects.equals(this.defaultCurrency, businessProfilePatch.defaultCurrency) &&
         Objects.equals(this.defaultLocale, businessProfilePatch.defaultLocale) &&
         Objects.equals(this.defaultTimezone, businessProfilePatch.defaultTimezone) &&
@@ -338,7 +363,7 @@ public class BusinessProfilePatch {
 
   @Override
   public int hashCode() {
-    return Objects.hash(legalName, displayName, email, phone, website, taxId, address, defaultCurrency, defaultLocale, defaultTimezone, logoFileId);
+    return Objects.hash(legalName, displayName, email, phone, website, taxId, address, electronicAddress, defaultCurrency, defaultLocale, defaultTimezone, logoFileId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -359,6 +384,7 @@ public class BusinessProfilePatch {
     sb.append("    website: ").append(toIndentedString(website)).append("\n");
     sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    electronicAddress: ").append(toIndentedString(electronicAddress)).append("\n");
     sb.append("    defaultCurrency: ").append(toIndentedString(defaultCurrency)).append("\n");
     sb.append("    defaultLocale: ").append(toIndentedString(defaultLocale)).append("\n");
     sb.append("    defaultTimezone: ").append(toIndentedString(defaultTimezone)).append("\n");
@@ -392,6 +418,7 @@ public class BusinessProfilePatch {
     openapiFields.add("website");
     openapiFields.add("tax_id");
     openapiFields.add("address");
+    openapiFields.add("electronic_address");
     openapiFields.add("default_currency");
     openapiFields.add("default_locale");
     openapiFields.add("default_timezone");
@@ -443,6 +470,10 @@ public class BusinessProfilePatch {
       // validate the optional field `address`
       if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) {
         PostalAddress.validateJsonElement(jsonObj.get("address"));
+      }
+      // validate the optional field `electronic_address`
+      if (jsonObj.get("electronic_address") != null && !jsonObj.get("electronic_address").isJsonNull()) {
+        ElectronicAddress.validateJsonElement(jsonObj.get("electronic_address"));
       }
       if ((jsonObj.get("default_currency") != null && !jsonObj.get("default_currency").isJsonNull()) && !jsonObj.get("default_currency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `default_currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("default_currency").toString()));
