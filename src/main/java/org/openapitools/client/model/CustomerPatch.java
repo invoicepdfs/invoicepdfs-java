@@ -54,11 +54,15 @@ import com.invoicepdfs.JSON;
 /**
  * CustomerPatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CustomerPatch {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_CONTACT_NAME = "contact_name";
+  @SerializedName(SERIALIZED_NAME_CONTACT_NAME)
+  private String contactName;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -107,6 +111,25 @@ public class CustomerPatch {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public CustomerPatch contactName(String contactName) {
+    this.contactName = contactName;
+    return this;
+  }
+
+  /**
+   * Get contactName
+   * @return contactName
+   */
+  @javax.annotation.Nullable
+  public String getContactName() {
+    return contactName;
+  }
+
+  public void setContactName(String contactName) {
+    this.contactName = contactName;
   }
 
 
@@ -262,6 +285,7 @@ public class CustomerPatch {
     }
     CustomerPatch customerPatch = (CustomerPatch) o;
     return Objects.equals(this.name, customerPatch.name) &&
+        Objects.equals(this.contactName, customerPatch.contactName) &&
         Objects.equals(this.email, customerPatch.email) &&
         Objects.equals(this.phone, customerPatch.phone) &&
         Objects.equals(this.taxId, customerPatch.taxId) &&
@@ -277,7 +301,7 @@ public class CustomerPatch {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, email, phone, taxId, billingAddress, shippingAddress, electronicAddress, metadata);
+    return Objects.hash(name, contactName, email, phone, taxId, billingAddress, shippingAddress, electronicAddress, metadata);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -292,6 +316,7 @@ public class CustomerPatch {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomerPatch {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    contactName: ").append(toIndentedString(contactName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
@@ -322,6 +347,7 @@ public class CustomerPatch {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("contact_name");
     openapiFields.add("email");
     openapiFields.add("phone");
     openapiFields.add("tax_id");
@@ -357,6 +383,9 @@ public class CustomerPatch {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("contact_name") != null && !jsonObj.get("contact_name").isJsonNull()) && !jsonObj.get("contact_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contact_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contact_name").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));

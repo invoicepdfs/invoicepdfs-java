@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * How a tax is treated, as opposed to what it is called.  &#x60;name&#x60; and &#x60;rate&#x60; do not say this: two taxes at 0% may be zero-rated, exempt, reverse-charge or outside scope, and EN 16931 keeps them in separate VAT breakdown groups with different mandatory fields. Optional, so an invoice that never mentions a category calculates exactly as before.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TaxCategory {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)

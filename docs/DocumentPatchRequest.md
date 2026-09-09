@@ -19,6 +19,7 @@
 |**reason** | **String** |  |  [optional] |
 |**shipTo** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
 |**buyerReference** | **String** |  |  [optional] |
+|**deliveryDate** | **LocalDate** |  |  [optional] |
 |**lineItems** | [**List&lt;StandardLineItemInput&gt;**](StandardLineItemInput.md) |  |  [optional] |
 |**discounts** | [**List&lt;LineItemDiscountInput&gt;**](LineItemDiscountInput.md) |  |  [optional] |
 |**shipping** | [**InvoiceShippingInput**](InvoiceShippingInput.md) |  |  [optional] |

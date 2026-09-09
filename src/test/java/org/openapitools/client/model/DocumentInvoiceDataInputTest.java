@@ -105,6 +105,14 @@ public class DocumentInvoiceDataInputTest {
     }
 
     /**
+     * Test the property 'deliveryDate'
+     */
+    @Test
+    public void deliveryDateTest() {
+        // TODO: test deliveryDate
+    }
+
+    /**
      * Test the property 'buyerReference'
      */
     @Test

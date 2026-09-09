@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  [optional] |
+|**contactName** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |
 |**taxId** | **String** |  |  [optional] |

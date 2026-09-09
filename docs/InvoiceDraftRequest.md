@@ -17,6 +17,7 @@
 |**customerId** | **String** |  |  |
 |**shipTo** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
 |**buyerReference** | **String** |  |  [optional] |
+|**deliveryDate** | **LocalDate** |  |  [optional] |
 |**precedingInvoiceNumber** | **String** |  |  [optional] |
 |**lineItems** | [**List&lt;InvoiceLineItemInput&gt;**](InvoiceLineItemInput.md) |  |  |
 |**discounts** | [**List&lt;InvoiceDiscountInput&gt;**](InvoiceDiscountInput.md) |  |  [optional] |

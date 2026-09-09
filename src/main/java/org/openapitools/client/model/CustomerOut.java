@@ -54,11 +54,15 @@ import com.invoicepdfs.JSON;
 /**
  * CustomerOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CustomerOut {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_CONTACT_NAME = "contact_name";
+  @SerializedName(SERIALIZED_NAME_CONTACT_NAME)
+  private String contactName;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -119,6 +123,25 @@ public class CustomerOut {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public CustomerOut contactName(String contactName) {
+    this.contactName = contactName;
+    return this;
+  }
+
+  /**
+   * Get contactName
+   * @return contactName
+   */
+  @javax.annotation.Nullable
+  public String getContactName() {
+    return contactName;
+  }
+
+  public void setContactName(String contactName) {
+    this.contactName = contactName;
   }
 
 
@@ -331,6 +354,7 @@ public class CustomerOut {
     }
     CustomerOut customerOut = (CustomerOut) o;
     return Objects.equals(this.name, customerOut.name) &&
+        Objects.equals(this.contactName, customerOut.contactName) &&
         Objects.equals(this.email, customerOut.email) &&
         Objects.equals(this.phone, customerOut.phone) &&
         Objects.equals(this.taxId, customerOut.taxId) &&
@@ -349,7 +373,7 @@ public class CustomerOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, email, phone, taxId, billingAddress, shippingAddress, electronicAddress, metadata, id, createdAt, updatedAt);
+    return Objects.hash(name, contactName, email, phone, taxId, billingAddress, shippingAddress, electronicAddress, metadata, id, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -364,6 +388,7 @@ public class CustomerOut {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomerOut {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    contactName: ").append(toIndentedString(contactName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
@@ -397,6 +422,7 @@ public class CustomerOut {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("contact_name");
     openapiFields.add("email");
     openapiFields.add("phone");
     openapiFields.add("tax_id");
@@ -446,6 +472,9 @@ public class CustomerOut {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("contact_name") != null && !jsonObj.get("contact_name").isJsonNull()) && !jsonObj.get("contact_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contact_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contact_name").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));

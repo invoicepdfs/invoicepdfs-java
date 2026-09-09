@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ElectronicAddress;
+import org.openapitools.client.model.InvoiceBankAccountInput;
 import org.openapitools.client.model.PostalAddress;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
@@ -54,6 +55,14 @@ public class BusinessProfileCreateTest {
     @Test
     public void displayNameTest() {
         // TODO: test displayName
+    }
+
+    /**
+     * Test the property 'contactName'
+     */
+    @Test
+    public void contactNameTest() {
+        // TODO: test contactName
     }
 
     /**
@@ -94,6 +103,14 @@ public class BusinessProfileCreateTest {
     @Test
     public void addressTest() {
         // TODO: test address
+    }
+
+    /**
+     * Test the property 'bankAccount'
+     */
+    @Test
+    public void bankAccountTest() {
+        // TODO: test bankAccount
     }
 
     /**

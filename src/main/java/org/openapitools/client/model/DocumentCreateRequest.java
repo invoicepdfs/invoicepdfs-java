@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentCreateRequest {
   /**
    * Gets or Sets documentType
@@ -175,6 +175,10 @@ public class DocumentCreateRequest {
   public static final String SERIALIZED_NAME_BUYER_REFERENCE = "buyer_reference";
   @SerializedName(SERIALIZED_NAME_BUYER_REFERENCE)
   private String buyerReference;
+
+  public static final String SERIALIZED_NAME_DELIVERY_DATE = "delivery_date";
+  @SerializedName(SERIALIZED_NAME_DELIVERY_DATE)
+  private LocalDate deliveryDate;
 
   public static final String SERIALIZED_NAME_LINE_ITEMS = "line_items";
   @SerializedName(SERIALIZED_NAME_LINE_ITEMS)
@@ -443,6 +447,25 @@ public class DocumentCreateRequest {
   }
 
 
+  public DocumentCreateRequest deliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
+    return this;
+  }
+
+  /**
+   * Get deliveryDate
+   * @return deliveryDate
+   */
+  @javax.annotation.Nullable
+  public LocalDate getDeliveryDate() {
+    return deliveryDate;
+  }
+
+  public void setDeliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
+  }
+
+
   public DocumentCreateRequest lineItems(List<StandardLineItemInput> lineItems) {
     this.lineItems = lineItems;
     return this;
@@ -676,6 +699,7 @@ public class DocumentCreateRequest {
         Objects.equals(this.reason, documentCreateRequest.reason) &&
         Objects.equals(this.shipTo, documentCreateRequest.shipTo) &&
         Objects.equals(this.buyerReference, documentCreateRequest.buyerReference) &&
+        Objects.equals(this.deliveryDate, documentCreateRequest.deliveryDate) &&
         Objects.equals(this.lineItems, documentCreateRequest.lineItems) &&
         Objects.equals(this.discounts, documentCreateRequest.discounts) &&
         Objects.equals(this.shipping, documentCreateRequest.shipping) &&
@@ -693,7 +717,7 @@ public class DocumentCreateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentType, number, issueDate, dueDate, currency, locale, businessProfileId, customerId, sourceDocumentId, reason, shipTo, buyerReference, lineItems, discounts, shipping, notes, terms, customFields, payment, branding, brandingProfileId);
+    return Objects.hash(documentType, number, issueDate, dueDate, currency, locale, businessProfileId, customerId, sourceDocumentId, reason, shipTo, buyerReference, deliveryDate, lineItems, discounts, shipping, notes, terms, customFields, payment, branding, brandingProfileId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -719,6 +743,7 @@ public class DocumentCreateRequest {
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    buyerReference: ").append(toIndentedString(buyerReference)).append("\n");
+    sb.append("    deliveryDate: ").append(toIndentedString(deliveryDate)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
     sb.append("    shipping: ").append(toIndentedString(shipping)).append("\n");
@@ -762,6 +787,7 @@ public class DocumentCreateRequest {
     openapiFields.add("reason");
     openapiFields.add("ship_to");
     openapiFields.add("buyer_reference");
+    openapiFields.add("delivery_date");
     openapiFields.add("line_items");
     openapiFields.add("discounts");
     openapiFields.add("shipping");

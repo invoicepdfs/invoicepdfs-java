@@ -147,6 +147,14 @@ public class DocumentCreateRequestTest {
     }
 
     /**
+     * Test the property 'deliveryDate'
+     */
+    @Test
+    public void deliveryDateTest() {
+        // TODO: test deliveryDate
+    }
+
+    /**
      * Test the property 'lineItems'
      */
     @Test

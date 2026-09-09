@@ -6795,7 +6795,7 @@ components:
       type: object
     BusinessProfileCreate:
       example:
-        default_timezone: default_timezone
+        contact_name: contact_name
         website: website
         address:
           country: country
@@ -6804,23 +6804,34 @@ components:
           postal_code: postal_code
           line2: line2
           line1: 1 Main St
-        phone: phone
         logo_file_id: logo_file_id
-        default_locale: default_locale
-        legal_name: Acme Corp Inc.
         display_name: display_name
-        default_currency: default_currency
-        email: email
         tax_id: tax_id
         electronic_address:
           scheme_id: "0088"
           value: "9482348239"
+        default_timezone: default_timezone
+        phone: phone
+        default_locale: default_locale
+        legal_name: Acme Corp Inc.
+        default_currency: default_currency
+        email: email
+        bank_account:
+          account_number: account_number
+          account_name: account_name
+          iban: iban
+          bank_name: bank_name
+          routing_number: routing_number
+          swift: swift
       properties:
         legal_name:
           example: Acme Corp Inc.
           title: Legal Name
           type: string
         display_name:
+          nullable: true
+          type: string
+        contact_name:
           nullable: true
           type: string
         email:
@@ -6837,6 +6848,8 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/PostalAddress'
+        bank_account:
+          $ref: '#/components/schemas/InvoiceBankAccountInput'
         electronic_address:
           $ref: '#/components/schemas/ElectronicAddress'
         default_currency:
@@ -6857,6 +6870,7 @@ components:
       type: object
     BusinessProfileOut:
       example:
+        contact_name: contact_name
         website: website
         address:
           country: country
@@ -6880,12 +6894,22 @@ components:
         id: id
         default_currency: default_currency
         email: email
+        bank_account:
+          account_number: account_number
+          account_name: account_name
+          iban: iban
+          bank_name: bank_name
+          routing_number: routing_number
+          swift: swift
       properties:
         legal_name:
           example: Acme Corp Inc.
           title: Legal Name
           type: string
         display_name:
+          nullable: true
+          type: string
+        contact_name:
           nullable: true
           type: string
         email:
@@ -6902,6 +6926,8 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/PostalAddress'
+        bank_account:
+          $ref: '#/components/schemas/InvoiceBankAccountInput'
         electronic_address:
           $ref: '#/components/schemas/ElectronicAddress'
         default_currency:
@@ -6934,7 +6960,7 @@ components:
       type: object
     BusinessProfilePatch:
       example:
-        default_timezone: default_timezone
+        contact_name: contact_name
         website: website
         address:
           country: country
@@ -6943,22 +6969,33 @@ components:
           postal_code: postal_code
           line2: line2
           line1: 1 Main St
-        phone: phone
         logo_file_id: logo_file_id
-        default_locale: default_locale
-        legal_name: legal_name
         display_name: display_name
-        default_currency: default_currency
-        email: email
         tax_id: tax_id
         electronic_address:
           scheme_id: "0088"
           value: "9482348239"
+        default_timezone: default_timezone
+        phone: phone
+        default_locale: default_locale
+        legal_name: legal_name
+        default_currency: default_currency
+        email: email
+        bank_account:
+          account_number: account_number
+          account_name: account_name
+          iban: iban
+          bank_name: bank_name
+          routing_number: routing_number
+          swift: swift
       properties:
         legal_name:
           title: Legal Name
           type: string
         display_name:
+          nullable: true
+          type: string
+        contact_name:
           nullable: true
           type: string
         email:
@@ -6975,6 +7012,8 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/PostalAddress'
+        bank_account:
+          $ref: '#/components/schemas/InvoiceBankAccountInput'
         electronic_address:
           $ref: '#/components/schemas/ElectronicAddress'
         default_currency:
@@ -6994,6 +7033,7 @@ components:
     BusinessProfileResponse:
       example:
         data:
+          contact_name: contact_name
           website: website
           address:
             country: country
@@ -7017,6 +7057,13 @@ components:
           id: id
           default_currency: default_currency
           email: email
+          bank_account:
+            account_number: account_number
+            account_name: account_name
+            iban: iban
+            bank_name: bank_name
+            routing_number: routing_number
+            swift: swift
       properties:
         data:
           $ref: '#/components/schemas/BusinessProfileOut'
@@ -7030,7 +7077,8 @@ components:
           next_cursor: next_cursor
           has_more: false
         data:
-        - website: website
+        - contact_name: contact_name
+          website: website
           address:
             country: country
             city: city
@@ -7053,7 +7101,15 @@ components:
           id: id
           default_currency: default_currency
           email: email
-        - website: website
+          bank_account:
+            account_number: account_number
+            account_name: account_name
+            iban: iban
+            bank_name: bank_name
+            routing_number: routing_number
+            swift: swift
+        - contact_name: contact_name
+          website: website
           address:
             country: country
             city: city
@@ -7076,6 +7132,13 @@ components:
           id: id
           default_currency: default_currency
           email: email
+          bank_account:
+            account_number: account_number
+            account_name: account_name
+            iban: iban
+            bank_name: bank_name
+            routing_number: routing_number
+            swift: swift
       properties:
         data:
           items:
@@ -7499,6 +7562,7 @@ components:
       type: object
     CustomerCreate:
       example:
+        contact_name: contact_name
         metadata:
           key: ""
         phone: phone
@@ -7527,6 +7591,9 @@ components:
           example: Jane Smith
           title: Name
           type: string
+        contact_name:
+          nullable: true
+          type: string
         email:
           nullable: true
           type: string
@@ -7552,6 +7619,7 @@ components:
       type: object
     CustomerOut:
       example:
+        contact_name: contact_name
         metadata:
           key: ""
         updated_at: updated_at
@@ -7582,6 +7650,9 @@ components:
         name:
           example: Jane Smith
           title: Name
+          type: string
+        contact_name:
+          nullable: true
           type: string
         email:
           nullable: true
@@ -7620,6 +7691,7 @@ components:
       type: object
     CustomerPatch:
       example:
+        contact_name: contact_name
         metadata:
           key: ""
         phone: phone
@@ -7647,6 +7719,9 @@ components:
         name:
           title: Name
           type: string
+        contact_name:
+          nullable: true
+          type: string
         email:
           nullable: true
           type: string
@@ -7671,6 +7746,7 @@ components:
     CustomerResponse:
       example:
         data:
+          contact_name: contact_name
           metadata:
             key: ""
           updated_at: updated_at
@@ -7710,7 +7786,8 @@ components:
           next_cursor: next_cursor
           has_more: false
         data:
-        - metadata:
+        - contact_name: contact_name
+          metadata:
             key: ""
           updated_at: updated_at
           phone: phone
@@ -7736,7 +7813,8 @@ components:
           electronic_address:
             scheme_id: "0088"
             value: "9482348239"
-        - metadata:
+        - contact_name: contact_name
+          metadata:
             key: ""
           updated_at: updated_at
           phone: phone
@@ -8010,6 +8088,7 @@ components:
       example:
         data:
           seller:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -8102,6 +8181,7 @@ components:
             sku: sku
           buyer_reference: buyer_reference
           buyer:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -8126,6 +8206,7 @@ components:
               bank_name: bank_name
               routing_number: routing_number
               swift: swift
+          delivery_date: 2000-01-23
           issue_date: 2026-07-20
           discounts:
           - reason: reason
@@ -8155,6 +8236,7 @@ components:
           preceding_invoice_number: preceding_invoice_number
           invoice_number: INV-2026-001
           ship_to:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -8236,6 +8318,7 @@ components:
       example:
         data:
           seller:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -8328,6 +8411,7 @@ components:
             sku: sku
           buyer_reference: buyer_reference
           buyer:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -8352,6 +8436,7 @@ components:
               bank_name: bank_name
               routing_number: routing_number
               swift: swift
+          delivery_date: 2000-01-23
           issue_date: 2026-07-20
           discounts:
           - reason: reason
@@ -8381,6 +8466,7 @@ components:
           preceding_invoice_number: preceding_invoice_number
           invoice_number: INV-2026-001
           ship_to:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -8555,6 +8641,7 @@ components:
         buyer_reference: buyer_reference
         business_profile_id: bp_01ABC
         number: INV-2026-001
+        delivery_date: 2000-01-23
         issue_date: 2026-07-20
         discounts:
         - reason: reason
@@ -8651,6 +8738,10 @@ components:
         buyer_reference:
           nullable: true
           type: string
+        delivery_date:
+          format: date
+          nullable: true
+          type: string
         line_items:
           items:
             $ref: '#/components/schemas/StandardLineItemInput'
@@ -8739,6 +8830,7 @@ components:
     DocumentInvoiceDataInput:
       example:
         seller:
+          contact_name: contact_name
           website: website
           address:
             country: country
@@ -8831,6 +8923,7 @@ components:
           sku: sku
         buyer_reference: buyer_reference
         buyer:
+          contact_name: contact_name
           website: website
           address:
             country: country
@@ -8855,6 +8948,7 @@ components:
             bank_name: bank_name
             routing_number: routing_number
             swift: swift
+        delivery_date: 2000-01-23
         issue_date: 2026-07-20
         discounts:
         - reason: reason
@@ -8884,6 +8978,7 @@ components:
         preceding_invoice_number: preceding_invoice_number
         invoice_number: INV-2026-001
         ship_to:
+          contact_name: contact_name
           website: website
           address:
             country: country
@@ -8932,6 +9027,10 @@ components:
           $ref: '#/components/schemas/DocumentPartyInput'
         ship_to:
           $ref: '#/components/schemas/DocumentPartyInput'
+        delivery_date:
+          format: date
+          nullable: true
+          type: string
         buyer_reference:
           nullable: true
           type: string
@@ -9217,6 +9316,7 @@ components:
       type: object
     DocumentPartyInput:
       example:
+        contact_name: contact_name
         website: website
         address:
           country: country
@@ -9247,6 +9347,9 @@ components:
           title: Name
           type: string
         legal_name:
+          nullable: true
+          type: string
+        contact_name:
           nullable: true
           type: string
         email:
@@ -9357,6 +9460,7 @@ components:
         buyer_reference: buyer_reference
         business_profile_id: business_profile_id
         number: number
+        delivery_date: 2000-01-23
         issue_date: 2000-01-23
         discounts:
         - reason: reason
@@ -9445,6 +9549,10 @@ components:
         ship_to:
           $ref: '#/components/schemas/PostalAddress'
         buyer_reference:
+          nullable: true
+          type: string
+        delivery_date:
+          format: date
           nullable: true
           type: string
         line_items:
@@ -9562,6 +9670,7 @@ components:
           expires_in: 0
         data:
           seller:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -9654,6 +9763,7 @@ components:
             sku: sku
           buyer_reference: buyer_reference
           buyer:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -9678,6 +9788,7 @@ components:
               bank_name: bank_name
               routing_number: routing_number
               swift: swift
+          delivery_date: 2000-01-23
           issue_date: 2026-07-20
           discounts:
           - reason: reason
@@ -9707,6 +9818,7 @@ components:
           preceding_invoice_number: preceding_invoice_number
           invoice_number: INV-2026-001
           ship_to:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -9935,6 +10047,7 @@ components:
       example:
         data:
           seller:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -10027,6 +10140,7 @@ components:
             sku: sku
           buyer_reference: buyer_reference
           buyer:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -10051,6 +10165,7 @@ components:
               bank_name: bank_name
               routing_number: routing_number
               swift: swift
+          delivery_date: 2000-01-23
           issue_date: 2026-07-20
           discounts:
           - reason: reason
@@ -10080,6 +10195,7 @@ components:
           preceding_invoice_number: preceding_invoice_number
           invoice_number: INV-2026-001
           ship_to:
+            contact_name: contact_name
             website: website
             address:
               country: country
@@ -10731,6 +10847,7 @@ components:
         locale: locale
         buyer_reference: buyer_reference
         business_profile_id: bp_01ABC
+        delivery_date: 2000-01-23
         issue_date: 2026-07-20
         discounts:
         - reason: reason
@@ -10818,6 +10935,10 @@ components:
         ship_to:
           $ref: '#/components/schemas/PostalAddress'
         buyer_reference:
+          nullable: true
+          type: string
+        delivery_date:
+          format: date
           nullable: true
           type: string
         preceding_invoice_number:
@@ -12170,6 +12291,7 @@ components:
           locale: locale
           buyer_reference: buyer_reference
           business_profile_id: bp_01ABC
+          delivery_date: 2000-01-23
           issue_date: 2026-07-20
           discounts:
           - reason: reason
@@ -12429,6 +12551,7 @@ components:
           locale: locale
           buyer_reference: buyer_reference
           business_profile_id: bp_01ABC
+          delivery_date: 2000-01-23
           issue_date: 2026-07-20
           discounts:
           - reason: reason

@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
 |**legalName** | **String** |  |  [optional] |
+|**contactName** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |
 |**website** | **String** |  |  [optional] |

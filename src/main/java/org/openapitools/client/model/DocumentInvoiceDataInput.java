@@ -60,7 +60,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentInvoiceDataInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentInvoiceDataInput {
   public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
   @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)
@@ -89,6 +89,10 @@ public class DocumentInvoiceDataInput {
   public static final String SERIALIZED_NAME_SHIP_TO = "ship_to";
   @SerializedName(SERIALIZED_NAME_SHIP_TO)
   private DocumentPartyInput shipTo;
+
+  public static final String SERIALIZED_NAME_DELIVERY_DATE = "delivery_date";
+  @SerializedName(SERIALIZED_NAME_DELIVERY_DATE)
+  private LocalDate deliveryDate;
 
   public static final String SERIALIZED_NAME_BUYER_REFERENCE = "buyer_reference";
   @SerializedName(SERIALIZED_NAME_BUYER_REFERENCE)
@@ -255,6 +259,25 @@ public class DocumentInvoiceDataInput {
 
   public void setShipTo(DocumentPartyInput shipTo) {
     this.shipTo = shipTo;
+  }
+
+
+  public DocumentInvoiceDataInput deliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
+    return this;
+  }
+
+  /**
+   * Get deliveryDate
+   * @return deliveryDate
+   */
+  @javax.annotation.Nullable
+  public LocalDate getDeliveryDate() {
+    return deliveryDate;
+  }
+
+  public void setDeliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
   }
 
 
@@ -451,6 +474,7 @@ public class DocumentInvoiceDataInput {
         Objects.equals(this.seller, documentInvoiceDataInput.seller) &&
         Objects.equals(this.buyer, documentInvoiceDataInput.buyer) &&
         Objects.equals(this.shipTo, documentInvoiceDataInput.shipTo) &&
+        Objects.equals(this.deliveryDate, documentInvoiceDataInput.deliveryDate) &&
         Objects.equals(this.buyerReference, documentInvoiceDataInput.buyerReference) &&
         Objects.equals(this.precedingInvoiceNumber, documentInvoiceDataInput.precedingInvoiceNumber) &&
         Objects.equals(this.lineItems, documentInvoiceDataInput.lineItems) &&
@@ -467,7 +491,7 @@ public class DocumentInvoiceDataInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, issueDate, dueDate, currency, seller, buyer, shipTo, buyerReference, precedingInvoiceNumber, lineItems, discounts, shipping, customFields, payment, branding);
+    return Objects.hash(invoiceNumber, issueDate, dueDate, currency, seller, buyer, shipTo, deliveryDate, buyerReference, precedingInvoiceNumber, lineItems, discounts, shipping, customFields, payment, branding);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -488,6 +512,7 @@ public class DocumentInvoiceDataInput {
     sb.append("    seller: ").append(toIndentedString(seller)).append("\n");
     sb.append("    buyer: ").append(toIndentedString(buyer)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    sb.append("    deliveryDate: ").append(toIndentedString(deliveryDate)).append("\n");
     sb.append("    buyerReference: ").append(toIndentedString(buyerReference)).append("\n");
     sb.append("    precedingInvoiceNumber: ").append(toIndentedString(precedingInvoiceNumber)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
@@ -525,6 +550,7 @@ public class DocumentInvoiceDataInput {
     openapiFields.add("seller");
     openapiFields.add("buyer");
     openapiFields.add("ship_to");
+    openapiFields.add("delivery_date");
     openapiFields.add("buyer_reference");
     openapiFields.add("preceding_invoice_number");
     openapiFields.add("line_items");

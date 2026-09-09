@@ -51,6 +51,14 @@ public class CustomerPatchTest {
     }
 
     /**
+     * Test the property 'contactName'
+     */
+    @Test
+    public void contactNameTest() {
+        // TODO: test contactName
+    }
+
+    /**
      * Test the property 'email'
      */
     @Test

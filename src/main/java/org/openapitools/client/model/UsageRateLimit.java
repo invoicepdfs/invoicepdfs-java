@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * UsageRateLimit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UsageRateLimit {
   public static final String SERIALIZED_NAME_REQUESTS_PER_SECOND = "requests_per_second";
   @SerializedName(SERIALIZED_NAME_REQUESTS_PER_SECOND)

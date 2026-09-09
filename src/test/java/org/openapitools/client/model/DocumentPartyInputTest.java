@@ -58,6 +58,14 @@ public class DocumentPartyInputTest {
     }
 
     /**
+     * Test the property 'contactName'
+     */
+    @Test
+    public void contactNameTest() {
+        // TODO: test contactName
+    }
+
+    /**
      * Test the property 'email'
      */
     @Test

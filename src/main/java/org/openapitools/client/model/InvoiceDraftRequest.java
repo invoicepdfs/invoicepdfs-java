@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceDraftRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceDraftRequest {
   public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
   @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)
@@ -167,6 +167,10 @@ public class InvoiceDraftRequest {
   public static final String SERIALIZED_NAME_BUYER_REFERENCE = "buyer_reference";
   @SerializedName(SERIALIZED_NAME_BUYER_REFERENCE)
   private String buyerReference;
+
+  public static final String SERIALIZED_NAME_DELIVERY_DATE = "delivery_date";
+  @SerializedName(SERIALIZED_NAME_DELIVERY_DATE)
+  private LocalDate deliveryDate;
 
   public static final String SERIALIZED_NAME_PRECEDING_INVOICE_NUMBER = "preceding_invoice_number";
   @SerializedName(SERIALIZED_NAME_PRECEDING_INVOICE_NUMBER)
@@ -394,6 +398,25 @@ public class InvoiceDraftRequest {
 
   public void setBuyerReference(String buyerReference) {
     this.buyerReference = buyerReference;
+  }
+
+
+  public InvoiceDraftRequest deliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
+    return this;
+  }
+
+  /**
+   * Get deliveryDate
+   * @return deliveryDate
+   */
+  @javax.annotation.Nullable
+  public LocalDate getDeliveryDate() {
+    return deliveryDate;
+  }
+
+  public void setDeliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
   }
 
 
@@ -628,6 +651,7 @@ public class InvoiceDraftRequest {
         Objects.equals(this.customerId, invoiceDraftRequest.customerId) &&
         Objects.equals(this.shipTo, invoiceDraftRequest.shipTo) &&
         Objects.equals(this.buyerReference, invoiceDraftRequest.buyerReference) &&
+        Objects.equals(this.deliveryDate, invoiceDraftRequest.deliveryDate) &&
         Objects.equals(this.precedingInvoiceNumber, invoiceDraftRequest.precedingInvoiceNumber) &&
         Objects.equals(this.lineItems, invoiceDraftRequest.lineItems) &&
         Objects.equals(this.discounts, invoiceDraftRequest.discounts) &&
@@ -645,7 +669,7 @@ public class InvoiceDraftRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, documentType, issueDate, dueDate, currency, locale, businessProfileId, customerId, shipTo, buyerReference, precedingInvoiceNumber, lineItems, discounts, shipping, notes, terms, customFields, payment, branding);
+    return Objects.hash(invoiceNumber, documentType, issueDate, dueDate, currency, locale, businessProfileId, customerId, shipTo, buyerReference, deliveryDate, precedingInvoiceNumber, lineItems, discounts, shipping, notes, terms, customFields, payment, branding);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -669,6 +693,7 @@ public class InvoiceDraftRequest {
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    buyerReference: ").append(toIndentedString(buyerReference)).append("\n");
+    sb.append("    deliveryDate: ").append(toIndentedString(deliveryDate)).append("\n");
     sb.append("    precedingInvoiceNumber: ").append(toIndentedString(precedingInvoiceNumber)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
@@ -710,6 +735,7 @@ public class InvoiceDraftRequest {
     openapiFields.add("customer_id");
     openapiFields.add("ship_to");
     openapiFields.add("buyer_reference");
+    openapiFields.add("delivery_date");
     openapiFields.add("preceding_invoice_number");
     openapiFields.add("line_items");
     openapiFields.add("discounts");

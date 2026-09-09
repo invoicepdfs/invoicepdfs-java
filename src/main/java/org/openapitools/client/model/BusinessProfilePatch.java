@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ElectronicAddress;
+import org.openapitools.client.model.InvoiceBankAccountInput;
 import org.openapitools.client.model.PostalAddress;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -52,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * BusinessProfilePatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:19:07.078658090Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BusinessProfilePatch {
   public static final String SERIALIZED_NAME_LEGAL_NAME = "legal_name";
   @SerializedName(SERIALIZED_NAME_LEGAL_NAME)
@@ -61,6 +62,10 @@ public class BusinessProfilePatch {
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "display_name";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   private String displayName;
+
+  public static final String SERIALIZED_NAME_CONTACT_NAME = "contact_name";
+  @SerializedName(SERIALIZED_NAME_CONTACT_NAME)
+  private String contactName;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -81,6 +86,10 @@ public class BusinessProfilePatch {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   private PostalAddress address;
+
+  public static final String SERIALIZED_NAME_BANK_ACCOUNT = "bank_account";
+  @SerializedName(SERIALIZED_NAME_BANK_ACCOUNT)
+  private InvoiceBankAccountInput bankAccount;
 
   public static final String SERIALIZED_NAME_ELECTRONIC_ADDRESS = "electronic_address";
   @SerializedName(SERIALIZED_NAME_ELECTRONIC_ADDRESS)
@@ -140,6 +149,25 @@ public class BusinessProfilePatch {
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
+  }
+
+
+  public BusinessProfilePatch contactName(String contactName) {
+    this.contactName = contactName;
+    return this;
+  }
+
+  /**
+   * Get contactName
+   * @return contactName
+   */
+  @javax.annotation.Nullable
+  public String getContactName() {
+    return contactName;
+  }
+
+  public void setContactName(String contactName) {
+    this.contactName = contactName;
   }
 
 
@@ -235,6 +263,25 @@ public class BusinessProfilePatch {
 
   public void setAddress(PostalAddress address) {
     this.address = address;
+  }
+
+
+  public BusinessProfilePatch bankAccount(InvoiceBankAccountInput bankAccount) {
+    this.bankAccount = bankAccount;
+    return this;
+  }
+
+  /**
+   * Get bankAccount
+   * @return bankAccount
+   */
+  @javax.annotation.Nullable
+  public InvoiceBankAccountInput getBankAccount() {
+    return bankAccount;
+  }
+
+  public void setBankAccount(InvoiceBankAccountInput bankAccount) {
+    this.bankAccount = bankAccount;
   }
 
 
@@ -345,11 +392,13 @@ public class BusinessProfilePatch {
     BusinessProfilePatch businessProfilePatch = (BusinessProfilePatch) o;
     return Objects.equals(this.legalName, businessProfilePatch.legalName) &&
         Objects.equals(this.displayName, businessProfilePatch.displayName) &&
+        Objects.equals(this.contactName, businessProfilePatch.contactName) &&
         Objects.equals(this.email, businessProfilePatch.email) &&
         Objects.equals(this.phone, businessProfilePatch.phone) &&
         Objects.equals(this.website, businessProfilePatch.website) &&
         Objects.equals(this.taxId, businessProfilePatch.taxId) &&
         Objects.equals(this.address, businessProfilePatch.address) &&
+        Objects.equals(this.bankAccount, businessProfilePatch.bankAccount) &&
         Objects.equals(this.electronicAddress, businessProfilePatch.electronicAddress) &&
         Objects.equals(this.defaultCurrency, businessProfilePatch.defaultCurrency) &&
         Objects.equals(this.defaultLocale, businessProfilePatch.defaultLocale) &&
@@ -363,7 +412,7 @@ public class BusinessProfilePatch {
 
   @Override
   public int hashCode() {
-    return Objects.hash(legalName, displayName, email, phone, website, taxId, address, electronicAddress, defaultCurrency, defaultLocale, defaultTimezone, logoFileId);
+    return Objects.hash(legalName, displayName, contactName, email, phone, website, taxId, address, bankAccount, electronicAddress, defaultCurrency, defaultLocale, defaultTimezone, logoFileId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -379,11 +428,13 @@ public class BusinessProfilePatch {
     sb.append("class BusinessProfilePatch {\n");
     sb.append("    legalName: ").append(toIndentedString(legalName)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    contactName: ").append(toIndentedString(contactName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    website: ").append(toIndentedString(website)).append("\n");
     sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    electronicAddress: ").append(toIndentedString(electronicAddress)).append("\n");
     sb.append("    defaultCurrency: ").append(toIndentedString(defaultCurrency)).append("\n");
     sb.append("    defaultLocale: ").append(toIndentedString(defaultLocale)).append("\n");
@@ -413,11 +464,13 @@ public class BusinessProfilePatch {
     openapiFields = new HashSet<String>();
     openapiFields.add("legal_name");
     openapiFields.add("display_name");
+    openapiFields.add("contact_name");
     openapiFields.add("email");
     openapiFields.add("phone");
     openapiFields.add("website");
     openapiFields.add("tax_id");
     openapiFields.add("address");
+    openapiFields.add("bank_account");
     openapiFields.add("electronic_address");
     openapiFields.add("default_currency");
     openapiFields.add("default_locale");
@@ -455,6 +508,9 @@ public class BusinessProfilePatch {
       if ((jsonObj.get("display_name") != null && !jsonObj.get("display_name").isJsonNull()) && !jsonObj.get("display_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `display_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("display_name").toString()));
       }
+      if ((jsonObj.get("contact_name") != null && !jsonObj.get("contact_name").isJsonNull()) && !jsonObj.get("contact_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contact_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contact_name").toString()));
+      }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
@@ -470,6 +526,10 @@ public class BusinessProfilePatch {
       // validate the optional field `address`
       if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) {
         PostalAddress.validateJsonElement(jsonObj.get("address"));
+      }
+      // validate the optional field `bank_account`
+      if (jsonObj.get("bank_account") != null && !jsonObj.get("bank_account").isJsonNull()) {
+        InvoiceBankAccountInput.validateJsonElement(jsonObj.get("bank_account"));
       }
       // validate the optional field `electronic_address`
       if (jsonObj.get("electronic_address") != null && !jsonObj.get("electronic_address").isJsonNull()) {

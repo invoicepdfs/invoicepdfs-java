@@ -9,11 +9,13 @@
 |------------ | ------------- | ------------- | -------------|
 |**legalName** | **String** |  |  |
 |**displayName** | **String** |  |  [optional] |
+|**contactName** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |
 |**website** | **String** |  |  [optional] |
 |**taxId** | **String** |  |  [optional] |
 |**address** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
+|**bankAccount** | [**InvoiceBankAccountInput**](InvoiceBankAccountInput.md) |  |  [optional] |
 |**electronicAddress** | [**ElectronicAddress**](ElectronicAddress.md) |  |  [optional] |
 |**defaultCurrency** | **String** |  |  [optional] |
 |**defaultLocale** | **String** |  |  [optional] |
