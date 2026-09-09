@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**createDocument**](DocumentsApi.md#createDocument) | **POST** /api/v1/documents | Create Document |
 | [**createDocumentRender**](DocumentsApi.md#createDocumentRender) | **POST** /api/v1/documents/{document_id}/renders | Create Document Render |
 | [**deleteDocument**](DocumentsApi.md#deleteDocument) | **DELETE** /api/v1/documents/{document_id} | Delete Document |
+| [**downloadDocumentXml**](DocumentsApi.md#downloadDocumentXml) | **GET** /api/v1/documents/{document_id}/xml | Download Document Xml |
 | [**duplicateDocument**](DocumentsApi.md#duplicateDocument) | **POST** /api/v1/documents/{document_id}/duplicate | Duplicate Document |
 | [**finalizeDocument**](DocumentsApi.md#finalizeDocument) | **POST** /api/v1/documents/{document_id}/finalize | Finalize Document |
 | [**getDocument**](DocumentsApi.md#getDocument) | **GET** /api/v1/documents/{document_id} | Get Document |
@@ -18,6 +19,7 @@ All URIs are relative to *http://localhost*
 | [**markSent**](DocumentsApi.md#markSent) | **POST** /api/v1/documents/{document_id}/mark-sent | Mark Sent |
 | [**markUnpaid**](DocumentsApi.md#markUnpaid) | **POST** /api/v1/documents/{document_id}/mark-unpaid | Mark Unpaid |
 | [**renderDocument**](DocumentsApi.md#renderDocument) | **POST** /api/v1/documents/render | Render Document |
+| [**renderDocumentXml**](DocumentsApi.md#renderDocumentXml) | **POST** /api/v1/documents/xml | Render Document Xml |
 | [**restoreDocument**](DocumentsApi.md#restoreDocument) | **POST** /api/v1/documents/{document_id}/restore | Restore Document |
 | [**sendDocument**](DocumentsApi.md#sendDocument) | **POST** /api/v1/documents/{document_id}/send | Send Document |
 | [**updateDocument**](DocumentsApi.md#updateDocument) | **PATCH** /api/v1/documents/{document_id} | Update Document |
@@ -360,6 +362,76 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="downloadDocumentXml"></a>
+# **downloadDocumentXml**
+> String downloadDocumentXml(documentId, profile)
+
+Download Document Xml
+
+The e-invoicing XML for a document already stored here.  Reads &#x60;data_json&#x60; directly rather than going through the render path&#39;s reconstruction: the status, the logo and the source document&#39;s number are all attached there for the *PDF*, and none of them belong in the XML. The credit note&#39;s BG-3 reference is already in the stored payload, resolved when the document was written.
+
+### Example
+```java
+// Import classes:
+import com.invoicepdfs.ApiClient;
+import com.invoicepdfs.ApiException;
+import com.invoicepdfs.Configuration;
+import com.invoicepdfs.auth.*;
+import com.invoicepdfs.models.*;
+import org.openapitools.client.api.DocumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP bearer authorization: HTTPBearer
+    HttpBearerAuth HTTPBearer = (HttpBearerAuth) defaultClient.getAuthentication("HTTPBearer");
+    HTTPBearer.setBearerToken("BEARER TOKEN");
+
+    DocumentsApi apiInstance = new DocumentsApi(defaultClient);
+    String documentId = "documentId_example"; // String | 
+    String profile = "peppol_bis_billing_3"; // String | Which ruleset to write this against. No default: a document valid under one can be rejected by another, so the choice is the request.
+    try {
+      String result = apiInstance.downloadDocumentXml(documentId, profile);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DocumentsApi#downloadDocumentXml");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **documentId** | **String**|  | |
+| **profile** | **String**| Which ruleset to write this against. No default: a document valid under one can be rejected by another, so the choice is the request. | |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/xml, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The stored document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="duplicateDocument"></a>
@@ -966,6 +1038,74 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="renderDocumentXml"></a>
+# **renderDocumentXml**
+> String renderDocumentXml(documentComplianceRequest)
+
+Render Document Xml
+
+The e-invoicing XML for a document, without storing anything.  Takes the same body as &#x60;/validate-compliance&#x60;, and the pairing is the point: check first, then take the XML once it passes. Nothing here validates against the ruleset — a document missing mandatory fields serialises to XML missing those elements, which is a more useful artefact to look at than a refusal, and &#x60;/validate-compliance&#x60; is where the refusal belongs.  The syntax is not a parameter. It follows from the profile, because a profile already is a syntax plus a ruleset, and asking a caller for both is asking them to know that Peppol means UBL.
+
+### Example
+```java
+// Import classes:
+import com.invoicepdfs.ApiClient;
+import com.invoicepdfs.ApiException;
+import com.invoicepdfs.Configuration;
+import com.invoicepdfs.auth.*;
+import com.invoicepdfs.models.*;
+import org.openapitools.client.api.DocumentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP bearer authorization: HTTPBearer
+    HttpBearerAuth HTTPBearer = (HttpBearerAuth) defaultClient.getAuthentication("HTTPBearer");
+    HTTPBearer.setBearerToken("BEARER TOKEN");
+
+    DocumentsApi apiInstance = new DocumentsApi(defaultClient);
+    DocumentComplianceRequest documentComplianceRequest = new DocumentComplianceRequest(); // DocumentComplianceRequest | 
+    try {
+      String result = apiInstance.renderDocumentXml(documentComplianceRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DocumentsApi#renderDocumentXml");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **documentComplianceRequest** | [**DocumentComplianceRequest**](DocumentComplianceRequest.md)|  | |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/xml, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="restoreDocument"></a>

@@ -49,14 +49,16 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentOutputOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T02:15:57.238612512Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T02:59:30.783835177Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentOutputOptions {
   /**
    * Gets or Sets format
    */
   @JsonAdapter(FormatEnum.Adapter.class)
   public enum FormatEnum {
-    PDF("pdf");
+    PDF("pdf"),
+    
+    FACTURX_PDF("facturx_pdf");
 
     private String value;
 

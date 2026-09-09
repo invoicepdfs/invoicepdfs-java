@@ -113,6 +113,21 @@ public class DocumentsApiTest {
     }
 
     /**
+     * Download Document Xml
+     *
+     * The e-invoicing XML for a document already stored here.  Reads &#x60;data_json&#x60; directly rather than going through the render path&#39;s reconstruction: the status, the logo and the source document&#39;s number are all attached there for the *PDF*, and none of them belong in the XML. The credit note&#39;s BG-3 reference is already in the stored payload, resolved when the document was written.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void downloadDocumentXmlTest() throws ApiException {
+        String documentId = null;
+        String profile = null;
+        String response = api.downloadDocumentXml(documentId, profile);
+        // TODO: test validations
+    }
+
+    /**
      * Duplicate Document
      *
      * @throws ApiException if the Api call fails
@@ -223,6 +238,20 @@ public class DocumentsApiTest {
         DocumentRenderRequest documentRenderRequest = null;
         String idempotencyKey = null;
         RenderResponse response = api.renderDocument(documentRenderRequest, idempotencyKey);
+        // TODO: test validations
+    }
+
+    /**
+     * Render Document Xml
+     *
+     * The e-invoicing XML for a document, without storing anything.  Takes the same body as &#x60;/validate-compliance&#x60;, and the pairing is the point: check first, then take the XML once it passes. Nothing here validates against the ruleset — a document missing mandatory fields serialises to XML missing those elements, which is a more useful artefact to look at than a refusal, and &#x60;/validate-compliance&#x60; is where the refusal belongs.  The syntax is not a parameter. It follows from the profile, because a profile already is a syntax plus a ruleset, and asking a caller for both is asking them to know that Peppol means UBL.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void renderDocumentXmlTest() throws ApiException {
+        DocumentComplianceRequest documentComplianceRequest = null;
+        String response = api.renderDocumentXml(documentComplianceRequest);
         // TODO: test validations
     }
 

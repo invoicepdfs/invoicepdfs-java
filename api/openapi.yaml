@@ -1223,6 +1223,62 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /api/v1/documents/{document_id}/xml:
+    get:
+      description: |-
+        The e-invoicing XML for a document already stored here.
+
+        Reads `data_json` directly rather than going through the render path's
+        reconstruction: the status, the logo and the source document's number are
+        all attached there for the *PDF*, and none of them belong in the XML. The
+        credit note's BG-3 reference is already in the stored payload, resolved when
+        the document was written.
+      operationId: download_document_xml
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      - description: "Which ruleset to write this against. No default: a document\
+          \ valid under one can be rejected by another, so the choice is the request."
+        explode: true
+        in: query
+        name: profile
+        required: true
+        schema:
+          description: "Which ruleset to write this against. No default: a document\
+            \ valid under one can be rejected by another, so the choice is the request."
+          example: peppol_bis_billing_3
+          title: Profile
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/xml:
+              schema:
+                type: string
+          description: "The stored document as XML, in the syntax the chosen profile\
+            \ is expressed in — UBL for Peppol BIS, CII for Factur-X."
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Download Document Xml
+      tags:
+      - documents
+      x-visibility: public
+      x-accepts:
+      - application/json
+      - application/xml
   /api/v1/documents/{document_id}:
     delete:
       operationId: delete_document
@@ -1804,6 +1860,51 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /api/v1/documents/xml:
+    post:
+      description: |-
+        The e-invoicing XML for a document, without storing anything.
+
+        Takes the same body as `/validate-compliance`, and the pairing is the point:
+        check first, then take the XML once it passes. Nothing here validates
+        against the ruleset — a document missing mandatory fields serialises to XML
+        missing those elements, which is a more useful artefact to look at than a
+        refusal, and `/validate-compliance` is where the refusal belongs.
+
+        The syntax is not a parameter. It follows from the profile, because a
+        profile already is a syntax plus a ruleset, and asking a caller for both is
+        asking them to know that Peppol means UBL.
+      operationId: render_document_xml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentComplianceRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/xml:
+              schema:
+                type: string
+          description: "The document as XML, in the syntax the chosen profile is expressed\
+            \ in — UBL for Peppol BIS, CII for Factur-X."
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Render Document Xml
+      tags:
+      - documents
+      x-visibility: public
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - application/xml
   /api/v1/documents/calculate:
     post:
       operationId: calculate_document
@@ -8986,6 +9087,7 @@ components:
           default: pdf
           enum:
           - pdf
+          - facturx_pdf
           title: Format
           type: string
         delivery:
@@ -9309,6 +9411,7 @@ components:
         (``app__documents__schemas__DocumentRenderRequest``), which the SDK generators turned
         into ``AppDocumentsSchemasDocumentRenderRequest``.
       example:
+        format: pdf
         template_id: tpl_modern
         expires_in: 0
         page_size: LETTER
@@ -9325,6 +9428,16 @@ components:
           default: 3600
           title: Expires In
           type: integer
+        format:
+          default: pdf
+          description: "`facturx_pdf` embeds the EN 16931 CII XML in a PDF/A-3, which\
+            \ is what a French or German counterparty means by Factur-X or ZUGFeRD."
+          enum:
+          - pdf
+          - facturx_pdf
+          example: pdf
+          title: Format
+          type: string
       title: DocumentRenderOptions
       type: object
     DocumentRenderRequest:

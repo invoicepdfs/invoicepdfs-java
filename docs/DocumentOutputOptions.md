@@ -18,6 +18,7 @@
 | Name | Value |
 |---- | -----|
 | PDF | &quot;pdf&quot; |
+| FACTURX_PDF | &quot;facturx_pdf&quot; |
 
 
 

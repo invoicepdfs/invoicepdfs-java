@@ -61,4 +61,12 @@ public class DocumentRenderOptionsTest {
         // TODO: test expiresIn
     }
 
+    /**
+     * Test the property 'format'
+     */
+    @Test
+    public void formatTest() {
+        // TODO: test format
+    }
+
 }

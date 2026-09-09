@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * Render options for an already-stored document (&#x60;&#x60;POST /documents/{id}/renders&#x60;&#x60;).  Distinct from &#x60;&#x60;app.schemas.v1.DocumentRenderRequest&#x60;&#x60;, which carries a full inline document for the stateless &#x60;&#x60;POST /documents/render&#x60;&#x60;. Two classes sharing one name made FastAPI fall back to module-qualified schema names in the spec (&#x60;&#x60;app__documents__schemas__DocumentRenderRequest&#x60;&#x60;), which the SDK generators turned into &#x60;&#x60;AppDocumentsSchemasDocumentRenderRequest&#x60;&#x60;.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T02:15:57.238612512Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T02:59:30.783835177Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentRenderOptions {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
@@ -62,6 +62,62 @@ public class DocumentRenderOptions {
   public static final String SERIALIZED_NAME_EXPIRES_IN = "expires_in";
   @SerializedName(SERIALIZED_NAME_EXPIRES_IN)
   private Integer expiresIn = 3600;
+
+  /**
+   * &#x60;facturx_pdf&#x60; embeds the EN 16931 CII XML in a PDF/A-3, which is what a French or German counterparty means by Factur-X or ZUGFeRD.
+   */
+  @JsonAdapter(FormatEnum.Adapter.class)
+  public enum FormatEnum {
+    PDF("pdf"),
+    
+    FACTURX_PDF("facturx_pdf");
+
+    private String value;
+
+    FormatEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static FormatEnum fromValue(String value) {
+      for (FormatEnum b : FormatEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<FormatEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FormatEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FormatEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return FormatEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      FormatEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_FORMAT = "format";
+  @SerializedName(SERIALIZED_NAME_FORMAT)
+  private FormatEnum format = FormatEnum.PDF;
 
   public DocumentRenderOptions() {
   }
@@ -123,6 +179,25 @@ public class DocumentRenderOptions {
   }
 
 
+  public DocumentRenderOptions format(FormatEnum format) {
+    this.format = format;
+    return this;
+  }
+
+  /**
+   * &#x60;facturx_pdf&#x60; embeds the EN 16931 CII XML in a PDF/A-3, which is what a French or German counterparty means by Factur-X or ZUGFeRD.
+   * @return format
+   */
+  @javax.annotation.Nullable
+  public FormatEnum getFormat() {
+    return format;
+  }
+
+  public void setFormat(FormatEnum format) {
+    this.format = format;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -135,12 +210,13 @@ public class DocumentRenderOptions {
     DocumentRenderOptions documentRenderOptions = (DocumentRenderOptions) o;
     return Objects.equals(this.templateId, documentRenderOptions.templateId) &&
         Objects.equals(this.pageSize, documentRenderOptions.pageSize) &&
-        Objects.equals(this.expiresIn, documentRenderOptions.expiresIn);
+        Objects.equals(this.expiresIn, documentRenderOptions.expiresIn) &&
+        Objects.equals(this.format, documentRenderOptions.format);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(templateId, pageSize, expiresIn);
+    return Objects.hash(templateId, pageSize, expiresIn, format);
   }
 
   @Override
@@ -150,6 +226,7 @@ public class DocumentRenderOptions {
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
+    sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -175,6 +252,7 @@ public class DocumentRenderOptions {
     openapiFields.add("template_id");
     openapiFields.add("page_size");
     openapiFields.add("expires_in");
+    openapiFields.add("format");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -206,6 +284,13 @@ public class DocumentRenderOptions {
       }
       if ((jsonObj.get("page_size") != null && !jsonObj.get("page_size").isJsonNull()) && !jsonObj.get("page_size").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `page_size` to be a primitive type in the JSON string but got `%s`", jsonObj.get("page_size").toString()));
+      }
+      if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
+      }
+      // validate the optional field `format`
+      if (jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) {
+        FormatEnum.validateJsonElement(jsonObj.get("format"));
       }
   }
 

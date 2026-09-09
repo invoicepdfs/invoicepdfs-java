@@ -752,6 +752,147 @@ public class DocumentsApi {
         return localVarCall;
     }
     /**
+     * Build call for downloadDocumentXml
+     * @param documentId  (required)
+     * @param profile Which ruleset to write this against. No default: a document valid under one can be rejected by another, so the choice is the request. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The stored document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadDocumentXmlCall(String documentId, String profile, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/documents/{document_id}/xml"
+            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (profile != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("profile", profile));
+        }
+
+        final String[] localVarAccepts = {
+            "application/xml",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call downloadDocumentXmlValidateBeforeCall(String documentId, String profile, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null) {
+            throw new ApiException("Missing the required parameter 'documentId' when calling downloadDocumentXml(Async)");
+        }
+
+        // verify the required parameter 'profile' is set
+        if (profile == null) {
+            throw new ApiException("Missing the required parameter 'profile' when calling downloadDocumentXml(Async)");
+        }
+
+        return downloadDocumentXmlCall(documentId, profile, _callback);
+
+    }
+
+    /**
+     * Download Document Xml
+     * The e-invoicing XML for a document already stored here.  Reads &#x60;data_json&#x60; directly rather than going through the render path&#39;s reconstruction: the status, the logo and the source document&#39;s number are all attached there for the *PDF*, and none of them belong in the XML. The credit note&#39;s BG-3 reference is already in the stored payload, resolved when the document was written.
+     * @param documentId  (required)
+     * @param profile Which ruleset to write this against. No default: a document valid under one can be rejected by another, so the choice is the request. (required)
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The stored document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public String downloadDocumentXml(String documentId, String profile) throws ApiException {
+        ApiResponse<String> localVarResp = downloadDocumentXmlWithHttpInfo(documentId, profile);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Download Document Xml
+     * The e-invoicing XML for a document already stored here.  Reads &#x60;data_json&#x60; directly rather than going through the render path&#39;s reconstruction: the status, the logo and the source document&#39;s number are all attached there for the *PDF*, and none of them belong in the XML. The credit note&#39;s BG-3 reference is already in the stored payload, resolved when the document was written.
+     * @param documentId  (required)
+     * @param profile Which ruleset to write this against. No default: a document valid under one can be rejected by another, so the choice is the request. (required)
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The stored document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> downloadDocumentXmlWithHttpInfo(String documentId, String profile) throws ApiException {
+        okhttp3.Call localVarCall = downloadDocumentXmlValidateBeforeCall(documentId, profile, null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Download Document Xml (asynchronously)
+     * The e-invoicing XML for a document already stored here.  Reads &#x60;data_json&#x60; directly rather than going through the render path&#39;s reconstruction: the status, the logo and the source document&#39;s number are all attached there for the *PDF*, and none of them belong in the XML. The credit note&#39;s BG-3 reference is already in the stored payload, resolved when the document was written.
+     * @param documentId  (required)
+     * @param profile Which ruleset to write this against. No default: a document valid under one can be rejected by another, so the choice is the request. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The stored document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadDocumentXmlAsync(String documentId, String profile, final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = downloadDocumentXmlValidateBeforeCall(documentId, profile, _callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for duplicateDocument
      * @param documentId  (required)
      * @param _callback Callback for upload/download progress
@@ -1938,6 +2079,134 @@ public class DocumentsApi {
 
         okhttp3.Call localVarCall = renderDocumentValidateBeforeCall(documentRenderRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for renderDocumentXml
+     * @param documentComplianceRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call renderDocumentXmlCall(DocumentComplianceRequest documentComplianceRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = documentComplianceRequest;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/documents/xml";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "HTTPBearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call renderDocumentXmlValidateBeforeCall(DocumentComplianceRequest documentComplianceRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentComplianceRequest' is set
+        if (documentComplianceRequest == null) {
+            throw new ApiException("Missing the required parameter 'documentComplianceRequest' when calling renderDocumentXml(Async)");
+        }
+
+        return renderDocumentXmlCall(documentComplianceRequest, _callback);
+
+    }
+
+    /**
+     * Render Document Xml
+     * The e-invoicing XML for a document, without storing anything.  Takes the same body as &#x60;/validate-compliance&#x60;, and the pairing is the point: check first, then take the XML once it passes. Nothing here validates against the ruleset — a document missing mandatory fields serialises to XML missing those elements, which is a more useful artefact to look at than a refusal, and &#x60;/validate-compliance&#x60; is where the refusal belongs.  The syntax is not a parameter. It follows from the profile, because a profile already is a syntax plus a ruleset, and asking a caller for both is asking them to know that Peppol means UBL.
+     * @param documentComplianceRequest  (required)
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public String renderDocumentXml(DocumentComplianceRequest documentComplianceRequest) throws ApiException {
+        ApiResponse<String> localVarResp = renderDocumentXmlWithHttpInfo(documentComplianceRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Render Document Xml
+     * The e-invoicing XML for a document, without storing anything.  Takes the same body as &#x60;/validate-compliance&#x60;, and the pairing is the point: check first, then take the XML once it passes. Nothing here validates against the ruleset — a document missing mandatory fields serialises to XML missing those elements, which is a more useful artefact to look at than a refusal, and &#x60;/validate-compliance&#x60; is where the refusal belongs.  The syntax is not a parameter. It follows from the profile, because a profile already is a syntax plus a ruleset, and asking a caller for both is asking them to know that Peppol means UBL.
+     * @param documentComplianceRequest  (required)
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> renderDocumentXmlWithHttpInfo(DocumentComplianceRequest documentComplianceRequest) throws ApiException {
+        okhttp3.Call localVarCall = renderDocumentXmlValidateBeforeCall(documentComplianceRequest, null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Render Document Xml (asynchronously)
+     * The e-invoicing XML for a document, without storing anything.  Takes the same body as &#x60;/validate-compliance&#x60;, and the pairing is the point: check first, then take the XML once it passes. Nothing here validates against the ruleset — a document missing mandatory fields serialises to XML missing those elements, which is a more useful artefact to look at than a refusal, and &#x60;/validate-compliance&#x60; is where the refusal belongs.  The syntax is not a parameter. It follows from the profile, because a profile already is a syntax plus a ruleset, and asking a caller for both is asking them to know that Peppol means UBL.
+     * @param documentComplianceRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The document as XML, in the syntax the chosen profile is expressed in — UBL for Peppol BIS, CII for Factur-X. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call renderDocumentXmlAsync(DocumentComplianceRequest documentComplianceRequest, final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = renderDocumentXmlValidateBeforeCall(documentComplianceRequest, _callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
