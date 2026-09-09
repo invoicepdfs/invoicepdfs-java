@@ -73,6 +73,7 @@ docs/BusinessProfilesApi.md
 docs/BusinessProfilesListResponse.md
 docs/CalculationBreakdown.md
 docs/ComplianceCheckOut.md
+docs/ComplianceRulesetOut.md
 docs/ComplianceViolationOut.md
 docs/CountriesListResponse.md
 docs/CountryOut.md
@@ -368,6 +369,7 @@ src/main/java/org/openapitools/client/model/BusinessProfileResponse.java
 src/main/java/org/openapitools/client/model/BusinessProfilesListResponse.java
 src/main/java/org/openapitools/client/model/CalculationBreakdown.java
 src/main/java/org/openapitools/client/model/ComplianceCheckOut.java
+src/main/java/org/openapitools/client/model/ComplianceRulesetOut.java
 src/main/java/org/openapitools/client/model/ComplianceViolationOut.java
 src/main/java/org/openapitools/client/model/CountriesListResponse.java
 src/main/java/org/openapitools/client/model/CountryOut.java
@@ -615,6 +617,7 @@ src/test/java/org/openapitools/client/model/BusinessProfileResponseTest.java
 src/test/java/org/openapitools/client/model/BusinessProfilesListResponseTest.java
 src/test/java/org/openapitools/client/model/CalculationBreakdownTest.java
 src/test/java/org/openapitools/client/model/ComplianceCheckOutTest.java
+src/test/java/org/openapitools/client/model/ComplianceRulesetOutTest.java
 src/test/java/org/openapitools/client/model/ComplianceViolationOutTest.java
 src/test/java/org/openapitools/client/model/CountriesListResponseTest.java
 src/test/java/org/openapitools/client/model/CountryOutTest.java

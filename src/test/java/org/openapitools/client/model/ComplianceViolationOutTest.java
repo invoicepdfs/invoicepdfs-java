@@ -61,4 +61,20 @@ public class ComplianceViolationOutTest {
         // TODO: test message
     }
 
+    /**
+     * Test the property 'severity'
+     */
+    @Test
+    public void severityTest() {
+        // TODO: test severity
+    }
+
+    /**
+     * Test the property 'ruleset'
+     */
+    @Test
+    public void rulesetTest() {
+        // TODO: test ruleset
+    }
+
 }

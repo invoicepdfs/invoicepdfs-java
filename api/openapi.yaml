@@ -1827,10 +1827,14 @@ paths:
         check every invoice they are about to send rather than discovering the
         problem from a rejection weeks later.
 
-        This is the semantic half — mandatory fields and conditional requirements.
-        Schematron is the authoritative check and is not wired up yet, so a document
-        that passes here is not thereby proven conformant. It says what it can prove
-        is wrong, which is the useful half early.
+        Two tiers run, and both are reported. The mandatory-field check names a
+        field of the request you can go and change. Schematron then serializes the
+        document and runs the **published rules at a pinned version** over the
+        result — the same artefacts an access point runs — so a finding here quotes
+        the rule id a rejection notice would quote.
+
+        Read `valid` together with `fully_checked`: `valid` says nothing fatal was
+        found, and `rulesets` says what actually ran to find it.
       operationId: validate_compliance
       requestBody:
         content:
@@ -7128,13 +7132,29 @@ components:
     ComplianceCheckOut:
       example:
         valid: true
-        ruleset_version: PEPPOL-UBL-3.15.0
+        fully_checked: true
+        rulesets:
+        - reason: reason
+          id: peppol-en16931-ubl
+          label: Peppol BIS Billing 3.0
+          version: 3.0.20
+          ran: true
+        - reason: reason
+          id: peppol-en16931-ubl
+          label: Peppol BIS Billing 3.0
+          version: 3.0.20
+          ran: true
+        ruleset_version: EN16931-UBL 1.3.16 + Peppol BIS Billing 3.0.20
         profile: peppol_bis_billing_3
         violations:
-        - path: "lines[1].unit_code"
+        - severity: fatal
+          path: "lines[1].unit_code"
+          ruleset: semantic
           rule: BT-130
           message: A coded unit is required.
-        - path: "lines[1].unit_code"
+        - severity: fatal
+          path: "lines[1].unit_code"
+          ruleset: semantic
           rule: BT-130
           message: A coded unit is required.
       properties:
@@ -7145,16 +7165,34 @@ components:
         ruleset_version:
           description: "The version these rules came from. Worth recording alongside\
             \ any document you file — rulesets revise, and 'which rules did this pass?'\
-            \ is what an audit asks years later."
-          example: PEPPOL-UBL-3.15.0
+            \ is what an audit asks years later. `rulesets` breaks the same answer\
+            \ down per ruleset."
+          example: EN16931-UBL 1.3.16 + Peppol BIS Billing 3.0.20
           title: Ruleset Version
           type: string
         valid:
+          description: "Nothing fatal was found. Read it with `fully_checked` — on\
+            \ its own it says what was checked came back clean, not that everything\
+            \ was checked."
           title: Valid
           type: boolean
+        fully_checked:
+          default: true
+          description: "Every ruleset that applies to this profile ran. False means\
+            \ at least one could not, and `rulesets` says which and why."
+          title: Fully Checked
+          type: boolean
+        rulesets:
+          description: "Every ruleset the document was held to, including the mandatory-field\
+            \ check, at the version that ran."
+          items:
+            $ref: '#/components/schemas/ComplianceRulesetOut'
+          title: Rulesets
+          type: array
         violations:
           description: "Every violation found, not the first — fixing one field per\
-            \ round trip is the experience this avoids."
+            \ round trip is the experience this avoids. Ordered mandatory-field findings\
+            \ first, since those name a field you can go and change."
           items:
             $ref: '#/components/schemas/ComplianceViolationOut'
           title: Violations
@@ -7165,25 +7203,83 @@ components:
       - valid
       title: ComplianceCheckOut
       type: object
+    ComplianceRulesetOut:
+      description: "One ruleset the document was held to, and whether it actually\
+        \ ran."
+      example:
+        reason: reason
+        id: peppol-en16931-ubl
+        label: Peppol BIS Billing 3.0
+        version: 3.0.20
+        ran: true
+      properties:
+        id:
+          example: peppol-en16931-ubl
+          title: Id
+          type: string
+        label:
+          example: Peppol BIS Billing 3.0
+          title: Label
+          type: string
+        version:
+          default: ""
+          description: The upstream release of the rules. Empty for checks with no
+            version of their own.
+          example: 3.0.20
+          title: Version
+          type: string
+        ran:
+          description: False when this ruleset could not be run at all. A ruleset
+            that did not run is not a pass — `valid` only reports what was checked.
+          title: Ran
+          type: boolean
+        reason:
+          nullable: true
+          type: string
+      required:
+      - id
+      - label
+      - ran
+      title: ComplianceRulesetOut
+      type: object
     ComplianceViolationOut:
       example:
+        severity: fatal
         path: "lines[1].unit_code"
+        ruleset: semantic
         rule: BT-130
         message: A coded unit is required.
       properties:
         rule:
-          description: The EN 16931 term or group.
+          description: "The identifier the standard uses — a business term from the\
+            \ mandatory-field check, a rule id from Schematron. A rule id is what\
+            \ a rejection notice from an access point quotes."
           example: BT-130
           title: Rule
           type: string
         path:
-          description: Where in the document.
+          description: Where the problem is. The mandatory-field check names a field
+            of the request; Schematron names the node in the generated XML.
           example: "lines[1].unit_code"
           title: Path
           type: string
         message:
           example: A coded unit is required.
           title: Message
+          type: string
+        severity:
+          default: fatal
+          description: "`fatal` would get the document rejected. `warning` is a recommendation\
+            \ — both EN 16931 and Peppol grade a large share of their rules as advisory,\
+            \ and `valid` ignores those."
+          example: fatal
+          title: Severity
+          type: string
+        ruleset:
+          default: semantic
+          description: Which ruleset found it — matches an `id` in `rulesets`.
+          example: semantic
+          title: Ruleset
           type: string
       required:
       - message
@@ -8343,13 +8439,29 @@ components:
       example:
         data:
           valid: true
-          ruleset_version: PEPPOL-UBL-3.15.0
+          fully_checked: true
+          rulesets:
+          - reason: reason
+            id: peppol-en16931-ubl
+            label: Peppol BIS Billing 3.0
+            version: 3.0.20
+            ran: true
+          - reason: reason
+            id: peppol-en16931-ubl
+            label: Peppol BIS Billing 3.0
+            version: 3.0.20
+            ran: true
+          ruleset_version: EN16931-UBL 1.3.16 + Peppol BIS Billing 3.0.20
           profile: peppol_bis_billing_3
           violations:
-          - path: "lines[1].unit_code"
+          - severity: fatal
+            path: "lines[1].unit_code"
+            ruleset: semantic
             rule: BT-130
             message: A coded unit is required.
-          - path: "lines[1].unit_code"
+          - severity: fatal
+            path: "lines[1].unit_code"
+            ruleset: semantic
             rule: BT-130
             message: A coded unit is required.
       properties:

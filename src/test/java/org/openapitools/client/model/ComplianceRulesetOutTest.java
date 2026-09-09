@@ -19,74 +19,63 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.client.model.ComplianceRulesetOut;
-import org.openapitools.client.model.ComplianceViolationOut;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ComplianceCheckOut
+ * Model tests for ComplianceRulesetOut
  */
-public class ComplianceCheckOutTest {
-    private final ComplianceCheckOut model = new ComplianceCheckOut();
+public class ComplianceRulesetOutTest {
+    private final ComplianceRulesetOut model = new ComplianceRulesetOut();
 
     /**
-     * Model tests for ComplianceCheckOut
+     * Model tests for ComplianceRulesetOut
      */
     @Test
-    public void testComplianceCheckOut() {
-        // TODO: test ComplianceCheckOut
+    public void testComplianceRulesetOut() {
+        // TODO: test ComplianceRulesetOut
     }
 
     /**
-     * Test the property 'profile'
+     * Test the property 'id'
      */
     @Test
-    public void profileTest() {
-        // TODO: test profile
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
-     * Test the property 'rulesetVersion'
+     * Test the property 'label'
      */
     @Test
-    public void rulesetVersionTest() {
-        // TODO: test rulesetVersion
+    public void labelTest() {
+        // TODO: test label
     }
 
     /**
-     * Test the property 'valid'
+     * Test the property 'version'
      */
     @Test
-    public void validTest() {
-        // TODO: test valid
+    public void versionTest() {
+        // TODO: test version
     }
 
     /**
-     * Test the property 'fullyChecked'
+     * Test the property 'ran'
      */
     @Test
-    public void fullyCheckedTest() {
-        // TODO: test fullyChecked
+    public void ranTest() {
+        // TODO: test ran
     }
 
     /**
-     * Test the property 'rulesets'
+     * Test the property 'reason'
      */
     @Test
-    public void rulesetsTest() {
-        // TODO: test rulesets
-    }
-
-    /**
-     * Test the property 'violations'
-     */
-    @Test
-    public void violationsTest() {
-        // TODO: test violations
+    public void reasonTest() {
+        // TODO: test reason
     }
 
 }

@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * ComplianceViolationOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T04:00:50.241324842Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ComplianceViolationOut {
   public static final String SERIALIZED_NAME_RULE = "rule";
   @SerializedName(SERIALIZED_NAME_RULE)
@@ -63,6 +63,14 @@ public class ComplianceViolationOut {
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
+  public static final String SERIALIZED_NAME_SEVERITY = "severity";
+  @SerializedName(SERIALIZED_NAME_SEVERITY)
+  private String severity = "fatal";
+
+  public static final String SERIALIZED_NAME_RULESET = "ruleset";
+  @SerializedName(SERIALIZED_NAME_RULESET)
+  private String ruleset = "semantic";
+
   public ComplianceViolationOut() {
   }
 
@@ -72,7 +80,7 @@ public class ComplianceViolationOut {
   }
 
   /**
-   * The EN 16931 term or group.
+   * The identifier the standard uses — a business term from the mandatory-field check, a rule id from Schematron. A rule id is what a rejection notice from an access point quotes.
    * @return rule
    */
   @javax.annotation.Nonnull
@@ -91,7 +99,7 @@ public class ComplianceViolationOut {
   }
 
   /**
-   * Where in the document.
+   * Where the problem is. The mandatory-field check names a field of the request; Schematron names the node in the generated XML.
    * @return path
    */
   @javax.annotation.Nonnull
@@ -123,6 +131,44 @@ public class ComplianceViolationOut {
   }
 
 
+  public ComplianceViolationOut severity(String severity) {
+    this.severity = severity;
+    return this;
+  }
+
+  /**
+   * &#x60;fatal&#x60; would get the document rejected. &#x60;warning&#x60; is a recommendation — both EN 16931 and Peppol grade a large share of their rules as advisory, and &#x60;valid&#x60; ignores those.
+   * @return severity
+   */
+  @javax.annotation.Nullable
+  public String getSeverity() {
+    return severity;
+  }
+
+  public void setSeverity(String severity) {
+    this.severity = severity;
+  }
+
+
+  public ComplianceViolationOut ruleset(String ruleset) {
+    this.ruleset = ruleset;
+    return this;
+  }
+
+  /**
+   * Which ruleset found it — matches an &#x60;id&#x60; in &#x60;rulesets&#x60;.
+   * @return ruleset
+   */
+  @javax.annotation.Nullable
+  public String getRuleset() {
+    return ruleset;
+  }
+
+  public void setRuleset(String ruleset) {
+    this.ruleset = ruleset;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -135,12 +181,14 @@ public class ComplianceViolationOut {
     ComplianceViolationOut complianceViolationOut = (ComplianceViolationOut) o;
     return Objects.equals(this.rule, complianceViolationOut.rule) &&
         Objects.equals(this.path, complianceViolationOut.path) &&
-        Objects.equals(this.message, complianceViolationOut.message);
+        Objects.equals(this.message, complianceViolationOut.message) &&
+        Objects.equals(this.severity, complianceViolationOut.severity) &&
+        Objects.equals(this.ruleset, complianceViolationOut.ruleset);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rule, path, message);
+    return Objects.hash(rule, path, message, severity, ruleset);
   }
 
   @Override
@@ -150,6 +198,8 @@ public class ComplianceViolationOut {
     sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+    sb.append("    ruleset: ").append(toIndentedString(ruleset)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -175,6 +225,8 @@ public class ComplianceViolationOut {
     openapiFields.add("rule");
     openapiFields.add("path");
     openapiFields.add("message");
+    openapiFields.add("severity");
+    openapiFields.add("ruleset");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -219,6 +271,12 @@ public class ComplianceViolationOut {
       }
       if (!jsonObj.get("message").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+      }
+      if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+      }
+      if ((jsonObj.get("ruleset") != null && !jsonObj.get("ruleset").isJsonNull()) && !jsonObj.get("ruleset").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ruleset` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ruleset").toString()));
       }
   }
 

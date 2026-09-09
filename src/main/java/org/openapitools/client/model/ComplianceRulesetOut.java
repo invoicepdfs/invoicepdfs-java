@@ -48,116 +48,110 @@ import java.util.Set;
 import com.invoicepdfs.JSON;
 
 /**
- * LineItemDiscountInput
+ * One ruleset the document was held to, and whether it actually ran.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class LineItemDiscountInput {
-  /**
-   * Gets or Sets type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    PERCENTAGE("percentage"),
-    
-    FIXED("fixed");
+public class ComplianceRulesetOut {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
 
-    private String value;
+  public static final String SERIALIZED_NAME_LABEL = "label";
+  @SerializedName(SERIALIZED_NAME_LABEL)
+  private String label;
 
-    TypeEnum(String value) {
-      this.value = value;
-    }
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version = "";
 
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private TypeEnum type = TypeEnum.PERCENTAGE;
-
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
-  private String value;
+  public static final String SERIALIZED_NAME_RAN = "ran";
+  @SerializedName(SERIALIZED_NAME_RAN)
+  private Boolean ran;
 
   public static final String SERIALIZED_NAME_REASON = "reason";
   @SerializedName(SERIALIZED_NAME_REASON)
   private String reason;
 
-  public LineItemDiscountInput() {
+  public ComplianceRulesetOut() {
   }
 
-  public LineItemDiscountInput type(TypeEnum type) {
-    this.type = type;
+  public ComplianceRulesetOut id(String id) {
+    this.id = id;
     return this;
   }
 
   /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public TypeEnum getType() {
-    return type;
-  }
-
-  public void setType(TypeEnum type) {
-    this.type = type;
-  }
-
-
-  public LineItemDiscountInput value(String value) {
-    this.value = value;
-    return this;
-  }
-
-  /**
-   * Get value
-   * @return value
+   * Get id
+   * @return id
    */
   @javax.annotation.Nonnull
-  public String getValue() {
-    return value;
+  public String getId() {
+    return id;
   }
 
-  public void setValue(String value) {
-    this.value = value;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
-  public LineItemDiscountInput reason(String reason) {
+  public ComplianceRulesetOut label(String label) {
+    this.label = label;
+    return this;
+  }
+
+  /**
+   * Get label
+   * @return label
+   */
+  @javax.annotation.Nonnull
+  public String getLabel() {
+    return label;
+  }
+
+  public void setLabel(String label) {
+    this.label = label;
+  }
+
+
+  public ComplianceRulesetOut version(String version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * The upstream release of the rules. Empty for checks with no version of their own.
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
+
+  public ComplianceRulesetOut ran(Boolean ran) {
+    this.ran = ran;
+    return this;
+  }
+
+  /**
+   * False when this ruleset could not be run at all. A ruleset that did not run is not a pass — &#x60;valid&#x60; only reports what was checked.
+   * @return ran
+   */
+  @javax.annotation.Nonnull
+  public Boolean getRan() {
+    return ran;
+  }
+
+  public void setRan(Boolean ran) {
+    this.ran = ran;
+  }
+
+
+  public ComplianceRulesetOut reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -185,10 +179,12 @@ public class LineItemDiscountInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LineItemDiscountInput lineItemDiscountInput = (LineItemDiscountInput) o;
-    return Objects.equals(this.type, lineItemDiscountInput.type) &&
-        Objects.equals(this.value, lineItemDiscountInput.value) &&
-        Objects.equals(this.reason, lineItemDiscountInput.reason);
+    ComplianceRulesetOut complianceRulesetOut = (ComplianceRulesetOut) o;
+    return Objects.equals(this.id, complianceRulesetOut.id) &&
+        Objects.equals(this.label, complianceRulesetOut.label) &&
+        Objects.equals(this.version, complianceRulesetOut.version) &&
+        Objects.equals(this.ran, complianceRulesetOut.ran) &&
+        Objects.equals(this.reason, complianceRulesetOut.reason);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -197,7 +193,7 @@ public class LineItemDiscountInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, value, reason);
+    return Objects.hash(id, label, version, ran, reason);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -210,9 +206,11 @@ public class LineItemDiscountInput {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LineItemDiscountInput {\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("class ComplianceRulesetOut {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    ran: ").append(toIndentedString(ran)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -236,52 +234,55 @@ public class LineItemDiscountInput {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("value");
+    openapiFields.add("id");
+    openapiFields.add("label");
+    openapiFields.add("version");
+    openapiFields.add("ran");
     openapiFields.add("reason");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("value");
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("label");
+    openapiRequiredFields.add("ran");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to LineItemDiscountInput
+   * @throws IOException if the JSON Element is invalid with respect to ComplianceRulesetOut
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!LineItemDiscountInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LineItemDiscountInput is not found in the empty JSON string", LineItemDiscountInput.openapiRequiredFields.toString()));
+        if (!ComplianceRulesetOut.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ComplianceRulesetOut is not found in the empty JSON string", ComplianceRulesetOut.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!LineItemDiscountInput.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `LineItemDiscountInput` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ComplianceRulesetOut.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ComplianceRulesetOut` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : LineItemDiscountInput.openapiRequiredFields) {
+      for (String requiredField : ComplianceRulesetOut.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      if (!jsonObj.get("label").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
       }
-      if (!jsonObj.get("value").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
+      if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
       if ((jsonObj.get("reason") != null && !jsonObj.get("reason").isJsonNull()) && !jsonObj.get("reason").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
@@ -292,22 +293,22 @@ public class LineItemDiscountInput {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!LineItemDiscountInput.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'LineItemDiscountInput' and its subtypes
+       if (!ComplianceRulesetOut.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ComplianceRulesetOut' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<LineItemDiscountInput> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(LineItemDiscountInput.class));
+       final TypeAdapter<ComplianceRulesetOut> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ComplianceRulesetOut.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<LineItemDiscountInput>() {
+       return (TypeAdapter<T>) new TypeAdapter<ComplianceRulesetOut>() {
            @Override
-           public void write(JsonWriter out, LineItemDiscountInput value) throws IOException {
+           public void write(JsonWriter out, ComplianceRulesetOut value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public LineItemDiscountInput read(JsonReader in) throws IOException {
+           public ComplianceRulesetOut read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -318,18 +319,18 @@ public class LineItemDiscountInput {
   }
 
   /**
-   * Create an instance of LineItemDiscountInput given an JSON string
+   * Create an instance of ComplianceRulesetOut given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of LineItemDiscountInput
-   * @throws IOException if the JSON string is invalid with respect to LineItemDiscountInput
+   * @return An instance of ComplianceRulesetOut
+   * @throws IOException if the JSON string is invalid with respect to ComplianceRulesetOut
    */
-  public static LineItemDiscountInput fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, LineItemDiscountInput.class);
+  public static ComplianceRulesetOut fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ComplianceRulesetOut.class);
   }
 
   /**
-   * Convert an instance of LineItemDiscountInput to an JSON string
+   * Convert an instance of ComplianceRulesetOut to an JSON string
    *
    * @return JSON string
    */

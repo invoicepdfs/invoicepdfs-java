@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ComplianceRulesetOut;
 import org.openapitools.client.model.ComplianceViolationOut;
 
 import com.google.gson.Gson;
@@ -52,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * ComplianceCheckOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T04:00:50.241324842Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T14:23:16.788987228Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ComplianceCheckOut {
   public static final String SERIALIZED_NAME_PROFILE = "profile";
   @SerializedName(SERIALIZED_NAME_PROFILE)
@@ -65,6 +66,14 @@ public class ComplianceCheckOut {
   public static final String SERIALIZED_NAME_VALID = "valid";
   @SerializedName(SERIALIZED_NAME_VALID)
   private Boolean valid;
+
+  public static final String SERIALIZED_NAME_FULLY_CHECKED = "fully_checked";
+  @SerializedName(SERIALIZED_NAME_FULLY_CHECKED)
+  private Boolean fullyChecked = true;
+
+  public static final String SERIALIZED_NAME_RULESETS = "rulesets";
+  @SerializedName(SERIALIZED_NAME_RULESETS)
+  private List<ComplianceRulesetOut> rulesets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VIOLATIONS = "violations";
   @SerializedName(SERIALIZED_NAME_VIOLATIONS)
@@ -98,7 +107,7 @@ public class ComplianceCheckOut {
   }
 
   /**
-   * The version these rules came from. Worth recording alongside any document you file — rulesets revise, and &#39;which rules did this pass?&#39; is what an audit asks years later.
+   * The version these rules came from. Worth recording alongside any document you file — rulesets revise, and &#39;which rules did this pass?&#39; is what an audit asks years later. &#x60;rulesets&#x60; breaks the same answer down per ruleset.
    * @return rulesetVersion
    */
   @javax.annotation.Nonnull
@@ -117,7 +126,7 @@ public class ComplianceCheckOut {
   }
 
   /**
-   * Get valid
+   * Nothing fatal was found. Read it with &#x60;fully_checked&#x60; — on its own it says what was checked came back clean, not that everything was checked.
    * @return valid
    */
   @javax.annotation.Nonnull
@@ -127,6 +136,52 @@ public class ComplianceCheckOut {
 
   public void setValid(Boolean valid) {
     this.valid = valid;
+  }
+
+
+  public ComplianceCheckOut fullyChecked(Boolean fullyChecked) {
+    this.fullyChecked = fullyChecked;
+    return this;
+  }
+
+  /**
+   * Every ruleset that applies to this profile ran. False means at least one could not, and &#x60;rulesets&#x60; says which and why.
+   * @return fullyChecked
+   */
+  @javax.annotation.Nullable
+  public Boolean getFullyChecked() {
+    return fullyChecked;
+  }
+
+  public void setFullyChecked(Boolean fullyChecked) {
+    this.fullyChecked = fullyChecked;
+  }
+
+
+  public ComplianceCheckOut rulesets(List<ComplianceRulesetOut> rulesets) {
+    this.rulesets = rulesets;
+    return this;
+  }
+
+  public ComplianceCheckOut addRulesetsItem(ComplianceRulesetOut rulesetsItem) {
+    if (this.rulesets == null) {
+      this.rulesets = new ArrayList<>();
+    }
+    this.rulesets.add(rulesetsItem);
+    return this;
+  }
+
+  /**
+   * Every ruleset the document was held to, including the mandatory-field check, at the version that ran.
+   * @return rulesets
+   */
+  @javax.annotation.Nullable
+  public List<ComplianceRulesetOut> getRulesets() {
+    return rulesets;
+  }
+
+  public void setRulesets(List<ComplianceRulesetOut> rulesets) {
+    this.rulesets = rulesets;
   }
 
 
@@ -144,7 +199,7 @@ public class ComplianceCheckOut {
   }
 
   /**
-   * Every violation found, not the first — fixing one field per round trip is the experience this avoids.
+   * Every violation found, not the first — fixing one field per round trip is the experience this avoids. Ordered mandatory-field findings first, since those name a field you can go and change.
    * @return violations
    */
   @javax.annotation.Nullable
@@ -170,12 +225,14 @@ public class ComplianceCheckOut {
     return Objects.equals(this.profile, complianceCheckOut.profile) &&
         Objects.equals(this.rulesetVersion, complianceCheckOut.rulesetVersion) &&
         Objects.equals(this.valid, complianceCheckOut.valid) &&
+        Objects.equals(this.fullyChecked, complianceCheckOut.fullyChecked) &&
+        Objects.equals(this.rulesets, complianceCheckOut.rulesets) &&
         Objects.equals(this.violations, complianceCheckOut.violations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, rulesetVersion, valid, violations);
+    return Objects.hash(profile, rulesetVersion, valid, fullyChecked, rulesets, violations);
   }
 
   @Override
@@ -185,6 +242,8 @@ public class ComplianceCheckOut {
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    rulesetVersion: ").append(toIndentedString(rulesetVersion)).append("\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
+    sb.append("    fullyChecked: ").append(toIndentedString(fullyChecked)).append("\n");
+    sb.append("    rulesets: ").append(toIndentedString(rulesets)).append("\n");
     sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -211,6 +270,8 @@ public class ComplianceCheckOut {
     openapiFields.add("profile");
     openapiFields.add("ruleset_version");
     openapiFields.add("valid");
+    openapiFields.add("fully_checked");
+    openapiFields.add("rulesets");
     openapiFields.add("violations");
 
     // a set of required properties/fields (JSON key names)
@@ -253,6 +314,20 @@ public class ComplianceCheckOut {
       }
       if (!jsonObj.get("ruleset_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ruleset_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ruleset_version").toString()));
+      }
+      if (jsonObj.get("rulesets") != null && !jsonObj.get("rulesets").isJsonNull()) {
+        JsonArray jsonArrayrulesets = jsonObj.getAsJsonArray("rulesets");
+        if (jsonArrayrulesets != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("rulesets").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `rulesets` to be an array in the JSON string but got `%s`", jsonObj.get("rulesets").toString()));
+          }
+
+          // validate the optional field `rulesets` (array)
+          for (int i = 0; i < jsonArrayrulesets.size(); i++) {
+            ComplianceRulesetOut.validateJsonElement(jsonArrayrulesets.get(i));
+          };
+        }
       }
       if (jsonObj.get("violations") != null && !jsonObj.get("violations").isJsonNull()) {
         JsonArray jsonArrayviolations = jsonObj.getAsJsonArray("violations");
