@@ -7989,6 +7989,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -8215,6 +8216,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -8387,6 +8389,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -8903,6 +8906,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -9188,6 +9192,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -9508,6 +9513,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -9880,6 +9886,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -10551,6 +10558,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -10812,6 +10820,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma
@@ -12380,6 +12389,7 @@ components:
           enum:
           - invoice
           - credit_note
+          - debit_note
           - quote
           - receipt
           - proforma

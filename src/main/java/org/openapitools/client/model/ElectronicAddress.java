@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * BT-34 / BT-49 — where a document is routed on Peppol or DBNA.  Both halves are required: an identifier without its scheme cannot be resolved, because the same string means different things in different code lists. This is not the tax id, which identifies a company to a tax authority rather than a mailbox on a network.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T05:11:02.871565432Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T00:19:05.918090234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ElectronicAddress {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)

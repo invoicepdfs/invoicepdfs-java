@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * TemplateDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T05:11:02.871565432Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T00:19:05.918090234Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TemplateDetail {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)

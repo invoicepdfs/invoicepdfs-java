@@ -20,6 +20,7 @@
 |---- | -----|
 | INVOICE | &quot;invoice&quot; |
 | CREDIT_NOTE | &quot;credit_note&quot; |
+| DEBIT_NOTE | &quot;debit_note&quot; |
 | QUOTE | &quot;quote&quot; |
 | RECEIPT | &quot;receipt&quot; |
 | PROFORMA | &quot;proforma&quot; |
