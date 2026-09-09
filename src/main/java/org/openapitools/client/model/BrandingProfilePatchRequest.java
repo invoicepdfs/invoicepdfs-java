@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * BrandingProfilePatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T02:59:30.783835177Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T04:00:50.241324842Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BrandingProfilePatchRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
