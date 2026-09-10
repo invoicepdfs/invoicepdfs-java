@@ -14,6 +14,7 @@
 |**seller** | [**DocumentPartyInput**](DocumentPartyInput.md) |  |  |
 |**buyer** | [**DocumentPartyInput**](DocumentPartyInput.md) |  |  |
 |**shipTo** | [**DocumentPartyInput**](DocumentPartyInput.md) |  |  [optional] |
+|**taxScheme** | **String** |  |  [optional] |
 |**deliveryDate** | **LocalDate** |  |  [optional] |
 |**buyerReference** | **String** |  |  [optional] |
 |**precedingInvoiceNumber** | **String** |  |  [optional] |

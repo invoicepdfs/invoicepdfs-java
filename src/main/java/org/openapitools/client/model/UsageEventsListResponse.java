@@ -53,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * UsageEventsListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:56:55.734746365Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UsageEventsListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

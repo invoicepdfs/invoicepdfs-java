@@ -66,6 +66,14 @@ public class ComplianceCheckOutTest {
     }
 
     /**
+     * Test the property 'inScope'
+     */
+    @Test
+    public void inScopeTest() {
+        // TODO: test inScope
+    }
+
+    /**
      * Test the property 'fullyChecked'
      */
     @Test

@@ -53,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * ComplianceCheckOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:56:55.734746365Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ComplianceCheckOut {
   public static final String SERIALIZED_NAME_PROFILE = "profile";
   @SerializedName(SERIALIZED_NAME_PROFILE)
@@ -66,6 +66,10 @@ public class ComplianceCheckOut {
   public static final String SERIALIZED_NAME_VALID = "valid";
   @SerializedName(SERIALIZED_NAME_VALID)
   private Boolean valid;
+
+  public static final String SERIALIZED_NAME_IN_SCOPE = "in_scope";
+  @SerializedName(SERIALIZED_NAME_IN_SCOPE)
+  private Boolean inScope = true;
 
   public static final String SERIALIZED_NAME_FULLY_CHECKED = "fully_checked";
   @SerializedName(SERIALIZED_NAME_FULLY_CHECKED)
@@ -136,6 +140,25 @@ public class ComplianceCheckOut {
 
   public void setValid(Boolean valid) {
     this.valid = valid;
+  }
+
+
+  public ComplianceCheckOut inScope(Boolean inScope) {
+    this.inScope = inScope;
+    return this;
+  }
+
+  /**
+   * Whether any of these rulesets is likely to apply to this document at all. False when neither party is in a country that uses one — these are European e-invoicing rulesets, and for a wholly domestic US invoice, say, &#x60;valid&#x60; is answering a question nobody asked. Advisory: it never changes the verdict or withholds the check, because an open network means a US seller invoicing a Dutch buyer genuinely needs it.
+   * @return inScope
+   */
+  @javax.annotation.Nullable
+  public Boolean getInScope() {
+    return inScope;
+  }
+
+  public void setInScope(Boolean inScope) {
+    this.inScope = inScope;
   }
 
 
@@ -225,6 +248,7 @@ public class ComplianceCheckOut {
     return Objects.equals(this.profile, complianceCheckOut.profile) &&
         Objects.equals(this.rulesetVersion, complianceCheckOut.rulesetVersion) &&
         Objects.equals(this.valid, complianceCheckOut.valid) &&
+        Objects.equals(this.inScope, complianceCheckOut.inScope) &&
         Objects.equals(this.fullyChecked, complianceCheckOut.fullyChecked) &&
         Objects.equals(this.rulesets, complianceCheckOut.rulesets) &&
         Objects.equals(this.violations, complianceCheckOut.violations);
@@ -232,7 +256,7 @@ public class ComplianceCheckOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, rulesetVersion, valid, fullyChecked, rulesets, violations);
+    return Objects.hash(profile, rulesetVersion, valid, inScope, fullyChecked, rulesets, violations);
   }
 
   @Override
@@ -242,6 +266,7 @@ public class ComplianceCheckOut {
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    rulesetVersion: ").append(toIndentedString(rulesetVersion)).append("\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
+    sb.append("    inScope: ").append(toIndentedString(inScope)).append("\n");
     sb.append("    fullyChecked: ").append(toIndentedString(fullyChecked)).append("\n");
     sb.append("    rulesets: ").append(toIndentedString(rulesets)).append("\n");
     sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
@@ -270,6 +295,7 @@ public class ComplianceCheckOut {
     openapiFields.add("profile");
     openapiFields.add("ruleset_version");
     openapiFields.add("valid");
+    openapiFields.add("in_scope");
     openapiFields.add("fully_checked");
     openapiFields.add("rulesets");
     openapiFields.add("violations");

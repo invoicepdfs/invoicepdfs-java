@@ -17,6 +17,7 @@
 |**customerId** | **String** |  |  |
 |**shipTo** | [**PostalAddress**](PostalAddress.md) |  |  [optional] |
 |**buyerReference** | **String** |  |  [optional] |
+|**taxScheme** | **String** |  |  [optional] |
 |**deliveryDate** | **LocalDate** |  |  [optional] |
 |**precedingInvoiceNumber** | **String** |  |  [optional] |
 |**lineItems** | [**List&lt;InvoiceLineItemInput&gt;**](InvoiceLineItemInput.md) |  |  |

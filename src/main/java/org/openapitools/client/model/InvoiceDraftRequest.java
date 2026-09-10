@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceDraftRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T18:56:55.734746365Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceDraftRequest {
   public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
   @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)
@@ -167,6 +167,10 @@ public class InvoiceDraftRequest {
   public static final String SERIALIZED_NAME_BUYER_REFERENCE = "buyer_reference";
   @SerializedName(SERIALIZED_NAME_BUYER_REFERENCE)
   private String buyerReference;
+
+  public static final String SERIALIZED_NAME_TAX_SCHEME = "tax_scheme";
+  @SerializedName(SERIALIZED_NAME_TAX_SCHEME)
+  private String taxScheme;
 
   public static final String SERIALIZED_NAME_DELIVERY_DATE = "delivery_date";
   @SerializedName(SERIALIZED_NAME_DELIVERY_DATE)
@@ -398,6 +402,25 @@ public class InvoiceDraftRequest {
 
   public void setBuyerReference(String buyerReference) {
     this.buyerReference = buyerReference;
+  }
+
+
+  public InvoiceDraftRequest taxScheme(String taxScheme) {
+    this.taxScheme = taxScheme;
+    return this;
+  }
+
+  /**
+   * Get taxScheme
+   * @return taxScheme
+   */
+  @javax.annotation.Nullable
+  public String getTaxScheme() {
+    return taxScheme;
+  }
+
+  public void setTaxScheme(String taxScheme) {
+    this.taxScheme = taxScheme;
   }
 
 
@@ -651,6 +674,7 @@ public class InvoiceDraftRequest {
         Objects.equals(this.customerId, invoiceDraftRequest.customerId) &&
         Objects.equals(this.shipTo, invoiceDraftRequest.shipTo) &&
         Objects.equals(this.buyerReference, invoiceDraftRequest.buyerReference) &&
+        Objects.equals(this.taxScheme, invoiceDraftRequest.taxScheme) &&
         Objects.equals(this.deliveryDate, invoiceDraftRequest.deliveryDate) &&
         Objects.equals(this.precedingInvoiceNumber, invoiceDraftRequest.precedingInvoiceNumber) &&
         Objects.equals(this.lineItems, invoiceDraftRequest.lineItems) &&
@@ -669,7 +693,7 @@ public class InvoiceDraftRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, documentType, issueDate, dueDate, currency, locale, businessProfileId, customerId, shipTo, buyerReference, deliveryDate, precedingInvoiceNumber, lineItems, discounts, shipping, notes, terms, customFields, payment, branding);
+    return Objects.hash(invoiceNumber, documentType, issueDate, dueDate, currency, locale, businessProfileId, customerId, shipTo, buyerReference, taxScheme, deliveryDate, precedingInvoiceNumber, lineItems, discounts, shipping, notes, terms, customFields, payment, branding);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -693,6 +717,7 @@ public class InvoiceDraftRequest {
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    buyerReference: ").append(toIndentedString(buyerReference)).append("\n");
+    sb.append("    taxScheme: ").append(toIndentedString(taxScheme)).append("\n");
     sb.append("    deliveryDate: ").append(toIndentedString(deliveryDate)).append("\n");
     sb.append("    precedingInvoiceNumber: ").append(toIndentedString(precedingInvoiceNumber)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
@@ -735,6 +760,7 @@ public class InvoiceDraftRequest {
     openapiFields.add("customer_id");
     openapiFields.add("ship_to");
     openapiFields.add("buyer_reference");
+    openapiFields.add("tax_scheme");
     openapiFields.add("delivery_date");
     openapiFields.add("preceding_invoice_number");
     openapiFields.add("line_items");
@@ -812,6 +838,9 @@ public class InvoiceDraftRequest {
       }
       if ((jsonObj.get("buyer_reference") != null && !jsonObj.get("buyer_reference").isJsonNull()) && !jsonObj.get("buyer_reference").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `buyer_reference` to be a primitive type in the JSON string but got `%s`", jsonObj.get("buyer_reference").toString()));
+      }
+      if ((jsonObj.get("tax_scheme") != null && !jsonObj.get("tax_scheme").isJsonNull()) && !jsonObj.get("tax_scheme").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tax_scheme` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tax_scheme").toString()));
       }
       if ((jsonObj.get("preceding_invoice_number") != null && !jsonObj.get("preceding_invoice_number").isJsonNull()) && !jsonObj.get("preceding_invoice_number").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `preceding_invoice_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("preceding_invoice_number").toString()));

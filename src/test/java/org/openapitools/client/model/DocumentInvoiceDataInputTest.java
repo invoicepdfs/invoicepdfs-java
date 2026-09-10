@@ -105,6 +105,14 @@ public class DocumentInvoiceDataInputTest {
     }
 
     /**
+     * Test the property 'taxScheme'
+     */
+    @Test
+    public void taxSchemeTest() {
+        // TODO: test taxScheme
+    }
+
+    /**
      * Test the property 'deliveryDate'
      */
     @Test
