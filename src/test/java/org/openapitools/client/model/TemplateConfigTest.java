@@ -25,33 +25,57 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for DocumentTemplateRef
+ * Model tests for TemplateConfig
  */
-public class DocumentTemplateRefTest {
-    private final DocumentTemplateRef model = new DocumentTemplateRef();
+public class TemplateConfigTest {
+    private final TemplateConfig model = new TemplateConfig();
 
     /**
-     * Model tests for DocumentTemplateRef
+     * Model tests for TemplateConfig
      */
     @Test
-    public void testDocumentTemplateRef() {
-        // TODO: test DocumentTemplateRef
+    public void testTemplateConfig() {
+        // TODO: test TemplateConfig
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'primaryColor'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void primaryColorTest() {
+        // TODO: test primaryColor
     }
 
     /**
-     * Test the property 'version'
+     * Test the property 'accentColor'
      */
     @Test
-    public void versionTest() {
-        // TODO: test version
+    public void accentColorTest() {
+        // TODO: test accentColor
+    }
+
+    /**
+     * Test the property 'fontFamily'
+     */
+    @Test
+    public void fontFamilyTest() {
+        // TODO: test fontFamily
+    }
+
+    /**
+     * Test the property 'headerText'
+     */
+    @Test
+    public void headerTextTest() {
+        // TODO: test headerText
+    }
+
+    /**
+     * Test the property 'footerText'
+     */
+    @Test
+    public void footerTextTest() {
+        // TODO: test footerText
     }
 
 }

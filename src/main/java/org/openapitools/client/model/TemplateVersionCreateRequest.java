@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * TemplateVersionCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TemplateVersionCreateRequest {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
@@ -61,10 +59,6 @@ public class TemplateVersionCreateRequest {
   public static final String SERIALIZED_NAME_CHANGELOG = "changelog";
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
   private String changelog;
-
-  public static final String SERIALIZED_NAME_CONFIG = "config";
-  @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Map<String, Object> config = new HashMap<>();
 
   public TemplateVersionCreateRequest() {
   }
@@ -107,33 +101,6 @@ public class TemplateVersionCreateRequest {
   }
 
 
-  public TemplateVersionCreateRequest config(Map<String, Object> config) {
-    this.config = config;
-    return this;
-  }
-
-  public TemplateVersionCreateRequest putConfigItem(String key, Object configItem) {
-    if (this.config == null) {
-      this.config = new HashMap<>();
-    }
-    this.config.put(key, configItem);
-    return this;
-  }
-
-  /**
-   * Get config
-   * @return config
-   */
-  @javax.annotation.Nullable
-  public Map<String, Object> getConfig() {
-    return config;
-  }
-
-  public void setConfig(Map<String, Object> config) {
-    this.config = config;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -145,8 +112,7 @@ public class TemplateVersionCreateRequest {
     }
     TemplateVersionCreateRequest templateVersionCreateRequest = (TemplateVersionCreateRequest) o;
     return Objects.equals(this.label, templateVersionCreateRequest.label) &&
-        Objects.equals(this.changelog, templateVersionCreateRequest.changelog) &&
-        Objects.equals(this.config, templateVersionCreateRequest.config);
+        Objects.equals(this.changelog, templateVersionCreateRequest.changelog);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -155,7 +121,7 @@ public class TemplateVersionCreateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(label, changelog, config);
+    return Objects.hash(label, changelog);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -171,7 +137,6 @@ public class TemplateVersionCreateRequest {
     sb.append("class TemplateVersionCreateRequest {\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -196,7 +161,6 @@ public class TemplateVersionCreateRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("label");
     openapiFields.add("changelog");
-    openapiFields.add("config");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

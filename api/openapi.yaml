@@ -2435,6 +2435,17 @@ paths:
           title: Template Id
           type: string
         style: simple
+      - description: Preview the config this version recorded rather than the template's
+          current config. Only a custom (`ctpl_`) template has versions.
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          minimum: 1
+          nullable: true
+          type: integer
+        style: form
       - explode: false
         in: header
         name: Idempotency-Key
@@ -2585,6 +2596,54 @@ paths:
       security:
       - HTTPBearer: []
       summary: Get Template Version
+      tags:
+      - template-versions
+      x-visibility: public
+      x-accepts:
+      - application/json
+  /api/v1/templates/{template_id}/versions/{version}/restore:
+    post:
+      description: |-
+        Put a template back to the config a version recorded.
+
+        The template moves; the version does not. Restoring v1 over v3's config does
+        not delete v3 or renumber anything — the next snapshot is v4, and the history
+        stays a record of what happened rather than a record of the last decision.
+        Take a version first if the config being replaced is worth keeping.
+      operationId: restore_template_version
+      parameters:
+      - explode: false
+        in: path
+        name: template_id
+        required: true
+        schema:
+          title: Template Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          title: Version
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateVersionResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Restore Template Version
       tags:
       - template-versions
       x-visibility: public
@@ -6020,6 +6079,7 @@ components:
           format: pdf
           archive_format: zip
           combine: false
+        template_version: 1
         template_id: tpl_modern
         operation: render
         items:
@@ -6061,6 +6121,10 @@ components:
           default: tpl_modern
           title: Template Id
           type: string
+        template_version:
+          minimum: 1
+          nullable: true
+          type: integer
         output:
           $ref: '#/components/schemas/BatchOutputOptions'
       required:
@@ -6169,14 +6233,15 @@ components:
     BatchOut:
       example:
         completed_at: completed_at
-        completed_items: 6
-        failed_items: 1
+        completed_items: 1
+        template_version: 0
+        failed_items: 5
         updated_at: updated_at
         created_at: created_at
         template_id: template_id
         id: id
         operation: operation
-        total_items: 0
+        total_items: 6
         status: queued
       properties:
         id:
@@ -6197,6 +6262,9 @@ components:
         template_id:
           title: Template Id
           type: string
+        template_version:
+          nullable: true
+          type: integer
         total_items:
           title: Total Items
           type: integer
@@ -6255,14 +6323,15 @@ components:
       example:
         data:
           completed_at: completed_at
-          completed_items: 6
-          failed_items: 1
+          completed_items: 1
+          template_version: 0
+          failed_items: 5
           updated_at: updated_at
           created_at: created_at
           template_id: template_id
           id: id
           operation: operation
-          total_items: 0
+          total_items: 6
           status: queued
       properties:
         data:
@@ -6278,24 +6347,26 @@ components:
           has_more: false
         data:
         - completed_at: completed_at
-          completed_items: 6
-          failed_items: 1
+          completed_items: 1
+          template_version: 0
+          failed_items: 5
           updated_at: updated_at
           created_at: created_at
           template_id: template_id
           id: id
           operation: operation
-          total_items: 0
+          total_items: 6
           status: queued
         - completed_at: completed_at
-          completed_items: 6
-          failed_items: 1
+          completed_items: 1
+          template_version: 0
+          failed_items: 5
           updated_at: updated_at
           created_at: created_at
           template_id: template_id
           id: id
           operation: operation
-          total_items: 0
+          total_items: 6
           status: queued
       properties:
         data:
@@ -7466,7 +7537,11 @@ components:
         is_default: false
         published_at: published_at
         config:
-          key: ""
+          accent_color: accent_color
+          font_family: font_family
+          header_text: header_text
+          footer_text: footer_text
+          primary_color: primary_color
         status: status
       properties:
         id:
@@ -7482,9 +7557,7 @@ components:
           title: Base Template Id
           type: string
         config:
-          additionalProperties: true
-          title: Config
-          type: object
+          $ref: '#/components/schemas/TemplateConfig'
         status:
           title: Status
           type: string
@@ -7522,7 +7595,11 @@ components:
           is_default: false
           published_at: published_at
           config:
-            key: ""
+            accent_color: accent_color
+            font_family: font_family
+            header_text: header_text
+            footer_text: footer_text
+            primary_color: primary_color
           status: status
       properties:
         data:
@@ -7546,7 +7623,11 @@ components:
           is_default: false
           published_at: published_at
           config:
-            key: ""
+            accent_color: accent_color
+            font_family: font_family
+            header_text: header_text
+            footer_text: footer_text
+            primary_color: primary_color
           status: status
         - updated_at: updated_at
           base_template_id: base_template_id
@@ -7557,7 +7638,11 @@ components:
           is_default: false
           published_at: published_at
           config:
-            key: ""
+            accent_color: accent_color
+            font_family: font_family
+            header_text: header_text
+            footer_text: footer_text
+            primary_color: primary_color
           status: status
       properties:
         data:
@@ -9314,7 +9399,7 @@ components:
       example:
         delivery: url
         format: pdf
-        expires_in: 0
+        expires_in: 6
       properties:
         format:
           default: pdf
@@ -9657,15 +9742,20 @@ components:
         (``app__documents__schemas__DocumentRenderRequest``), which the SDK generators turned
         into ``AppDocumentsSchemasDocumentRenderRequest``.
       example:
+        template_version: 1
         format: pdf
         template_id: tpl_modern
-        expires_in: 0
+        expires_in: 6
         page_size: LETTER
       properties:
         template_id:
           default: tpl_modern
           title: Template Id
           type: string
+        template_version:
+          minimum: 1
+          nullable: true
+          type: integer
         page_size:
           default: LETTER
           title: Page Size
@@ -9690,10 +9780,11 @@ components:
       example:
         template:
           id: id
+          version: 1
         output:
           delivery: url
           format: pdf
-          expires_in: 0
+          expires_in: 6
         data:
           seller:
             contact_name: contact_name
@@ -9976,10 +10067,15 @@ components:
     DocumentTemplateRef:
       example:
         id: id
+        version: 1
       properties:
         id:
           title: Id
           type: string
+        version:
+          minimum: 1
+          nullable: true
+          type: integer
       required:
       - id
       title: DocumentTemplateRef
@@ -12751,10 +12847,12 @@ components:
           subtotal:
             amount: amount
             currency: currency
+        template_version: 0
         expires_at: expires_at
         format: pdf
         download_url: download_url
         created_at: created_at
+        template_id: template_id
         id: id
         status: completed
         document_type: invoice
@@ -12779,6 +12877,12 @@ components:
           - delivery_note
           title: Document Type
           type: string
+        template_id:
+          title: Template Id
+          type: string
+        template_version:
+          nullable: true
+          type: integer
         format:
           enum:
           - pdf
@@ -12804,6 +12908,7 @@ components:
       - format
       - id
       - status
+      - template_id
       title: RenderOut
       type: object
     RenderResponse:
@@ -12828,10 +12933,12 @@ components:
             subtotal:
               amount: amount
               currency: currency
+          template_version: 0
           expires_at: expires_at
           format: pdf
           download_url: download_url
           created_at: created_at
+          template_id: template_id
           id: id
           status: completed
           document_type: invoice
@@ -13276,13 +13383,59 @@ components:
       - data
       title: TaxRatesListResponse
       type: object
+    TemplateConfig:
+      additionalProperties: false
+      description: |-
+        What a custom template is: a built-in design plus the brand to render it in.
+
+        A custom template is not a design of its own — it names one of the built-ins
+        in ``base_template_id`` and carries the values below, which are the same ones
+        ``data.branding`` carries. They are applied *underneath* a request's own
+        branding, so a document that states a colour still wins and one template can
+        serve several brands.
+
+        Typed rather than the free-form object it used to be: nothing read that
+        object, so every key in it was equally correct and a caller could keep
+        sending ``primary_colour`` forever without a word back. Unset here means
+        "the template has no opinion" — unlike ``Branding``, whose every field has a
+        non-empty default and so cannot say that.
+      example:
+        accent_color: accent_color
+        font_family: font_family
+        header_text: header_text
+        footer_text: footer_text
+        primary_color: primary_color
+      properties:
+        primary_color:
+          nullable: true
+          pattern: "^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+          type: string
+        accent_color:
+          nullable: true
+          pattern: "^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+          type: string
+        font_family:
+          nullable: true
+          type: string
+        header_text:
+          nullable: true
+          type: string
+        footer_text:
+          nullable: true
+          type: string
+      title: TemplateConfig
+      type: object
     TemplateCreateRequest:
       example:
         base_template_id: tpl_modern
         name: name
         description: description
         config:
-          key: ""
+          accent_color: accent_color
+          font_family: font_family
+          header_text: header_text
+          footer_text: footer_text
+          primary_color: primary_color
       properties:
         name:
           maxLength: 256
@@ -13297,9 +13450,7 @@ components:
           title: Base Template Id
           type: string
         config:
-          additionalProperties: true
-          title: Config
-          type: object
+          $ref: '#/components/schemas/TemplateConfig'
       required:
       - name
       title: TemplateCreateRequest
@@ -13351,7 +13502,11 @@ components:
         name: name
         description: description
         config:
-          key: ""
+          accent_color: accent_color
+          font_family: font_family
+          header_text: header_text
+          footer_text: footer_text
+          primary_color: primary_color
       properties:
         name:
           maxLength: 256
@@ -13362,9 +13517,7 @@ components:
           nullable: true
           type: string
         config:
-          additionalProperties: true
-          title: Config
-          type: object
+          $ref: '#/components/schemas/TemplateConfig'
       title: TemplatePatchRequest
       type: object
     TemplateSummary:
@@ -13394,8 +13547,6 @@ components:
       example:
         changelog: changelog
         label: label
-        config:
-          key: ""
       properties:
         label:
           nullable: true
@@ -13403,10 +13554,6 @@ components:
         changelog:
           nullable: true
           type: string
-        config:
-          additionalProperties: true
-          title: Config
-          type: object
       title: TemplateVersionCreateRequest
       type: object
     TemplateVersionOut:
@@ -13418,7 +13565,11 @@ components:
         label: label
         version: 0
         config:
-          key: ""
+          accent_color: accent_color
+          font_family: font_family
+          header_text: header_text
+          footer_text: footer_text
+          primary_color: primary_color
       properties:
         id:
           title: Id
@@ -13436,9 +13587,7 @@ components:
           nullable: true
           type: string
         config:
-          additionalProperties: true
-          title: Config
-          type: object
+          $ref: '#/components/schemas/TemplateConfig'
         created_at:
           title: Created At
           type: string
@@ -13460,7 +13609,11 @@ components:
           label: label
           version: 0
           config:
-            key: ""
+            accent_color: accent_color
+            font_family: font_family
+            header_text: header_text
+            footer_text: footer_text
+            primary_color: primary_color
       properties:
         data:
           $ref: '#/components/schemas/TemplateVersionOut'
@@ -13478,7 +13631,11 @@ components:
           label: label
           version: 0
           config:
-            key: ""
+            accent_color: accent_color
+            font_family: font_family
+            header_text: header_text
+            footer_text: footer_text
+            primary_color: primary_color
         - changelog: changelog
           created_at: created_at
           template_id: template_id
@@ -13486,7 +13643,11 @@ components:
           label: label
           version: 0
           config:
-            key: ""
+            accent_color: accent_color
+            font_family: font_family
+            header_text: header_text
+            footer_text: footer_text
+            primary_color: primary_color
       properties:
         data:
           items:

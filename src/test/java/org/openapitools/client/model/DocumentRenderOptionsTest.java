@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -43,6 +44,14 @@ public class DocumentRenderOptionsTest {
     @Test
     public void templateIdTest() {
         // TODO: test templateId
+    }
+
+    /**
+     * Test the property 'templateVersion'
+     */
+    @Test
+    public void templateVersionTest() {
+        // TODO: test templateVersion
     }
 
     /**

@@ -543,7 +543,7 @@ This endpoint does not need any parameter.
 
 <a id="previewTemplate"></a>
 # **previewTemplate**
-> RenderResponse previewTemplate(templateId, documentRenderRequest, idempotencyKey)
+> RenderResponse previewTemplate(templateId, documentRenderRequest, version, idempotencyKey)
 
 Preview Template
 
@@ -569,9 +569,10 @@ public class Example {
     TemplatesApi apiInstance = new TemplatesApi(defaultClient);
     String templateId = "templateId_example"; // String | 
     DocumentRenderRequest documentRenderRequest = new DocumentRenderRequest(); // DocumentRenderRequest | 
+    Integer version = 56; // Integer | Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions.
     String idempotencyKey = "idempotencyKey_example"; // String | 
     try {
-      RenderResponse result = apiInstance.previewTemplate(templateId, documentRenderRequest, idempotencyKey);
+      RenderResponse result = apiInstance.previewTemplate(templateId, documentRenderRequest, version, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplatesApi#previewTemplate");
@@ -590,6 +591,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **templateId** | **String**|  | |
 | **documentRenderRequest** | [**DocumentRenderRequest**](DocumentRenderRequest.md)|  | |
+| **version** | **Integer**| Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. | [optional] |
 | **idempotencyKey** | **String**|  | [optional] |
 
 ### Return type

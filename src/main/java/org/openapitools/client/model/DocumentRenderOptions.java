@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,11 +50,15 @@ import com.invoicepdfs.JSON;
 /**
  * Render options for an already-stored document (&#x60;&#x60;POST /documents/{id}/renders&#x60;&#x60;).  Distinct from &#x60;&#x60;app.schemas.v1.DocumentRenderRequest&#x60;&#x60;, which carries a full inline document for the stateless &#x60;&#x60;POST /documents/render&#x60;&#x60;. Two classes sharing one name made FastAPI fall back to module-qualified schema names in the spec (&#x60;&#x60;app__documents__schemas__DocumentRenderRequest&#x60;&#x60;), which the SDK generators turned into &#x60;&#x60;AppDocumentsSchemasDocumentRenderRequest&#x60;&#x60;.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentRenderOptions {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
   private String templateId = "tpl_modern";
+
+  public static final String SERIALIZED_NAME_TEMPLATE_VERSION = "template_version";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_VERSION)
+  private Integer templateVersion;
 
   public static final String SERIALIZED_NAME_PAGE_SIZE = "page_size";
   @SerializedName(SERIALIZED_NAME_PAGE_SIZE)
@@ -141,6 +146,26 @@ public class DocumentRenderOptions {
   }
 
 
+  public DocumentRenderOptions templateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
+    return this;
+  }
+
+  /**
+   * Get templateVersion
+   * minimum: 1
+   * @return templateVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getTemplateVersion() {
+    return templateVersion;
+  }
+
+  public void setTemplateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
+  }
+
+
   public DocumentRenderOptions pageSize(String pageSize) {
     this.pageSize = pageSize;
     return this;
@@ -209,14 +234,26 @@ public class DocumentRenderOptions {
     }
     DocumentRenderOptions documentRenderOptions = (DocumentRenderOptions) o;
     return Objects.equals(this.templateId, documentRenderOptions.templateId) &&
+        Objects.equals(this.templateVersion, documentRenderOptions.templateVersion) &&
         Objects.equals(this.pageSize, documentRenderOptions.pageSize) &&
         Objects.equals(this.expiresIn, documentRenderOptions.expiresIn) &&
         Objects.equals(this.format, documentRenderOptions.format);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(templateId, pageSize, expiresIn, format);
+    return Objects.hash(templateId, templateVersion, pageSize, expiresIn, format);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -224,6 +261,7 @@ public class DocumentRenderOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentRenderOptions {\n");
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+    sb.append("    templateVersion: ").append(toIndentedString(templateVersion)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
@@ -250,6 +288,7 @@ public class DocumentRenderOptions {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("template_id");
+    openapiFields.add("template_version");
     openapiFields.add("page_size");
     openapiFields.add("expires_in");
     openapiFields.add("format");

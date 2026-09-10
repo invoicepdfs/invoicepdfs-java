@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.BatchItemInput;
 import org.openapitools.client.model.BatchOutputOptions;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +54,7 @@ import com.invoicepdfs.JSON;
 /**
  * BatchCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BatchCreateRequest {
   /**
    * Gets or Sets operation
@@ -116,6 +117,10 @@ public class BatchCreateRequest {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
   private String templateId = "tpl_modern";
+
+  public static final String SERIALIZED_NAME_TEMPLATE_VERSION = "template_version";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_VERSION)
+  private Integer templateVersion;
 
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
@@ -189,6 +194,26 @@ public class BatchCreateRequest {
   }
 
 
+  public BatchCreateRequest templateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
+    return this;
+  }
+
+  /**
+   * Get templateVersion
+   * minimum: 1
+   * @return templateVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getTemplateVersion() {
+    return templateVersion;
+  }
+
+  public void setTemplateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
+  }
+
+
   public BatchCreateRequest output(BatchOutputOptions output) {
     this.output = output;
     return this;
@@ -221,12 +246,24 @@ public class BatchCreateRequest {
     return Objects.equals(this.operation, batchCreateRequest.operation) &&
         Objects.equals(this.items, batchCreateRequest.items) &&
         Objects.equals(this.templateId, batchCreateRequest.templateId) &&
+        Objects.equals(this.templateVersion, batchCreateRequest.templateVersion) &&
         Objects.equals(this.output, batchCreateRequest.output);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operation, items, templateId, output);
+    return Objects.hash(operation, items, templateId, templateVersion, output);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -236,6 +273,7 @@ public class BatchCreateRequest {
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+    sb.append("    templateVersion: ").append(toIndentedString(templateVersion)).append("\n");
     sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -262,6 +300,7 @@ public class BatchCreateRequest {
     openapiFields.add("operation");
     openapiFields.add("items");
     openapiFields.add("template_id");
+    openapiFields.add("template_version");
     openapiFields.add("output");
 
     // a set of required properties/fields (JSON key names)

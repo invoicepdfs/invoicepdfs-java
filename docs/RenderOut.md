@@ -10,6 +10,8 @@
 |**id** | **String** |  |  |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**documentType** | [**DocumentTypeEnum**](#DocumentTypeEnum) |  |  |
+|**templateId** | **String** |  |  |
+|**templateVersion** | **Integer** |  |  [optional] |
 |**format** | [**FormatEnum**](#FormatEnum) |  |  |
 |**downloadUrl** | **String** |  |  |
 |**expiresAt** | **String** |  |  |

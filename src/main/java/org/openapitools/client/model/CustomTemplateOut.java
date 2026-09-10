@@ -21,8 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import org.openapitools.client.model.TemplateConfig;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * CustomTemplateOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CustomTemplateOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -72,7 +71,7 @@ public class CustomTemplateOut {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Map<String, Object> config = new HashMap<>();
+  private TemplateConfig config;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -173,16 +172,8 @@ public class CustomTemplateOut {
   }
 
 
-  public CustomTemplateOut config(Map<String, Object> config) {
+  public CustomTemplateOut config(TemplateConfig config) {
     this.config = config;
-    return this;
-  }
-
-  public CustomTemplateOut putConfigItem(String key, Object configItem) {
-    if (this.config == null) {
-      this.config = new HashMap<>();
-    }
-    this.config.put(key, configItem);
     return this;
   }
 
@@ -191,11 +182,11 @@ public class CustomTemplateOut {
    * @return config
    */
   @javax.annotation.Nullable
-  public Map<String, Object> getConfig() {
+  public TemplateConfig getConfig() {
     return config;
   }
 
-  public void setConfig(Map<String, Object> config) {
+  public void setConfig(TemplateConfig config) {
     this.config = config;
   }
 
@@ -429,6 +420,10 @@ public class CustomTemplateOut {
       }
       if (!jsonObj.get("base_template_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `base_template_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("base_template_id").toString()));
+      }
+      // validate the optional field `config`
+      if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
+        TemplateConfig.validateJsonElement(jsonObj.get("config"));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

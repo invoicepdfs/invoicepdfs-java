@@ -10,6 +10,7 @@
 |**operation** | [**OperationEnum**](#OperationEnum) |  |  [optional] |
 |**items** | [**List&lt;BatchItemInput&gt;**](BatchItemInput.md) |  |  |
 |**templateId** | **String** |  |  [optional] |
+|**templateVersion** | **Integer** |  |  [optional] |
 |**output** | [**BatchOutputOptions**](BatchOutputOptions.md) |  |  [optional] |
 
 

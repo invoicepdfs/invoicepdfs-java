@@ -9,6 +9,7 @@ Render options for an already-stored document (``POST /documents/{id}/renders``)
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**templateId** | **String** |  |  [optional] |
+|**templateVersion** | **Integer** |  |  [optional] |
 |**pageSize** | **String** |  |  [optional] |
 |**expiresIn** | **Integer** |  |  [optional] |
 |**format** | [**FormatEnum**](#FormatEnum) | &#x60;facturx_pdf&#x60; embeds the EN 16931 CII XML in a PDF/A-3, which is what a French or German counterparty means by Factur-X or ZUGFeRD. |  [optional] |

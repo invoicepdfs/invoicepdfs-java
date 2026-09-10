@@ -72,4 +72,19 @@ public class TemplateVersionsApiTest {
         // TODO: test validations
     }
 
+    /**
+     * Restore Template Version
+     *
+     * Put a template back to the config a version recorded.  The template moves; the version does not. Restoring v1 over v3&#39;s config does not delete v3 or renumber anything — the next snapshot is v4, and the history stays a record of what happened rather than a record of the last decision. Take a version first if the config being replaced is worth keeping.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void restoreTemplateVersionTest() throws ApiException {
+        String templateId = null;
+        Integer version = null;
+        TemplateVersionResponse response = api.restoreTemplateVersion(templateId, version);
+        // TODO: test validations
+    }
+
 }

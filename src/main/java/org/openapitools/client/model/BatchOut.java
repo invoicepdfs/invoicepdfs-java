@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * BatchOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BatchOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -125,6 +125,10 @@ public class BatchOut {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
   private String templateId;
+
+  public static final String SERIALIZED_NAME_TEMPLATE_VERSION = "template_version";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_VERSION)
+  private Integer templateVersion;
 
   public static final String SERIALIZED_NAME_TOTAL_ITEMS = "total_items";
   @SerializedName(SERIALIZED_NAME_TOTAL_ITEMS)
@@ -226,6 +230,25 @@ public class BatchOut {
 
   public void setTemplateId(String templateId) {
     this.templateId = templateId;
+  }
+
+
+  public BatchOut templateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
+    return this;
+  }
+
+  /**
+   * Get templateVersion
+   * @return templateVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getTemplateVersion() {
+    return templateVersion;
+  }
+
+  public void setTemplateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
   }
 
 
@@ -357,6 +380,7 @@ public class BatchOut {
         Objects.equals(this.status, batchOut.status) &&
         Objects.equals(this.operation, batchOut.operation) &&
         Objects.equals(this.templateId, batchOut.templateId) &&
+        Objects.equals(this.templateVersion, batchOut.templateVersion) &&
         Objects.equals(this.totalItems, batchOut.totalItems) &&
         Objects.equals(this.completedItems, batchOut.completedItems) &&
         Objects.equals(this.failedItems, batchOut.failedItems) &&
@@ -371,7 +395,7 @@ public class BatchOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, operation, templateId, totalItems, completedItems, failedItems, createdAt, updatedAt, completedAt);
+    return Objects.hash(id, status, operation, templateId, templateVersion, totalItems, completedItems, failedItems, createdAt, updatedAt, completedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -389,6 +413,7 @@ public class BatchOut {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+    sb.append("    templateVersion: ").append(toIndentedString(templateVersion)).append("\n");
     sb.append("    totalItems: ").append(toIndentedString(totalItems)).append("\n");
     sb.append("    completedItems: ").append(toIndentedString(completedItems)).append("\n");
     sb.append("    failedItems: ").append(toIndentedString(failedItems)).append("\n");
@@ -421,6 +446,7 @@ public class BatchOut {
     openapiFields.add("status");
     openapiFields.add("operation");
     openapiFields.add("template_id");
+    openapiFields.add("template_version");
     openapiFields.add("total_items");
     openapiFields.add("completed_items");
     openapiFields.add("failed_items");

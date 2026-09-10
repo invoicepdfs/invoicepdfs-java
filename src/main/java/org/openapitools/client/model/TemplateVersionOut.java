@@ -21,8 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import org.openapitools.client.model.TemplateConfig;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * TemplateVersionOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TemplateVersionOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -76,7 +75,7 @@ public class TemplateVersionOut {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Map<String, Object> config = new HashMap<>();
+  private TemplateConfig config;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -180,16 +179,8 @@ public class TemplateVersionOut {
   }
 
 
-  public TemplateVersionOut config(Map<String, Object> config) {
+  public TemplateVersionOut config(TemplateConfig config) {
     this.config = config;
-    return this;
-  }
-
-  public TemplateVersionOut putConfigItem(String key, Object configItem) {
-    if (this.config == null) {
-      this.config = new HashMap<>();
-    }
-    this.config.put(key, configItem);
     return this;
   }
 
@@ -198,11 +189,11 @@ public class TemplateVersionOut {
    * @return config
    */
   @javax.annotation.Nonnull
-  public Map<String, Object> getConfig() {
+  public TemplateConfig getConfig() {
     return config;
   }
 
-  public void setConfig(Map<String, Object> config) {
+  public void setConfig(TemplateConfig config) {
     this.config = config;
   }
 
@@ -351,6 +342,8 @@ public class TemplateVersionOut {
       if ((jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) && !jsonObj.get("changelog").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `changelog` to be a primitive type in the JSON string but got `%s`", jsonObj.get("changelog").toString()));
       }
+      // validate the required field `config`
+      TemplateConfig.validateJsonElement(jsonObj.get("config"));
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }

@@ -11,7 +11,7 @@
 |**name** | **String** |  |  |
 |**description** | **String** |  |  [optional] |
 |**baseTemplateId** | **String** |  |  |
-|**config** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**config** | [**TemplateConfig**](TemplateConfig.md) |  |  [optional] |
 |**status** | **String** |  |  |
 |**isDefault** | **Boolean** |  |  [optional] |
 |**createdAt** | **String** |  |  |

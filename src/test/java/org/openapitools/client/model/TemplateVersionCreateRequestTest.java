@@ -20,8 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -54,14 +52,6 @@ public class TemplateVersionCreateRequestTest {
     @Test
     public void changelogTest() {
         // TODO: test changelog
-    }
-
-    /**
-     * Test the property 'config'
-     */
-    @Test
-    public void configTest() {
-        // TODO: test config
     }
 
 }

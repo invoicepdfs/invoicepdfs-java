@@ -10,7 +10,7 @@
 |**name** | **String** |  |  |
 |**description** | **String** |  |  [optional] |
 |**baseTemplateId** | **String** |  |  [optional] |
-|**config** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**config** | [**TemplateConfig**](TemplateConfig.md) |  |  [optional] |
 
 
 

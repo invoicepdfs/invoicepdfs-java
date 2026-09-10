@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.CalculationBreakdown;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * RenderOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T03:37:22.786754036Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RenderOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -177,6 +178,14 @@ public class RenderOut {
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
   private DocumentTypeEnum documentType;
+
+  public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
+  private String templateId;
+
+  public static final String SERIALIZED_NAME_TEMPLATE_VERSION = "template_version";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_VERSION)
+  private Integer templateVersion;
 
   /**
    * Gets or Sets format
@@ -308,6 +317,44 @@ public class RenderOut {
   }
 
 
+  public RenderOut templateId(String templateId) {
+    this.templateId = templateId;
+    return this;
+  }
+
+  /**
+   * Get templateId
+   * @return templateId
+   */
+  @javax.annotation.Nonnull
+  public String getTemplateId() {
+    return templateId;
+  }
+
+  public void setTemplateId(String templateId) {
+    this.templateId = templateId;
+  }
+
+
+  public RenderOut templateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
+    return this;
+  }
+
+  /**
+   * Get templateVersion
+   * @return templateVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getTemplateVersion() {
+    return templateVersion;
+  }
+
+  public void setTemplateVersion(Integer templateVersion) {
+    this.templateVersion = templateVersion;
+  }
+
+
   public RenderOut format(FormatEnum format) {
     this.format = format;
     return this;
@@ -416,6 +463,8 @@ public class RenderOut {
     return Objects.equals(this.id, renderOut.id) &&
         Objects.equals(this.status, renderOut.status) &&
         Objects.equals(this.documentType, renderOut.documentType) &&
+        Objects.equals(this.templateId, renderOut.templateId) &&
+        Objects.equals(this.templateVersion, renderOut.templateVersion) &&
         Objects.equals(this.format, renderOut.format) &&
         Objects.equals(this.downloadUrl, renderOut.downloadUrl) &&
         Objects.equals(this.expiresAt, renderOut.expiresAt) &&
@@ -423,9 +472,20 @@ public class RenderOut {
         Objects.equals(this.createdAt, renderOut.createdAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, documentType, format, downloadUrl, expiresAt, calculation, createdAt);
+    return Objects.hash(id, status, documentType, templateId, templateVersion, format, downloadUrl, expiresAt, calculation, createdAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -435,6 +495,8 @@ public class RenderOut {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");
+    sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+    sb.append("    templateVersion: ").append(toIndentedString(templateVersion)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
@@ -465,6 +527,8 @@ public class RenderOut {
     openapiFields.add("id");
     openapiFields.add("status");
     openapiFields.add("document_type");
+    openapiFields.add("template_id");
+    openapiFields.add("template_version");
     openapiFields.add("format");
     openapiFields.add("download_url");
     openapiFields.add("expires_at");
@@ -476,6 +540,7 @@ public class RenderOut {
     openapiRequiredFields.add("id");
     openapiRequiredFields.add("status");
     openapiRequiredFields.add("document_type");
+    openapiRequiredFields.add("template_id");
     openapiRequiredFields.add("format");
     openapiRequiredFields.add("download_url");
     openapiRequiredFields.add("expires_at");
@@ -524,6 +589,9 @@ public class RenderOut {
       }
       // validate the required field `document_type`
       DocumentTypeEnum.validateJsonElement(jsonObj.get("document_type"));
+      if (!jsonObj.get("template_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `template_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template_id").toString()));
+      }
       if (!jsonObj.get("format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }

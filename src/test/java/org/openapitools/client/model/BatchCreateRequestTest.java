@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.BatchItemInput;
 import org.openapitools.client.model.BatchOutputOptions;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -63,6 +64,14 @@ public class BatchCreateRequestTest {
     @Test
     public void templateIdTest() {
         // TODO: test templateId
+    }
+
+    /**
+     * Test the property 'templateVersion'
+     */
+    @Test
+    public void templateVersionTest() {
+        // TODO: test templateVersion
     }
 
     /**

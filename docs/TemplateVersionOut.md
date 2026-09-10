@@ -12,7 +12,7 @@
 |**version** | **Integer** |  |  |
 |**label** | **String** |  |  [optional] |
 |**changelog** | **String** |  |  [optional] |
-|**config** | **Map&lt;String, Object&gt;** |  |  |
+|**config** | [**TemplateConfig**](TemplateConfig.md) |  |  |
 |**createdAt** | **String** |  |  |
 
 

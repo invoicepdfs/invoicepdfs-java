@@ -11,6 +11,7 @@
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**operation** | **String** |  |  |
 |**templateId** | **String** |  |  |
+|**templateVersion** | **Integer** |  |  [optional] |
 |**totalItems** | **Integer** |  |  |
 |**completedItems** | **Integer** |  |  |
 |**failedItems** | **Integer** |  |  |

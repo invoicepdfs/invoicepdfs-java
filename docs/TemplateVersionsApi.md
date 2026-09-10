@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**createTemplateVersion**](TemplateVersionsApi.md#createTemplateVersion) | **POST** /api/v1/templates/{template_id}/versions | Create Template Version |
 | [**getTemplateVersion**](TemplateVersionsApi.md#getTemplateVersion) | **GET** /api/v1/templates/{template_id}/versions/{version} | Get Template Version |
 | [**listTemplateVersions**](TemplateVersionsApi.md#listTemplateVersions) | **GET** /api/v1/templates/{template_id}/versions | List Template Versions |
+| [**restoreTemplateVersion**](TemplateVersionsApi.md#restoreTemplateVersion) | **POST** /api/v1/templates/{template_id}/versions/{version}/restore | Restore Template Version |
 
 
 <a id="createTemplateVersion"></a>
@@ -195,6 +196,76 @@ public class Example {
 ### Return type
 
 [**TemplateVersionsListResponse**](TemplateVersionsListResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="restoreTemplateVersion"></a>
+# **restoreTemplateVersion**
+> TemplateVersionResponse restoreTemplateVersion(templateId, version)
+
+Restore Template Version
+
+Put a template back to the config a version recorded.  The template moves; the version does not. Restoring v1 over v3&#39;s config does not delete v3 or renumber anything — the next snapshot is v4, and the history stays a record of what happened rather than a record of the last decision. Take a version first if the config being replaced is worth keeping.
+
+### Example
+```java
+// Import classes:
+import com.invoicepdfs.ApiClient;
+import com.invoicepdfs.ApiException;
+import com.invoicepdfs.Configuration;
+import com.invoicepdfs.auth.*;
+import com.invoicepdfs.models.*;
+import org.openapitools.client.api.TemplateVersionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP bearer authorization: HTTPBearer
+    HttpBearerAuth HTTPBearer = (HttpBearerAuth) defaultClient.getAuthentication("HTTPBearer");
+    HTTPBearer.setBearerToken("BEARER TOKEN");
+
+    TemplateVersionsApi apiInstance = new TemplateVersionsApi(defaultClient);
+    String templateId = "templateId_example"; // String | 
+    Integer version = 56; // Integer | 
+    try {
+      TemplateVersionResponse result = apiInstance.restoreTemplateVersion(templateId, version);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TemplateVersionsApi#restoreTemplateVersion");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **templateId** | **String**|  | |
+| **version** | **Integer**|  | |
+
+### Return type
+
+[**TemplateVersionResponse**](TemplateVersionResponse.md)
 
 ### Authorization
 

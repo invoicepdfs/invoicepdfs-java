@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.CalculationBreakdown;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -60,6 +61,22 @@ public class RenderOutTest {
     @Test
     public void documentTypeTest() {
         // TODO: test documentType
+    }
+
+    /**
+     * Test the property 'templateId'
+     */
+    @Test
+    public void templateIdTest() {
+        // TODO: test templateId
+    }
+
+    /**
+     * Test the property 'templateVersion'
+     */
+    @Test
+    public void templateVersionTest() {
+        // TODO: test templateVersion
     }
 
     /**

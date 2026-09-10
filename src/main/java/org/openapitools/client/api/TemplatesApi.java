@@ -1089,6 +1089,7 @@ public class TemplatesApi {
      * Build call for previewTemplate
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
+     * @param version Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. (optional)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1100,7 +1101,7 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call previewTemplateCall(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call previewTemplateCall(String templateId, DocumentRenderRequest documentRenderRequest, Integer version, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1125,6 +1126,10 @@ public class TemplatesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (version != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("version", version));
+        }
 
         if (idempotencyKey != null) {
             localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
@@ -1152,7 +1157,7 @@ public class TemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call previewTemplateValidateBeforeCall(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call previewTemplateValidateBeforeCall(String templateId, DocumentRenderRequest documentRenderRequest, Integer version, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
             throw new ApiException("Missing the required parameter 'templateId' when calling previewTemplate(Async)");
@@ -1163,7 +1168,7 @@ public class TemplatesApi {
             throw new ApiException("Missing the required parameter 'documentRenderRequest' when calling previewTemplate(Async)");
         }
 
-        return previewTemplateCall(templateId, documentRenderRequest, idempotencyKey, _callback);
+        return previewTemplateCall(templateId, documentRenderRequest, version, idempotencyKey, _callback);
 
     }
 
@@ -1172,6 +1177,7 @@ public class TemplatesApi {
      * 
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
+     * @param version Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. (optional)
      * @param idempotencyKey  (optional)
      * @return RenderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1182,8 +1188,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public RenderResponse previewTemplate(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
-        ApiResponse<RenderResponse> localVarResp = previewTemplateWithHttpInfo(templateId, documentRenderRequest, idempotencyKey);
+    public RenderResponse previewTemplate(String templateId, DocumentRenderRequest documentRenderRequest, Integer version, String idempotencyKey) throws ApiException {
+        ApiResponse<RenderResponse> localVarResp = previewTemplateWithHttpInfo(templateId, documentRenderRequest, version, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -1192,6 +1198,7 @@ public class TemplatesApi {
      * 
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
+     * @param version Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. (optional)
      * @param idempotencyKey  (optional)
      * @return ApiResponse&lt;RenderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1202,8 +1209,8 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RenderResponse> previewTemplateWithHttpInfo(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, idempotencyKey, null);
+    public ApiResponse<RenderResponse> previewTemplateWithHttpInfo(String templateId, DocumentRenderRequest documentRenderRequest, Integer version, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, version, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1213,6 +1220,7 @@ public class TemplatesApi {
      * 
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
+     * @param version Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. (optional)
      * @param idempotencyKey  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1224,9 +1232,9 @@ public class TemplatesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call previewTemplateAsync(String templateId, DocumentRenderRequest documentRenderRequest, String idempotencyKey, final ApiCallback<RenderResponse> _callback) throws ApiException {
+    public okhttp3.Call previewTemplateAsync(String templateId, DocumentRenderRequest documentRenderRequest, Integer version, String idempotencyKey, final ApiCallback<RenderResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = previewTemplateValidateBeforeCall(templateId, documentRenderRequest, version, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<RenderResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

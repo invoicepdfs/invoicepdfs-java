@@ -71,6 +71,14 @@ public class BatchOutTest {
     }
 
     /**
+     * Test the property 'templateVersion'
+     */
+    @Test
+    public void templateVersionTest() {
+        // TODO: test templateVersion
+    }
+
+    /**
      * Test the property 'totalItems'
      */
     @Test

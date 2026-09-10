@@ -145,8 +145,9 @@ public class TemplatesApiTest {
     public void previewTemplateTest() throws ApiException {
         String templateId = null;
         DocumentRenderRequest documentRenderRequest = null;
+        Integer version = null;
         String idempotencyKey = null;
-        RenderResponse response = api.previewTemplate(templateId, documentRenderRequest, idempotencyKey);
+        RenderResponse response = api.previewTemplate(templateId, documentRenderRequest, version, idempotencyKey);
         // TODO: test validations
     }
 

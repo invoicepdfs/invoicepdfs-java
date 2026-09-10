@@ -204,6 +204,7 @@ docs/TaxRatePatchRequest.md
 docs/TaxRateResponse.md
 docs/TaxRatesApi.md
 docs/TaxRatesListResponse.md
+docs/TemplateConfig.md
 docs/TemplateCreateRequest.md
 docs/TemplateDetail.md
 docs/TemplateDetailResponse.md
@@ -484,6 +485,7 @@ src/main/java/org/openapitools/client/model/TaxRateOut.java
 src/main/java/org/openapitools/client/model/TaxRatePatchRequest.java
 src/main/java/org/openapitools/client/model/TaxRateResponse.java
 src/main/java/org/openapitools/client/model/TaxRatesListResponse.java
+src/main/java/org/openapitools/client/model/TemplateConfig.java
 src/main/java/org/openapitools/client/model/TemplateCreateRequest.java
 src/main/java/org/openapitools/client/model/TemplateDetail.java
 src/main/java/org/openapitools/client/model/TemplateDetailResponse.java
@@ -732,6 +734,7 @@ src/test/java/org/openapitools/client/model/TaxRateOutTest.java
 src/test/java/org/openapitools/client/model/TaxRatePatchRequestTest.java
 src/test/java/org/openapitools/client/model/TaxRateResponseTest.java
 src/test/java/org/openapitools/client/model/TaxRatesListResponseTest.java
+src/test/java/org/openapitools/client/model/TemplateConfigTest.java
 src/test/java/org/openapitools/client/model/TemplateCreateRequestTest.java
 src/test/java/org/openapitools/client/model/TemplateDetailResponseTest.java
 src/test/java/org/openapitools/client/model/TemplateDetailTest.java
