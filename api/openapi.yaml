@@ -2684,6 +2684,13 @@ paths:
       - application/json
   /api/v1/renders/{render_id}/download:
     get:
+      description: |-
+        Fetch the PDF, by signature or by API key.
+
+        Two ways in, and the signature is checked *first* — before the row is looked
+        up — so a forged token cannot be used to tell a real render id from an
+        invented one. It also means the token path costs no auth work at all, which
+        matters because this is the one endpoint a browser hits directly.
       operationId: download_render
       parameters:
       - explode: false
@@ -2694,6 +2701,17 @@ paths:
           title: Render Id
           type: string
         style: simple
+      - description: The signature from this render's `download_url`. Present it and
+          no API key is needed — that is what makes the URL a link. Omit it and the
+          request authenticates normally.
+        explode: true
+        in: query
+        name: token
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -4485,6 +4503,77 @@ paths:
                 $ref: '#/components/schemas/PageSizesListResponse'
           description: Successful Response
       summary: List Page Sizes
+      tags:
+      - reference
+      x-visibility: public
+      x-accepts:
+      - application/json
+  /api/v1/reference/tax-categories:
+    get:
+      description: |-
+        UNCL5305, in full — the VAT treatment of a line, which its rate does not say.
+
+        Two lines at 0% may be zero-rated, exempt, reverse-charge or outside scope,
+        and EN 16931 puts them in separate VAT breakdown groups with different
+        mandatory fields. Exhaustive: a category outside this list is wrong.
+      operationId: list_tax_categories
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeListResponse'
+          description: Successful Response
+      summary: List Tax Categories
+      tags:
+      - reference
+      x-visibility: public
+      x-accepts:
+      - application/json
+  /api/v1/reference/tax-schemes:
+    get:
+      description: |-
+        UNCL5153 — which tax regime a document is issued under, one per document.
+
+        `VAT` is the only member an e-invoice can carry; the others exist so a
+        caller can state that their tax is *not* VAT and be told so, rather than
+        have VAT assumed on their behalf. There is no default: a PDF does not need
+        a scheme, and guessing one puts a claim in a document a tax authority reads
+        that the caller never made.
+      operationId: list_tax_schemes
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeListResponse'
+          description: Successful Response
+      summary: List Tax Schemes
+      tags:
+      - reference
+      x-visibility: public
+      x-accepts:
+      - application/json
+  /api/v1/reference/unit-codes:
+    get:
+      description: |-
+        UN/ECE Recommendation 20 — the unit a line item is measured in.
+
+        A **shortlist**: twenty-one of hundreds, ordered by how often an invoice
+        needs them. `exhaustive` is false, and it means it — `unit_code` accepts any
+        value, nothing validates against this list, and an uncommon code is still
+        correct. Offered because the field takes a code rather than the printed
+        label: mapping "hrs" to HUR is an inference that is right until it silently
+        is not, and the audience for the result is a tax authority.
+      operationId: list_unit_codes
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeListResponse'
+          description: Successful Response
+      summary: List Unit Codes
       tags:
       - reference
       x-visibility: public
@@ -7263,6 +7352,63 @@ components:
       - total
       title: CalculationBreakdown
       type: object
+    CodeListResponse:
+      description: |-
+        A coded list from a standard, and whether it is the whole of one.
+
+        `exhaustive` is the field that changes what a client does. `true` means a
+        value outside `data` is wrong, so the list can back a picker with no escape
+        hatch. `false` means `data` is a shortlist of the codes an invoice usually
+        needs — the API accepts any code, nothing validates against this, and
+        treating it as closed rejects values that are perfectly valid.
+      example:
+        standard: UN/ECE Recommendation 20
+        data:
+        - code: HUR
+          label: Hour
+        - code: HUR
+          label: Hour
+        exhaustive: true
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/CodeOut'
+          title: Data
+          type: array
+        standard:
+          description: The code list these values come from.
+          example: UN/ECE Recommendation 20
+          title: Standard
+          type: string
+        exhaustive:
+          description: Whether `data` is the complete list. When false it is a shortlist
+            and other codes remain valid.
+          title: Exhaustive
+          type: boolean
+      required:
+      - data
+      - exhaustive
+      - standard
+      title: CodeListResponse
+      type: object
+    CodeOut:
+      example:
+        code: HUR
+        label: Hour
+      properties:
+        code:
+          example: HUR
+          title: Code
+          type: string
+        label:
+          example: Hour
+          title: Label
+          type: string
+      required:
+      - code
+      - label
+      title: CodeOut
+      type: object
     ComplianceCheckOut:
       example:
         valid: true
@@ -9399,7 +9545,7 @@ components:
       example:
         delivery: url
         format: pdf
-        expires_in: 6
+        expires_in: 364564
       properties:
         format:
           default: pdf
@@ -9417,6 +9563,13 @@ components:
           type: string
         expires_in:
           default: 3600
+          description: "How long the render stays downloadable, in seconds (1 minute\
+            \ to 7 days). It is also the lifetime of the signature in `download_url`,\
+            \ which is why it is bounded: an unbounded value meant an unbounded grant.\
+            \ A value below the floor used to be accepted and produced a render that\
+            \ had already expired."
+          maximum: 604800
+          minimum: 60
           title: Expires In
           type: integer
       title: DocumentOutputOptions
@@ -9745,7 +9898,7 @@ components:
         template_version: 1
         format: pdf
         template_id: tpl_modern
-        expires_in: 6
+        expires_in: 364564
         page_size: LETTER
       properties:
         template_id:
@@ -9762,6 +9915,13 @@ components:
           type: string
         expires_in:
           default: 3600
+          description: "How long the render stays downloadable, in seconds (1 minute\
+            \ to 7 days). It is also the lifetime of the signature in `download_url`,\
+            \ which is why it is bounded: an unbounded value meant an unbounded grant.\
+            \ A value below the floor used to be accepted and produced a render that\
+            \ had already expired."
+          maximum: 604800
+          minimum: 60
           title: Expires In
           type: integer
         format:
@@ -9784,7 +9944,7 @@ components:
         output:
           delivery: url
           format: pdf
-          expires_in: 6
+          expires_in: 364564
         data:
           seller:
             contact_name: contact_name

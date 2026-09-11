@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * Render options for an already-stored document (&#x60;&#x60;POST /documents/{id}/renders&#x60;&#x60;).  Distinct from &#x60;&#x60;app.schemas.v1.DocumentRenderRequest&#x60;&#x60;, which carries a full inline document for the stateless &#x60;&#x60;POST /documents/render&#x60;&#x60;. Two classes sharing one name made FastAPI fall back to module-qualified schema names in the spec (&#x60;&#x60;app__documents__schemas__DocumentRenderRequest&#x60;&#x60;), which the SDK generators turned into &#x60;&#x60;AppDocumentsSchemasDocumentRenderRequest&#x60;&#x60;.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T02:32:41.381608782Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentRenderOptions {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
@@ -191,7 +191,9 @@ public class DocumentRenderOptions {
   }
 
   /**
-   * Get expiresIn
+   * How long the render stays downloadable, in seconds (1 minute to 7 days). It is also the lifetime of the signature in &#x60;download_url&#x60;, which is why it is bounded: an unbounded value meant an unbounded grant. A value below the floor used to be accepted and produced a render that had already expired.
+   * minimum: 60
+   * maximum: 604800
    * @return expiresIn
    */
   @javax.annotation.Nullable

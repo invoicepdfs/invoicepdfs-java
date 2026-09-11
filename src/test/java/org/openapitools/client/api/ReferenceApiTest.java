@@ -14,6 +14,7 @@
 package org.openapitools.client.api;
 
 import com.invoicepdfs.ApiException;
+import org.openapitools.client.model.CodeListResponse;
 import org.openapitools.client.model.CountriesListResponse;
 import org.openapitools.client.model.CurrenciesListResponse;
 import org.openapitools.client.model.DocumentTypesListResponse;
@@ -94,6 +95,32 @@ public class ReferenceApiTest {
     }
 
     /**
+     * List Tax Categories
+     *
+     * UNCL5305, in full — the VAT treatment of a line, which its rate does not say.  Two lines at 0% may be zero-rated, exempt, reverse-charge or outside scope, and EN 16931 puts them in separate VAT breakdown groups with different mandatory fields. Exhaustive: a category outside this list is wrong.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listTaxCategoriesTest() throws ApiException {
+        CodeListResponse response = api.listTaxCategories();
+        // TODO: test validations
+    }
+
+    /**
+     * List Tax Schemes
+     *
+     * UNCL5153 — which tax regime a document is issued under, one per document.  &#x60;VAT&#x60; is the only member an e-invoice can carry; the others exist so a caller can state that their tax is *not* VAT and be told so, rather than have VAT assumed on their behalf. There is no default: a PDF does not need a scheme, and guessing one puts a claim in a document a tax authority reads that the caller never made.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listTaxSchemesTest() throws ApiException {
+        CodeListResponse response = api.listTaxSchemes();
+        // TODO: test validations
+    }
+
+    /**
      * List Timezones
      *
      * @throws ApiException if the Api call fails
@@ -101,6 +128,19 @@ public class ReferenceApiTest {
     @Test
     public void listTimezonesTest() throws ApiException {
         TimezonesListResponse response = api.listTimezones();
+        // TODO: test validations
+    }
+
+    /**
+     * List Unit Codes
+     *
+     * UN/ECE Recommendation 20 — the unit a line item is measured in.  A **shortlist**: twenty-one of hundreds, ordered by how often an invoice needs them. &#x60;exhaustive&#x60; is false, and it means it — &#x60;unit_code&#x60; accepts any value, nothing validates against this list, and an uncommon code is still correct. Offered because the field takes a code rather than the printed label: mapping \&quot;hrs\&quot; to HUR is an inference that is right until it silently is not, and the audience for the result is a tax authority.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listUnitCodesTest() throws ApiException {
+        CodeListResponse response = api.listUnitCodes();
         // TODO: test validations
     }
 

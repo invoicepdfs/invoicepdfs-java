@@ -10,9 +10,11 @@ All URIs are relative to *http://localhost*
 
 <a id="downloadRender"></a>
 # **downloadRender**
-> File downloadRender(renderId)
+> File downloadRender(renderId, token)
 
 Download Render
+
+Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
 
 ### Example
 ```java
@@ -35,8 +37,9 @@ public class Example {
 
     RendersApi apiInstance = new RendersApi(defaultClient);
     String renderId = "renderId_example"; // String | 
+    String token = "token_example"; // String | The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally.
     try {
-      File result = apiInstance.downloadRender(renderId);
+      File result = apiInstance.downloadRender(renderId, token);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RendersApi#downloadRender");
@@ -54,6 +57,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **renderId** | **String**|  | |
+| **token** | **String**| The signature from this render&#39;s &#x60;download_url&#x60;. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally. | [optional] |
 
 ### Return type
 

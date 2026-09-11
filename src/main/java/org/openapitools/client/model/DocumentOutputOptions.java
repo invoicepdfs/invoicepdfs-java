@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentOutputOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T13:48:00.956218593Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T02:32:41.381608782Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentOutputOptions {
   /**
    * Gets or Sets format
@@ -214,7 +214,9 @@ public class DocumentOutputOptions {
   }
 
   /**
-   * Get expiresIn
+   * How long the render stays downloadable, in seconds (1 minute to 7 days). It is also the lifetime of the signature in &#x60;download_url&#x60;, which is why it is bounded: an unbounded value meant an unbounded grant. A value below the floor used to be accepted and produced a render that had already expired.
+   * minimum: 60
+   * maximum: 604800
    * @return expiresIn
    */
   @javax.annotation.Nullable

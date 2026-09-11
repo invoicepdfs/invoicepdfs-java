@@ -77,6 +77,7 @@ public class RendersApi {
     /**
      * Build call for downloadRender
      * @param renderId  (required)
+     * @param token The signature from this render&#39;s &#x60;download_url&#x60;. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -87,7 +88,7 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadRenderCall(String renderId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call downloadRenderCall(String renderId, String token, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -113,6 +114,10 @@ public class RendersApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (token != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("token", token));
+        }
+
         final String[] localVarAccepts = {
             "application/pdf",
             "application/json"
@@ -134,20 +139,21 @@ public class RendersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadRenderValidateBeforeCall(String renderId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadRenderValidateBeforeCall(String renderId, String token, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'renderId' is set
         if (renderId == null) {
             throw new ApiException("Missing the required parameter 'renderId' when calling downloadRender(Async)");
         }
 
-        return downloadRenderCall(renderId, _callback);
+        return downloadRenderCall(renderId, token, _callback);
 
     }
 
     /**
      * Download Render
-     * 
+     * Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
      * @param renderId  (required)
+     * @param token The signature from this render&#39;s &#x60;download_url&#x60;. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally. (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -157,15 +163,16 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadRender(String renderId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadRenderWithHttpInfo(renderId);
+    public File downloadRender(String renderId, String token) throws ApiException {
+        ApiResponse<File> localVarResp = downloadRenderWithHttpInfo(renderId, token);
         return localVarResp.getData();
     }
 
     /**
      * Download Render
-     * 
+     * Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
      * @param renderId  (required)
+     * @param token The signature from this render&#39;s &#x60;download_url&#x60;. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally. (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -175,16 +182,17 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadRenderWithHttpInfo(String renderId) throws ApiException {
-        okhttp3.Call localVarCall = downloadRenderValidateBeforeCall(renderId, null);
+    public ApiResponse<File> downloadRenderWithHttpInfo(String renderId, String token) throws ApiException {
+        okhttp3.Call localVarCall = downloadRenderValidateBeforeCall(renderId, token, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Download Render (asynchronously)
-     * 
+     * Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
      * @param renderId  (required)
+     * @param token The signature from this render&#39;s &#x60;download_url&#x60;. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -195,9 +203,9 @@ public class RendersApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadRenderAsync(String renderId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadRenderAsync(String renderId, String token, final ApiCallback<File> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = downloadRenderValidateBeforeCall(renderId, _callback);
+        okhttp3.Call localVarCall = downloadRenderValidateBeforeCall(renderId, token, _callback);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

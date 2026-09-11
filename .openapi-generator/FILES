@@ -72,6 +72,8 @@ docs/BusinessProfileResponse.md
 docs/BusinessProfilesApi.md
 docs/BusinessProfilesListResponse.md
 docs/CalculationBreakdown.md
+docs/CodeListResponse.md
+docs/CodeOut.md
 docs/ComplianceCheckOut.md
 docs/ComplianceRulesetOut.md
 docs/ComplianceViolationOut.md
@@ -369,6 +371,8 @@ src/main/java/org/openapitools/client/model/BusinessProfilePatch.java
 src/main/java/org/openapitools/client/model/BusinessProfileResponse.java
 src/main/java/org/openapitools/client/model/BusinessProfilesListResponse.java
 src/main/java/org/openapitools/client/model/CalculationBreakdown.java
+src/main/java/org/openapitools/client/model/CodeListResponse.java
+src/main/java/org/openapitools/client/model/CodeOut.java
 src/main/java/org/openapitools/client/model/ComplianceCheckOut.java
 src/main/java/org/openapitools/client/model/ComplianceRulesetOut.java
 src/main/java/org/openapitools/client/model/ComplianceViolationOut.java
@@ -618,6 +622,8 @@ src/test/java/org/openapitools/client/model/BusinessProfilePatchTest.java
 src/test/java/org/openapitools/client/model/BusinessProfileResponseTest.java
 src/test/java/org/openapitools/client/model/BusinessProfilesListResponseTest.java
 src/test/java/org/openapitools/client/model/CalculationBreakdownTest.java
+src/test/java/org/openapitools/client/model/CodeListResponseTest.java
+src/test/java/org/openapitools/client/model/CodeOutTest.java
 src/test/java/org/openapitools/client/model/ComplianceCheckOutTest.java
 src/test/java/org/openapitools/client/model/ComplianceRulesetOutTest.java
 src/test/java/org/openapitools/client/model/ComplianceViolationOutTest.java
