@@ -362,6 +362,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
+| **409** | The document is not a draft. Only drafts can be deleted. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="downloadDocumentXml"></a>

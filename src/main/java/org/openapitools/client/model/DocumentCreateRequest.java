@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T17:21:33.306163778Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T18:45:36.851537712Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentCreateRequest {
   /**
    * Gets or Sets documentType

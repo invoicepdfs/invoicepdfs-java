@@ -143,6 +143,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
+| **409** | The profile is named on documents or recurring invoices. &#x60;details.referenced_by&#x60; counts each one. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="getBusinessProfile"></a>

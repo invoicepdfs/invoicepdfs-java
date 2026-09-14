@@ -62,7 +62,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceDraftRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T17:21:33.306163778Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T18:45:36.851537712Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceDraftRequest {
   public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
   @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)

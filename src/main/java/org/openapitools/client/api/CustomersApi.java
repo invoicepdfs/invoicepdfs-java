@@ -222,6 +222,7 @@ public class CustomersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The customer is named on documents or recurring invoices. &#x60;details.referenced_by&#x60; counts each one. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -291,6 +292,7 @@ public class CustomersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The customer is named on documents or recurring invoices. &#x60;details.referenced_by&#x60; counts each one. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -309,6 +311,7 @@ public class CustomersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The customer is named on documents or recurring invoices. &#x60;details.referenced_by&#x60; counts each one. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -329,6 +332,7 @@ public class CustomersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The customer is named on documents or recurring invoices. &#x60;details.referenced_by&#x60; counts each one. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
