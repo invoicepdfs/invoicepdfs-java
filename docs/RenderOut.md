@@ -17,6 +17,7 @@
 |**expiresAt** | **String** |  |  |
 |**calculation** | [**CalculationBreakdown**](CalculationBreakdown.md) |  |  |
 |**createdAt** | **String** |  |  |
+|**compliance** | [**RenderComplianceOut**](RenderComplianceOut.md) |  |  [optional] |
 
 
 

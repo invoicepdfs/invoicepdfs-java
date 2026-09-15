@@ -13006,6 +13006,62 @@ components:
       - pagination
       title: RecurringInvoicesListResponse
       type: object
+    RenderComplianceOut:
+      description: |-
+        What this PDF was held to, for a render that carries embedded XML.
+
+        Absent on a plain `pdf`: no ruleset was applied, so there is no claim to
+        report. A render that was produced at all satisfied every fatal rule that
+        ran — the render is refused otherwise — so the useful questions are which
+        rules those were, and whether all of them ran.
+      example:
+        advisories:
+        - severity: fatal
+          path: "lines[1].unit_code"
+          ruleset: semantic
+          rule: BT-130
+          message: A coded unit is required.
+        - severity: fatal
+          path: "lines[1].unit_code"
+          ruleset: semantic
+          rule: BT-130
+          message: A coded unit is required.
+        fully_checked: true
+        ruleset_version: en16931-1.3.16
+        profile: factur_x_en16931
+      properties:
+        profile:
+          description: The ruleset this document was built and validated against.
+          example: factur_x_en16931
+          title: Profile
+          type: string
+        ruleset_version:
+          description: "The artefact versions the check actually ran. A profile is\
+            \ held to more than one ruleset, and they are regenerated over time, so\
+            \ this is what makes 'which rules did this pass?' answerable later."
+          example: en16931-1.3.16
+          title: Ruleset Version
+          type: string
+        fully_checked:
+          description: "False when a ruleset could not run. The document still satisfied\
+            \ everything that did, but the authoritative Schematron tier being absent\
+            \ is a materially weaker statement than it passing."
+          title: Fully Checked
+          type: boolean
+        advisories:
+          description: "Non-fatal findings the render proceeded past. Both rulesets\
+            \ grade a large share of their rules as advisory, so these are worth reading\
+            \ and are not a rejection."
+          items:
+            $ref: '#/components/schemas/ComplianceViolationOut'
+          title: Advisories
+          type: array
+      required:
+      - fully_checked
+      - profile
+      - ruleset_version
+      title: RenderComplianceOut
+      type: object
     RenderOut:
       example:
         calculation:
@@ -13029,6 +13085,21 @@ components:
             currency: currency
         template_version: 0
         expires_at: expires_at
+        compliance:
+          advisories:
+          - severity: fatal
+            path: "lines[1].unit_code"
+            ruleset: semantic
+            rule: BT-130
+            message: A coded unit is required.
+          - severity: fatal
+            path: "lines[1].unit_code"
+            ruleset: semantic
+            rule: BT-130
+            message: A coded unit is required.
+          fully_checked: true
+          ruleset_version: en16931-1.3.16
+          profile: factur_x_en16931
         format: pdf
         download_url: download_url
         created_at: created_at
@@ -13079,6 +13150,8 @@ components:
         created_at:
           title: Created At
           type: string
+        compliance:
+          $ref: '#/components/schemas/RenderComplianceOut'
       required:
       - calculation
       - created_at
@@ -13115,6 +13188,21 @@ components:
               currency: currency
           template_version: 0
           expires_at: expires_at
+          compliance:
+            advisories:
+            - severity: fatal
+              path: "lines[1].unit_code"
+              ruleset: semantic
+              rule: BT-130
+              message: A coded unit is required.
+            - severity: fatal
+              path: "lines[1].unit_code"
+              ruleset: semantic
+              rule: BT-130
+              message: A coded unit is required.
+            fully_checked: true
+            ruleset_version: en16931-1.3.16
+            profile: factur_x_en16931
           format: pdf
           download_url: download_url
           created_at: created_at

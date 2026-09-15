@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.CalculationBreakdown;
+import org.openapitools.client.model.RenderComplianceOut;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -51,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * RenderOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T18:45:36.851537712Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-15T02:40:13.506657392Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RenderOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -257,6 +258,10 @@ public class RenderOut {
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private String createdAt;
 
+  public static final String SERIALIZED_NAME_COMPLIANCE = "compliance";
+  @SerializedName(SERIALIZED_NAME_COMPLIANCE)
+  private RenderComplianceOut compliance;
+
   public RenderOut() {
   }
 
@@ -450,6 +455,25 @@ public class RenderOut {
   }
 
 
+  public RenderOut compliance(RenderComplianceOut compliance) {
+    this.compliance = compliance;
+    return this;
+  }
+
+  /**
+   * Get compliance
+   * @return compliance
+   */
+  @javax.annotation.Nullable
+  public RenderComplianceOut getCompliance() {
+    return compliance;
+  }
+
+  public void setCompliance(RenderComplianceOut compliance) {
+    this.compliance = compliance;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -469,7 +493,8 @@ public class RenderOut {
         Objects.equals(this.downloadUrl, renderOut.downloadUrl) &&
         Objects.equals(this.expiresAt, renderOut.expiresAt) &&
         Objects.equals(this.calculation, renderOut.calculation) &&
-        Objects.equals(this.createdAt, renderOut.createdAt);
+        Objects.equals(this.createdAt, renderOut.createdAt) &&
+        Objects.equals(this.compliance, renderOut.compliance);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -478,7 +503,7 @@ public class RenderOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, documentType, templateId, templateVersion, format, downloadUrl, expiresAt, calculation, createdAt);
+    return Objects.hash(id, status, documentType, templateId, templateVersion, format, downloadUrl, expiresAt, calculation, createdAt, compliance);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -502,6 +527,7 @@ public class RenderOut {
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    calculation: ").append(toIndentedString(calculation)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -534,6 +560,7 @@ public class RenderOut {
     openapiFields.add("expires_at");
     openapiFields.add("calculation");
     openapiFields.add("created_at");
+    openapiFields.add("compliance");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -607,6 +634,10 @@ public class RenderOut {
       CalculationBreakdown.validateJsonElement(jsonObj.get("calculation"));
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
+      }
+      // validate the optional field `compliance`
+      if (jsonObj.get("compliance") != null && !jsonObj.get("compliance").isJsonNull()) {
+        RenderComplianceOut.validateJsonElement(jsonObj.get("compliance"));
       }
   }
 
