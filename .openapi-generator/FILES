@@ -74,6 +74,7 @@ docs/BusinessProfilesListResponse.md
 docs/CalculationBreakdown.md
 docs/CodeListResponse.md
 docs/CodeOut.md
+docs/ComplianceApi.md
 docs/ComplianceCheckOut.md
 docs/ComplianceRulesetOut.md
 docs/ComplianceViolationOut.md
@@ -288,6 +289,7 @@ src/main/java/org/openapitools/client/api/BatchesApi.java
 src/main/java/org/openapitools/client/api/BillingApi.java
 src/main/java/org/openapitools/client/api/BrandingProfilesApi.java
 src/main/java/org/openapitools/client/api/BusinessProfilesApi.java
+src/main/java/org/openapitools/client/api/ComplianceApi.java
 src/main/java/org/openapitools/client/api/CustomersApi.java
 src/main/java/org/openapitools/client/api/DeliveriesApi.java
 src/main/java/org/openapitools/client/api/DocumentAttachmentsApi.java
@@ -541,6 +543,7 @@ src/test/java/org/openapitools/client/api/BatchesApiTest.java
 src/test/java/org/openapitools/client/api/BillingApiTest.java
 src/test/java/org/openapitools/client/api/BrandingProfilesApiTest.java
 src/test/java/org/openapitools/client/api/BusinessProfilesApiTest.java
+src/test/java/org/openapitools/client/api/ComplianceApiTest.java
 src/test/java/org/openapitools/client/api/CustomersApiTest.java
 src/test/java/org/openapitools/client/api/DeliveriesApiTest.java
 src/test/java/org/openapitools/client/api/DocumentAttachmentsApiTest.java

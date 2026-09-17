@@ -1237,62 +1237,6 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/documents/{document_id}/xml:
-    get:
-      description: |-
-        The e-invoicing XML for a document already stored here.
-
-        Reads `data_json` directly rather than going through the render path's
-        reconstruction: the status, the logo and the source document's number are
-        all attached there for the *PDF*, and none of them belong in the XML. The
-        credit note's BG-3 reference is already in the stored payload, resolved when
-        the document was written.
-      operationId: download_document_xml
-      parameters:
-      - explode: false
-        in: path
-        name: document_id
-        required: true
-        schema:
-          title: Document Id
-          type: string
-        style: simple
-      - description: "Which ruleset to write this against. No default: a document\
-          \ valid under one can be rejected by another, so the choice is the request."
-        explode: true
-        in: query
-        name: profile
-        required: true
-        schema:
-          description: "Which ruleset to write this against. No default: a document\
-            \ valid under one can be rejected by another, so the choice is the request."
-          example: peppol_bis_billing_3
-          title: Profile
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/xml:
-              schema:
-                type: string
-          description: "The stored document as XML, in the syntax the chosen profile\
-            \ is expressed in — UBL for Peppol BIS, CII for Factur-X."
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiErrorResponse'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Download Document Xml
-      tags:
-      - documents
-      x-visibility: public
-      x-accepts:
-      - application/json
-      - application/xml
   /api/v1/documents/{document_id}:
     delete:
       operationId: delete_document
@@ -1838,97 +1782,6 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /api/v1/documents/validate-compliance:
-    post:
-      description: |-
-        Check a document against an e-invoicing ruleset without rendering it.
-
-        Costs no renders: nothing is stored and no PDF is produced, so a caller can
-        check every invoice they are about to send rather than discovering the
-        problem from a rejection weeks later.
-
-        Two tiers run, and both are reported. The mandatory-field check names a
-        field of the request you can go and change. Schematron then serializes the
-        document and runs the **published rules at a pinned version** over the
-        result — the same artefacts an access point runs — so a finding here quotes
-        the rule id a rejection notice would quote.
-
-        Read `valid` together with `fully_checked`: `valid` says nothing fatal was
-        found, and `rulesets` says what actually ran to find it.
-      operationId: validate_compliance
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DocumentComplianceRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DocumentComplianceResponse'
-          description: Successful Response
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiErrorResponse'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Validate Compliance
-      tags:
-      - documents
-      x-visibility: public
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /api/v1/documents/xml:
-    post:
-      description: |-
-        The e-invoicing XML for a document, without storing anything.
-
-        Takes the same body as `/validate-compliance`, and the pairing is the point:
-        check first, then take the XML once it passes. Nothing here validates
-        against the ruleset — a document missing mandatory fields serialises to XML
-        missing those elements, which is a more useful artefact to look at than a
-        refusal, and `/validate-compliance` is where the refusal belongs.
-
-        The syntax is not a parameter. It follows from the profile, because a
-        profile already is a syntax plus a ruleset, and asking a caller for both is
-        asking them to know that Peppol means UBL.
-      operationId: render_document_xml
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DocumentComplianceRequest'
-        required: true
-      responses:
-        "200":
-          content:
-            application/xml:
-              schema:
-                type: string
-          description: "The document as XML, in the syntax the chosen profile is expressed\
-            \ in — UBL for Peppol BIS, CII for Factur-X."
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiErrorResponse'
-          description: Validation Error
-      security:
-      - HTTPBearer: []
-      summary: Render Document Xml
-      tags:
-      - documents
-      x-visibility: public
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-      - application/xml
   /api/v1/documents/calculate:
     post:
       operationId: calculate_document
@@ -2006,6 +1859,153 @@ paths:
       x-accepts:
       - application/json
       - application/pdf
+  /api/v1/documents/validate-compliance:
+    post:
+      description: |-
+        Check a document against an e-invoicing ruleset without rendering it.
+
+        Costs no renders: nothing is stored and no PDF is produced, so a caller can
+        check every invoice they are about to send rather than discovering the
+        problem from a rejection weeks later.
+
+        Two tiers run, and both are reported. The mandatory-field check names a
+        field of the request you can go and change. Schematron then serializes the
+        document and runs the **published rules at a pinned version** over the
+        result — the same artefacts an access point runs — so a finding here quotes
+        the rule id a rejection notice would quote.
+
+        Read `valid` together with `fully_checked`: `valid` says nothing fatal was
+        found, and `rulesets` says what actually ran to find it.
+      operationId: validate_compliance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentComplianceRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentComplianceResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Validate Compliance
+      tags:
+      - compliance
+      x-visibility: public
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/documents/xml:
+    post:
+      description: |-
+        The e-invoicing XML for a document, without storing anything.
+
+        Takes the same body as `/validate-compliance`, and the pairing is the point:
+        check first, then take the XML once it passes. Nothing here validates
+        against the ruleset — a document missing mandatory fields serialises to XML
+        missing those elements, which is a more useful artefact to look at than a
+        refusal, and `/validate-compliance` is where the refusal belongs.
+
+        The syntax is not a parameter. It follows from the profile, because a
+        profile already is a syntax plus a ruleset, and asking a caller for both is
+        asking them to know that Peppol means UBL.
+      operationId: render_document_xml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentComplianceRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/xml:
+              schema:
+                type: string
+          description: "The document as XML, in the syntax the chosen profile is expressed\
+            \ in — UBL for Peppol BIS, CII for Factur-X."
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Render Document Xml
+      tags:
+      - compliance
+      x-visibility: public
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - application/xml
+  /api/v1/documents/{document_id}/xml:
+    get:
+      description: |-
+        The e-invoicing XML for a document already stored here.
+
+        Reads `data_json` directly rather than going through the render path's
+        reconstruction: the status, the logo and the source document's number are
+        all attached there for the *PDF*, and none of them belong in the XML. The
+        credit note's BG-3 reference is already in the stored payload, resolved when
+        the document was written.
+      operationId: download_document_xml
+      parameters:
+      - explode: false
+        in: path
+        name: document_id
+        required: true
+        schema:
+          title: Document Id
+          type: string
+        style: simple
+      - description: "Which ruleset to write this against. No default: a document\
+          \ valid under one can be rejected by another, so the choice is the request."
+        explode: true
+        in: query
+        name: profile
+        required: true
+        schema:
+          description: "Which ruleset to write this against. No default: a document\
+            \ valid under one can be rejected by another, so the choice is the request."
+          example: peppol_bis_billing_3
+          title: Profile
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/xml:
+              schema:
+                type: string
+          description: "The stored document as XML, in the syntax the chosen profile\
+            \ is expressed in — UBL for Peppol BIS, CII for Factur-X."
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: Download Document Xml
+      tags:
+      - compliance
+      x-visibility: public
+      x-accepts:
+      - application/json
+      - application/xml
   /api/v1/documents/{document_id}/attachments:
     get:
       operationId: list_document_attachments

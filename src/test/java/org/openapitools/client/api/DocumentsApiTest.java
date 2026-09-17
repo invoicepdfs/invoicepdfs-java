@@ -20,8 +20,6 @@ import org.openapitools.client.model.DeliveryResponse;
 import org.openapitools.client.model.DeliverySendRequest;
 import org.openapitools.client.model.DocumentCalculateRequest;
 import org.openapitools.client.model.DocumentCalculateResponse;
-import org.openapitools.client.model.DocumentComplianceRequest;
-import org.openapitools.client.model.DocumentComplianceResponse;
 import org.openapitools.client.model.DocumentCreateRequest;
 import org.openapitools.client.model.DocumentPatchRequest;
 import org.openapitools.client.model.DocumentRenderOptions;
@@ -109,21 +107,6 @@ public class DocumentsApiTest {
     public void deleteDocumentTest() throws ApiException {
         String documentId = null;
         SimpleBoolResponse response = api.deleteDocument(documentId);
-        // TODO: test validations
-    }
-
-    /**
-     * Download Document Xml
-     *
-     * The e-invoicing XML for a document already stored here.  Reads &#x60;data_json&#x60; directly rather than going through the render path&#39;s reconstruction: the status, the logo and the source document&#39;s number are all attached there for the *PDF*, and none of them belong in the XML. The credit note&#39;s BG-3 reference is already in the stored payload, resolved when the document was written.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void downloadDocumentXmlTest() throws ApiException {
-        String documentId = null;
-        String profile = null;
-        String response = api.downloadDocumentXml(documentId, profile);
         // TODO: test validations
     }
 
@@ -242,20 +225,6 @@ public class DocumentsApiTest {
     }
 
     /**
-     * Render Document Xml
-     *
-     * The e-invoicing XML for a document, without storing anything.  Takes the same body as &#x60;/validate-compliance&#x60;, and the pairing is the point: check first, then take the XML once it passes. Nothing here validates against the ruleset — a document missing mandatory fields serialises to XML missing those elements, which is a more useful artefact to look at than a refusal, and &#x60;/validate-compliance&#x60; is where the refusal belongs.  The syntax is not a parameter. It follows from the profile, because a profile already is a syntax plus a ruleset, and asking a caller for both is asking them to know that Peppol means UBL.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void renderDocumentXmlTest() throws ApiException {
-        DocumentComplianceRequest documentComplianceRequest = null;
-        String response = api.renderDocumentXml(documentComplianceRequest);
-        // TODO: test validations
-    }
-
-    /**
      * Restore Document
      *
      * @throws ApiException if the Api call fails
@@ -290,20 +259,6 @@ public class DocumentsApiTest {
         String documentId = null;
         DocumentPatchRequest documentPatchRequest = null;
         DocumentResponse response = api.updateDocument(documentId, documentPatchRequest);
-        // TODO: test validations
-    }
-
-    /**
-     * Validate Compliance
-     *
-     * Check a document against an e-invoicing ruleset without rendering it.  Costs no renders: nothing is stored and no PDF is produced, so a caller can check every invoice they are about to send rather than discovering the problem from a rejection weeks later.  Two tiers run, and both are reported. The mandatory-field check names a field of the request you can go and change. Schematron then serializes the document and runs the **published rules at a pinned version** over the result — the same artefacts an access point runs — so a finding here quotes the rule id a rejection notice would quote.  Read &#x60;valid&#x60; together with &#x60;fully_checked&#x60;: &#x60;valid&#x60; says nothing fatal was found, and &#x60;rulesets&#x60; says what actually ran to find it.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void validateComplianceTest() throws ApiException {
-        DocumentComplianceRequest documentComplianceRequest = null;
-        DocumentComplianceResponse response = api.validateCompliance(documentComplianceRequest);
         // TODO: test validations
     }
 
