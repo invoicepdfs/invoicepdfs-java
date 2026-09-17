@@ -3003,7 +3003,7 @@ paths:
               $ref: '#/components/schemas/BatchCreateRequest'
         required: true
       responses:
-        "200":
+        "202":
           content:
             application/json:
               schema:
@@ -4217,6 +4217,55 @@ paths:
       - tax-rates
       x-visibility: public
       x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/jobs:
+    get:
+      description: |-
+        This account's jobs, newest first.
+
+        Without it the other three routes here were unreachable: a job id was never
+        returned by anything, so there was no way to arrive at one.
+      operationId: list_jobs
+      parameters:
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          maximum: 100
+          minimum: 1
+          title: Limit
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobsListResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+          description: Validation Error
+      security:
+      - HTTPBearer: []
+      summary: List Jobs
+      tags:
+      - jobs
+      x-visibility: internal
       x-accepts:
       - application/json
   /api/v1/jobs/{job_id}:
@@ -11865,6 +11914,50 @@ components:
       required:
       - data
       title: JobResponse
+      type: object
+    JobsListResponse:
+      example:
+        pagination:
+          next_cursor: next_cursor
+          has_more: false
+        data:
+        - result:
+            key: ""
+          completed_at: completed_at
+          progress:
+            current: 0
+            total: 6
+            percentage: 1
+          created_at: created_at
+          started_at: started_at
+          id: id
+          type: type
+          error: error
+          status: queued
+        - result:
+            key: ""
+          completed_at: completed_at
+          progress:
+            current: 0
+            total: 6
+            percentage: 1
+          created_at: created_at
+          started_at: started_at
+          id: id
+          type: type
+          error: error
+          status: queued
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/JobOut'
+          title: Data
+          type: array
+        pagination:
+          $ref: '#/components/schemas/CursorPagination'
+      required:
+      - data
+      title: JobsListResponse
       type: object
     LineItemDiscountInput:
       example:

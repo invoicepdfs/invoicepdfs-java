@@ -16,6 +16,7 @@ package org.openapitools.client.api;
 import com.invoicepdfs.ApiException;
 import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.JobResponse;
+import org.openapitools.client.model.JobsListResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -53,6 +54,21 @@ public class JobsApiTest {
     public void getJobTest() throws ApiException {
         String jobId = null;
         JobResponse response = api.getJob(jobId);
+        // TODO: test validations
+    }
+
+    /**
+     * List Jobs
+     *
+     * This account&#39;s jobs, newest first.  Without it the other three routes here were unreachable: a job id was never returned by anything, so there was no way to arrive at one.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listJobsTest() throws ApiException {
+        Integer limit = null;
+        String cursor = null;
+        JobsListResponse response = api.listJobs(limit, cursor);
         // TODO: test validations
     }
 

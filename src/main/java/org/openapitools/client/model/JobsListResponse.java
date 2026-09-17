@@ -23,7 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.ApiRequestLogOut;
+import org.openapitools.client.model.CursorPagination;
+import org.openapitools.client.model.JobOut;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,23 +51,27 @@ import java.util.Set;
 import com.invoicepdfs.JSON;
 
 /**
- * ApiRequestLogsListResponse
+ * JobsListResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-17T21:10:04.226323459Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class ApiRequestLogsListResponse {
+public class JobsListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<ApiRequestLogOut> data = new ArrayList<>();
+  private List<JobOut> data = new ArrayList<>();
 
-  public ApiRequestLogsListResponse() {
+  public static final String SERIALIZED_NAME_PAGINATION = "pagination";
+  @SerializedName(SERIALIZED_NAME_PAGINATION)
+  private CursorPagination pagination;
+
+  public JobsListResponse() {
   }
 
-  public ApiRequestLogsListResponse data(List<ApiRequestLogOut> data) {
+  public JobsListResponse data(List<JobOut> data) {
     this.data = data;
     return this;
   }
 
-  public ApiRequestLogsListResponse addDataItem(ApiRequestLogOut dataItem) {
+  public JobsListResponse addDataItem(JobOut dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -79,12 +84,31 @@ public class ApiRequestLogsListResponse {
    * @return data
    */
   @javax.annotation.Nonnull
-  public List<ApiRequestLogOut> getData() {
+  public List<JobOut> getData() {
     return data;
   }
 
-  public void setData(List<ApiRequestLogOut> data) {
+  public void setData(List<JobOut> data) {
     this.data = data;
+  }
+
+
+  public JobsListResponse pagination(CursorPagination pagination) {
+    this.pagination = pagination;
+    return this;
+  }
+
+  /**
+   * Get pagination
+   * @return pagination
+   */
+  @javax.annotation.Nullable
+  public CursorPagination getPagination() {
+    return pagination;
+  }
+
+  public void setPagination(CursorPagination pagination) {
+    this.pagination = pagination;
   }
 
 
@@ -97,20 +121,22 @@ public class ApiRequestLogsListResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiRequestLogsListResponse apiRequestLogsListResponse = (ApiRequestLogsListResponse) o;
-    return Objects.equals(this.data, apiRequestLogsListResponse.data);
+    JobsListResponse jobsListResponse = (JobsListResponse) o;
+    return Objects.equals(this.data, jobsListResponse.data) &&
+        Objects.equals(this.pagination, jobsListResponse.pagination);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data);
+    return Objects.hash(data, pagination);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiRequestLogsListResponse {\n");
+    sb.append("class JobsListResponse {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,6 +160,7 @@ public class ApiRequestLogsListResponse {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("data");
+    openapiFields.add("pagination");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -144,25 +171,25 @@ public class ApiRequestLogsListResponse {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ApiRequestLogsListResponse
+   * @throws IOException if the JSON Element is invalid with respect to JobsListResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ApiRequestLogsListResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ApiRequestLogsListResponse is not found in the empty JSON string", ApiRequestLogsListResponse.openapiRequiredFields.toString()));
+        if (!JobsListResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in JobsListResponse is not found in the empty JSON string", JobsListResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ApiRequestLogsListResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ApiRequestLogsListResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!JobsListResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `JobsListResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ApiRequestLogsListResponse.openapiRequiredFields) {
+      for (String requiredField : JobsListResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -176,30 +203,34 @@ public class ApiRequestLogsListResponse {
       JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
       // validate the required field `data` (array)
       for (int i = 0; i < jsonArraydata.size(); i++) {
-        ApiRequestLogOut.validateJsonElement(jsonArraydata.get(i));
+        JobOut.validateJsonElement(jsonArraydata.get(i));
       };
+      // validate the optional field `pagination`
+      if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
+        CursorPagination.validateJsonElement(jsonObj.get("pagination"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ApiRequestLogsListResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ApiRequestLogsListResponse' and its subtypes
+       if (!JobsListResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'JobsListResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ApiRequestLogsListResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ApiRequestLogsListResponse.class));
+       final TypeAdapter<JobsListResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(JobsListResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ApiRequestLogsListResponse>() {
+       return (TypeAdapter<T>) new TypeAdapter<JobsListResponse>() {
            @Override
-           public void write(JsonWriter out, ApiRequestLogsListResponse value) throws IOException {
+           public void write(JsonWriter out, JobsListResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ApiRequestLogsListResponse read(JsonReader in) throws IOException {
+           public JobsListResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -210,18 +241,18 @@ public class ApiRequestLogsListResponse {
   }
 
   /**
-   * Create an instance of ApiRequestLogsListResponse given an JSON string
+   * Create an instance of JobsListResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ApiRequestLogsListResponse
-   * @throws IOException if the JSON string is invalid with respect to ApiRequestLogsListResponse
+   * @return An instance of JobsListResponse
+   * @throws IOException if the JSON string is invalid with respect to JobsListResponse
    */
-  public static ApiRequestLogsListResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ApiRequestLogsListResponse.class);
+  public static JobsListResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, JobsListResponse.class);
   }
 
   /**
-   * Convert an instance of ApiRequestLogsListResponse to an JSON string
+   * Convert an instance of JobsListResponse to an JSON string
    *
    * @return JSON string
    */

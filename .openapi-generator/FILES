@@ -157,6 +157,7 @@ docs/JobOut.md
 docs/JobProgressOut.md
 docs/JobResponse.md
 docs/JobsApi.md
+docs/JobsListResponse.md
 docs/LineItemDiscountInput.md
 docs/LineItemTaxInput.md
 docs/LocaleOut.md
@@ -450,6 +451,7 @@ src/main/java/org/openapitools/client/model/InvoicesListResponse.java
 src/main/java/org/openapitools/client/model/JobOut.java
 src/main/java/org/openapitools/client/model/JobProgressOut.java
 src/main/java/org/openapitools/client/model/JobResponse.java
+src/main/java/org/openapitools/client/model/JobsListResponse.java
 src/main/java/org/openapitools/client/model/LineItemDiscountInput.java
 src/main/java/org/openapitools/client/model/LineItemTaxInput.java
 src/main/java/org/openapitools/client/model/LocaleOut.java
@@ -703,6 +705,7 @@ src/test/java/org/openapitools/client/model/InvoicesListResponseTest.java
 src/test/java/org/openapitools/client/model/JobOutTest.java
 src/test/java/org/openapitools/client/model/JobProgressOutTest.java
 src/test/java/org/openapitools/client/model/JobResponseTest.java
+src/test/java/org/openapitools/client/model/JobsListResponseTest.java
 src/test/java/org/openapitools/client/model/LineItemDiscountInputTest.java
 src/test/java/org/openapitools/client/model/LineItemTaxInputTest.java
 src/test/java/org/openapitools/client/model/LocaleOutTest.java
