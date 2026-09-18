@@ -209,7 +209,7 @@ public class DeliveriesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -271,14 +271,14 @@ public class DeliveriesApi {
 
     /**
      * Retry Delivery
-     * 
+     * Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in &#x60;queued&#x60;. Transient failures are already retried automatically; this is for after those are exhausted.
      * @param deliveryId  (required)
      * @return DeliveryResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -289,14 +289,14 @@ public class DeliveriesApi {
 
     /**
      * Retry Delivery
-     * 
+     * Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in &#x60;queued&#x60;. Transient failures are already retried automatically; this is for after those are exhausted.
      * @param deliveryId  (required)
      * @return ApiResponse&lt;DeliveryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -308,7 +308,7 @@ public class DeliveriesApi {
 
     /**
      * Retry Delivery (asynchronously)
-     * 
+     * Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in &#x60;queued&#x60;. Transient failures are already retried automatically; this is for after those are exhausted.
      * @param deliveryId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -316,7 +316,7 @@ public class DeliveriesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */

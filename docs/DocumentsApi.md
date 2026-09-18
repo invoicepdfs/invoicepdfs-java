@@ -1040,6 +1040,8 @@ public class Example {
 
 Send Document
 
+Queue the document to be emailed.  Returns 202 with the delivery in &#x60;queued&#x60;. The mail is sent in the background and retried on transient failure; poll &#x60;GET /deliveries/{id}&#x60; for the outcome.
+
 ### Example
 ```java
 // Import classes:
@@ -1099,7 +1101,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **202** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="updateDocument"></a>

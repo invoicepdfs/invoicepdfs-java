@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * One ruleset the document was held to, and whether it actually ran.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-17T21:10:04.226323459Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T04:53:27.051151016Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ComplianceRulesetOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

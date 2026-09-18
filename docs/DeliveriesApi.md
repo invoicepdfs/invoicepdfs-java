@@ -80,6 +80,8 @@ public class Example {
 
 Retry Delivery
 
+Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in &#x60;queued&#x60;. Transient failures are already retried automatically; this is for after those are exhausted.
+
 ### Example
 ```java
 // Import classes:
@@ -137,6 +139,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **202** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 

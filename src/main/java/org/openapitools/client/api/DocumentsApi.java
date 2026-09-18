@@ -2080,7 +2080,7 @@ public class DocumentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -2148,7 +2148,7 @@ public class DocumentsApi {
 
     /**
      * Send Document
-     * 
+     * Queue the document to be emailed.  Returns 202 with the delivery in &#x60;queued&#x60;. The mail is sent in the background and retried on transient failure; poll &#x60;GET /deliveries/{id}&#x60; for the outcome.
      * @param documentId  (required)
      * @param deliverySendRequest  (required)
      * @return DeliveryResponse
@@ -2156,7 +2156,7 @@ public class DocumentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -2167,7 +2167,7 @@ public class DocumentsApi {
 
     /**
      * Send Document
-     * 
+     * Queue the document to be emailed.  Returns 202 with the delivery in &#x60;queued&#x60;. The mail is sent in the background and retried on transient failure; poll &#x60;GET /deliveries/{id}&#x60; for the outcome.
      * @param documentId  (required)
      * @param deliverySendRequest  (required)
      * @return ApiResponse&lt;DeliveryResponse&gt;
@@ -2175,7 +2175,7 @@ public class DocumentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -2187,7 +2187,7 @@ public class DocumentsApi {
 
     /**
      * Send Document (asynchronously)
-     * 
+     * Queue the document to be emailed.  Returns 202 with the delivery in &#x60;queued&#x60;. The mail is sent in the background and retried on transient failure; poll &#x60;GET /deliveries/{id}&#x60; for the outcome.
      * @param documentId  (required)
      * @param deliverySendRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -2196,7 +2196,7 @@ public class DocumentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */

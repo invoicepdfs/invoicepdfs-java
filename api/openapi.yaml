@@ -1661,6 +1661,12 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/send:
     post:
+      description: |-
+        Queue the document to be emailed.
+
+        Returns 202 with the delivery in `queued`. The mail is sent in the
+        background and retried on transient failure; poll `GET /deliveries/{id}`
+        for the outcome.
       operationId: send_document
       parameters:
       - explode: false
@@ -1678,7 +1684,7 @@ paths:
               $ref: '#/components/schemas/DeliverySendRequest'
         required: true
       responses:
-        "200":
+        "202":
           content:
             application/json:
               schema:
@@ -3212,6 +3218,11 @@ paths:
       - application/json
   /api/v1/deliveries/{delivery_id}/retry:
     post:
+      description: |-
+        Queue a fresh delivery copying a failed one.
+
+        Returns 202 with the new delivery in `queued`. Transient failures are
+        already retried automatically; this is for after those are exhausted.
       operationId: retry_delivery
       parameters:
       - explode: false
@@ -3223,7 +3234,7 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
+        "202":
           content:
             application/json:
               schema:
