@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * AuthRefreshData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T16:29:54.612556740Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class AuthRefreshData {
   public static final String SERIALIZED_NAME_ID_TOKEN = "id_token";
   @SerializedName(SERIALIZED_NAME_ID_TOKEN)

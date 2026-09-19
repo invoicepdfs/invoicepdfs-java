@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.CalculationBreakdown;
 import org.openapitools.client.model.RenderComplianceOut;
+import org.openapitools.client.model.RenderFailureOut;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * RenderOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T16:29:54.612556740Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RenderOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -63,7 +64,13 @@ public class RenderOut {
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
-    COMPLETED("completed");
+    QUEUED("queued"),
+    
+    PROCESSING("processing"),
+    
+    COMPLETED("completed"),
+    
+    FAILED("failed");
 
     private String value;
 
@@ -262,6 +269,10 @@ public class RenderOut {
   @SerializedName(SERIALIZED_NAME_COMPLIANCE)
   private RenderComplianceOut compliance;
 
+  public static final String SERIALIZED_NAME_FAILURE = "failure";
+  @SerializedName(SERIALIZED_NAME_FAILURE)
+  private RenderFailureOut failure;
+
   public RenderOut() {
   }
 
@@ -388,7 +399,7 @@ public class RenderOut {
    * Get downloadUrl
    * @return downloadUrl
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDownloadUrl() {
     return downloadUrl;
   }
@@ -407,7 +418,7 @@ public class RenderOut {
    * Get expiresAt
    * @return expiresAt
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getExpiresAt() {
     return expiresAt;
   }
@@ -474,6 +485,25 @@ public class RenderOut {
   }
 
 
+  public RenderOut failure(RenderFailureOut failure) {
+    this.failure = failure;
+    return this;
+  }
+
+  /**
+   * Get failure
+   * @return failure
+   */
+  @javax.annotation.Nullable
+  public RenderFailureOut getFailure() {
+    return failure;
+  }
+
+  public void setFailure(RenderFailureOut failure) {
+    this.failure = failure;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -494,7 +524,8 @@ public class RenderOut {
         Objects.equals(this.expiresAt, renderOut.expiresAt) &&
         Objects.equals(this.calculation, renderOut.calculation) &&
         Objects.equals(this.createdAt, renderOut.createdAt) &&
-        Objects.equals(this.compliance, renderOut.compliance);
+        Objects.equals(this.compliance, renderOut.compliance) &&
+        Objects.equals(this.failure, renderOut.failure);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -503,7 +534,7 @@ public class RenderOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, documentType, templateId, templateVersion, format, downloadUrl, expiresAt, calculation, createdAt, compliance);
+    return Objects.hash(id, status, documentType, templateId, templateVersion, format, downloadUrl, expiresAt, calculation, createdAt, compliance, failure);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -528,6 +559,7 @@ public class RenderOut {
     sb.append("    calculation: ").append(toIndentedString(calculation)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
+    sb.append("    failure: ").append(toIndentedString(failure)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -561,6 +593,7 @@ public class RenderOut {
     openapiFields.add("calculation");
     openapiFields.add("created_at");
     openapiFields.add("compliance");
+    openapiFields.add("failure");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -569,8 +602,6 @@ public class RenderOut {
     openapiRequiredFields.add("document_type");
     openapiRequiredFields.add("template_id");
     openapiRequiredFields.add("format");
-    openapiRequiredFields.add("download_url");
-    openapiRequiredFields.add("expires_at");
     openapiRequiredFields.add("calculation");
     openapiRequiredFields.add("created_at");
   }
@@ -624,10 +655,10 @@ public class RenderOut {
       }
       // validate the required field `format`
       FormatEnum.validateJsonElement(jsonObj.get("format"));
-      if (!jsonObj.get("download_url").isJsonPrimitive()) {
+      if ((jsonObj.get("download_url") != null && !jsonObj.get("download_url").isJsonNull()) && !jsonObj.get("download_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `download_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("download_url").toString()));
       }
-      if (!jsonObj.get("expires_at").isJsonPrimitive()) {
+      if ((jsonObj.get("expires_at") != null && !jsonObj.get("expires_at").isJsonNull()) && !jsonObj.get("expires_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `expires_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expires_at").toString()));
       }
       // validate the required field `calculation`
@@ -638,6 +669,10 @@ public class RenderOut {
       // validate the optional field `compliance`
       if (jsonObj.get("compliance") != null && !jsonObj.get("compliance").isJsonNull()) {
         RenderComplianceOut.validateJsonElement(jsonObj.get("compliance"));
+      }
+      // validate the optional field `failure`
+      if (jsonObj.get("failure") != null && !jsonObj.get("failure").isJsonNull()) {
+        RenderFailureOut.validateJsonElement(jsonObj.get("failure"));
       }
   }
 

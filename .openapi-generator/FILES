@@ -192,6 +192,7 @@ docs/RecurringInvoicesApi.md
 docs/RecurringInvoicesListResponse.md
 docs/ReferenceApi.md
 docs/RenderComplianceOut.md
+docs/RenderFailureOut.md
 docs/RenderOut.md
 docs/RenderResponse.md
 docs/RendersApi.md
@@ -481,6 +482,7 @@ src/main/java/org/openapitools/client/model/RecurringInvoicePatchRequest.java
 src/main/java/org/openapitools/client/model/RecurringInvoiceResponse.java
 src/main/java/org/openapitools/client/model/RecurringInvoicesListResponse.java
 src/main/java/org/openapitools/client/model/RenderComplianceOut.java
+src/main/java/org/openapitools/client/model/RenderFailureOut.java
 src/main/java/org/openapitools/client/model/RenderOut.java
 src/main/java/org/openapitools/client/model/RenderResponse.java
 src/main/java/org/openapitools/client/model/SimpleBoolResponse.java
@@ -735,6 +737,7 @@ src/test/java/org/openapitools/client/model/RecurringInvoicePatchRequestTest.jav
 src/test/java/org/openapitools/client/model/RecurringInvoiceResponseTest.java
 src/test/java/org/openapitools/client/model/RecurringInvoicesListResponseTest.java
 src/test/java/org/openapitools/client/model/RenderComplianceOutTest.java
+src/test/java/org/openapitools/client/model/RenderFailureOutTest.java
 src/test/java/org/openapitools/client/model/RenderOutTest.java
 src/test/java/org/openapitools/client/model/RenderResponseTest.java
 src/test/java/org/openapitools/client/model/SimpleBoolResponseTest.java

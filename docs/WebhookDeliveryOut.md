@@ -25,6 +25,7 @@
 | Name | Value |
 |---- | -----|
 | PENDING | &quot;pending&quot; |
+| RETRYING | &quot;retrying&quot; |
 | DELIVERED | &quot;delivered&quot; |
 | FAILED | &quot;failed&quot; |
 

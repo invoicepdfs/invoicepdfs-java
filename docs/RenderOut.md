@@ -13,11 +13,12 @@
 |**templateId** | **String** |  |  |
 |**templateVersion** | **Integer** |  |  [optional] |
 |**format** | [**FormatEnum**](#FormatEnum) |  |  |
-|**downloadUrl** | **String** |  |  |
-|**expiresAt** | **String** |  |  |
+|**downloadUrl** | **String** |  |  [optional] |
+|**expiresAt** | **String** |  |  [optional] |
 |**calculation** | [**CalculationBreakdown**](CalculationBreakdown.md) |  |  |
 |**createdAt** | **String** |  |  |
 |**compliance** | [**RenderComplianceOut**](RenderComplianceOut.md) |  |  [optional] |
+|**failure** | [**RenderFailureOut**](RenderFailureOut.md) |  |  [optional] |
 
 
 
@@ -25,7 +26,10 @@
 
 | Name | Value |
 |---- | -----|
+| QUEUED | &quot;queued&quot; |
+| PROCESSING | &quot;processing&quot; |
 | COMPLETED | &quot;completed&quot; |
+| FAILED | &quot;failed&quot; |
 
 
 

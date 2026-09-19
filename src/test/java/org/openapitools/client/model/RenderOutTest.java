@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.CalculationBreakdown;
 import org.openapitools.client.model.RenderComplianceOut;
+import org.openapitools.client.model.RenderFailureOut;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -126,6 +127,14 @@ public class RenderOutTest {
     @Test
     public void complianceTest() {
         // TODO: test compliance
+    }
+
+    /**
+     * Test the property 'failure'
+     */
+    @Test
+    public void failureTest() {
+        // TODO: test failure
     }
 
 }

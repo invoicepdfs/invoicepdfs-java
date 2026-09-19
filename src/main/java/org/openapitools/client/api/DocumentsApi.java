@@ -1818,6 +1818,7 @@ public class DocumentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Returned when &#x60;output.mode&#x60; is &#x60;async&#x60;: the render is queued and a worker will produce it. Follow it with &#x60;GET /renders/{render_id}&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -1893,6 +1894,7 @@ public class DocumentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Returned when &#x60;output.mode&#x60; is &#x60;async&#x60;: the render is queued and a worker will produce it. Follow it with &#x60;GET /renders/{render_id}&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -1912,6 +1914,7 @@ public class DocumentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Returned when &#x60;output.mode&#x60; is &#x60;async&#x60;: the render is queued and a worker will produce it. Follow it with &#x60;GET /renders/{render_id}&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
@@ -1933,6 +1936,7 @@ public class DocumentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The rendered document. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> Returned when &#x60;output.mode&#x60; is &#x60;async&#x60;: the render is queued and a worker will produce it. Follow it with &#x60;GET /renders/{render_id}&#x60;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */

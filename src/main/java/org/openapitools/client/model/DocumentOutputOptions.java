@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentOutputOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T16:29:54.612556740Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentOutputOptions {
   /**
    * Gets or Sets format
@@ -163,6 +163,62 @@ public class DocumentOutputOptions {
   @SerializedName(SERIALIZED_NAME_DELIVERY)
   private DeliveryEnum delivery = DeliveryEnum.URL;
 
+  /**
+   * &#x60;sync&#x60; renders inside the request and answers with the finished document. &#x60;async&#x60; returns &#x60;202&#x60; with a &#x60;queued&#x60; render a worker picks up; follow it with &#x60;GET /renders/{id}&#x60;. Use it for bursts — rendering is CPU-bound, so a hundred at once queue behind each other whichever mode you ask for, and only one of the two holds a connection open while they do.
+   */
+  @JsonAdapter(ModeEnum.Adapter.class)
+  public enum ModeEnum {
+    SYNC("sync"),
+    
+    ASYNC("async");
+
+    private String value;
+
+    ModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ModeEnum fromValue(String value) {
+      for (ModeEnum b : ModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MODE = "mode";
+  @SerializedName(SERIALIZED_NAME_MODE)
+  private ModeEnum mode = ModeEnum.SYNC;
+
   public static final String SERIALIZED_NAME_EXPIRES_IN = "expires_in";
   @SerializedName(SERIALIZED_NAME_EXPIRES_IN)
   private Integer expiresIn = 3600;
@@ -208,6 +264,25 @@ public class DocumentOutputOptions {
   }
 
 
+  public DocumentOutputOptions mode(ModeEnum mode) {
+    this.mode = mode;
+    return this;
+  }
+
+  /**
+   * &#x60;sync&#x60; renders inside the request and answers with the finished document. &#x60;async&#x60; returns &#x60;202&#x60; with a &#x60;queued&#x60; render a worker picks up; follow it with &#x60;GET /renders/{id}&#x60;. Use it for bursts — rendering is CPU-bound, so a hundred at once queue behind each other whichever mode you ask for, and only one of the two holds a connection open while they do.
+   * @return mode
+   */
+  @javax.annotation.Nullable
+  public ModeEnum getMode() {
+    return mode;
+  }
+
+  public void setMode(ModeEnum mode) {
+    this.mode = mode;
+  }
+
+
   public DocumentOutputOptions expiresIn(Integer expiresIn) {
     this.expiresIn = expiresIn;
     return this;
@@ -241,12 +316,13 @@ public class DocumentOutputOptions {
     DocumentOutputOptions documentOutputOptions = (DocumentOutputOptions) o;
     return Objects.equals(this.format, documentOutputOptions.format) &&
         Objects.equals(this.delivery, documentOutputOptions.delivery) &&
+        Objects.equals(this.mode, documentOutputOptions.mode) &&
         Objects.equals(this.expiresIn, documentOutputOptions.expiresIn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(format, delivery, expiresIn);
+    return Objects.hash(format, delivery, mode, expiresIn);
   }
 
   @Override
@@ -255,6 +331,7 @@ public class DocumentOutputOptions {
     sb.append("class DocumentOutputOptions {\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    delivery: ").append(toIndentedString(delivery)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -280,6 +357,7 @@ public class DocumentOutputOptions {
     openapiFields = new HashSet<String>();
     openapiFields.add("format");
     openapiFields.add("delivery");
+    openapiFields.add("mode");
     openapiFields.add("expires_in");
 
     // a set of required properties/fields (JSON key names)
@@ -320,6 +398,13 @@ public class DocumentOutputOptions {
       // validate the optional field `delivery`
       if (jsonObj.get("delivery") != null && !jsonObj.get("delivery").isJsonNull()) {
         DeliveryEnum.validateJsonElement(jsonObj.get("delivery"));
+      }
+      if ((jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonNull()) && !jsonObj.get("mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
+      }
+      // validate the optional field `mode`
+      if (jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonNull()) {
+        ModeEnum.validateJsonElement(jsonObj.get("mode"));
       }
   }
 

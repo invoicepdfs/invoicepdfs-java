@@ -1849,6 +1849,13 @@ paths:
                 type: string
           description: "The rendered document. Returns the PDF itself instead when\
             \ `output.delivery` is `binary` or the request sends `Accept: application/pdf`."
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RenderResponse'
+          description: "Returned when `output.mode` is `async`: the render is queued\
+            \ and a worker will produce it. Follow it with `GET /renders/{render_id}`."
         "422":
           content:
             application/json:
@@ -8280,8 +8287,6 @@ components:
           enum:
           - queued
           - sent
-          - delivered
-          - bounced
           - failed
           title: Status
           type: string
@@ -9623,6 +9628,7 @@ components:
       type: object
     DocumentOutputOptions:
       example:
+        mode: sync
         delivery: url
         format: pdf
         expires_in: 364564
@@ -9640,6 +9646,19 @@ components:
           - url
           - binary
           title: Delivery
+          type: string
+        mode:
+          default: sync
+          description: "`sync` renders inside the request and answers with the finished\
+            \ document. `async` returns `202` with a `queued` render a worker picks\
+            \ up; follow it with `GET /renders/{id}`. Use it for bursts — rendering\
+            \ is CPU-bound, so a hundred at once queue behind each other whichever\
+            \ mode you ask for, and only one of the two holds a connection open while\
+            \ they do."
+          enum:
+          - sync
+          - async
+          title: Mode
           type: string
         expires_in:
           default: 3600
@@ -10022,6 +10041,7 @@ components:
           id: id
           version: 1
         output:
+          mode: sync
           delivery: url
           format: pdf
           expires_in: 364564
@@ -13166,6 +13186,40 @@ components:
       - ruleset_version
       title: RenderComplianceOut
       type: object
+    RenderFailureOut:
+      description: |-
+        Why a render failed, in the same shape the synchronous path returns.
+
+        A synchronous render of a document EN 16931 would reject answers `422
+        compliance_failed` with every violation at once — a list of fields to go and
+        fill in. A queued render has to be able to say the same thing: the caller
+        who chose `async` did not choose a worse answer.
+      example:
+        code: compliance_failed
+        details:
+          key: ""
+        message: message
+      properties:
+        code:
+          description: '`compliance_failed` for a document that is well-formed and
+            would be rejected by the ruleset it asked for; `unprocessable_entity`
+            for one the renderer could not make sense of. The same codes the synchronous
+            path returns.'
+          example: compliance_failed
+          title: Code
+          type: string
+        message:
+          title: Message
+          type: string
+        details:
+          additionalProperties: true
+          nullable: true
+          type: object
+      required:
+      - code
+      - message
+      title: RenderFailureOut
+      type: object
     RenderOut:
       example:
         calculation:
@@ -13204,12 +13258,17 @@ components:
           fully_checked: true
           ruleset_version: en16931-1.3.16
           profile: factur_x_en16931
+        failure:
+          code: compliance_failed
+          details:
+            key: ""
+          message: message
         format: pdf
         download_url: download_url
         created_at: created_at
         template_id: template_id
         id: id
-        status: completed
+        status: queued
         document_type: invoice
       properties:
         id:
@@ -13217,7 +13276,10 @@ components:
           type: string
         status:
           enum:
+          - queued
+          - processing
           - completed
+          - failed
           title: Status
           type: string
         document_type:
@@ -13244,10 +13306,10 @@ components:
           title: Format
           type: string
         download_url:
-          title: Download Url
+          nullable: true
           type: string
         expires_at:
-          title: Expires At
+          nullable: true
           type: string
         calculation:
           $ref: '#/components/schemas/CalculationBreakdown'
@@ -13256,12 +13318,12 @@ components:
           type: string
         compliance:
           $ref: '#/components/schemas/RenderComplianceOut'
+        failure:
+          $ref: '#/components/schemas/RenderFailureOut'
       required:
       - calculation
       - created_at
       - document_type
-      - download_url
-      - expires_at
       - format
       - id
       - status
@@ -13307,12 +13369,17 @@ components:
             fully_checked: true
             ruleset_version: en16931-1.3.16
             profile: factur_x_en16931
+          failure:
+            code: compliance_failed
+            details:
+              key: ""
+            message: message
           format: pdf
           download_url: download_url
           created_at: created_at
           template_id: template_id
           id: id
-          status: completed
+          status: queued
           document_type: invoice
       properties:
         data:
@@ -14391,6 +14458,7 @@ components:
         status:
           enum:
           - pending
+          - retrying
           - delivered
           - failed
           title: Status

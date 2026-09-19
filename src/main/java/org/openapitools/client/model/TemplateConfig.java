@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * What a custom template is: a built-in design plus the brand to render it in.  A custom template is not a design of its own — it names one of the built-ins in &#x60;&#x60;base_template_id&#x60;&#x60; and carries the values below, which are the same ones &#x60;&#x60;data.branding&#x60;&#x60; carries. They are applied *underneath* a request&#39;s own branding, so a document that states a colour still wins and one template can serve several brands.  Typed rather than the free-form object it used to be: nothing read that object, so every key in it was equally correct and a caller could keep sending &#x60;&#x60;primary_colour&#x60;&#x60; forever without a word back. Unset here means \&quot;the template has no opinion\&quot; — unlike &#x60;&#x60;Branding&#x60;&#x60;, whose every field has a non-empty default and so cannot say that.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T16:29:54.612556740Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TemplateConfig {
   public static final String SERIALIZED_NAME_PRIMARY_COLOR = "primary_color";
   @SerializedName(SERIALIZED_NAME_PRIMARY_COLOR)

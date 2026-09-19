@@ -20,53 +20,48 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for DocumentOutputOptions
+ * Model tests for RenderFailureOut
  */
-public class DocumentOutputOptionsTest {
-    private final DocumentOutputOptions model = new DocumentOutputOptions();
+public class RenderFailureOutTest {
+    private final RenderFailureOut model = new RenderFailureOut();
 
     /**
-     * Model tests for DocumentOutputOptions
+     * Model tests for RenderFailureOut
      */
     @Test
-    public void testDocumentOutputOptions() {
-        // TODO: test DocumentOutputOptions
+    public void testRenderFailureOut() {
+        // TODO: test RenderFailureOut
     }
 
     /**
-     * Test the property 'format'
+     * Test the property 'code'
      */
     @Test
-    public void formatTest() {
-        // TODO: test format
+    public void codeTest() {
+        // TODO: test code
     }
 
     /**
-     * Test the property 'delivery'
+     * Test the property 'message'
      */
     @Test
-    public void deliveryTest() {
-        // TODO: test delivery
+    public void messageTest() {
+        // TODO: test message
     }
 
     /**
-     * Test the property 'mode'
+     * Test the property 'details'
      */
     @Test
-    public void modeTest() {
-        // TODO: test mode
-    }
-
-    /**
-     * Test the property 'expiresIn'
-     */
-    @Test
-    public void expiresInTest() {
-        // TODO: test expiresIn
+    public void detailsTest() {
+        // TODO: test details
     }
 
 }

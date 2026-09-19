@@ -27,8 +27,6 @@
 |---- | -----|
 | QUEUED | &quot;queued&quot; |
 | SENT | &quot;sent&quot; |
-| DELIVERED | &quot;delivered&quot; |
-| BOUNCED | &quot;bounced&quot; |
 | FAILED | &quot;failed&quot; |
 
 

@@ -21,6 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,28 +50,32 @@ import java.util.Set;
 import com.invoicepdfs.JSON;
 
 /**
- * LocaleOut
+ * Why a render failed, in the same shape the synchronous path returns.  A synchronous render of a document EN 16931 would reject answers &#x60;422 compliance_failed&#x60; with every violation at once — a list of fields to go and fill in. A queued render has to be able to say the same thing: the caller who chose &#x60;async&#x60; did not choose a worse answer.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class LocaleOut {
+public class RenderFailureOut {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+  public static final String SERIALIZED_NAME_MESSAGE = "message";
+  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  private String message;
 
-  public LocaleOut() {
+  public static final String SERIALIZED_NAME_DETAILS = "details";
+  @SerializedName(SERIALIZED_NAME_DETAILS)
+  private Map<String, Object> details;
+
+  public RenderFailureOut() {
   }
 
-  public LocaleOut code(String code) {
+  public RenderFailureOut code(String code) {
     this.code = code;
     return this;
   }
 
   /**
-   * Get code
+   * &#x60;compliance_failed&#x60; for a document that is well-formed and would be rejected by the ruleset it asked for; &#x60;unprocessable_entity&#x60; for one the renderer could not make sense of. The same codes the synchronous path returns.
    * @return code
    */
   @javax.annotation.Nonnull
@@ -81,22 +88,49 @@ public class LocaleOut {
   }
 
 
-  public LocaleOut name(String name) {
-    this.name = name;
+  public RenderFailureOut message(String message) {
+    this.message = message;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get message
+   * @return message
    */
   @javax.annotation.Nonnull
-  public String getName() {
-    return name;
+  public String getMessage() {
+    return message;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+
+  public RenderFailureOut details(Map<String, Object> details) {
+    this.details = details;
+    return this;
+  }
+
+  public RenderFailureOut putDetailsItem(String key, Object detailsItem) {
+    if (this.details == null) {
+      this.details = new HashMap<>();
+    }
+    this.details.put(key, detailsItem);
+    return this;
+  }
+
+  /**
+   * Get details
+   * @return details
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getDetails() {
+    return details;
+  }
+
+  public void setDetails(Map<String, Object> details) {
+    this.details = details;
   }
 
 
@@ -109,22 +143,35 @@ public class LocaleOut {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LocaleOut localeOut = (LocaleOut) o;
-    return Objects.equals(this.code, localeOut.code) &&
-        Objects.equals(this.name, localeOut.name);
+    RenderFailureOut renderFailureOut = (RenderFailureOut) o;
+    return Objects.equals(this.code, renderFailureOut.code) &&
+        Objects.equals(this.message, renderFailureOut.message) &&
+        Objects.equals(this.details, renderFailureOut.details);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, name);
+    return Objects.hash(code, message, details);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LocaleOut {\n");
+    sb.append("class RenderFailureOut {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -148,37 +195,38 @@ public class LocaleOut {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("code");
-    openapiFields.add("name");
+    openapiFields.add("message");
+    openapiFields.add("details");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("code");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("message");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to LocaleOut
+   * @throws IOException if the JSON Element is invalid with respect to RenderFailureOut
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!LocaleOut.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LocaleOut is not found in the empty JSON string", LocaleOut.openapiRequiredFields.toString()));
+        if (!RenderFailureOut.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RenderFailureOut is not found in the empty JSON string", RenderFailureOut.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!LocaleOut.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `LocaleOut` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RenderFailureOut.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RenderFailureOut` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : LocaleOut.openapiRequiredFields) {
+      for (String requiredField : RenderFailureOut.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -187,8 +235,8 @@ public class LocaleOut {
       if (!jsonObj.get("code").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if (!jsonObj.get("message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
   }
 
@@ -196,22 +244,22 @@ public class LocaleOut {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!LocaleOut.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'LocaleOut' and its subtypes
+       if (!RenderFailureOut.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RenderFailureOut' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<LocaleOut> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(LocaleOut.class));
+       final TypeAdapter<RenderFailureOut> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RenderFailureOut.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<LocaleOut>() {
+       return (TypeAdapter<T>) new TypeAdapter<RenderFailureOut>() {
            @Override
-           public void write(JsonWriter out, LocaleOut value) throws IOException {
+           public void write(JsonWriter out, RenderFailureOut value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public LocaleOut read(JsonReader in) throws IOException {
+           public RenderFailureOut read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -222,18 +270,18 @@ public class LocaleOut {
   }
 
   /**
-   * Create an instance of LocaleOut given an JSON string
+   * Create an instance of RenderFailureOut given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of LocaleOut
-   * @throws IOException if the JSON string is invalid with respect to LocaleOut
+   * @return An instance of RenderFailureOut
+   * @throws IOException if the JSON string is invalid with respect to RenderFailureOut
    */
-  public static LocaleOut fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, LocaleOut.class);
+  public static RenderFailureOut fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RenderFailureOut.class);
   }
 
   /**
-   * Convert an instance of LocaleOut to an JSON string
+   * Convert an instance of RenderFailureOut to an JSON string
    *
    * @return JSON string
    */
