@@ -52,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * A coded list from a standard, and whether it is the whole of one.  &#x60;exhaustive&#x60; is the field that changes what a client does. &#x60;true&#x60; means a value outside &#x60;data&#x60; is wrong, so the list can back a picker with no escape hatch. &#x60;false&#x60; means &#x60;data&#x60; is a shortlist of the codes an invoice usually needs — the API accepts any code, nothing validates against this, and treating it as closed rejects values that are perfectly valid.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T17:39:09.235168503Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CodeListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

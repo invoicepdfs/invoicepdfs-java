@@ -66,6 +66,11 @@ paths:
       - application/json
   /api/v1/auth/me:
     get:
+      description: |-
+        The account behind the current credential, and the plan it is on.
+
+        Works with either an API key or a Firebase token, so it is the cheapest
+        way to confirm a credential is live and see what it can reach.
       operationId: get_current_user
       responses:
         "200":
@@ -1140,6 +1145,11 @@ paths:
       - application/json
   /api/v1/documents:
     get:
+      description: |-
+        Every document on the account, newest first.
+
+        Cursor-paginated: pass the `next_cursor` from a response to fetch the page
+        after it. Filter by `document_type` or `status` to narrow the list.
       operationId: list_documents
       parameters:
       - explode: true
@@ -1199,6 +1209,12 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Create a document in `draft`.
+
+        Totals are computed and stored at creation, so the figures you read back are
+        the ones that were issued rather than a recalculation. Nothing is rendered —
+        use `create_document_render` once the document is final.
       operationId: create_document
       parameters:
       - explode: false
@@ -1239,6 +1255,11 @@ paths:
       - application/json
   /api/v1/documents/{document_id}:
     delete:
+      description: |-
+        Permanently remove a `draft`.
+
+        `409` if anything still points at it — a render, a delivery or a payment —
+        naming what does. Finalized documents are voided or archived, not deleted.
       operationId: delete_document
       parameters:
       - explode: false
@@ -1277,6 +1298,7 @@ paths:
       x-accepts:
       - application/json
     get:
+      description: "One document, with the totals stored when it was created."
       operationId: get_document
       parameters:
       - explode: false
@@ -1309,6 +1331,12 @@ paths:
       x-accepts:
       - application/json
     patch:
+      description: |-
+        Change a document that is still a `draft`.
+
+        A finalized document is a record of what was issued and cannot be edited;
+        `409` if it has moved past `draft`. Only the fields you send are changed —
+        omit one to leave it alone, and send `null` to clear it.
       operationId: update_document
       parameters:
       - explode: false
@@ -1349,6 +1377,11 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/duplicate:
     post:
+      description: |-
+        Copy a document into a new `draft`.
+
+        The copy gets the next available number rather than the original's, so it can
+        be finalized without colliding with the document it came from.
       operationId: duplicate_document
       parameters:
       - explode: false
@@ -1382,6 +1415,11 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/finalize:
     post:
+      description: |-
+        Issue a `draft`: fix its number and totals.
+
+        From here the document is a record. It can be sent, marked paid, voided or
+        archived, but not edited — `update_document` returns `409` afterwards.
       operationId: finalize_document
       parameters:
       - explode: false
@@ -1415,6 +1453,12 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/void:
     post:
+      description: |-
+        Cancel a document that was issued.
+
+        Voiding is how a finalized document is withdrawn, since it cannot be deleted.
+        The PDF renders with a `VOID` mark from then on, so a copy already sent is
+        distinguishable from the live one.
       operationId: void_document
       parameters:
       - explode: false
@@ -1448,6 +1492,12 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/mark-sent:
     post:
+      description: |-
+        Record that the document reached the customer.
+
+        **This does not send anything** — it only moves the status, for when the
+        document was delivered by some means of your own. Use `send_document` to
+        have us email it.
       operationId: mark_sent
       parameters:
       - explode: false
@@ -1481,6 +1531,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/mark-paid:
     post:
+      description: Record that the document was paid in full.
       operationId: mark_paid
       parameters:
       - explode: false
@@ -1514,6 +1565,10 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/mark-unpaid:
     post:
+      description: |-
+        Undo `mark_paid`, returning the document to `sent`.
+
+        For a payment that was recorded in error or later reversed.
       operationId: mark_unpaid
       parameters:
       - explode: false
@@ -1547,6 +1602,11 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/archive:
     post:
+      description: |-
+        Move a document out of the active list.
+
+        Archiving hides a document from the default listing without destroying it;
+        `restore_document` brings it back. Drafts are deleted rather than archived.
       operationId: archive_document
       parameters:
       - explode: false
@@ -1580,6 +1640,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/restore:
     post:
+      description: Bring an archived document back to `finalized`.
       operationId: restore_document
       parameters:
       - explode: false
@@ -1613,6 +1674,14 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/renders:
     post:
+      description: |-
+        Render a stored document to a PDF.
+
+        Use this when the document lives here. To render one you hold yourself,
+        without storing it, use `render_document`.
+
+        The response carries a signed `download_url` that needs no API key, valid
+        until `expires_at`.
       operationId: create_document_render
       parameters:
       - explode: false
@@ -1707,6 +1776,11 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/deliveries:
     get:
+      description: |-
+        Every email delivery attempted for this document.
+
+        One row per attempt, newest first, including the ones that failed — which is
+        where to look when a customer says the invoice never arrived.
       operationId: list_document_deliveries
       parameters:
       - explode: false
@@ -1759,6 +1833,12 @@ paths:
       - application/json
   /api/v1/documents/validate:
     post:
+      description: |-
+        Check that a document body is well-formed, without pricing it.
+
+        The cheapest of the three stateless operations: no totals are computed and no
+        PDF is produced. Use `calculate_document` for the money and `render_document`
+        for the document.
       operationId: validate_document
       requestBody:
         content:
@@ -1790,6 +1870,12 @@ paths:
       - application/json
   /api/v1/documents/calculate:
     post:
+      description: |-
+        Compute the totals for a document without storing or rendering it.
+
+        Returns the same breakdown — subtotal, discounts, tax, shipping, total — that
+        a render would print, so a checkout page can show a figure before committing
+        to one.
       operationId: calculate_document
       requestBody:
         content:
@@ -1821,6 +1907,15 @@ paths:
       - application/json
   /api/v1/documents/render:
     post:
+      description: |-
+        Render a document supplied inline, storing nothing but the PDF.
+
+        The stateless path: pass the whole document in the body and get a PDF back,
+        with no customer, business profile or stored document required. To render a
+        document that already lives here, use `create_document_render`.
+
+        Returns JSON with a signed `download_url` by default. Ask for the bytes
+        directly with `output.delivery: "binary"` or `Accept: application/pdf`.
       operationId: render_document
       parameters:
       - explode: false
@@ -2684,6 +2779,12 @@ paths:
       - application/json
   /api/v1/renders/{render_id}:
     get:
+      description: |-
+        One render: its status, its totals, and how to download it.
+
+        `download_url` and `expires_at` are `null` until the render is `completed`,
+        and a `failed` render carries a `failure` explaining why. Poll this after an
+        asynchronous render.
       operationId: get_render
       parameters:
       - explode: false

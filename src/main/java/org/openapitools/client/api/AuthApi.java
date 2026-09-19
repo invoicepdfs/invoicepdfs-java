@@ -273,7 +273,7 @@ public class AuthApi {
 
     /**
      * Get Current User
-     * 
+     * The account behind the current credential, and the plan it is on.  Works with either an API key or a Firebase token, so it is the cheapest way to confirm a credential is live and see what it can reach.
      * @return AuthMeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -289,7 +289,7 @@ public class AuthApi {
 
     /**
      * Get Current User
-     * 
+     * The account behind the current credential, and the plan it is on.  Works with either an API key or a Firebase token, so it is the cheapest way to confirm a credential is live and see what it can reach.
      * @return ApiResponse&lt;AuthMeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -306,7 +306,7 @@ public class AuthApi {
 
     /**
      * Get Current User (asynchronously)
-     * 
+     * The account behind the current credential, and the plan it is on.  Works with either an API key or a Firebase token, so it is the cheapest way to confirm a credential is live and see what it can reach.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

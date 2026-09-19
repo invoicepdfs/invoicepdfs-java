@@ -31,6 +31,8 @@ All URIs are relative to *http://localhost*
 
 Archive Document
 
+Move a document out of the active list.  Archiving hides a document from the default listing without destroying it; &#x60;restore_document&#x60; brings it back. Drafts are deleted rather than archived.
+
 ### Example
 ```java
 // Import classes:
@@ -97,6 +99,8 @@ public class Example {
 
 Calculate Document
 
+Compute the totals for a document without storing or rendering it.  Returns the same breakdown — subtotal, discounts, tax, shipping, total — that a render would print, so a checkout page can show a figure before committing to one.
+
 ### Example
 ```java
 // Import classes:
@@ -162,6 +166,8 @@ public class Example {
 > DocumentResponse createDocument(documentCreateRequest, idempotencyKey)
 
 Create Document
+
+Create a document in &#x60;draft&#x60;.  Totals are computed and stored at creation, so the figures you read back are the ones that were issued rather than a recalculation. Nothing is rendered — use &#x60;create_document_render&#x60; once the document is final.
 
 ### Example
 ```java
@@ -230,6 +236,8 @@ public class Example {
 > RenderResponse createDocumentRender(documentId, documentRenderOptions, idempotencyKey)
 
 Create Document Render
+
+Render a stored document to a PDF.  Use this when the document lives here. To render one you hold yourself, without storing it, use &#x60;render_document&#x60;.  The response carries a signed &#x60;download_url&#x60; that needs no API key, valid until &#x60;expires_at&#x60;.
 
 ### Example
 ```java
@@ -301,6 +309,8 @@ public class Example {
 
 Delete Document
 
+Permanently remove a &#x60;draft&#x60;.  &#x60;409&#x60; if anything still points at it — a render, a delivery or a payment — naming what does. Finalized documents are voided or archived, not deleted.
+
 ### Example
 ```java
 // Import classes:
@@ -368,6 +378,8 @@ public class Example {
 
 Duplicate Document
 
+Copy a document into a new &#x60;draft&#x60;.  The copy gets the next available number rather than the original&#39;s, so it can be finalized without colliding with the document it came from.
+
 ### Example
 ```java
 // Import classes:
@@ -433,6 +445,8 @@ public class Example {
 > DocumentResponse finalizeDocument(documentId)
 
 Finalize Document
+
+Issue a &#x60;draft&#x60;: fix its number and totals.  From here the document is a record. It can be sent, marked paid, voided or archived, but not edited — &#x60;update_document&#x60; returns &#x60;409&#x60; afterwards.
 
 ### Example
 ```java
@@ -500,6 +514,8 @@ public class Example {
 
 Get Document
 
+One document, with the totals stored when it was created.
+
 ### Example
 ```java
 // Import classes:
@@ -565,6 +581,8 @@ public class Example {
 > DeliveriesListResponse listDocumentDeliveries(documentId, limit, cursor)
 
 List Document Deliveries
+
+Every email delivery attempted for this document.  One row per attempt, newest first, including the ones that failed — which is where to look when a customer says the invoice never arrived.
 
 ### Example
 ```java
@@ -635,6 +653,8 @@ public class Example {
 > DocumentsListResponse listDocuments(limit, cursor, documentType, status)
 
 List Documents
+
+Every document on the account, newest first.  Cursor-paginated: pass the &#x60;next_cursor&#x60; from a response to fetch the page after it. Filter by &#x60;document_type&#x60; or &#x60;status&#x60; to narrow the list.
 
 ### Example
 ```java
@@ -708,6 +728,8 @@ public class Example {
 
 Mark Paid
 
+Record that the document was paid in full.
+
 ### Example
 ```java
 // Import classes:
@@ -773,6 +795,8 @@ public class Example {
 > DocumentResponse markSent(documentId)
 
 Mark Sent
+
+Record that the document reached the customer.  **This does not send anything** — it only moves the status, for when the document was delivered by some means of your own. Use &#x60;send_document&#x60; to have us email it.
 
 ### Example
 ```java
@@ -840,6 +864,8 @@ public class Example {
 
 Mark Unpaid
 
+Undo &#x60;mark_paid&#x60;, returning the document to &#x60;sent&#x60;.  For a payment that was recorded in error or later reversed.
+
 ### Example
 ```java
 // Import classes:
@@ -905,6 +931,8 @@ public class Example {
 > RenderResponse renderDocument(documentRenderRequest, idempotencyKey)
 
 Render Document
+
+Render a document supplied inline, storing nothing but the PDF.  The stateless path: pass the whole document in the body and get a PDF back, with no customer, business profile or stored document required. To render a document that already lives here, use &#x60;create_document_render&#x60;.  Returns JSON with a signed &#x60;download_url&#x60; by default. Ask for the bytes directly with &#x60;output.delivery: \&quot;binary\&quot;&#x60; or &#x60;Accept: application/pdf&#x60;.
 
 ### Example
 ```java
@@ -974,6 +1002,8 @@ public class Example {
 > DocumentResponse restoreDocument(documentId)
 
 Restore Document
+
+Bring an archived document back to &#x60;finalized&#x60;.
 
 ### Example
 ```java
@@ -1111,6 +1141,8 @@ public class Example {
 
 Update Document
 
+Change a document that is still a &#x60;draft&#x60;.  A finalized document is a record of what was issued and cannot be edited; &#x60;409&#x60; if it has moved past &#x60;draft&#x60;. Only the fields you send are changed — omit one to leave it alone, and send &#x60;null&#x60; to clear it.
+
 ### Example
 ```java
 // Import classes:
@@ -1179,6 +1211,8 @@ public class Example {
 
 Validate Document
 
+Check that a document body is well-formed, without pricing it.  The cheapest of the three stateless operations: no totals are computed and no PDF is produced. Use &#x60;calculate_document&#x60; for the money and &#x60;render_document&#x60; for the document.
+
 ### Example
 ```java
 // Import classes:
@@ -1244,6 +1278,8 @@ public class Example {
 > DocumentResponse voidDocument(documentId)
 
 Void Document
+
+Cancel a document that was issued.  Voiding is how a finalized document is withdrawn, since it cannot be deleted. The PDF renders with a &#x60;VOID&#x60; mark from then on, so a copy already sent is distinguishable from the live one.
 
 ### Example
 ```java

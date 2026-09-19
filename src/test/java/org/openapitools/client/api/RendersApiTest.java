@@ -51,6 +51,8 @@ public class RendersApiTest {
     /**
      * Get Render
      *
+     * One render: its status, its totals, and how to download it.  &#x60;download_url&#x60; and &#x60;expires_at&#x60; are &#x60;null&#x60; until the render is &#x60;completed&#x60;, and a &#x60;failed&#x60; render carries a &#x60;failure&#x60; explaining why. Poll this after an asynchronous render.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test

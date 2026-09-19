@@ -281,7 +281,7 @@ public class RendersApi {
 
     /**
      * Get Render
-     * 
+     * One render: its status, its totals, and how to download it.  &#x60;download_url&#x60; and &#x60;expires_at&#x60; are &#x60;null&#x60; until the render is &#x60;completed&#x60;, and a &#x60;failed&#x60; render carries a &#x60;failure&#x60; explaining why. Poll this after an asynchronous render.
      * @param renderId  (required)
      * @return RenderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -299,7 +299,7 @@ public class RendersApi {
 
     /**
      * Get Render
-     * 
+     * One render: its status, its totals, and how to download it.  &#x60;download_url&#x60; and &#x60;expires_at&#x60; are &#x60;null&#x60; until the render is &#x60;completed&#x60;, and a &#x60;failed&#x60; render carries a &#x60;failure&#x60; explaining why. Poll this after an asynchronous render.
      * @param renderId  (required)
      * @return ApiResponse&lt;RenderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -318,7 +318,7 @@ public class RendersApi {
 
     /**
      * Get Render (asynchronously)
-     * 
+     * One render: its status, its totals, and how to download it.  &#x60;download_url&#x60; and &#x60;expires_at&#x60; are &#x60;null&#x60; until the render is &#x60;completed&#x60;, and a &#x60;failed&#x60; render carries a &#x60;failure&#x60; explaining why. Poll this after an asynchronous render.
      * @param renderId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

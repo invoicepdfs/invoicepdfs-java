@@ -53,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * WebhookEndpointsListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T17:39:09.235168503Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class WebhookEndpointsListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
