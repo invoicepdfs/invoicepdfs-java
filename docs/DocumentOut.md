@@ -10,7 +10,7 @@
 |**id** | **String** |  |  |
 |**documentType** | [**DocumentTypeEnum**](#DocumentTypeEnum) |  |  |
 |**number** | **String** |  |  |
-|**status** | **String** |  |  |
+|**status** | **DocumentStatus** |  |  |
 |**issueDate** | **LocalDate** |  |  |
 |**dueDate** | **LocalDate** |  |  [optional] |
 |**currency** | **String** |  |  |

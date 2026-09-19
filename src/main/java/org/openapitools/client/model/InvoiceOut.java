@@ -24,6 +24,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.DocumentStatus;
 import org.openapitools.client.model.InvoiceTotalsOut;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -54,75 +55,15 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    DRAFT("draft"),
-    
-    FINALIZED("finalized"),
-    
-    SENT("sent"),
-    
-    PAID("paid"),
-    
-    VOID("void"),
-    
-    ARCHIVED("archived");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private StatusEnum status;
+  private DocumentStatus status;
 
   public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
   @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)
@@ -262,7 +203,7 @@ public class InvoiceOut {
   }
 
 
-  public InvoiceOut status(StatusEnum status) {
+  public InvoiceOut status(DocumentStatus status) {
     this.status = status;
     return this;
   }
@@ -272,11 +213,11 @@ public class InvoiceOut {
    * @return status
    */
   @javax.annotation.Nonnull
-  public StatusEnum getStatus() {
+  public DocumentStatus getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(DocumentStatus status) {
     this.status = status;
   }
 
@@ -683,11 +624,8 @@ public class InvoiceOut {
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
       // validate the required field `status`
-      StatusEnum.validateJsonElement(jsonObj.get("status"));
+      DocumentStatus.validateJsonElement(jsonObj.get("status"));
       if (!jsonObj.get("invoice_number").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `invoice_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("invoice_number").toString()));
       }

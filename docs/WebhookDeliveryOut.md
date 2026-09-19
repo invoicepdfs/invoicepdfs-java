@@ -11,23 +11,12 @@
 |**endpointId** | **String** |  |  |
 |**eventId** | **String** |  |  |
 |**eventType** | **String** |  |  |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  |
+|**status** | **WebhookDeliveryStatus** |  |  |
 |**httpStatus** | **Integer** |  |  [optional] |
 |**attempts** | **Integer** |  |  |
 |**errorMessage** | **String** |  |  [optional] |
 |**createdAt** | **String** |  |  |
 |**deliveredAt** | **String** |  |  [optional] |
-
-
-
-## Enum: StatusEnum
-
-| Name | Value |
-|---- | -----|
-| PENDING | &quot;pending&quot; |
-| RETRYING | &quot;retrying&quot; |
-| DELIVERED | &quot;delivered&quot; |
-| FAILED | &quot;failed&quot; |
 
 
 

@@ -23,6 +23,7 @@ import java.util.Arrays;
 import org.openapitools.client.model.CalculationBreakdown;
 import org.openapitools.client.model.RenderComplianceOut;
 import org.openapitools.client.model.RenderFailureOut;
+import org.openapitools.client.model.RenderStatus;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

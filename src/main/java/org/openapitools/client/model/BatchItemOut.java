@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.BatchItemStatus;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -50,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * BatchItemOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BatchItemOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -64,63 +65,9 @@ public class BatchItemOut {
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
   private String documentType;
 
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    PENDING("pending"),
-    
-    COMPLETED("completed"),
-    
-    FAILED("failed");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private StatusEnum status;
+  private BatchItemStatus status;
 
   public static final String SERIALIZED_NAME_RENDER_ID = "render_id";
   @SerializedName(SERIALIZED_NAME_RENDER_ID)
@@ -194,7 +141,7 @@ public class BatchItemOut {
   }
 
 
-  public BatchItemOut status(StatusEnum status) {
+  public BatchItemOut status(BatchItemStatus status) {
     this.status = status;
     return this;
   }
@@ -204,11 +151,11 @@ public class BatchItemOut {
    * @return status
    */
   @javax.annotation.Nonnull
-  public StatusEnum getStatus() {
+  public BatchItemStatus getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(BatchItemStatus status) {
     this.status = status;
   }
 
@@ -391,11 +338,8 @@ public class BatchItemOut {
       if (!jsonObj.get("document_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `document_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_type").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
       // validate the required field `status`
-      StatusEnum.validateJsonElement(jsonObj.get("status"));
+      BatchItemStatus.validateJsonElement(jsonObj.get("status"));
       if ((jsonObj.get("render_id") != null && !jsonObj.get("render_id").isJsonNull()) && !jsonObj.get("render_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `render_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("render_id").toString()));
       }

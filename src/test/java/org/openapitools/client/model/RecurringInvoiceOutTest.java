@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.client.model.RecurringInvoiceStatus;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

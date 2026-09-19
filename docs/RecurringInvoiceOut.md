@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  |
-|**status** | **String** |  |  |
+|**status** | **RecurringInvoiceStatus** |  |  |
 |**businessProfileId** | **String** |  |  |
 |**customerId** | **String** |  |  |
 |**frequency** | **String** |  |  |

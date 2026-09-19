@@ -24,6 +24,7 @@ import java.util.Arrays;
 import org.openapitools.client.model.CalculationBreakdown;
 import org.openapitools.client.model.RenderComplianceOut;
 import org.openapitools.client.model.RenderFailureOut;
+import org.openapitools.client.model.RenderStatus;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -53,71 +54,15 @@ import com.invoicepdfs.JSON;
 /**
  * RenderOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RenderOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    QUEUED("queued"),
-    
-    PROCESSING("processing"),
-    
-    COMPLETED("completed"),
-    
-    FAILED("failed");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private StatusEnum status;
+  private RenderStatus status;
 
   /**
    * Gets or Sets documentType
@@ -295,7 +240,7 @@ public class RenderOut {
   }
 
 
-  public RenderOut status(StatusEnum status) {
+  public RenderOut status(RenderStatus status) {
     this.status = status;
     return this;
   }
@@ -305,11 +250,11 @@ public class RenderOut {
    * @return status
    */
   @javax.annotation.Nonnull
-  public StatusEnum getStatus() {
+  public RenderStatus getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(RenderStatus status) {
     this.status = status;
   }
 
@@ -637,11 +582,8 @@ public class RenderOut {
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
       // validate the required field `status`
-      StatusEnum.validateJsonElement(jsonObj.get("status"));
+      RenderStatus.validateJsonElement(jsonObj.get("status"));
       if (!jsonObj.get("document_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `document_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_type").toString()));
       }

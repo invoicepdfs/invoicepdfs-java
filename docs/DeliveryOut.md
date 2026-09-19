@@ -15,19 +15,9 @@
 |**subject** | **String** |  |  |
 |**message** | **String** |  |  [optional] |
 |**attachPdf** | **Boolean** |  |  |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  |
+|**status** | **DeliveryStatus** |  |  |
 |**createdAt** | **String** |  |  |
 |**sentAt** | **String** |  |  [optional] |
-
-
-
-## Enum: StatusEnum
-
-| Name | Value |
-|---- | -----|
-| QUEUED | &quot;queued&quot; |
-| SENT | &quot;sent&quot; |
-| FAILED | &quot;failed&quot; |
 
 
 

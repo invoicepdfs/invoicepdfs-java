@@ -24,6 +24,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.DocumentStatus;
 import org.openapitools.client.model.InvoiceTotalsOut;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -54,7 +55,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -134,7 +135,7 @@ public class DocumentOut {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status;
+  private DocumentStatus status;
 
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
@@ -248,7 +249,7 @@ public class DocumentOut {
   }
 
 
-  public DocumentOut status(String status) {
+  public DocumentOut status(DocumentStatus status) {
     this.status = status;
     return this;
   }
@@ -258,11 +259,11 @@ public class DocumentOut {
    * @return status
    */
   @javax.annotation.Nonnull
-  public String getStatus() {
+  public DocumentStatus getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(DocumentStatus status) {
     this.status = status;
   }
 
@@ -683,9 +684,8 @@ public class DocumentOut {
       if (!jsonObj.get("number").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("number").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
+      // validate the required field `status`
+      DocumentStatus.validateJsonElement(jsonObj.get("status"));
       if (!jsonObj.get("currency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }

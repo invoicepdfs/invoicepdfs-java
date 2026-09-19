@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
+import org.openapitools.client.model.RecurringInvoiceStatus;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * RecurringInvoiceOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RecurringInvoiceOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -58,7 +59,7 @@ public class RecurringInvoiceOut {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status;
+  private RecurringInvoiceStatus status;
 
   public static final String SERIALIZED_NAME_BUSINESS_PROFILE_ID = "business_profile_id";
   @SerializedName(SERIALIZED_NAME_BUSINESS_PROFILE_ID)
@@ -130,7 +131,7 @@ public class RecurringInvoiceOut {
   }
 
 
-  public RecurringInvoiceOut status(String status) {
+  public RecurringInvoiceOut status(RecurringInvoiceStatus status) {
     this.status = status;
     return this;
   }
@@ -140,11 +141,11 @@ public class RecurringInvoiceOut {
    * @return status
    */
   @javax.annotation.Nonnull
-  public String getStatus() {
+  public RecurringInvoiceStatus getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(RecurringInvoiceStatus status) {
     this.status = status;
   }
 
@@ -512,9 +513,8 @@ public class RecurringInvoiceOut {
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
+      // validate the required field `status`
+      RecurringInvoiceStatus.validateJsonElement(jsonObj.get("status"));
       if (!jsonObj.get("business_profile_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `business_profile_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("business_profile_id").toString()));
       }

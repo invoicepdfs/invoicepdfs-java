@@ -40,10 +40,12 @@ docs/AuthTokenResponse.md
 docs/BatchCreateRequest.md
 docs/BatchItemInput.md
 docs/BatchItemOut.md
+docs/BatchItemStatus.md
 docs/BatchItemsListResponse.md
 docs/BatchOut.md
 docs/BatchOutputOptions.md
 docs/BatchResponse.md
+docs/BatchStatus.md
 docs/BatchesApi.md
 docs/BatchesListResponse.md
 docs/BillingApi.md
@@ -97,6 +99,7 @@ docs/DeliveriesListResponse.md
 docs/DeliveryOut.md
 docs/DeliveryResponse.md
 docs/DeliverySendRequest.md
+docs/DeliveryStatus.md
 docs/DocumentAttachmentsApi.md
 docs/DocumentBrandingInput.md
 docs/DocumentCalculateRequest.md
@@ -118,6 +121,7 @@ docs/DocumentRenderOptions.md
 docs/DocumentRenderRequest.md
 docs/DocumentResponse.md
 docs/DocumentShippingInput.md
+docs/DocumentStatus.md
 docs/DocumentTemplateRef.md
 docs/DocumentTypeOut.md
 docs/DocumentTypesListResponse.md
@@ -134,6 +138,7 @@ docs/HealthResponse.md
 docs/ImportCreateRequest.md
 docs/ImportOut.md
 docs/ImportResponse.md
+docs/ImportStatus.md
 docs/ImportsApi.md
 docs/InvoiceAttachmentCreateRequest.md
 docs/InvoiceAttachmentOut.md
@@ -156,6 +161,7 @@ docs/InvoicesListResponse.md
 docs/JobOut.md
 docs/JobProgressOut.md
 docs/JobResponse.md
+docs/JobStatus.md
 docs/JobsApi.md
 docs/JobsListResponse.md
 docs/LineItemDiscountInput.md
@@ -188,6 +194,7 @@ docs/RecurringInvoiceCreateRequest.md
 docs/RecurringInvoiceOut.md
 docs/RecurringInvoicePatchRequest.md
 docs/RecurringInvoiceResponse.md
+docs/RecurringInvoiceStatus.md
 docs/RecurringInvoicesApi.md
 docs/RecurringInvoicesListResponse.md
 docs/ReferenceApi.md
@@ -195,6 +202,7 @@ docs/RenderComplianceOut.md
 docs/RenderFailureOut.md
 docs/RenderOut.md
 docs/RenderResponse.md
+docs/RenderStatus.md
 docs/RendersApi.md
 docs/SimpleBoolResponse.md
 docs/StandardLineItemInput.md
@@ -241,6 +249,7 @@ docs/VersionResponse.md
 docs/WebhookDeliveriesListResponse.md
 docs/WebhookDeliveryOut.md
 docs/WebhookDeliveryResponse.md
+docs/WebhookDeliveryStatus.md
 docs/WebhookEndpointCreateRequest.md
 docs/WebhookEndpointOut.md
 docs/WebhookEndpointPatchRequest.md
@@ -348,10 +357,12 @@ src/main/java/org/openapitools/client/model/AuthTokenResponse.java
 src/main/java/org/openapitools/client/model/BatchCreateRequest.java
 src/main/java/org/openapitools/client/model/BatchItemInput.java
 src/main/java/org/openapitools/client/model/BatchItemOut.java
+src/main/java/org/openapitools/client/model/BatchItemStatus.java
 src/main/java/org/openapitools/client/model/BatchItemsListResponse.java
 src/main/java/org/openapitools/client/model/BatchOut.java
 src/main/java/org/openapitools/client/model/BatchOutputOptions.java
 src/main/java/org/openapitools/client/model/BatchResponse.java
+src/main/java/org/openapitools/client/model/BatchStatus.java
 src/main/java/org/openapitools/client/model/BatchesListResponse.java
 src/main/java/org/openapitools/client/model/BillingCheckoutData.java
 src/main/java/org/openapitools/client/model/BillingCheckoutRequest.java
@@ -398,6 +409,7 @@ src/main/java/org/openapitools/client/model/DeliveriesListResponse.java
 src/main/java/org/openapitools/client/model/DeliveryOut.java
 src/main/java/org/openapitools/client/model/DeliveryResponse.java
 src/main/java/org/openapitools/client/model/DeliverySendRequest.java
+src/main/java/org/openapitools/client/model/DeliveryStatus.java
 src/main/java/org/openapitools/client/model/DocumentBrandingInput.java
 src/main/java/org/openapitools/client/model/DocumentCalculateRequest.java
 src/main/java/org/openapitools/client/model/DocumentCalculateResponse.java
@@ -418,6 +430,7 @@ src/main/java/org/openapitools/client/model/DocumentRenderOptions.java
 src/main/java/org/openapitools/client/model/DocumentRenderRequest.java
 src/main/java/org/openapitools/client/model/DocumentResponse.java
 src/main/java/org/openapitools/client/model/DocumentShippingInput.java
+src/main/java/org/openapitools/client/model/DocumentStatus.java
 src/main/java/org/openapitools/client/model/DocumentTemplateRef.java
 src/main/java/org/openapitools/client/model/DocumentTypeOut.java
 src/main/java/org/openapitools/client/model/DocumentTypesListResponse.java
@@ -431,6 +444,7 @@ src/main/java/org/openapitools/client/model/HealthResponse.java
 src/main/java/org/openapitools/client/model/ImportCreateRequest.java
 src/main/java/org/openapitools/client/model/ImportOut.java
 src/main/java/org/openapitools/client/model/ImportResponse.java
+src/main/java/org/openapitools/client/model/ImportStatus.java
 src/main/java/org/openapitools/client/model/InvoiceAttachmentCreateRequest.java
 src/main/java/org/openapitools/client/model/InvoiceAttachmentOut.java
 src/main/java/org/openapitools/client/model/InvoiceAttachmentResponse.java
@@ -452,6 +466,7 @@ src/main/java/org/openapitools/client/model/InvoicesListResponse.java
 src/main/java/org/openapitools/client/model/JobOut.java
 src/main/java/org/openapitools/client/model/JobProgressOut.java
 src/main/java/org/openapitools/client/model/JobResponse.java
+src/main/java/org/openapitools/client/model/JobStatus.java
 src/main/java/org/openapitools/client/model/JobsListResponse.java
 src/main/java/org/openapitools/client/model/LineItemDiscountInput.java
 src/main/java/org/openapitools/client/model/LineItemTaxInput.java
@@ -480,11 +495,13 @@ src/main/java/org/openapitools/client/model/RecurringInvoiceCreateRequest.java
 src/main/java/org/openapitools/client/model/RecurringInvoiceOut.java
 src/main/java/org/openapitools/client/model/RecurringInvoicePatchRequest.java
 src/main/java/org/openapitools/client/model/RecurringInvoiceResponse.java
+src/main/java/org/openapitools/client/model/RecurringInvoiceStatus.java
 src/main/java/org/openapitools/client/model/RecurringInvoicesListResponse.java
 src/main/java/org/openapitools/client/model/RenderComplianceOut.java
 src/main/java/org/openapitools/client/model/RenderFailureOut.java
 src/main/java/org/openapitools/client/model/RenderOut.java
 src/main/java/org/openapitools/client/model/RenderResponse.java
+src/main/java/org/openapitools/client/model/RenderStatus.java
 src/main/java/org/openapitools/client/model/SimpleBoolResponse.java
 src/main/java/org/openapitools/client/model/StandardLineItemInput.java
 src/main/java/org/openapitools/client/model/StatsCounts.java
@@ -525,6 +542,7 @@ src/main/java/org/openapitools/client/model/VersionResponse.java
 src/main/java/org/openapitools/client/model/WebhookDeliveriesListResponse.java
 src/main/java/org/openapitools/client/model/WebhookDeliveryOut.java
 src/main/java/org/openapitools/client/model/WebhookDeliveryResponse.java
+src/main/java/org/openapitools/client/model/WebhookDeliveryStatus.java
 src/main/java/org/openapitools/client/model/WebhookEndpointCreateRequest.java
 src/main/java/org/openapitools/client/model/WebhookEndpointOut.java
 src/main/java/org/openapitools/client/model/WebhookEndpointPatchRequest.java
@@ -603,10 +621,12 @@ src/test/java/org/openapitools/client/model/AuthTokenResponseTest.java
 src/test/java/org/openapitools/client/model/BatchCreateRequestTest.java
 src/test/java/org/openapitools/client/model/BatchItemInputTest.java
 src/test/java/org/openapitools/client/model/BatchItemOutTest.java
+src/test/java/org/openapitools/client/model/BatchItemStatusTest.java
 src/test/java/org/openapitools/client/model/BatchItemsListResponseTest.java
 src/test/java/org/openapitools/client/model/BatchOutTest.java
 src/test/java/org/openapitools/client/model/BatchOutputOptionsTest.java
 src/test/java/org/openapitools/client/model/BatchResponseTest.java
+src/test/java/org/openapitools/client/model/BatchStatusTest.java
 src/test/java/org/openapitools/client/model/BatchesListResponseTest.java
 src/test/java/org/openapitools/client/model/BillingCheckoutDataTest.java
 src/test/java/org/openapitools/client/model/BillingCheckoutRequestTest.java
@@ -653,6 +673,7 @@ src/test/java/org/openapitools/client/model/DeliveriesListResponseTest.java
 src/test/java/org/openapitools/client/model/DeliveryOutTest.java
 src/test/java/org/openapitools/client/model/DeliveryResponseTest.java
 src/test/java/org/openapitools/client/model/DeliverySendRequestTest.java
+src/test/java/org/openapitools/client/model/DeliveryStatusTest.java
 src/test/java/org/openapitools/client/model/DocumentBrandingInputTest.java
 src/test/java/org/openapitools/client/model/DocumentCalculateRequestTest.java
 src/test/java/org/openapitools/client/model/DocumentCalculateResponseTest.java
@@ -673,6 +694,7 @@ src/test/java/org/openapitools/client/model/DocumentRenderOptionsTest.java
 src/test/java/org/openapitools/client/model/DocumentRenderRequestTest.java
 src/test/java/org/openapitools/client/model/DocumentResponseTest.java
 src/test/java/org/openapitools/client/model/DocumentShippingInputTest.java
+src/test/java/org/openapitools/client/model/DocumentStatusTest.java
 src/test/java/org/openapitools/client/model/DocumentTemplateRefTest.java
 src/test/java/org/openapitools/client/model/DocumentTypeOutTest.java
 src/test/java/org/openapitools/client/model/DocumentTypesListResponseTest.java
@@ -686,6 +708,7 @@ src/test/java/org/openapitools/client/model/HealthResponseTest.java
 src/test/java/org/openapitools/client/model/ImportCreateRequestTest.java
 src/test/java/org/openapitools/client/model/ImportOutTest.java
 src/test/java/org/openapitools/client/model/ImportResponseTest.java
+src/test/java/org/openapitools/client/model/ImportStatusTest.java
 src/test/java/org/openapitools/client/model/InvoiceAttachmentCreateRequestTest.java
 src/test/java/org/openapitools/client/model/InvoiceAttachmentOutTest.java
 src/test/java/org/openapitools/client/model/InvoiceAttachmentResponseTest.java
@@ -707,6 +730,7 @@ src/test/java/org/openapitools/client/model/InvoicesListResponseTest.java
 src/test/java/org/openapitools/client/model/JobOutTest.java
 src/test/java/org/openapitools/client/model/JobProgressOutTest.java
 src/test/java/org/openapitools/client/model/JobResponseTest.java
+src/test/java/org/openapitools/client/model/JobStatusTest.java
 src/test/java/org/openapitools/client/model/JobsListResponseTest.java
 src/test/java/org/openapitools/client/model/LineItemDiscountInputTest.java
 src/test/java/org/openapitools/client/model/LineItemTaxInputTest.java
@@ -735,11 +759,13 @@ src/test/java/org/openapitools/client/model/RecurringInvoiceCreateRequestTest.ja
 src/test/java/org/openapitools/client/model/RecurringInvoiceOutTest.java
 src/test/java/org/openapitools/client/model/RecurringInvoicePatchRequestTest.java
 src/test/java/org/openapitools/client/model/RecurringInvoiceResponseTest.java
+src/test/java/org/openapitools/client/model/RecurringInvoiceStatusTest.java
 src/test/java/org/openapitools/client/model/RecurringInvoicesListResponseTest.java
 src/test/java/org/openapitools/client/model/RenderComplianceOutTest.java
 src/test/java/org/openapitools/client/model/RenderFailureOutTest.java
 src/test/java/org/openapitools/client/model/RenderOutTest.java
 src/test/java/org/openapitools/client/model/RenderResponseTest.java
+src/test/java/org/openapitools/client/model/RenderStatusTest.java
 src/test/java/org/openapitools/client/model/SimpleBoolResponseTest.java
 src/test/java/org/openapitools/client/model/StandardLineItemInputTest.java
 src/test/java/org/openapitools/client/model/StatsCountsTest.java
@@ -780,6 +806,7 @@ src/test/java/org/openapitools/client/model/VersionResponseTest.java
 src/test/java/org/openapitools/client/model/WebhookDeliveriesListResponseTest.java
 src/test/java/org/openapitools/client/model/WebhookDeliveryOutTest.java
 src/test/java/org/openapitools/client/model/WebhookDeliveryResponseTest.java
+src/test/java/org/openapitools/client/model/WebhookDeliveryStatusTest.java
 src/test/java/org/openapitools/client/model/WebhookEndpointCreateRequestTest.java
 src/test/java/org/openapitools/client/model/WebhookEndpointOutTest.java
 src/test/java/org/openapitools/client/model/WebhookEndpointPatchRequestTest.java

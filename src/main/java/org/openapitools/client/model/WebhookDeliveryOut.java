@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.WebhookDeliveryStatus;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -50,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * WebhookDeliveryOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:20:19.466994333Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T15:36:04.534072030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class WebhookDeliveryOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -68,65 +69,9 @@ public class WebhookDeliveryOut {
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
   private String eventType;
 
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    PENDING("pending"),
-    
-    RETRYING("retrying"),
-    
-    DELIVERED("delivered"),
-    
-    FAILED("failed");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private StatusEnum status;
+  private WebhookDeliveryStatus status;
 
   public static final String SERIALIZED_NAME_HTTP_STATUS = "http_status";
   @SerializedName(SERIALIZED_NAME_HTTP_STATUS)
@@ -227,7 +172,7 @@ public class WebhookDeliveryOut {
   }
 
 
-  public WebhookDeliveryOut status(StatusEnum status) {
+  public WebhookDeliveryOut status(WebhookDeliveryStatus status) {
     this.status = status;
     return this;
   }
@@ -237,11 +182,11 @@ public class WebhookDeliveryOut {
    * @return status
    */
   @javax.annotation.Nonnull
-  public StatusEnum getStatus() {
+  public WebhookDeliveryStatus getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(WebhookDeliveryStatus status) {
     this.status = status;
   }
 
@@ -477,11 +422,8 @@ public class WebhookDeliveryOut {
       if (!jsonObj.get("event_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `event_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event_type").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
       // validate the required field `status`
-      StatusEnum.validateJsonElement(jsonObj.get("status"));
+      WebhookDeliveryStatus.validateJsonElement(jsonObj.get("status"));
       if ((jsonObj.get("error_message") != null && !jsonObj.get("error_message").isJsonNull()) && !jsonObj.get("error_message").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `error_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error_message").toString()));
       }

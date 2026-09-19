@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  |
 |**sourceFormat** | **String** |  |  |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  |
+|**status** | **ImportStatus** |  |  |
 |**totalRows** | **Integer** |  |  |
 |**importedRows** | **Integer** |  |  |
 |**failedRows** | **Integer** |  |  |
@@ -17,18 +17,6 @@
 |**createdAt** | **String** |  |  |
 |**updatedAt** | **String** |  |  |
 |**completedAt** | **String** |  |  [optional] |
-
-
-
-## Enum: StatusEnum
-
-| Name | Value |
-|---- | -----|
-| PENDING | &quot;pending&quot; |
-| PROCESSING | &quot;processing&quot; |
-| COMPLETED | &quot;completed&quot; |
-| FAILED | &quot;failed&quot; |
-| CANCELLED | &quot;cancelled&quot; |
 
 
 

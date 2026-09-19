@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  |
+|**status** | **RenderStatus** |  |  |
 |**documentType** | [**DocumentTypeEnum**](#DocumentTypeEnum) |  |  |
 |**templateId** | **String** |  |  |
 |**templateVersion** | **Integer** |  |  [optional] |
@@ -19,17 +19,6 @@
 |**createdAt** | **String** |  |  |
 |**compliance** | [**RenderComplianceOut**](RenderComplianceOut.md) |  |  [optional] |
 |**failure** | [**RenderFailureOut**](RenderFailureOut.md) |  |  [optional] |
-
-
-
-## Enum: StatusEnum
-
-| Name | Value |
-|---- | -----|
-| QUEUED | &quot;queued&quot; |
-| PROCESSING | &quot;processing&quot; |
-| COMPLETED | &quot;completed&quot; |
-| FAILED | &quot;failed&quot; |
 
 
 

@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  |
+|**status** | **DocumentStatus** |  |  |
 |**invoiceNumber** | **String** |  |  |
 |**documentType** | [**DocumentTypeEnum**](#DocumentTypeEnum) |  |  |
 |**issueDate** | **LocalDate** |  |  |
@@ -22,19 +22,6 @@
 |**createdAt** | **String** |  |  |
 |**updatedAt** | **String** |  |  |
 |**finalizedAt** | **String** |  |  [optional] |
-
-
-
-## Enum: StatusEnum
-
-| Name | Value |
-|---- | -----|
-| DRAFT | &quot;draft&quot; |
-| FINALIZED | &quot;finalized&quot; |
-| SENT | &quot;sent&quot; |
-| PAID | &quot;paid&quot; |
-| VOID | &quot;void&quot; |
-| ARCHIVED | &quot;archived&quot; |
 
 
 
