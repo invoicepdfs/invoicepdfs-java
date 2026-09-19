@@ -16,6 +16,8 @@ All URIs are relative to *http://localhost*
 
 Cancel Import
 
+Discard an import without creating anything. Only while it is &#x60;pending&#x60; or &#x60;processing&#x60;.
+
 ### Example
 ```java
 // Import classes:
@@ -81,6 +83,8 @@ public class Example {
 > ImportResponse confirmImport(importId)
 
 Confirm Import
+
+Commit a reviewed import, creating its documents.  Only from &#x60;pending&#x60; — an import already confirmed or cancelled returns &#x60;409&#x60;.
 
 ### Example
 ```java
@@ -148,6 +152,8 @@ public class Example {
 
 Create Import
 
+Upload rows to be turned into documents, for review first.  Nothing is created yet: the rows are parsed and held so you can check them. &#x60;confirm_import&#x60; commits them, &#x60;cancel_import&#x60; discards them.
+
 ### Example
 ```java
 // Import classes:
@@ -213,6 +219,8 @@ public class Example {
 > ImportResponse getImport(importId)
 
 Get Import
+
+An import&#39;s status and how many rows it holds.
 
 ### Example
 ```java

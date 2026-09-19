@@ -15,6 +15,8 @@ All URIs are relative to *http://localhost*
 
 Create Document Attachment
 
+Attach an already-uploaded file to a document.  Takes the &#x60;file_id&#x60; from &#x60;upload_file&#x60; rather than the bytes, so one upload can be attached to several documents.
+
 ### Example
 ```java
 // Import classes:
@@ -83,6 +85,8 @@ public class Example {
 
 Delete Document Attachment
 
+Detach a file from this document. The file itself is kept.
+
 ### Example
 ```java
 // Import classes:
@@ -150,6 +154,8 @@ public class Example {
 > InvoiceAttachmentsListResponse listDocumentAttachments(documentId)
 
 List Document Attachments
+
+Files attached to this document.
 
 ### Example
 ```java

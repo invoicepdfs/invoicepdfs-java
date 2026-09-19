@@ -145,7 +145,7 @@ public class JobsApi {
 
     /**
      * Cancel Job
-     * 
+     * Stop a job that has not finished.
      * @param jobId  (required)
      * @return JobResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -163,7 +163,7 @@ public class JobsApi {
 
     /**
      * Cancel Job
-     * 
+     * Stop a job that has not finished.
      * @param jobId  (required)
      * @return ApiResponse&lt;JobResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -182,7 +182,7 @@ public class JobsApi {
 
     /**
      * Cancel Job (asynchronously)
-     * 
+     * Stop a job that has not finished.
      * @param jobId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -272,7 +272,7 @@ public class JobsApi {
 
     /**
      * Get Job
-     * 
+     * One job&#39;s status and progress.
      * @param jobId  (required)
      * @return JobResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -290,7 +290,7 @@ public class JobsApi {
 
     /**
      * Get Job
-     * 
+     * One job&#39;s status and progress.
      * @param jobId  (required)
      * @return ApiResponse&lt;JobResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -309,7 +309,7 @@ public class JobsApi {
 
     /**
      * Get Job (asynchronously)
-     * 
+     * One job&#39;s status and progress.
      * @param jobId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -532,7 +532,7 @@ public class JobsApi {
 
     /**
      * Retry Job
-     * 
+     * Return a &#x60;failed&#x60; or &#x60;cancelled&#x60; job to &#x60;queued&#x60;, clearing its progress and error.  &#x60;409&#x60; from any other status.
      * @param jobId  (required)
      * @return JobResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -550,7 +550,7 @@ public class JobsApi {
 
     /**
      * Retry Job
-     * 
+     * Return a &#x60;failed&#x60; or &#x60;cancelled&#x60; job to &#x60;queued&#x60;, clearing its progress and error.  &#x60;409&#x60; from any other status.
      * @param jobId  (required)
      * @return ApiResponse&lt;JobResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -569,7 +569,7 @@ public class JobsApi {
 
     /**
      * Retry Job (asynchronously)
-     * 
+     * Return a &#x60;failed&#x60; or &#x60;cancelled&#x60; job to &#x60;queued&#x60;, clearing its progress and error.  &#x60;409&#x60; from any other status.
      * @param jobId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

@@ -16,6 +16,8 @@ All URIs are relative to *http://localhost*
 
 Cancel Job
 
+Stop a job that has not finished.
+
 ### Example
 ```java
 // Import classes:
@@ -81,6 +83,8 @@ public class Example {
 > JobResponse getJob(jobId)
 
 Get Job
+
+One job&#39;s status and progress.
 
 ### Example
 ```java
@@ -217,6 +221,8 @@ public class Example {
 > JobResponse retryJob(jobId)
 
 Retry Job
+
+Return a &#x60;failed&#x60; or &#x60;cancelled&#x60; job to &#x60;queued&#x60;, clearing its progress and error.  &#x60;409&#x60; from any other status.
 
 ### Example
 ```java

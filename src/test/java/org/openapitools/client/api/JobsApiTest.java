@@ -36,6 +36,8 @@ public class JobsApiTest {
     /**
      * Cancel Job
      *
+     * Stop a job that has not finished.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -47,6 +49,8 @@ public class JobsApiTest {
 
     /**
      * Get Job
+     *
+     * One job&#39;s status and progress.
      *
      * @throws ApiException if the Api call fails
      */
@@ -74,6 +78,8 @@ public class JobsApiTest {
 
     /**
      * Retry Job
+     *
+     * Return a &#x60;failed&#x60; or &#x60;cancelled&#x60; job to &#x60;queued&#x60;, clearing its progress and error.  &#x60;409&#x60; from any other status.
      *
      * @throws ApiException if the Api call fails
      */

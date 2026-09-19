@@ -23,6 +23,8 @@ All URIs are relative to *http://localhost*
 
 Create Template
 
+Design a template of your own, starting as a &#x60;draft&#x60;.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
+
 ### Example
 ```java
 // Import classes:
@@ -89,6 +91,8 @@ public class Example {
 
 Delete Template
 
+Remove a custom template.  &#x60;409&#x60; if a document or a recurring schedule still names it.
+
 ### Example
 ```java
 // Import classes:
@@ -153,6 +157,8 @@ null (empty response body)
 > CustomTemplateResponse duplicateTemplate(templateId)
 
 Duplicate Template
+
+Copy a custom template into a new &#x60;draft&#x60;, to change without affecting the original.
 
 ### Example
 ```java
@@ -220,6 +226,8 @@ public class Example {
 
 Get Builtin Template
 
+One built-in template: its id, name and the options it accepts.
+
 ### Example
 ```java
 // Import classes:
@@ -285,6 +293,8 @@ public class Example {
 > CustomTemplateResponse getCustomTemplate(templateId)
 
 Get Custom Template
+
+One of this account&#39;s templates.
 
 ### Example
 ```java
@@ -352,6 +362,8 @@ public class Example {
 
 Get Template
 
+One built-in template: its id, name and the options it accepts.
+
 ### Example
 ```java
 // Import classes:
@@ -417,6 +429,8 @@ public class Example {
 > CustomTemplatesListResponse listCustomTemplates(limit, cursor)
 
 List Custom Templates
+
+Templates this account has designed, newest first. Cursor-paginated.
 
 ### Example
 ```java
@@ -486,6 +500,8 @@ public class Example {
 
 List Templates
 
+The built-in templates every account can render with.  Your own designs are listed separately by &#x60;list_custom_templates&#x60;.
+
 ### Example
 ```java
 // Import classes:
@@ -546,6 +562,8 @@ This endpoint does not need any parameter.
 > RenderResponse previewTemplate(templateId, documentRenderRequest, version, idempotencyKey)
 
 Preview Template
+
+Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
 
 ### Example
 ```java
@@ -619,6 +637,8 @@ public class Example {
 
 Publish Template
 
+Mark a custom template &#x60;published&#x60;.  &#x60;409&#x60; if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
+
 ### Example
 ```java
 // Import classes:
@@ -684,6 +704,8 @@ public class Example {
 > CustomTemplateResponse updateTemplate(templateId, templatePatchRequest)
 
 Update Template
+
+Change a custom template. Only the fields you send are changed.
 
 ### Example
 ```java

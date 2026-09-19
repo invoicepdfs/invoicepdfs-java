@@ -152,7 +152,7 @@ public class TemplatesApi {
 
     /**
      * Create Template
-     * 
+     * Design a template of your own, starting as a &#x60;draft&#x60;.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
      * @param templateCreateRequest  (required)
      * @return CustomTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -170,7 +170,7 @@ public class TemplatesApi {
 
     /**
      * Create Template
-     * 
+     * Design a template of your own, starting as a &#x60;draft&#x60;.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
      * @param templateCreateRequest  (required)
      * @return ApiResponse&lt;CustomTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -189,7 +189,7 @@ public class TemplatesApi {
 
     /**
      * Create Template (asynchronously)
-     * 
+     * Design a template of your own, starting as a &#x60;draft&#x60;.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
      * @param templateCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -279,7 +279,7 @@ public class TemplatesApi {
 
     /**
      * Delete Template
-     * 
+     * Remove a custom template.  &#x60;409&#x60; if a document or a recurring schedule still names it.
      * @param templateId  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -295,7 +295,7 @@ public class TemplatesApi {
 
     /**
      * Delete Template
-     * 
+     * Remove a custom template.  &#x60;409&#x60; if a document or a recurring schedule still names it.
      * @param templateId  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -313,7 +313,7 @@ public class TemplatesApi {
 
     /**
      * Delete Template (asynchronously)
-     * 
+     * Remove a custom template.  &#x60;409&#x60; if a document or a recurring schedule still names it.
      * @param templateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -402,7 +402,7 @@ public class TemplatesApi {
 
     /**
      * Duplicate Template
-     * 
+     * Copy a custom template into a new &#x60;draft&#x60;, to change without affecting the original.
      * @param templateId  (required)
      * @return CustomTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -420,7 +420,7 @@ public class TemplatesApi {
 
     /**
      * Duplicate Template
-     * 
+     * Copy a custom template into a new &#x60;draft&#x60;, to change without affecting the original.
      * @param templateId  (required)
      * @return ApiResponse&lt;CustomTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -439,7 +439,7 @@ public class TemplatesApi {
 
     /**
      * Duplicate Template (asynchronously)
-     * 
+     * Copy a custom template into a new &#x60;draft&#x60;, to change without affecting the original.
      * @param templateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -529,7 +529,7 @@ public class TemplatesApi {
 
     /**
      * Get Builtin Template
-     * 
+     * One built-in template: its id, name and the options it accepts.
      * @param templateId  (required)
      * @return TemplateDetailResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -547,7 +547,7 @@ public class TemplatesApi {
 
     /**
      * Get Builtin Template
-     * 
+     * One built-in template: its id, name and the options it accepts.
      * @param templateId  (required)
      * @return ApiResponse&lt;TemplateDetailResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -566,7 +566,7 @@ public class TemplatesApi {
 
     /**
      * Get Builtin Template (asynchronously)
-     * 
+     * One built-in template: its id, name and the options it accepts.
      * @param templateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -656,7 +656,7 @@ public class TemplatesApi {
 
     /**
      * Get Custom Template
-     * 
+     * One of this account&#39;s templates.
      * @param templateId  (required)
      * @return CustomTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -674,7 +674,7 @@ public class TemplatesApi {
 
     /**
      * Get Custom Template
-     * 
+     * One of this account&#39;s templates.
      * @param templateId  (required)
      * @return ApiResponse&lt;CustomTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -693,7 +693,7 @@ public class TemplatesApi {
 
     /**
      * Get Custom Template (asynchronously)
-     * 
+     * One of this account&#39;s templates.
      * @param templateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -783,7 +783,7 @@ public class TemplatesApi {
 
     /**
      * Get Template
-     * 
+     * One built-in template: its id, name and the options it accepts.
      * @param templateId  (required)
      * @return TemplateDetailResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -801,7 +801,7 @@ public class TemplatesApi {
 
     /**
      * Get Template
-     * 
+     * One built-in template: its id, name and the options it accepts.
      * @param templateId  (required)
      * @return ApiResponse&lt;TemplateDetailResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -820,7 +820,7 @@ public class TemplatesApi {
 
     /**
      * Get Template (asynchronously)
-     * 
+     * One built-in template: its id, name and the options it accepts.
      * @param templateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -913,7 +913,7 @@ public class TemplatesApi {
 
     /**
      * List Custom Templates
-     * 
+     * Templates this account has designed, newest first. Cursor-paginated.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return CustomTemplatesListResponse
@@ -932,7 +932,7 @@ public class TemplatesApi {
 
     /**
      * List Custom Templates
-     * 
+     * Templates this account has designed, newest first. Cursor-paginated.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;CustomTemplatesListResponse&gt;
@@ -952,7 +952,7 @@ public class TemplatesApi {
 
     /**
      * List Custom Templates (asynchronously)
-     * 
+     * Templates this account has designed, newest first. Cursor-paginated.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1035,7 +1035,7 @@ public class TemplatesApi {
 
     /**
      * List Templates
-     * 
+     * The built-in templates every account can render with.  Your own designs are listed separately by &#x60;list_custom_templates&#x60;.
      * @return TemplatesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1051,7 +1051,7 @@ public class TemplatesApi {
 
     /**
      * List Templates
-     * 
+     * The built-in templates every account can render with.  Your own designs are listed separately by &#x60;list_custom_templates&#x60;.
      * @return ApiResponse&lt;TemplatesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1068,7 +1068,7 @@ public class TemplatesApi {
 
     /**
      * List Templates (asynchronously)
-     * 
+     * The built-in templates every account can render with.  Your own designs are listed separately by &#x60;list_custom_templates&#x60;.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1174,7 +1174,7 @@ public class TemplatesApi {
 
     /**
      * Preview Template
-     * 
+     * Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
      * @param version Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. (optional)
@@ -1195,7 +1195,7 @@ public class TemplatesApi {
 
     /**
      * Preview Template
-     * 
+     * Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
      * @param version Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. (optional)
@@ -1217,7 +1217,7 @@ public class TemplatesApi {
 
     /**
      * Preview Template (asynchronously)
-     * 
+     * Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
      * @param templateId  (required)
      * @param documentRenderRequest  (required)
      * @param version Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. (optional)
@@ -1310,7 +1310,7 @@ public class TemplatesApi {
 
     /**
      * Publish Template
-     * 
+     * Mark a custom template &#x60;published&#x60;.  &#x60;409&#x60; if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
      * @param templateId  (required)
      * @return CustomTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1328,7 +1328,7 @@ public class TemplatesApi {
 
     /**
      * Publish Template
-     * 
+     * Mark a custom template &#x60;published&#x60;.  &#x60;409&#x60; if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
      * @param templateId  (required)
      * @return ApiResponse&lt;CustomTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1347,7 +1347,7 @@ public class TemplatesApi {
 
     /**
      * Publish Template (asynchronously)
-     * 
+     * Mark a custom template &#x60;published&#x60;.  &#x60;409&#x60; if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
      * @param templateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1444,7 +1444,7 @@ public class TemplatesApi {
 
     /**
      * Update Template
-     * 
+     * Change a custom template. Only the fields you send are changed.
      * @param templateId  (required)
      * @param templatePatchRequest  (required)
      * @return CustomTemplateResponse
@@ -1463,7 +1463,7 @@ public class TemplatesApi {
 
     /**
      * Update Template
-     * 
+     * Change a custom template. Only the fields you send are changed.
      * @param templateId  (required)
      * @param templatePatchRequest  (required)
      * @return ApiResponse&lt;CustomTemplateResponse&gt;
@@ -1483,7 +1483,7 @@ public class TemplatesApi {
 
     /**
      * Update Template (asynchronously)
-     * 
+     * Change a custom template. Only the fields you send are changed.
      * @param templateId  (required)
      * @param templatePatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

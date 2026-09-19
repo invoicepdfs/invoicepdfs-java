@@ -146,7 +146,7 @@ public class FilesApi {
 
     /**
      * Delete File
-     * 
+     * Remove a stored file.  &#x60;409&#x60; if a branding profile or a document attachment still references it.
      * @param fileId  (required)
      * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -164,7 +164,7 @@ public class FilesApi {
 
     /**
      * Delete File
-     * 
+     * Remove a stored file.  &#x60;409&#x60; if a branding profile or a document attachment still references it.
      * @param fileId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -183,7 +183,7 @@ public class FilesApi {
 
     /**
      * Delete File (asynchronously)
-     * 
+     * Remove a stored file.  &#x60;409&#x60; if a branding profile or a document attachment still references it.
      * @param fileId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -273,7 +273,7 @@ public class FilesApi {
 
     /**
      * Get File
-     * 
+     * A stored file&#39;s metadata — name, type and size.
      * @param fileId  (required)
      * @return FileResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -291,7 +291,7 @@ public class FilesApi {
 
     /**
      * Get File
-     * 
+     * A stored file&#39;s metadata — name, type and size.
      * @param fileId  (required)
      * @return ApiResponse&lt;FileResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -310,7 +310,7 @@ public class FilesApi {
 
     /**
      * Get File (asynchronously)
-     * 
+     * A stored file&#39;s metadata — name, type and size.
      * @param fileId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -409,7 +409,7 @@ public class FilesApi {
 
     /**
      * Upload File
-     * 
+     * Store a file and get an id for it.  Where logos and document attachments come from: upload once, then reference the returned &#x60;file_id&#x60; from a branding profile or an attachment.
      * @param _file  (required)
      * @param idempotencyKey  (optional)
      * @return FileResponse
@@ -428,7 +428,7 @@ public class FilesApi {
 
     /**
      * Upload File
-     * 
+     * Store a file and get an id for it.  Where logos and document attachments come from: upload once, then reference the returned &#x60;file_id&#x60; from a branding profile or an attachment.
      * @param _file  (required)
      * @param idempotencyKey  (optional)
      * @return ApiResponse&lt;FileResponse&gt;
@@ -448,7 +448,7 @@ public class FilesApi {
 
     /**
      * Upload File (asynchronously)
-     * 
+     * Store a file and get an id for it.  Where logos and document attachments come from: upload once, then reference the returned &#x60;file_id&#x60; from a branding profile or an attachment.
      * @param _file  (required)
      * @param idempotencyKey  (optional)
      * @param _callback The callback to be executed when the API call finishes

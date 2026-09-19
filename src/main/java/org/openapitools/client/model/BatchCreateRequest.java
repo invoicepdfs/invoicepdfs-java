@@ -54,7 +54,7 @@ import com.invoicepdfs.JSON;
 /**
  * BatchCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T17:52:39.824221350Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T21:07:35.825260064Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class BatchCreateRequest {
   /**
    * Gets or Sets operation

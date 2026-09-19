@@ -36,6 +36,8 @@ public class ImportsApiTest {
     /**
      * Cancel Import
      *
+     * Discard an import without creating anything. Only while it is &#x60;pending&#x60; or &#x60;processing&#x60;.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -47,6 +49,8 @@ public class ImportsApiTest {
 
     /**
      * Confirm Import
+     *
+     * Commit a reviewed import, creating its documents.  Only from &#x60;pending&#x60; — an import already confirmed or cancelled returns &#x60;409&#x60;.
      *
      * @throws ApiException if the Api call fails
      */
@@ -60,6 +64,8 @@ public class ImportsApiTest {
     /**
      * Create Import
      *
+     * Upload rows to be turned into documents, for review first.  Nothing is created yet: the rows are parsed and held so you can check them. &#x60;confirm_import&#x60; commits them, &#x60;cancel_import&#x60; discards them.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -71,6 +77,8 @@ public class ImportsApiTest {
 
     /**
      * Get Import
+     *
+     * An import&#39;s status and how many rows it holds.
      *
      * @throws ApiException if the Api call fails
      */

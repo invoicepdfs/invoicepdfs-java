@@ -2196,6 +2196,7 @@ paths:
       - application/xml
   /api/v1/documents/{document_id}/attachments:
     get:
+      description: Files attached to this document.
       operationId: list_document_attachments
       parameters:
       - explode: false
@@ -2228,6 +2229,11 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Attach an already-uploaded file to a document.
+
+        Takes the `file_id` from `upload_file` rather than the bytes, so one upload
+        can be attached to several documents.
       operationId: create_document_attachment
       parameters:
       - explode: false
@@ -2268,6 +2274,7 @@ paths:
       - application/json
   /api/v1/documents/{document_id}/attachments/{attachment_id}:
     delete:
+      description: Detach a file from this document. The file itself is kept.
       operationId: delete_document_attachment
       parameters:
       - explode: false
@@ -2309,6 +2316,10 @@ paths:
       - application/json
   /api/v1/templates:
     get:
+      description: |-
+        The built-in templates every account can render with.
+
+        Your own designs are listed separately by `list_custom_templates`.
       operationId: list_templates
       responses:
         "200":
@@ -2327,6 +2338,7 @@ paths:
       - application/json
   /api/v1/templates/builtin/{template_id}:
     get:
+      description: "One built-in template: its id, name and the options it accepts."
       operationId: get_builtin_template
       parameters:
       - explode: false
@@ -2360,6 +2372,7 @@ paths:
       - application/json
   /api/v1/templates/custom:
     get:
+      description: "Templates this account has designed, newest first. Cursor-paginated."
       operationId: list_custom_templates
       parameters:
       - explode: true
@@ -2403,6 +2416,12 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Design a template of your own, starting as a `draft`.
+
+        A custom template is a built-in plus your own configuration — it does not
+        replace the layout, it adjusts it. Drafts can be rendered while you iterate;
+        publish it when you want a version pinned.
       operationId: create_template
       requestBody:
         content:
@@ -2434,6 +2453,10 @@ paths:
       - application/json
   /api/v1/templates/custom/{template_id}:
     delete:
+      description: |-
+        Remove a custom template.
+
+        `409` if a document or a recurring schedule still names it.
       operationId: delete_template
       parameters:
       - explode: false
@@ -2462,6 +2485,7 @@ paths:
       x-accepts:
       - application/json
     get:
+      description: One of this account's templates.
       operationId: get_custom_template
       parameters:
       - explode: false
@@ -2494,6 +2518,7 @@ paths:
       x-accepts:
       - application/json
     patch:
+      description: Change a custom template. Only the fields you send are changed.
       operationId: update_template
       parameters:
       - explode: false
@@ -2534,6 +2559,8 @@ paths:
       - application/json
   /api/v1/templates/custom/{template_id}/duplicate:
     post:
+      description: "Copy a custom template into a new `draft`, to change without affecting\
+        \ the original."
       operationId: duplicate_template
       parameters:
       - explode: false
@@ -2567,6 +2594,11 @@ paths:
       - application/json
   /api/v1/templates/custom/{template_id}/publish:
     post:
+      description: |-
+        Mark a custom template `published`.
+
+        `409` if it is published already. Publishing is what makes a version
+        pinnable, so a document rendered months from now can still be reproduced.
       operationId: publish_template
       parameters:
       - explode: false
@@ -2600,6 +2632,7 @@ paths:
       - application/json
   /api/v1/templates/{template_id}:
     get:
+      description: "One built-in template: its id, name and the options it accepts."
       operationId: get_template
       parameters:
       - explode: false
@@ -2633,6 +2666,12 @@ paths:
       - application/json
   /api/v1/templates/{template_id}/preview:
     post:
+      description: |-
+        Render a template against sample data to see how it looks.
+
+        **This is a real render**: it counts against the monthly quota and is metered
+        like any other, because it does the same work. Use it to check a design, not
+        as a way to render documents.
       operationId: preview_template
       parameters:
       - explode: false
@@ -2698,6 +2737,7 @@ paths:
       - application/pdf
   /api/v1/templates/{template_id}/versions:
     get:
+      description: "Every published version of a custom template, newest first."
       operationId: list_template_versions
       parameters:
       - explode: false
@@ -2730,6 +2770,11 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Snapshot a template's current configuration as a new version.
+
+        A document can pin a version, so a render months later reproduces the design
+        that was live when it was issued rather than today's.
       operationId: create_template_version
       parameters:
       - explode: false
@@ -2770,6 +2815,7 @@ paths:
       - application/json
   /api/v1/templates/{template_id}/versions/{version}:
     get:
+      description: One version's stored configuration.
       operationId: get_template_version
       parameters:
       - explode: false
@@ -3146,6 +3192,7 @@ paths:
       - application/json
   /api/v1/batches:
     get:
+      description: "Batch jobs on this account, newest first."
       operationId: list_batches
       parameters:
       - explode: true
@@ -3189,6 +3236,15 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Queue many documents to be rendered at once.
+
+        Returns `202` — the batch is recorded and a worker renders it; nothing is
+        rendered inside this request. Poll `get_batch` for progress, then
+        `download_batch` for the results.
+
+        The whole batch is refused if it would exceed the monthly quota, rather than
+        rendering part of it.
       operationId: create_batch
       requestBody:
         content:
@@ -3220,6 +3276,11 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}:
     get:
+      description: |-
+        A batch's status and its per-item counts.
+
+        The poll surface: `total_items`, `completed_items` and `failed_items` say how
+        far it has got without listing every item.
       operationId: get_batch
       parameters:
       - explode: false
@@ -3253,6 +3314,11 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}/items:
     get:
+      description: |-
+        Every item in a batch with its own status, newest first.
+
+        Where to look when `failed_items` is not zero: each row carries its error and,
+        once rendered, its `render_id`.
       operationId: list_batch_items
       parameters:
       - explode: false
@@ -3305,6 +3371,11 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}/cancel:
     post:
+      description: |-
+        Stop a batch that has not finished.
+
+        Items not yet started are cancelled. An item already rendering completes —
+        the work is done and cancelling it would waste it.
       operationId: cancel_batch
       parameters:
       - explode: false
@@ -3338,6 +3409,11 @@ paths:
       - application/json
   /api/v1/batches/{batch_id}/download:
     get:
+      description: |-
+        Every completed render in the batch, as a ZIP.
+
+        `409` until the batch is `completed`. Items that failed are simply absent, so
+        check `failed_items` rather than counting files.
       operationId: download_batch
       parameters:
       - explode: false
@@ -3748,6 +3824,11 @@ paths:
       - application/json
   /api/v1/files:
     post:
+      description: |-
+        Store a file and get an id for it.
+
+        Where logos and document attachments come from: upload once, then reference
+        the returned `file_id` from a branding profile or an attachment.
       operationId: upload_file
       parameters:
       - explode: false
@@ -3788,6 +3869,10 @@ paths:
       - application/json
   /api/v1/files/{file_id}:
     delete:
+      description: |-
+        Remove a stored file.
+
+        `409` if a branding profile or a document attachment still references it.
       operationId: delete_file
       parameters:
       - explode: false
@@ -3820,6 +3905,7 @@ paths:
       x-accepts:
       - application/json
     get:
+      description: "A stored file's metadata — name, type and size."
       operationId: get_file
       parameters:
       - explode: false
@@ -4513,6 +4599,7 @@ paths:
       - application/json
   /api/v1/jobs/{job_id}:
     get:
+      description: One job's status and progress.
       operationId: get_job
       parameters:
       - explode: false
@@ -4546,6 +4633,7 @@ paths:
       - application/json
   /api/v1/jobs/{job_id}/cancel:
     post:
+      description: Stop a job that has not finished.
       operationId: cancel_job
       parameters:
       - explode: false
@@ -4579,6 +4667,10 @@ paths:
       - application/json
   /api/v1/jobs/{job_id}/retry:
     post:
+      description: |-
+        Return a `failed` or `cancelled` job to `queued`, clearing its progress and error.
+
+        `409` from any other status.
       operationId: retry_job
       parameters:
       - explode: false
@@ -4612,6 +4704,11 @@ paths:
       - application/json
   /api/v1/imports:
     post:
+      description: |-
+        Upload rows to be turned into documents, for review first.
+
+        Nothing is created yet: the rows are parsed and held so you can check them.
+        `confirm_import` commits them, `cancel_import` discards them.
       operationId: create_import
       requestBody:
         content:
@@ -4643,6 +4740,7 @@ paths:
       - application/json
   /api/v1/imports/{import_id}:
     get:
+      description: An import's status and how many rows it holds.
       operationId: get_import
       parameters:
       - explode: false
@@ -4676,6 +4774,10 @@ paths:
       - application/json
   /api/v1/imports/{import_id}/confirm:
     post:
+      description: |-
+        Commit a reviewed import, creating its documents.
+
+        Only from `pending` — an import already confirmed or cancelled returns `409`.
       operationId: confirm_import
       parameters:
       - explode: false
@@ -4709,6 +4811,8 @@ paths:
       - application/json
   /api/v1/imports/{import_id}/cancel:
     post:
+      description: Discard an import without creating anything. Only while it is `pending`
+        or `processing`.
       operationId: cancel_import
       parameters:
       - explode: false

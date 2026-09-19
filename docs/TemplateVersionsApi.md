@@ -16,6 +16,8 @@ All URIs are relative to *http://localhost*
 
 Create Template Version
 
+Snapshot a template&#39;s current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today&#39;s.
+
 ### Example
 ```java
 // Import classes:
@@ -84,6 +86,8 @@ public class Example {
 
 Get Template Version
 
+One version&#39;s stored configuration.
+
 ### Example
 ```java
 // Import classes:
@@ -151,6 +155,8 @@ public class Example {
 > TemplateVersionsListResponse listTemplateVersions(templateId)
 
 List Template Versions
+
+Every published version of a custom template, newest first.
 
 ### Example
 ```java

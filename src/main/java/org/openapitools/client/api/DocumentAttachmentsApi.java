@@ -154,7 +154,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * Create Document Attachment
-     * 
+     * Attach an already-uploaded file to a document.  Takes the &#x60;file_id&#x60; from &#x60;upload_file&#x60; rather than the bytes, so one upload can be attached to several documents.
      * @param documentId  (required)
      * @param invoiceAttachmentCreateRequest  (required)
      * @return InvoiceAttachmentResponse
@@ -173,7 +173,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * Create Document Attachment
-     * 
+     * Attach an already-uploaded file to a document.  Takes the &#x60;file_id&#x60; from &#x60;upload_file&#x60; rather than the bytes, so one upload can be attached to several documents.
      * @param documentId  (required)
      * @param invoiceAttachmentCreateRequest  (required)
      * @return ApiResponse&lt;InvoiceAttachmentResponse&gt;
@@ -193,7 +193,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * Create Document Attachment (asynchronously)
-     * 
+     * Attach an already-uploaded file to a document.  Takes the &#x60;file_id&#x60; from &#x60;upload_file&#x60; rather than the bytes, so one upload can be attached to several documents.
      * @param documentId  (required)
      * @param invoiceAttachmentCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -291,7 +291,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * Delete Document Attachment
-     * 
+     * Detach a file from this document. The file itself is kept.
      * @param documentId  (required)
      * @param attachmentId  (required)
      * @return SimpleBoolResponse
@@ -310,7 +310,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * Delete Document Attachment
-     * 
+     * Detach a file from this document. The file itself is kept.
      * @param documentId  (required)
      * @param attachmentId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
@@ -330,7 +330,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * Delete Document Attachment (asynchronously)
-     * 
+     * Detach a file from this document. The file itself is kept.
      * @param documentId  (required)
      * @param attachmentId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -421,7 +421,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * List Document Attachments
-     * 
+     * Files attached to this document.
      * @param documentId  (required)
      * @return InvoiceAttachmentsListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -439,7 +439,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * List Document Attachments
-     * 
+     * Files attached to this document.
      * @param documentId  (required)
      * @return ApiResponse&lt;InvoiceAttachmentsListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -458,7 +458,7 @@ public class DocumentAttachmentsApi {
 
     /**
      * List Document Attachments (asynchronously)
-     * 
+     * Files attached to this document.
      * @param documentId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

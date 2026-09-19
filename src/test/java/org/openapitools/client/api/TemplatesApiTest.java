@@ -43,6 +43,8 @@ public class TemplatesApiTest {
     /**
      * Create Template
      *
+     * Design a template of your own, starting as a &#x60;draft&#x60;.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -54,6 +56,8 @@ public class TemplatesApiTest {
 
     /**
      * Delete Template
+     *
+     * Remove a custom template.  &#x60;409&#x60; if a document or a recurring schedule still names it.
      *
      * @throws ApiException if the Api call fails
      */
@@ -67,6 +71,8 @@ public class TemplatesApiTest {
     /**
      * Duplicate Template
      *
+     * Copy a custom template into a new &#x60;draft&#x60;, to change without affecting the original.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -78,6 +84,8 @@ public class TemplatesApiTest {
 
     /**
      * Get Builtin Template
+     *
+     * One built-in template: its id, name and the options it accepts.
      *
      * @throws ApiException if the Api call fails
      */
@@ -91,6 +99,8 @@ public class TemplatesApiTest {
     /**
      * Get Custom Template
      *
+     * One of this account&#39;s templates.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -103,6 +113,8 @@ public class TemplatesApiTest {
     /**
      * Get Template
      *
+     * One built-in template: its id, name and the options it accepts.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -114,6 +126,8 @@ public class TemplatesApiTest {
 
     /**
      * List Custom Templates
+     *
+     * Templates this account has designed, newest first. Cursor-paginated.
      *
      * @throws ApiException if the Api call fails
      */
@@ -128,6 +142,8 @@ public class TemplatesApiTest {
     /**
      * List Templates
      *
+     * The built-in templates every account can render with.  Your own designs are listed separately by &#x60;list_custom_templates&#x60;.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -138,6 +154,8 @@ public class TemplatesApiTest {
 
     /**
      * Preview Template
+     *
+     * Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
      *
      * @throws ApiException if the Api call fails
      */
@@ -154,6 +172,8 @@ public class TemplatesApiTest {
     /**
      * Publish Template
      *
+     * Mark a custom template &#x60;published&#x60;.  &#x60;409&#x60; if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -165,6 +185,8 @@ public class TemplatesApiTest {
 
     /**
      * Update Template
+     *
+     * Change a custom template. Only the fields you send are changed.
      *
      * @throws ApiException if the Api call fails
      */

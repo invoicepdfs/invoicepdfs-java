@@ -38,6 +38,8 @@ public class DocumentAttachmentsApiTest {
     /**
      * Create Document Attachment
      *
+     * Attach an already-uploaded file to a document.  Takes the &#x60;file_id&#x60; from &#x60;upload_file&#x60; rather than the bytes, so one upload can be attached to several documents.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -51,6 +53,8 @@ public class DocumentAttachmentsApiTest {
     /**
      * Delete Document Attachment
      *
+     * Detach a file from this document. The file itself is kept.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -63,6 +67,8 @@ public class DocumentAttachmentsApiTest {
 
     /**
      * List Document Attachments
+     *
+     * Files attached to this document.
      *
      * @throws ApiException if the Api call fails
      */

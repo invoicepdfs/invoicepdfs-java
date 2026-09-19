@@ -37,6 +37,8 @@ public class TemplateVersionsApiTest {
     /**
      * Create Template Version
      *
+     * Snapshot a template&#39;s current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today&#39;s.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -50,6 +52,8 @@ public class TemplateVersionsApiTest {
     /**
      * Get Template Version
      *
+     * One version&#39;s stored configuration.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -62,6 +66,8 @@ public class TemplateVersionsApiTest {
 
     /**
      * List Template Versions
+     *
+     * Every published version of a custom template, newest first.
      *
      * @throws ApiException if the Api call fails
      */

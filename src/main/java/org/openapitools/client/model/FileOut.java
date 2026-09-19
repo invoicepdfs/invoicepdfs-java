@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * FileOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T17:52:39.824221350Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-19T21:07:35.825260064Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class FileOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

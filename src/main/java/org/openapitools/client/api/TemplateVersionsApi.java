@@ -153,7 +153,7 @@ public class TemplateVersionsApi {
 
     /**
      * Create Template Version
-     * 
+     * Snapshot a template&#39;s current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today&#39;s.
      * @param templateId  (required)
      * @param templateVersionCreateRequest  (required)
      * @return TemplateVersionResponse
@@ -172,7 +172,7 @@ public class TemplateVersionsApi {
 
     /**
      * Create Template Version
-     * 
+     * Snapshot a template&#39;s current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today&#39;s.
      * @param templateId  (required)
      * @param templateVersionCreateRequest  (required)
      * @return ApiResponse&lt;TemplateVersionResponse&gt;
@@ -192,7 +192,7 @@ public class TemplateVersionsApi {
 
     /**
      * Create Template Version (asynchronously)
-     * 
+     * Snapshot a template&#39;s current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today&#39;s.
      * @param templateId  (required)
      * @param templateVersionCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -290,7 +290,7 @@ public class TemplateVersionsApi {
 
     /**
      * Get Template Version
-     * 
+     * One version&#39;s stored configuration.
      * @param templateId  (required)
      * @param version  (required)
      * @return TemplateVersionResponse
@@ -309,7 +309,7 @@ public class TemplateVersionsApi {
 
     /**
      * Get Template Version
-     * 
+     * One version&#39;s stored configuration.
      * @param templateId  (required)
      * @param version  (required)
      * @return ApiResponse&lt;TemplateVersionResponse&gt;
@@ -329,7 +329,7 @@ public class TemplateVersionsApi {
 
     /**
      * Get Template Version (asynchronously)
-     * 
+     * One version&#39;s stored configuration.
      * @param templateId  (required)
      * @param version  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -420,7 +420,7 @@ public class TemplateVersionsApi {
 
     /**
      * List Template Versions
-     * 
+     * Every published version of a custom template, newest first.
      * @param templateId  (required)
      * @return TemplateVersionsListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -438,7 +438,7 @@ public class TemplateVersionsApi {
 
     /**
      * List Template Versions
-     * 
+     * Every published version of a custom template, newest first.
      * @param templateId  (required)
      * @return ApiResponse&lt;TemplateVersionsListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -457,7 +457,7 @@ public class TemplateVersionsApi {
 
     /**
      * List Template Versions (asynchronously)
-     * 
+     * Every published version of a custom template, newest first.
      * @param templateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

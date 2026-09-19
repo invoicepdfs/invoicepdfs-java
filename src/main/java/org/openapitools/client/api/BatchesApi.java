@@ -148,7 +148,7 @@ public class BatchesApi {
 
     /**
      * Cancel Batch
-     * 
+     * Stop a batch that has not finished.  Items not yet started are cancelled. An item already rendering completes — the work is done and cancelling it would waste it.
      * @param batchId  (required)
      * @return BatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -166,7 +166,7 @@ public class BatchesApi {
 
     /**
      * Cancel Batch
-     * 
+     * Stop a batch that has not finished.  Items not yet started are cancelled. An item already rendering completes — the work is done and cancelling it would waste it.
      * @param batchId  (required)
      * @return ApiResponse&lt;BatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -185,7 +185,7 @@ public class BatchesApi {
 
     /**
      * Cancel Batch (asynchronously)
-     * 
+     * Stop a batch that has not finished.  Items not yet started are cancelled. An item already rendering completes — the work is done and cancelling it would waste it.
      * @param batchId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -275,7 +275,7 @@ public class BatchesApi {
 
     /**
      * Create Batch
-     * 
+     * Queue many documents to be rendered at once.  Returns &#x60;202&#x60; — the batch is recorded and a worker renders it; nothing is rendered inside this request. Poll &#x60;get_batch&#x60; for progress, then &#x60;download_batch&#x60; for the results.  The whole batch is refused if it would exceed the monthly quota, rather than rendering part of it.
      * @param batchCreateRequest  (required)
      * @return BatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -293,7 +293,7 @@ public class BatchesApi {
 
     /**
      * Create Batch
-     * 
+     * Queue many documents to be rendered at once.  Returns &#x60;202&#x60; — the batch is recorded and a worker renders it; nothing is rendered inside this request. Poll &#x60;get_batch&#x60; for progress, then &#x60;download_batch&#x60; for the results.  The whole batch is refused if it would exceed the monthly quota, rather than rendering part of it.
      * @param batchCreateRequest  (required)
      * @return ApiResponse&lt;BatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -312,7 +312,7 @@ public class BatchesApi {
 
     /**
      * Create Batch (asynchronously)
-     * 
+     * Queue many documents to be rendered at once.  Returns &#x60;202&#x60; — the batch is recorded and a worker renders it; nothing is rendered inside this request. Poll &#x60;get_batch&#x60; for progress, then &#x60;download_batch&#x60; for the results.  The whole batch is refused if it would exceed the monthly quota, rather than rendering part of it.
      * @param batchCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -403,7 +403,7 @@ public class BatchesApi {
 
     /**
      * Download Batch
-     * 
+     * Every completed render in the batch, as a ZIP.  &#x60;409&#x60; until the batch is &#x60;completed&#x60;. Items that failed are simply absent, so check &#x60;failed_items&#x60; rather than counting files.
      * @param batchId  (required)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -421,7 +421,7 @@ public class BatchesApi {
 
     /**
      * Download Batch
-     * 
+     * Every completed render in the batch, as a ZIP.  &#x60;409&#x60; until the batch is &#x60;completed&#x60;. Items that failed are simply absent, so check &#x60;failed_items&#x60; rather than counting files.
      * @param batchId  (required)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -440,7 +440,7 @@ public class BatchesApi {
 
     /**
      * Download Batch (asynchronously)
-     * 
+     * Every completed render in the batch, as a ZIP.  &#x60;409&#x60; until the batch is &#x60;completed&#x60;. Items that failed are simply absent, so check &#x60;failed_items&#x60; rather than counting files.
      * @param batchId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -530,7 +530,7 @@ public class BatchesApi {
 
     /**
      * Get Batch
-     * 
+     * A batch&#39;s status and its per-item counts.  The poll surface: &#x60;total_items&#x60;, &#x60;completed_items&#x60; and &#x60;failed_items&#x60; say how far it has got without listing every item.
      * @param batchId  (required)
      * @return BatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -548,7 +548,7 @@ public class BatchesApi {
 
     /**
      * Get Batch
-     * 
+     * A batch&#39;s status and its per-item counts.  The poll surface: &#x60;total_items&#x60;, &#x60;completed_items&#x60; and &#x60;failed_items&#x60; say how far it has got without listing every item.
      * @param batchId  (required)
      * @return ApiResponse&lt;BatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -567,7 +567,7 @@ public class BatchesApi {
 
     /**
      * Get Batch (asynchronously)
-     * 
+     * A batch&#39;s status and its per-item counts.  The poll surface: &#x60;total_items&#x60;, &#x60;completed_items&#x60; and &#x60;failed_items&#x60; say how far it has got without listing every item.
      * @param batchId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -667,7 +667,7 @@ public class BatchesApi {
 
     /**
      * List Batch Items
-     * 
+     * Every item in a batch with its own status, newest first.  Where to look when &#x60;failed_items&#x60; is not zero: each row carries its error and, once rendered, its &#x60;render_id&#x60;.
      * @param batchId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -687,7 +687,7 @@ public class BatchesApi {
 
     /**
      * List Batch Items
-     * 
+     * Every item in a batch with its own status, newest first.  Where to look when &#x60;failed_items&#x60; is not zero: each row carries its error and, once rendered, its &#x60;render_id&#x60;.
      * @param batchId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -708,7 +708,7 @@ public class BatchesApi {
 
     /**
      * List Batch Items (asynchronously)
-     * 
+     * Every item in a batch with its own status, newest first.  Where to look when &#x60;failed_items&#x60; is not zero: each row carries its error and, once rendered, its &#x60;render_id&#x60;.
      * @param batchId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -803,7 +803,7 @@ public class BatchesApi {
 
     /**
      * List Batches
-     * 
+     * Batch jobs on this account, newest first.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return BatchesListResponse
@@ -822,7 +822,7 @@ public class BatchesApi {
 
     /**
      * List Batches
-     * 
+     * Batch jobs on this account, newest first.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;BatchesListResponse&gt;
@@ -842,7 +842,7 @@ public class BatchesApi {
 
     /**
      * List Batches (asynchronously)
-     * 
+     * Batch jobs on this account, newest first.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
