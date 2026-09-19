@@ -148,7 +148,7 @@ public class TaxRatesApi {
 
     /**
      * Create Tax Rate
-     * 
+     * Store a reusable tax rate.  &#x60;inclusive&#x60; decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax &#x60;category&#x60; travels with the rate into e-invoicing XML.
      * @param taxRateCreateRequest  (required)
      * @return TaxRateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -166,7 +166,7 @@ public class TaxRatesApi {
 
     /**
      * Create Tax Rate
-     * 
+     * Store a reusable tax rate.  &#x60;inclusive&#x60; decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax &#x60;category&#x60; travels with the rate into e-invoicing XML.
      * @param taxRateCreateRequest  (required)
      * @return ApiResponse&lt;TaxRateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -185,7 +185,7 @@ public class TaxRatesApi {
 
     /**
      * Create Tax Rate (asynchronously)
-     * 
+     * Store a reusable tax rate.  &#x60;inclusive&#x60; decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax &#x60;category&#x60; travels with the rate into e-invoicing XML.
      * @param taxRateCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -275,7 +275,7 @@ public class TaxRatesApi {
 
     /**
      * Delete Tax Rate
-     * 
+     * Remove a stored tax rate. Documents already issued are unaffected.
      * @param taxRateId  (required)
      * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -293,7 +293,7 @@ public class TaxRatesApi {
 
     /**
      * Delete Tax Rate
-     * 
+     * Remove a stored tax rate. Documents already issued are unaffected.
      * @param taxRateId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -312,7 +312,7 @@ public class TaxRatesApi {
 
     /**
      * Delete Tax Rate (asynchronously)
-     * 
+     * Remove a stored tax rate. Documents already issued are unaffected.
      * @param taxRateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -402,7 +402,7 @@ public class TaxRatesApi {
 
     /**
      * Get Tax Rate
-     * 
+     * One stored tax rate.
      * @param taxRateId  (required)
      * @return TaxRateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -420,7 +420,7 @@ public class TaxRatesApi {
 
     /**
      * Get Tax Rate
-     * 
+     * One stored tax rate.
      * @param taxRateId  (required)
      * @return ApiResponse&lt;TaxRateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -439,7 +439,7 @@ public class TaxRatesApi {
 
     /**
      * Get Tax Rate (asynchronously)
-     * 
+     * One stored tax rate.
      * @param taxRateId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -532,7 +532,7 @@ public class TaxRatesApi {
 
     /**
      * List Tax Rates
-     * 
+     * Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return TaxRatesListResponse
@@ -551,7 +551,7 @@ public class TaxRatesApi {
 
     /**
      * List Tax Rates
-     * 
+     * Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;TaxRatesListResponse&gt;
@@ -571,7 +571,7 @@ public class TaxRatesApi {
 
     /**
      * List Tax Rates (asynchronously)
-     * 
+     * Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -669,7 +669,7 @@ public class TaxRatesApi {
 
     /**
      * Update Tax Rate
-     * 
+     * Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
      * @param taxRateId  (required)
      * @param taxRatePatchRequest  (required)
      * @return TaxRateResponse
@@ -688,7 +688,7 @@ public class TaxRatesApi {
 
     /**
      * Update Tax Rate
-     * 
+     * Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
      * @param taxRateId  (required)
      * @param taxRatePatchRequest  (required)
      * @return ApiResponse&lt;TaxRateResponse&gt;
@@ -708,7 +708,7 @@ public class TaxRatesApi {
 
     /**
      * Update Tax Rate (asynchronously)
-     * 
+     * Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
      * @param taxRateId  (required)
      * @param taxRatePatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

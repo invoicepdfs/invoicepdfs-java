@@ -153,7 +153,7 @@ public class BusinessProfilesApi {
 
     /**
      * Create Business Profile
-     * 
+     * Create an identity to issue documents as: the seller side.  &#x60;legal_name&#x60;, &#x60;tax_id&#x60;, address and bank details are what appears as the issuer, and what an e-invoicing ruleset checks. Distinct from a branding profile, which sets colours and a logo and says nothing about who you are.
      * @param businessProfileCreate  (required)
      * @param idempotencyKey  (optional)
      * @return BusinessProfileResponse
@@ -172,7 +172,7 @@ public class BusinessProfilesApi {
 
     /**
      * Create Business Profile
-     * 
+     * Create an identity to issue documents as: the seller side.  &#x60;legal_name&#x60;, &#x60;tax_id&#x60;, address and bank details are what appears as the issuer, and what an e-invoicing ruleset checks. Distinct from a branding profile, which sets colours and a logo and says nothing about who you are.
      * @param businessProfileCreate  (required)
      * @param idempotencyKey  (optional)
      * @return ApiResponse&lt;BusinessProfileResponse&gt;
@@ -192,7 +192,7 @@ public class BusinessProfilesApi {
 
     /**
      * Create Business Profile (asynchronously)
-     * 
+     * Create an identity to issue documents as: the seller side.  &#x60;legal_name&#x60;, &#x60;tax_id&#x60;, address and bank details are what appears as the issuer, and what an e-invoicing ruleset checks. Distinct from a branding profile, which sets colours and a logo and says nothing about who you are.
      * @param businessProfileCreate  (required)
      * @param idempotencyKey  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -284,7 +284,7 @@ public class BusinessProfilesApi {
 
     /**
      * Delete Business Profile
-     * 
+     * Remove a business profile.  &#x60;409&#x60; if any document was issued under it, naming what still points at it.
      * @param businessProfileId  (required)
      * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -303,7 +303,7 @@ public class BusinessProfilesApi {
 
     /**
      * Delete Business Profile
-     * 
+     * Remove a business profile.  &#x60;409&#x60; if any document was issued under it, naming what still points at it.
      * @param businessProfileId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -323,7 +323,7 @@ public class BusinessProfilesApi {
 
     /**
      * Delete Business Profile (asynchronously)
-     * 
+     * Remove a business profile.  &#x60;409&#x60; if any document was issued under it, naming what still points at it.
      * @param businessProfileId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -414,7 +414,7 @@ public class BusinessProfilesApi {
 
     /**
      * Get Business Profile
-     * 
+     * One business profile.
      * @param businessProfileId  (required)
      * @return BusinessProfileResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -432,7 +432,7 @@ public class BusinessProfilesApi {
 
     /**
      * Get Business Profile
-     * 
+     * One business profile.
      * @param businessProfileId  (required)
      * @return ApiResponse&lt;BusinessProfileResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -451,7 +451,7 @@ public class BusinessProfilesApi {
 
     /**
      * Get Business Profile (asynchronously)
-     * 
+     * One business profile.
      * @param businessProfileId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -544,7 +544,7 @@ public class BusinessProfilesApi {
 
     /**
      * List Business Profiles
-     * 
+     * The identities you issue documents *as*, newest first.  One per entity you bill from — a business with two trading names or two tax registrations needs two. For how documents *look* rather than who issues them, see the branding profiles.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return BusinessProfilesListResponse
@@ -563,7 +563,7 @@ public class BusinessProfilesApi {
 
     /**
      * List Business Profiles
-     * 
+     * The identities you issue documents *as*, newest first.  One per entity you bill from — a business with two trading names or two tax registrations needs two. For how documents *look* rather than who issues them, see the branding profiles.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;BusinessProfilesListResponse&gt;
@@ -583,7 +583,7 @@ public class BusinessProfilesApi {
 
     /**
      * List Business Profiles (asynchronously)
-     * 
+     * The identities you issue documents *as*, newest first.  One per entity you bill from — a business with two trading names or two tax registrations needs two. For how documents *look* rather than who issues them, see the branding profiles.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -686,7 +686,7 @@ public class BusinessProfilesApi {
 
     /**
      * Update Business Profile
-     * 
+     * Change a business profile.  Only the fields you send are changed. Documents already issued keep the issuer details they carried at the time.
      * @param businessProfileId  (required)
      * @param businessProfilePatch  (required)
      * @param idempotencyKey  (optional)
@@ -706,7 +706,7 @@ public class BusinessProfilesApi {
 
     /**
      * Update Business Profile
-     * 
+     * Change a business profile.  Only the fields you send are changed. Documents already issued keep the issuer details they carried at the time.
      * @param businessProfileId  (required)
      * @param businessProfilePatch  (required)
      * @param idempotencyKey  (optional)
@@ -727,7 +727,7 @@ public class BusinessProfilesApi {
 
     /**
      * Update Business Profile (asynchronously)
-     * 
+     * Change a business profile.  Only the fields you send are changed. Documents already issued keep the issuer details they carried at the time.
      * @param businessProfileId  (required)
      * @param businessProfilePatch  (required)
      * @param idempotencyKey  (optional)

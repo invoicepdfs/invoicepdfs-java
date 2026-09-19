@@ -277,7 +277,7 @@ public class NumberingSequencesApi {
 
     /**
      * Create Sequence
-     * 
+     * Define how a document type&#39;s numbers are built.  A prefix, an optional date pattern, and a zero-padded counter — &#x60;INV-2026-0001&#x60;. &#x60;reset&#x60; decides whether the counter returns to one each year.
      * @param numberingSequenceCreateRequest  (required)
      * @return NumberingSequenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -295,7 +295,7 @@ public class NumberingSequencesApi {
 
     /**
      * Create Sequence
-     * 
+     * Define how a document type&#39;s numbers are built.  A prefix, an optional date pattern, and a zero-padded counter — &#x60;INV-2026-0001&#x60;. &#x60;reset&#x60; decides whether the counter returns to one each year.
      * @param numberingSequenceCreateRequest  (required)
      * @return ApiResponse&lt;NumberingSequenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -314,7 +314,7 @@ public class NumberingSequencesApi {
 
     /**
      * Create Sequence (asynchronously)
-     * 
+     * Define how a document type&#39;s numbers are built.  A prefix, an optional date pattern, and a zero-padded counter — &#x60;INV-2026-0001&#x60;. &#x60;reset&#x60; decides whether the counter returns to one each year.
      * @param numberingSequenceCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -404,7 +404,7 @@ public class NumberingSequencesApi {
 
     /**
      * Delete Sequence
-     * 
+     * Remove a numbering scheme.  Documents of that type then need their number supplied explicitly.
      * @param sequenceId  (required)
      * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -422,7 +422,7 @@ public class NumberingSequencesApi {
 
     /**
      * Delete Sequence
-     * 
+     * Remove a numbering scheme.  Documents of that type then need their number supplied explicitly.
      * @param sequenceId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -441,7 +441,7 @@ public class NumberingSequencesApi {
 
     /**
      * Delete Sequence (asynchronously)
-     * 
+     * Remove a numbering scheme.  Documents of that type then need their number supplied explicitly.
      * @param sequenceId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -531,7 +531,7 @@ public class NumberingSequencesApi {
 
     /**
      * Get Sequence
-     * 
+     * One numbering sequence, including the number it will issue next.
      * @param sequenceId  (required)
      * @return NumberingSequenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -549,7 +549,7 @@ public class NumberingSequencesApi {
 
     /**
      * Get Sequence
-     * 
+     * One numbering sequence, including the number it will issue next.
      * @param sequenceId  (required)
      * @return ApiResponse&lt;NumberingSequenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -568,7 +568,7 @@ public class NumberingSequencesApi {
 
     /**
      * Get Sequence (asynchronously)
-     * 
+     * One numbering sequence, including the number it will issue next.
      * @param sequenceId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -661,7 +661,7 @@ public class NumberingSequencesApi {
 
     /**
      * List Sequences
-     * 
+     * The numbering schemes that produce document numbers, newest first.  Each names the document type it numbers, so invoices and credit notes can run on separate counters.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return NumberingSequencesListResponse
@@ -680,7 +680,7 @@ public class NumberingSequencesApi {
 
     /**
      * List Sequences
-     * 
+     * The numbering schemes that produce document numbers, newest first.  Each names the document type it numbers, so invoices and credit notes can run on separate counters.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;NumberingSequencesListResponse&gt;
@@ -700,7 +700,7 @@ public class NumberingSequencesApi {
 
     /**
      * List Sequences (asynchronously)
-     * 
+     * The numbering schemes that produce document numbers, newest first.  Each names the document type it numbers, so invoices and credit notes can run on separate counters.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -791,7 +791,7 @@ public class NumberingSequencesApi {
 
     /**
      * Preview Sequence
-     * 
+     * Show the next number **without consuming it**.  Nothing is claimed, so calling this twice returns the same number and the number stays available. Use &#x60;consume_sequence_number&#x60; to take it.
      * @param sequenceId  (required)
      * @return NumberingSequencePreviewResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -809,7 +809,7 @@ public class NumberingSequencesApi {
 
     /**
      * Preview Sequence
-     * 
+     * Show the next number **without consuming it**.  Nothing is claimed, so calling this twice returns the same number and the number stays available. Use &#x60;consume_sequence_number&#x60; to take it.
      * @param sequenceId  (required)
      * @return ApiResponse&lt;NumberingSequencePreviewResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -828,7 +828,7 @@ public class NumberingSequencesApi {
 
     /**
      * Preview Sequence (asynchronously)
-     * 
+     * Show the next number **without consuming it**.  Nothing is claimed, so calling this twice returns the same number and the number stays available. Use &#x60;consume_sequence_number&#x60; to take it.
      * @param sequenceId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -925,7 +925,7 @@ public class NumberingSequencesApi {
 
     /**
      * Update Sequence
-     * 
+     * Change a numbering scheme.  Numbers already issued are not rewritten, so a change takes effect from the next document. Moving the counter backwards can collide with a number already used.
      * @param sequenceId  (required)
      * @param numberingSequencePatchRequest  (required)
      * @return NumberingSequenceResponse
@@ -944,7 +944,7 @@ public class NumberingSequencesApi {
 
     /**
      * Update Sequence
-     * 
+     * Change a numbering scheme.  Numbers already issued are not rewritten, so a change takes effect from the next document. Moving the counter backwards can collide with a number already used.
      * @param sequenceId  (required)
      * @param numberingSequencePatchRequest  (required)
      * @return ApiResponse&lt;NumberingSequenceResponse&gt;
@@ -964,7 +964,7 @@ public class NumberingSequencesApi {
 
     /**
      * Update Sequence (asynchronously)
-     * 
+     * Change a numbering scheme.  Numbers already issued are not rewritten, so a change takes effect from the next document. Moving the counter backwards can collide with a number already used.
      * @param sequenceId  (required)
      * @param numberingSequencePatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

@@ -39,6 +39,8 @@ public class BusinessProfilesApiTest {
     /**
      * Create Business Profile
      *
+     * Create an identity to issue documents as: the seller side.  &#x60;legal_name&#x60;, &#x60;tax_id&#x60;, address and bank details are what appears as the issuer, and what an e-invoicing ruleset checks. Distinct from a branding profile, which sets colours and a logo and says nothing about who you are.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -52,6 +54,8 @@ public class BusinessProfilesApiTest {
     /**
      * Delete Business Profile
      *
+     * Remove a business profile.  &#x60;409&#x60; if any document was issued under it, naming what still points at it.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -63,6 +67,8 @@ public class BusinessProfilesApiTest {
 
     /**
      * Get Business Profile
+     *
+     * One business profile.
      *
      * @throws ApiException if the Api call fails
      */
@@ -76,6 +82,8 @@ public class BusinessProfilesApiTest {
     /**
      * List Business Profiles
      *
+     * The identities you issue documents *as*, newest first.  One per entity you bill from — a business with two trading names or two tax registrations needs two. For how documents *look* rather than who issues them, see the branding profiles.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -88,6 +96,8 @@ public class BusinessProfilesApiTest {
 
     /**
      * Update Business Profile
+     *
+     * Change a business profile.  Only the fields you send are changed. Documents already issued keep the issuer details they carried at the time.
      *
      * @throws ApiException if the Api call fails
      */

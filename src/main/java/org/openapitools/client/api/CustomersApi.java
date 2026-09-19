@@ -153,7 +153,7 @@ public class CustomersApi {
 
     /**
      * Create Customer
-     * 
+     * Store a customer you can bill repeatedly.  &#x60;tax_id&#x60; and &#x60;electronic_address&#x60; are what e-invoicing needs: a buyer VAT number and the Peppol identifier a receiver is addressed by. Neither is required for a plain PDF.
      * @param customerCreate  (required)
      * @param idempotencyKey  (optional)
      * @return CustomerResponse
@@ -172,7 +172,7 @@ public class CustomersApi {
 
     /**
      * Create Customer
-     * 
+     * Store a customer you can bill repeatedly.  &#x60;tax_id&#x60; and &#x60;electronic_address&#x60; are what e-invoicing needs: a buyer VAT number and the Peppol identifier a receiver is addressed by. Neither is required for a plain PDF.
      * @param customerCreate  (required)
      * @param idempotencyKey  (optional)
      * @return ApiResponse&lt;CustomerResponse&gt;
@@ -192,7 +192,7 @@ public class CustomersApi {
 
     /**
      * Create Customer (asynchronously)
-     * 
+     * Store a customer you can bill repeatedly.  &#x60;tax_id&#x60; and &#x60;electronic_address&#x60; are what e-invoicing needs: a buyer VAT number and the Peppol identifier a receiver is addressed by. Neither is required for a plain PDF.
      * @param customerCreate  (required)
      * @param idempotencyKey  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -284,7 +284,7 @@ public class CustomersApi {
 
     /**
      * Delete Customer
-     * 
+     * Remove a customer.  &#x60;409&#x60; if any document still references them, naming what does. History is kept rather than rewritten.
      * @param customerId  (required)
      * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -303,7 +303,7 @@ public class CustomersApi {
 
     /**
      * Delete Customer
-     * 
+     * Remove a customer.  &#x60;409&#x60; if any document still references them, naming what does. History is kept rather than rewritten.
      * @param customerId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -323,7 +323,7 @@ public class CustomersApi {
 
     /**
      * Delete Customer (asynchronously)
-     * 
+     * Remove a customer.  &#x60;409&#x60; if any document still references them, naming what does. History is kept rather than rewritten.
      * @param customerId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -414,7 +414,7 @@ public class CustomersApi {
 
     /**
      * Get Customer
-     * 
+     * One stored customer.
      * @param customerId  (required)
      * @return CustomerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -432,7 +432,7 @@ public class CustomersApi {
 
     /**
      * Get Customer
-     * 
+     * One stored customer.
      * @param customerId  (required)
      * @return ApiResponse&lt;CustomerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -451,7 +451,7 @@ public class CustomersApi {
 
     /**
      * Get Customer (asynchronously)
-     * 
+     * One stored customer.
      * @param customerId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -544,7 +544,7 @@ public class CustomersApi {
 
     /**
      * List Customers
-     * 
+     * The people and companies you bill, newest first.  Cursor-paginated. A customer is optional — the stateless render endpoints take a buyer inline — but storing one lets a document reference it by id.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return CustomersListResponse
@@ -563,7 +563,7 @@ public class CustomersApi {
 
     /**
      * List Customers
-     * 
+     * The people and companies you bill, newest first.  Cursor-paginated. A customer is optional — the stateless render endpoints take a buyer inline — but storing one lets a document reference it by id.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;CustomersListResponse&gt;
@@ -583,7 +583,7 @@ public class CustomersApi {
 
     /**
      * List Customers (asynchronously)
-     * 
+     * The people and companies you bill, newest first.  Cursor-paginated. A customer is optional — the stateless render endpoints take a buyer inline — but storing one lets a document reference it by id.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -686,7 +686,7 @@ public class CustomersApi {
 
     /**
      * Update Customer
-     * 
+     * Change a stored customer.  Only the fields you send are changed — omit one to leave it alone, send &#x60;null&#x60; to clear it. Documents already issued keep the details they were issued with; this does not rewrite them.
      * @param customerId  (required)
      * @param customerPatch  (required)
      * @param idempotencyKey  (optional)
@@ -706,7 +706,7 @@ public class CustomersApi {
 
     /**
      * Update Customer
-     * 
+     * Change a stored customer.  Only the fields you send are changed — omit one to leave it alone, send &#x60;null&#x60; to clear it. Documents already issued keep the details they were issued with; this does not rewrite them.
      * @param customerId  (required)
      * @param customerPatch  (required)
      * @param idempotencyKey  (optional)
@@ -727,7 +727,7 @@ public class CustomersApi {
 
     /**
      * Update Customer (asynchronously)
-     * 
+     * Change a stored customer.  Only the fields you send are changed — omit one to leave it alone, send &#x60;null&#x60; to clear it. Documents already issued keep the details they were issued with; this does not rewrite them.
      * @param customerId  (required)
      * @param customerPatch  (required)
      * @param idempotencyKey  (optional)

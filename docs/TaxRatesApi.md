@@ -17,6 +17,8 @@ All URIs are relative to *http://localhost*
 
 Create Tax Rate
 
+Store a reusable tax rate.  &#x60;inclusive&#x60; decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax &#x60;category&#x60; travels with the rate into e-invoicing XML.
+
 ### Example
 ```java
 // Import classes:
@@ -82,6 +84,8 @@ public class Example {
 > SimpleBoolResponse deleteTaxRate(taxRateId)
 
 Delete Tax Rate
+
+Remove a stored tax rate. Documents already issued are unaffected.
 
 ### Example
 ```java
@@ -149,6 +153,8 @@ public class Example {
 
 Get Tax Rate
 
+One stored tax rate.
+
 ### Example
 ```java
 // Import classes:
@@ -214,6 +220,8 @@ public class Example {
 > TaxRatesListResponse listTaxRates(limit, cursor)
 
 List Tax Rates
+
+Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
 
 ### Example
 ```java
@@ -282,6 +290,8 @@ public class Example {
 > TaxRateResponse updateTaxRate(taxRateId, taxRatePatchRequest)
 
 Update Tax Rate
+
+Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
 
 ### Example
 ```java

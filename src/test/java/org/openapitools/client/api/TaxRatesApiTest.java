@@ -39,6 +39,8 @@ public class TaxRatesApiTest {
     /**
      * Create Tax Rate
      *
+     * Store a reusable tax rate.  &#x60;inclusive&#x60; decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax &#x60;category&#x60; travels with the rate into e-invoicing XML.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -50,6 +52,8 @@ public class TaxRatesApiTest {
 
     /**
      * Delete Tax Rate
+     *
+     * Remove a stored tax rate. Documents already issued are unaffected.
      *
      * @throws ApiException if the Api call fails
      */
@@ -63,6 +67,8 @@ public class TaxRatesApiTest {
     /**
      * Get Tax Rate
      *
+     * One stored tax rate.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -74,6 +80,8 @@ public class TaxRatesApiTest {
 
     /**
      * List Tax Rates
+     *
+     * Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
      *
      * @throws ApiException if the Api call fails
      */
@@ -87,6 +95,8 @@ public class TaxRatesApiTest {
 
     /**
      * Update Tax Rate
+     *
+     * Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
      *
      * @throws ApiException if the Api call fails
      */

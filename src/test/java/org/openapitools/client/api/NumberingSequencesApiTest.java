@@ -55,6 +55,8 @@ public class NumberingSequencesApiTest {
     /**
      * Create Sequence
      *
+     * Define how a document type&#39;s numbers are built.  A prefix, an optional date pattern, and a zero-padded counter — &#x60;INV-2026-0001&#x60;. &#x60;reset&#x60; decides whether the counter returns to one each year.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -66,6 +68,8 @@ public class NumberingSequencesApiTest {
 
     /**
      * Delete Sequence
+     *
+     * Remove a numbering scheme.  Documents of that type then need their number supplied explicitly.
      *
      * @throws ApiException if the Api call fails
      */
@@ -79,6 +83,8 @@ public class NumberingSequencesApiTest {
     /**
      * Get Sequence
      *
+     * One numbering sequence, including the number it will issue next.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -90,6 +96,8 @@ public class NumberingSequencesApiTest {
 
     /**
      * List Sequences
+     *
+     * The numbering schemes that produce document numbers, newest first.  Each names the document type it numbers, so invoices and credit notes can run on separate counters.
      *
      * @throws ApiException if the Api call fails
      */
@@ -104,6 +112,8 @@ public class NumberingSequencesApiTest {
     /**
      * Preview Sequence
      *
+     * Show the next number **without consuming it**.  Nothing is claimed, so calling this twice returns the same number and the number stays available. Use &#x60;consume_sequence_number&#x60; to take it.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -115,6 +125,8 @@ public class NumberingSequencesApiTest {
 
     /**
      * Update Sequence
+     *
+     * Change a numbering scheme.  Numbers already issued are not rewritten, so a change takes effect from the next document. Moving the counter backwards can collide with a number already used.
      *
      * @throws ApiException if the Api call fails
      */

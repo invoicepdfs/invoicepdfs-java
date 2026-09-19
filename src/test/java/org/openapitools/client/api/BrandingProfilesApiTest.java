@@ -40,6 +40,8 @@ public class BrandingProfilesApiTest {
     /**
      * Create Branding Profile
      *
+     * Create a look: colours, logo, fonts and footer.  Applies on top of whichever template a render names, so one template can serve several brands. Mark one as the default and documents that name no profile will use it.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -51,6 +53,8 @@ public class BrandingProfilesApiTest {
 
     /**
      * Delete Branding Logo
+     *
+     * Remove this profile&#39;s logo, leaving its colours and text intact.
      *
      * @throws ApiException if the Api call fails
      */
@@ -64,6 +68,8 @@ public class BrandingProfilesApiTest {
     /**
      * Delete Branding Profile
      *
+     * Remove a branding profile.  Deleting the default is allowed: the oldest remaining profile becomes the default in its place, so documents that name no profile keep rendering.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -75,6 +81,8 @@ public class BrandingProfilesApiTest {
 
     /**
      * Get Branding Profile
+     *
+     * One branding profile.
      *
      * @throws ApiException if the Api call fails
      */
@@ -88,6 +96,8 @@ public class BrandingProfilesApiTest {
     /**
      * List Branding Profiles
      *
+     * The looks a document can be rendered in, newest first.  Colours, logo, fonts and footer text — how a document appears. Who it is issued by is a business profile, which is a different thing.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -98,6 +108,8 @@ public class BrandingProfilesApiTest {
 
     /**
      * Set Default Branding Profile
+     *
+     * Make this the profile used when a document names none.  Exactly one profile is the default; setting a new one clears the previous.
      *
      * @throws ApiException if the Api call fails
      */
@@ -111,6 +123,8 @@ public class BrandingProfilesApiTest {
     /**
      * Update Branding Profile
      *
+     * Change a branding profile.  Only the fields you send are changed. &#x60;hide_invoicepdfs_branding&#x60; is stored on any plan but only honoured on a plan that includes it — it is applied when a document renders, not validated here, so setting it on a plan without it is accepted and has no effect.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -123,6 +137,8 @@ public class BrandingProfilesApiTest {
 
     /**
      * Upload Branding Logo
+     *
+     * Attach a logo image to this branding profile.  Replaces whatever logo the profile carried. The image is embedded when a document renders, so a later change applies to future renders and leaves PDFs already produced as they were.
      *
      * @throws ApiException if the Api call fails
      */
