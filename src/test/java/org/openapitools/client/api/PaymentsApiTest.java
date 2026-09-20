@@ -39,6 +39,8 @@ public class PaymentsApiTest {
     /**
      * Create Document Payment
      *
+     * Record a payment received against an invoice.  The currency is taken from the invoice rather than from the request, so a payment can never disagree with what was billed.  Refused with 409 while the invoice is still a draft. Recording a payment does not move the invoice to &#x60;paid&#x60; — use &#x60;mark_paid&#x60; for that.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -52,6 +54,8 @@ public class PaymentsApiTest {
     /**
      * Delete Payment
      *
+     * Remove a recorded payment.  The payment is deleted outright rather than reversed, and the invoice&#39;s status is left alone. The deletion is kept in the audit log.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -64,6 +68,8 @@ public class PaymentsApiTest {
     /**
      * Get Payment
      *
+     * One recorded payment by id.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -75,6 +81,8 @@ public class PaymentsApiTest {
 
     /**
      * List Document Payments
+     *
+     * Payments recorded against one document, newest first.
      *
      * @throws ApiException if the Api call fails
      */
@@ -89,6 +97,8 @@ public class PaymentsApiTest {
 
     /**
      * Update Payment
+     *
+     * Correct a payment that was already recorded.  Only the fields you send are changed. The invoice&#39;s status and totals are left alone.
      *
      * @throws ApiException if the Api call fails
      */

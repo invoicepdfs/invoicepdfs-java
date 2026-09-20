@@ -155,7 +155,7 @@ public class PaymentsApi {
 
     /**
      * Create Document Payment
-     * 
+     * Record a payment received against an invoice.  The currency is taken from the invoice rather than from the request, so a payment can never disagree with what was billed.  Refused with 409 while the invoice is still a draft. Recording a payment does not move the invoice to &#x60;paid&#x60; — use &#x60;mark_paid&#x60; for that.
      * @param documentId  (required)
      * @param paymentCreateRequest  (required)
      * @return PaymentResponse
@@ -174,7 +174,7 @@ public class PaymentsApi {
 
     /**
      * Create Document Payment
-     * 
+     * Record a payment received against an invoice.  The currency is taken from the invoice rather than from the request, so a payment can never disagree with what was billed.  Refused with 409 while the invoice is still a draft. Recording a payment does not move the invoice to &#x60;paid&#x60; — use &#x60;mark_paid&#x60; for that.
      * @param documentId  (required)
      * @param paymentCreateRequest  (required)
      * @return ApiResponse&lt;PaymentResponse&gt;
@@ -194,7 +194,7 @@ public class PaymentsApi {
 
     /**
      * Create Document Payment (asynchronously)
-     * 
+     * Record a payment received against an invoice.  The currency is taken from the invoice rather than from the request, so a payment can never disagree with what was billed.  Refused with 409 while the invoice is still a draft. Recording a payment does not move the invoice to &#x60;paid&#x60; — use &#x60;mark_paid&#x60; for that.
      * @param documentId  (required)
      * @param paymentCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -285,7 +285,7 @@ public class PaymentsApi {
 
     /**
      * Delete Payment
-     * 
+     * Remove a recorded payment.  The payment is deleted outright rather than reversed, and the invoice&#39;s status is left alone. The deletion is kept in the audit log.
      * @param paymentId  (required)
      * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -303,7 +303,7 @@ public class PaymentsApi {
 
     /**
      * Delete Payment
-     * 
+     * Remove a recorded payment.  The payment is deleted outright rather than reversed, and the invoice&#39;s status is left alone. The deletion is kept in the audit log.
      * @param paymentId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -322,7 +322,7 @@ public class PaymentsApi {
 
     /**
      * Delete Payment (asynchronously)
-     * 
+     * Remove a recorded payment.  The payment is deleted outright rather than reversed, and the invoice&#39;s status is left alone. The deletion is kept in the audit log.
      * @param paymentId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -412,7 +412,7 @@ public class PaymentsApi {
 
     /**
      * Get Payment
-     * 
+     * One recorded payment by id.
      * @param paymentId  (required)
      * @return PaymentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -430,7 +430,7 @@ public class PaymentsApi {
 
     /**
      * Get Payment
-     * 
+     * One recorded payment by id.
      * @param paymentId  (required)
      * @return ApiResponse&lt;PaymentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -449,7 +449,7 @@ public class PaymentsApi {
 
     /**
      * Get Payment (asynchronously)
-     * 
+     * One recorded payment by id.
      * @param paymentId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -549,7 +549,7 @@ public class PaymentsApi {
 
     /**
      * List Document Payments
-     * 
+     * Payments recorded against one document, newest first.
      * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -569,7 +569,7 @@ public class PaymentsApi {
 
     /**
      * List Document Payments
-     * 
+     * Payments recorded against one document, newest first.
      * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -590,7 +590,7 @@ public class PaymentsApi {
 
     /**
      * List Document Payments (asynchronously)
-     * 
+     * Payments recorded against one document, newest first.
      * @param documentId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -689,7 +689,7 @@ public class PaymentsApi {
 
     /**
      * Update Payment
-     * 
+     * Correct a payment that was already recorded.  Only the fields you send are changed. The invoice&#39;s status and totals are left alone.
      * @param paymentId  (required)
      * @param paymentPatchRequest  (required)
      * @return PaymentResponse
@@ -708,7 +708,7 @@ public class PaymentsApi {
 
     /**
      * Update Payment
-     * 
+     * Correct a payment that was already recorded.  Only the fields you send are changed. The invoice&#39;s status and totals are left alone.
      * @param paymentId  (required)
      * @param paymentPatchRequest  (required)
      * @return ApiResponse&lt;PaymentResponse&gt;
@@ -728,7 +728,7 @@ public class PaymentsApi {
 
     /**
      * Update Payment (asynchronously)
-     * 
+     * Correct a payment that was already recorded.  Only the fields you send are changed. The invoice&#39;s status and totals are left alone.
      * @param paymentId  (required)
      * @param paymentPatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

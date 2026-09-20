@@ -14,6 +14,8 @@ All URIs are relative to *http://localhost*
 
 Get Audit Event
 
+One audit event by id.
+
 ### Example
 ```java
 // Import classes:
@@ -79,6 +81,8 @@ public class Example {
 > AuditEventsListResponse listAuditEvents(limit, cursor, action, resourceType, resourceId)
 
 List Audit Events
+
+Who changed what on this account, newest first.  Filter by &#x60;action&#x60;, &#x60;resource_type&#x60; and &#x60;resource_id&#x60; to follow a single object&#39;s history.
 
 ### Example
 ```java

@@ -138,7 +138,7 @@ public class UsageApi {
 
     /**
      * Get Usage
-     * 
+     * Renders used this calendar month, against the plan&#39;s quota.  The period starts at midnight UTC on the first of the month.  For rate limits, log retention and overage, use &#x60;get_usage_limits&#x60;; for the individual renders behind the count, &#x60;list_usage_events&#x60;.
      * @return UsageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -154,7 +154,7 @@ public class UsageApi {
 
     /**
      * Get Usage
-     * 
+     * Renders used this calendar month, against the plan&#39;s quota.  The period starts at midnight UTC on the first of the month.  For rate limits, log retention and overage, use &#x60;get_usage_limits&#x60;; for the individual renders behind the count, &#x60;list_usage_events&#x60;.
      * @return ApiResponse&lt;UsageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -171,7 +171,7 @@ public class UsageApi {
 
     /**
      * Get Usage (asynchronously)
-     * 
+     * Renders used this calendar month, against the plan&#39;s quota.  The period starts at midnight UTC on the first of the month.  For rate limits, log retention and overage, use &#x60;get_usage_limits&#x60;; for the individual renders behind the count, &#x60;list_usage_events&#x60;.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -251,7 +251,7 @@ public class UsageApi {
 
     /**
      * Get Usage Limits
-     * 
+     * Every ceiling on the account, and how close you are to each.  A superset of &#x60;get_usage&#x60;: the render quota and what is left of it, plus requests per second, how long API logs are kept, and overage — whether it is enabled and available on the plan, how many renders have gone over, and what they have cost so far.  The cost estimate is rounded up, so it is never lower than the invoice.
      * @return UsageLimitsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -267,7 +267,7 @@ public class UsageApi {
 
     /**
      * Get Usage Limits
-     * 
+     * Every ceiling on the account, and how close you are to each.  A superset of &#x60;get_usage&#x60;: the render quota and what is left of it, plus requests per second, how long API logs are kept, and overage — whether it is enabled and available on the plan, how many renders have gone over, and what they have cost so far.  The cost estimate is rounded up, so it is never lower than the invoice.
      * @return ApiResponse&lt;UsageLimitsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -284,7 +284,7 @@ public class UsageApi {
 
     /**
      * Get Usage Limits (asynchronously)
-     * 
+     * Every ceiling on the account, and how close you are to each.  A superset of &#x60;get_usage&#x60;: the render quota and what is left of it, plus requests per second, how long API logs are kept, and overage — whether it is enabled and available on the plan, how many renders have gone over, and what they have cost so far.  The cost estimate is rounded up, so it is never lower than the invoice.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -375,7 +375,7 @@ public class UsageApi {
 
     /**
      * List Usage Events
-     * 
+     * One row per metered render, newest first.  The detail behind the count &#x60;get_usage&#x60; returns, each row naming the render that produced it.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return UsageEventsListResponse
@@ -394,7 +394,7 @@ public class UsageApi {
 
     /**
      * List Usage Events
-     * 
+     * One row per metered render, newest first.  The detail behind the count &#x60;get_usage&#x60; returns, each row naming the render that produced it.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;UsageEventsListResponse&gt;
@@ -414,7 +414,7 @@ public class UsageApi {
 
     /**
      * List Usage Events (asynchronously)
-     * 
+     * One row per metered render, newest first.  The detail behind the count &#x60;get_usage&#x60; returns, each row naming the render that produced it.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes

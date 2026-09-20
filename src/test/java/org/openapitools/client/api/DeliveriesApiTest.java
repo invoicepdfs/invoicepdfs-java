@@ -35,6 +35,8 @@ public class DeliveriesApiTest {
     /**
      * Get Delivery
      *
+     * One email delivery by id — an email sent to a customer.  Not to be confused with &#x60;get_webhook_delivery&#x60;, which is an HTTP POST to one of your webhook endpoints.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test

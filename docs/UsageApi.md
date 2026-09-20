@@ -15,6 +15,8 @@ All URIs are relative to *http://localhost*
 
 Get Usage
 
+Renders used this calendar month, against the plan&#39;s quota.  The period starts at midnight UTC on the first of the month.  For rate limits, log retention and overage, use &#x60;get_usage_limits&#x60;; for the individual renders behind the count, &#x60;list_usage_events&#x60;.
+
 ### Example
 ```java
 // Import classes:
@@ -76,6 +78,8 @@ This endpoint does not need any parameter.
 
 Get Usage Limits
 
+Every ceiling on the account, and how close you are to each.  A superset of &#x60;get_usage&#x60;: the render quota and what is left of it, plus requests per second, how long API logs are kept, and overage — whether it is enabled and available on the plan, how many renders have gone over, and what they have cost so far.  The cost estimate is rounded up, so it is never lower than the invoice.
+
 ### Example
 ```java
 // Import classes:
@@ -136,6 +140,8 @@ This endpoint does not need any parameter.
 > UsageEventsListResponse listUsageEvents(limit, cursor)
 
 List Usage Events
+
+One row per metered render, newest first.  The detail behind the count &#x60;get_usage&#x60; returns, each row naming the render that produced it.
 
 ### Example
 ```java

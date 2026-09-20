@@ -145,7 +145,7 @@ public class AuditLogApi {
 
     /**
      * Get Audit Event
-     * 
+     * One audit event by id.
      * @param auditEventId  (required)
      * @return AuditEventResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -163,7 +163,7 @@ public class AuditLogApi {
 
     /**
      * Get Audit Event
-     * 
+     * One audit event by id.
      * @param auditEventId  (required)
      * @return ApiResponse&lt;AuditEventResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -182,7 +182,7 @@ public class AuditLogApi {
 
     /**
      * Get Audit Event (asynchronously)
-     * 
+     * One audit event by id.
      * @param auditEventId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -290,7 +290,7 @@ public class AuditLogApi {
 
     /**
      * List Audit Events
-     * 
+     * Who changed what on this account, newest first.  Filter by &#x60;action&#x60;, &#x60;resource_type&#x60; and &#x60;resource_id&#x60; to follow a single object&#39;s history.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param action  (optional)
@@ -312,7 +312,7 @@ public class AuditLogApi {
 
     /**
      * List Audit Events
-     * 
+     * Who changed what on this account, newest first.  Filter by &#x60;action&#x60;, &#x60;resource_type&#x60; and &#x60;resource_id&#x60; to follow a single object&#39;s history.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param action  (optional)
@@ -335,7 +335,7 @@ public class AuditLogApi {
 
     /**
      * List Audit Events (asynchronously)
-     * 
+     * Who changed what on this account, newest first.  Filter by &#x60;action&#x60;, &#x60;resource_type&#x60; and &#x60;resource_id&#x60; to follow a single object&#39;s history.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param action  (optional)

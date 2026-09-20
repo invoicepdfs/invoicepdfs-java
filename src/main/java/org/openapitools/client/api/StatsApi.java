@@ -135,7 +135,7 @@ public class StatsApi {
 
     /**
      * Get Stats
-     * 
+     * Counts and recent activity for the account, in one call.  Totals for documents, customers and business profiles, a breakdown of documents by status, and the ten most recent documents — cheaper than paging each collection to build a dashboard.  The &#x60;invoice&#x60;-prefixed fields cover every document type, not only invoices.
      * @return StatsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -151,7 +151,7 @@ public class StatsApi {
 
     /**
      * Get Stats
-     * 
+     * Counts and recent activity for the account, in one call.  Totals for documents, customers and business profiles, a breakdown of documents by status, and the ten most recent documents — cheaper than paging each collection to build a dashboard.  The &#x60;invoice&#x60;-prefixed fields cover every document type, not only invoices.
      * @return ApiResponse&lt;StatsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -168,7 +168,7 @@ public class StatsApi {
 
     /**
      * Get Stats (asynchronously)
-     * 
+     * Counts and recent activity for the account, in one call.  Totals for documents, customers and business profiles, a breakdown of documents by status, and the ten most recent documents — cheaper than paging each collection to build a dashboard.  The &#x60;invoice&#x60;-prefixed fields cover every document type, not only invoices.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
