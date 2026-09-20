@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * &#x60;completed&#x60; is the schedule running out, not a failure — set by app/recurring/processor.py when the end date or occurrence count is reached. &#x60;RecurringInvoiceOut.status&#x60; was an unconstrained &#x60;str&#x60;, so this is the first time the set has been written down anywhere.
+ * Where a recurring schedule is in its life.  &#x60;completed&#x60; is the schedule running out, not a failure: it is set automatically once the end date or the occurrence count is reached.
  */
 @JsonAdapter(RecurringInvoiceStatus.Adapter.class)
 public enum RecurringInvoiceStatus {

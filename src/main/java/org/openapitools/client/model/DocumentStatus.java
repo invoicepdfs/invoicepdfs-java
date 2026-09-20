@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * The document lifecycle. The transitions between these live in app/documents/base.py, which is the only thing that moves a document.
+ * The document lifecycle.
  */
 @JsonAdapter(DocumentStatus.Adapter.class)
 public enum DocumentStatus {

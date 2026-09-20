@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Three, not the five that were published. &#x60;confirm_import&#x60; does the work inside the request — \&quot;For MVP, mark as completed immediately; future: background processing\&quot; (app/api/v1/imports.py) — so nothing is ever &#x60;processing&#x60;, and nothing sets &#x60;failed&#x60;. They described a background path that was never built, the same way &#x60;render.*&#x60; events and &#x60;bounced&#x60; did.
+ * How far an import has got.  &#x60;confirm_import&#x60; completes the work before it responds, so an import is &#x60;pending&#x60; until it is confirmed and &#x60;completed&#x60; immediately afterwards.
  */
 @JsonAdapter(ImportStatus.Adapter.class)
 public enum ImportStatus {

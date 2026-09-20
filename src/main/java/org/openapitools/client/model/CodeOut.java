@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * CodeOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-20T02:40:47.610917163Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-20T14:45:12.055991825Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CodeOut {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)

@@ -53,7 +53,7 @@ import com.invoicepdfs.JSON;
 /**
  * CustomTemplatesListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-20T02:40:47.610917163Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-20T14:45:12.055991825Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CustomTemplatesListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
