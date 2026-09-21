@@ -19,6 +19,7 @@ import org.openapitools.client.model.SimpleBoolResponse;
 import org.openapitools.client.model.WebhookDeliveriesListResponse;
 import org.openapitools.client.model.WebhookDeliveryResponse;
 import org.openapitools.client.model.WebhookEndpointCreateRequest;
+import org.openapitools.client.model.WebhookEndpointCreatedResponse;
 import org.openapitools.client.model.WebhookEndpointPatchRequest;
 import org.openapitools.client.model.WebhookEndpointResponse;
 import org.openapitools.client.model.WebhookEndpointsListResponse;
@@ -42,14 +43,14 @@ public class WebhooksApiTest {
     /**
      * Create Webhook Endpoint
      *
-     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call &#x60;rotate_webhook_secret&#x60; to obtain one before you can verify signatures.
+     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  The response carries the signing secret, and is the only one that ever will — store it now. Reading or listing endpoints never returns it, and the only way to get another is &#x60;rotate_webhook_secret&#x60;, which stops this one working.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void createWebhookEndpointTest() throws ApiException {
         WebhookEndpointCreateRequest webhookEndpointCreateRequest = null;
-        WebhookEndpointResponse response = api.createWebhookEndpoint(webhookEndpointCreateRequest);
+        WebhookEndpointCreatedResponse response = api.createWebhookEndpoint(webhookEndpointCreateRequest);
         // TODO: test validations
     }
 
@@ -156,7 +157,7 @@ public class WebhooksApiTest {
     /**
      * Test Webhook Endpoint
      *
-     * Record a test event against this endpoint.  Creates a &#x60;test&#x60; event and a delivery in &#x60;pending&#x60;, which you can inspect with &#x60;get_webhook_delivery&#x60;.  This call does not send the delivery. Pass the returned delivery id to &#x60;retry_webhook_delivery&#x60; to have it dispatched.
+     * Send a test event to this endpoint.  Delivers a &#x60;test&#x60; event immediately, so you can confirm the URL is reachable and your signature check works before real events depend on it.  Returns straight away with the delivery in &#x60;pending&#x60;; follow it with &#x60;get_webhook_delivery&#x60; to see whether it arrived.
      *
      * @throws ApiException if the Api call fails
      */

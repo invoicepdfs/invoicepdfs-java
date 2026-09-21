@@ -5486,8 +5486,10 @@ paths:
 
         The endpoint starts active and begins receiving the events you list.
 
-        A signing secret is generated but is **not** returned here. Call
-        `rotate_webhook_secret` to obtain one before you can verify signatures.
+        The response carries the signing secret, and is the only one that ever
+        will — store it now. Reading or listing endpoints never returns it, and
+        the only way to get another is `rotate_webhook_secret`, which stops this
+        one working.
       operationId: create_webhook_endpoint
       requestBody:
         content:
@@ -5500,7 +5502,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/WebhookEndpointResponse'
+                $ref: '#/components/schemas/WebhookEndpointCreatedResponse'
           description: Successful Response
         "422":
           content:
@@ -5676,13 +5678,13 @@ paths:
   /api/v1/webhook-endpoints/{endpoint_id}/test:
     post:
       description: |-
-        Record a test event against this endpoint.
+        Send a test event to this endpoint.
 
-        Creates a `test` event and a delivery in `pending`, which you can inspect
-        with `get_webhook_delivery`.
+        Delivers a `test` event immediately, so you can confirm the URL is
+        reachable and your signature check works before real events depend on it.
 
-        This call does not send the delivery. Pass the returned delivery id to
-        `retry_webhook_delivery` to have it dispatched.
+        Returns straight away with the delivery in `pending`; follow it with
+        `get_webhook_delivery` to see whether it arrived.
       operationId: test_webhook_endpoint
       parameters:
       - explode: false
@@ -15012,6 +15014,81 @@ components:
       - events
       - url
       title: WebhookEndpointCreateRequest
+      type: object
+    WebhookEndpointCreatedOut:
+      description: |-
+        A newly created endpoint, including its signing secret.
+
+        The only time the secret is returned. Store it now: reading or listing
+        endpoints never includes it, and the only way to obtain another is to
+        rotate, which invalidates this one.
+      example:
+        is_active: true
+        updated_at: updated_at
+        description: description
+        created_at: created_at
+        id: id
+        secret: secret
+        url: url
+        events:
+        - events
+        - events
+      properties:
+        id:
+          title: Id
+          type: string
+        url:
+          title: Url
+          type: string
+        description:
+          nullable: true
+          type: string
+        events:
+          items:
+            type: string
+          title: Events
+          type: array
+        is_active:
+          title: Is Active
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+        secret:
+          title: Secret
+          type: string
+      required:
+      - created_at
+      - events
+      - id
+      - is_active
+      - secret
+      - updated_at
+      - url
+      title: WebhookEndpointCreatedOut
+      type: object
+    WebhookEndpointCreatedResponse:
+      example:
+        data:
+          is_active: true
+          updated_at: updated_at
+          description: description
+          created_at: created_at
+          id: id
+          secret: secret
+          url: url
+          events:
+          - events
+          - events
+      properties:
+        data:
+          $ref: '#/components/schemas/WebhookEndpointCreatedOut'
+      required:
+      - data
+      title: WebhookEndpointCreatedResponse
       type: object
     WebhookEndpointOut:
       example:

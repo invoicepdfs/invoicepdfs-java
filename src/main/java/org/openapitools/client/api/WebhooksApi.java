@@ -32,6 +32,7 @@ import org.openapitools.client.model.SimpleBoolResponse;
 import org.openapitools.client.model.WebhookDeliveriesListResponse;
 import org.openapitools.client.model.WebhookDeliveryResponse;
 import org.openapitools.client.model.WebhookEndpointCreateRequest;
+import org.openapitools.client.model.WebhookEndpointCreatedResponse;
 import org.openapitools.client.model.WebhookEndpointPatchRequest;
 import org.openapitools.client.model.WebhookEndpointResponse;
 import org.openapitools.client.model.WebhookEndpointsListResponse;
@@ -151,9 +152,9 @@ public class WebhooksApi {
 
     /**
      * Create Webhook Endpoint
-     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call &#x60;rotate_webhook_secret&#x60; to obtain one before you can verify signatures.
+     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  The response carries the signing secret, and is the only one that ever will — store it now. Reading or listing endpoints never returns it, and the only way to get another is &#x60;rotate_webhook_secret&#x60;, which stops this one working.
      * @param webhookEndpointCreateRequest  (required)
-     * @return WebhookEndpointResponse
+     * @return WebhookEndpointCreatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -162,16 +163,16 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookEndpointResponse createWebhookEndpoint(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
-        ApiResponse<WebhookEndpointResponse> localVarResp = createWebhookEndpointWithHttpInfo(webhookEndpointCreateRequest);
+    public WebhookEndpointCreatedResponse createWebhookEndpoint(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
+        ApiResponse<WebhookEndpointCreatedResponse> localVarResp = createWebhookEndpointWithHttpInfo(webhookEndpointCreateRequest);
         return localVarResp.getData();
     }
 
     /**
      * Create Webhook Endpoint
-     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call &#x60;rotate_webhook_secret&#x60; to obtain one before you can verify signatures.
+     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  The response carries the signing secret, and is the only one that ever will — store it now. Reading or listing endpoints never returns it, and the only way to get another is &#x60;rotate_webhook_secret&#x60;, which stops this one working.
      * @param webhookEndpointCreateRequest  (required)
-     * @return ApiResponse&lt;WebhookEndpointResponse&gt;
+     * @return ApiResponse&lt;WebhookEndpointCreatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -180,15 +181,15 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookEndpointResponse> createWebhookEndpointWithHttpInfo(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
+    public ApiResponse<WebhookEndpointCreatedResponse> createWebhookEndpointWithHttpInfo(WebhookEndpointCreateRequest webhookEndpointCreateRequest) throws ApiException {
         okhttp3.Call localVarCall = createWebhookEndpointValidateBeforeCall(webhookEndpointCreateRequest, null);
-        Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<WebhookEndpointCreatedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Create Webhook Endpoint (asynchronously)
-     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call &#x60;rotate_webhook_secret&#x60; to obtain one before you can verify signatures.
+     * Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  The response carries the signing secret, and is the only one that ever will — store it now. Reading or listing endpoints never returns it, and the only way to get another is &#x60;rotate_webhook_secret&#x60;, which stops this one working.
      * @param webhookEndpointCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -200,10 +201,10 @@ public class WebhooksApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookEndpointAsync(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback<WebhookEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call createWebhookEndpointAsync(WebhookEndpointCreateRequest webhookEndpointCreateRequest, final ApiCallback<WebhookEndpointCreatedResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWebhookEndpointValidateBeforeCall(webhookEndpointCreateRequest, _callback);
-        Type localVarReturnType = new TypeToken<WebhookEndpointResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<WebhookEndpointCreatedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1179,7 +1180,7 @@ public class WebhooksApi {
 
     /**
      * Test Webhook Endpoint
-     * Record a test event against this endpoint.  Creates a &#x60;test&#x60; event and a delivery in &#x60;pending&#x60;, which you can inspect with &#x60;get_webhook_delivery&#x60;.  This call does not send the delivery. Pass the returned delivery id to &#x60;retry_webhook_delivery&#x60; to have it dispatched.
+     * Send a test event to this endpoint.  Delivers a &#x60;test&#x60; event immediately, so you can confirm the URL is reachable and your signature check works before real events depend on it.  Returns straight away with the delivery in &#x60;pending&#x60;; follow it with &#x60;get_webhook_delivery&#x60; to see whether it arrived.
      * @param endpointId  (required)
      * @return WebhookDeliveryResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1197,7 +1198,7 @@ public class WebhooksApi {
 
     /**
      * Test Webhook Endpoint
-     * Record a test event against this endpoint.  Creates a &#x60;test&#x60; event and a delivery in &#x60;pending&#x60;, which you can inspect with &#x60;get_webhook_delivery&#x60;.  This call does not send the delivery. Pass the returned delivery id to &#x60;retry_webhook_delivery&#x60; to have it dispatched.
+     * Send a test event to this endpoint.  Delivers a &#x60;test&#x60; event immediately, so you can confirm the URL is reachable and your signature check works before real events depend on it.  Returns straight away with the delivery in &#x60;pending&#x60;; follow it with &#x60;get_webhook_delivery&#x60; to see whether it arrived.
      * @param endpointId  (required)
      * @return ApiResponse&lt;WebhookDeliveryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1216,7 +1217,7 @@ public class WebhooksApi {
 
     /**
      * Test Webhook Endpoint (asynchronously)
-     * Record a test event against this endpoint.  Creates a &#x60;test&#x60; event and a delivery in &#x60;pending&#x60;, which you can inspect with &#x60;get_webhook_delivery&#x60;.  This call does not send the delivery. Pass the returned delivery id to &#x60;retry_webhook_delivery&#x60; to have it dispatched.
+     * Send a test event to this endpoint.  Delivers a &#x60;test&#x60; event immediately, so you can confirm the URL is reachable and your signature check works before real events depend on it.  Returns straight away with the delivery in &#x60;pending&#x60;; follow it with &#x60;get_webhook_delivery&#x60; to see whether it arrived.
      * @param endpointId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

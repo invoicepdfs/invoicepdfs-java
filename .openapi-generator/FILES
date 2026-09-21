@@ -251,6 +251,8 @@ docs/WebhookDeliveryOut.md
 docs/WebhookDeliveryResponse.md
 docs/WebhookDeliveryStatus.md
 docs/WebhookEndpointCreateRequest.md
+docs/WebhookEndpointCreatedOut.md
+docs/WebhookEndpointCreatedResponse.md
 docs/WebhookEndpointOut.md
 docs/WebhookEndpointPatchRequest.md
 docs/WebhookEndpointResponse.md
@@ -544,6 +546,8 @@ src/main/java/org/openapitools/client/model/WebhookDeliveryOut.java
 src/main/java/org/openapitools/client/model/WebhookDeliveryResponse.java
 src/main/java/org/openapitools/client/model/WebhookDeliveryStatus.java
 src/main/java/org/openapitools/client/model/WebhookEndpointCreateRequest.java
+src/main/java/org/openapitools/client/model/WebhookEndpointCreatedOut.java
+src/main/java/org/openapitools/client/model/WebhookEndpointCreatedResponse.java
 src/main/java/org/openapitools/client/model/WebhookEndpointOut.java
 src/main/java/org/openapitools/client/model/WebhookEndpointPatchRequest.java
 src/main/java/org/openapitools/client/model/WebhookEndpointResponse.java
@@ -808,6 +812,8 @@ src/test/java/org/openapitools/client/model/WebhookDeliveryOutTest.java
 src/test/java/org/openapitools/client/model/WebhookDeliveryResponseTest.java
 src/test/java/org/openapitools/client/model/WebhookDeliveryStatusTest.java
 src/test/java/org/openapitools/client/model/WebhookEndpointCreateRequestTest.java
+src/test/java/org/openapitools/client/model/WebhookEndpointCreatedOutTest.java
+src/test/java/org/openapitools/client/model/WebhookEndpointCreatedResponseTest.java
 src/test/java/org/openapitools/client/model/WebhookEndpointOutTest.java
 src/test/java/org/openapitools/client/model/WebhookEndpointPatchRequestTest.java
 src/test/java/org/openapitools/client/model/WebhookEndpointResponseTest.java
