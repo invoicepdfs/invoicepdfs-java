@@ -137,7 +137,7 @@ public class HealthApi {
 
     /**
      * Get Health
-     * 
+     * Is the API process alive.  Answers as long as the process can serve a request; it checks nothing behind it. For whether the service can actually do work, use &#x60;get_readiness&#x60;.
      * @return HealthResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -153,7 +153,7 @@ public class HealthApi {
 
     /**
      * Get Health
-     * 
+     * Is the API process alive.  Answers as long as the process can serve a request; it checks nothing behind it. For whether the service can actually do work, use &#x60;get_readiness&#x60;.
      * @return ApiResponse&lt;HealthResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -170,7 +170,7 @@ public class HealthApi {
 
     /**
      * Get Health (asynchronously)
-     * 
+     * Is the API process alive.  Answers as long as the process can serve a request; it checks nothing behind it. For whether the service can actually do work, use &#x60;get_readiness&#x60;.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -250,7 +250,7 @@ public class HealthApi {
 
     /**
      * Get Readiness
-     * 
+     * Can the API serve real traffic — dependencies included.  Checks the database, storage, and the separate render service, and reports each one. &#x60;status&#x60; is &#x60;ready&#x60; only when all three are &#x60;ok&#x60;, so this is the check to point a load balancer at. &#x60;get_health&#x60; answers sooner but proves less.
      * @return ReadyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -266,7 +266,7 @@ public class HealthApi {
 
     /**
      * Get Readiness
-     * 
+     * Can the API serve real traffic — dependencies included.  Checks the database, storage, and the separate render service, and reports each one. &#x60;status&#x60; is &#x60;ready&#x60; only when all three are &#x60;ok&#x60;, so this is the check to point a load balancer at. &#x60;get_health&#x60; answers sooner but proves less.
      * @return ApiResponse&lt;ReadyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -283,7 +283,7 @@ public class HealthApi {
 
     /**
      * Get Readiness (asynchronously)
-     * 
+     * Can the API serve real traffic — dependencies included.  Checks the database, storage, and the separate render service, and reports each one. &#x60;status&#x60; is &#x60;ready&#x60; only when all three are &#x60;ok&#x60;, so this is the check to point a load balancer at. &#x60;get_health&#x60; answers sooner but proves less.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -363,7 +363,7 @@ public class HealthApi {
 
     /**
      * Get Version
-     * 
+     * Which build is deployed.
      * @return VersionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -379,7 +379,7 @@ public class HealthApi {
 
     /**
      * Get Version
-     * 
+     * Which build is deployed.
      * @return ApiResponse&lt;VersionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -396,7 +396,7 @@ public class HealthApi {
 
     /**
      * Get Version (asynchronously)
-     * 
+     * Which build is deployed.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

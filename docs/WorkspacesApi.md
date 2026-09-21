@@ -21,6 +21,8 @@ All URIs are relative to *http://localhost*
 
 Add Workspace Member
 
+Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
+
 ### Example
 ```java
 // Import classes:
@@ -91,6 +93,8 @@ public class Example {
 
 Create Workspace
 
+Create a workspace, owned by this account.  The creating account is added as its first member with the &#x60;owner&#x60; role.  Send an &#x60;Idempotency-Key&#x60; header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
+
 ### Example
 ```java
 // Import classes:
@@ -159,6 +163,8 @@ public class Example {
 
 Delete Workspace
 
+Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
+
 ### Example
 ```java
 // Import classes:
@@ -224,6 +230,8 @@ public class Example {
 > WorkspaceResponse getWorkspace(workspaceId)
 
 Get Workspace
+
+One workspace by id.
 
 ### Example
 ```java
@@ -291,6 +299,8 @@ public class Example {
 
 List Workspace Members
 
+Everyone on a workspace, with their role.
+
 ### Example
 ```java
 // Import classes:
@@ -356,6 +366,8 @@ public class Example {
 > WorkspacesListResponse listWorkspaces(limit, cursor)
 
 List Workspaces
+
+Workspaces this account owns, newest first.
 
 ### Example
 ```java
@@ -425,6 +437,8 @@ public class Example {
 
 Remove Workspace Member
 
+Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
+
 ### Example
 ```java
 // Import classes:
@@ -492,6 +506,8 @@ public class Example {
 > WorkspaceResponse updateWorkspace(workspaceId, workspacePatchRequest, idempotencyKey)
 
 Update Workspace
+
+Rename a workspace.  Only the fields you send are changed.
 
 ### Example
 ```java
@@ -562,6 +578,8 @@ public class Example {
 > WorkspaceMemberOut updateWorkspaceMember(workspaceId, memberId, workspaceMemberPatchRequest)
 
 Update Workspace Member
+
+Change a member&#39;s role.
 
 ### Example
 ```java

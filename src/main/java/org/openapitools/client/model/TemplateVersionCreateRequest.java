@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * TemplateVersionCreateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-21T02:24:35.322244898Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-21T02:47:21.324216835Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TemplateVersionCreateRequest {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)

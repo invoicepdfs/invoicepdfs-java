@@ -164,7 +164,7 @@ public class WorkspacesApi {
 
     /**
      * Add Workspace Member
-     * 
+     * Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
      * @param workspaceId  (required)
      * @param workspaceMemberCreateRequest  (required)
      * @param idempotencyKey  (optional)
@@ -184,7 +184,7 @@ public class WorkspacesApi {
 
     /**
      * Add Workspace Member
-     * 
+     * Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
      * @param workspaceId  (required)
      * @param workspaceMemberCreateRequest  (required)
      * @param idempotencyKey  (optional)
@@ -205,7 +205,7 @@ public class WorkspacesApi {
 
     /**
      * Add Workspace Member (asynchronously)
-     * 
+     * Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
      * @param workspaceId  (required)
      * @param workspaceMemberCreateRequest  (required)
      * @param idempotencyKey  (optional)
@@ -302,7 +302,7 @@ public class WorkspacesApi {
 
     /**
      * Create Workspace
-     * 
+     * Create a workspace, owned by this account.  The creating account is added as its first member with the &#x60;owner&#x60; role.  Send an &#x60;Idempotency-Key&#x60; header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
      * @param workspaceCreateRequest  (required)
      * @param idempotencyKey  (optional)
      * @return WorkspaceResponse
@@ -321,7 +321,7 @@ public class WorkspacesApi {
 
     /**
      * Create Workspace
-     * 
+     * Create a workspace, owned by this account.  The creating account is added as its first member with the &#x60;owner&#x60; role.  Send an &#x60;Idempotency-Key&#x60; header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
      * @param workspaceCreateRequest  (required)
      * @param idempotencyKey  (optional)
      * @return ApiResponse&lt;WorkspaceResponse&gt;
@@ -341,7 +341,7 @@ public class WorkspacesApi {
 
     /**
      * Create Workspace (asynchronously)
-     * 
+     * Create a workspace, owned by this account.  The creating account is added as its first member with the &#x60;owner&#x60; role.  Send an &#x60;Idempotency-Key&#x60; header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
      * @param workspaceCreateRequest  (required)
      * @param idempotencyKey  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -432,7 +432,7 @@ public class WorkspacesApi {
 
     /**
      * Delete Workspace
-     * 
+     * Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
      * @param workspaceId  (required)
      * @return SimpleBoolResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -450,7 +450,7 @@ public class WorkspacesApi {
 
     /**
      * Delete Workspace
-     * 
+     * Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
      * @param workspaceId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -469,7 +469,7 @@ public class WorkspacesApi {
 
     /**
      * Delete Workspace (asynchronously)
-     * 
+     * Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
      * @param workspaceId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -559,7 +559,7 @@ public class WorkspacesApi {
 
     /**
      * Get Workspace
-     * 
+     * One workspace by id.
      * @param workspaceId  (required)
      * @return WorkspaceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -577,7 +577,7 @@ public class WorkspacesApi {
 
     /**
      * Get Workspace
-     * 
+     * One workspace by id.
      * @param workspaceId  (required)
      * @return ApiResponse&lt;WorkspaceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -596,7 +596,7 @@ public class WorkspacesApi {
 
     /**
      * Get Workspace (asynchronously)
-     * 
+     * One workspace by id.
      * @param workspaceId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -686,7 +686,7 @@ public class WorkspacesApi {
 
     /**
      * List Workspace Members
-     * 
+     * Everyone on a workspace, with their role.
      * @param workspaceId  (required)
      * @return WorkspaceMembersListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -704,7 +704,7 @@ public class WorkspacesApi {
 
     /**
      * List Workspace Members
-     * 
+     * Everyone on a workspace, with their role.
      * @param workspaceId  (required)
      * @return ApiResponse&lt;WorkspaceMembersListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -723,7 +723,7 @@ public class WorkspacesApi {
 
     /**
      * List Workspace Members (asynchronously)
-     * 
+     * Everyone on a workspace, with their role.
      * @param workspaceId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -816,7 +816,7 @@ public class WorkspacesApi {
 
     /**
      * List Workspaces
-     * 
+     * Workspaces this account owns, newest first.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return WorkspacesListResponse
@@ -835,7 +835,7 @@ public class WorkspacesApi {
 
     /**
      * List Workspaces
-     * 
+     * Workspaces this account owns, newest first.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @return ApiResponse&lt;WorkspacesListResponse&gt;
@@ -855,7 +855,7 @@ public class WorkspacesApi {
 
     /**
      * List Workspaces (asynchronously)
-     * 
+     * Workspaces this account owns, newest first.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -953,7 +953,7 @@ public class WorkspacesApi {
 
     /**
      * Remove Workspace Member
-     * 
+     * Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
      * @param workspaceId  (required)
      * @param memberId  (required)
      * @return SimpleBoolResponse
@@ -972,7 +972,7 @@ public class WorkspacesApi {
 
     /**
      * Remove Workspace Member
-     * 
+     * Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
      * @param workspaceId  (required)
      * @param memberId  (required)
      * @return ApiResponse&lt;SimpleBoolResponse&gt;
@@ -992,7 +992,7 @@ public class WorkspacesApi {
 
     /**
      * Remove Workspace Member (asynchronously)
-     * 
+     * Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
      * @param workspaceId  (required)
      * @param memberId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1095,7 +1095,7 @@ public class WorkspacesApi {
 
     /**
      * Update Workspace
-     * 
+     * Rename a workspace.  Only the fields you send are changed.
      * @param workspaceId  (required)
      * @param workspacePatchRequest  (required)
      * @param idempotencyKey  (optional)
@@ -1115,7 +1115,7 @@ public class WorkspacesApi {
 
     /**
      * Update Workspace
-     * 
+     * Rename a workspace.  Only the fields you send are changed.
      * @param workspaceId  (required)
      * @param workspacePatchRequest  (required)
      * @param idempotencyKey  (optional)
@@ -1136,7 +1136,7 @@ public class WorkspacesApi {
 
     /**
      * Update Workspace (asynchronously)
-     * 
+     * Rename a workspace.  Only the fields you send are changed.
      * @param workspaceId  (required)
      * @param workspacePatchRequest  (required)
      * @param idempotencyKey  (optional)
@@ -1242,7 +1242,7 @@ public class WorkspacesApi {
 
     /**
      * Update Workspace Member
-     * 
+     * Change a member&#39;s role.
      * @param workspaceId  (required)
      * @param memberId  (required)
      * @param workspaceMemberPatchRequest  (required)
@@ -1262,7 +1262,7 @@ public class WorkspacesApi {
 
     /**
      * Update Workspace Member
-     * 
+     * Change a member&#39;s role.
      * @param workspaceId  (required)
      * @param memberId  (required)
      * @param workspaceMemberPatchRequest  (required)
@@ -1283,7 +1283,7 @@ public class WorkspacesApi {
 
     /**
      * Update Workspace Member (asynchronously)
-     * 
+     * Change a member&#39;s role.
      * @param workspaceId  (required)
      * @param memberId  (required)
      * @param workspaceMemberPatchRequest  (required)

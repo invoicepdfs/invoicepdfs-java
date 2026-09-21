@@ -43,6 +43,8 @@ public class WorkspacesApiTest {
     /**
      * Add Workspace Member
      *
+     * Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -57,6 +59,8 @@ public class WorkspacesApiTest {
     /**
      * Create Workspace
      *
+     * Create a workspace, owned by this account.  The creating account is added as its first member with the &#x60;owner&#x60; role.  Send an &#x60;Idempotency-Key&#x60; header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -70,6 +74,8 @@ public class WorkspacesApiTest {
     /**
      * Delete Workspace
      *
+     * Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -81,6 +87,8 @@ public class WorkspacesApiTest {
 
     /**
      * Get Workspace
+     *
+     * One workspace by id.
      *
      * @throws ApiException if the Api call fails
      */
@@ -94,6 +102,8 @@ public class WorkspacesApiTest {
     /**
      * List Workspace Members
      *
+     * Everyone on a workspace, with their role.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -105,6 +115,8 @@ public class WorkspacesApiTest {
 
     /**
      * List Workspaces
+     *
+     * Workspaces this account owns, newest first.
      *
      * @throws ApiException if the Api call fails
      */
@@ -119,6 +131,8 @@ public class WorkspacesApiTest {
     /**
      * Remove Workspace Member
      *
+     * Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
@@ -131,6 +145,8 @@ public class WorkspacesApiTest {
 
     /**
      * Update Workspace
+     *
+     * Rename a workspace.  Only the fields you send are changed.
      *
      * @throws ApiException if the Api call fails
      */
@@ -145,6 +161,8 @@ public class WorkspacesApiTest {
 
     /**
      * Update Workspace Member
+     *
+     * Change a member&#39;s role.
      *
      * @throws ApiException if the Api call fails
      */

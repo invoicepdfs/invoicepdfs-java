@@ -18,6 +18,12 @@ servers:
 paths:
   /health:
     get:
+      description: |-
+        Is the API process alive.
+
+        Answers as long as the process can serve a request; it checks nothing
+        behind it. For whether the service can actually do work, use
+        `get_readiness`.
       operationId: get_health
       responses:
         "200":
@@ -34,6 +40,7 @@ paths:
       - application/json
   /version:
     get:
+      description: Which build is deployed.
       operationId: get_version
       responses:
         "200":
@@ -50,6 +57,13 @@ paths:
       - application/json
   /ready:
     get:
+      description: |-
+        Can the API serve real traffic — dependencies included.
+
+        Checks the database, storage, and the separate render service, and reports
+        each one. `status` is `ready` only when all three are `ok`, so this is the
+        check to point a load balancer at. `get_health` answers sooner but proves
+        less.
       operationId: get_readiness
       responses:
         "200":
@@ -298,6 +312,11 @@ paths:
       - application/json
   /api/v1/api-keys:
     get:
+      description: |-
+        Every API key on the account, including revoked ones.
+
+        Shows only the last four characters: the key itself is stored hashed and
+        cannot be recovered.
       operationId: list_api_keys
       responses:
         "200":
@@ -315,6 +334,14 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Create an API key and return it once.
+
+        The response is the only place the key appears — it is stored hashed, so a
+        lost key cannot be recovered, only replaced.
+
+        Keys are not scoped: any key can do anything this account can, including
+        creating further keys and deleting data. Treat one as a full credential.
       operationId: create_api_key
       requestBody:
         content:
@@ -346,6 +373,14 @@ paths:
       - application/json
   /api/v1/api-keys/{api_key_id}:
     delete:
+      description: |-
+        Stop an API key working, permanently.
+
+        Takes effect immediately and cannot be undone — issue a new key with
+        `create_api_key` instead. The record is kept, so the key still appears in
+        `list_api_keys` with a revoked date and the audit log stays readable.
+
+        Revoking an already-revoked key succeeds and changes nothing.
       operationId: revoke_api_key
       parameters:
       - explode: false
@@ -378,6 +413,7 @@ paths:
       x-accepts:
       - application/json
     get:
+      description: "One API key's details by id, without the key itself."
       operationId: get_api_key
       parameters:
       - explode: false
@@ -410,6 +446,11 @@ paths:
       x-accepts:
       - application/json
     patch:
+      description: |-
+        Rename an API key.
+
+        The key itself is unchanged and keeps working. To replace the secret while
+        keeping the record, use `rotate_api_key`.
       operationId: update_api_key
       parameters:
       - explode: false
@@ -3545,6 +3586,11 @@ paths:
       - application/json
   /api/v1/recurring-invoices:
     get:
+      description: |-
+        The schedules on this account, newest first.
+
+        These are the recurring definitions, not the invoices they produce; for
+        those, use `list_generated_invoices`. Narrow with `status`.
       operationId: list_recurring_invoices
       parameters:
       - explode: true
@@ -3596,6 +3642,12 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Set up a schedule that issues invoices on its own.
+
+        Starts `active`, so the first invoice is issued when the schedule next
+        falls due. The invoices it produces are ordinary documents — read them with
+        `list_generated_invoices`.
       operationId: create_recurring_invoice
       requestBody:
         content:
@@ -3627,6 +3679,14 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}:
     delete:
+      description: |-
+        End a schedule permanently.
+
+        Terminal: it cannot be resumed or edited afterwards, and cancelling twice
+        is refused with 409. To stop issuing temporarily, use
+        `pause_recurring_invoice` instead.
+
+        Invoices already issued are left alone.
       operationId: cancel_recurring_invoice
       parameters:
       - explode: false
@@ -3659,6 +3719,7 @@ paths:
       x-accepts:
       - application/json
     get:
+      description: One recurring schedule by id.
       operationId: get_recurring_invoice
       parameters:
       - explode: false
@@ -3691,6 +3752,11 @@ paths:
       x-accepts:
       - application/json
     patch:
+      description: |-
+        Change a recurring schedule.
+
+        Only the fields you send are changed. Refused with 409 once the schedule is
+        cancelled, which is terminal. Invoices already issued are not revisited.
       operationId: update_recurring_invoice
       parameters:
       - explode: false
@@ -3731,6 +3797,11 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/pause:
     post:
+      description: |-
+        Stop a schedule issuing invoices, for now.
+
+        Only an `active` schedule can be paused; anything else is refused with 409.
+        Nothing already issued changes. Restart it with `resume_recurring_invoice`.
       operationId: pause_recurring_invoice
       parameters:
       - explode: false
@@ -3764,6 +3835,11 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/resume:
     post:
+      description: |-
+        Start a paused schedule issuing again.
+
+        Only a `paused` schedule can be resumed; anything else is refused with 409.
+        A cancelled schedule cannot be brought back — create a new one.
       operationId: resume_recurring_invoice
       parameters:
       - explode: false
@@ -3797,6 +3873,11 @@ paths:
       - application/json
   /api/v1/recurring-invoices/{recurring_id}/invoices:
     get:
+      description: |-
+        The invoices one schedule has actually issued, newest first.
+
+        The documents produced by this schedule, as opposed to
+        `list_recurring_invoices`, which lists the schedules themselves.
       operationId: list_generated_invoices
       parameters:
       - explode: false
@@ -4092,6 +4173,14 @@ paths:
       - application/json
   /api/v1/logs:
     get:
+      description: |-
+        Recent API requests made with your keys, newest first.
+
+        Method, path, status, duration and the request and response bodies, so you
+        can see what an integration actually sent rather than what it meant to.
+
+        Filter to `success` or `error` with `status`. How long these are kept
+        depends on the plan — `get_usage_limits` reports the retention.
       operationId: list_logs
       parameters:
       - explode: true
@@ -4901,6 +4990,12 @@ paths:
       - application/json
   /api/v1/reference/currencies:
     get:
+      description: |-
+        The currency codes a document may be issued in.
+
+        ISO 4217, with the minor-unit count each one uses — the amounts in this API
+        are integers in the currency's smallest unit, so that figure is what says
+        where the decimal point goes.
       operationId: list_currencies
       responses:
         "200":
@@ -4917,6 +5012,10 @@ paths:
       - application/json
   /api/v1/reference/countries:
     get:
+      description: |-
+        The country codes accepted anywhere an address is given.
+
+        ISO 3166-1 alpha-2.
       operationId: list_countries
       responses:
         "200":
@@ -4933,6 +5032,11 @@ paths:
       - application/json
   /api/v1/reference/locales:
     get:
+      description: |-
+        The locale codes accepted on a document or business profile.
+
+        The value is stored and returned as given; it is not currently applied to
+        anything a render produces.
       operationId: list_locales
       responses:
         "200":
@@ -4949,6 +5053,11 @@ paths:
       - application/json
   /api/v1/reference/timezones:
     get:
+      description: |-
+        The time zone names accepted on a business profile.
+
+        IANA names. Stored and returned as given: recurring schedules are evaluated
+        in UTC and do not consult it.
       operationId: list_timezones
       responses:
         "200":
@@ -4965,6 +5074,7 @@ paths:
       - application/json
   /api/v1/reference/page-sizes:
     get:
+      description: The page sizes a render can use.
       operationId: list_page_sizes
       responses:
         "200":
@@ -5074,6 +5184,7 @@ paths:
       - application/json
   /api/v1/workspaces:
     get:
+      description: "Workspaces this account owns, newest first."
       operationId: list_workspaces
       parameters:
       - explode: true
@@ -5117,6 +5228,13 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Create a workspace, owned by this account.
+
+        The creating account is added as its first member with the `owner` role.
+
+        Send an `Idempotency-Key` header to make retrying safe: a repeat with the
+        same key and body returns the original workspace instead of a second one.
       operationId: create_workspace
       parameters:
       - explode: false
@@ -5157,6 +5275,11 @@ paths:
       - application/json
   /api/v1/workspaces/{workspace_id}:
     delete:
+      description: |-
+        Delete a workspace and its membership list.
+
+        Every member record goes with it. This cannot be undone, and documents are
+        unaffected — they belong to the account, not the workspace.
       operationId: delete_workspace
       parameters:
       - explode: false
@@ -5189,6 +5312,7 @@ paths:
       x-accepts:
       - application/json
     get:
+      description: One workspace by id.
       operationId: get_workspace
       parameters:
       - explode: false
@@ -5221,6 +5345,10 @@ paths:
       x-accepts:
       - application/json
     patch:
+      description: |-
+        Rename a workspace.
+
+        Only the fields you send are changed.
       operationId: update_workspace
       parameters:
       - explode: false
@@ -5269,6 +5397,7 @@ paths:
       - application/json
   /api/v1/workspaces/{workspace_id}/members:
     get:
+      description: "Everyone on a workspace, with their role."
       operationId: list_workspace_members
       parameters:
       - explode: false
@@ -5301,6 +5430,11 @@ paths:
       x-accepts:
       - application/json
     post:
+      description: |-
+        Add someone to a workspace by email address.
+
+        Refused with 409 if that email is already a member. The address does not
+        have to belong to an existing account.
       operationId: add_workspace_member
       parameters:
       - explode: false
@@ -5349,6 +5483,10 @@ paths:
       - application/json
   /api/v1/workspaces/{workspace_id}/members/{member_id}:
     delete:
+      description: |-
+        Remove someone from a workspace.
+
+        Removes the membership only; nothing they created is affected.
       operationId: remove_workspace_member
       parameters:
       - explode: false
@@ -5389,6 +5527,7 @@ paths:
       x-accepts:
       - application/json
     patch:
+      description: Change a member's role.
       operationId: update_workspace_member
       parameters:
       - explode: false

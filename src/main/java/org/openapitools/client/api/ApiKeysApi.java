@@ -150,7 +150,7 @@ public class ApiKeysApi {
 
     /**
      * Create Api Key
-     * 
+     * Create an API key and return it once.  The response is the only place the key appears — it is stored hashed, so a lost key cannot be recovered, only replaced.  Keys are not scoped: any key can do anything this account can, including creating further keys and deleting data. Treat one as a full credential.
      * @param apiKeyCreateRequest  (required)
      * @return ApiKeyCreateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -168,7 +168,7 @@ public class ApiKeysApi {
 
     /**
      * Create Api Key
-     * 
+     * Create an API key and return it once.  The response is the only place the key appears — it is stored hashed, so a lost key cannot be recovered, only replaced.  Keys are not scoped: any key can do anything this account can, including creating further keys and deleting data. Treat one as a full credential.
      * @param apiKeyCreateRequest  (required)
      * @return ApiResponse&lt;ApiKeyCreateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -187,7 +187,7 @@ public class ApiKeysApi {
 
     /**
      * Create Api Key (asynchronously)
-     * 
+     * Create an API key and return it once.  The response is the only place the key appears — it is stored hashed, so a lost key cannot be recovered, only replaced.  Keys are not scoped: any key can do anything this account can, including creating further keys and deleting data. Treat one as a full credential.
      * @param apiKeyCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -277,7 +277,7 @@ public class ApiKeysApi {
 
     /**
      * Get Api Key
-     * 
+     * One API key&#39;s details by id, without the key itself.
      * @param apiKeyId  (required)
      * @return ApiKeyDetailResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -295,7 +295,7 @@ public class ApiKeysApi {
 
     /**
      * Get Api Key
-     * 
+     * One API key&#39;s details by id, without the key itself.
      * @param apiKeyId  (required)
      * @return ApiResponse&lt;ApiKeyDetailResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -314,7 +314,7 @@ public class ApiKeysApi {
 
     /**
      * Get Api Key (asynchronously)
-     * 
+     * One API key&#39;s details by id, without the key itself.
      * @param apiKeyId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -396,7 +396,7 @@ public class ApiKeysApi {
 
     /**
      * List Api Keys
-     * 
+     * Every API key on the account, including revoked ones.  Shows only the last four characters: the key itself is stored hashed and cannot be recovered.
      * @return ApiKeyListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -412,7 +412,7 @@ public class ApiKeysApi {
 
     /**
      * List Api Keys
-     * 
+     * Every API key on the account, including revoked ones.  Shows only the last four characters: the key itself is stored hashed and cannot be recovered.
      * @return ApiResponse&lt;ApiKeyListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -429,7 +429,7 @@ public class ApiKeysApi {
 
     /**
      * List Api Keys (asynchronously)
-     * 
+     * Every API key on the account, including revoked ones.  Shows only the last four characters: the key itself is stored hashed and cannot be recovered.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -517,7 +517,7 @@ public class ApiKeysApi {
 
     /**
      * Revoke Api Key
-     * 
+     * Stop an API key working, permanently.  Takes effect immediately and cannot be undone — issue a new key with &#x60;create_api_key&#x60; instead. The record is kept, so the key still appears in &#x60;list_api_keys&#x60; with a revoked date and the audit log stays readable.  Revoking an already-revoked key succeeds and changes nothing.
      * @param apiKeyId  (required)
      * @return ApiKeyRevokeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -535,7 +535,7 @@ public class ApiKeysApi {
 
     /**
      * Revoke Api Key
-     * 
+     * Stop an API key working, permanently.  Takes effect immediately and cannot be undone — issue a new key with &#x60;create_api_key&#x60; instead. The record is kept, so the key still appears in &#x60;list_api_keys&#x60; with a revoked date and the audit log stays readable.  Revoking an already-revoked key succeeds and changes nothing.
      * @param apiKeyId  (required)
      * @return ApiResponse&lt;ApiKeyRevokeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -554,7 +554,7 @@ public class ApiKeysApi {
 
     /**
      * Revoke Api Key (asynchronously)
-     * 
+     * Stop an API key working, permanently.  Takes effect immediately and cannot be undone — issue a new key with &#x60;create_api_key&#x60; instead. The record is kept, so the key still appears in &#x60;list_api_keys&#x60; with a revoked date and the audit log stays readable.  Revoking an already-revoked key succeeds and changes nothing.
      * @param apiKeyId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -778,7 +778,7 @@ public class ApiKeysApi {
 
     /**
      * Update Api Key
-     * 
+     * Rename an API key.  The key itself is unchanged and keeps working. To replace the secret while keeping the record, use &#x60;rotate_api_key&#x60;.
      * @param apiKeyId  (required)
      * @param apiKeyPatchRequest  (required)
      * @return ApiKeyDetailResponse
@@ -797,7 +797,7 @@ public class ApiKeysApi {
 
     /**
      * Update Api Key
-     * 
+     * Rename an API key.  The key itself is unchanged and keeps working. To replace the secret while keeping the record, use &#x60;rotate_api_key&#x60;.
      * @param apiKeyId  (required)
      * @param apiKeyPatchRequest  (required)
      * @return ApiResponse&lt;ApiKeyDetailResponse&gt;
@@ -817,7 +817,7 @@ public class ApiKeysApi {
 
     /**
      * Update Api Key (asynchronously)
-     * 
+     * Rename an API key.  The key itself is unchanged and keeps working. To replace the secret while keeping the record, use &#x60;rotate_api_key&#x60;.
      * @param apiKeyId  (required)
      * @param apiKeyPatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

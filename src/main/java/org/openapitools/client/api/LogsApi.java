@@ -147,7 +147,7 @@ public class LogsApi {
 
     /**
      * List Logs
-     * 
+     * Recent API requests made with your keys, newest first.  Method, path, status, duration and the request and response bodies, so you can see what an integration actually sent rather than what it meant to.  Filter to &#x60;success&#x60; or &#x60;error&#x60; with &#x60;status&#x60;. How long these are kept depends on the plan — &#x60;get_usage_limits&#x60; reports the retention.
      * @param status  (optional, default to )
      * @param limit  (optional, default to 100)
      * @return ApiRequestLogsListResponse
@@ -166,7 +166,7 @@ public class LogsApi {
 
     /**
      * List Logs
-     * 
+     * Recent API requests made with your keys, newest first.  Method, path, status, duration and the request and response bodies, so you can see what an integration actually sent rather than what it meant to.  Filter to &#x60;success&#x60; or &#x60;error&#x60; with &#x60;status&#x60;. How long these are kept depends on the plan — &#x60;get_usage_limits&#x60; reports the retention.
      * @param status  (optional, default to )
      * @param limit  (optional, default to 100)
      * @return ApiResponse&lt;ApiRequestLogsListResponse&gt;
@@ -186,7 +186,7 @@ public class LogsApi {
 
     /**
      * List Logs (asynchronously)
-     * 
+     * Recent API requests made with your keys, newest first.  Method, path, status, duration and the request and response bodies, so you can see what an integration actually sent rather than what it meant to.  Filter to &#x60;success&#x60; or &#x60;error&#x60; with &#x60;status&#x60;. How long these are kept depends on the plan — &#x60;get_usage_limits&#x60; reports the retention.
      * @param status  (optional, default to )
      * @param limit  (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes

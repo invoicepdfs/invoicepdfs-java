@@ -21,6 +21,8 @@ All URIs are relative to *http://localhost*
 
 List Countries
 
+The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
+
 ### Example
 ```java
 // Import classes:
@@ -76,6 +78,8 @@ No authorization required
 > CurrenciesListResponse listCurrencies()
 
 List Currencies
+
+The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency&#39;s smallest unit, so that figure is what says where the decimal point goes.
 
 ### Example
 ```java
@@ -191,6 +195,8 @@ No authorization required
 
 List Locales
 
+The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
+
 ### Example
 ```java
 // Import classes:
@@ -246,6 +252,8 @@ No authorization required
 > PageSizesListResponse listPageSizes()
 
 List Page Sizes
+
+The page sizes a render can use.
 
 ### Example
 ```java
@@ -418,6 +426,8 @@ No authorization required
 > TimezonesListResponse listTimezones()
 
 List Timezones
+
+The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
 
 ### Example
 ```java

@@ -18,6 +18,8 @@ All URIs are relative to *http://localhost*
 
 Create Api Key
 
+Create an API key and return it once.  The response is the only place the key appears — it is stored hashed, so a lost key cannot be recovered, only replaced.  Keys are not scoped: any key can do anything this account can, including creating further keys and deleting data. Treat one as a full credential.
+
 ### Example
 ```java
 // Import classes:
@@ -83,6 +85,8 @@ public class Example {
 > ApiKeyDetailResponse getApiKey(apiKeyId)
 
 Get Api Key
+
+One API key&#39;s details by id, without the key itself.
 
 ### Example
 ```java
@@ -150,6 +154,8 @@ public class Example {
 
 List Api Keys
 
+Every API key on the account, including revoked ones.  Shows only the last four characters: the key itself is stored hashed and cannot be recovered.
+
 ### Example
 ```java
 // Import classes:
@@ -210,6 +216,8 @@ This endpoint does not need any parameter.
 > ApiKeyRevokeResponse revokeApiKey(apiKeyId)
 
 Revoke Api Key
+
+Stop an API key working, permanently.  Takes effect immediately and cannot be undone — issue a new key with &#x60;create_api_key&#x60; instead. The record is kept, so the key still appears in &#x60;list_api_keys&#x60; with a revoked date and the audit log stays readable.  Revoking an already-revoked key succeeds and changes nothing.
 
 ### Example
 ```java
@@ -344,6 +352,8 @@ public class Example {
 > ApiKeyDetailResponse updateApiKey(apiKeyId, apiKeyPatchRequest)
 
 Update Api Key
+
+Rename an API key.  The key itself is unchanged and keeps working. To replace the secret while keeping the record, use &#x60;rotate_api_key&#x60;.
 
 ### Example
 ```java

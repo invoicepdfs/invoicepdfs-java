@@ -141,7 +141,7 @@ public class ReferenceApi {
 
     /**
      * List Countries
-     * 
+     * The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
      * @return CountriesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -157,7 +157,7 @@ public class ReferenceApi {
 
     /**
      * List Countries
-     * 
+     * The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
      * @return ApiResponse&lt;CountriesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -174,7 +174,7 @@ public class ReferenceApi {
 
     /**
      * List Countries (asynchronously)
-     * 
+     * The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -254,7 +254,7 @@ public class ReferenceApi {
 
     /**
      * List Currencies
-     * 
+     * The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency&#39;s smallest unit, so that figure is what says where the decimal point goes.
      * @return CurrenciesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -270,7 +270,7 @@ public class ReferenceApi {
 
     /**
      * List Currencies
-     * 
+     * The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency&#39;s smallest unit, so that figure is what says where the decimal point goes.
      * @return ApiResponse&lt;CurrenciesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -287,7 +287,7 @@ public class ReferenceApi {
 
     /**
      * List Currencies (asynchronously)
-     * 
+     * The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency&#39;s smallest unit, so that figure is what says where the decimal point goes.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -480,7 +480,7 @@ public class ReferenceApi {
 
     /**
      * List Locales
-     * 
+     * The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
      * @return LocalesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -496,7 +496,7 @@ public class ReferenceApi {
 
     /**
      * List Locales
-     * 
+     * The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
      * @return ApiResponse&lt;LocalesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -513,7 +513,7 @@ public class ReferenceApi {
 
     /**
      * List Locales (asynchronously)
-     * 
+     * The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -593,7 +593,7 @@ public class ReferenceApi {
 
     /**
      * List Page Sizes
-     * 
+     * The page sizes a render can use.
      * @return PageSizesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -609,7 +609,7 @@ public class ReferenceApi {
 
     /**
      * List Page Sizes
-     * 
+     * The page sizes a render can use.
      * @return ApiResponse&lt;PageSizesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -626,7 +626,7 @@ public class ReferenceApi {
 
     /**
      * List Page Sizes (asynchronously)
-     * 
+     * The page sizes a render can use.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -932,7 +932,7 @@ public class ReferenceApi {
 
     /**
      * List Timezones
-     * 
+     * The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
      * @return TimezonesListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -948,7 +948,7 @@ public class ReferenceApi {
 
     /**
      * List Timezones
-     * 
+     * The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
      * @return ApiResponse&lt;TimezonesListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -965,7 +965,7 @@ public class ReferenceApi {
 
     /**
      * List Timezones (asynchronously)
-     * 
+     * The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

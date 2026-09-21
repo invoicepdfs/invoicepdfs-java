@@ -50,7 +50,7 @@ import com.invoicepdfs.JSON;
 /**
  * Render options for a document that is already stored.  For &#x60;&#x60;POST /documents/{id}/renders&#x60;&#x60;. The stateless &#x60;&#x60;POST /documents/render&#x60;&#x60; takes the whole document inline instead.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-21T02:24:35.322244898Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-21T02:47:21.324216835Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentRenderOptions {
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)

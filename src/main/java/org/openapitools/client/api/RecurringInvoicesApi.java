@@ -148,7 +148,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Cancel Recurring Invoice
-     * 
+     * End a schedule permanently.  Terminal: it cannot be resumed or edited afterwards, and cancelling twice is refused with 409. To stop issuing temporarily, use &#x60;pause_recurring_invoice&#x60; instead.  Invoices already issued are left alone.
      * @param recurringId  (required)
      * @return RecurringInvoiceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -166,7 +166,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Cancel Recurring Invoice
-     * 
+     * End a schedule permanently.  Terminal: it cannot be resumed or edited afterwards, and cancelling twice is refused with 409. To stop issuing temporarily, use &#x60;pause_recurring_invoice&#x60; instead.  Invoices already issued are left alone.
      * @param recurringId  (required)
      * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -185,7 +185,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Cancel Recurring Invoice (asynchronously)
-     * 
+     * End a schedule permanently.  Terminal: it cannot be resumed or edited afterwards, and cancelling twice is refused with 409. To stop issuing temporarily, use &#x60;pause_recurring_invoice&#x60; instead.  Invoices already issued are left alone.
      * @param recurringId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -275,7 +275,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Create Recurring Invoice
-     * 
+     * Set up a schedule that issues invoices on its own.  Starts &#x60;active&#x60;, so the first invoice is issued when the schedule next falls due. The invoices it produces are ordinary documents — read them with &#x60;list_generated_invoices&#x60;.
      * @param recurringInvoiceCreateRequest  (required)
      * @return RecurringInvoiceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -293,7 +293,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Create Recurring Invoice
-     * 
+     * Set up a schedule that issues invoices on its own.  Starts &#x60;active&#x60;, so the first invoice is issued when the schedule next falls due. The invoices it produces are ordinary documents — read them with &#x60;list_generated_invoices&#x60;.
      * @param recurringInvoiceCreateRequest  (required)
      * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -312,7 +312,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Create Recurring Invoice (asynchronously)
-     * 
+     * Set up a schedule that issues invoices on its own.  Starts &#x60;active&#x60;, so the first invoice is issued when the schedule next falls due. The invoices it produces are ordinary documents — read them with &#x60;list_generated_invoices&#x60;.
      * @param recurringInvoiceCreateRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -402,7 +402,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Get Recurring Invoice
-     * 
+     * One recurring schedule by id.
      * @param recurringId  (required)
      * @return RecurringInvoiceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -420,7 +420,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Get Recurring Invoice
-     * 
+     * One recurring schedule by id.
      * @param recurringId  (required)
      * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -439,7 +439,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Get Recurring Invoice (asynchronously)
-     * 
+     * One recurring schedule by id.
      * @param recurringId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -539,7 +539,7 @@ public class RecurringInvoicesApi {
 
     /**
      * List Generated Invoices
-     * 
+     * The invoices one schedule has actually issued, newest first.  The documents produced by this schedule, as opposed to &#x60;list_recurring_invoices&#x60;, which lists the schedules themselves.
      * @param recurringId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -559,7 +559,7 @@ public class RecurringInvoicesApi {
 
     /**
      * List Generated Invoices
-     * 
+     * The invoices one schedule has actually issued, newest first.  The documents produced by this schedule, as opposed to &#x60;list_recurring_invoices&#x60;, which lists the schedules themselves.
      * @param recurringId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -580,7 +580,7 @@ public class RecurringInvoicesApi {
 
     /**
      * List Generated Invoices (asynchronously)
-     * 
+     * The invoices one schedule has actually issued, newest first.  The documents produced by this schedule, as opposed to &#x60;list_recurring_invoices&#x60;, which lists the schedules themselves.
      * @param recurringId  (required)
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
@@ -680,7 +680,7 @@ public class RecurringInvoicesApi {
 
     /**
      * List Recurring Invoices
-     * 
+     * The schedules on this account, newest first.  These are the recurring definitions, not the invoices they produce; for those, use &#x60;list_generated_invoices&#x60;. Narrow with &#x60;status&#x60;.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param status  (optional)
@@ -700,7 +700,7 @@ public class RecurringInvoicesApi {
 
     /**
      * List Recurring Invoices
-     * 
+     * The schedules on this account, newest first.  These are the recurring definitions, not the invoices they produce; for those, use &#x60;list_generated_invoices&#x60;. Narrow with &#x60;status&#x60;.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param status  (optional)
@@ -721,7 +721,7 @@ public class RecurringInvoicesApi {
 
     /**
      * List Recurring Invoices (asynchronously)
-     * 
+     * The schedules on this account, newest first.  These are the recurring definitions, not the invoices they produce; for those, use &#x60;list_generated_invoices&#x60;. Narrow with &#x60;status&#x60;.
      * @param limit  (optional, default to 50)
      * @param cursor  (optional)
      * @param status  (optional)
@@ -813,7 +813,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Pause Recurring Invoice
-     * 
+     * Stop a schedule issuing invoices, for now.  Only an &#x60;active&#x60; schedule can be paused; anything else is refused with 409. Nothing already issued changes. Restart it with &#x60;resume_recurring_invoice&#x60;.
      * @param recurringId  (required)
      * @return RecurringInvoiceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -831,7 +831,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Pause Recurring Invoice
-     * 
+     * Stop a schedule issuing invoices, for now.  Only an &#x60;active&#x60; schedule can be paused; anything else is refused with 409. Nothing already issued changes. Restart it with &#x60;resume_recurring_invoice&#x60;.
      * @param recurringId  (required)
      * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -850,7 +850,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Pause Recurring Invoice (asynchronously)
-     * 
+     * Stop a schedule issuing invoices, for now.  Only an &#x60;active&#x60; schedule can be paused; anything else is refused with 409. Nothing already issued changes. Restart it with &#x60;resume_recurring_invoice&#x60;.
      * @param recurringId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -940,7 +940,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Resume Recurring Invoice
-     * 
+     * Start a paused schedule issuing again.  Only a &#x60;paused&#x60; schedule can be resumed; anything else is refused with 409. A cancelled schedule cannot be brought back — create a new one.
      * @param recurringId  (required)
      * @return RecurringInvoiceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -958,7 +958,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Resume Recurring Invoice
-     * 
+     * Start a paused schedule issuing again.  Only a &#x60;paused&#x60; schedule can be resumed; anything else is refused with 409. A cancelled schedule cannot be brought back — create a new one.
      * @param recurringId  (required)
      * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -977,7 +977,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Resume Recurring Invoice (asynchronously)
-     * 
+     * Start a paused schedule issuing again.  Only a &#x60;paused&#x60; schedule can be resumed; anything else is refused with 409. A cancelled schedule cannot be brought back — create a new one.
      * @param recurringId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1074,7 +1074,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Update Recurring Invoice
-     * 
+     * Change a recurring schedule.  Only the fields you send are changed. Refused with 409 once the schedule is cancelled, which is terminal. Invoices already issued are not revisited.
      * @param recurringId  (required)
      * @param recurringInvoicePatchRequest  (required)
      * @return RecurringInvoiceResponse
@@ -1093,7 +1093,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Update Recurring Invoice
-     * 
+     * Change a recurring schedule.  Only the fields you send are changed. Refused with 409 once the schedule is cancelled, which is terminal. Invoices already issued are not revisited.
      * @param recurringId  (required)
      * @param recurringInvoicePatchRequest  (required)
      * @return ApiResponse&lt;RecurringInvoiceResponse&gt;
@@ -1113,7 +1113,7 @@ public class RecurringInvoicesApi {
 
     /**
      * Update Recurring Invoice (asynchronously)
-     * 
+     * Change a recurring schedule.  Only the fields you send are changed. Refused with 409 once the schedule is cancelled, which is terminal. Invoices already issued are not revisited.
      * @param recurringId  (required)
      * @param recurringInvoicePatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
