@@ -52,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * Why a render failed, in the same shape the synchronous path returns.  A synchronous render of a document EN 16931 would reject answers &#x60;422 compliance_failed&#x60; with every violation at once — a list of fields to go and fill in. A queued render has to be able to say the same thing: the caller who chose &#x60;async&#x60; did not choose a worse answer.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-21T02:47:21.324216835Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T08:58:00.519013524Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RenderFailureOut {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
