@@ -19,9 +19,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -53,6 +56,22 @@ public class ReadyResponseTest {
     @Test
     public void dependenciesTest() {
         // TODO: test dependencies
+    }
+
+    /**
+     * Test the property 'workers'
+     */
+    @Test
+    public void workersTest() {
+        // TODO: test workers
+    }
+
+    /**
+     * Test the property 'degraded'
+     */
+    @Test
+    public void degradedTest() {
+        // TODO: test degraded
     }
 
 }

@@ -13219,6 +13219,11 @@ components:
       type: object
     ReadyResponse:
       example:
+        degraded:
+        - degraded
+        - degraded
+        workers:
+          key: workers
         status: ready
         dependencies:
           key: ok
@@ -13237,6 +13242,16 @@ components:
             type: string
           title: Dependencies
           type: object
+        workers:
+          additionalProperties:
+            type: string
+          title: Workers
+          type: object
+        degraded:
+          items:
+            type: string
+          nullable: true
+          type: array
       required:
       - dependencies
       - status

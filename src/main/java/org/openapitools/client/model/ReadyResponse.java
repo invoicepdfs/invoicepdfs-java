@@ -20,9 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +54,7 @@ import com.invoicepdfs.JSON;
 /**
  * ReadyResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T08:58:00.519013524Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-29T01:48:18.534002254Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ReadyResponse {
   /**
    * Gets or Sets status
@@ -165,6 +168,14 @@ public class ReadyResponse {
   @SerializedName(SERIALIZED_NAME_DEPENDENCIES)
   private Map<String, InnerEnum> dependencies = new HashMap<>();
 
+  public static final String SERIALIZED_NAME_WORKERS = "workers";
+  @SerializedName(SERIALIZED_NAME_WORKERS)
+  private Map<String, String> workers = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_DEGRADED = "degraded";
+  @SerializedName(SERIALIZED_NAME_DEGRADED)
+  private List<String> degraded;
+
   public ReadyResponse() {
   }
 
@@ -214,6 +225,60 @@ public class ReadyResponse {
   }
 
 
+  public ReadyResponse workers(Map<String, String> workers) {
+    this.workers = workers;
+    return this;
+  }
+
+  public ReadyResponse putWorkersItem(String key, String workersItem) {
+    if (this.workers == null) {
+      this.workers = new HashMap<>();
+    }
+    this.workers.put(key, workersItem);
+    return this;
+  }
+
+  /**
+   * Get workers
+   * @return workers
+   */
+  @javax.annotation.Nullable
+  public Map<String, String> getWorkers() {
+    return workers;
+  }
+
+  public void setWorkers(Map<String, String> workers) {
+    this.workers = workers;
+  }
+
+
+  public ReadyResponse degraded(List<String> degraded) {
+    this.degraded = degraded;
+    return this;
+  }
+
+  public ReadyResponse addDegradedItem(String degradedItem) {
+    if (this.degraded == null) {
+      this.degraded = new ArrayList<>();
+    }
+    this.degraded.add(degradedItem);
+    return this;
+  }
+
+  /**
+   * Get degraded
+   * @return degraded
+   */
+  @javax.annotation.Nullable
+  public List<String> getDegraded() {
+    return degraded;
+  }
+
+  public void setDegraded(List<String> degraded) {
+    this.degraded = degraded;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -225,12 +290,25 @@ public class ReadyResponse {
     }
     ReadyResponse readyResponse = (ReadyResponse) o;
     return Objects.equals(this.status, readyResponse.status) &&
-        Objects.equals(this.dependencies, readyResponse.dependencies);
+        Objects.equals(this.dependencies, readyResponse.dependencies) &&
+        Objects.equals(this.workers, readyResponse.workers) &&
+        Objects.equals(this.degraded, readyResponse.degraded);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, dependencies);
+    return Objects.hash(status, dependencies, workers, degraded);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -239,6 +317,8 @@ public class ReadyResponse {
     sb.append("class ReadyResponse {\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
+    sb.append("    workers: ").append(toIndentedString(workers)).append("\n");
+    sb.append("    degraded: ").append(toIndentedString(degraded)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -263,6 +343,8 @@ public class ReadyResponse {
     openapiFields = new HashSet<String>();
     openapiFields.add("status");
     openapiFields.add("dependencies");
+    openapiFields.add("workers");
+    openapiFields.add("degraded");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -303,6 +385,10 @@ public class ReadyResponse {
       }
       // validate the required field `status`
       StatusEnum.validateJsonElement(jsonObj.get("status"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("degraded") != null && !jsonObj.get("degraded").isJsonNull() && !jsonObj.get("degraded").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `degraded` to be an array in the JSON string but got `%s`", jsonObj.get("degraded").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

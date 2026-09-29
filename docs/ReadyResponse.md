@@ -9,6 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**dependencies** | [**Map&lt;String, InnerEnum&gt;**](#Map&lt;String, InnerEnum&gt;) |  |  |
+|**workers** | **Map&lt;String, String&gt;** |  |  [optional] |
+|**degraded** | **List&lt;String&gt;** |  |  [optional] |
 
 
 
