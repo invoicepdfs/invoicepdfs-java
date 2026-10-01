@@ -49,7 +49,7 @@ import com.invoicepdfs.JSON;
 /**
  * DocumentOutputOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-29T01:48:18.534002254Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-01T00:31:20.495264504Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DocumentOutputOptions {
   /**
    * Gets or Sets format
