@@ -51,7 +51,7 @@ import com.invoicepdfs.JSON;
 /**
  * InvoiceLineItemTaxInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-01T04:42:28.310163532Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T05:17:19.932682270Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvoiceLineItemTaxInput {
   public static final String SERIALIZED_NAME_TAX_RATE_ID = "tax_rate_id";
   @SerializedName(SERIALIZED_NAME_TAX_RATE_ID)

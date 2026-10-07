@@ -52,7 +52,7 @@ import com.invoicepdfs.JSON;
 /**
  * What this PDF was held to, for a render that carries embedded XML.  Absent on a plain &#x60;pdf&#x60;: no ruleset was applied, so there is no claim to report. A render that was produced at all satisfied every fatal rule that ran — the render is refused otherwise — so the useful questions are which rules those were, and whether all of them ran.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-01T04:42:28.310163532Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T05:17:19.932682270Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RenderComplianceOut {
   public static final String SERIALIZED_NAME_PROFILE = "profile";
   @SerializedName(SERIALIZED_NAME_PROFILE)

@@ -269,7 +269,7 @@ public class DocumentsApiTest {
     /**
      * Send Document
      *
-     * Queue the document to be emailed.  Returns 202 with the delivery in &#x60;queued&#x60;. The mail is sent in the background and retried on transient failure; poll &#x60;GET /deliveries/{id}&#x60; for the outcome.
+     * Queue the document to be emailed, with its PDF attached.  The document must be finalized; sending a draft is a 409. &#x60;attach_pdf&#x60; defaults to true, and on that path a render must already exist — the email attaches an existing render rather than making one — so the natural sequence is create, finalize, render, send, and sending straight after finalizing is refused with &#x60;No render exists for this document&#x60;. Send with &#x60;attach_pdf: false&#x60; and no render is needed, because none is attached.  Returns 202 with the delivery in &#x60;queued&#x60;. The mail is sent in the background and retried on transient failure; poll &#x60;GET /deliveries/{id}&#x60; for the outcome.
      *
      * @throws ApiException if the Api call fails
      */
